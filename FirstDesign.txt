@@ -116,7 +116,7 @@ item{
 }
 
 
-#loot effect先就算了
+#loot先就算了
 #loot可以合并到item里去
 loot{
     ~ ~ ~ = #spawn
@@ -125,17 +125,6 @@ loot{
     @s += #give
     @s::container.5 = #replace entity
 }
-
-
-attribute{
-    @s::generic.attack_damage all #get
-    @s::generic.attack_damage *4 #base get
-    @s::generic.attack_damage 
-    @s::generic.attack_damage = #set
-    @s::generic.attack_damage += #modifier add
-    @s::generic.attack_damage -= #modifier remove
-    @s::generic.attack_damage 0-0-0-0 *4#modifier get
-} 
 
 while{ if @e }->func loopname{
 
@@ -196,18 +185,37 @@ block{
     ~ ~ ~ ~ ~ ~ ~ ~ ~ filtered oak_planks
 }
 
+attribute{
+    @s::generic.attack_damage all #get
+    @s::generic.attack_damage *4 #base get
+    @s::generic.attack_damage 
+    @s::generic.attack_damage = #set
+    @s::generic.attack_damage += #modifier add
+    @s::generic.attack_damage -= #modifier remove
+    @s::generic.attack_damage 0-0-0-0 *4#modifier get
+} 
+
+
 entity ~ ~ ~ pig{}
 entity{
     @s ~ ~ ~ #tp
-    @s tag+ temp #tag
-    @s tag- temp #tag
-    @s effect+ #effect give
-    @s effect- #effect clear
+    @s tag+= temp #tag
+    @s tag-= temp #tag
+    @s effect+= #effect give
+    @s effect-= #effect clear
     @s kill
+    @s attribute::generic.attack_damage +=
 }
 entity @s {
     ~ ~ ~
-    tag+ temp
+    tag+= temp
 }
 
+#表达式方式的支持
+@s::Item += {} //data不用写了
+@s.kill 
+@s.tag +=
+@s.tp @r
+@s:boss += @s:flower //scb不用写了
+@s += minecraft:stone //item 不用写了give
 
