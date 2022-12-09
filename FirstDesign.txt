@@ -1,0 +1,213 @@
+#实体带有记分板 @s:sb1
+#storage|实体的NBT路径 @s::Item
+
+
+exec{ 
+    as @e[]
+    at @e[]
+    position ~ ~ ~
+    position @e[] #position as
+    rotated @e[] #rotated as
+    rotated ~ ~
+    if @e[] #if entity
+    if @e[]:sb1 >= @s:sb2 #if score
+    if @e[]:sb1 matches 2..5 #if score
+    if ~ ~ ~ stone{} #if block
+    if ~ ~ ~ ~ ~ ~ ~ ~ ~ all|masked #if blocks
+    if @e[]::{} #if data entity
+    if ~ ~ ~ ::{}  #if data block
+    if foo:str::{} #if data storage
+}
+->func{ #生成匿名函数#比如本文件是utils/test，则生成utils/test/21.mcf
+
+}
+?=>@s:sb3  #store success
+
+exec{}
+=>@e[]:sb3  #store result score
+=> ~ ~ ~ ::Base int*3#store result block
+=>foo:bar value|max  #store result bossbar
+=> @e[]::XXXX int*3 #store result entity
+=> foo:storage::XXX int*3#store result storage
+->func test{ #run 一个函数，这个函数会自动创建为一个mcf
+
+}
+
+#run一个函数
+exec{}->func foo:utils/test 
+
+
+#exec可以省略
+#{}->func1
+#{if @s}->func1
+#func1=>@e[]:sb3
+#->func1 {} #定义并执行
+
+
+func utils/test{ #自动创建一个mcf
+    func utils/test #递归调用自己
+}
+
+func #utils/all{ #自动创建一个function tag
+    func utils/a{
+
+    }
+    func utils/b{
+
+    }
+    func utils/c
+}
+
+
+scb test "displayname" #objective add test dummy "displayname"
+scb(deathCount) test "" #objective add test deathCount
+scb test = {
+    displayname "分数" # modify <计分板ID> displayname <显示名称>
+    rendertype hearts|integer #modify <记分板ID> rendertype (hearts|integer)
+    display sidebar #setdisplay <槽位> <记分板ID>
+    remove #remove <记分板ID>
+}
+
+scb{
+    @s:test +=1   #add
+    @s:test -=1   #remove
+    @s:test =1    #set
+    @s:test reset    #reset
+    @s:test    #get
+    @s:test1 += @s:test2 #operation
+    @s:test1 -= @s:test2
+    @s:ans := @s:test2 + @s:test3 / @s:test4
+} 
+
+scb{ @s:test1 += @s:test2 } =>@s:test3 #execute store result
+
+data{
+    ~ ~ ~ ::Base *3 #get block
+    @e[]::Item #get 
+    @e[] += {} #merge
+    @e[]::Item += @s::Item #modify merge from
+    @e[]::Item += {} #modify merge value 
+    @e[]::Item = {} #modify set value
+    @s::ArmorItems >> {id:'iron_boots', Count:1b} #prepend
+    @s::ArmorItems << {id:'iron_boots', Count:1b} #append
+    @s::ArmorItems [0]+ {id:'iron_boots', Count:1b} #insert
+    foo:storage::Data remove 
+}
+
+define `pos ~ ~ ~
+define(selector) `temp @e[]
+define(snbt) `nbt1 {
+    id:'iron_boots', 
+    Count:1b
+}
+define(json) `use {
+    "text":"aaaa"
+}
+
+
+#以下纯口嗨
+
+item{
+    @e[]::armor.chest = xxx 4 #replace with
+    @e[]::armor.chest = @s::armor.chest foo:modifier #replace from
+    @e[]::armor.chest = foo:modifier #modify
+    @e[] += xxx 4 #give
+    @e[] -= xxx 4 #clear
+}
+
+
+#loot effect先就算了
+#loot可以合并到item里去
+loot{
+    ~ ~ ~ = #spawn
+    ~ ~ ~ += #insert
+    ~ ~ ~::container.5 = #replace block
+    @s += #give
+    @s::container.5 = #replace entity
+}
+
+
+attribute{
+    @s::generic.attack_damage all #get
+    @s::generic.attack_damage *4 #base get
+    @s::generic.attack_damage 
+    @s::generic.attack_damage = #set
+    @s::generic.attack_damage += #modifier add
+    @s::generic.attack_damage -= #modifier remove
+    @s::generic.attack_damage 0-0-0-0 *4#modifier get
+} 
+
+while{ if @e }->func loopname{
+
+}
+#自动生成
+#execute if @e  run function loopname
+##loopname
+#execute if @e  run function loopname
+
+
+#bossbar
+bossbar foo:newboss "New Boss"  #bossbar add
+bossbar foo:newboss = {
+    max|players|value|visible #bossbar get
+    remove 
+    color  #bossbar set
+    max
+    name
+    players
+    style
+    visible
+}
+
+
+display{
+    @s << @s:obj # tellraw @s {"score":{"name":"@s","objective":"obj"}
+    @s title {} # title @s title {}
+    @s actionbar {} #title @s actionbar {}
+    @s subtitle {} #title @s subtitle {}
+    #可以整合scoreboard和bossbar
+    scb test "分数"
+    scb test = {
+        displayname "分数" # modify <计分板ID> displayname <显示名称>
+        rendertype hearts|integer #modify <记分板ID> rendertype (hearts|integer)
+        display sidebar #setdisplay <槽位> <记分板ID>
+        remove #remove <记分板ID>
+    }
+    scb test {""} = {
+
+    }
+    @s bossbar foo:newboss #bossbar set players
+    bossbar foo:newboss {""}
+    bossbar foo:newboss {""} = {
+
+    }
+    
+}
+
+display @s {
+    << @s:obj 
+    << @s:obj1 <<@s:obj2
+}
+
+
+block{
+    ~ ~ ~ minecraft:stone[] keep #setblock
+    ~ ~ ~ ~ ~ ~ minecraft:stone[] keep
+    ~ ~ ~ ~ ~ ~ ~ ~ ~ filtered oak_planks
+}
+
+entity ~ ~ ~ pig{}
+entity{
+    @s ~ ~ ~ #tp
+    @s tag+ temp #tag
+    @s tag- temp #tag
+    @s effect+ #effect give
+    @s effect- #effect clear
+    @s kill
+}
+entity @s {
+    ~ ~ ~
+    tag+ temp
+}
+
+
