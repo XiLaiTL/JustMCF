@@ -1,4 +1,4 @@
-#实体带有记分板 @s:sb1
+#实体带有记分板 sb1@s @s:sb1
 #storage|实体的NBT路径 @s::Item
 #json j{}
 #nbt n{}
@@ -11,8 +11,8 @@ exec{
     rotated @e[] #rotated as
     rotated ~ ~
     if @e[] #if entity
-    if @e[]:sb1 >= @s:sb2 #if score
-    if @e[]:sb1 matches 2..5 #if score
+    if sb1@e[] >= sb2@s #if score
+    if sb1@e[] matches 2..5 #if score
     if ~ ~ ~ stone{} #if block
     if ~ ~ ~ ~ ~ ~ ~ ~ ~ all|masked #if blocks
     if @e[]::{} #if data entity
@@ -39,10 +39,10 @@ exec{}->func foo:utils/test
 
 
 #exec可以省略
-#{}->func1
-#{if @s}->func1
-#func1=>@e[]:sb3
-#->func1 {} #定义并执行
+# {}->func1
+# {if @s}->func1
+# func1=>sb3@e[]
+# ->func1 {} #定义并执行
 
 
 func utils/test{ #自动创建一个mcf
@@ -60,9 +60,9 @@ func #utils/all{ #自动创建一个function tag
 }
 
 
-scb test "displayname" #objective add test dummy "displayname"
-scb(deathCount) test "" #objective add test deathCount
-scb test = {
+scb test j"displayname" #objective add test dummy "displayname"
+scb(deathCount) test default #objective add test deathCount  #default表示默认名称
+scb test {
     displayname "分数" # modify <计分板ID> displayname <显示名称>
     rendertype hearts|integer #modify <记分板ID> rendertype (hearts|integer)
     display sidebar #setdisplay <槽位> <记分板ID>
@@ -70,38 +70,40 @@ scb test = {
 }
 
 scb{
-    @s:test +=1   #add
-    @s:test -=1   #remove
-    @s:test =1    #set
-    @s:test reset    #reset
-    @s:test    #get
-    @s:test1 += @s:test2 #operation
-    @s:test1 -= @s:test2
-    @s:ans := @s:test2 + @s:test3 / @s:test4
+    test@s +=1   #add
+    test@s -=1   #remove
+    test@s =1    #set
+    test@s reset    #reset
+    test@s    #get
+    test1@s += test2@s #operation
+    test1@s -= test2@s
+    ans@s := test2@s + test3@s / test4@s
 } 
 
-scb{ @s:test1 += @s:test2 } =>@s:test3 #execute store result
+scb{ test1@s += test2@s } =>test3@s #execute store result
 
 data{
     ~ ~ ~ ::Base *3 #get block
     @e[]::Item #get 
-    @e[] += {} #merge
-    @e[]::Item += @s::Item #modify merge from
-    @e[]::Item += {} #modify merge value 
+    @e[] |= {} #merge
+    @e[]::Item |= @s::Item #modify merge from
+    @e[]::Item |= {} #modify merge value 
     @e[]::Item = {} #modify set value
-    @s::ArmorItems >> {id:'iron_boots', Count:1b} #prepend
-    @s::ArmorItems << {id:'iron_boots', Count:1b} #append
-    @s::ArmorItems [0]+ {id:'iron_boots', Count:1b} #insert
+    @s::ArmorItems ..0 {id:'iron_boots', Count:1b} #prepend
+    @s::ArmorItems .. {id:'iron_boots', Count:1b} #append
+    @s::ArmorItems ..1 {id:'iron_boots', Count:1b} #insert 1
     foo:storage::Data remove 
 }
 
+#所有出现的玩家名都得用define替换
+define(player) `xxx
 define `pos ~ ~ ~
 define(selector) `temp @e[]
-define(snbt) `nbt1 {
+define(snbt) `nbt1 n{
     id:'iron_boots', 
     Count:1b
 }
-define(json) `use {
+define(json) `use j{
     "text":"aaaa"
 }
 
@@ -135,10 +137,31 @@ while{ if @e }->func loopname{
 ##loopname
 #execute if @e  run function loopname
 
+for{foo:flower::list}->func loopname{
+    foo:flower::list[0] = {}
+}
+#自动生成
+#execute store result score loop int run data get storage foo:flower list 
+#execute if score loop int matches 1. . run function loopname
+##loopname
+#data modify storage foo:flower list[0] set value {}
+#data modify storage foo:flower list append from storage foo:flower list[0]
+#data remove storage foo:flower list[0]
+#scoreboard players remove loop int 1
+#execute if score loop int matches 1.. run function #loopname
+
+for{foo:flower::temp = ["abcd","efgh","ojbk"] }->func loopname{
+
+}
+#自动生成
+#data merge storage foo:flower temp value ["abcd","efgh","ojbk"]
+#....
+
+
 
 #bossbar
-bossbar foo:newboss "New Boss"  #bossbar add
-bossbar foo:newboss = {
+bossbar foo:newboss j"New Boss"  #bossbar add
+bossbar foo:newboss {
     max|players|value|visible #bossbar get
     remove 
     color  #bossbar set
@@ -151,32 +174,31 @@ bossbar foo:newboss = {
 
 
 display{
-    @s << @s:obj # tellraw @s {"score":{"name":"@s","objective":"obj"}
+    @s text {obj@s} # tellraw @s {"score":{"name":"@s","objective":"obj"}
     @s title {} # title @s title {}
     @s actionbar {} #title @s actionbar {}
     @s subtitle {} #title @s subtitle {}
     #可以整合scoreboard和bossbar
-    scb test "分数"
-    scb test = {
+    scb test j"分数"
+    scb test {
         displayname "分数" # modify <计分板ID> displayname <显示名称>
         rendertype hearts|integer #modify <记分板ID> rendertype (hearts|integer)
         display sidebar #setdisplay <槽位> <记分板ID>
         remove #remove <记分板ID>
     }
-    scb test {""} = {
+    scb test j{""} {
 
     }
     @s bossbar foo:newboss #bossbar set players
-    bossbar foo:newboss {""}
-    bossbar foo:newboss {""} = {
+    bossbar foo:newboss j{""}
+    bossbar foo:newboss j{""} {
 
     }
     
 }
 
 display @s {
-    << @s:obj 
-    << @s:obj1 <<@s:obj2
+
 }
 
 
@@ -186,7 +208,7 @@ block{
     ~ ~ ~ ~ ~ ~ ~ ~ ~ filtered oak_planks
 }
 
-attribute{
+attr{
     @s::generic.attack_damage all #get
     @s::generic.attack_damage *4 #base get
     @s::generic.attack_damage 
@@ -205,7 +227,7 @@ entity{
     @s effect+= #effect give
     @s effect-= #effect clear
     @s kill
-    @s attribute::generic.attack_damage +=
+    @s attr::generic.attack_damage +=
 }
 entity @s {
     ~ ~ ~
@@ -217,6 +239,14 @@ entity @s {
 @s.kill 
 @s.tag +=
 @s.tp @r
-@s:boss += @s:flower #scb不用写了
+boss@s += flower@s #scb不用写了
 @s += minecraft:stone #item 不用写了give
+
+#宏语言：js沙箱 eval, ##输出到外界，自动替换为plain_out(`xxx`)
+{{
+    const list = [1,2,3,4,5]
+    for(let i of list){##
+        setblock ~ ~${i} ~
+    ##}
+}}
 
