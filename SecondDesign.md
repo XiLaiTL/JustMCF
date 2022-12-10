@@ -112,8 +112,8 @@ nbt @e CustomArrayTag ..<index> <val>   # data insert
 ### ITEM
 ```
 item <object>:<path> = <id> <count> <nbt>   # repalce
-item <object> += <id> <count> <nbt>         # give
-item <object> += loot <loot_table>
+item <object> ..> <id> <count> <nbt>         # give
+item <object> ..> loot <loot_table>
 item <entity>[:<path>] {
     # multi operations
     ...
@@ -123,19 +123,19 @@ item <entity>[:<path>] {
 ### TAG
 
 ```
-tag <entity> <+= / -=> <tag>
+tag <entity> ..> | ..< <tag>
 ```
 
 ### EFFECT
 
 ```
-effect <entity> <+= / -=> <effect> ...
+effect <entity> ..> | ..< <effect> ...
 ```
 
 ### ATTRIBUTES
 
 ```
-attr <entity> <attribute> += <val>
+attr <entity> <attribute> ..> | ..< <val>
 ```
 
 ## JSON
