@@ -3,6 +3,7 @@
 ## Lambda式execute
 
 ### 自动创建匿名函数
+
 ```
 exec {
     as @e[]
@@ -13,16 +14,31 @@ exec {
 }
 ```
 
+### 自动创建带名函数
+
+```
+exec {
+    as @e[]
+    at @s
+    ...
+} => func <name> {
+    # do something
+}
+```
+
+
 ### 单命令储存返回值
+
+见[引用](#引用)
 ```
 exec {
     ...
-} => # do something => <success/result> <score/block/...> <object>
+} => # do something => <success/result> <object>
 ```
 
 ### 调用一个函数
 ```
-exec {...} => [<function(if not declared)>] <function>
+exec {...} => [<func(if not declared)>] <function>
 ```
 
 ### while循环
@@ -78,7 +94,7 @@ scb <name> {
 
 ## 表达式
 
-### 基本表达
+### 引用
 ```
 score <entity> <name>               # 指一个或多个实体的分数
 nbt <entity> <path>                 # 指一个或多个实体的NBT
