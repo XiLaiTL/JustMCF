@@ -1,6 +1,7 @@
 #实体带有记分板 @s:sb1
 #storage|实体的NBT路径 @s::Item
-
+#json j{}
+#nbt n{}
 
 exec{ 
     as @e[]
@@ -212,10 +213,10 @@ entity @s {
 }
 
 #表达式方式的支持
-@s::Item += {} //data不用写了
+@s::Item += {} #data不用写了
 @s.kill 
 @s.tag +=
 @s.tp @r
-@s:boss += @s:flower //scb不用写了
-@s += minecraft:stone //item 不用写了give
+@s:boss += @s:flower #scb不用写了
+@s += minecraft:stone #item 不用写了give
 
