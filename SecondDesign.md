@@ -59,11 +59,24 @@ namesp <name> {
 }
 ```
 
+### 文件夹
+```
+folder <relative_path> {
+    # inside
+}
+```
+
 ### 定义单个函数
 ```
-func [<namesp>:]<path> tagged <tag1, tag2, ...> {
+func [<namesp>:]<path> [tagged <tag1, tag2, ...>] {
     # do something
 }
+```
+
+### 声明函数
+用于编译器识别符号
+```
+func [<namesp>:]<path> [tagged <tag1, tag2, ...>]
 ```
 
 ### 调用函数
@@ -78,6 +91,7 @@ call <relative_path_with_dot>
 ## 计分板
 
 ### 初始化器
+见[JSON字面量](#JSON字面量)
 ```
 scb <name> <displayname> {
     rendertype <hearts/integer>
@@ -113,11 +127,11 @@ bossbar bar max = 100               # assign
 
 ### NBT
 
-字面量
+#### NBT字面量
 ```
 n{Tag:Val}
 ```
-用法
+#### 用法
 ```
 nbt @e CustomName |= n{...}              # data merge
 nbt @e CustomArrayTag ..> <val>         # data append
@@ -156,11 +170,11 @@ attr <entity> <attribute> ..> | ..< <val>
 
 ## JSON
 
-字面量
+#### JSON字面量
 ```
 j{"text":"Some Text Here"}
 ```
-用法
+#### 用法
 ```
 display <player> <title/text/...> <val>
 ```
