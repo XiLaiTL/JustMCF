@@ -29,7 +29,8 @@ exec {
 
 ### 单命令储存返回值
 
-见[引用](#引用)
+> 见[引用](#引用)
+
 ```
 exec {
     ...
@@ -91,7 +92,9 @@ call <relative_path_with_dot>
 ## 计分板
 
 ### 初始化器
-见[JSON字面量](#JSON字面量)
+> 见[JSON字面量](#JSON字面量)
+
+如果希望`displayname`为缺省值，可以写`default`；如果只是新建计分板，可以不写`{}`之间的内容。
 ```
 scb <name> <displayname> {
     rendertype <hearts/integer>
