@@ -3,8 +3,11 @@ grammar justmcf;
 mcfStatement: statement;
 statement: commandStatement*;
 commandStatement
-    :execStatement
-    |LeagalCommandStatement
+    : execStatement
+    | commandStatement execStoreChild+
+    | dataOperationExpression
+    | scbOperationExpression
+    | LeagalCommandStatement
     ;
 LeagalCommandStatement
     :'advancement' ~[\r\n]*
@@ -120,14 +123,12 @@ LeagalCommandStatement
     |'xp' ~[\r\n]*
     ;
 
-
-
 execStatement
-    : 'exec'? ('{' execChild* '}')? execStoreChild? (execRunChild|execStoreChild)
+    : 'exec'? ('{' execChild* '}') execStoreChild* (execRunChild|execStoreChild) execStoreChild*
     ;
 execStoreChild
     : ('=>'|'?=>') scbExpression
-    | ('=>'|'?=>') dataExpression Type '*' NUMBER
+    | ('=>'|'?=>') dataExpression (Type '*' NUMBER)?
     ;
 execRunChild
     : '->' ('func' ResourceLocation? ('tagged' ResourceLocation (',' ResourceLocation)*)?)? commandStatement
@@ -162,10 +163,39 @@ dataExpression
     | selector '::' nbtPath
     | pos3Expression '::' nbtPath
     ;
+dataOperationExpression
+    : dataExpression
+    | dataExpression '|=' nbt
+    | dataExpression '|=' dataExpression
+    | dataExpression '=' nbt
+    | dataExpression '..' dataExpression
+    | dataExpression '..0' dataExpression
+    | dataExpression '..' NUMBER dataExpression
+    | dataExpression 'remove'
+    ;
+
+scbOperationExpression
+    : scbExpression '+=' scbExpression
+    | scbExpression '-=' scbExpression
+    | scbExpression '*=' scbExpression
+    | scbExpression '/=' scbExpression
+    | scbExpression '%=' scbExpression
+    | scbExpression '><' scbExpression
+    | scbExpression '<<' scbExpression
+    | scbExpression '>>' scbExpression
+    | scbExpression '=' scbExpression
+    | scbExpression 'reset'
+    | scbExpression ':=' scbSingleOperationExpression
+    ;
+scbSingleOperationExpression
+    : scbSingleOperationExpression ('+'|'-'|'*'|'/'|'%') scbSingleOperationExpression
+    | '(' scbSingleOperationExpression ')'
+    ;
+
 scbExpression: NBTName Selector;
-pos3Expression: Pos1 Pos1 Pos1;
-pos2Expression: Pos1 Pos1;
-pos5Expression: Pos1 Pos1 Pos1 Pos1 Pos1;
+pos3Expression: pos1 pos1 pos1;
+pos2Expression: pos1 pos1;
+pos5Expression: pos1 pos1 pos1 pos1 pos1;
 blockExpression: nameSpace blockstate? nbt? ;
 blockstate: '[' (.)+? ']';
 
@@ -184,19 +214,20 @@ Pair
 NameSpace: AcceptableName ':' ResourceLocation;
 
 
-NBTName: [a-z_\-0-9.A-Z]+;
-AcceptableName: [a-z_\-0-9.]+;
+NBTName: [a-z_A-Z][a-z_\-0-9.A-Z]*;
+AcceptableName: [a-z_][a-z_\-0-9.]*;
 ResourceLocation: AcceptableName ('/' AcceptableName)*;
 
-Pos1: ('~'|'^')? NUMBER | ('~'|'^') ; //没写小数
+pos1: Pos1 | NUMBER;
+Pos1: ('~'|'^') NUMBER | ('~'|'^') ; //没写小数
 
 
 
 nbtPath
-    : AcceptableName
+    : NBTName
     | nbtCompound
-    | AcceptableName nbtCompound
-    | AcceptableName ('[' NUMBER ']'|'[]')* ('[' nbtCompound ']')?
+    | NBTName nbtCompound
+    | NBTName ('[' NUMBER ']'|'[]')* ('[' nbtCompound ']')?
     ;
 
 snbt: nbtValue;
