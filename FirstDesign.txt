@@ -95,7 +95,7 @@ data{
     foo:storage::Data remove 
 }
 
-#所有出现的玩家名都得用define替换
+#所有出现的玩家名都得用define替换 ，见后面，还有一种方案
 define(player) `xxx
 define `pos ~ ~ ~
 define(selector) `temp @e[]
@@ -219,7 +219,6 @@ attr{
 } 
 
 
-entity ~ ~ ~ pig{}
 entity{
     @s ~ ~ ~ #tp
     @s tag+= temp #tag
@@ -233,6 +232,17 @@ entity @s {
     ~ ~ ~
     tag+= temp
 }
+
+entity(pig) xxxx n{} { #初始化，指定了uuid，uuid可以在项目文件中配置/自动生成，可以使用@xxxx来选中该实体
+    tp ~ ~ ~
+
+
+}
+entity @xxxx{ #完成修改
+
+}
+entity(player) xxxx  #选择器假名，可以用@xxxx指代player
+
 
 #表达式方式的支持
 @s::Item += {} #data不用写了

@@ -162,7 +162,7 @@ dataExpression
     | selector '::' nbtPath
     | pos3Expression '::' nbtPath
     ;
-scbExpression: AcceptableName Selector;
+scbExpression: NBTName Selector;
 pos3Expression: Pos1 Pos1 Pos1;
 pos2Expression: Pos1 Pos1;
 pos5Expression: Pos1 Pos1 Pos1 Pos1 Pos1;
