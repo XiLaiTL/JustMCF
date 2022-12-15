@@ -1,0 +1,10 @@
+execute if score stemp1 int matches 0 run data modify entity @s data.data_list[0] set from storage math:io ltd
+execute if score stemp1 int matches 1 run data modify entity @s data.data_list[1] set from storage math:io ltd
+execute if score stemp1 int matches 2 run data modify entity @s data.data_list[2] set from storage math:io ltd
+execute if score stemp1 int matches 3 run data modify entity @s data.data_list[3] set from storage math:io ltd
+execute if score stemp1 int matches 4 run data modify entity @s data.data_list[4] set from storage math:io ltd
+execute if score stemp1 int matches 5 run data modify entity @s data.data_list[5] set from storage math:io ltd
+execute if score stemp1 int matches 6 run data modify entity @s data.data_list[6] set from storage math:io ltd
+execute if score stemp1 int matches 7 run data modify entity @s data.data_list[7] set from storage math:io ltd
+execute if score stemp1 int matches 8 run data modify entity @s data.data_list[8] set from storage math:io ltd
+execute if score stemp1 int matches 9 run data modify entity @s data.data_list[9] set from storage math:io ltd

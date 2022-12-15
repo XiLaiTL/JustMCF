@@ -7,132 +7,138 @@ commandStatement
     | commandStatement execStoreChild+
     | dataOperationExpression
     | scbOperationExpression
+    | funcStatement
     | LeagalCommandStatement
     ;
 LeagalCommandStatement
-    :'advancement' ~[\r\n]*
-    |'alwaysday' ~[\r\n]*
-    |'attribute' ~[\r\n]*
-    |'ban' ~[\r\n]*
-    |'ban-ip' ~[\r\n]*
-    |'banlist' ~[\r\n]*
-    |'bossbar' ~[\r\n]*
-    |'camerashake' ~[\r\n]*
-    |'changesetting' ~[\r\n]*
-    |'clear' ~[\r\n]*
-    |'clearspawnpoint' ~[\r\n]*
-    |'clone' ~[\r\n]*
-    |'connect' ~[\r\n]*
-    |'damage' ~[\r\n]*
-    |'data' ~[\r\n]*
-    |'datapack' ~[\r\n]*
-    |'daylock' ~[\r\n]*
-    |'debug' ~[\r\n]*
-    |'dedicatedwsserver' ~[\r\n]*
-    |'defaultgamemode' ~[\r\n]*
-    |'deop' ~[\r\n]*
-    |'dialogue' ~[\r\n]*
-    |'difficulty' ~[\r\n]*
-    |'effect' ~[\r\n]*
-    |'enchant' ~[\r\n]*
-    |'event' ~[\r\n]*
-    |'execute' ~[\r\n]*
-    |'experience' ~[\r\n]*
-    |'fill' ~[\r\n]*
-    |'fillbiome' ~[\r\n]*
-    |'fog' ~[\r\n]*
-    |'forceload' ~[\r\n]*
-    |'function' ~[\r\n]*
-    |'gamemode' ~[\r\n]*
-    |'gamerule' ~[\r\n]*
-    |'gametest' ~[\r\n]*
-    |'give' ~[\r\n]*
-    |'help' ~[\r\n]*
-    |'immutableworld' ~[\r\n]*
-    |'item' ~[\r\n]*
-    |'jfr' ~[\r\n]*
-    |'kick' ~[\r\n]*
-    |'kill' ~[\r\n]*
-    |'list' ~[\r\n]*
-    |'locate' ~[\r\n]*
-    |'loot' ~[\r\n]*
-    |'me' ~[\r\n]*
-    |'mobevent' ~[\r\n]*
-    |'msg' ~[\r\n]*
-    |'music' ~[\r\n]*
-    |'op' ~[\r\n]*
-    |'ops' ~[\r\n]*
-    |'pardon' ~[\r\n]*
-    |'pardon-ip' ~[\r\n]*
-    |'particle' ~[\r\n]*
-    |'perf' ~[\r\n]*
-    |'permission' ~[\r\n]*
-    |'place' ~[\r\n]*
-    |'playanimation' ~[\r\n]*
-    |'playsound' ~[\r\n]*
-    |'publish' ~[\r\n]*
-    |'recipe' ~[\r\n]*
-    |'reload' ~[\r\n]*
-    |'remove' ~[\r\n]*
-    |'replaceitem' ~[\r\n]*
-    |'ride' ~[\r\n]*
-    |'save' ~[\r\n]*
-    |'save-all' ~[\r\n]*
-    |'save-off' ~[\r\n]*
-    |'save-on' ~[\r\n]*
-    |'say' ~[\r\n]*
-    |'schedule' ~[\r\n]*
-    |'scoreboard' ~[\r\n]*
-    |'seed' ~[\r\n]*
-    |'setblock' ~[\r\n]*
-    |'setidletimeout' ~[\r\n]*
-    |'setmaxplayers' ~[\r\n]*
-    |'setworldspawn' ~[\r\n]*
-    |'spawnpoint' ~[\r\n]*
-    |'spectate' ~[\r\n]*
-    |'spreadplayers' ~[\r\n]*
-    |'stop' ~[\r\n]*
-    |'stopsound' ~[\r\n]*
-    |'structure' ~[\r\n]*
-    |'summon' ~[\r\n]*
-    |'tag' ~[\r\n]*
-    |'team' ~[\r\n]*
-    |'teammsg' ~[\r\n]*
-    |'teleport' ~[\r\n]*
-    |'tell' ~[\r\n]*
-    |'tellraw' ~[\r\n]*
-    |'testfor' ~[\r\n]*
-    |'testforblock' ~[\r\n]*
-    |'testforblocks' ~[\r\n]*
-    |'tickingarea' ~[\r\n]*
-    |'time' ~[\r\n]*
-    |'title' ~[\r\n]*
-    |'titleraw' ~[\r\n]*
-    |'tm' ~[\r\n]*
-    |'toggledownfall' ~[\r\n]*
-    |'tp' ~[\r\n]*
-    |'trigger' ~[\r\n]*
-    |'volumearea' ~[\r\n]*
-    |'w' ~[\r\n]*
-    |'wb' ~[\r\n]*
-    |'weather' ~[\r\n]*
-    |'whitelist' ~[\r\n]*
-    |'worldborder' ~[\r\n]*
-    |'worldbuilder' ~[\r\n]*
-    |'wsserver' ~[\r\n]*
-    |'xp' ~[\r\n]*
+    :'\nadvancement ' ~[\r\n]*
+    |'\nalwaysday ' ~[\r\n]*
+    |'\nattribute ' ~[\r\n]*
+    |'\nban ' ~[\r\n]*
+    |'\nban-ip ' ~[\r\n]*
+    |'\nbanlist ' ~[\r\n]*
+    |'\nbossbar ' ~[\r\n]*
+    |'\ncamerashake ' ~[\r\n]*
+    |'\nchangesetting ' ~[\r\n]*
+    |'\nclear ' ~[\r\n]*
+    |'\nclearspawnpoint ' ~[\r\n]*
+    |'\nclone ' ~[\r\n]*
+    |'\nconnect ' ~[\r\n]*
+    |'\ndamage ' ~[\r\n]*
+    |'\ndata ' ~[\r\n]*
+    |'\ndatapack ' ~[\r\n]*
+    |'\ndaylock ' ~[\r\n]*
+    |'\ndebug ' ~[\r\n]*
+    |'\ndedicatedwsserver ' ~[\r\n]*
+    |'\ndefaultgamemode ' ~[\r\n]*
+    |'\ndeop ' ~[\r\n]*
+    |'\ndialogue ' ~[\r\n]*
+    |'\ndifficulty ' ~[\r\n]*
+    |'\neffect ' ~[\r\n]*
+    |'\nenchant ' ~[\r\n]*
+    |'\nevent ' ~[\r\n]*
+    |'\nexecute ' ~[\r\n]*
+    |'\nexperience ' ~[\r\n]*
+    |'\nfill ' ~[\r\n]*
+    |'\nfillbiome ' ~[\r\n]*
+    |'\nfog ' ~[\r\n]*
+    |'\nforceload ' ~[\r\n]*
+    |'\nfunction ' ~[\r\n]*
+    |'\ngamemode ' ~[\r\n]*
+    |'\ngamerule ' ~[\r\n]*
+    |'\ngametest ' ~[\r\n]*
+    |'\ngive ' ~[\r\n]*
+    |'\nhelp ' ~[\r\n]*
+    |'\nimmutableworld ' ~[\r\n]*
+    |'\nitem ' ~[\r\n]*
+    |'\njfr ' ~[\r\n]*
+    |'\nkick ' ~[\r\n]*
+    |'\nkill ' ~[\r\n]*
+    |'\nlist ' ~[\r\n]*
+    |'\nlocate ' ~[\r\n]*
+    |'\nloot ' ~[\r\n]*
+    |'\nme ' ~[\r\n]*
+    |'\nmobevent ' ~[\r\n]*
+    |'\nmsg ' ~[\r\n]*
+    |'\nmusic ' ~[\r\n]*
+    |'\nop ' ~[\r\n]*
+    |'\nops ' ~[\r\n]*
+    |'\npardon ' ~[\r\n]*
+    |'\npardon-ip ' ~[\r\n]*
+    |'\nparticle ' ~[\r\n]*
+    |'\nperf ' ~[\r\n]*
+    |'\npermission ' ~[\r\n]*
+    |'\nplace ' ~[\r\n]*
+    |'\nplayanimation ' ~[\r\n]*
+    |'\nplaysound ' ~[\r\n]*
+    |'\npublish ' ~[\r\n]*
+    |'\nrecipe ' ~[\r\n]*
+    |'\nreload ' ~[\r\n]*
+    |'\nremove ' ~[\r\n]*
+    |'\nreplaceitem ' ~[\r\n]*
+    |'\nride ' ~[\r\n]*
+    |'\nsave ' ~[\r\n]*
+    |'\nsave-all ' ~[\r\n]*
+    |'\nsave-off ' ~[\r\n]*
+    |'\nsave-on ' ~[\r\n]*
+    |'\nsay ' ~[\r\n]*
+    |'\nschedule ' ~[\r\n]*
+    |'\nscoreboard ' ~[\r\n]*
+    |'\nseed ' ~[\r\n]*
+    |'\nsetblock ' ~[\r\n]*
+    |'\nsetidletimeout ' ~[\r\n]*
+    |'\nsetmaxplayers ' ~[\r\n]*
+    |'\nsetworldspawn ' ~[\r\n]*
+    |'\nspawnpoint ' ~[\r\n]*
+    |'\nspectate ' ~[\r\n]*
+    |'\nspreadplayers ' ~[\r\n]*
+    |'\nstop ' ~[\r\n]*
+    |'\nstopsound ' ~[\r\n]*
+    |'\nstructure ' ~[\r\n]*
+    |'\nsummon ' ~[\r\n]*
+    |'\ntag ' ~[\r\n]*
+    |'\nteam ' ~[\r\n]*
+    |'\nteammsg ' ~[\r\n]*
+    |'\nteleport ' ~[\r\n]*
+    |'\ntell ' ~[\r\n]*
+    |'\ntellraw ' ~[\r\n]*
+    |'\ntestfor ' ~[\r\n]*
+    |'\ntestforblock ' ~[\r\n]*
+    |'\ntestforblocks ' ~[\r\n]*
+    |'\ntickingarea ' ~[\r\n]*
+    |'\ntime ' ~[\r\n]*
+    |'\ntitle ' ~[\r\n]*
+    |'\ntitleraw ' ~[\r\n]*
+    |'\ntm ' ~[\r\n]*
+    |'\ntoggledownfall ' ~[\r\n]*
+    |'\ntp ' ~[\r\n]*
+    |'\ntrigger ' ~[\r\n]*
+    |'\nvolumearea ' ~[\r\n]*
+    |'\nw ' ~[\r\n]*
+    |'\nwb ' ~[\r\n]*
+    |'\nweather ' ~[\r\n]*
+    |'\nwhitelist ' ~[\r\n]*
+    |'\nworldborder ' ~[\r\n]*
+    |'\nworldbuilder ' ~[\r\n]*
+    |'\nwsserver ' ~[\r\n]*
+    |'\nxp ' ~[\r\n]*
+    ;
+
+funcStatement
+    : 'func' nameSpace ('tagged' nameSpace (',' nameSpace)*)? '{' statement '}'
     ;
 
 execStatement
-    : 'exec'? ('{' execChild* '}') execStoreChild* (execRunChild|execStoreChild) execStoreChild*
+    : 'exec'? '{' execChild* '}' execStoreChild* (execRunChild|execStoreChild) execStoreChild*
     ;
 execStoreChild
     : ('=>'|'?=>') scbExpression
-    | ('=>'|'?=>') dataExpression (Type '*' NUMBER)?
+    | ('=>'|'?=>') dataExpression (AcceptableName '*' NUMBER)?
     ;
 execRunChild
-    : '->' ('func' ResourceLocation? ('tagged' ResourceLocation (',' ResourceLocation)*)?)? commandStatement
-    | '->' ('func' ResourceLocation? ('tagged' ResourceLocation (',' ResourceLocation)*)?)? '{' statement '}'
+    : '->' 'func' nameSpace ('tagged' nameSpace (',' nameSpace)*)? '{' statement '}'
+    | '->' 'func'? '{' statement '}'
+    | '->'  commandStatement
     ;
 execChild
     : 'as' selector
@@ -152,12 +158,12 @@ execChild
     ;
 
 CompareOperation
-    : '<'|'<='| '='|'>='|'>'
+    : '<'|'<='| '=='|'>='|'>'
     ;
 MatchesOperation
     : NUMBER '..' NUMBER
     ;
-nameSpace: Pair | NameSpace;
+
 dataExpression
     : nameSpace '::' nbtPath
     | selector '::' nbtPath
@@ -168,14 +174,21 @@ dataOperationExpression
     | dataExpression '|=' nbt
     | dataExpression '|=' dataExpression
     | dataExpression '=' nbt
+    | dataExpression '=' dataExpression
+    | dataExpression '..' nbt
     | dataExpression '..' dataExpression
+    | dataExpression '..0' nbt
     | dataExpression '..0' dataExpression
+    | dataExpression '..' NUMBER nbt
     | dataExpression '..' NUMBER dataExpression
     | dataExpression 'remove'
     ;
 
 scbOperationExpression
-    : scbExpression '+=' scbExpression
+    : scbExpression
+    | scbExpression '+=' NUMBER
+    | scbExpression '-=' NUMBER
+    | scbExpression '+=' scbExpression
     | scbExpression '-=' scbExpression
     | scbExpression '*=' scbExpression
     | scbExpression '/=' scbExpression
@@ -188,35 +201,40 @@ scbOperationExpression
     | scbExpression ':=' scbSingleOperationExpression
     ;
 scbSingleOperationExpression
-    : scbSingleOperationExpression ('+'|'-'|'*'|'/'|'%') scbSingleOperationExpression
+    : scbExpression
+    | scbSingleOperationExpression ('+'|'-'|'*'|'/'|'%') scbSingleOperationExpression
     | '(' scbSingleOperationExpression ')'
     ;
 
-scbExpression: NBTName Selector;
+scbExpression
+    : nbtName selector
+    ;
+
 pos3Expression: pos1 pos1 pos1;
 pos2Expression: pos1 pos1;
 pos5Expression: pos1 pos1 pos1 pos1 pos1;
 blockExpression: nameSpace blockstate? nbt? ;
 blockstate: '[' (.)+? ']';
 
-selector: Selector ('[' (.)+? ']')?;
+selector
+    : Selector ('[' (.)+? ']')?
+    | '@' nbtName
+    | '#' nbtName
+    | '#'
+    ;
 Selector: '@s' | '@r' | '@a' | '@e' | '@p';
 
-json: 'j' jsonText ; //有问题
-nbt: 'n' snbt;  //有问题
 
-Type: 'byte'|'short'|'int'|'long'|'float'|'double';
+json: 'j' jsonText ;
+nbt: 'n' snbt;
 
-Pair
-    : NBTName ':' (ByteNumber|ShortNumber|LongNumber|FloatNumber|DoubleNumber)
-    | NBTName ':'NBTName
-    ;
-NameSpace: AcceptableName ':' ResourceLocation;
-
-
-NBTName: [a-z_A-Z][a-z_\-0-9.A-Z]*;
+nameSpace: AcceptableName ':' resourceLocation;
 AcceptableName: [a-z_][a-z_\-0-9.]*;
-ResourceLocation: AcceptableName ('/' AcceptableName)*;
+NBTName: [a-z_A-Z][a-z_\-0-9.A-Z]*;
+nbtName: AcceptableName | NBTName;
+resourceLocation: AcceptableName ('/' AcceptableName)*;
+
+
 
 pos1: Pos1 | NUMBER;
 Pos1: ('~'|'^') NUMBER | ('~'|'^') ; //没写小数
@@ -224,18 +242,15 @@ Pos1: ('~'|'^') NUMBER | ('~'|'^') ; //没写小数
 
 
 nbtPath
-    : NBTName
+    : nbtName
     | nbtCompound
-    | NBTName nbtCompound
-    | NBTName ('[' NUMBER ']'|'[]')* ('[' nbtCompound ']')?
+    | nbtName nbtCompound
+    | nbtName ('[' NUMBER ']'|'[]')* ('[' nbtCompound ']')?
     ;
 
 snbt: nbtValue;
 nbtCompound:'{' nbtPair (',' nbtPair)* '}' | '{' '}';
-nbtPair
-    : Pair
-    | NBTName ':' nbtValue
-    ;
+nbtPair: nbtName ':' nbtValue;
 nbtList: '[' nbtValue (',' nbtValue)* ']' | '[' ']';
 nbtValue
     :nbtCompound|nbtList|nbtByteArr|nbtIntArr|nbtLongArr|nbtString|ByteNumber|ShortNumber|LongNumber|FloatNumber|DoubleNumber

@@ -1,0 +1,11 @@
+data remove entity @s data.data_list[]._need_cor_
+execute if score stemp1 int matches 0 run data modify storage math:io ltd set from entity @s data.data_list[0]
+execute if score stemp1 int matches 1 run data modify storage math:io ltd set from entity @s data.data_list[1]
+execute if score stemp1 int matches 2 run data modify storage math:io ltd set from entity @s data.data_list[2]
+execute if score stemp1 int matches 3 run data modify storage math:io ltd set from entity @s data.data_list[3]
+execute if score stemp1 int matches 4 run data modify storage math:io ltd set from entity @s data.data_list[4]
+execute if score stemp1 int matches 5 run data modify storage math:io ltd set from entity @s data.data_list[5]
+execute if score stemp1 int matches 6 run data modify storage math:io ltd set from entity @s data.data_list[6]
+execute if score stemp1 int matches 7 run data modify storage math:io ltd set from entity @s data.data_list[7]
+execute if score stemp1 int matches 8 run data modify storage math:io ltd set from entity @s data.data_list[8]
+execute if score stemp1 int matches 9 run data modify storage math:io ltd set from entity @s data.data_list[9]

@@ -141,6 +141,7 @@ for{foo:flower::list}->func loopname{
     foo:flower::list[0] = {}
 }
 #自动生成
+#这里的loop int要跟循环深度去变，防止嵌套循环时出错
 #execute store result score loop int run data get storage foo:flower list 
 #execute if score loop int matches 1. . run function loopname
 ##loopname

@@ -1,0 +1,47 @@
+ltd(轻量数据结构)
+
+1.ltd:_init
+	输入：无
+	输出：无
+	初始化ltd
+
+2.ltd:_new
+	输入：无
+	输出：result int
+	申请新的内存空间，返回内存地址到result
+
+3.ltd:_del
+	输入：input int
+	输出：无
+	将内存地址input所在内存空间释放
+
+4.ltd:_get
+	输入：input int
+	输出：storage math:io ltd
+	获取内存地址input所在内存空间数据到ltd
+
+5.ltd:_store
+	输入：input int
+	      storage math:io ltd
+	输出：无
+	将ltd数据储存到内存地址input所在内存空间
+
+垃圾回收机制：
+	每间隔20gt随机访问连续的10块内存，对于每块内存：
+		如果它带有"需要响应"标签，释放这块内存(数据依然保留，但可能被其它应用挤占)
+		否则给它打上"需要响应"标签
+	而对于内存的_get/_store操作会移除"需要响应"标签。因此在两次随机点名的时间间隔(最短为20gt)内，
+	只要有对于内存的_get/_store操作即可避免它被回收。
+
+	手动避免回收方法：
+		1.为长时存在的系统变量设置_static_标签，避免垃圾回收，例如：
+			scoreboard players set input int ...(系统变量内存地址)
+			function ltd:_get
+			data modify storage math:io ltd._static_ set value 1b
+			function ltd:_store
+		2.为依赖实体访问的变量设置引用实体(referrer)，在该实体存在时避免垃圾回收，例如：
+			tag @s add ltd_referrer
+			scoreboard players set input int ...(变量内存地址)
+			function ltd:_get
+			data modify storage math:io ltd.referrer_uuid set from entity @s UUID
+			function ltd:_store

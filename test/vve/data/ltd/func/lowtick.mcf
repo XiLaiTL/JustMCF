@@ -1,0 +1,51 @@
+func ltd:lowtick{
+    {as @e[tag=data_marker,limit=1,sort=random] }->func ltd:check{
+        for{ @s::data.index_list }->func ltd:tmp_rmv{
+            entity(marker) ~ ~ ~ n{Tags:["temp_marker","temp_deal"]}
+            @s::data.index_list[0] => int@e[tag=temp_deal,limit=1]
+            @e.tag-= temp_deal
+        }
+
+        math:io::need_cor_list = []
+        int@loop = 0
+        for{ @s::data.data_list }->func ltd:check_loop{
+            int@need_cor = 1
+            {as @e[tag=temp_marker] if int@s = int@loop }-> 
+                int@need_cor = 0
+            
+            math:io::temp_referrer_uuid = @s::data.data_list[0].referrer_uuid
+            {   if @s::data.data_list[0].referrer_uuid 
+                as @e[tag=referrer]
+            }->func ltd:check_uuid{
+                math:io::cmp = math:io::temp_referrer_uuid
+                math:io::cmp = @s::UUID ?=> int@_need_cor
+                {if int@_need_cor 0}-> int@need_cor = 0 
+            }
+
+            {   if int@need_cor 1 
+                unless @s::data.data_list[0]._static_ 
+            }->func ltd:check_cor{
+                math:io::need_cor_list ..0 0
+                int@loop => math:io::need_cor_list[0] int*1
+                {unless @s::data.data_list[0]._need_cor_}->math:io::need_cor_list[0] remove
+                @s::data.data_list[0]._need_cor_ = 1b
+            }
+            int@loop += 1
+        }
+
+
+        int@num10 = ltd_id@s
+        int@num10 *= int@10
+        math:io::need_cor_list => int@loop
+        while{if int@loop 1..}->func ltd:check_rmv{
+            math:io::need_cor_list[0] => int@input
+            int@input += int@num10
+            func ltd:_del
+            math:io::need_cor_list[0] remove
+            int@loop -= 1
+        }
+
+        @e[tag=temp_marker].kill
+    }
+    int@ltd_timer=0
+}
