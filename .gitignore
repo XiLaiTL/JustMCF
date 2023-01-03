@@ -1,3 +1,5 @@
 McfunctionSharp.iml
 /.idea/
-/.antlr/
+/antlr/.antlr/
+/node_modules/
+/build/
