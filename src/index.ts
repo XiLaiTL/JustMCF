@@ -23,9 +23,12 @@ func test:foo {
 }
 
 func test:a2 {
-    
     say no
     say qaq
+
+    func test:a3 {
+        say nonono
+    }
 }
 
 `)
