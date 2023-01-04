@@ -11,7 +11,7 @@ function execute(code: string) {
     const visitor = new JustMCFSimplifyVisitor()
 
     const mcfFile = parser.mcfFile()
-    console.log(mcfFile.toStringTree())
+//    console.log(mcfFile.toStringTree())
     visitor.visit(mcfFile);
     visitor.printAllMcfunction()
 }
@@ -20,13 +20,21 @@ execute(`
 func test:foo {
     say hello
     say 1111
+    { if @s }->{
+        say yes
+    }
+    {if @s }->{
+        say yes2
+        {if @s }->{
+            say yes3
+        }
+    }
 }
 
 func test:a2 {
     say no
     say qaq
-
-    func test:a3 {
+    { if @s }->func test:a3 {
         say nonono
     }
 }

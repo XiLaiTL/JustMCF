@@ -3,10 +3,16 @@
 
 import { ParseTreeVisitor } from "antlr4ts/tree/ParseTreeVisitor";
 
+import { ExecWithRunOrChildContext } from "./JustMCFParser";
+import { ExecWithoutRunOrChildContext } from "./JustMCFParser";
+import { ExecDirectRunContext } from "./JustMCFParser";
+import { ExecNamedRunContext } from "./JustMCFParser";
+import { ExecAnonymousRunContext } from "./JustMCFParser";
 import { McfFileContext } from "./JustMCFParser";
 import { StatementAndCommandContext } from "./JustMCFParser";
 import { CommandContext } from "./JustMCFParser";
 import { StatementContext } from "./JustMCFParser";
+import { LeagalCommandContext } from "./JustMCFParser";
 import { FuncStatementContext } from "./JustMCFParser";
 import { ExecStatementContext } from "./JustMCFParser";
 import { ExecStoreChildContext } from "./JustMCFParser";
@@ -59,6 +65,46 @@ import { JsonValueContext } from "./JustMCFParser";
  */
 export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	/**
+	 * Visit a parse tree produced by the `execWithRunOrChild`
+	 * labeled alternative in `JustMCFParser.execStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitExecWithRunOrChild?: (ctx: ExecWithRunOrChildContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `execWithoutRunOrChild`
+	 * labeled alternative in `JustMCFParser.execStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitExecWithoutRunOrChild?: (ctx: ExecWithoutRunOrChildContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `execDirectRun`
+	 * labeled alternative in `JustMCFParser.execRunChild`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitExecDirectRun?: (ctx: ExecDirectRunContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `execNamedRun`
+	 * labeled alternative in `JustMCFParser.execRunChild`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitExecNamedRun?: (ctx: ExecNamedRunContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `execAnonymousRun`
+	 * labeled alternative in `JustMCFParser.execRunChild`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitExecAnonymousRun?: (ctx: ExecAnonymousRunContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by `JustMCFParser.mcfFile`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -85,6 +131,13 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitStatement?: (ctx: StatementContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.leagalCommand`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitLeagalCommand?: (ctx: LeagalCommandContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.funcStatement`.

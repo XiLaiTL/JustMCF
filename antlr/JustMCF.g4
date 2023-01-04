@@ -7,12 +7,13 @@ command
     | dataOperationExpression
     | scbOperationExpression
     | execStatement
-    | LeagalCommand
+    | leagalCommand
     ;
 statement
     : funcStatement
-    | execStatement
+    | left='->' funcStatement
     ;
+leagalCommand : LeagalCommand;
 LeagalCommand
     :'advancement ' ~[\r\n]*
     |'alwaysday ' ~[\r\n]*
@@ -132,17 +133,18 @@ funcStatement
     ;
 
 execStatement
-    : 'exec'? '{' execChild* '}' execStoreChild* (execRunChild|execStoreChild) execStoreChild*
-    | 'exec' '{' execChild* '}'
+    : 'exec'? '{' execChild* '}' execStoreChild* (execRunChild|execStoreChild) execStoreChild* #execWithRunOrChild
+    | 'exec' '{' execChild+ '}'                                                                #execWithoutRunOrChild
     ;
 execStoreChild
     : ('=>'|'?=>') scbIdentifier
     | ('=>'|'?=>') dataIdentifier (AcceptableName '*' NUMBER)?
     ;
+
 execRunChild
-    : '->' 'func' nameSpace ('tagged' nameSpace (',' nameSpace)*)? '{' statementAndCommand* '}'
-    | '->' 'func'? '{' statementAndCommand* '}'
-    | '->'  command
+    : '->' command                                                                              #execDirectRun
+    | '->' funcStatement                                                                        #execNamedRun
+    | '->' 'func'? '{' statementAndCommand* '}'                                                 #execAnonymousRun
     ;
 execChild
     : 'as' selector

@@ -3,10 +3,16 @@
 
 import { ParseTreeListener } from "antlr4ts/tree/ParseTreeListener";
 
+import { ExecWithRunOrChildContext } from "./JustMCFParser";
+import { ExecWithoutRunOrChildContext } from "./JustMCFParser";
+import { ExecDirectRunContext } from "./JustMCFParser";
+import { ExecNamedRunContext } from "./JustMCFParser";
+import { ExecAnonymousRunContext } from "./JustMCFParser";
 import { McfFileContext } from "./JustMCFParser";
 import { StatementAndCommandContext } from "./JustMCFParser";
 import { CommandContext } from "./JustMCFParser";
 import { StatementContext } from "./JustMCFParser";
+import { LeagalCommandContext } from "./JustMCFParser";
 import { FuncStatementContext } from "./JustMCFParser";
 import { ExecStatementContext } from "./JustMCFParser";
 import { ExecStoreChildContext } from "./JustMCFParser";
@@ -56,6 +62,71 @@ import { JsonValueContext } from "./JustMCFParser";
  */
 export interface JustMCFListener extends ParseTreeListener {
 	/**
+	 * Enter a parse tree produced by the `execWithRunOrChild`
+	 * labeled alternative in `JustMCFParser.execStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterExecWithRunOrChild?: (ctx: ExecWithRunOrChildContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execWithRunOrChild`
+	 * labeled alternative in `JustMCFParser.execStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitExecWithRunOrChild?: (ctx: ExecWithRunOrChildContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execWithoutRunOrChild`
+	 * labeled alternative in `JustMCFParser.execStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterExecWithoutRunOrChild?: (ctx: ExecWithoutRunOrChildContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execWithoutRunOrChild`
+	 * labeled alternative in `JustMCFParser.execStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitExecWithoutRunOrChild?: (ctx: ExecWithoutRunOrChildContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execDirectRun`
+	 * labeled alternative in `JustMCFParser.execRunChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecDirectRun?: (ctx: ExecDirectRunContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execDirectRun`
+	 * labeled alternative in `JustMCFParser.execRunChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecDirectRun?: (ctx: ExecDirectRunContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execNamedRun`
+	 * labeled alternative in `JustMCFParser.execRunChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecNamedRun?: (ctx: ExecNamedRunContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execNamedRun`
+	 * labeled alternative in `JustMCFParser.execRunChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecNamedRun?: (ctx: ExecNamedRunContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execAnonymousRun`
+	 * labeled alternative in `JustMCFParser.execRunChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecAnonymousRun?: (ctx: ExecAnonymousRunContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execAnonymousRun`
+	 * labeled alternative in `JustMCFParser.execRunChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecAnonymousRun?: (ctx: ExecAnonymousRunContext) => void;
+
+	/**
 	 * Enter a parse tree produced by `JustMCFParser.mcfFile`.
 	 * @param ctx the parse tree
 	 */
@@ -98,6 +169,17 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitStatement?: (ctx: StatementContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.leagalCommand`.
+	 * @param ctx the parse tree
+	 */
+	enterLeagalCommand?: (ctx: LeagalCommandContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.leagalCommand`.
+	 * @param ctx the parse tree
+	 */
+	exitLeagalCommand?: (ctx: LeagalCommandContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `JustMCFParser.funcStatement`.
