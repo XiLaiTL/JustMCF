@@ -3,10 +3,10 @@ grammar JustMCF;
 mcfFile: funcStatement*;
 statementAndCommand: (command|statement);
 command
-    : command execStoreChild+
+    : execStatement
     | dataOperationExpression
     | scbOperationExpression
-    | execStatement
+    | command execStoreChild+
     | leagalCommand
     ;
 statement
@@ -133,34 +133,44 @@ funcStatement
     ;
 
 execStatement
-    : 'exec'? '{' execChild* '}' execStoreChild* (execRunChild|execStoreChild) execStoreChild* #execWithRunOrChild
-    | 'exec' '{' execChild+ '}'                                                                #execWithoutRunOrChild
+    : 'exec'? '{' execChild* '}' execStoreChild* (execRunChild|execStoreChild) execStoreChild*       #execWithRunOrChild
+    | 'exec' '{' execChild+ '}'                                                                      #execWithoutRunOrChild
     ;
 execStoreChild
-    : ('=>'|'?=>') scbIdentifier
-    | ('=>'|'?=>') dataIdentifier (AcceptableName '*' NUMBER)?
+    : '=>' scbIdentifier                                                                #execStoreResultScore
+    | '?=>' scbIdentifier                                                               #execStoreSuccessScore
+    | '=>' dataIdentifier (AcceptableName '*' NUMBER)?                                  #execStoreResultData
+    | '?=>' dataIdentifier (AcceptableName '*' NUMBER)?                                 #execStoreSuccessData
+    | '=>' 'bossbar'? nameSpace value=('value'|'max')                                   #execStoreResultBossbar
+    | '?=>' 'bossbar'? nameSpace value=('value'|'max')                                  #execStoreSuccessBossbar
     ;
 
 execRunChild
-    : '->' command                                                                              #execDirectRun
-    | '->' funcStatement                                                                        #execNamedRun
-    | '->' 'func'? '{' statementAndCommand* '}'                                                 #execAnonymousRun
+    : '->' command                                                                                   #execDirectRun
+    | '->' funcStatement                                                                             #execNamedRun
+    | '->' 'func'? '{' statementAndCommand* '}'                                                      #execAnonymousRun
     ;
 execChild
-    : 'as' selector
-    | 'at' selector
-    |'position' pos3Identifier
-    |'position' selector
-    |'rotated' pos2Identifier
-    |'rotated' selector
-    |('if'|'unless') selector
-    |('if'|'unless') scbIdentifier CompareOperation scbIdentifier
-    |('if'|'unless') scbIdentifier matchPart
-    |('if'|'unless') nameSpace
-    |('if'|'unless') pos3Identifier blockIdentifier
-    |('if'|'unless') pos3Identifier pos3Identifier pos3Identifier ('all'|'masked')
-    |('if'|'unless') dataIdentifier
-    | execStoreChild
+    : 'align' AcceptableName                                                                         #execAlign
+    | 'anchored' anchor=('eyes'|'feet')                                                              #execAnchored
+    | 'in' nameSpace                                                                                 #execIn
+    | 'as' selector                                                                                  #execAs
+    | 'at' selector                                                                                  #execAt
+    | 'facing' pos3Identifier                                                                        #execFacingPos
+    | 'facing' selector anchor=('eyes'|'feet')                                                       #execFacingEntity
+    | 'positioned' pos3Identifier                                                                    #execPositionedPos
+    | 'positioned' selector                                                                          #execPostionedAs
+    | 'rotated' pos2Identifier                                                                       #execRotatedPos
+    | 'rotated' selector                                                                             #execRotatedAs
+    |cond=('if'|'unless') selector                                                                   #execIfEntity
+    |cond=('if'|'unless') scbIdentifier CompareOperation scbIdentifier                               #execIfScore
+    |cond=('if'|'unless') scbIdentifier matchPart                                                    #execIfScoreMatches
+    |cond=('if'|'unless') nameSpace                                                                  #execPredicate
+    |cond=('if'|'unless') pos3Identifier blockIdentifier                                             #execIfBlock
+    |cond=('if'|'unless') pos3Identifier pos3Identifier pos3Identifier scan_mode=('all'|'masked')    #execIfBlocks
+    |cond=('if'|'unless') dataIdentifier                                                             #execIfData
+    |cond=('if'|'unless') 'biome' pos3Identifier nameSpace                                           #execIfBiome
+    | execStoreChild                                                                                 #execStore
     ;
 
 CompareOperation
@@ -173,9 +183,9 @@ matchPart
     ;
 
 dataIdentifier
-    : nameSpace '::' nbtPath
-    | selector '::' nbtPath
-    | pos3Identifier '::' nbtPath
+    : nameSpace '::' nbtPath                                                                    #dataStorage
+    | selector '::' nbtPath                                                                     #dataEntity
+    | pos3Identifier '::' nbtPath                                                               #dataBlock
     ;
 dataOperationExpression
     : dataIdentifier
@@ -196,6 +206,7 @@ scbOperationExpression
     : scbIdentifier
     | scbIdentifier '+=' NUMBER
     | scbIdentifier '-=' NUMBER
+    | scbIdentifier '=' NUMBER
     | scbIdentifier '+=' scbIdentifier
     | scbIdentifier '-=' scbIdentifier
     | scbIdentifier '*=' scbIdentifier
@@ -209,8 +220,12 @@ scbOperationExpression
     | scbIdentifier ':=' scbSingleOperationExpression
     ;
 scbSingleOperationExpression
-    : scbIdentifier
-    | scbSingleOperationExpression ('+'|'-'|'*'|'/'|'%') scbSingleOperationExpression
+    : scbSingleOperationExpression op=('><'|'<<'|'>>') scbSingleOperationExpression
+    | scbSingleOperationExpression op=('*'|'/'|'%') scbSingleOperationExpression
+    | scbSingleOperationExpression op=('+'|'-') scbSingleOperationExpression
+    | scbSingleOperationExpression op='=' scbSingleOperationExpression
+    | NUMBER
+    | scbIdentifier
     | '(' scbSingleOperationExpression ')'
     ;
 

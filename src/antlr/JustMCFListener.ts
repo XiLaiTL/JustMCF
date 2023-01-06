@@ -3,11 +3,40 @@
 
 import { ParseTreeListener } from "antlr4ts/tree/ParseTreeListener";
 
+import { ExecStoreResultScoreContext } from "./JustMCFParser";
+import { ExecStoreSuccessScoreContext } from "./JustMCFParser";
+import { ExecStoreResultDataContext } from "./JustMCFParser";
+import { ExecStoreSuccessDataContext } from "./JustMCFParser";
+import { ExecStoreResultBossbarContext } from "./JustMCFParser";
+import { ExecStoreSuccessBossbarContext } from "./JustMCFParser";
 import { ExecWithRunOrChildContext } from "./JustMCFParser";
 import { ExecWithoutRunOrChildContext } from "./JustMCFParser";
 import { ExecDirectRunContext } from "./JustMCFParser";
 import { ExecNamedRunContext } from "./JustMCFParser";
 import { ExecAnonymousRunContext } from "./JustMCFParser";
+import { ExecAlignContext } from "./JustMCFParser";
+import { ExecAnchoredContext } from "./JustMCFParser";
+import { ExecInContext } from "./JustMCFParser";
+import { ExecAsContext } from "./JustMCFParser";
+import { ExecAtContext } from "./JustMCFParser";
+import { ExecFacingPosContext } from "./JustMCFParser";
+import { ExecFacingEntityContext } from "./JustMCFParser";
+import { ExecPositionedPosContext } from "./JustMCFParser";
+import { ExecPostionedAsContext } from "./JustMCFParser";
+import { ExecRotatedPosContext } from "./JustMCFParser";
+import { ExecRotatedAsContext } from "./JustMCFParser";
+import { ExecIfEntityContext } from "./JustMCFParser";
+import { ExecIfScoreContext } from "./JustMCFParser";
+import { ExecIfScoreMatchesContext } from "./JustMCFParser";
+import { ExecPredicateContext } from "./JustMCFParser";
+import { ExecIfBlockContext } from "./JustMCFParser";
+import { ExecIfBlocksContext } from "./JustMCFParser";
+import { ExecIfDataContext } from "./JustMCFParser";
+import { ExecIfBiomeContext } from "./JustMCFParser";
+import { ExecStoreContext } from "./JustMCFParser";
+import { DataStorageContext } from "./JustMCFParser";
+import { DataEntityContext } from "./JustMCFParser";
+import { DataBlockContext } from "./JustMCFParser";
 import { McfFileContext } from "./JustMCFParser";
 import { StatementAndCommandContext } from "./JustMCFParser";
 import { CommandContext } from "./JustMCFParser";
@@ -61,6 +90,84 @@ import { JsonValueContext } from "./JustMCFParser";
  * `JustMCFParser`.
  */
 export interface JustMCFListener extends ParseTreeListener {
+	/**
+	 * Enter a parse tree produced by the `execStoreResultScore`
+	 * labeled alternative in `JustMCFParser.execStoreChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecStoreResultScore?: (ctx: ExecStoreResultScoreContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execStoreResultScore`
+	 * labeled alternative in `JustMCFParser.execStoreChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecStoreResultScore?: (ctx: ExecStoreResultScoreContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execStoreSuccessScore`
+	 * labeled alternative in `JustMCFParser.execStoreChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecStoreSuccessScore?: (ctx: ExecStoreSuccessScoreContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execStoreSuccessScore`
+	 * labeled alternative in `JustMCFParser.execStoreChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecStoreSuccessScore?: (ctx: ExecStoreSuccessScoreContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execStoreResultData`
+	 * labeled alternative in `JustMCFParser.execStoreChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecStoreResultData?: (ctx: ExecStoreResultDataContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execStoreResultData`
+	 * labeled alternative in `JustMCFParser.execStoreChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecStoreResultData?: (ctx: ExecStoreResultDataContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execStoreSuccessData`
+	 * labeled alternative in `JustMCFParser.execStoreChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecStoreSuccessData?: (ctx: ExecStoreSuccessDataContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execStoreSuccessData`
+	 * labeled alternative in `JustMCFParser.execStoreChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecStoreSuccessData?: (ctx: ExecStoreSuccessDataContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execStoreResultBossbar`
+	 * labeled alternative in `JustMCFParser.execStoreChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecStoreResultBossbar?: (ctx: ExecStoreResultBossbarContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execStoreResultBossbar`
+	 * labeled alternative in `JustMCFParser.execStoreChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecStoreResultBossbar?: (ctx: ExecStoreResultBossbarContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execStoreSuccessBossbar`
+	 * labeled alternative in `JustMCFParser.execStoreChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecStoreSuccessBossbar?: (ctx: ExecStoreSuccessBossbarContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execStoreSuccessBossbar`
+	 * labeled alternative in `JustMCFParser.execStoreChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecStoreSuccessBossbar?: (ctx: ExecStoreSuccessBossbarContext) => void;
+
 	/**
 	 * Enter a parse tree produced by the `execWithRunOrChild`
 	 * labeled alternative in `JustMCFParser.execStatement`.
@@ -125,6 +232,305 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitExecAnonymousRun?: (ctx: ExecAnonymousRunContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execAlign`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecAlign?: (ctx: ExecAlignContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execAlign`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecAlign?: (ctx: ExecAlignContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execAnchored`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecAnchored?: (ctx: ExecAnchoredContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execAnchored`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecAnchored?: (ctx: ExecAnchoredContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execIn`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecIn?: (ctx: ExecInContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execIn`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecIn?: (ctx: ExecInContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execAs`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecAs?: (ctx: ExecAsContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execAs`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecAs?: (ctx: ExecAsContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execAt`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecAt?: (ctx: ExecAtContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execAt`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecAt?: (ctx: ExecAtContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execFacingPos`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecFacingPos?: (ctx: ExecFacingPosContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execFacingPos`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecFacingPos?: (ctx: ExecFacingPosContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execFacingEntity`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecFacingEntity?: (ctx: ExecFacingEntityContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execFacingEntity`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecFacingEntity?: (ctx: ExecFacingEntityContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execPositionedPos`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecPositionedPos?: (ctx: ExecPositionedPosContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execPositionedPos`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecPositionedPos?: (ctx: ExecPositionedPosContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execPostionedAs`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecPostionedAs?: (ctx: ExecPostionedAsContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execPostionedAs`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecPostionedAs?: (ctx: ExecPostionedAsContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execRotatedPos`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecRotatedPos?: (ctx: ExecRotatedPosContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execRotatedPos`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecRotatedPos?: (ctx: ExecRotatedPosContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execRotatedAs`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecRotatedAs?: (ctx: ExecRotatedAsContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execRotatedAs`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecRotatedAs?: (ctx: ExecRotatedAsContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execIfEntity`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecIfEntity?: (ctx: ExecIfEntityContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execIfEntity`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecIfEntity?: (ctx: ExecIfEntityContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execIfScore`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecIfScore?: (ctx: ExecIfScoreContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execIfScore`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecIfScore?: (ctx: ExecIfScoreContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execIfScoreMatches`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecIfScoreMatches?: (ctx: ExecIfScoreMatchesContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execIfScoreMatches`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecIfScoreMatches?: (ctx: ExecIfScoreMatchesContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execPredicate`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecPredicate?: (ctx: ExecPredicateContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execPredicate`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecPredicate?: (ctx: ExecPredicateContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execIfBlock`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecIfBlock?: (ctx: ExecIfBlockContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execIfBlock`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecIfBlock?: (ctx: ExecIfBlockContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execIfBlocks`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecIfBlocks?: (ctx: ExecIfBlocksContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execIfBlocks`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecIfBlocks?: (ctx: ExecIfBlocksContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execIfData`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecIfData?: (ctx: ExecIfDataContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execIfData`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecIfData?: (ctx: ExecIfDataContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execIfBiome`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecIfBiome?: (ctx: ExecIfBiomeContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execIfBiome`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecIfBiome?: (ctx: ExecIfBiomeContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execStore`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecStore?: (ctx: ExecStoreContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execStore`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecStore?: (ctx: ExecStoreContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `dataStorage`
+	 * labeled alternative in `JustMCFParser.dataIdentifier`.
+	 * @param ctx the parse tree
+	 */
+	enterDataStorage?: (ctx: DataStorageContext) => void;
+	/**
+	 * Exit a parse tree produced by the `dataStorage`
+	 * labeled alternative in `JustMCFParser.dataIdentifier`.
+	 * @param ctx the parse tree
+	 */
+	exitDataStorage?: (ctx: DataStorageContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `dataEntity`
+	 * labeled alternative in `JustMCFParser.dataIdentifier`.
+	 * @param ctx the parse tree
+	 */
+	enterDataEntity?: (ctx: DataEntityContext) => void;
+	/**
+	 * Exit a parse tree produced by the `dataEntity`
+	 * labeled alternative in `JustMCFParser.dataIdentifier`.
+	 * @param ctx the parse tree
+	 */
+	exitDataEntity?: (ctx: DataEntityContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `dataBlock`
+	 * labeled alternative in `JustMCFParser.dataIdentifier`.
+	 * @param ctx the parse tree
+	 */
+	enterDataBlock?: (ctx: DataBlockContext) => void;
+	/**
+	 * Exit a parse tree produced by the `dataBlock`
+	 * labeled alternative in `JustMCFParser.dataIdentifier`.
+	 * @param ctx the parse tree
+	 */
+	exitDataBlock?: (ctx: DataBlockContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `JustMCFParser.mcfFile`.

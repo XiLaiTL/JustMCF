@@ -16,12 +16,30 @@ function execute(code: string) {
     visitor.printAllMcfunction()
 }
 
+declare global {
+    interface Array<T> {
+        pushAll(arr: Array<T>): number;
+    }
+}
+Array.prototype.pushAll = function <T>(arr: T[]): number {
+    let len = this.length
+    for (const elem of arr) len = this.push(elem)
+    return len
+}
+
+
 execute(`
 func test:foo {
     say hello
     say 1111
-    { if @s }->{
-        say yes
+    { as @e[tag=temp_new,limit=1] }->func ltd:set{
+        {unless math:io::ltd_addr[0]}->
+            say 1
+            => ltd_id@s
+        {if math:io::ltd_addr[0]}->func ltd:addr_trans{
+            say 2
+            => ltd_id@s
+        }
     }
     {if @s }->{
         say yes2
