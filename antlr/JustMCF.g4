@@ -183,50 +183,56 @@ matchPart
     ;
 
 dataIdentifier
-    : nameSpace '::' nbtPath                                                                    #dataStorage
-    | selector '::' nbtPath                                                                     #dataEntity
-    | pos3Identifier '::' nbtPath                                                               #dataBlock
+    : nameSpace '::' nbtPath                                                                          #dataStorage
+    | selector '::' nbtPath                                                                           #dataEntity
+    | pos3Identifier '::' nbtPath                                                                     #dataBlock
+    ;
+dataMergeExpression
+    : nameSpace '|=' nbt                                                                              #dataMergeStorage
+    | selector '|=' nbt                                                                               #dataMergeEntity
+    | pos3Identifier '|=' nbt                                                                         #dataMergeBlock
     ;
 dataOperationExpression
-    : dataIdentifier
-    | dataIdentifier '|=' nbt
-    | dataIdentifier '|=' dataIdentifier
-    | dataIdentifier '=' nbt
-    | dataIdentifier '=' dataIdentifier
-    | dataIdentifier '..' nbt
-    | dataIdentifier '..' dataIdentifier
-    | dataIdentifier '..0' nbt
-    | dataIdentifier '..0' dataIdentifier
-    | dataIdentifier '..' NUMBER nbt
-    | dataIdentifier '..' NUMBER dataIdentifier
-    | dataIdentifier 'remove'
+    : dataIdentifier                                                                                  #dataGet
+    | dataMergeExpression                                                                             #dataMerge
+    | dataIdentifier '|=' nbt                                                                         #dataModifyMergeValue
+    | dataIdentifier '|=' dataIdentifier                                                              #dataModifyMergeFrom
+    | dataIdentifier '=' nbt                                                                          #dataModifySetValue
+    | dataIdentifier '=' dataIdentifier                                                               #dataModifySetFrom
+    | dataIdentifier '..' nbt                                                                         #dataModifyAppendValue
+    | dataIdentifier '..' dataIdentifier                                                              #dataModifyAppendFrom
+    | dataIdentifier '..0' nbt                                                                        #dataModifyPrependValue
+    | dataIdentifier '..0' dataIdentifier                                                             #dataModifyPrependFrom
+    | dataIdentifier '..' NUMBER nbt                                                                  #dataModifyInsertValue
+    | dataIdentifier '..' NUMBER dataIdentifier                                                       #dataModifyInsertFrom
+    | dataIdentifier 'remove'                                                                         #dataRemove
     ;
 
 scbOperationExpression
-    : scbIdentifier
-    | scbIdentifier '+=' NUMBER
-    | scbIdentifier '-=' NUMBER
-    | scbIdentifier '=' NUMBER
-    | scbIdentifier '+=' scbIdentifier
-    | scbIdentifier '-=' scbIdentifier
-    | scbIdentifier '*=' scbIdentifier
-    | scbIdentifier '/=' scbIdentifier
-    | scbIdentifier '%=' scbIdentifier
-    | scbIdentifier '><' scbIdentifier
-    | scbIdentifier '<<' scbIdentifier
-    | scbIdentifier '>>' scbIdentifier
-    | scbIdentifier '=' scbIdentifier
-    | scbIdentifier 'reset'
-    | scbIdentifier ':=' scbSingleOperationExpression
+    : scbIdentifier                                                                                   #scbGet
+    | scbIdentifier '+=' NUMBER                                                                       #scbAdd
+    | scbIdentifier '-=' NUMBER                                                                       #scbRemove
+    | scbIdentifier '=' NUMBER                                                                        #scbSet
+    | scbIdentifier '+=' scbIdentifier                                                                #scbOptAddAssign
+    | scbIdentifier '-=' scbIdentifier                                                                #scbOptSubAssign
+    | scbIdentifier '*=' scbIdentifier                                                                #scbOptMulAssign
+    | scbIdentifier '/=' scbIdentifier                                                                #scbOptDivAssign
+    | scbIdentifier '%=' scbIdentifier                                                                #scbOptModAssign
+    | scbIdentifier '><' scbIdentifier                                                                #scbOptExcFunc
+    | scbIdentifier '<<' scbIdentifier                                                                #scbOptMinFunc
+    | scbIdentifier '>>' scbIdentifier                                                                #scbOptMaxFunc
+    | scbIdentifier '=' scbIdentifier                                                                 #scbOptAssign
+    | scbIdentifier 'reset'                                                                           #scbReset
+    | scbIdentifier ':=' scbSingleOperationExpression                                                 #scbOptExpression
     ;
 scbSingleOperationExpression
-    : scbSingleOperationExpression op=('><'|'<<'|'>>') scbSingleOperationExpression
-    | scbSingleOperationExpression op=('*'|'/'|'%') scbSingleOperationExpression
-    | scbSingleOperationExpression op=('+'|'-') scbSingleOperationExpression
-    | scbSingleOperationExpression op='=' scbSingleOperationExpression
-    | NUMBER
-    | scbIdentifier
-    | '(' scbSingleOperationExpression ')'
+    : scbSingleOperationExpression op=('><'|'<<'|'>>') scbSingleOperationExpression                   #scbFuncExpression
+    | scbSingleOperationExpression op=('*'|'/'|'%') scbSingleOperationExpression                      #scbOptMulDivModExpression
+    | scbSingleOperationExpression op=('+'|'-') scbSingleOperationExpression                          #scbOptAddSubExpression
+    | scbSingleOperationExpression op='=' scbSingleOperationExpression                                #scbOptAssignExpression
+    | NUMBER                                                                                          #scbTempNumberExpression
+    | scbIdentifier                                                                                   #scbIdExpression
+    | '(' scbSingleOperationExpression ')'                                                            #scbParenExpression
     ;
 
 scbIdentifier

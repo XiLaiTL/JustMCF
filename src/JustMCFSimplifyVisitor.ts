@@ -1,5 +1,5 @@
 import { ParseTree } from 'antlr4ts/tree/ParseTree';
-import { McfFileContext, StatementAndCommandContext, CommandContext, StatementContext, FuncStatementContext, ExecStatementContext, ExecStoreChildContext, ExecRunChildContext, ExecChildContext, MatchPartContext, DataIdentifierContext, DataOperationExpressionContext, ScbOperationExpressionContext, ScbSingleOperationExpressionContext, ScbIdentifierContext, Pos3IdentifierContext, Pos2IdentifierContext, Pos5IdentifierContext, Pos1Context, BlockIdentifierContext, BlockstateContext, SelectorContext, NameSpaceContext, RegisterNameContext, NbtNameContext, ResourceLocationContext, NbtContext, JsonContext, NbtPathContext, SnbtValueContext, SnbtContext, NbtCompoundContext, NbtPairContext, NbtListContext, NbtValueContext, NbtByteArrContext, NbtIntArrContext, NbtLongArrContext, NbtStringContext, JsonTextValueContext, JsonTextContext, JsonObjContext, JsonPairContext, JsonArrContext, JsonValueContext, ExecNamedRunContext, ExecAnonymousRunContext, ExecDirectRunContext, ExecWithoutRunOrChildContext, ExecWithRunOrChildContext, LeagalCommandContext, DataStorageContext, ExecStoreResultBossbarContext, ExecAlignContext,ExecAnchoredContext, ExecInContext, ExecAsContext, DataEntityContext, ExecAtContext, ExecFacingEntityContext, ExecFacingPosContext, ExecIfBiomeContext, ExecIfBlockContext, ExecIfBlocksContext, ExecIfDataContext, ExecIfEntityContext, ExecIfScoreContext, ExecIfScoreMatchesContext, ExecPositionedPosContext, ExecPostionedAsContext, ExecPredicateContext, ExecRotatedAsContext, ExecRotatedPosContext, ExecStoreSuccessScoreContext, ExecStoreSuccessDataContext, ExecStoreSuccessBossbarContext, ExecStoreResultScoreContext, ExecStoreResultDataContext, ExecStoreContext, DataBlockContext } from './antlr/JustMCFParser';
+import { McfFileContext, StatementAndCommandContext, CommandContext, StatementContext, FuncStatementContext, ExecStatementContext, ExecStoreChildContext, ExecRunChildContext, ExecChildContext, MatchPartContext, DataIdentifierContext, DataOperationExpressionContext, ScbOperationExpressionContext, ScbSingleOperationExpressionContext, ScbIdentifierContext, Pos3IdentifierContext, Pos2IdentifierContext, Pos5IdentifierContext, Pos1Context, BlockIdentifierContext, BlockstateContext, SelectorContext, NameSpaceContext, RegisterNameContext, NbtNameContext, ResourceLocationContext, NbtContext, JsonContext, NbtPathContext, SnbtValueContext, SnbtContext, NbtCompoundContext, NbtPairContext, NbtListContext, NbtValueContext, NbtByteArrContext, NbtIntArrContext, NbtLongArrContext, NbtStringContext, JsonTextValueContext, JsonTextContext, JsonObjContext, JsonPairContext, JsonArrContext, JsonValueContext, ExecNamedRunContext, ExecAnonymousRunContext, ExecDirectRunContext, ExecWithoutRunOrChildContext, ExecWithRunOrChildContext, LeagalCommandContext, DataStorageContext, ExecStoreResultBossbarContext, ExecAlignContext, ExecAnchoredContext, ExecInContext, ExecAsContext, DataEntityContext, ExecAtContext, ExecFacingEntityContext, ExecFacingPosContext, ExecIfBiomeContext, ExecIfBlockContext, ExecIfBlocksContext, ExecIfDataContext, ExecIfEntityContext, ExecIfScoreContext, ExecIfScoreMatchesContext, ExecPositionedPosContext, ExecPostionedAsContext, ExecPredicateContext, ExecRotatedAsContext, ExecRotatedPosContext, ExecStoreSuccessScoreContext, ExecStoreSuccessDataContext, ExecStoreSuccessBossbarContext, ExecStoreResultScoreContext, ExecStoreResultDataContext, ExecStoreContext, DataBlockContext, DataMergeStorageContext, DataMergeEntityContext, DataMergeBlockContext, DataGetContext, DataModifyMergeValueContext, DataModifyMergeFromContext, DataModifyAppendFromContext, DataModifyAppendValueContext, DataModifyInsertFromContext, DataModifyInsertValueContext, DataModifyPrependFromContext, DataModifyPrependValueContext, DataModifySetFromContext, DataModifySetValueContext, DataRemoveContext, ScbGetContext, ScbAddContext, ScbRemoveContext, ScbSetContext, ScbOptAddAssignContext, ScbOptSubAssignContext, ScbOptExcFuncContext, ScbResetContext, ScbOptExpressionContext, ScbOptMaxFuncContext, ScbOptAssignContext, ScbOptDivAssignContext, ScbOptMinFuncContext, ScbOptModAssignContext, ScbOptMulAssignContext, ScbFuncExpressionContext, ScbIdExpressionContext, ScbOptAddSubExpressionContext, ScbOptAssignExpressionContext, ScbOptMulDivModExpressionContext, ScbParenExpressionContext, ScbTempNumberExpressionContext } from './antlr/JustMCFParser';
 import { JustMCFVisitor } from "./antlr/JustMCFVisitor";
 import { AbstractParseTreeVisitor } from "antlr4ts/tree/AbstractParseTreeVisitor";
 
@@ -174,10 +174,53 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitExecStore(ctx: ExecStoreContext) {return this.visit(ctx.execStoreChild())}
     visitMatchPart(ctx: MatchPartContext) { return [ctx.text] }
     
-    visitDataOperationExpression?: ((ctx: DataOperationExpressionContext) => string[]) | undefined;
-    visitScbOperationExpression?: ((ctx: ScbOperationExpressionContext) => string[]) | undefined;
-    visitScbSingleOperationExpression?: ((ctx: ScbSingleOperationExpressionContext) => string[]) | undefined;
-    
+//    visitDataOperationExpression?: ((ctx: DataOperationExpressionContext) => string[]) | undefined;
+    visitDataMergeStorage(ctx: DataMergeStorageContext) {return [`data merge storage ${this.visitAndReturnFirst(ctx.nameSpace())} ${this.visitAndReturnFirst(ctx.nbt())}`]}
+    visitDataMergeEntity(ctx: DataMergeEntityContext) {return [`data merge entity ${this.visitAndReturnFirst(ctx.selector())} ${this.visitAndReturnFirst(ctx.nbt())}`]}
+    visitDataMergeBlock(ctx:DataMergeBlockContext){return [`data merge block ${this.visitAndReturnFirst(ctx.pos3Identifier())} ${this.visitAndReturnFirst(ctx.nbt())}` ]}
+    visitDataGet(ctx:DataGetContext){return [`data get ${this.visitAndReturnFirst(ctx.dataIdentifier())}`]}
+    visitDataModifyMergeValue(ctx:DataModifyMergeValueContext){return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier())} merge value ${this.visitAndReturnFirst(ctx.nbt())}`]}
+    visitDataModifyMergeFrom(ctx:DataModifyMergeFromContext){return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier(0))} merge from ${this.visitAndReturnFirst(ctx.dataIdentifier(1))}`]}
+    visitDataModifySetValue(ctx:DataModifySetValueContext){return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier())} set value ${this.visitAndReturnFirst(ctx.nbt())}`]}
+    visitDataModifySetFrom(ctx:DataModifySetFromContext){return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier(0))} set from ${this.visitAndReturnFirst(ctx.dataIdentifier(1))}`]}
+    visitDataModifyAppendValue(ctx:DataModifyAppendValueContext){return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier())} append value ${this.visitAndReturnFirst(ctx.nbt())}`]}
+    visitDataModifyAppendFrom(ctx:DataModifyAppendFromContext){return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier(0))} append from ${this.visitAndReturnFirst(ctx.dataIdentifier(1))}`]}
+    visitDataModifyPrependValue(ctx:DataModifyPrependValueContext){return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier())} prepend value ${this.visitAndReturnFirst(ctx.nbt())}`]}
+    visitDataModifyPrependFrom(ctx:DataModifyPrependFromContext){return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier(0))} prepend from ${this.visitAndReturnFirst(ctx.dataIdentifier(1))}`]}
+    visitDataModifyInsertValue(ctx:DataModifyInsertValueContext){return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier())} insert value ${this.visitAndReturnFirst(ctx.nbt())}`]}
+    visitDataModifyInsertFrom(ctx:DataModifyInsertFromContext){return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier(0))} insert from ${this.visitAndReturnFirst(ctx.dataIdentifier(1))}`]}
+    visitDataRemove(ctx:DataRemoveContext){return [`data remove ${this.visitAndReturnFirst(ctx.dataIdentifier())}`]}
+
+
+ //   visitScbOperationExpression?: ((ctx: ScbOperationExpressionContext) => string[]) | undefined;
+    visitScbGet(ctx: ScbGetContext) { return [`scoreboard players get ${this.visitAndReturnFirst(ctx.scbIdentifier())}`] }
+    visitScbAdd(ctx: ScbAddContext) { return [`scoreboard players add ${this.visitAndReturnFirst(ctx.scbIdentifier())} ${this.visitAndReturnFirst(ctx.NUMBER())}`] }
+    visitScbRemove(ctx: ScbRemoveContext) { return [`scoreboard players remove ${this.visitAndReturnFirst(ctx.scbIdentifier())} ${this.visitAndReturnFirst(ctx.NUMBER())}`] }
+    visitScbSet(ctx: ScbSetContext) { return [`scoreboard players set ${this.visitAndReturnFirst(ctx.scbIdentifier())} ${this.visitAndReturnFirst(ctx.NUMBER())}`] }
+    visitScbOptAddAssign(ctx: ScbOptAddAssignContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} += ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
+    visitScbOptSubAssign(ctx: ScbOptSubAssignContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} -= ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
+    visitScbOptMulAssign(ctx: ScbOptMulAssignContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} *= ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
+    visitScbOptDivAssign(ctx: ScbOptDivAssignContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} /= ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
+    visitScbOptModAssign(ctx: ScbOptModAssignContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} %= ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
+    visitScbOptExcFunc(ctx: ScbOptExcFuncContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} >< ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
+    visitScbOptMinFunc(ctx: ScbOptMinFuncContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} << ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
+    visitScbOptMaxFunc(ctx: ScbOptMaxFuncContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} >> ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
+    visitScbOptAssign(ctx: ScbOptAssignContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} = ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
+    visitScbReset(ctx: ScbResetContext) { return [`scoreboard players reset ${this.visitAndReturnFirst(ctx.scbIdentifier())}`] } //TODO: the objective is not required
+    visitScbOptExpression(ctx: ScbOptExpressionContext) { return this.visit(ctx.scbSingleOperationExpression()).concat([`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier())} = `]) }
+
+    //visitScbSingleOperationExpression?: ((ctx: ScbSingleOperationExpressionContext) => string[]) | undefined;
+    visitScbFuncExpression(ctx: ScbFuncExpressionContext) {
+        //return [ number of temp, ]
+        return []
+    }
+    visitScbOptMulDivModExpression(ctx: ScbOptMulDivModExpressionContext){ return []}
+    visitScbOptAddSubExpression(ctx: ScbOptAddSubExpressionContext){ return []}
+    visitScbOptAssignExpression(ctx: ScbOptAssignExpressionContext){ return []}
+    visitScbTempNumberExpression(ctx: ScbTempNumberExpressionContext){ return []}
+    visitScbIdExpression(ctx: ScbIdExpressionContext){ return []}
+    visitScbParenExpression(ctx: ScbParenExpressionContext){ return []}
+
     visitNbt(ctx: NbtContext){ return [ctx.text.replace("n{","{").replace("n[","[") ]}
     visitJson(ctx: JsonContext){ return [ctx.text.replace("j{","{").replace("j[","[") ]}
     visitNbtPath(ctx: NbtPathContext) {return [ctx.text]}

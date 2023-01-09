@@ -9,11 +9,49 @@ import { ExecStoreResultDataContext } from "./JustMCFParser";
 import { ExecStoreSuccessDataContext } from "./JustMCFParser";
 import { ExecStoreResultBossbarContext } from "./JustMCFParser";
 import { ExecStoreSuccessBossbarContext } from "./JustMCFParser";
+import { DataMergeStorageContext } from "./JustMCFParser";
+import { DataMergeEntityContext } from "./JustMCFParser";
+import { DataMergeBlockContext } from "./JustMCFParser";
+import { DataGetContext } from "./JustMCFParser";
+import { DataMergeContext } from "./JustMCFParser";
+import { DataModifyMergeValueContext } from "./JustMCFParser";
+import { DataModifyMergeFromContext } from "./JustMCFParser";
+import { DataModifySetValueContext } from "./JustMCFParser";
+import { DataModifySetFromContext } from "./JustMCFParser";
+import { DataModifyAppendValueContext } from "./JustMCFParser";
+import { DataModifyAppendFromContext } from "./JustMCFParser";
+import { DataModifyPrependValueContext } from "./JustMCFParser";
+import { DataModifyPrependFromContext } from "./JustMCFParser";
+import { DataModifyInsertValueContext } from "./JustMCFParser";
+import { DataModifyInsertFromContext } from "./JustMCFParser";
+import { DataRemoveContext } from "./JustMCFParser";
+import { ScbFuncExpressionContext } from "./JustMCFParser";
+import { ScbOptMulDivModExpressionContext } from "./JustMCFParser";
+import { ScbOptAddSubExpressionContext } from "./JustMCFParser";
+import { ScbOptAssignExpressionContext } from "./JustMCFParser";
+import { ScbTempNumberExpressionContext } from "./JustMCFParser";
+import { ScbIdExpressionContext } from "./JustMCFParser";
+import { ScbParenExpressionContext } from "./JustMCFParser";
 import { ExecWithRunOrChildContext } from "./JustMCFParser";
 import { ExecWithoutRunOrChildContext } from "./JustMCFParser";
 import { ExecDirectRunContext } from "./JustMCFParser";
 import { ExecNamedRunContext } from "./JustMCFParser";
 import { ExecAnonymousRunContext } from "./JustMCFParser";
+import { ScbGetContext } from "./JustMCFParser";
+import { ScbAddContext } from "./JustMCFParser";
+import { ScbRemoveContext } from "./JustMCFParser";
+import { ScbSetContext } from "./JustMCFParser";
+import { ScbOptAddAssignContext } from "./JustMCFParser";
+import { ScbOptSubAssignContext } from "./JustMCFParser";
+import { ScbOptMulAssignContext } from "./JustMCFParser";
+import { ScbOptDivAssignContext } from "./JustMCFParser";
+import { ScbOptModAssignContext } from "./JustMCFParser";
+import { ScbOptExcFuncContext } from "./JustMCFParser";
+import { ScbOptMinFuncContext } from "./JustMCFParser";
+import { ScbOptMaxFuncContext } from "./JustMCFParser";
+import { ScbOptAssignContext } from "./JustMCFParser";
+import { ScbResetContext } from "./JustMCFParser";
+import { ScbOptExpressionContext } from "./JustMCFParser";
 import { ExecAlignContext } from "./JustMCFParser";
 import { ExecAnchoredContext } from "./JustMCFParser";
 import { ExecInContext } from "./JustMCFParser";
@@ -49,6 +87,7 @@ import { ExecRunChildContext } from "./JustMCFParser";
 import { ExecChildContext } from "./JustMCFParser";
 import { MatchPartContext } from "./JustMCFParser";
 import { DataIdentifierContext } from "./JustMCFParser";
+import { DataMergeExpressionContext } from "./JustMCFParser";
 import { DataOperationExpressionContext } from "./JustMCFParser";
 import { ScbOperationExpressionContext } from "./JustMCFParser";
 import { ScbSingleOperationExpressionContext } from "./JustMCFParser";
@@ -142,6 +181,190 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitExecStoreSuccessBossbar?: (ctx: ExecStoreSuccessBossbarContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by the `dataMergeStorage`
+	 * labeled alternative in `JustMCFParser.dataMergeExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataMergeStorage?: (ctx: DataMergeStorageContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `dataMergeEntity`
+	 * labeled alternative in `JustMCFParser.dataMergeExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataMergeEntity?: (ctx: DataMergeEntityContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `dataMergeBlock`
+	 * labeled alternative in `JustMCFParser.dataMergeExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataMergeBlock?: (ctx: DataMergeBlockContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `dataGet`
+	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataGet?: (ctx: DataGetContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `dataMerge`
+	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataMerge?: (ctx: DataMergeContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `dataModifyMergeValue`
+	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataModifyMergeValue?: (ctx: DataModifyMergeValueContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `dataModifyMergeFrom`
+	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataModifyMergeFrom?: (ctx: DataModifyMergeFromContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `dataModifySetValue`
+	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataModifySetValue?: (ctx: DataModifySetValueContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `dataModifySetFrom`
+	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataModifySetFrom?: (ctx: DataModifySetFromContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `dataModifyAppendValue`
+	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataModifyAppendValue?: (ctx: DataModifyAppendValueContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `dataModifyAppendFrom`
+	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataModifyAppendFrom?: (ctx: DataModifyAppendFromContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `dataModifyPrependValue`
+	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataModifyPrependValue?: (ctx: DataModifyPrependValueContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `dataModifyPrependFrom`
+	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataModifyPrependFrom?: (ctx: DataModifyPrependFromContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `dataModifyInsertValue`
+	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataModifyInsertValue?: (ctx: DataModifyInsertValueContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `dataModifyInsertFrom`
+	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataModifyInsertFrom?: (ctx: DataModifyInsertFromContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `dataRemove`
+	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataRemove?: (ctx: DataRemoveContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbFuncExpression`
+	 * labeled alternative in `JustMCFParser.scbSingleOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbFuncExpression?: (ctx: ScbFuncExpressionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbOptMulDivModExpression`
+	 * labeled alternative in `JustMCFParser.scbSingleOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbOptMulDivModExpression?: (ctx: ScbOptMulDivModExpressionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbOptAddSubExpression`
+	 * labeled alternative in `JustMCFParser.scbSingleOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbOptAddSubExpression?: (ctx: ScbOptAddSubExpressionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbOptAssignExpression`
+	 * labeled alternative in `JustMCFParser.scbSingleOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbOptAssignExpression?: (ctx: ScbOptAssignExpressionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbTempNumberExpression`
+	 * labeled alternative in `JustMCFParser.scbSingleOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbTempNumberExpression?: (ctx: ScbTempNumberExpressionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbIdExpression`
+	 * labeled alternative in `JustMCFParser.scbSingleOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbIdExpression?: (ctx: ScbIdExpressionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbParenExpression`
+	 * labeled alternative in `JustMCFParser.scbSingleOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbParenExpression?: (ctx: ScbParenExpressionContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by the `execWithRunOrChild`
 	 * labeled alternative in `JustMCFParser.execStatement`.
 	 * @param ctx the parse tree
@@ -180,6 +403,126 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitExecAnonymousRun?: (ctx: ExecAnonymousRunContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbGet`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbGet?: (ctx: ScbGetContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbAdd`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbAdd?: (ctx: ScbAddContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbRemove`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbRemove?: (ctx: ScbRemoveContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbSet`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbSet?: (ctx: ScbSetContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbOptAddAssign`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbOptAddAssign?: (ctx: ScbOptAddAssignContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbOptSubAssign`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbOptSubAssign?: (ctx: ScbOptSubAssignContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbOptMulAssign`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbOptMulAssign?: (ctx: ScbOptMulAssignContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbOptDivAssign`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbOptDivAssign?: (ctx: ScbOptDivAssignContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbOptModAssign`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbOptModAssign?: (ctx: ScbOptModAssignContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbOptExcFunc`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbOptExcFunc?: (ctx: ScbOptExcFuncContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbOptMinFunc`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbOptMinFunc?: (ctx: ScbOptMinFuncContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbOptMaxFunc`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbOptMaxFunc?: (ctx: ScbOptMaxFuncContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbOptAssign`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbOptAssign?: (ctx: ScbOptAssignContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbReset`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbReset?: (ctx: ScbResetContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbOptExpression`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbOptExpression?: (ctx: ScbOptExpressionContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `execAlign`
@@ -448,6 +791,13 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitDataIdentifier?: (ctx: DataIdentifierContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.dataMergeExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataMergeExpression?: (ctx: DataMergeExpressionContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.dataOperationExpression`.
