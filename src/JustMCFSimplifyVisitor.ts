@@ -1,5 +1,5 @@
 import { ParseTree } from 'antlr4ts/tree/ParseTree';
-import { McfFileContext, StatementAndCommandContext, CommandContext, StatementContext, FuncStatementContext, ExecStatementContext, ExecStoreChildContext, ExecRunChildContext, ExecChildContext, MatchPartContext, DataIdentifierContext, DataOperationExpressionContext, ScbOperationExpressionContext, ScbSingleOperationExpressionContext, ScbIdentifierContext, Pos3IdentifierContext, Pos2IdentifierContext, Pos5IdentifierContext, Pos1Context, BlockIdentifierContext, BlockstateContext, SelectorContext, NameSpaceContext, RegisterNameContext, NbtNameContext, ResourceLocationContext, NbtContext, JsonContext, NbtPathContext, SnbtValueContext, SnbtContext, NbtCompoundContext, NbtPairContext, NbtListContext, NbtValueContext, NbtByteArrContext, NbtIntArrContext, NbtLongArrContext, NbtStringContext, JsonTextValueContext, JsonTextContext, JsonObjContext, JsonPairContext, JsonArrContext, JsonValueContext, ExecNamedRunContext, ExecAnonymousRunContext, ExecDirectRunContext, ExecWithoutRunOrChildContext, ExecWithRunOrChildContext, LeagalCommandContext, DataStorageContext, ExecStoreResultBossbarContext, ExecAlignContext, ExecAnchoredContext, ExecInContext, ExecAsContext, DataEntityContext, ExecAtContext, ExecFacingEntityContext, ExecFacingPosContext, ExecIfBiomeContext, ExecIfBlockContext, ExecIfBlocksContext, ExecIfDataContext, ExecIfEntityContext, ExecIfScoreContext, ExecIfScoreMatchesContext, ExecPositionedPosContext, ExecPostionedAsContext, ExecPredicateContext, ExecRotatedAsContext, ExecRotatedPosContext, ExecStoreSuccessScoreContext, ExecStoreSuccessDataContext, ExecStoreSuccessBossbarContext, ExecStoreResultScoreContext, ExecStoreResultDataContext, ExecStoreContext, DataBlockContext, DataMergeStorageContext, DataMergeEntityContext, DataMergeBlockContext, DataGetContext, DataModifyMergeValueContext, DataModifyMergeFromContext, DataModifyAppendFromContext, DataModifyAppendValueContext, DataModifyInsertFromContext, DataModifyInsertValueContext, DataModifyPrependFromContext, DataModifyPrependValueContext, DataModifySetFromContext, DataModifySetValueContext, DataRemoveContext, ScbGetContext, ScbAddContext, ScbRemoveContext, ScbSetContext, ScbOptAddAssignContext, ScbOptSubAssignContext, ScbOptExcFuncContext, ScbResetContext, ScbOptExpressionContext, ScbOptMaxFuncContext, ScbOptAssignContext, ScbOptDivAssignContext, ScbOptMinFuncContext, ScbOptModAssignContext, ScbOptMulAssignContext, ScbFuncExpressionContext, ScbIdExpressionContext, ScbOptAddSubExpressionContext, ScbOptAssignExpressionContext, ScbOptMulDivModExpressionContext, ScbParenExpressionContext, ScbTempNumberExpressionContext } from './antlr/JustMCFParser';
+import { McfFileContext, StatementAndCommandContext, CommandContext, StatementContext, FuncStatementContext, ExecStatementContext, ExecStoreChildContext, ExecRunChildContext, ExecChildContext, MatchPartContext, DataIdentifierContext, DataOperationExpressionContext, ScbOperationExpressionContext, ScbSingleOperationExpressionContext, ScbIdentifierContext, Pos3IdentifierContext, Pos2IdentifierContext, Pos5IdentifierContext, Pos1Context, BlockIdentifierContext, BlockstateContext, SelectorContext, NameSpaceContext, RegisterNameContext, NbtNameContext, ResourceLocationContext, NbtContext, JsonContext, NbtPathContext, SnbtValueContext, SnbtContext, NbtCompoundContext, NbtPairContext, NbtListContext, NbtValueContext, NbtByteArrContext, NbtIntArrContext, NbtLongArrContext, NbtStringContext, JsonTextValueContext, JsonTextContext, JsonObjContext, JsonPairContext, JsonArrContext, JsonValueContext, ExecNamedRunContext, ExecAnonymousRunContext, ExecDirectRunContext, ExecWithoutRunOrChildContext, ExecWithRunOrChildContext, LeagalCommandContext, DataStorageContext, ExecStoreResultBossbarContext, ExecAlignContext, ExecAnchoredContext, ExecInContext, ExecAsContext, DataEntityContext, ExecAtContext, ExecFacingEntityContext, ExecFacingPosContext, ExecIfBiomeContext, ExecIfBlockContext, ExecIfBlocksContext, ExecIfDataContext, ExecIfEntityContext, ExecIfScoreContext, ExecIfScoreMatchesContext, ExecPositionedPosContext, ExecPostionedAsContext, ExecPredicateContext, ExecRotatedAsContext, ExecRotatedPosContext, ExecStoreSuccessScoreContext, ExecStoreSuccessDataContext, ExecStoreSuccessBossbarContext, ExecStoreResultScoreContext, ExecStoreResultDataContext, ExecStoreContext, DataBlockContext, DataMergeStorageContext, DataMergeEntityContext, DataMergeBlockContext, DataGetContext, DataModifyMergeValueContext, DataModifyMergeFromContext, DataModifyAppendFromContext, DataModifyAppendValueContext, DataModifyInsertFromContext, DataModifyInsertValueContext, DataModifyPrependFromContext, DataModifyPrependValueContext, DataModifySetFromContext, DataModifySetValueContext, DataRemoveContext, ScbGetContext, ScbAddContext, ScbRemoveContext, ScbSetContext, ScbOptAddAssignContext, ScbOptSubAssignContext, ScbOptExcFuncContext, ScbResetContext, ScbOptExpressionContext, ScbOptMaxFuncContext, ScbOptAssignContext, ScbOptDivAssignContext, ScbOptMinFuncContext, ScbOptModAssignContext, ScbOptMulAssignContext, ScbFuncExpressionContext, ScbIdExpressionContext, ScbOptAddSubExpressionContext, ScbOptMulDivModExpressionContext, ScbParenExpressionContext, ScbTempNumberExpressionContext } from './antlr/JustMCFParser';
 import { JustMCFVisitor } from "./antlr/JustMCFVisitor";
 import { AbstractParseTreeVisitor } from "antlr4ts/tree/AbstractParseTreeVisitor";
 
@@ -13,6 +13,12 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
 
     private anonymousFunctionFatherNamespaceTimes: { [mcfunctionFileName: string]: number } = {};
     private tempFunctionNamespace: string[] = [];
+
+    private _tempScbObjectiveName: string = "justmcf-temp-scoreboard"
+	public set tempScbObjectiveName(value: string ) { this._tempScbObjectiveName = value;}
+    
+    private tempScbTargetName: number[] = [];
+    private tempScbTargetNameUsed: number[] = [];
 
     printAllMcfunction() {
         for (const mcfunctionFileName in this.mcfunction) {
@@ -207,19 +213,52 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitScbOptMaxFunc(ctx: ScbOptMaxFuncContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} >> ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
     visitScbOptAssign(ctx: ScbOptAssignContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} = ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
     visitScbReset(ctx: ScbResetContext) { return [`scoreboard players reset ${this.visitAndReturnFirst(ctx.scbIdentifier())}`] } //TODO: the objective is not required
-    visitScbOptExpression(ctx: ScbOptExpressionContext) { return this.visit(ctx.scbSingleOperationExpression()).concat([`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier())} = `]) }
+    visitScbOptExpression(ctx: ScbOptExpressionContext) {
+        this.tempScbTargetName = []
+        const res = this.visit(ctx.scbSingleOperationExpression())
+        this.tempScbTargetName = []
+        return res.slice(1).concat([`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier())} = ${'temp' + res[0]} ${this._tempScbObjectiveName}`])
+    }
 
     //visitScbSingleOperationExpression?: ((ctx: ScbSingleOperationExpressionContext) => string[]) | undefined;
-    visitScbFuncExpression(ctx: ScbFuncExpressionContext) {
-        //return [ number of temp, ]
-        return []
+    visitScbOptExpressionUtils(ctx: ScbFuncExpressionContext | ScbOptMulDivModExpressionContext | ScbOptAddSubExpressionContext) {
+        const left = this.visit(ctx.scbSingleOperationExpression(0) as ScbSingleOperationExpressionContext )
+        const right = this.visit(ctx.scbSingleOperationExpression(1) as ScbSingleOperationExpressionContext)
+        let op = ""
+        switch (ctx._op.text) {
+            case "<<": op = "<"; break;
+            case ">>": op = ">"; break;
+            case "+": op = "+="; break;
+            case "-": op = "-="; break;
+            case "*": op = "*="; break;
+            case "/": op = "/="; break;
+            case "%": op = "%="; break;
+            default: throw new JustMCFSimplifyError("error operation symbol")
+        }
+        const rightTempNumber = Number.parseInt(right[0])
+        this.tempScbTargetName.remove(rightTempNumber) //release no use
+        this.tempScbTargetNameUsed.push(rightTempNumber)
+        //return [ number of temp, ..commands]
+        return left.concat(right.slice(1)).concat([
+            `scoreboard players operation ${'temp'+left[0]} ${this._tempScbObjectiveName} ${op} ${'temp'+right[0]} ${this._tempScbObjectiveName}`
+        ]) 
     }
-    visitScbOptMulDivModExpression(ctx: ScbOptMulDivModExpressionContext){ return []}
-    visitScbOptAddSubExpression(ctx: ScbOptAddSubExpressionContext){ return []}
-    visitScbOptAssignExpression(ctx: ScbOptAssignExpressionContext){ return []}
-    visitScbTempNumberExpression(ctx: ScbTempNumberExpressionContext){ return []}
-    visitScbIdExpression(ctx: ScbIdExpressionContext){ return []}
-    visitScbParenExpression(ctx: ScbParenExpressionContext){ return []}
+    visitScbFuncExpression(ctx: ScbFuncExpressionContext) {return this.visitScbOptExpressionUtils(ctx)}
+    visitScbOptMulDivModExpression(ctx: ScbOptMulDivModExpressionContext) {return this.visitScbOptExpressionUtils(ctx)}
+    visitScbOptAddSubExpression(ctx: ScbOptAddSubExpressionContext){ return this.visitScbOptExpressionUtils(ctx)}
+    visitScbTempNumberExpression(ctx: ScbTempNumberExpressionContext) {
+        let tempNumber = this.tempScbTargetName.length 
+        if (this.tempScbTargetNameUsed.length > 0) {tempNumber = this.tempScbTargetNameUsed.pop()!!}
+        this.tempScbTargetName.push(tempNumber)
+        return [`${tempNumber}`,`scoreboard player operation ${'temp'+tempNumber} ${this._tempScbObjectiveName} set ${ctx.NUMBER().text}`]
+    }
+    visitScbIdExpression(ctx: ScbIdExpressionContext) {
+        let tempNumber = this.tempScbTargetName.length 
+        if (this.tempScbTargetNameUsed.length > 0) {tempNumber = this.tempScbTargetNameUsed.pop()!!}
+        this.tempScbTargetName.push(tempNumber)
+        return [`${tempNumber}`,`scoreboard player operation ${'temp'+tempNumber} ${this._tempScbObjectiveName} = ${this.visit(ctx.scbIdentifier())}`]
+    }
+    visitScbParenExpression(ctx: ScbParenExpressionContext){ return this.visit(ctx.scbSingleOperationExpression())}
 
     visitNbt(ctx: NbtContext){ return [ctx.text.replace("n{","{").replace("n[","[") ]}
     visitJson(ctx: JsonContext){ return [ctx.text.replace("j{","{").replace("j[","[") ]}

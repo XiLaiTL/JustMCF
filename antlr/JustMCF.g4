@@ -226,10 +226,9 @@ scbOperationExpression
     | scbIdentifier ':=' scbSingleOperationExpression                                                 #scbOptExpression
     ;
 scbSingleOperationExpression
-    : scbSingleOperationExpression op=('><'|'<<'|'>>') scbSingleOperationExpression                   #scbFuncExpression
+    : scbSingleOperationExpression op=('<<'|'>>') scbSingleOperationExpression                   #scbFuncExpression
     | scbSingleOperationExpression op=('*'|'/'|'%') scbSingleOperationExpression                      #scbOptMulDivModExpression
     | scbSingleOperationExpression op=('+'|'-') scbSingleOperationExpression                          #scbOptAddSubExpression
-    | scbSingleOperationExpression op='=' scbSingleOperationExpression                                #scbOptAssignExpression
     | NUMBER                                                                                          #scbTempNumberExpression
     | scbIdentifier                                                                                   #scbIdExpression
     | '(' scbSingleOperationExpression ')'                                                            #scbParenExpression

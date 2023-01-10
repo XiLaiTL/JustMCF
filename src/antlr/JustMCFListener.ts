@@ -28,7 +28,6 @@ import { DataRemoveContext } from "./JustMCFParser";
 import { ScbFuncExpressionContext } from "./JustMCFParser";
 import { ScbOptMulDivModExpressionContext } from "./JustMCFParser";
 import { ScbOptAddSubExpressionContext } from "./JustMCFParser";
-import { ScbOptAssignExpressionContext } from "./JustMCFParser";
 import { ScbTempNumberExpressionContext } from "./JustMCFParser";
 import { ScbIdExpressionContext } from "./JustMCFParser";
 import { ScbParenExpressionContext } from "./JustMCFParser";
@@ -453,19 +452,6 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitScbOptAddSubExpression?: (ctx: ScbOptAddSubExpressionContext) => void;
-
-	/**
-	 * Enter a parse tree produced by the `scbOptAssignExpression`
-	 * labeled alternative in `JustMCFParser.scbSingleOperationExpression`.
-	 * @param ctx the parse tree
-	 */
-	enterScbOptAssignExpression?: (ctx: ScbOptAssignExpressionContext) => void;
-	/**
-	 * Exit a parse tree produced by the `scbOptAssignExpression`
-	 * labeled alternative in `JustMCFParser.scbSingleOperationExpression`.
-	 * @param ctx the parse tree
-	 */
-	exitScbOptAssignExpression?: (ctx: ScbOptAssignExpressionContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `scbTempNumberExpression`

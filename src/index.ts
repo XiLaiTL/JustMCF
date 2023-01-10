@@ -19,6 +19,7 @@ function execute(code: string) {
 declare global {
     interface Array<T> {
         pushAll(arr: Array<T>): number;
+        remove(elem: T): Array<T>;
     }
 }
 Array.prototype.pushAll = function <T>(arr: T[]): number {
@@ -26,7 +27,11 @@ Array.prototype.pushAll = function <T>(arr: T[]): number {
     for (const elem of arr) len = this.push(elem)
     return len
 }
-
+Array.prototype.remove = function <T>(elem: T): T[] {
+    const index = this.indexOf(elem)
+    if (index > -1) { return this.splice(index, 1) } 
+    return this
+}
 
 execute(`
 func test:foo {
@@ -44,7 +49,7 @@ func test:foo {
     {if @s }->{
         say yes2
         {if @s }->{
-            say yes3
+            scb@temp := 6*7+7*(9+3)
         }
     }
 }
