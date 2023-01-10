@@ -16,9 +16,15 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
 
     private _tempScbObjectiveName: string = "justmcf-temp-scoreboard"
 	public set tempScbObjectiveName(value: string ) { this._tempScbObjectiveName = value;}
-    
+
     private tempScbTargetName: number[] = [];
     private tempScbTargetNameUsed: number[] = [];
+    getVaildTempScbTargetName(): [number, string] {
+        let tempNumber = this.tempScbTargetName.length 
+        if (this.tempScbTargetNameUsed.length > 0) {tempNumber = this.tempScbTargetNameUsed.pop()!!}
+        this.tempScbTargetName.push(tempNumber)
+        return [tempNumber,`${'temp'+tempNumber} ${this._tempScbObjectiveName}` ]
+    }
 
     printAllMcfunction() {
         for (const mcfunctionFileName in this.mcfunction) {
@@ -217,10 +223,11 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         this.tempScbTargetName = []
         const res = this.visit(ctx.scbSingleOperationExpression())
         this.tempScbTargetName = []
-        return res.slice(1).concat([`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier())} = ${'temp' + res[0]} ${this._tempScbObjectiveName}`])
+        return res.slice(2).concat([`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier())} = ${res[1]}`])
     }
 
     //visitScbSingleOperationExpression?: ((ctx: ScbSingleOperationExpressionContext) => string[]) | undefined;
+    
     visitScbOptExpressionUtils(ctx: ScbFuncExpressionContext | ScbOptMulDivModExpressionContext | ScbOptAddSubExpressionContext) {
         const left = this.visit(ctx.scbSingleOperationExpression(0) as ScbSingleOperationExpressionContext )
         const right = this.visit(ctx.scbSingleOperationExpression(1) as ScbSingleOperationExpressionContext)
@@ -235,28 +242,34 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
             case "%": op = "%="; break;
             default: throw new JustMCFSimplifyError("error operation symbol")
         }
+        const commands = []
+        let leftTempNumber = Number.parseInt(left[0])
+        let leftScbId = left[1]
+        if (leftTempNumber == -1) { // -1 means using original id
+            [leftTempNumber, leftScbId] = this.getVaildTempScbTargetName() 
+            commands.push(`scoreboard players operation ${leftScbId} = ${left[1]}`)
+        }
+        commands.push(`scoreboard players operation ${leftScbId} ${op} ${right[1]}`)
+        
+        //release right node temp name which is not use
         const rightTempNumber = Number.parseInt(right[0])
-        this.tempScbTargetName.remove(rightTempNumber) //release no use
-        this.tempScbTargetNameUsed.push(rightTempNumber)
-        //return [ number of temp, ..commands]
-        return left.concat(right.slice(1)).concat([
-            `scoreboard players operation ${'temp'+left[0]} ${this._tempScbObjectiveName} ${op} ${'temp'+right[0]} ${this._tempScbObjectiveName}`
-        ]) 
+        if (rightTempNumber != -1) {
+            this.tempScbTargetName.remove(rightTempNumber) 
+            this.tempScbTargetNameUsed.push(rightTempNumber)
+        }
+
+        //return [ number of temp,name of scb, ..commands]
+        return [`${leftTempNumber}`,`${leftScbId}`].concat(left.slice(2)).concat(right.slice(2)).concat(commands) 
     }
     visitScbFuncExpression(ctx: ScbFuncExpressionContext) {return this.visitScbOptExpressionUtils(ctx)}
     visitScbOptMulDivModExpression(ctx: ScbOptMulDivModExpressionContext) {return this.visitScbOptExpressionUtils(ctx)}
     visitScbOptAddSubExpression(ctx: ScbOptAddSubExpressionContext){ return this.visitScbOptExpressionUtils(ctx)}
     visitScbTempNumberExpression(ctx: ScbTempNumberExpressionContext) {
-        let tempNumber = this.tempScbTargetName.length 
-        if (this.tempScbTargetNameUsed.length > 0) {tempNumber = this.tempScbTargetNameUsed.pop()!!}
-        this.tempScbTargetName.push(tempNumber)
-        return [`${tempNumber}`,`scoreboard player operation ${'temp'+tempNumber} ${this._tempScbObjectiveName} set ${ctx.NUMBER().text}`]
+        const [tempNumber, tempId] = this.getVaildTempScbTargetName() 
+        return [`${tempNumber}`,`${tempId}`,`scoreboard players set ${tempId} ${ctx.NUMBER().text}`]
     }
     visitScbIdExpression(ctx: ScbIdExpressionContext) {
-        let tempNumber = this.tempScbTargetName.length 
-        if (this.tempScbTargetNameUsed.length > 0) {tempNumber = this.tempScbTargetNameUsed.pop()!!}
-        this.tempScbTargetName.push(tempNumber)
-        return [`${tempNumber}`,`scoreboard player operation ${'temp'+tempNumber} ${this._tempScbObjectiveName} = ${this.visit(ctx.scbIdentifier())}`]
+        return [`${-1}`,`${this.visit(ctx.scbIdentifier())}`]
     }
     visitScbParenExpression(ctx: ScbParenExpressionContext){ return this.visit(ctx.scbSingleOperationExpression())}
 
