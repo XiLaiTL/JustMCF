@@ -24,6 +24,10 @@ func test:foo {
         for(let i of list){#{
             setblock ~ ~$\{i} ~ stone
         }#}
+
+        #{
+            say hello $\{a}
+        }#
     }}
     say hello
     say 1111
@@ -43,6 +47,12 @@ func test:foo {
             scb@temp := 9*(scb@temp1 + scb@temp2)
         }
     }
+
+    {{
+        #{
+            say hello222 $\{a}
+        }#
+    }}
 }
 
 func test:a2 {
