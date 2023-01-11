@@ -1,21 +1,5 @@
-import { CharStream, CharStreams, CommonTokenStream } from 'antlr4ts'; 
-import { JustMCFLexer } from './antlr/JustMCFLexer';
-import { JustMCFParser } from './antlr/JustMCFParser';
-import { JustMCFSimplifyVisitor } from './JustMCFSimplifyVisitor';
-
-function execute(code: string) {
-    const input = CharStreams.fromString(code)
-    const lexer = new JustMCFLexer(input)
-    const tokens = new CommonTokenStream(lexer)
-    const parser = new JustMCFParser(tokens)
-    const visitor = new JustMCFSimplifyVisitor()
-
-    const mcfFile = parser.mcfFile()
-//    console.log(mcfFile.toStringTree())
-    visitor.visit(mcfFile);
-    visitor.printAllMcfunction()
-}
-
+import { Sandbox } from './EvalScript';
+import { execute } from "./Simplify";
 declare global {
     interface Array<T> {
         pushAll(arr: Array<T>): number;
@@ -29,12 +13,18 @@ Array.prototype.pushAll = function <T>(arr: T[]): number {
 }
 Array.prototype.remove = function <T>(elem: T): T[] {
     const index = this.indexOf(elem)
-    if (index > -1) { return this.splice(index, 1) } 
+    if (index > -1) { return this.splice(index, 1) }
     return this
 }
 
 execute(`
 func test:foo {
+    {{
+        const list = [1,2,3,4,5]
+        for(let i of list){#{
+            setblock ~ ~$\{i} ~ stone
+        }#}
+    }}
     say hello
     say 1111
     { as @e[tag=temp_new,limit=1] }->func ltd:set{

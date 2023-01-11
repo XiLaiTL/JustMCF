@@ -3,6 +3,14 @@ import { McfFileContext, StatementAndCommandContext, CommandContext, StatementCo
 import { JustMCFVisitor } from "./antlr/JustMCFVisitor";
 import { AbstractParseTreeVisitor } from "antlr4ts/tree/AbstractParseTreeVisitor";
 
+
+export interface option {
+    scbExpression?: {
+        tempScbObjectiveName?: string,
+        useConstNumberScbObjective?: boolean,
+        constNumberScbObjectiveName?: string
+    }
+}
 export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     implements JustMCFVisitor<string[]> {
     protected defaultResult(): string[] {
@@ -10,23 +18,48 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     }
 
     private mcfunction: { [mcfunctionFileName: string]: string[] } = {};
+    private constScbInitFunc: number[] = [];
 
     private anonymousFunctionFatherNamespaceTimes: { [mcfunctionFileName: string]: number } = {};
     private tempFunctionNamespace: string[] = [];
 
-    private _tempScbObjectiveName: string = "justmcf-temp-scoreboard"
-	public set tempScbObjectiveName(value: string ) { this._tempScbObjectiveName = value;}
 
+    private _option: option = {
+        scbExpression: {
+            tempScbObjectiveName: "justmcf-temp-scoreboard",
+            useConstNumberScbObjective: false,
+            constNumberScbObjectiveName: "justmcf-const-scoreboard"
+        }
+    }
+    public set option(val: option) {
+        this._option = {
+            scbExpression: {
+                ...this._option.scbExpression, ...val.scbExpression
+            }
+        }
+    }
+    
     private tempScbTargetName: number[] = [];
     private tempScbTargetNameUsed: number[] = [];
+    removeUnusedTempScbTargetName(rightTempNumber:number) {
+        this.tempScbTargetName.remove(rightTempNumber) 
+        this.tempScbTargetNameUsed.push(rightTempNumber)
+    }
     getVaildTempScbTargetName(): [number, string] {
         let tempNumber = this.tempScbTargetName.length 
         if (this.tempScbTargetNameUsed.length > 0) {tempNumber = this.tempScbTargetNameUsed.pop()!!}
         this.tempScbTargetName.push(tempNumber)
-        return [tempNumber,`${'temp'+tempNumber} ${this._tempScbObjectiveName}` ]
+        return [tempNumber,`${'temp'+tempNumber} ${this._option.scbExpression?.tempScbObjectiveName}` ]
     }
 
+    createInitFunc() {
+        if (this.mcfunction["init"] === undefined) this.mcfunction["init"] = []
+        for (const num of this.constScbInitFunc) {
+            this.mcfunction["init"].push(`scoreboard players set ${num} ${this._option.scbExpression?.constNumberScbObjectiveName} ${num}`)
+        }
+    }
     printAllMcfunction() {
+        this.createInitFunc()
         for (const mcfunctionFileName in this.mcfunction) {
             console.log(mcfunctionFileName)
             for (const command of this.mcfunction[mcfunctionFileName]) {
@@ -232,41 +265,55 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         const left = this.visit(ctx.scbSingleOperationExpression(0) as ScbSingleOperationExpressionContext )
         const right = this.visit(ctx.scbSingleOperationExpression(1) as ScbSingleOperationExpressionContext)
         let op = ""
+        let couldExchange = false
         switch (ctx._op.text) {
-            case "<<": op = "<"; break;
-            case ">>": op = ">"; break;
-            case "+": op = "+="; break;
+            case "<<": op = "<"; couldExchange = true; break;
+            case ">>": op = ">"; couldExchange = true; break;
+            case "+": op = "+="; couldExchange = true; break;
             case "-": op = "-="; break;
-            case "*": op = "*="; break;
+            case "*": op = "*="; couldExchange = true; break;
             case "/": op = "/="; break;
             case "%": op = "%="; break;
             default: throw new JustMCFSimplifyError("error operation symbol")
         }
         const commands = []
-        let leftTempNumber = Number.parseInt(left[0])
-        let leftScbId = left[1]
-        if (leftTempNumber == -1) { // -1 means using original id
-            [leftTempNumber, leftScbId] = this.getVaildTempScbTargetName() 
-            commands.push(`scoreboard players operation ${leftScbId} = ${left[1]}`)
-        }
-        commands.push(`scoreboard players operation ${leftScbId} ${op} ${right[1]}`)
-        
-        //release right node temp name which is not use
+        const leftTempNumber = Number.parseInt(left[0])
         const rightTempNumber = Number.parseInt(right[0])
-        if (rightTempNumber != -1) {
-            this.tempScbTargetName.remove(rightTempNumber) 
-            this.tempScbTargetNameUsed.push(rightTempNumber)
+        const isOriginalId = (i:number)=>i==-1 // -1 means using original id
+        let [resTempNumber, resScbId] = [leftTempNumber,left[1]]
+        if (isOriginalId(leftTempNumber)) { 
+            if (!isOriginalId(rightTempNumber) && couldExchange == true) {
+                [resTempNumber, resScbId] = [rightTempNumber,right[1]]
+                commands.push(`scoreboard players operation ${right[1]} ${op} ${left[1]}`)
+            }
+            else {
+                [resTempNumber, resScbId] = this.getVaildTempScbTargetName() 
+                commands.push(`scoreboard players operation ${resScbId} = ${left[1]}`)
+                commands.push(`scoreboard players operation ${resScbId} ${op} ${right[1]}`)
+            }
         }
-
+        else {
+            if (!isOriginalId(rightTempNumber)) {
+                this.removeUnusedTempScbTargetName(rightTempNumber) //release right node temp name which is not use
+            }
+            commands.push(`scoreboard players operation ${left[1]} ${op} ${right[1]}`)
+        }
+        
         //return [ number of temp,name of scb, ..commands]
-        return [`${leftTempNumber}`,`${leftScbId}`].concat(left.slice(2)).concat(right.slice(2)).concat(commands) 
+        return [`${resTempNumber}`,`${resScbId}`].concat(left.slice(2)).concat(right.slice(2)).concat(commands) 
     }
     visitScbFuncExpression(ctx: ScbFuncExpressionContext) {return this.visitScbOptExpressionUtils(ctx)}
     visitScbOptMulDivModExpression(ctx: ScbOptMulDivModExpressionContext) {return this.visitScbOptExpressionUtils(ctx)}
     visitScbOptAddSubExpression(ctx: ScbOptAddSubExpressionContext){ return this.visitScbOptExpressionUtils(ctx)}
     visitScbTempNumberExpression(ctx: ScbTempNumberExpressionContext) {
-        const [tempNumber, tempId] = this.getVaildTempScbTargetName() 
-        return [`${tempNumber}`,`${tempId}`,`scoreboard players set ${tempId} ${ctx.NUMBER().text}`]
+        if (this._option?.scbExpression?.useConstNumberScbObjective) {
+            if(!this.constScbInitFunc.includes(Number.parseInt(ctx.NUMBER().text))) this.constScbInitFunc.push(Number.parseInt(ctx.NUMBER().text))
+            return [`${-1}`,`${ctx.NUMBER().text} ${this._option.scbExpression.constNumberScbObjectiveName}`]
+        }
+        else {
+            const [tempNumber, tempId] = this.getVaildTempScbTargetName() 
+            return [`${tempNumber}`,`${tempId}`,`scoreboard players set ${tempId} ${ctx.NUMBER().text}`]
+        }
     }
     visitScbIdExpression(ctx: ScbIdExpressionContext) {
         return [`${-1}`,`${this.visit(ctx.scbIdentifier())}`]
@@ -304,3 +351,4 @@ class JustMCFSimplifyError extends Error{
         super(message);
     }
 }
+

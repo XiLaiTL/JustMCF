@@ -3,3 +3,4 @@ McfunctionSharp.iml
 /antlr/.antlr/
 /node_modules/
 /build/
+/.vscode/

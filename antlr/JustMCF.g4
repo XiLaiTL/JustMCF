@@ -226,7 +226,7 @@ scbOperationExpression
     | scbIdentifier ':=' scbSingleOperationExpression                                                 #scbOptExpression
     ;
 scbSingleOperationExpression
-    : scbSingleOperationExpression op=('<<'|'>>') scbSingleOperationExpression                   #scbFuncExpression
+    : scbSingleOperationExpression op=('<<'|'>>') scbSingleOperationExpression                        #scbFuncExpression
     | scbSingleOperationExpression op=('*'|'/'|'%') scbSingleOperationExpression                      #scbOptMulDivModExpression
     | scbSingleOperationExpression op=('+'|'-') scbSingleOperationExpression                          #scbOptAddSubExpression
     | NUMBER                                                                                          #scbTempNumberExpression
@@ -255,6 +255,10 @@ selector
     | '#'
     ;
 Selector: '@s' | '@r' | '@a' | '@e' | '@p';
+
+//script: '{{' (.)+? '}}';
+
+
 
 nameSpace: AcceptableName ':' resourceLocation;
 registerName: (AcceptableName ':')? AcceptableName;
