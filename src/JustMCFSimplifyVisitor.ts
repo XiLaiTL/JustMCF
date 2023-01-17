@@ -5,6 +5,9 @@ import { AbstractParseTreeVisitor } from "antlr4ts/tree/AbstractParseTreeVisitor
 
 
 export interface option {
+    selector?: {
+        limitMode?:string,
+    }
     scbExpression?: {
         tempScbObjectiveName?: string,
         useConstNumberScbObjective?: boolean,

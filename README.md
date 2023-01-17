@@ -48,7 +48,7 @@ folder_name
   * UUID: `@entityname` 其中，可以指定 `entityname`对应的UUID，或让JustMCF自动生成UUID。
   * 目标选择器变量：`@e[type=xxxx]`和原来不变。
 * 坐标：共有三类坐标，在JustMCF中，需要左右添加尖括号
-  * 2个值表示朝向坐标 `< ~ ~ >`
+  * 2个值表示朝向坐标或者xz坐标 `< ~ ~ >`
   * 3个值表示位置坐标 `< ~ ~ ~ >` （这个可以简化为 `<~>`）
   * 5个值表示方位坐标 `< ~ ~ ~ ~ ~ >`控制流逻辑简化
 * 记分板：来源只有实体，在JustMCF中，表示为
@@ -121,10 +121,12 @@ ans@s := test2@s + test3@s / test4@s
 
 ### NBT数据运算
 
+稍有不同的是data merge的表现形式
+
 ```
 < ~ ~ ~ > ::Base *3                              ##get block
 @e[]::Item                                       ##get 
-@e[] |= n{}                                      ##merge
+@e[].data |= n{}                                 ##merge
 @e[]::Item |= @s::Item                           ##modify merge from
 @e[]::Item |= n{}                                ##modify merge value 
 @e[]::Item = n{}                                 ##modify set value
@@ -213,10 +215,10 @@ func #foo:utils/all{ ##自动创建一个function tag
 {
     as @e[]
     at @e[]
-    position < ~ ~ ~ >
-    position @e[]                           ##position as
-    rotated < ~ ~ >
-    rotated @e[]                            ##rotated as
+    pos < ~ ~ ~ >
+    pos @e[]                           ##position as
+    rot < ~ ~ >
+    rot @e[]                            ##rotated as
 }->func foo:test
 ```
 
@@ -229,6 +231,7 @@ func #foo:utils/all{ ##自动创建一个function tag
     if sb1@e[] 2..5                              ##if score xxx matches
     if < ~ ~ ~ > stone{}                         ##if block
     if < ~ ~ ~ > < ~ ~ ~ > < ~ ~ ~ > all|masked  ##if blocks
+    if biome < ~ ~ ~ > namespace                 ##if biome
     if @e[]::{}                                  ##if data entity
     if < ~ ~ ~ > ::{}                            ##if data block
     if foo:str::{}                               ##if data storage
@@ -307,6 +310,59 @@ tellraw @s {"text":"hello"} ?=> sb1@s
 
 会自动生成mcfunction文件，名称不需要指定，会自动指定为所在文件、嵌套层数与匿名函数的编号的组合。
 
+### 条件语句
+
+#### exist表达式
+
+在JustMCF中，用`{xxx:1b}`和`null`两种值来模拟bool表达式，为了和nbt的bool变量类型区分，我们称之为exist表达式。exist表达式用if语句中。
+
+也就是exec大括号部分作为exist表达式，将会在局部作用域生成exist变量
+
+对于nbt来说，可以直接写在外面
+
+```
+{if @e} && {if < ~ ~ ~ > stone} && foo:stor::bool
+```
+
+可以将exist值赋值给nbt
+
+```
+foo:stor::bool_1 = {if @e} && {if ~ ~ ~ stone} 
+```
+
+exist值可以为`true`、`false`
+
+```
+foo:stor::bool_1 = true
+		##data modify foo:stor bool_1 set value 1b
+foo:stor::bool_1 = false
+		## data remove foo:stor bool_1
+```
+
+#### 逻辑运算符
+
+| 符号 | 描述           | 实现                                                         |
+| ---- | -------------- | ------------------------------------------------------------ |
+| &&   | 可以熔断的且   | bool a=false;<br/>if xxxx1-> a= true;<br/>if a unless xxxx2 -> a = false;<br/> |
+| \|\| | 可以熔断的或   | bool a=false;<br/>if xxxx1->a=true;<br/>unless a if xxxx2->a=true;<br/> |
+| !    |                |                                                              |
+| &    | 不可以熔断的且 |                                                              |
+| \|   | 不可以熔断的或 |                                                              |
+
+#### if语句
+
+```
+if( {if @e} && {if scb@s ..1 } && foo:stor::bool_1 )->{
+
+}
+else if()->{ ##匿名函数
+
+}
+else->func foo:test{ ##具名函数
+
+}
+```
+
 ### 循环语句
 
 #### while语句
@@ -324,6 +380,14 @@ while{ if @e }->func loopname{
 ##execute if @e  run function loopname
 ```
 
+也可以使用bool表达式的形式
+
+```
+while()->func loopname{
+
+}
+```
+
 #### for语句
 
 用于遍历列表，这里的大括号相当于data的大括号
@@ -335,7 +399,7 @@ for{ foo:flower::list }->func loopname{
 ##自动生成
 ##这里的loop int要跟循环深度去变，防止嵌套循环时出错
 ##execute store result score loop int run data get storage foo:flower list 
-##execute if score loop int matches 1. . run function loopname
+##execute if score loop int matches 1.. run function loopname
 ####loopname
 ##data modify storage foo:flower list[0] set value {}
 ##data modify storage foo:flower list append from storage foo:flower list[0]
@@ -345,7 +409,7 @@ for{ foo:flower::list }->func loopname{
 ```
 
 ```
-for{foo:flower::temp = ["abcd","efgh","ojbk"] }->func loopname{
+for{foo:flower::temp |= ["abcd","efgh","ojbk"] }->func loopname{
 
 }
 ##自动生成
@@ -370,16 +434,16 @@ for{foo:flower::temp = ["abcd","efgh","ojbk"] }->func loopname{
 
 ### data命令聚合
 
-上述提到的NBT数据运算内容全部写在 `data{}`大括号里
+上述提到的NBT数据运算内容全部写在 `data{}`大括号里，merge要稍作修改，可以不带.nbt
 
 例如：
 
 ```
 data{
-    @e[] |= {}                                    ##merge
+    @e[] |= n{}                                    ##merge
     @e[]::Item |= @s::Item                        ##modify merge from
-    @e[]::Item |= {}                              ##modify merge value 
-    @s::ArmorItems .. {id:'iron_boots', Count:1b} ##append
+    @e[]::Item |= n{}                              ##modify merge value 
+    @s::ArmorItems .. n{id:'iron_boots', Count:1b} ##append
 }
 ```
 
@@ -407,13 +471,11 @@ display{
         rendertype hearts
         display sidebar
     }
-    scb test j{""} {
-
-    }
+    
     @s bossbar foo:newboss 
                  ##bossbar set players
     bossbar foo:newboss j{""}
-    bossbar foo:newboss j{""} {
+    bossbar foo:newboss {
 
     }
   
@@ -500,11 +562,12 @@ entity(pig) < ~ ~ ~ > n{}
 entity(player) xxxx
 ```
 
-初始化指定了uuid，uuid可以在项目文件中配置/自动生成，可以使用@xxxx来选中该实体
+初始化使用假名，而实际上指定了uuid，uuid可以在项目文件中配置/自动生成，可以使用@xxxx来选中该实体
 
 ```
-entity(pig) < ~ ~ ~ > xxxx n{} {   
-    tp < ~ ~ ~ >
+entity(pig) < ~ ~ ~ > xxxx n{} 
+entity @xxxx{   
+    .tp < ~ ~ ~ >
 }
 ```
 
@@ -512,13 +575,13 @@ entity(pig) < ~ ~ ~ > xxxx n{} {
 
 ```
 entity{
-    @s tp < ~ ~ ~ >                                    ##tp
-    @s tag+= temp                                      ##tag
-    @s tag-= temp                                      ##tag
-    @s effect+=                                        ##effect give
-    @s effect-=                                        ##effect clear
-    @s kill
-    @s attr::generic.attack_damage +=
+    @s.tp < ~ ~ ~ >                                    ##tp
+    @s.tag+= temp                                      ##tag
+    @s.tag-= temp                                      ##tag
+    @s.effect+=                                        ##effect give
+    @s.effect-=                                        ##effect clear
+    @s.kill
+    @s.attr::generic.attack_damage +=
 }
 ```
 
@@ -526,8 +589,8 @@ entity{
 
 ```
 entity @xxxx{
-    tp < ~ ~ ~ >
-    tag+= temp
+    .tp < ~ ~ ~ >
+    .tag+= temp
 }
 ```
 
@@ -557,17 +620,20 @@ block{
 }
 ```
 
+### world命令聚合
+
 ## 命令对象化
 
-相当于是entity命令聚合的简化处理
+相当于是entity命令聚合去掉框
 
 ```
 @s.kill 
 @s.tag +=
 @s.tp @r
-@s += minecraft:stone                      ##item 不用写了give
+@s.item += minecraft:stone                      ##give
+@s.item::armor.chest = xxx 4			       ##item
+@s.exec{}->{}							     ##execute as
 ```
-
 
 ## 支持脚本
 
@@ -585,3 +651,82 @@ block{
     }#}
 }}
 ```
+
+## 进阶函数设计
+
+### 数据类型
+
+#### 基本数据类型
+
+nbt:可以省略，默认是nbt的类型
+
+| 类型名称   |      |
+| ---------- | ---- |
+| scb        |      |
+| scb:int    |      |
+| nbt        |      |
+| nbt:bool   |      |
+| nbt:byte   |      |
+| nbt:short  |      |
+| nbt:int    |      |
+| nbt:long   |      |
+| nbt:float  |      |
+| nbt:double |      |
+| nbt:string |      |
+| nbt:byte[] |      |
+| nbt:int[]  |      |
+| nbt:long[] |      |
+| nbt:list   |      |
+| nbt:object |      |
+| exist      |      |
+
+#### NBT类型信息
+
+类型信息是可以自己设计或者来自原版（例如生物），每一次modify from，其实就是把对应的类型信息转移到自己身上来。
+
+```
+interface test:foo n{
+	Name:"",
+	Age:17,
+	Information:{}
+}
+```
+
+提前设计的类型信息，可以用于自动补全、判断nbt类型等等。
+
+这个类型应该是鸭子的。
+
+NBT类型信息加上只对本类型操作的func，就相当于class了。
+
+#### 带类型标记的赋值语法
+
+前置的方式进行类型的标记
+
+```
+nbt:float foo:test::value = 32f
+```
+
+### 函数
+
+不带类型标记的函数
+
+```
+func test:fun1(a,b){
+	return c
+}
+```
+
+带类型标记的函数
+
+```
+func test:func1(int a,int b) int {
+	
+}
+```
+
+函数执行
+
+```
+foo:test::value = func test:func1(a,b)
+```
+

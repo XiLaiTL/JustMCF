@@ -158,10 +158,10 @@ execChild
     | 'at' selector                                                                                  #execAt
     | 'facing' pos3Identifier                                                                        #execFacingPos
     | 'facing' selector anchor=('eyes'|'feet')                                                       #execFacingEntity
-    | 'positioned' pos3Identifier                                                                    #execPositionedPos
-    | 'positioned' selector                                                                          #execPostionedAs
-    | 'rotated' pos2Identifier                                                                       #execRotatedPos
-    | 'rotated' selector                                                                             #execRotatedAs
+    | ('positioned'|'pos') pos3Identifier                                                                    #execPositionedPos
+    | ('positioned'|'pos') selector                                                                          #execPostionedAs
+    | ('rotated'|'rot') pos2Identifier                                                                       #execRotatedPos
+    | ('rotated'|'rot') selector                                                                             #execRotatedAs
     |cond=('if'|'unless') selector                                                                   #execIfEntity
     |cond=('if'|'unless') scbIdentifier CompareOperation scbIdentifier                               #execIfScore
     |cond=('if'|'unless') scbIdentifier matchPart                                                    #execIfScoreMatches
