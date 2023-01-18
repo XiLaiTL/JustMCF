@@ -61,12 +61,13 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
             this.mcfunction["init"].push(`scoreboard players set ${num} ${this._option.scbExpression?.constNumberScbObjectiveName} ${num}`)
         }
     }
-    printAllMcfunction() {
+    printAllMcfunction(dealCommand:(code:string)=>string) {
         this.createInitFunc()
         for (const mcfunctionFileName in this.mcfunction) {
             console.log(mcfunctionFileName)
             for (const command of this.mcfunction[mcfunctionFileName]) {
-                console.log(`   ${command}`)
+                console.log(`   ${dealCommand(command)}`)
+                //TODO: add the commands which had deal to list
             }
         }
     }

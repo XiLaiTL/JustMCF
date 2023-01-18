@@ -3,11 +3,13 @@ import { evalAndReplace } from './EvalScript';
 import { JustMCFLexer } from './antlr/JustMCFLexer';
 import { JustMCFParser } from './antlr/JustMCFParser';
 import { JustMCFSimplifyVisitor } from './JustMCFSimplifyVisitor';
+import { convertBackLeagalCommands, convertLeagalCommands } from './LeagalCommand';
 
 export function execute(code: string) {
     const evalScriptCode = evalAndReplace(code)
+    const leagalCommandConvertCode = convertLeagalCommands(evalScriptCode)
 
-    const input = CharStreams.fromString(evalScriptCode)
+    const input = CharStreams.fromString(leagalCommandConvertCode)
     const lexer = new JustMCFLexer(input)
     const tokens = new CommonTokenStream(lexer)
     const parser = new JustMCFParser(tokens)
@@ -21,5 +23,5 @@ export function execute(code: string) {
         }
     }
     visitor.visit(mcfFile);
-    visitor.printAllMcfunction()
+    visitor.printAllMcfunction(convertBackLeagalCommands)
 }
