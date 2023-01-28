@@ -224,6 +224,8 @@ func #foo:utils/all{ ##自动创建一个function tag
 
 #### 执行条件(if/unless 子语句)
 
+对于if子语句来说，例如`if entity @e`可以省略if或者entity或者两者都省略只写`@e`。当然推荐使用省略entity的形式。这样对于unless子语句来说是统一的。
+
 ```
 {
     if @e[]                                      ##if entity
@@ -324,10 +326,18 @@ tellraw @s {"text":"hello"} ?=> sb1@s
 {if @e} && {if < ~ ~ ~ > stone} && foo:stor::bool
 ```
 
+对于execute中使用的if来说（unless则不行），上述语句可以写成
+
+```
+{entity @e} && {block < ~ ~ ~ > stone} && foo:stor::bool
+
+{@e} && { < ~ ~ ~ > stone} && foo:stor::bool
+```
+
 可以将exist值赋值给nbt
 
 ```
-foo:stor::bool_1 = {if @e} && {if ~ ~ ~ stone} 
+foo:stor::bool_1 = {if @e} && {if < ~ ~ ~ > stone} 
 ```
 
 exist值可以为`true`、`false`
@@ -434,7 +444,7 @@ for{foo:flower::temp |= ["abcd","efgh","ojbk"] }->func loopname{
 
 ### data命令聚合
 
-上述提到的NBT数据运算内容全部写在 `data{}`大括号里，merge要稍作修改，可以不带.nbt
+上述提到的NBT数据运算内容全部写在 `data{}`大括号里。merge语句可以不用带`.data`
 
 例如：
 
@@ -457,13 +467,17 @@ data{
 
 ```
 display{
-    @s text j{obj@s} 
+    @s.text j{obj@s} 
                  ## tellraw @s {"score":{"name":"@s","objective":"obj"}
-    @s title j{} 
+    @s.title j{} 
                  ## title @s title {}
-    @s actionbar j{} 
+    @s.title {
+        actionbar j{}
+        times 10 70 20
+    }
+    @s.actionbar j{} 
                  ## title @s actionbar {}
-    @s subtitle j{} 
+    @s.subtitle j{} 
                  ## title @s subtitle {}
     scb test "分数"
     scb test {
@@ -472,7 +486,7 @@ display{
         display sidebar
     }
     
-    @s bossbar foo:newboss 
+    @s.bossbar foo:newboss 
                  ##bossbar set players
     bossbar foo:newboss j{""}
     bossbar foo:newboss {
@@ -485,6 +499,28 @@ display{
 ```
 display @s{
 
+}
+```
+
+#### title命令聚合
+
+```
+title @s{
+    title j{}
+    subtitle j{}
+    actionbar j{}
+    clear
+    reset
+    times 10 70 20
+}
+```
+
+```
+title {
+    @s.title j{}
+    @s.subtitle j{}
+    @s.title.clear
+    @s.title.times 10 70 20
 }
 ```
 
@@ -501,7 +537,7 @@ bossbar foo:newboss "New Boss"  ##bossbar add
 
 ```
 bossbar foo:newboss {
-    max|players|value|visible ##bossbar get
+    get max|players|value|visible ##bossbar get
     remove 
     color  ##bossbar set
     max
@@ -520,7 +556,7 @@ bossbar foo:newboss {
 item{
     @e[]::armor.chest = xxx 4                        ##replace with
     @e[]::armor.chest = @s::armor.chest foo:modifier ##replace from
-    @e[]::armor.chest = foo:modifier                 ##modify
+    @e[]::armor.chest += foo:modifier                 ##modify
     @e[] += xxx 4                                    ##give
     @e[] -= xxx 4                                    ##clear
     < ~ ~ ~ > =                                   ##loot spawn
@@ -596,15 +632,18 @@ entity @xxxx{
 
 #### attribute命令聚合
 
+TODO:取代UUID，这里直接用name进行运算
+
 ```
 attr{
     @s::generic.attack_damage all             ##get
-    @s::generic.attack_damage *4              ##base get
-    @s::generic.attack_damage 
-    @s::generic.attack_damage =               ##set
-    @s::generic.attack_damage +=              ##modifier add
+    @s::generic.attack_damage base *4         ##base get
+    @s::generic.attack_damage base =          ##set
+    @s::generic.attack_damage += 0-0-0-0-0 test(+3)   ##modifier add uuid name value add
+    @s::generic.attack_damage += 0-0-0-0-0 test(*+3)  ##modifier add uuid name value multiply_base
+    @s::generic.attack_damage += 0-0-0-0-0 test(*3)   ##modifier add uuid name value multiply
     @s::generic.attack_damage -=              ##modifier remove
-    @s::generic.attack_damage 0-0-0-0 *4      ##modifier get
+    @s::generic.attack_damage 0-0-0-0-0 *4      ##modifier get
 } 
 ```
 

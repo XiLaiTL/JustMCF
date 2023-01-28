@@ -55,3 +55,12 @@ func test:a3 {
     
     `)
 })
+
+test('Name Used Function', () => {
+    execute(`
+func test:as {
+    say 1
+}
+    
+    `)
+})

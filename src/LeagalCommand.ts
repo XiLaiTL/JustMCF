@@ -5,7 +5,7 @@ const leagalCommands = [
     'ban',
     'ban-ip',
     'banlist',
-    'bossbar',
+//    'bossbar',
     'camerashake',
     'changesetting',
     'clear',
@@ -95,7 +95,7 @@ const leagalCommands = [
     'testforblocks',
     'tickingarea',
     'time',
-    'title',
+ //   'title',
     'titleraw',
     'tm',
     'toggledownfall',
@@ -122,6 +122,14 @@ export function convertLeagalCommands(code: string):string {
     for (const commandToken of improvedCommand) {
         const regex = new RegExp(String.raw`(?<=\n\s*)${commandToken}\s*\{`, 'g')
         resCode = resCode.replace(regex,`++${commandToken} {`)
+    }
+    {
+        const regex = /(?<=\n\s*)(?<![A-Z0-9a-z\-_+.])(?<!\+\+)title(?=\s@(p|a|r|s|e)(\[(.)+?\])?\s(clear|reset|title|subtitle|actionbar|times)(\s|\n))/g
+        resCode = resCode.replace(regex,`/title`)
+    }
+    {
+        const regex = /(?<=\n\s*)(?<![A-Z0-9a-z\-_+.])(?<!\+\+)bossbar(?=\s(add|get|list|remove|set)(\s|\n))/g
+        resCode = resCode.replace(regex,`/bossbar`)
     }
     for (const commandToken of leagalCommands) {
         const regex = new RegExp(String.raw`(?<=\n\s*)(?<![A-Z0-9a-z\-_+.])(?<!\+\+)${commandToken}\s`, 'g')
