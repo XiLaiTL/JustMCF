@@ -109,7 +109,8 @@ const leagalCommands = [
     'worldborder',
     'worldbuilder',
     'wsserver',
-    'xp'
+    'xp',
+    '#'
 ]
 const improvedCommand = [
     'item',

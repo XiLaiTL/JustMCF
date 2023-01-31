@@ -40,28 +40,43 @@ noInExecStatement
 leagalCommand : LeagalCommand;
 
 nameSpaceStatement
-    : ('namsp'|'namespace') acceptableName? ('[' nameSpaceSettings* ']')? '{' nameSpaceStatementInner* '}'
+    : ('namsp'|'namespace') acceptableName? ('[' (nameSpaceSettings ','?)* ']')? '{' nameSpaceStatementInner* '}'
     ;
 nameSpaceSettings
-    : 'func' '=' acceptableName #nameSpaceSettingsFunc
-    | 'block' '=' acceptableName #nameSpaceSettingsBlock
+    : type='func' '=' acceptableName #nameSpaceSettingsFunc
+    | type='block' '=' acceptableName #nameSpaceSettingsBlock
+    | type='storage' '=' acceptableName #nameSpaceSettingsStorage
+    | type='bossbar' '='  acceptableName #nameSpaceSettingsBossbar
+    | type='biome' '=' acceptableName #nameSpaceSettingsBiome
+    | type='predicate' '=' acceptableName #nameSpaceSettingsPredicate
+    | type=('dim'|'dimension') '=' acceptableName #nameSpaceSettingsDim
+    | type='item' '=' acceptableName #nameSpaceSettingsItem
+    | type='loot' '=' acceptableName #nameSpaceSettingsLoot
+    | type='item_modifier' '=' acceptableName #nameSpaceSettingsItemModifier
+    | type='default' '=' acceptableName #nameSpaceSettingsDefault
+    | type='default' #nameSpaceSettingsJustDefault
     ;
 nameSpaceStatementInner
     : funcTagStatement
     | funcTagStatementInner
     ;
 funcTagStatement
-    : 'func' tagNameSpace '{' funcTagStatementInner* '}'
+    : 'func' tagNameSpaceFunc('[' (funcTagSettings ','?)* ']')? '{' funcTagStatementInner* '}'
+    ;
+funcTagSettings
+    : 'replace' '=' BOOL #funcTagSettingsReplace
+    | 'replaced' #funcTagSettingsReplaced
     ;
 funcTagStatementInner
-    : funcStatement
-    | funcImproveStatement
+    : funcStatement #funcTagSIFuncS
+    | funcImproveStatement #funcTagSIFuncImproveS
+    | funcTagStatement #funcTagSIFuncTagS
     ;
 funcStatement
-    : 'func' nameSpace ('tagged' nameSpace (',' nameSpace)*)? '{' statementInner* '}'
+    : 'func' nameSpaceFunc ('tagged' tagNameSpaceFunc (',' tagNameSpaceFunc)*)? '{' statementInner* '}'
     ;
 funcImproveStatement
-    : 'func' nameSpace '(' funcImproveParam (',' funcImproveParam)* ')' typeName? '{' funcImproveStatementInner*  '}'
+    : 'func' nameSpaceFunc '(' funcImproveParam (',' funcImproveParam)* ')' typeName? '{' funcImproveStatementInner*  '}'
     ;
 funcImproveParam
     : typeName? acceptableName
@@ -73,8 +88,11 @@ funcImproveStatementInner
 returnStatement
     : 'return' dataIdentifier
     ;
-funcRunStatement: 'func' nameSpace;
-funcImproveRunExpression: 'func' nameSpace '('funcImproveRunParam (',' funcImproveRunParam)* ')';
+funcRunStatement
+    : 'func' nameSpaceFunc
+    | 'func' tagNameSpaceFunc
+    ;
+funcImproveRunExpression: 'func' nameSpaceFunc '('funcImproveRunParam (',' funcImproveRunParam)* ')';
 funcImproveRunParam
     : dataIdentifier
     ;
@@ -87,8 +105,8 @@ execStoreChild
     | '?=>' scbIdentifier                                                               #execStoreSuccessScore
     | '=>' dataIdentifier (NumberType '*' NUMBER)?                                  #execStoreResultData
     | '?=>' dataIdentifier (NumberType '*' NUMBER)?                                 #execStoreSuccessData
-    | '=>' 'bossbar' nameSpace value=('value'|'max')?                                   #execStoreResultBossbar
-    | '?=>' 'bossbar' nameSpace value=('value'|'max')?                                  #execStoreSuccessBossbar
+    | '=>' 'bossbar' nameSpaceBossbar value=('value'|'max')?                                   #execStoreResultBossbar
+    | '?=>' 'bossbar' nameSpaceBossbar value=('value'|'max')?                                  #execStoreSuccessBossbar
     ;
 
 execRunChild
@@ -99,7 +117,7 @@ execRunChild
 execChild
     : 'align' AcceptableName                                                                         #execAlign
     | 'anchored' anchor=('eyes'|'feet')                                                              #execAnchored
-    | 'in' nameSpace                                                                                 #execIn
+    | 'in' nameSpaceDim                                                                                 #execIn
     | 'as' selector                                                                                  #execAs
     | 'at' selector                                                                                  #execAt
     | 'facing' pos3Identifier                                                                        #execFacingPos
@@ -111,11 +129,11 @@ execChild
     |cond=('if'|'unless')? 'entity'? selector                                                                   #execIfEntity
     |cond=('if'|'unless')? 'score'? scbIdentifier CompareOperation scbIdentifier                               #execIfScore
     |cond=('if'|'unless')? 'score'? scbIdentifier matchPart                                                    #execIfScoreMatches
-    |cond=('if'|'unless')? 'predicate'? nameSpace                                                                  #execPredicate
+    |cond=('if'|'unless')? 'predicate'? nameSpacePredicate                                                                  #execPredicate
     |cond=('if'|'unless')? 'block'? pos3Identifier blockIdentifier                                             #execIfBlock
     |cond=('if'|'unless')? 'blocks'? pos3Identifier pos3Identifier pos3Identifier scan_mode=('all'|'masked')    #execIfBlocks
     |cond=('if'|'unless')? 'data'? dataIdentifier                                                             #execIfData
-    |cond=('if'|'unless')? 'biome' pos3Identifier nameSpace                                           #execIfBiome
+    |cond=('if'|'unless')? 'biome' pos3Identifier nameSpaceBiome                                           #execIfBiome
     | execStoreChild                                                                                 #execStore
     ;
 
@@ -129,12 +147,12 @@ matchPart
     ;
 
 dataIdentifier
-    : nameSpace '::' nbtPath                                                                          #dataStorage
+    : nameSpaceStorage '::' nbtPath                                                                          #dataStorage
     | selector '::' nbtPath                                                                           #dataEntity
     | pos3Identifier '::' nbtPath                                                                     #dataBlock
     ;
 dataMergeExpression
-    : nameSpace '|=' nbt                                                                              #dataMergeStorage
+    : nameSpaceStorage '|=' nbt                                                                              #dataMergeStorage
     | selector '|=' nbt                                                                               #dataMergeEntity
     | pos3Identifier '|=' nbt                                                                         #dataMergeBlock
     ;
@@ -170,6 +188,7 @@ scbOperationExpression
     | scbIdentifier '>>' scbIdentifier                                                                #scbOptMaxFunc
     | scbIdentifier '=' scbIdentifier                                                                 #scbOptAssign
     | scbIdentifier 'reset'                                                                           #scbReset
+    | scbIdentifier 'enable'                                                                          #scbEnable
     | scbIdentifier ':=' scbSingleOperationExpression                                                 #scbOptExpression
     ;
 scbSingleOperationExpression
@@ -192,7 +211,7 @@ pos5Identifier: '<' pos1 pos1 pos1 pos1 pos1 '>';
 pos1: Pos1 | NUMBER;
 Pos1: ('~'|'^') NUMBER | ('~'|'^') ; //没写小数
 
-blockIdentifier:registerName blockstate? nbt? ;
+blockIdentifier:nameSpaceBlock blockstate? nbt? ;
 blockstate: '[' (.)+? ']';
 
 selector
@@ -206,43 +225,60 @@ Selector: '@s' | '@r' | '@a' | '@e' | '@p';
 //script: '{{' (.)+? '}}';
 
 nameSpace
-    : acceptableName ':' resourceLocation #nameSpaceWith
-    | resourceLocation #nameSpaceDefault
+    : acceptableName op=':' resourceLocation
+    | resourceLocation
     ;
+nameSpaceBlock:nameSpace;
+nameSpaceFunc:nameSpace;
+nameSpaceStorage:nameSpace;
+nameSpaceBossbar:nameSpace;
+nameSpaceBiome:nameSpace;
+nameSpaceDim:nameSpace;
+nameSpacePredicate:nameSpace;
+nameSpaceItem:nameSpace;
+nameSpaceLoot:nameSpace;
+nameSpaceItemModifier:nameSpace;
 tagNameSpace
     : '#' nameSpace
     ;
+tagNameSpaceItem:tagNameSpace;
+tagNameSpaceBlock:tagNameSpace;
+tagNameSpaceFunc:tagNameSpace;
+tagNameSpaceEntity:tagNameSpace;
 registerName: (acceptableName ':')? acceptableName;
 
 Key:  'namsp'|'namespace'
     | 'exec' | 'align' | 'anchored' | 'eyes'| 'feet'|'in' |'as' |'at' |'facing' | 'postitioned' | 'pos' | 'rotated' |'rot'|'if'|'unless'|'all' | 'masked' |'biome'|'value'|'max'
     | 'entity' | 'score' |'predicate' |'block' |'blocks' 
-    | 'scb' | 'displayname'|'rendertype'|'display'
+    | 'scb' | 'displayname'|'rendertype'|'display'|'enable'|'list'
     | 'data' | 'reset' |'add'| 'remove'
     | 'func' | 'tagged' |'return'
-    | 'default'|'player'
+    | 'default'|'player'|'players'
     | 'bossbar'|'visible'|'blue'|'green'|'pink'|'purple'|'red'|'white'|'yellow'|'color'|'name'|'style'|'notched_6'|'notched_10'|'notched_12'|'notched_20'|'progress'|'set'
     | 'title'|'subtitle'|'actionbar'|'times'
     | 'text'|'item'|'loot'|'give'|'clear'|'fish'|'kill'|'mine'|'mainhand'|'offhand'
     | 'attr'|'base'|'destroy'|'keep'|'replace'|'hollow'|'outline'|'force'|'move'|'normal'
     | 'interface'
     | 'while'|'for'
+    | 'replaced'
+    | 'dim'|'dimension'|'item_modifier'
     ;
 NumberType
     : 'byte'|'short'|'int'|'long'|'float'|'double'
     ;
 AcceptableName: [a-z_][a-z_\-0-9.]* ;
 acceptableName: AcceptableName | Key | NumberType;
+criterion: nameSpace;
 NBTName: [a-z_A-Z][a-z_\-0-9.A-Z]* ;
 nbtName: AcceptableName | NBTName | Key | NumberType;
 resourceLocation: acceptableName ('/' acceptableName)*;
 typeName: (acceptableName ':')? acceptableName ('['']')?;
 item_slot: acceptableName;
 item_predicate
-    : (nameSpace| tagNameSpace) (snbt|nbt)?
+    : (nameSpaceItem| tagNameSpaceItem) (snbt|nbt)?
     ;
 block_predicate
-    : (nameSpace| tagNameSpace) blockstate? (snbt|nbt)?
+    : (nameSpaceBlock| tagNameSpaceBlock) blockstate? (snbt|nbt)?
     ; 
 
 UUID16_:   HEX{1,8} '-'HEX{1,4}'-'HEX{1,4}'-'HEX{1,4}'-'HEX{1,12}  ;
@@ -250,11 +286,16 @@ UUID16_:   HEX{1,8} '-'HEX{1,4}'-'HEX{1,4}'-'HEX{1,4}'-'HEX{1,12}  ;
 
 dataStatement: 'data' '{' dataOperationExpression* '}';
 
-scbPlayerStatement: 'scb' '{' scbOperationExpression* '}';
+scbPlayerStatement: 'scb' '{' scbPlayerStatementInner* '}';
+scbPlayerStatementInner
+    : scbOperationExpression #scbPlayerSIScbOperationExpression
+    | selector? 'list' #scbPlayerSIScbList
+    ;
 scbObjectiveStatement
-    : 'scb'( '(' type=acceptableName ')')? objective=acceptableName display=json ('{' ('.'? scbStatementInner)* '}')? #scbObjSDeclareWithName
-    | 'scb'( '(' type=acceptableName ')')? objective=acceptableName 'default' ('{'('.'? scbStatementInner)* '}')? #scbObjSDeclareDefault
-    | 'scb' objective=acceptableName '{' ('.'? scbStatementInner)* '}' #scbObjSOperation
+    : 'scb'( '(' criterion ')')? acceptableName display=json ('{' ('.'? scbStatementInner)* '}')? #scbObjSDeclareWithName
+    | 'scb' '(' criterion ')' acceptableName #scbObjSDeclareSingle
+    | 'scb'( '(' criterion ')')? acceptableName 'default' ('{'('.'? scbStatementInner)* '}')? #scbObjSDeclareDefault
+    | 'scb' acceptableName '{' ('.'? scbStatementInner)* '}' #scbObjSOperation
     ;
 scbStatementInner
     : 'remove' #scbSIRemove
@@ -263,26 +304,26 @@ scbStatementInner
     | 'display' acceptableName #scbSIDisplay
     ;
 
-bossbarStatement
-    : 'bossbar' nameSpace json ('{' ( '.'? bossbarStatementInner)* '}')? #bossbarSDeclare
-    | 'bossbar' nameSpace '{' ( '.'? bossbarStatementInner)* '}' #bossbarSOperation
+bossbarStatement    
+    : 'bossbar' nameSpaceBossbar json ('{' ( '.'? bossbarStatementInner)* '}')? #bossbarSDeclare
+    | 'bossbar' nameSpaceBossbar '{' ( '.'? bossbarStatementInner)* '}' #bossbarSOperation
     ;
 bossbarStatementInner
-    : 'get'? ('max'|'player'|'value'|'visible') #bossbarSIGet
-    | 'remove'  #bossbarSIRemove
-    | 'set'? 'color' ('blue'|'green'|'pink'|'purple'|'red'|'white'|'yellow')  #bossbarSISetColor
-    | 'set'? 'max' NUMBER  #bossbarSISetMax
-    | 'set'? 'name' json  #bossbarSISetName
-    | 'set'? 'player' selector  #bossbarSISetPlayer
-    | 'set'? 'player' 'default'  #bossbarSISetPlayerNull
-    | 'set'? 'style' ('notched_6'|'notched_10'|'notched_12'|'notched_20'|'progress')  #bossbarSISetStyle
-    | 'set'? 'value' NUMBER  #bossbarSISetValue
-    | 'set'? 'visible' ('true'|'false') #bossbarSISetVisible
+    : 'get'? type=('max'|'player'|'value'|'visible')                                  #bossbarSIGet
+    | 'remove'                                                                  #bossbarSIRemove
+    | 'set'? 'color' color=('blue'|'green'|'pink'|'purple'|'red'|'white'|'yellow')  #bossbarSISetColor
+    | 'set'? 'max' NUMBER                                                           #bossbarSISetMax
+    | 'set'? 'name' json                                                        #bossbarSISetName
+    | 'set'? 'players' selector                                                              #bossbarSISetPlayer
+    | 'set'? 'players' 'default'                                                 #bossbarSISetPlayerNull
+    | 'set'? 'style' style=('notched_6'|'notched_10'|'notched_12'|'notched_20'|'progress')  #bossbarSISetStyle
+    | 'set'? 'value' NUMBER                                                          #bossbarSISetValue
+    | 'set'? 'visible' bool=('true'|'false')                                                      #bossbarSISetVisible
     ;
 bossbarOperationExpression
-    : 'bossbar' nameSpace ('max'|'player'|'value'|'visible')? #bossbarOpExprGet
-    | 'bossbar' nameSpace 'value'? '=' NUMBER #bossbarOpExprAssignValue
-    | 'bossbar' nameSpace 'max' '=' NUMBER #bossbarOpExprAssignMax
+    : 'bossbar' nameSpaceBossbar type=('max'|'player'|'value'|'visible')?             #bossbarOpExprGet
+    | 'bossbar' nameSpaceBossbar 'value'? '=' NUMBER                            #bossbarOpExprAssignValue
+    | 'bossbar' nameSpaceBossbar 'max' '=' NUMBER                                    #bossbarOpExprAssignMax
     ;
 
 titleStatement
@@ -320,7 +361,7 @@ displayIndependentStatementInner
     : titleIndependentStatementInner #displayISITitleSingle
     | 'title' '{' titleSelectorStatementInner* '}' #displayISITitleCompound
     | 'text' json #displayISIText
-    | 'bossbar' json #displayISIBossbar
+    | 'bossbar' nameSpaceBossbar json #displayISIBossbar
     ;
 itemStatement
     : 'item' '{' itemStatementInner*'}' #itemSCompound
@@ -345,9 +386,9 @@ lootSelectorStatementInner
 lootIndependentStatementInnerGive: ('+='|'give') lootSource;
 lootIndependentStatementInnerReplaceEntity: item_slot '+=' lootSource;
 lootSource
-    :'fish' nameSpace pos3Identifier hand=('mainhand'|'offhand')? #lootSourceFishHand
-    |'fish' nameSpace pos3Identifier registerName? #lootSourceFishTool
-    |'loot'? nameSpace #lootSourceLoot
+    :'fish' nameSpaceLoot pos3Identifier hand=('mainhand'|'offhand')? #lootSourceFishHand
+    |'fish' nameSpaceLoot pos3Identifier registerName? #lootSourceFishTool
+    |'loot'? nameSpaceLoot #lootSourceLoot
     |'kill'? selector #lootSourceKill
     |'mine'? pos3Identifier hand=('mainhand'|'offhand')? #lootSourceMineHand
     |'mine'? pos3Identifier registerName? #lootSourceMineTool
@@ -366,9 +407,9 @@ itemSelectorStatementInner
     ;
 itemIndependentStatementInner
     : item_slot '=' registerName NUMBER? #itemISIReplaceWith
-    | item_slot '=' selector '::' item_slot nameSpace #itemISIReplaceFromEntity
-    | item_slot '=' pos3Identifier '::' item_slot nameSpace #itemISIReplaceFromBlock
-    | item_slot '+=' nameSpace #itemISIModify
+    | item_slot '=' selector '::' item_slot nameSpaceItemModifier #itemISIReplaceFromEntity
+    | item_slot '=' pos3Identifier '::' item_slot nameSpaceItemModifier #itemISIReplaceFromBlock
+    | item_slot '+=' nameSpaceItemModifier #itemISIModify
     ;
 giveAndClearIndependentStatementInner
     : ('+='|'give') registerName NUMBER? #giveISI
@@ -451,7 +492,7 @@ blockStatement
     | pos3Identifier pos3Identifier pos3Identifier 'filtered ' block_predicate mod=('force'|'move'|'normal')? #blockSCloneFiltered
     ;
 interfaceStatement
-    : 'interface' nameSpace nbt
+    : 'interface' nameSpaceStorage nbt
     ;
 dataAssignExistExpression
     : dataIdentifier '=' existExpression
@@ -695,4 +736,11 @@ LeagalCommand
     |'/worldbuilder ' ~[\r\n]*
     |'/wsserver ' ~[\r\n]*
     |'/xp ' ~[\r\n]*
+    |'/# '  ~[\r\n]*
+    ;
+LineComment
+    : '##'  ~[\r\n]* -> skip
+    ;
+BlockComment
+    : '#=' .*? '=#' -> skip
     ;
