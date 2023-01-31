@@ -192,7 +192,7 @@ import { BossbarOpExprGetContext } from "./JustMCFParser";
 import { BossbarOpExprAssignValueContext } from "./JustMCFParser";
 import { BossbarOpExprAssignMaxContext } from "./JustMCFParser";
 import { AttrSCompoundContext } from "./JustMCFParser";
-import { AttrSSelectorContext } from "./JustMCFParser";
+import { AttrSSelectorCompoundContext } from "./JustMCFParser";
 import { BlockSSetblockContext } from "./JustMCFParser";
 import { BlockSFillContext } from "./JustMCFParser";
 import { BlockSFillReplaceContext } from "./JustMCFParser";
@@ -1883,12 +1883,12 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitAttrSCompound?: (ctx: AttrSCompoundContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by the `attrSSelector`
+	 * Visit a parse tree produced by the `attrSSelectorCompound`
 	 * labeled alternative in `JustMCFParser.attrStatement`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitAttrSSelector?: (ctx: AttrSSelectorContext) => Result;
+	visitAttrSSelectorCompound?: (ctx: AttrSSelectorCompoundContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `blockSSetblock`

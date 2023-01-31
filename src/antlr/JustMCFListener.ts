@@ -192,7 +192,7 @@ import { BossbarOpExprGetContext } from "./JustMCFParser";
 import { BossbarOpExprAssignValueContext } from "./JustMCFParser";
 import { BossbarOpExprAssignMaxContext } from "./JustMCFParser";
 import { AttrSCompoundContext } from "./JustMCFParser";
-import { AttrSSelectorContext } from "./JustMCFParser";
+import { AttrSSelectorCompoundContext } from "./JustMCFParser";
 import { BlockSSetblockContext } from "./JustMCFParser";
 import { BlockSFillContext } from "./JustMCFParser";
 import { BlockSFillReplaceContext } from "./JustMCFParser";
@@ -2825,17 +2825,17 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitAttrSCompound?: (ctx: AttrSCompoundContext) => void;
 
 	/**
-	 * Enter a parse tree produced by the `attrSSelector`
+	 * Enter a parse tree produced by the `attrSSelectorCompound`
 	 * labeled alternative in `JustMCFParser.attrStatement`.
 	 * @param ctx the parse tree
 	 */
-	enterAttrSSelector?: (ctx: AttrSSelectorContext) => void;
+	enterAttrSSelectorCompound?: (ctx: AttrSSelectorCompoundContext) => void;
 	/**
-	 * Exit a parse tree produced by the `attrSSelector`
+	 * Exit a parse tree produced by the `attrSSelectorCompound`
 	 * labeled alternative in `JustMCFParser.attrStatement`.
 	 * @param ctx the parse tree
 	 */
-	exitAttrSSelector?: (ctx: AttrSSelectorContext) => void;
+	exitAttrSSelectorCompound?: (ctx: AttrSSelectorCompoundContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `blockSSetblock`

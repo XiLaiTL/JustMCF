@@ -1,5 +1,5 @@
 import { ParseTree } from 'antlr4ts/tree/ParseTree';
-import { FuncTagSettingsReplaceContext, FuncTagSettingsReplacedContext, FuncTagSIFuncImproveSContext, FuncTagSIFuncSContext, FuncTagSIFuncTagSContext, NameSpaceBiomeContext, NameSpaceBlockContext, NameSpaceBossbarContext, NameSpaceDimContext, NameSpaceFuncContext, NameSpaceItemContext, NameSpaceItemModifierContext, NameSpaceLootContext, NameSpacePredicateContext, NameSpaceSettingsBiomeContext, NameSpaceSettingsBossbarContext, NameSpaceSettingsDefaultContext, NameSpaceSettingsDimContext, NameSpaceSettingsItemContext, NameSpaceSettingsItemModifierContext, NameSpaceSettingsJustDefaultContext, NameSpaceSettingsLootContext, NameSpaceSettingsPredicateContext, NameSpaceSettingsStorageContext, NameSpaceStorageContext, TagNameSpaceBlockContext, TagNameSpaceContext, TagNameSpaceEntityContext, TagNameSpaceFuncContext, TagNameSpaceItemContext, ScbPlayerSIScbListContext, ScbObjSDeclareSingleContext, CriterionContext, BossbarSDeclareContext, BossbarSOperationContext, BossbarSIGetContext, BossbarSISetColorContext, BossbarSISetMaxContext, BossbarSISetNameContext, BossbarSISetPlayerContext, BossbarSISetPlayerNullContext, BossbarSISetStyleContext, BossbarSISetValueContext, BossbarSISetVisibleContext, BossbarOpExprGetContext, BossbarOpExprAssignValueContext, BossbarOpExprAssignMaxContext, TitleSCompoundContext, BossbarSIRemoveContext, BossbarStatementInnerContext, TitleSSelectorCompoundContext, TitleSISelectorSingleContext, TitleSISelectorCompoundContext, TitleSSIJsonContext, TitleSSIClearContext, TitleSSIResetContext, TitleSSITimesContext, TitleISIJsonContext, TitleISIClearContext, TitleISIResetContext, TitleISITimesContext, TitleSelectorStatementInnerContext, DisplaySCompoundContext, AttrISIGetBaseContext, AttrISIGetContext, AttrISIModifierAddContext, AttrISIModifierGetContext, AttrISIModifierRemoveContext, AttrISISetBaseContext, AttrSCompoundContext, AttrSISelectorCompoundContext, AttrSISingleContext, AttrSSelectorContext, BlockSCloneContext, BlockSCloneFilteredContext, BlockSFillContext, BlockSFillReplaceContext, BlockSSetblockContext, ClearISIContext, DisplayISIBossbarContext, DisplayISITextContext, DisplayISITitleCompoundContext, DisplayISITitleSingleContext, DisplaySIBossbarContext, DisplaySIScbContext, DisplaySISelectorCompoundContext, DisplaySISelectorSingleContext, DisplaySSelectorCompoundContext, EffectISIClearAllContext, EffectISIClearContext, EffectISIClearSpContext, EffectISIGiveContext, EntityISIAttrCompoundContext, EntityISIAttrSingleContext, EntityISIDisplayCompoundContext, EntityISIDisplaySingleContext, EntityISIEffectContext, EntityISIExecContext, EntityISIGiveAndClearContext, EntityISIItemCompoundContext, EntityISIItemSingleContext, EntityISIKillContext, EntityISILootCompoundContext, EntityISILootGiveSingleContext, EntityISILootSingleContext, EntityISITagContext, EntityISITitleCompoundContext, EntityISITpContext, EntitySCompoundContext, EntitySDeclareContext, EntitySDeclarePlayerContext, EntitySIEntityExpressionContext, EntitySISelectorCompoundContext, EntitySSelectorCompoundContext, GiveISIContext, ItemISIModifyContext, ItemISIReplaceFromBlockContext, ItemISIReplaceFromEntityContext, ItemISIReplaceWithContext, ItemSCompoundContext, ItemSIBlockContext, ItemSIEntityContext, ItemSIGiveAndClearContext, ItemSILootInnerContext, ItemSISelectorNestContext, ItemSSelectorCompoundContext, ItemSSIGiveAndClearContext, ItemSSIItemContext, ItemSSILootInnerContext, LootSCompoundContext, LootSIGiveContext, LootSIInsertContext, LootSIReplaceBlockContext, LootSIReplaceEntityContext, LootSISelectorNestContext, LootSISpawnContext, LootSourceFishHandContext, LootSourceFishToolContext, LootSourceKillContext, LootSourceLootContext, LootSourceMineHandContext, LootSourceMineToolContext, LootSSelectorCompoundContext, TagISIAddContext, TagISIListContext, TagISIRemoveContext, TpISIDestinationContext, TpISIFacingContext, TpISIFacingEntityContext, TpISIPosContext, TpISIRotatedContext, TpISIRotatedDivContext } from './antlr/JustMCFParser';
+import { FuncTagSettingsReplaceContext, FuncTagSettingsReplacedContext, FuncTagSIFuncImproveSContext, FuncTagSIFuncSContext, FuncTagSIFuncTagSContext, NameSpaceBiomeContext, NameSpaceBlockContext, NameSpaceBossbarContext, NameSpaceDimContext, NameSpaceFuncContext, NameSpaceItemContext, NameSpaceItemModifierContext, NameSpaceLootContext, NameSpacePredicateContext, NameSpaceSettingsBiomeContext, NameSpaceSettingsBossbarContext, NameSpaceSettingsDefaultContext, NameSpaceSettingsDimContext, NameSpaceSettingsItemContext, NameSpaceSettingsItemModifierContext, NameSpaceSettingsJustDefaultContext, NameSpaceSettingsLootContext, NameSpaceSettingsPredicateContext, NameSpaceSettingsStorageContext, NameSpaceStorageContext, TagNameSpaceBlockContext, TagNameSpaceContext, TagNameSpaceEntityContext, TagNameSpaceFuncContext, TagNameSpaceItemContext, ScbPlayerSIScbListContext, ScbObjSDeclareSingleContext, CriterionContext, BossbarSDeclareContext, BossbarSOperationContext, BossbarSIGetContext, BossbarSISetColorContext, BossbarSISetMaxContext, BossbarSISetNameContext, BossbarSISetPlayerContext, BossbarSISetPlayerNullContext, BossbarSISetStyleContext, BossbarSISetValueContext, BossbarSISetVisibleContext, BossbarOpExprGetContext, BossbarOpExprAssignValueContext, BossbarOpExprAssignMaxContext, TitleSCompoundContext, BossbarSIRemoveContext, BossbarStatementInnerContext, TitleSSelectorCompoundContext, TitleSISelectorSingleContext, TitleSISelectorCompoundContext, TitleSSIJsonContext, TitleSSIClearContext, TitleSSIResetContext, TitleSSITimesContext, TitleISIJsonContext, TitleISIClearContext, TitleISIResetContext, TitleISITimesContext, TitleSelectorStatementInnerContext, DisplaySCompoundContext, AttrISIGetBaseContext, AttrISIGetContext, AttrISIModifierAddContext, AttrISIModifierGetContext, AttrISIModifierRemoveContext, AttrISISetBaseContext, AttrSCompoundContext, AttrSISelectorCompoundContext, AttrSISingleContext, AttrSSelectorCompoundContext, BlockSCloneContext, BlockSCloneFilteredContext, BlockSFillContext, BlockSFillReplaceContext, BlockSSetblockContext, ClearISIContext, DisplayISIBossbarContext, DisplayISITextContext, DisplayISITitleCompoundContext, DisplayISITitleSingleContext, DisplaySIBossbarContext, DisplaySIScbContext, DisplaySISelectorCompoundContext, DisplaySISelectorSingleContext, DisplaySSelectorCompoundContext, EffectISIClearAllContext, EffectISIClearContext, EffectISIClearSpContext, EffectISIGiveContext, EntityISIAttrCompoundContext, EntityISIAttrSingleContext, EntityISIDisplayCompoundContext, EntityISIDisplaySingleContext, EntityISIEffectContext, EntityISIExecContext, EntityISIGiveAndClearContext, EntityISIItemCompoundContext, EntityISIItemSingleContext, EntityISIKillContext, EntityISILootCompoundContext, EntityISILootGiveSingleContext, EntityISILootSingleContext, EntityISITagContext, EntityISITitleCompoundContext, EntityISITpContext, EntitySCompoundContext, EntitySDeclareContext, EntitySDeclarePlayerContext, EntitySIEntityExpressionContext, EntitySISelectorCompoundContext, EntitySSelectorCompoundContext, GiveISIContext, ItemISIModifyContext, ItemISIReplaceFromBlockContext, ItemISIReplaceFromEntityContext, ItemISIReplaceWithContext, ItemSCompoundContext, ItemSIBlockContext, ItemSIEntityContext, ItemSIGiveAndClearContext, ItemSILootInnerContext, ItemSISelectorNestContext, ItemSSelectorCompoundContext, ItemSSIGiveAndClearContext, ItemSSIItemContext, ItemSSILootInnerContext, LootSCompoundContext, LootSIGiveContext, LootSIInsertContext, LootSIReplaceBlockContext, LootSIReplaceEntityContext, LootSISelectorNestContext, LootSISpawnContext, LootSourceFishHandContext, LootSourceFishToolContext, LootSourceKillContext, LootSourceLootContext, LootSourceMineHandContext, LootSourceMineToolContext, LootSSelectorCompoundContext, TagISIAddContext, TagISIListContext, TagISIRemoveContext, TpISIDestinationContext, TpISIFacingContext, TpISIFacingEntityContext, TpISIPosContext, TpISIRotatedContext, TpISIRotatedDivContext, LootIndependentStatementInnerGiveContext, LootIndependentStatementInnerReplaceEntityContext, Item_slotContext, Item_predicateContext, SnbtContext, Block_predicateContext } from './antlr/JustMCFParser';
 import { ScbFuncExpressionContext } from "./antlr/JustMCFParser";
 import { ScbOptMulDivModExpressionContext } from "./antlr/JustMCFParser";
 import { ScbOptAddSubExpressionContext } from "./antlr/JustMCFParser";
@@ -109,6 +109,7 @@ import { JsonContext } from "./antlr/JustMCFParser";
 import { NbtPathContext } from "./antlr/JustMCFParser";
 import { JustMCFVisitor } from "./antlr/JustMCFVisitor";
 import { AbstractParseTreeVisitor } from "antlr4ts/tree/AbstractParseTreeVisitor";
+import { test } from 'vitest';
 
 export interface namespaceInfo{
     block?: string,
@@ -152,6 +153,12 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
 
     //function namespace id `namespace:resource_loaction`  + number
     private anonymousFunctionFatherNamespaceTimes: { [mcfunctionFileName: string]: number } = {};
+    updateAnonymousFunctionFatherNamespaceTimes(namespace: string) {
+        if (this.anonymousFunctionFatherNamespaceTimes[namespace] === undefined)
+            this.anonymousFunctionFatherNamespaceTimes[namespace] = 0
+        else
+            this.anonymousFunctionFatherNamespaceTimes[namespace] += 1
+    }
     //function namespace stack
     private tempFunctionNamespace: string[] = [];
 
@@ -220,18 +227,18 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
 
 /* Deal the Identifiers */
     // visitDataIdentifier?: ((ctx: DataIdentifierContext) => string[]) | undefined;
-    visitDataStorage(ctx: DataStorageContext) { return [`storage ${this.visitAndReturnFirst(ctx.nameSpaceStorage())} ${this.visitAndReturnFirst(ctx.nbtPath())}`] }
-    visitDataEntity(ctx: DataEntityContext) { return [`entity ${this.visitAndReturnFirst(ctx.selector())} ${this.visitAndReturnFirst(ctx.nbtPath())}`] }
-    visitDataBlock(ctx: DataBlockContext) { return [`block ${this.visitAndReturnFirst(ctx.pos3Identifier())} ${this.visitAndReturnFirst(ctx.nbtPath())}`] }
-    visitScbIdentifier(ctx: ScbIdentifierContext) { return [`${this.visitAndReturnFirst(ctx.selector())} ${this.visitAndReturnFirst(ctx.nbtName())}`] }
-    visitPos3Identifier(ctx: Pos3IdentifierContext) { return [`${this.visitAndReturnFirst(ctx.pos1(0))} ${this.visitAndReturnFirst(ctx.pos1(1))} ${this.visitAndReturnFirst(ctx.pos1(2))}`] }
-    visitPos2Identifier(ctx: Pos2IdentifierContext) { return [`${this.visitAndReturnFirst(ctx.pos1(0))} ${this.visitAndReturnFirst(ctx.pos1(1))}`] }
-    visitPos5Identifier(ctx: Pos5IdentifierContext) { return [`${this.visitAndReturnFirst(ctx.pos1(0))} ${this.visitAndReturnFirst(ctx.pos1(1))} ${this.visitAndReturnFirst(ctx.pos1(2))} ${this.visitAndReturnFirst(ctx.pos1(3))} ${this.visitAndReturnFirst(ctx.pos1(4))}`] }
+    visitDataStorage(ctx: DataStorageContext) { return [`storage ${this.v(ctx.nameSpaceStorage())} ${this.v(ctx.nbtPath())}`] }
+    visitDataEntity(ctx: DataEntityContext) { return [`entity ${this.v(ctx.selector())} ${this.v(ctx.nbtPath())}`] }
+    visitDataBlock(ctx: DataBlockContext) { return [`block ${this.v(ctx.pos3Identifier())} ${this.v(ctx.nbtPath())}`] }
+    visitScbIdentifier(ctx: ScbIdentifierContext) { return [`${this.v(ctx.selector())} ${this.v(ctx.nbtName())}`] }
+    visitPos3Identifier(ctx: Pos3IdentifierContext) { return [`${this.v(ctx.pos1(0))} ${this.v(ctx.pos1(1))} ${this.v(ctx.pos1(2))}`] }
+    visitPos2Identifier(ctx: Pos2IdentifierContext) { return [`${this.v(ctx.pos1(0))} ${this.v(ctx.pos1(1))}`] }
+    visitPos5Identifier(ctx: Pos5IdentifierContext) { return [`${this.v(ctx.pos1(0))} ${this.v(ctx.pos1(1))} ${this.v(ctx.pos1(2))} ${this.v(ctx.pos1(3))} ${this.v(ctx.pos1(4))}`] }
     visitPos1(ctx: Pos1Context) { return [ctx.text] }
     visitBlockIdentifier(ctx: BlockIdentifierContext) {
-        let block = `${this.visitAndReturnFirst(ctx.nameSpaceBlock())}`
-        if (ctx.blockstate() !== undefined) block = `${block}${this.visitAndReturnFirst(ctx.blockstate()!!)}`
-        if (ctx.nbt() !== undefined) block = `${block} ${this.visitAndReturnFirst(ctx.nbt()!!)}`
+        let block = `${this.v(ctx.nameSpaceBlock())}`
+        if (ctx.blockstate() !== undefined) block = `${block}${this.v(ctx.blockstate()!!)}`
+        if (ctx.nbt() !== undefined) block = `${block} ${this.v(ctx.nbt()!!)}`
         return [block]
     }
     visitBlockstate(ctx: BlockstateContext) { return [ctx.text] }
@@ -239,6 +246,25 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitSelector(ctx: SelectorContext) {
         if (/^@[parse]$/.test(ctx.text)) return [ctx.text]
         else return [ctx.text.replace("@", "")]
+    }
+    visitItem_slot(ctx: Item_slotContext) { return [ctx.text] }
+    visitItem_predicate(ctx: Item_predicateContext) {
+        const name = (ctx.nameSpaceItem() !== undefined)
+            ? this.v(ctx.nameSpaceItem()!!)
+            : this.v(ctx.tagNameSpaceItem()!!);
+        const nbt = (ctx.snbt() !== undefined) ? this.v(ctx.snbt()!!)
+            : (ctx.nbt() !== undefined) ? this.v(ctx.nbt()!!) : "";
+        return [`${name}${nbt}`]
+        
+    }
+    visitBlock_predicate(ctx: Block_predicateContext) {
+        const name = (ctx.nameSpaceBlock() !== undefined)
+            ? this.v(ctx.nameSpaceBlock()!!)
+            : this.v(ctx.tagNameSpaceBlock()!!);
+        const blockstate = (ctx.blockstate() !== undefined) ? this.v(ctx.blockstate()!!) : "";
+        const nbt = (ctx.snbt() !== undefined) ? this.v(ctx.snbt()!!)
+            : (ctx.nbt() !== undefined) ? this.v(ctx.nbt()!!) : "";
+        return [`${name}${blockstate}${nbt}`]
     }
 
 /* Deal the Namespace And Names */
@@ -285,7 +311,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         if (ctx.acceptableName() !== undefined) {
             let key: (keyof namespaceInfo)
             for ( key in this._option.namespace) {
-                this.namespace[this.namespace.length-1][key] = this.visitAndReturnFirst(ctx.acceptableName()!!)
+                this.namespace[this.namespace.length-1][key] = this.v(ctx.acceptableName()!!)
             }
         }
         for (const setting of ctx.nameSpaceSettings()) { this.visit(setting) }
@@ -294,22 +320,22 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         this.namespace.pop()
         return []
     }
-    visitNameSpaceSettingsFunc(ctx: NameSpaceSettingsFuncContext) { this.namespace[this.namespace.length-1]["func"] = this.visitAndReturnFirst(ctx.acceptableName()); return [] }
-    visitNameSpaceSettingsBlock(ctx: NameSpaceSettingsBlockContext){this.namespace[this.namespace.length-1]["block"] = this.visitAndReturnFirst(ctx.acceptableName()); return []}
-    visitNameSpaceSettingsStorage(ctx: NameSpaceSettingsStorageContext) { this.namespace[this.namespace.length-1]["storage"] = this.visitAndReturnFirst(ctx.acceptableName()); return [] }
-    visitNameSpaceSettingsBiome(ctx: NameSpaceSettingsBiomeContext){this.namespace[this.namespace.length-1]["biome"] = this.visitAndReturnFirst(ctx.acceptableName()); return []}
-    visitNameSpaceSettingsBossbar(ctx: NameSpaceSettingsBossbarContext){this.namespace[this.namespace.length-1]["bossbar"] = this.visitAndReturnFirst(ctx.acceptableName()); return []}
-    visitNameSpaceSettingsPredicate(ctx: NameSpaceSettingsPredicateContext){this.namespace[this.namespace.length-1]["predicate"] = this.visitAndReturnFirst(ctx.acceptableName()); return []}
-    visitNameSpaceSettingsItem(ctx: NameSpaceSettingsItemContext){this.namespace[this.namespace.length-1]["item"] = this.visitAndReturnFirst(ctx.acceptableName()); return []}
-    visitNameSpaceSettingsLoot(ctx: NameSpaceSettingsLootContext){this.namespace[this.namespace.length-1]["loot"] = this.visitAndReturnFirst(ctx.acceptableName()); return []}
-    visitNameSpaceSettingsItemModifier(ctx: NameSpaceSettingsItemModifierContext){this.namespace[this.namespace.length-1]["item_modifier"] = this.visitAndReturnFirst(ctx.acceptableName()); return []}
-    visitNameSpaceSettingsDim(ctx: NameSpaceSettingsDimContext){this.namespace[this.namespace.length-1]["dimension"] = this.visitAndReturnFirst(ctx.acceptableName()); return []}
+    visitNameSpaceSettingsFunc(ctx: NameSpaceSettingsFuncContext) { this.namespace[this.namespace.length-1]["func"] = this.v(ctx.acceptableName()); return [] }
+    visitNameSpaceSettingsBlock(ctx: NameSpaceSettingsBlockContext){this.namespace[this.namespace.length-1]["block"] = this.v(ctx.acceptableName()); return []}
+    visitNameSpaceSettingsStorage(ctx: NameSpaceSettingsStorageContext) { this.namespace[this.namespace.length-1]["storage"] = this.v(ctx.acceptableName()); return [] }
+    visitNameSpaceSettingsBiome(ctx: NameSpaceSettingsBiomeContext){this.namespace[this.namespace.length-1]["biome"] = this.v(ctx.acceptableName()); return []}
+    visitNameSpaceSettingsBossbar(ctx: NameSpaceSettingsBossbarContext){this.namespace[this.namespace.length-1]["bossbar"] = this.v(ctx.acceptableName()); return []}
+    visitNameSpaceSettingsPredicate(ctx: NameSpaceSettingsPredicateContext){this.namespace[this.namespace.length-1]["predicate"] = this.v(ctx.acceptableName()); return []}
+    visitNameSpaceSettingsItem(ctx: NameSpaceSettingsItemContext){this.namespace[this.namespace.length-1]["item"] = this.v(ctx.acceptableName()); return []}
+    visitNameSpaceSettingsLoot(ctx: NameSpaceSettingsLootContext){this.namespace[this.namespace.length-1]["loot"] = this.v(ctx.acceptableName()); return []}
+    visitNameSpaceSettingsItemModifier(ctx: NameSpaceSettingsItemModifierContext){this.namespace[this.namespace.length-1]["item_modifier"] = this.v(ctx.acceptableName()); return []}
+    visitNameSpaceSettingsDim(ctx: NameSpaceSettingsDimContext){this.namespace[this.namespace.length-1]["dimension"] = this.v(ctx.acceptableName()); return []}
 
     visitNameSpaceSettingsDefault(ctx: NameSpaceSettingsDefaultContext) {
         let key: (keyof namespaceInfo)
         for (key in this._option.namespace) {
             if(key != "func" && key != "storage")
-                this.namespace[this.namespace.length-1][key] = this.visitAndReturnFirst(ctx.acceptableName())
+                this.namespace[this.namespace.length-1][key] = this.v(ctx.acceptableName())
         }
         return []
     }
@@ -325,13 +351,13 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
 
 /* Function Tag Statement */
     visitFuncTagStatement(ctx: FuncTagStatementContext) {
-        const name = this.visitAndReturnFirst(ctx.tagNameSpaceFunc())
+        const name = this.v(ctx.tagNameSpaceFunc())
         for (const funcTagStatementSetting of ctx.funcTagSettings()) {
             const [key, value] = this.visit(funcTagStatementSetting)
             this.functionTag[name]["replace"] = value=="true"
         }
         for (const funcTagStatementInner of ctx.funcTagStatementInner()) {
-            this.functionTag[name].values.push(this.visitAndReturnFirst(funcTagStatementInner))
+            this.functionTag[name].values.push(this.v(funcTagStatementInner))
         }
         return []
     }
@@ -356,50 +382,40 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     }
 
     visitFuncStatement(ctx: FuncStatementContext) {
-        const namespace = this.visitAndReturnFirst(ctx.nameSpaceFunc())
+        const namespace = this.v(ctx.nameSpaceFunc())
         for (const tagNameSpaceContext of ctx.tagNameSpaceFunc()) {
-            const tagName = this.visitAndReturnFirst(tagNameSpaceContext)
+            const tagName = this.v(tagNameSpaceContext)
             this.functionTag[tagName].values.push(namespace)
         }
         this.tempFunctionNamespace.push(namespace) //use for child anonymous func
-        const commands: string[] = []
-        for (const singleContext of ctx.statementInner()) {
-            commands.pushAll(this.visit(singleContext))
-        }
+
+        this.mcfunction[namespace] = ctx.statementInner().flatMap(context => this.visit(context))
+        
         this.tempFunctionNamespace.pop()
-        this.mcfunction[namespace] = commands
         return []
     }
 
     visitExecNamedRun(ctx: ExecNamedRunContext) {
         this.visit(ctx.funcStatement())
-        const namespace = this.visitAndReturnFirst(ctx.funcStatement().nameSpaceFunc())
+        const namespace = this.v(ctx.funcStatement().nameSpaceFunc())
         return [`function ${namespace}`]
     }
     visitExecAnonymousRun(ctx: ExecAnonymousRunContext) {
         let namespace = this.tempFunctionNamespace[this.tempFunctionNamespace.length - 1]
-        if (this.anonymousFunctionFatherNamespaceTimes[namespace] === undefined)
-            this.anonymousFunctionFatherNamespaceTimes[namespace] = 0
-        else
-            this.anonymousFunctionFatherNamespaceTimes[namespace] += 1
+        this.updateAnonymousFunctionFatherNamespaceTimes(namespace)
         namespace = `${namespace}/${this.anonymousFunctionFatherNamespaceTimes[namespace]}`
         this.tempFunctionNamespace.push(namespace) //use for child anonymous func
-        const commands: string[] = [];
-        for (const singleContext of ctx.statementInner()) {
-            commands.pushAll(this.visit(singleContext))
-        }
+
+        this.mcfunction[namespace] = ctx.statementInner().flatMap(context=>this.visit(context))
+        
         this.tempFunctionNamespace.pop()
-        this.mcfunction[namespace] = commands
         return [`function ${namespace}`]
     }
     visitExecDirectRun(ctx: ExecDirectRunContext) {
         const commands = this.visit(ctx.statement())
         if (commands.length > 1) {
             let namespace = this.tempFunctionNamespace[this.tempFunctionNamespace.length - 1]
-            if (this.anonymousFunctionFatherNamespaceTimes[namespace] === undefined)
-                this.anonymousFunctionFatherNamespaceTimes[namespace] = 0
-            else
-                this.anonymousFunctionFatherNamespaceTimes[namespace] += 1
+            this.updateAnonymousFunctionFatherNamespaceTimes(namespace)
             namespace = `${namespace}/${this.anonymousFunctionFatherNamespaceTimes[namespace]}`
             this.mcfunction[namespace] = commands
             return [`function ${namespace}`]
@@ -410,9 +426,9 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     }
     visitFuncRunStatement(ctx: FuncRunStatementContext){
         if (ctx.nameSpaceFunc() !== undefined) 
-            return [`function ${this.visitAndReturnFirst(ctx.nameSpaceFunc()!!)}`]
+            return [`function ${this.v(ctx.nameSpaceFunc()!!)}`]
         else 
-            return [`function ${this.visitAndReturnFirst(ctx.tagNameSpaceFunc()!!)}`]
+            return [`function ${this.v(ctx.tagNameSpaceFunc()!!)}`]
     }
     visitLeagalCommand(ctx: LeagalCommandContext) {return [ctx.text]}
 
@@ -429,45 +445,45 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitNoInExecStatementStore(ctx: NoInExecStatementStoreContext){
         let command: string = "execute"
         for (const execStoreChildContext of ctx.execStoreChild())
-            command = `${command} ${this.visitAndReturnFirst(execStoreChildContext)}`
-        command = `${command} run ${this.visitAndReturnFirst(ctx.statement())}`
+            command = `${command} ${this.v(execStoreChildContext)}`
+        command = `${command} run ${this.v(ctx.statement())}`
         return [command]
     }
 
     visitExecWithRunOrChild(ctx: ExecWithRunOrChildContext) {
         let command: string = "execute"
         for (const execChildContext of ctx.execChild())
-            command = `${command} ${this.visitAndReturnFirst(execChildContext)}`
+            command = `${command} ${this.v(execChildContext)}`
         for (const execStoreChildContext of ctx.execStoreChild())
-            command = `${command} ${this.visitAndReturnFirst(execStoreChildContext)}`
+            command = `${command} ${this.v(execStoreChildContext)}`
         if (ctx.execRunChild() !== undefined)
-            command = `${command} run ${this.visitAndReturnFirst(ctx.execRunChild()!!)}`
+            command = `${command} run ${this.v(ctx.execRunChild()!!)}`
         return [command]
     }
     visitExecWithoutRunOrChild(ctx: ExecWithoutRunOrChildContext) {
         let command: string = "execute"
         for (const execChildContext of ctx.execChild())
-            command = `${command} ${this.visitAndReturnFirst(execChildContext)}`
+            command = `${command} ${this.v(execChildContext)}`
         return [command]
     }
-    visitExecStoreResultScore(ctx: ExecStoreResultScoreContext) { return [`store result score ${this.visitAndReturnFirst(ctx.scbIdentifier())}`] }
-    visitExecStoreSuccessScore(ctx: ExecStoreSuccessScoreContext) { return [`store success score ${this.visitAndReturnFirst(ctx.scbIdentifier())}`] }
+    visitExecStoreResultScore(ctx: ExecStoreResultScoreContext) { return [`store result score ${this.v(ctx.scbIdentifier())}`] }
+    visitExecStoreSuccessScore(ctx: ExecStoreSuccessScoreContext) { return [`store success score ${this.v(ctx.scbIdentifier())}`] }
     visitExecStoreResultData(ctx: ExecStoreResultDataContext) {
         const storeTypeContext = ctx.NumberType()
         const storeScaleContext = ctx.NUMBER()
         const storeType = storeTypeContext === undefined ? "int" :storeTypeContext.text
         const storeScale = storeScaleContext === undefined ? "1" : storeScaleContext.text
-        return [`store result ${this.visitAndReturnFirst(ctx.dataIdentifier())} ${storeType} ${storeScale}`]
+        return [`store result ${this.v(ctx.dataIdentifier())} ${storeType} ${storeScale}`]
     }
     visitExecStoreSuccessData(ctx: ExecStoreSuccessDataContext) {
         const storeTypeContext = ctx.NumberType()
         const storeScaleContext = ctx.NUMBER()
         const storeType = storeTypeContext === undefined ? "int": storeTypeContext.text
         const storeScale = storeScaleContext === undefined ? "1" : storeScaleContext.text
-        return [`store success ${this.visitAndReturnFirst(ctx.dataIdentifier())} ${storeType} ${storeScale}`]
+        return [`store success ${this.v(ctx.dataIdentifier())} ${storeType} ${storeScale}`]
     }
-    visitExecStoreResultBossbar(ctx: ExecStoreResultBossbarContext) {return [`store result ${this.visitAndReturnFirst(ctx.nameSpaceBossbar())} ${(ctx._value.text!="max")? "value":"max"}`]}
-    visitExecStoreSuccessBossbar(ctx: ExecStoreSuccessBossbarContext) {return [`store success ${this.visitAndReturnFirst(ctx.nameSpaceBossbar())} ${(ctx._value.text!="max")? "value":"max"}`]}
+    visitExecStoreResultBossbar(ctx: ExecStoreResultBossbarContext) {return [`store result ${this.v(ctx.nameSpaceBossbar())} ${(ctx._value.text!="max")? "value":"max"}`]}
+    visitExecStoreSuccessBossbar(ctx: ExecStoreSuccessBossbarContext) {return [`store success ${this.v(ctx.nameSpaceBossbar())} ${(ctx._value.text!="max")? "value":"max"}`]}
     visitExecAlign(ctx: ExecAlignContext) {
         const axesDefault = ctx.AcceptableName().text
         const axes = `${/x/.test(axesDefault) ? "x" : ""}${/y/.test(axesDefault) ? "y" : ""}${/z/.test(axesDefault) ? "z" : ""}`
@@ -475,75 +491,71 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         return [`align ${axes}`]
     }
     visitExecAnchored(ctx: ExecAnchoredContext) { return [`anchored ${ctx._anchor.text}`] }
-    visitExecIn(ctx: ExecInContext) { return [`in ${this.visitAndReturnFirst(ctx.nameSpaceDim())}`] }
-    visitExecAs(ctx: ExecAsContext) { return [`as ${this.visitAndReturnFirst(ctx.selector())}`] }
-    visitExecAt(ctx: ExecAtContext) { return [`at ${this.visitAndReturnFirst(ctx.selector())}`] }
-    visitExecFacingPos(ctx: ExecFacingPosContext) { return [`facing ${this.visitAndReturnFirst(ctx.pos3Identifier())}`] }
-    visitExecFacingEntity(ctx: ExecFacingEntityContext) { return [`facing entity ${this.visitAndReturnFirst(ctx.selector())}`] }
-    visitExecPositionedPos(ctx: ExecPositionedPosContext) { return [`positioned ${this.visitAndReturnFirst(ctx.pos3Identifier())}`] }
-    visitExecPostionedAs(ctx: ExecPostionedAsContext) { return [`positioned as ${this.visitAndReturnFirst(ctx.selector())}`] }
-    visitExecRotatedPos(ctx: ExecRotatedPosContext) { return [`rotated ${this.visitAndReturnFirst(ctx.pos2Identifier())}`] }
-    visitExecRotatedAs(ctx: ExecRotatedAsContext) { return [`rotated as ${this.visitAndReturnFirst(ctx.selector())}`] }
-    visitExecIfEntity(ctx: ExecIfEntityContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} entity ${this.visitAndReturnFirst(ctx.selector())}`] }
+    visitExecIn(ctx: ExecInContext) { return [`in ${this.v(ctx.nameSpaceDim())}`] }
+    visitExecAs(ctx: ExecAsContext) { return [`as ${this.v(ctx.selector())}`] }
+    visitExecAt(ctx: ExecAtContext) { return [`at ${this.v(ctx.selector())}`] }
+    visitExecFacingPos(ctx: ExecFacingPosContext) { return [`facing ${this.v(ctx.pos3Identifier())}`] }
+    visitExecFacingEntity(ctx: ExecFacingEntityContext) { return [`facing entity ${this.v(ctx.selector())}`] }
+    visitExecPositionedPos(ctx: ExecPositionedPosContext) { return [`positioned ${this.v(ctx.pos3Identifier())}`] }
+    visitExecPostionedAs(ctx: ExecPostionedAsContext) { return [`positioned as ${this.v(ctx.selector())}`] }
+    visitExecRotatedPos(ctx: ExecRotatedPosContext) { return [`rotated ${this.v(ctx.pos2Identifier())}`] }
+    visitExecRotatedAs(ctx: ExecRotatedAsContext) { return [`rotated as ${this.v(ctx.selector())}`] }
+    visitExecIfEntity(ctx: ExecIfEntityContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} entity ${this.v(ctx.selector())}`] }
     visitExecIfScore(ctx: ExecIfScoreContext) {
         const operation = ctx.CompareOperation().text === "==" ? "=" : ctx.CompareOperation().text
-        return [`${(ctx._cond.text!="unless")?"if":"unless"} score ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} ${operation} ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`]
+        return [`${(ctx._cond.text!="unless")?"if":"unless"} score ${this.v(ctx.scbIdentifier(0))} ${operation} ${this.v(ctx.scbIdentifier(1))}`]
     }
-    visitExecIfScoreMatches(ctx: ExecIfScoreMatchesContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} score ${this.visitAndReturnFirst(ctx.scbIdentifier())} matches ${this.visitAndReturnFirst(ctx.matchPart())}`] }
-    visitExecPredicate(ctx: ExecPredicateContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} predicate ${this.visitAndReturnFirst(ctx.nameSpacePredicate())}`] }
-    visitExecIfBlock(ctx: ExecIfBlockContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} block ${this.visitAndReturnFirst(ctx.pos3Identifier())} ${this.visitAndReturnFirst(ctx.blockIdentifier())}`] }
-    visitExecIfBlocks(ctx: ExecIfBlocksContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} blocks ${this.visitAndReturnFirst(ctx.pos3Identifier(0))} ${this.visitAndReturnFirst(ctx.pos3Identifier(1))} ${this.visitAndReturnFirst(ctx.pos3Identifier(2))}`] }
-    visitExecIfData(ctx: ExecIfDataContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} ${this.visitAndReturnFirst(ctx.dataIdentifier())}`] }
-    visitExecIfBiome(ctx: ExecIfBiomeContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} biome ${this.visitAndReturnFirst(ctx.pos3Identifier())} ${this.visitAndReturnFirst(ctx.nameSpaceBiome())}`] }
+    visitExecIfScoreMatches(ctx: ExecIfScoreMatchesContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} score ${this.v(ctx.scbIdentifier())} matches ${this.v(ctx.matchPart())}`] }
+    visitExecPredicate(ctx: ExecPredicateContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} predicate ${this.v(ctx.nameSpacePredicate())}`] }
+    visitExecIfBlock(ctx: ExecIfBlockContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} block ${this.v(ctx.pos3Identifier())} ${this.v(ctx.blockIdentifier())}`] }
+    visitExecIfBlocks(ctx: ExecIfBlocksContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} blocks ${this.v(ctx.pos3Identifier(0))} ${this.v(ctx.pos3Identifier(1))} ${this.v(ctx.pos3Identifier(2))}`] }
+    visitExecIfData(ctx: ExecIfDataContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} ${this.v(ctx.dataIdentifier())}`] }
+    visitExecIfBiome(ctx: ExecIfBiomeContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} biome ${this.v(ctx.pos3Identifier())} ${this.v(ctx.nameSpaceBiome())}`] }
     visitExecStore(ctx: ExecStoreContext) { return this.visit(ctx.execStoreChild()) }
     visitMatchPart(ctx: MatchPartContext) { return [ctx.text] }
 
 /* Data Statement */
     // visitDataOperationExpression?: ((ctx: DataOperationExpressionContext) => string[]) | undefined;
-    visitDataMergeStorage(ctx: DataMergeStorageContext) { return [`data merge storage ${this.visitAndReturnFirst(ctx.nameSpaceStorage())} ${this.visitAndReturnFirst(ctx.nbt())}`] }
-    visitDataMergeEntity(ctx: DataMergeEntityContext) { return [`data merge entity ${this.visitAndReturnFirst(ctx.selector())} ${this.visitAndReturnFirst(ctx.nbt())}`] }
-    visitDataMergeBlock(ctx: DataMergeBlockContext) { return [`data merge block ${this.visitAndReturnFirst(ctx.pos3Identifier())} ${this.visitAndReturnFirst(ctx.nbt())}`] }
-    visitDataGet(ctx: DataGetContext) { return [`data get ${this.visitAndReturnFirst(ctx.dataIdentifier())}`] }
-    visitDataModifyMergeValue(ctx: DataModifyMergeValueContext) { return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier())} merge value ${this.visitAndReturnFirst(ctx.nbt())}`] }
-    visitDataModifyMergeFrom(ctx: DataModifyMergeFromContext) { return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier(0))} merge from ${this.visitAndReturnFirst(ctx.dataIdentifier(1))}`] }
-    visitDataModifySetValue(ctx: DataModifySetValueContext) { return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier())} set value ${this.visitAndReturnFirst(ctx.nbt())}`] }
-    visitDataModifySetFrom(ctx: DataModifySetFromContext) { return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier(0))} set from ${this.visitAndReturnFirst(ctx.dataIdentifier(1))}`] }
-    visitDataModifyAppendValue(ctx: DataModifyAppendValueContext) { return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier())} append value ${this.visitAndReturnFirst(ctx.nbt())}`] }
-    visitDataModifyAppendFrom(ctx: DataModifyAppendFromContext) { return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier(0))} append from ${this.visitAndReturnFirst(ctx.dataIdentifier(1))}`] }
-    visitDataModifyPrependValue(ctx: DataModifyPrependValueContext) { return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier())} prepend value ${this.visitAndReturnFirst(ctx.nbt())}`] }
-    visitDataModifyPrependFrom(ctx: DataModifyPrependFromContext) { return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier(0))} prepend from ${this.visitAndReturnFirst(ctx.dataIdentifier(1))}`] }
-    visitDataModifyInsertValue(ctx: DataModifyInsertValueContext) { return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier())} insert value ${this.visitAndReturnFirst(ctx.nbt())}`] }
-    visitDataModifyInsertFrom(ctx: DataModifyInsertFromContext) { return [`data modify ${this.visitAndReturnFirst(ctx.dataIdentifier(0))} insert from ${this.visitAndReturnFirst(ctx.dataIdentifier(1))}`] }
-    visitDataRemove(ctx: DataRemoveContext) { return [`data remove ${this.visitAndReturnFirst(ctx.dataIdentifier())}`] }
+    visitDataMergeStorage(ctx: DataMergeStorageContext) { return [`data merge storage ${this.v(ctx.nameSpaceStorage())} ${this.v(ctx.nbt())}`] }
+    visitDataMergeEntity(ctx: DataMergeEntityContext) { return [`data merge entity ${this.v(ctx.selector())} ${this.v(ctx.nbt())}`] }
+    visitDataMergeBlock(ctx: DataMergeBlockContext) { return [`data merge block ${this.v(ctx.pos3Identifier())} ${this.v(ctx.nbt())}`] }
+    visitDataGet(ctx: DataGetContext) { return [`data get ${this.v(ctx.dataIdentifier())}`] }
+    visitDataModifyMergeValue(ctx: DataModifyMergeValueContext) { return [`data modify ${this.v(ctx.dataIdentifier())} merge value ${this.v(ctx.nbt())}`] }
+    visitDataModifyMergeFrom(ctx: DataModifyMergeFromContext) { return [`data modify ${this.v(ctx.dataIdentifier(0))} merge from ${this.v(ctx.dataIdentifier(1))}`] }
+    visitDataModifySetValue(ctx: DataModifySetValueContext) { return [`data modify ${this.v(ctx.dataIdentifier())} set value ${this.v(ctx.nbt())}`] }
+    visitDataModifySetFrom(ctx: DataModifySetFromContext) { return [`data modify ${this.v(ctx.dataIdentifier(0))} set from ${this.v(ctx.dataIdentifier(1))}`] }
+    visitDataModifyAppendValue(ctx: DataModifyAppendValueContext) { return [`data modify ${this.v(ctx.dataIdentifier())} append value ${this.v(ctx.nbt())}`] }
+    visitDataModifyAppendFrom(ctx: DataModifyAppendFromContext) { return [`data modify ${this.v(ctx.dataIdentifier(0))} append from ${this.v(ctx.dataIdentifier(1))}`] }
+    visitDataModifyPrependValue(ctx: DataModifyPrependValueContext) { return [`data modify ${this.v(ctx.dataIdentifier())} prepend value ${this.v(ctx.nbt())}`] }
+    visitDataModifyPrependFrom(ctx: DataModifyPrependFromContext) { return [`data modify ${this.v(ctx.dataIdentifier(0))} prepend from ${this.v(ctx.dataIdentifier(1))}`] }
+    visitDataModifyInsertValue(ctx: DataModifyInsertValueContext) { return [`data modify ${this.v(ctx.dataIdentifier())} insert value ${this.v(ctx.nbt())}`] }
+    visitDataModifyInsertFrom(ctx: DataModifyInsertFromContext) { return [`data modify ${this.v(ctx.dataIdentifier(0))} insert from ${this.v(ctx.dataIdentifier(1))}`] }
+    visitDataRemove(ctx: DataRemoveContext) { return [`data remove ${this.v(ctx.dataIdentifier())}`] }
 
     visitDataStatement(ctx: DataStatementContext) {
-        const commands:string[] = [];
-        for (const dataOperationExpressionContext of ctx.dataOperationExpression()) {
-            commands.pushAll(this.visit(dataOperationExpressionContext))
-        }
-        return commands
+        return ctx.dataOperationExpression().flatMap(context=>this.visit(context))
     }
 /* Scb Statement */
     // visitScbOperationExpression?: ((ctx: ScbOperationExpressionContext) => string[]) | undefined;
-    visitScbGet(ctx: ScbGetContext) { return [`scoreboard players get ${this.visitAndReturnFirst(ctx.scbIdentifier())}`] }
-    visitScbAdd(ctx: ScbAddContext) { return [`scoreboard players add ${this.visitAndReturnFirst(ctx.scbIdentifier())} ${this.visitAndReturnFirst(ctx.NUMBER())}`] }
-    visitScbRemove(ctx: ScbRemoveContext) { return [`scoreboard players remove ${this.visitAndReturnFirst(ctx.scbIdentifier())} ${this.visitAndReturnFirst(ctx.NUMBER())}`] }
-    visitScbSet(ctx: ScbSetContext) { return [`scoreboard players set ${this.visitAndReturnFirst(ctx.scbIdentifier())} ${this.visitAndReturnFirst(ctx.NUMBER())}`] }
-    visitScbOptAddAssign(ctx: ScbOptAddAssignContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} += ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
-    visitScbOptSubAssign(ctx: ScbOptSubAssignContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} -= ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
-    visitScbOptMulAssign(ctx: ScbOptMulAssignContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} *= ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
-    visitScbOptDivAssign(ctx: ScbOptDivAssignContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} /= ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
-    visitScbOptModAssign(ctx: ScbOptModAssignContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} %= ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
-    visitScbOptExcFunc(ctx: ScbOptExcFuncContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} >< ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
-    visitScbOptMinFunc(ctx: ScbOptMinFuncContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} << ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
-    visitScbOptMaxFunc(ctx: ScbOptMaxFuncContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} >> ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
-    visitScbOptAssign(ctx: ScbOptAssignContext) { return [`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier(0))} = ${this.visitAndReturnFirst(ctx.scbIdentifier(1))}`] }
-    visitScbReset(ctx: ScbResetContext) { return [`scoreboard players reset ${this.visitAndReturnFirst(ctx.scbIdentifier())}`] } //TODO: the objective is not required
+    visitScbGet(ctx: ScbGetContext) { return [`scoreboard players get ${this.v(ctx.scbIdentifier())}`] }
+    visitScbAdd(ctx: ScbAddContext) { return [`scoreboard players add ${this.v(ctx.scbIdentifier())} ${this.v(ctx.NUMBER())}`] }
+    visitScbRemove(ctx: ScbRemoveContext) { return [`scoreboard players remove ${this.v(ctx.scbIdentifier())} ${this.v(ctx.NUMBER())}`] }
+    visitScbSet(ctx: ScbSetContext) { return [`scoreboard players set ${this.v(ctx.scbIdentifier())} ${this.v(ctx.NUMBER())}`] }
+    visitScbOptAddAssign(ctx: ScbOptAddAssignContext) { return [`scoreboard players operation ${this.v(ctx.scbIdentifier(0))} += ${this.v(ctx.scbIdentifier(1))}`] }
+    visitScbOptSubAssign(ctx: ScbOptSubAssignContext) { return [`scoreboard players operation ${this.v(ctx.scbIdentifier(0))} -= ${this.v(ctx.scbIdentifier(1))}`] }
+    visitScbOptMulAssign(ctx: ScbOptMulAssignContext) { return [`scoreboard players operation ${this.v(ctx.scbIdentifier(0))} *= ${this.v(ctx.scbIdentifier(1))}`] }
+    visitScbOptDivAssign(ctx: ScbOptDivAssignContext) { return [`scoreboard players operation ${this.v(ctx.scbIdentifier(0))} /= ${this.v(ctx.scbIdentifier(1))}`] }
+    visitScbOptModAssign(ctx: ScbOptModAssignContext) { return [`scoreboard players operation ${this.v(ctx.scbIdentifier(0))} %= ${this.v(ctx.scbIdentifier(1))}`] }
+    visitScbOptExcFunc(ctx: ScbOptExcFuncContext) { return [`scoreboard players operation ${this.v(ctx.scbIdentifier(0))} >< ${this.v(ctx.scbIdentifier(1))}`] }
+    visitScbOptMinFunc(ctx: ScbOptMinFuncContext) { return [`scoreboard players operation ${this.v(ctx.scbIdentifier(0))} << ${this.v(ctx.scbIdentifier(1))}`] }
+    visitScbOptMaxFunc(ctx: ScbOptMaxFuncContext) { return [`scoreboard players operation ${this.v(ctx.scbIdentifier(0))} >> ${this.v(ctx.scbIdentifier(1))}`] }
+    visitScbOptAssign(ctx: ScbOptAssignContext) { return [`scoreboard players operation ${this.v(ctx.scbIdentifier(0))} = ${this.v(ctx.scbIdentifier(1))}`] }
+    visitScbReset(ctx: ScbResetContext) { return [`scoreboard players reset ${this.v(ctx.scbIdentifier())}`] } //TODO: the objective is not required
     visitScbOptExpression(ctx: ScbOptExpressionContext) {
         this.tempScbTargetName = []
         const res = this.visit(ctx.scbSingleOperationExpression())
         this.tempScbTargetName = []
-        return res.slice(2).concat([`scoreboard players operation ${this.visitAndReturnFirst(ctx.scbIdentifier())} = ${res[1]}`])
+        return res.slice(2).concat([`scoreboard players operation ${this.v(ctx.scbIdentifier())} = ${res[1]}`])
     }
 
     // visitScbSingleOperationExpression?: ((ctx: ScbSingleOperationExpressionContext) => string[]) | undefined;
@@ -609,198 +621,217 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
 
 /* Scb Statement {} */
     visitScbPlayerStatement(ctx: ScbPlayerStatementContext) {
-        const commands: string[] = [];
-        for (const scbOperationExpressionContext of ctx.scbPlayerStatementInner()) {
-            commands.pushAll(this.visit(scbOperationExpressionContext))
-        }
-        return commands
+        return ctx.scbPlayerStatementInner().flatMap(context=>this.visit(context))
     }
     visitScbPlayerSIScbList(ctx: ScbPlayerSIScbListContext) {
         if (ctx.selector() !== undefined) 
-            return [`scoreboard players list ${this.visitAndReturnFirst(ctx.selector()!!)}`]
+            return [`scoreboard players list ${this.v(ctx.selector()!!)}`]
         else return [`scoreboard objectives list`]
     }
 
 /* Scb Objectives Statement */
     visitScbObjSDeclareWithName(ctx: ScbObjSDeclareWithNameContext) {
-        const commands: string[] = [];
-        const objectiveName = this.visitAndReturnFirst(ctx.acceptableName())
-        const criterion = ctx.criterion()===undefined? 'dummy': this.visitAndReturnFirst(ctx.criterion()!!)
-        commands.push(`scoreboard objectives add ${objectiveName} ${criterion} ${this.visitAndReturnFirst(ctx.json())}`)
-        for (const scbStatementInnerContext of ctx.scbStatementInner()) {
-            const command = this.visitAndReturnFirst(scbStatementInnerContext)
-            commands.push(command.replace("$$",objectiveName))
-        }
-        return commands
+        const objectiveName = this.v(ctx.acceptableName())
+        const criterion = ctx.criterion()===undefined? 'dummy': this.v(ctx.criterion()!!)
+        return [`scoreboard objectives add ${objectiveName} ${criterion} ${this.v(ctx.json())}`,...ctx.scbStatementInner().map(context=>this.v(context).replace("$$",objectiveName))]
     }
-    visitScbObjSDeclareSingle(ctx: ScbObjSDeclareSingleContext) {return [`scoreboard objectives add ${this.visitAndReturnFirst(ctx.acceptableName())} ${this.visitAndReturnFirst(ctx.criterion())}`]}
+    visitScbObjSDeclareSingle(ctx: ScbObjSDeclareSingleContext) {return [`scoreboard objectives add ${this.v(ctx.acceptableName())} ${this.v(ctx.criterion())}`]}
     visitScbObjSDeclareDefault(ctx: ScbObjSDeclareDefaultContext) {
-        const commands: string[] = [];
-        const objectiveName = this.visitAndReturnFirst(ctx.acceptableName())
-        const criterion = ctx.criterion()===undefined? 'dummy': this.visitAndReturnFirst(ctx.criterion()!!)
-        commands.push(`scoreboard objectives add ${objectiveName} ${criterion}`)
-        for (const scbStatementInnerContext of ctx.scbStatementInner()) {
-            const command = this.visitAndReturnFirst(scbStatementInnerContext)
-            commands.push(command.replace("$$",objectiveName))
-        }
-        return commands
+        const objectiveName = this.v(ctx.acceptableName())
+        const criterion = ctx.criterion()===undefined? 'dummy': this.v(ctx.criterion()!!)
+        return [`scoreboard objectives add ${objectiveName} ${criterion}`,...ctx.scbStatementInner().map(context=>this.v(context).replace("$$",objectiveName))]
     }
     visitScbObjSOperation(ctx: ScbObjSOperationContext) {
-        const commands: string[] = [];
-        const objectiveName = this.visitAndReturnFirst(ctx.acceptableName())
-        for (const scbStatementInnerContext of ctx.scbStatementInner()) {
-            const command = this.visitAndReturnFirst(scbStatementInnerContext)
-            commands.push(command.replace("$$",objectiveName))
-        }
-        return commands
+        const objectiveName = this.v(ctx.acceptableName())
+        return ctx.scbStatementInner().map(context=> this.v(context).replace("$$",objectiveName))
     }
     visitScbSIRemove(ctx: ScbSIRemoveContext) { return ["scoreboard objectives remove $$"] }
     visitScbSIDisplay(ctx: ScbSIDisplayContext) {
-        const pos = this.visitAndReturnFirst(ctx.acceptableName());
+        const pos = this.v(ctx.acceptableName());
         const test = /^(list|sidebar|(sidebar\.team\.(black|dark_blue|dark_green|dark_aqua|dark_red|dark_purple|gold|gray|dark_gray|blue|green|aqua|red|light_purple|yellow|white)))$/.test(pos)
         if(!test) throw new JustMCFSimplifyError("scoreboard display position error")
         return [`scoreboard objectives setdisplay ${pos} $$`]
     }
     visitScbSIRendertype(ctx: ScbSIRendertypeContext){return [`scoreboard objectives modify $$ rendertype ${ctx._type.text}}`]}
-    visitScbSIDisplayname(ctx: ScbSIDisplaynameContext){return [`scoreboard objectives modify $$ displayname ${this.visitAndReturnFirst(ctx.json())}`]}
+    visitScbSIDisplayname(ctx: ScbSIDisplaynameContext){return [`scoreboard objectives modify $$ displayname ${this.v(ctx.json())}`]}
 
 /* Bossbar Statement */
     
     visitBossbarSDeclare(ctx: BossbarSDeclareContext) {
-        const commands: string[] = [];
-        const namespace = this.visitAndReturnFirst(ctx.nameSpaceBossbar())
-        commands.push(`bossbar add ${namespace} ${this.visitAndReturnFirst(ctx.json())}`)
-        for (const bossbarStatementInnerContext of ctx.bossbarStatementInner()) {
-            const command = this.visitAndReturnFirst(bossbarStatementInnerContext)
-            commands.push(command.replace("$$",namespace))
-        }
-        return commands
+        const namespace = this.v(ctx.nameSpaceBossbar())
+        return [`bossbar add ${namespace} ${this.v(ctx.json())}`,...ctx.bossbarStatementInner().map(context=>this.v(context).replace("$$",namespace))]
     }
     visitBossbarSOperation(ctx: BossbarSOperationContext) {
-        const commands: string[] = [];
-        const namespace = this.visitAndReturnFirst(ctx.nameSpaceBossbar())
-        for (const bossbarStatementInnerContext of ctx.bossbarStatementInner()) {
-            const command = this.visitAndReturnFirst(bossbarStatementInnerContext)
-            commands.push(command.replace("$$",namespace))
-        }
-        return commands
+        const namespace = this.v(ctx.nameSpaceBossbar())
+        return ctx.bossbarStatementInner().map(context=> this.v(context).replace("$$",namespace))
     }
     visitBossbarSIGet(ctx: BossbarSIGetContext) { return [`bossbar get $$ ${ctx._type.text}`] }
     visitBossbarSIRemove(ctx: BossbarSIRemoveContext){return [`bossbar remove $$`]}
     visitBossbarSISetColor(ctx: BossbarSISetColorContext) { return [`bossbar set $$ color ${ctx._color}`] }
     visitBossbarSISetMax(ctx: BossbarSISetMaxContext) { return [`bossbar set $$ max ${ctx.NUMBER().text}`] }
-    visitBossbarSISetName(ctx: BossbarSISetNameContext) { return [`bossbar set $$ name ${this.visitAndReturnFirst(ctx.json())}`] }
-    visitBossbarSISetPlayer(ctx: BossbarSISetPlayerContext) { return [`bossbar set $$ players ${this.visitAndReturnFirst(ctx.selector())}`] }
+    visitBossbarSISetName(ctx: BossbarSISetNameContext) { return [`bossbar set $$ name ${this.v(ctx.json())}`] }
+    visitBossbarSISetPlayer(ctx: BossbarSISetPlayerContext) { return [`bossbar set $$ players ${this.v(ctx.selector())}`] }
     visitBossbarSISetPlayerNull(ctx: BossbarSISetPlayerNullContext) { return [`bossbar set $$ players`] }
     visitBossbarSISetStyle(ctx: BossbarSISetStyleContext) { return [`bossbar set $$ style ${ctx._style}`] }
     visitBossbarSISetValue(ctx: BossbarSISetValueContext) { return [`bossbar set $$ value ${ctx.NUMBER().text}`] }
     visitBossbarSISetVisible(ctx: BossbarSISetVisibleContext) { return [`bossbar set $$ visible ${ctx._bool.text}`] }
-    visitBossbarOpExprGet(ctx: BossbarOpExprGetContext) { return [`bossbar get ${this.visitAndReturnFirst(ctx.nameSpaceBossbar())} ${ctx._type.text===undefined?"value":ctx._type.text}`] }
-    visitBossbarOpExprAssignValue(ctx: BossbarOpExprAssignValueContext) { return [`bossbar set ${this.visitAndReturnFirst(ctx.nameSpaceBossbar())} value ${ctx.NUMBER().text}`] }
-    visitBossbarOpExprAssignMax(ctx: BossbarOpExprAssignMaxContext) { return [`bossbar set ${this.visitAndReturnFirst(ctx.nameSpaceBossbar())} max ${ctx.NUMBER().text}`] }
+    visitBossbarOpExprGet(ctx: BossbarOpExprGetContext) { return [`bossbar get ${this.v(ctx.nameSpaceBossbar())} ${ctx._type.text===undefined?"value":ctx._type.text}`] }
+    visitBossbarOpExprAssignValue(ctx: BossbarOpExprAssignValueContext) { return [`bossbar set ${this.v(ctx.nameSpaceBossbar())} value ${ctx.NUMBER().text}`] }
+    visitBossbarOpExprAssignMax(ctx: BossbarOpExprAssignMaxContext) { return [`bossbar set ${this.v(ctx.nameSpaceBossbar())} max ${ctx.NUMBER().text}`] }
 
 /* Title Statement */
     
     visitTitleSCompound(ctx: TitleSCompoundContext) {
-        const commands: string[] = [];
-        for (const titleStatementInnerContext of ctx.titleStatementInner())
-            commands.pushAll(this.visit(titleStatementInnerContext))
-        return commands
+        return ctx.titleStatementInner().flatMap(context=>this.visit(context))
     }
     visitTitleSSelectorCompound(ctx: TitleSSelectorCompoundContext) {
-        const commands: string[] = [];
-        const selector = this.visitAndReturnFirst(ctx.selector())
-        for (const titleSelectorStatementInnerContext of ctx.titleSelectorStatementInner()) {
-            const command = this.visitAndReturnFirst(titleSelectorStatementInnerContext)
-            commands.push(command.replace("$$",selector))
-        }
-        return commands
+        const selector = this.v(ctx.selector())
+        return ctx.titleSelectorStatementInner().map(context=>this.v(context).replace("$$",selector))
     }
     visitTitleSISelectorSingle(ctx: TitleSISelectorSingleContext) {
-        const command = this.visitAndReturnFirst(ctx.titleIndependentStatementInner())
-        return [ command.replace("$$",this.visitAndReturnFirst(ctx.selector())) ]
+        return [ this.v(ctx.titleIndependentStatementInner()).replace("$$",this.v(ctx.selector())) ]
     }
     visitTitleSISelectorCompound(ctx: TitleSISelectorCompoundContext) {
-        const commands: string[] = [];
-        const selector = this.visitAndReturnFirst(ctx.selector())
-        for (const titleSelectorStatementInnerContext of ctx.titleSelectorStatementInner()) {
-            const command = this.visitAndReturnFirst(titleSelectorStatementInnerContext)
-            commands.push(command.replace("$$",selector))
-        }
-        return commands
+        const selector = this.v(ctx.selector())
+        return ctx.titleSelectorStatementInner().map(context=>this.v(context).replace("$$",selector))
     }
-    visitTitleSSIJson(ctx: TitleSSIJsonContext) { return [`title $$ ${ctx._pos.text} ${this.visitAndReturnFirst(ctx.json())}`] }
+    visitTitleSSIJson(ctx: TitleSSIJsonContext) { return [`title $$ ${ctx._pos.text} ${this.v(ctx.json())}`] }
     visitTitleSSIClear(ctx: TitleSSIClearContext) { return ["title $$ clear"] }
     visitTitleSSIReset(ctx: TitleSSIResetContext) { return ["title $$ reset"] }
     visitTitleSSITimes(ctx: TitleSSITimesContext) { return [`title $$ times ${ctx.NUMBER(0).text} ${ctx.NUMBER(1).text} ${ctx.NUMBER(2).text}`] }
-    visitTitleISIJson(ctx: TitleISIJsonContext) { return [`title $$ ${ctx._pos.text} ${this.visitAndReturnFirst(ctx.json())}`] }
+    visitTitleISIJson(ctx: TitleISIJsonContext) { return [`title $$ ${ctx._pos.text} ${this.v(ctx.json())}`] }
     visitTitleISIClear(ctx: TitleISIClearContext) { return ["title $$ clear"] }
     visitTitleISIReset(ctx: TitleISIResetContext) { return ["title $$ reset"] }
     visitTitleISITimes(ctx: TitleISITimesContext){return [`title $$ times ${ctx.NUMBER(0).text} ${ctx.NUMBER(1).text} ${ctx.NUMBER(2).text}`]}
 
 /* Display Statement */
 
-    visitDisplaySCompound(ctx: DisplaySCompoundContext) {return []}
-    visitDisplaySSelectorCompound(ctx: DisplaySSelectorCompoundContext) {return []}
-    visitDisplaySIScb(ctx: DisplaySIScbContext) {return []}
-    visitDisplaySIBossbar(ctx: DisplaySIBossbarContext) {return []}
-    visitDisplaySISelectorSingle(ctx: DisplaySISelectorSingleContext) {return []}
-    visitDisplaySISelectorCompound(ctx: DisplaySISelectorCompoundContext) {return []}
+    visitDisplaySCompound(ctx: DisplaySCompoundContext) {return ctx.displayStatementInner().flatMap(context=>this.visit(context))}
+    visitDisplaySSelectorCompound(ctx: DisplaySSelectorCompoundContext) {
+        const selector = this.v(ctx.selector())
+        return ctx.displayIndependentStatementInner().flatMap(context => 
+            this.visit(context).map(command=>command.replace("$$", selector))
+        )
+    }
+    //visitDisplaySIScb(ctx: DisplaySIScbContext) {return []}
+    //visitDisplaySIBossbar(ctx: DisplaySIBossbarContext) {return []}
+    visitDisplaySISelectorSingle(ctx: DisplaySISelectorSingleContext) {
+        const selector = this.v(ctx.selector())
+        return this.visit(ctx.displayIndependentStatementInner()).map(command=>command.replace("$$", selector))
+    }
+    visitDisplaySISelectorCompound(ctx: DisplaySISelectorCompoundContext) {
+        const selector = this.v(ctx.selector())
+        return ctx.displayIndependentStatementInner().flatMap(context => 
+            this.visit(context).map(command=>command.replace("$$", selector))
+        )
+    }
     
     //visitDisplayISITitleSingle(ctx: DisplayISITitleSingleContext) { return [] }
     visitDisplayISITitleCompound(ctx: DisplayISITitleCompoundContext) {
-        const commands: string[] = [];
-        for (const titleSelectorStatementInnerContext of ctx.titleSelectorStatementInner()) {
-            commands.push(this.visitAndReturnFirst(titleSelectorStatementInnerContext))
-        }
-        return commands
+        return ctx.titleSelectorStatementInner().map(context=>this.v(context))
     }
-    visitDisplayISIText(ctx: DisplayISITextContext) {return [`tellraw $$ ${this.visitAndReturnFirst(ctx.json())}`]}
-    visitDisplayISIBossbar(ctx: DisplayISIBossbarContext) {return [`bossbar set ${this.visitAndReturnFirst(ctx.nameSpaceBossbar())} players $$`]}
+    visitDisplayISIText(ctx: DisplayISITextContext) {return [`tellraw $$ ${this.v(ctx.json())}`]}
+    visitDisplayISIBossbar(ctx: DisplayISIBossbarContext) {return [`bossbar set ${this.v(ctx.nameSpaceBossbar())} players $$`]}
     
     
-    visitItemSCompound(ctx: ItemSCompoundContext) { return [] }
-    visitItemSSelectorCompound(ctx: ItemSSelectorCompoundContext) {return []}
-    visitLootSCompound(ctx: LootSCompoundContext) {return []}
-    visitLootSSelectorCompound(ctx: LootSSelectorCompoundContext) {return []}
-    visitLootSIInsert(ctx: LootSIInsertContext) {return []}
-    visitLootSISpawn(ctx: LootSISpawnContext) {return []}
-    visitLootSIReplaceBlock(ctx: LootSIReplaceBlockContext) {return []}
-    visitLootSIGive(ctx: LootSIGiveContext) {return []}
-    visitLootSIReplaceEntity(ctx: LootSIReplaceEntityContext) {return []}
-    visitLootSISelectorNest(ctx: LootSISelectorNestContext) {return []}
-    visitLootSourceFishHand(ctx: LootSourceFishHandContext) {return []}
-    visitLootSourceFishTool(ctx: LootSourceFishToolContext) {return []}
-    visitLootSourceLoot(ctx: LootSourceLootContext) {return []}
-    visitLootSourceKill(ctx: LootSourceKillContext) {return []}
-    visitLootSourceMineHand(ctx: LootSourceMineHandContext) {return []}
-    visitLootSourceMineTool(ctx: LootSourceMineToolContext) {return []}
-    visitItemSIGiveAndClear(ctx: ItemSIGiveAndClearContext) {return []}
-    visitItemSIEntity(ctx: ItemSIEntityContext) {return []}
-    visitItemSIBlock(ctx: ItemSIBlockContext) {return []}
-    visitItemSILootInner(ctx: ItemSILootInnerContext) {return []}
-    visitItemSISelectorNest(ctx: ItemSISelectorNestContext) {return []}
-    visitItemSSIGiveAndClear(ctx: ItemSSIGiveAndClearContext) {return []}
-    visitItemSSIItem(ctx: ItemSSIItemContext) {return []}
-    visitItemSSILootInner(ctx: ItemSSILootInnerContext) {return []}
-    visitItemISIReplaceWith(ctx: ItemISIReplaceWithContext) {return []}
-    visitItemISIReplaceFromEntity(ctx: ItemISIReplaceFromEntityContext) {return []}
-    visitItemISIReplaceFromBlock(ctx: ItemISIReplaceFromBlockContext) {return []}
-    visitItemISIModify(ctx: ItemISIModifyContext) {return []}
-    visitGiveISI(ctx: GiveISIContext) {return []}
-    visitClearISI(ctx: ClearISIContext) {return []}
+    visitItemSCompound(ctx: ItemSCompoundContext) { return ctx.itemStatementInner().flatMap(context=>this.visit(context)) }
+    visitItemSSelectorCompound(ctx: ItemSSelectorCompoundContext) {
+        const selector = this.v(ctx.selector())
+        return ctx.itemSelectorStatementInner().flatMap(context =>
+            this.visit(context).map(command=>command.replace("$$",selector))
+        )
+    }
+    visitLootSCompound(ctx: LootSCompoundContext) {return ctx.lootStatementInner().flatMap(context=>this.visit(context))}
+    visitLootSSelectorCompound(ctx: LootSSelectorCompoundContext) {
+        const selector = this.v(ctx.selector())
+        return ctx.lootSelectorStatementInner().flatMap(context =>
+            this.visit(context).map(command=>command.replace("$$",selector))
+        )
+    }
+    visitLootSIInsert(ctx: LootSIInsertContext) {return [`loot insert ${this.v(ctx.pos3Identifier())} ${this.v(ctx.lootSource())}`]}
+    visitLootSISpawn(ctx: LootSISpawnContext) {return [`loot spawn ${this.v(ctx.pos3Identifier())} ${this.v(ctx.lootSource())}`]}
+    visitLootSIReplaceBlock(ctx: LootSIReplaceBlockContext) {return [this.v(ctx.lootIndependentStatementInnerReplaceEntity()).replace("entity $$",`block ${this.v(ctx.pos3Identifier())}`)]}
+    visitLootSIGive(ctx: LootSIGiveContext) {return [this.v(ctx).replace("$$",this.v(ctx.selector()))]}
+    visitLootSIReplaceEntity(ctx: LootSIReplaceEntityContext) {return [this.v(ctx).replace("$$",this.v(ctx.selector()))]}
+    visitLootSISelectorNest(ctx: LootSISelectorNestContext) {
+        const selector =this.v(ctx.selector())
+        return ctx.lootSelectorStatementInner().flatMap(context =>
+            this.visit(context).map(command => command.replace("$$", selector)))
+    }
+    visitLootIndependentStatementInnerGive(ctx: LootIndependentStatementInnerGiveContext){ return [`loot give $$ ${this.v(ctx.lootSource())}`]}
+    visitLootIndependentStatementInnerReplaceEntity(ctx: LootIndependentStatementInnerReplaceEntityContext) {
+        if(ctx.NUMBER()!==undefined) return [`loot replace entity $$ ${this.v(ctx.item_slot())} ${this.v(ctx.lootSource())} ${ctx.NUMBER()?.text}`]
+        else return [`loot replace entity $$ ${this.v(ctx.item_slot())} ${this.v(ctx.lootSource())}`]
+    }
+    visitLootSourceFishHand(ctx: LootSourceFishHandContext) {
+        if(ctx._hand.text!==undefined) return [`fish ${this.v(ctx.nameSpaceLoot())} ${this.v(ctx.pos3Identifier())} ${ctx._hand.text}`]
+        else return [`fish ${this.v(ctx.nameSpaceLoot())} ${this.v(ctx.pos3Identifier())}`]
+    }
+    visitLootSourceFishTool(ctx: LootSourceFishToolContext) {return [`fish ${this.v(ctx.nameSpaceLoot())} ${this.v(ctx.pos3Identifier())} ${this.v(ctx.nameSpaceItem())}` ]}
+    visitLootSourceLoot(ctx: LootSourceLootContext) {return [`loot ${this.v(ctx.nameSpaceLoot())}`]}
+    visitLootSourceKill(ctx: LootSourceKillContext) {return [`kill ${this.v(ctx.selector())}`]}
+    visitLootSourceMineHand(ctx: LootSourceMineHandContext) {
+        if(ctx._hand.text!==undefined) return [`mine ${this.v(ctx.pos3Identifier())} ${ctx._hand.text}`]
+        else return [`mine ${this.v(ctx.pos3Identifier())}`]
+    }
+    visitLootSourceMineTool(ctx: LootSourceMineToolContext) {return [`mine ${this.v(ctx.pos3Identifier())} ${this.v(ctx.nameSpaceItem())}`]}
+    visitItemSIGiveAndClear(ctx: ItemSIGiveAndClearContext) {return [this.v(ctx.giveAndClearIndependentStatementInner()).replace("$$",this.v(ctx.selector()))]}
+    visitItemSIEntity(ctx: ItemSIEntityContext) {return [this.v(ctx.itemIndependentStatementInner()).replace("$$",this.v(ctx.selector()))]}
+    visitItemSIBlock(ctx: ItemSIBlockContext) {return [this.v(ctx.itemIndependentStatementInner()).replace("entity $$",`block ${this.v(ctx.pos3Identifier())}`)]}
+    //visitItemSILootInner(ctx: ItemSILootInnerContext) {return []}
+    visitItemSISelectorNest(ctx: ItemSISelectorNestContext) {
+        const selector =this.v(ctx.selector())
+        return ctx.itemSelectorStatementInner().flatMap(context =>
+            this.visit(context).map(command => command.replace("$$", selector)))
+    }
+    //visitItemSSIGiveAndClear(ctx: ItemSSIGiveAndClearContext) {return []}
+    //visitItemSSIItem(ctx: ItemSSIItemContext) {return []}
+    //visitItemSSILootInner(ctx: ItemSSILootInnerContext) {return []}
+    visitItemISIReplaceWith(ctx: ItemISIReplaceWithContext) {
+        if(ctx.NUMBER()!==undefined) return [`item replace entity $$ ${this.v(ctx.item_slot())} with ${this.v(ctx.nameSpaceItem())} ${ctx.NUMBER()?.text}`]
+        else return [`item replace entity $$ ${this.v(ctx.item_slot())} with ${this.v(ctx.nameSpaceItem())}`]
+    }
+    visitItemISIReplaceFromEntity(ctx: ItemISIReplaceFromEntityContext) {
+        if(ctx.nameSpaceItemModifier()!==undefined) return [`item replace entity $$ ${this.v(ctx.item_slot(0))} from entity ${this.v(ctx.selector())} ${this.v(ctx.item_slot(1))} ${this.v(ctx.nameSpaceItemModifier()!!)}`]
+        else return [`item replace entity $$ ${this.v(ctx.item_slot(0))} from entity ${this.v(ctx.selector())} ${this.v(ctx.item_slot(1))}`]
+    }
+    visitItemISIReplaceFromBlock(ctx: ItemISIReplaceFromBlockContext) {
+        if(ctx.nameSpaceItemModifier()!==undefined) return [`item replace entity $$ ${this.v(ctx.item_slot(0))} from block ${this.v(ctx.pos3Identifier())} ${this.v(ctx.item_slot(1))} ${this.v(ctx.nameSpaceItemModifier()!!)}`]
+        else return [`item replace entity $$ ${this.v(ctx.item_slot(0))} from block ${this.v(ctx.pos3Identifier())} ${this.v(ctx.item_slot(1))}`]
+    }
+    visitItemISIModify(ctx: ItemISIModifyContext) {return [`item modify entity $$ ${this.v(ctx.item_slot())} ${this.v(ctx.nameSpaceItemModifier())}`]}
+    visitGiveISI(ctx: GiveISIContext) {
+        if(ctx.NUMBER()!==undefined) return [`give $$ ${this.v(ctx.nameSpaceItem())} ${ctx.NUMBER()?.text}`]
+        else return [`give $$ ${this.v(ctx.nameSpaceItem())}`]
+    }
+    visitClearISI(ctx: ClearISIContext) {
+        if(ctx.NUMBER()!==undefined) return [`clear $$ ${this.v(ctx.item_predicate())} ${ctx.NUMBER()?.text}`]
+        else return [`clear $$ ${this.v(ctx.item_predicate())}`]
+    }
     
     
-    visitAttrSCompound(ctx: AttrSCompoundContext) { return [] }
-    visitAttrSSelector(ctx: AttrSSelectorContext) {return []}
-    visitAttrSISingle(ctx: AttrSISingleContext) {return []}
-    visitAttrSISelectorCompound(ctx: AttrSISelectorCompoundContext) {return []}
-    visitAttrISIGet(ctx: AttrISIGetContext) {return []}
-    visitAttrISIGetBase(ctx: AttrISIGetBaseContext) {return []}
-    visitAttrISISetBase(ctx: AttrISISetBaseContext) {return []}
-    visitAttrISIModifierAdd(ctx: AttrISIModifierAddContext) {return []}
-    visitAttrISIModifierRemove(ctx: AttrISIModifierRemoveContext) {return []}
-    visitAttrISIModifierGet(ctx: AttrISIModifierGetContext) {return []}
+    visitAttrSCompound(ctx: AttrSCompoundContext) { return ctx.attrStatementInner().flatMap(context=>this.visit(context)) }
+    visitAttrSSelectorCompound(ctx: AttrSSelectorCompoundContext) {
+        const selector =this.v(ctx.selector())
+        return ctx.attrIndependentStatementInner().flatMap(context =>
+            this.visit(context).map(command => command.replace("$$", selector)))
+    }
+    visitAttrSISingle(ctx: AttrSISingleContext) {return [this.v(ctx.attrIndependentStatementInner()).replace("$$", this.v(ctx.selector()))]}
+    visitAttrSISelectorCompound(ctx: AttrSISelectorCompoundContext) {
+        const selector =this.v(ctx.selector())
+        return ctx.attrIndependentStatementInner().map(context =>this.v(context).replace("$$", selector))
+    }
+    visitAttrISIGet(ctx: AttrISIGetContext) {return [`attribute $$ ${this.v(ctx.registerName())} get`+ctx.NUMBER()!==undefined?` ${ctx.NUMBER()?.text}`:""]}
+    visitAttrISIGetBase(ctx: AttrISIGetBaseContext) {return [`attribute $$ ${this.v(ctx.registerName())} base get`+ctx.NUMBER()!==undefined?` ${ctx.NUMBER()?.text}`:""]}
+    visitAttrISISetBase(ctx: AttrISISetBaseContext) {return [`attribute $$ ${this.v(ctx.registerName())} base set ${ctx.NUMBER().text}`]}
+    visitAttrISIModifierAdd(ctx: AttrISIModifierAddContext) {
+        const type = ctx._op.text == "+" ? "add"
+            : ctx._op.text == "*+" ? "multiply_base"
+            : ctx._op.text == "*" ? "multiply":"add";
+        return [`attribute $$ ${this.v(ctx.registerName())} modifier add ${ctx.UUID16_().text} ${this.v(ctx.acceptableName())} ${ctx.NUMBER().text} ${type}`]
+    }
+    visitAttrISIModifierRemove(ctx: AttrISIModifierRemoveContext) {return [`attribute $$ ${this.v(ctx.registerName())} modifier remove ${ctx.UUID16_().text}`]}
+    visitAttrISIModifierGet(ctx: AttrISIModifierGetContext) {return [`attribute $$ ${this.v(ctx.registerName())} modifier value get ${ctx.UUID16_().text}`+ctx.NUMBER()!==undefined?` ${ctx.NUMBER()?.text}`:""]}
     
     
     visitEntitySDeclarePlayer(ctx: EntitySDeclarePlayerContext) { return [] }
@@ -808,7 +839,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitEntitySCompound(ctx: EntitySCompoundContext) {return []}
     visitEntitySSelectorCompound(ctx: EntitySSelectorCompoundContext) {return []}
     
-    visitTagISIAdd(ctx: TagISIAddContext) { return [] }
+    visitTagISIAdd(ctx: TagISIAddContext) { return [`tag add $$`] }
     visitTagISIRemove(ctx: TagISIRemoveContext) {return []}
     visitTagISIList(ctx: TagISIListContext) {return []}
     
@@ -854,7 +885,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitJson(ctx: JsonContext) { return [ctx.text.replace("j{", "{").replace("j[", "[")] }
     visitNbtPath(ctx: NbtPathContext) { return [ctx.text] }
     // visitSnbtValue?: ((ctx: SnbtValueContext) => string[]) | undefined;
-    // visitSnbt?: ((ctx: SnbtContext) => string[]) | undefined;
+    visitSnbt(ctx: SnbtContext){return [ctx.text]}
     // visitNbtCompound?: ((ctx: NbtCompoundContext) => string[]) | undefined;
     // visitNbtPair?: ((ctx: NbtPairContext) => string[]) | undefined;
     // visitNbtList?: ((ctx: NbtListContext) => string[]) | undefined;
@@ -871,7 +902,8 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     // visitJsonValue?: ((ctx: JsonValueContext) => string[]) | undefined;
 
     //because use string[] as the result type, need a new method to get first child of answer
-    visitAndReturnFirst(tree: ParseTree) {
+    //visitAndReturnFirst
+    v(tree: ParseTree) {
         return this.visit(tree)[0]
     }
 }

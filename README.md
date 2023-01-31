@@ -1,57 +1,56 @@
 # JustMCF
-
 <!-- TOC -->
 
 - [JustMCF](#justmcf)
-  - [1. 项目文件结构](#1-%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84)
-  - [2. 数据运算简化](#2-%E6%95%B0%E6%8D%AE%E8%BF%90%E7%AE%97%E7%AE%80%E5%8C%96)
-    - [2.1. scoreboard数据运算](#21-scoreboard%E6%95%B0%E6%8D%AE%E8%BF%90%E7%AE%97)
-    - [2.2. NBT数据运算](#22-nbt%E6%95%B0%E6%8D%AE%E8%BF%90%E7%AE%97)
-    - [2.3. NBT与记分板数据转换存储](#23-nbt%E4%B8%8E%E8%AE%B0%E5%88%86%E6%9D%BF%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2%E5%AD%98%E5%82%A8)
-  - [3. 逻辑控制流简化](#3-%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6%E6%B5%81%E7%AE%80%E5%8C%96)
-    - [3.1. 函数](#31-%E5%87%BD%E6%95%B0)
-      - [3.1.1. 函数声明](#311-%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E)
-      - [3.1.2. 函数声明并注册到标签中](#312-%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E%E5%B9%B6%E6%B3%A8%E5%86%8C%E5%88%B0%E6%A0%87%E7%AD%BE%E4%B8%AD)
-      - [3.1.3. 完整定义函数标签](#313-%E5%AE%8C%E6%95%B4%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E6%A0%87%E7%AD%BE)
-    - [3.2. execute控制流](#32-execute%E6%8E%A7%E5%88%B6%E6%B5%81)
-      - [3.2.1. 概览](#321-%E6%A6%82%E8%A7%88)
-      - [3.2.2. 执行者与执行方位设置](#322-%E6%89%A7%E8%A1%8C%E8%80%85%E4%B8%8E%E6%89%A7%E8%A1%8C%E6%96%B9%E4%BD%8D%E8%AE%BE%E7%BD%AE)
-      - [3.2.3. 执行条件if/unless 子语句](#323-%E6%89%A7%E8%A1%8C%E6%9D%A1%E4%BB%B6ifunless-%E5%AD%90%E8%AF%AD%E5%8F%A5)
-      - [3.2.4. 存储语句store 子语句](#324-%E5%AD%98%E5%82%A8%E8%AF%AD%E5%8F%A5store-%E5%AD%90%E8%AF%AD%E5%8F%A5)
-      - [3.2.5. 执行语句run 子语句](#325-%E6%89%A7%E8%A1%8C%E8%AF%AD%E5%8F%A5run-%E5%AD%90%E8%AF%AD%E5%8F%A5)
-        - [3.2.5.1. 直接执行命令](#3251-%E7%9B%B4%E6%8E%A5%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4)
-        - [3.2.5.2. 具名函数](#3252-%E5%85%B7%E5%90%8D%E5%87%BD%E6%95%B0)
-        - [3.2.5.3. 匿名函数](#3253-%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0)
-    - [3.3. 条件语句](#33-%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5)
-      - [3.3.1. exist表达式](#331-exist%E8%A1%A8%E8%BE%BE%E5%BC%8F)
-      - [3.3.2. 逻辑运算符](#332-%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6)
-      - [3.3.3. if语句](#333-if%E8%AF%AD%E5%8F%A5)
-    - [3.4. 循环语句](#34-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5)
-      - [3.4.1. while语句](#341-while%E8%AF%AD%E5%8F%A5)
-      - [3.4.2. for语句](#342-for%E8%AF%AD%E5%8F%A5)
-  - [4. 命令聚合](#4-%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
-    - [4.1. execute命令聚合](#41-execute%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
-    - [4.2. data命令聚合](#42-data%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
-    - [4.3. scoreboard命令聚合](#43-scoreboard%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
-    - [4.4. display命令聚合](#44-display%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
-      - [4.4.1. title命令聚合](#441-title%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
-      - [4.4.2. bossbar命令聚合](#442-bossbar%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
-    - [4.5. item命令聚合](#45-item%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
-      - [4.5.1. loot命令聚合](#451-loot%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
-    - [4.6. entity命令聚合](#46-entity%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
-      - [4.6.1. 初始化实体](#461-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AE%9E%E4%BD%93)
-      - [4.6.2. 对实体执行操作](#462-%E5%AF%B9%E5%AE%9E%E4%BD%93%E6%89%A7%E8%A1%8C%E6%93%8D%E4%BD%9C)
-      - [4.6.3. attribute命令聚合](#463-attribute%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
-    - [4.7. block命令聚合](#47-block%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
-    - [4.8. world命令聚合](#48-world%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
-  - [5. 命令对象化](#5-%E5%91%BD%E4%BB%A4%E5%AF%B9%E8%B1%A1%E5%8C%96)
-  - [6. 支持脚本](#6-%E6%94%AF%E6%8C%81%E8%84%9A%E6%9C%AC)
-  - [7. 进阶函数设计](#7-%E8%BF%9B%E9%98%B6%E5%87%BD%E6%95%B0%E8%AE%BE%E8%AE%A1)
-    - [7.1. 数据类型](#71-%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
-      - [7.1.1. 基本数据类型](#711-%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
-      - [7.1.2. NBT类型信息](#712-nbt%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF)
-      - [7.1.3. 带类型标记的赋值语法](#713-%E5%B8%A6%E7%B1%BB%E5%9E%8B%E6%A0%87%E8%AE%B0%E7%9A%84%E8%B5%8B%E5%80%BC%E8%AF%AD%E6%B3%95)
-    - [7.2. 函数](#72-%E5%87%BD%E6%95%B0)
+  - [项目文件结构](#%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84)
+  - [数据运算简化](#%E6%95%B0%E6%8D%AE%E8%BF%90%E7%AE%97%E7%AE%80%E5%8C%96)
+    - [scoreboard数据运算](#scoreboard%E6%95%B0%E6%8D%AE%E8%BF%90%E7%AE%97)
+    - [NBT数据运算](#nbt%E6%95%B0%E6%8D%AE%E8%BF%90%E7%AE%97)
+    - [NBT与记分板数据转换存储](#nbt%E4%B8%8E%E8%AE%B0%E5%88%86%E6%9D%BF%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2%E5%AD%98%E5%82%A8)
+  - [逻辑控制流简化](#%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6%E6%B5%81%E7%AE%80%E5%8C%96)
+    - [函数](#%E5%87%BD%E6%95%B0)
+      - [函数声明](#%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E)
+      - [函数声明并注册到标签中](#%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E%E5%B9%B6%E6%B3%A8%E5%86%8C%E5%88%B0%E6%A0%87%E7%AD%BE%E4%B8%AD)
+      - [完整定义函数标签](#%E5%AE%8C%E6%95%B4%E5%AE%9A%E4%B9%89%E5%87%BD%E6%95%B0%E6%A0%87%E7%AD%BE)
+    - [execute控制流](#execute%E6%8E%A7%E5%88%B6%E6%B5%81)
+      - [概览](#%E6%A6%82%E8%A7%88)
+      - [执行者与执行方位设置](#%E6%89%A7%E8%A1%8C%E8%80%85%E4%B8%8E%E6%89%A7%E8%A1%8C%E6%96%B9%E4%BD%8D%E8%AE%BE%E7%BD%AE)
+      - [执行条件if/unless 子语句](#%E6%89%A7%E8%A1%8C%E6%9D%A1%E4%BB%B6ifunless-%E5%AD%90%E8%AF%AD%E5%8F%A5)
+      - [存储语句store 子语句](#%E5%AD%98%E5%82%A8%E8%AF%AD%E5%8F%A5store-%E5%AD%90%E8%AF%AD%E5%8F%A5)
+      - [执行语句run 子语句](#%E6%89%A7%E8%A1%8C%E8%AF%AD%E5%8F%A5run-%E5%AD%90%E8%AF%AD%E5%8F%A5)
+        - [直接执行命令](#%E7%9B%B4%E6%8E%A5%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4)
+        - [具名函数](#%E5%85%B7%E5%90%8D%E5%87%BD%E6%95%B0)
+        - [匿名函数](#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0)
+    - [条件语句](#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5)
+      - [exist表达式](#exist%E8%A1%A8%E8%BE%BE%E5%BC%8F)
+      - [逻辑运算符](#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6)
+      - [if语句](#if%E8%AF%AD%E5%8F%A5)
+    - [循环语句](#%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5)
+      - [while语句](#while%E8%AF%AD%E5%8F%A5)
+      - [for语句](#for%E8%AF%AD%E5%8F%A5)
+  - [命令聚合](#%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
+    - [execute命令聚合](#execute%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
+    - [data命令聚合](#data%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
+    - [scoreboard命令聚合](#scoreboard%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
+    - [display命令聚合](#display%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
+      - [title命令聚合](#title%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
+      - [bossbar命令聚合](#bossbar%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
+    - [item命令聚合](#item%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
+      - [loot命令聚合](#loot%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
+    - [entity命令聚合](#entity%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
+      - [初始化实体](#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AE%9E%E4%BD%93)
+      - [对实体执行操作](#%E5%AF%B9%E5%AE%9E%E4%BD%93%E6%89%A7%E8%A1%8C%E6%93%8D%E4%BD%9C)
+      - [attribute命令聚合](#attribute%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
+    - [block命令聚合](#block%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
+    - [world命令聚合](#world%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
+  - [命令对象化](#%E5%91%BD%E4%BB%A4%E5%AF%B9%E8%B1%A1%E5%8C%96)
+  - [支持脚本](#%E6%94%AF%E6%8C%81%E8%84%9A%E6%9C%AC)
+  - [进阶函数设计](#%E8%BF%9B%E9%98%B6%E5%87%BD%E6%95%B0%E8%AE%BE%E8%AE%A1)
+    - [数据类型](#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
+      - [基本数据类型](#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
+      - [NBT类型信息](#nbt%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF)
+      - [带类型标记的赋值语法](#%E5%B8%A6%E7%B1%BB%E5%9E%8B%E6%A0%87%E8%AE%B0%E7%9A%84%E8%B5%8B%E5%80%BC%E8%AF%AD%E6%B3%95)
+    - [进阶函数](#%E8%BF%9B%E9%98%B6%E5%87%BD%E6%95%B0)
 
 <!-- /TOC -->
 
@@ -59,11 +58,11 @@ JustMCF是一个简化mcfunction工程的项目。使用JustMCF，可以使你�
 
 以下几个方面是JustMCF进行简化的部分
 
-* 数据运算简化
-* 逻辑控制流简化
-* 命令聚合
-* 命令对象化
-* 支持脚本
+- 数据运算简化
+- 逻辑控制流简化
+- 命令聚合
+- 命令对象化
+- 支持脚本
 
 ## 项目文件结构
 
@@ -73,7 +72,7 @@ JustMCF项目支持一个mcf.mcmeta文件，用于存放有关数据包兼容性
 
 通常一个数据包的文件结构为：
 
-```
+```text
 folder_name
 |-pack.mcmeta
 |-pack.png
@@ -92,32 +91,39 @@ folder_name
 
 在通常的编程中，数据可以这样被利用：
 
-* 初始化：data_name = data_value
-* 运算：data_name1 op data_name2
+- 初始化：data_name = data_value
+- 运算：data_name1 op data_name2
 
 在JustMCF中，用以下标识符来表示几类数据
 
-* 实体：在wiki上，可以用以下形式来代表实体：玩家名称 或 UUID 或 目标选择器变量。在JustMCF中，对应形式为：
-  * 玩家名称：`@playername` 需要在名称前加 `@`
-  * 假名：`#name` 不需要在名称前加 `@`，直接用原来的
-  * UUID: `@entityname` 其中，可以指定 `entityname`对应的UUID，或让JustMCF自动生成UUID。
-  * 目标选择器变量：`@e[type=xxxx]`和原来不变。
-* 坐标：共有三类坐标，在JustMCF中，需要左右添加尖括号
-  * 2个值表示朝向坐标或者xz坐标 `< ~ ~ >`
-  * 3个值表示位置坐标 `< ~ ~ ~ >` （这个可以简化为 `<~>`）
-  * 5个值表示方位坐标 `< ~ ~ ~ ~ ~ >`控制流逻辑简化
-* 记分板：来源只有实体，在JustMCF中，表示为
-  * 方案一：`scoreboardname@entityname` 其中，`@entityname`代表实体
-  * 方案二：`@entityname:scoreboardname`
-* NBT：来源为实体、方块实体、storage，在JustMCF中，表示为：
-  * 实体NBT：`@s::Tag1`
-  * 方块实体NBT：`<~ ~ ~>::Tag1`
-  * storageNBT： `foo:bar::Tag1`
+- 实体：在wiki上，可以用以下形式来代表实体：玩家名称 或 UUID 或 目标选择器变量。在JustMCF中，对应形式为：
+  - 玩家名称：`@playername` 需要在名称前加 `@`
+  - 假名：`#name` 不需要在名称前加 `@`，直接用原来的
+  - UUID: `@entityname` 其中，可以指定 `entityname`对应的UUID，或让JustMCF自动生成UUID。
+  - 目标选择器变量：`@e[type=xxxx]`和原来不变。
+
+- 坐标：共有三类坐标，在JustMCF中，需要左右添加尖括号
+  - 2个值表示朝向坐标或者xz坐标 `< ~ ~ >`
+  - 3个值表示位置坐标 `< ~ ~ ~ >` （这个可以简化为 `<~>`）
+  - 5个值表示方位坐标 `< ~ ~ ~ ~ ~ >`
+
+- 记分板：来源只有实体，在JustMCF中，表示为
+  - 方案一：`scoreboardname@entityname` 其中，`@entityname`代表实体
+
+  - 方案二：`@entityname:scoreboardname`
+
+- NBT：来源为实体、方块实体、storage，在JustMCF中，表示为：
+
+  - 实体NBT：`@s::Tag1`
+
+  - 方块实体NBT：`<~ ~ ~>::Tag1`
+
+  - storageNBT： `foo:bar::Tag1`
 
 在JustMCF中，用以下字面量表示不同的数据类型：
 
-* 原始JSON文本：`j`后面跟原始JSON文本，如 `j{"text":"test"}`
-* NBT值：`n`后面跟NBT值，如 `n{Tag1:"no"}`
+- 原始JSON文本：`j`后面跟原始JSON文本，如 `j{"text":"test"}`
+- NBT值：`n`后面跟NBT值，如 `n{Tag1:"no"}`
 
 ### scoreboard数据运算
 
@@ -125,12 +131,12 @@ folder_name
 
 初始化记分板
 
-```
+```mcf
 scb test "displayname" 
          ##scoreboard objective add test dummy "displayname"
 ```
 
-```
+```mcf
 
 scb(deathCount) test default {
     display sidebar
@@ -142,7 +148,7 @@ scb(deathCount) test default {
 
 设置记分板属性
 
-```
+```mcf
 scb test {
     displayname "分数"
     rendertype hearts|integer
@@ -158,7 +164,7 @@ scb test {
 
 记分板运算
 
-```
+```mcf
 test@s +=1                            ##add
 test@s -=1                            ##remove
 test@s =1                             ##set
@@ -170,7 +176,7 @@ test1@s -= test2@s
 
 完整表达式运算
 
-```
+```mcf
 ans@s := test2@s + test3@s / test4@s
 ```
 
@@ -178,7 +184,7 @@ ans@s := test2@s + test3@s / test4@s
 
 稍有不同的是data merge的表现形式
 
-```
+```mcf
 < ~ ~ ~ > ::Base *3                              ##get block
 @e[]::Item                                       ##get 
 @e[].data |= n{}                                 ##merge
@@ -194,13 +200,13 @@ ans@s := test2@s + test3@s / test4@s
 
 转换存储的书写方式是execute语句的store子语句的格式，见后一部分
 
-```
+```mcf
 @s::ArmorItems[] => armor@s
 
 ##execute store result score @s armor run data get entity @s ArmorItems[]
 ```
 
-```
+```mcf
 armor@s => foo:bar::Armor.Length int*1
 
 ##execute store result storage foo:bar Armor.Length int 1 run scoreboard players get @s armor
@@ -212,7 +218,7 @@ armor@s => foo:bar::Armor.Length int*1
 
 #### 函数声明
 
-```
+```mcf
 func foo:utils/test{                            ##自动创建一个mcf
     func foo:utils/test                         ##递归调用自己
 }
@@ -228,7 +234,7 @@ func开头带有大括号的语句是定义语句而非执行语句，不带有�
 
 #### 函数声明并注册到标签中
 
-```
+```mcf
 func foo:utils/test tagged foo:utils{
 
 }
@@ -236,7 +242,7 @@ func foo:utils/test tagged foo:utils{
 
 #### 完整定义函数标签
 
-```
+```mcf
 func #foo:utils/all{ ##自动创建一个function tag
     func foo:utils/a{
 
@@ -266,7 +272,7 @@ func #foo:utils/all{ ##自动创建一个function tag
 
 #### 执行者与执行方位设置
 
-```
+```mcf
 {
     as @e[]
     at @e[]
@@ -281,7 +287,7 @@ func #foo:utils/all{ ##自动创建一个function tag
 
 对于if子语句来说，例如`if entity @e`可以省略if或者entity或者两者都省略只写`@e`。当然推荐使用省略entity的形式。这样对于unless子语句来说是统一的。
 
-```
+```mcf
 {
     if @e[]                                      ##if entity
     if sb1@e[] >= sb2@s                          ##if score
@@ -303,7 +309,7 @@ func #foo:utils/all{ ##自动创建一个function tag
 
 简化的存储语句写在第一个大括号内也可以，写在大括号外也可以
 
-```
+```mcf
 {
     as @e[] ?=> scb@s
     as @e[] ?=> scb1@s
@@ -311,7 +317,7 @@ func #foo:utils/all{ ##自动创建一个function tag
 }->func foo:test
 ```
 
-```
+```mcf
 {as @p}
 ?=> sb3@s                                    ##store success score
 => sb3@e[]                                   ##store result score
@@ -324,7 +330,7 @@ func #foo:utils/all{ ##自动创建一个function tag
 
 在任意命令后边也可以跟上存储子命令
 
-```
+```mcf
 tellraw @s {"text":"hello"} ?=> sb1@s
 ```
 
@@ -340,7 +346,7 @@ tellraw @s {"text":"hello"} ?=> sb1@s
 
 ##### 具名函数
 
-```
+```mcf
 {as @p}->func foo:test{
     tellraw @s {"text":"hello"}
     tellraw @s {"text":"hello again"}
@@ -351,7 +357,7 @@ tellraw @s {"text":"hello"} ?=> sb1@s
 
 ##### 匿名函数
 
-```
+```mcf
 {as @p}->{
     tellraw @s {"text":"hello"}
     tellraw @s {"text":"hello again"}
@@ -377,13 +383,13 @@ tellraw @s {"text":"hello"} ?=> sb1@s
 
 对于nbt来说，可以直接写在外面
 
-```
+```mcf
 {if @e} && {if < ~ ~ ~ > stone} && foo:stor::bool
 ```
 
 对于execute中使用的if来说（unless则不行），上述语句可以写成
 
-```
+```mcf
 {entity @e} && {block < ~ ~ ~ > stone} && foo:stor::bool
 
 {@e} && { < ~ ~ ~ > stone} && foo:stor::bool
@@ -391,13 +397,13 @@ tellraw @s {"text":"hello"} ?=> sb1@s
 
 可以将exist值赋值给nbt
 
-```
+```mcf
 foo:stor::bool_1 = {if @e} && {if < ~ ~ ~ > stone} 
 ```
 
 exist值可以为`true`、`false`
 
-```
+```mcf
 foo:stor::bool_1 = true
 		##data modify foo:stor bool_1 set value 1b
 foo:stor::bool_1 = false
@@ -416,7 +422,7 @@ foo:stor::bool_1 = false
 
 #### if语句
 
-```
+```mcf
 if( {if @e} && {if scb@s ..1 } && foo:stor::bool_1 )->{
 
 }
@@ -434,7 +440,7 @@ else->func foo:test{ ##具名函数
 
 用于条件循环，这里的大括号相当于exec的大括号
 
-```
+```mcf
 while{ if @e }->func loopname{
 
 }
@@ -447,7 +453,7 @@ while{ if @e }->func loopname{
 
 也可以使用bool表达式的形式
 
-```
+```mcf
 while()->func loopname{
 
 }
@@ -457,7 +463,7 @@ while()->func loopname{
 
 用于遍历列表，这里的大括号相当于data的大括号
 
-```
+```mcf
 for{ foo:flower::list }->func loopname{
     foo:flower::list[0] = {}
 }
@@ -473,7 +479,7 @@ for{ foo:flower::list }->func loopname{
 ##execute if score loop int matches 1.. run function ##loopname
 ```
 
-```
+```mcf
 for{foo:flower::temp |= ["abcd","efgh","ojbk"] }->func loopname{
 
 }
@@ -503,7 +509,7 @@ for{foo:flower::temp |= ["abcd","efgh","ojbk"] }->func loopname{
 
 例如：
 
-```
+```mcf
 data{
     @e[] |= n{}                                    ##merge
     @e[]::Item |= @s::Item                        ##modify merge from
@@ -520,7 +526,7 @@ data{
 
 将 `tellraw` `title` `scoreboard` `bossbar`等具有显示作用的命令聚合在一起
 
-```
+```mcf
 display{
     @s.text j{obj@s} 
                  ## tellraw @s {"score":{"name":"@s","objective":"obj"}
@@ -551,7 +557,7 @@ display{
 }
 ```
 
-```
+```mcf
 display @s{
 
 }
@@ -559,7 +565,7 @@ display @s{
 
 #### title命令聚合
 
-```
+```mcf
 title @s{
     title j{}
     subtitle j{}
@@ -570,7 +576,7 @@ title @s{
 }
 ```
 
-```
+```mcf
 title {
     @s.title j{}
     @s.subtitle j{}
@@ -583,14 +589,14 @@ title {
 
 初始化
 
-```
+```mcf
 bossbar foo:newboss "New Boss"  ##bossbar add
 
 ```
 
 设置属性
 
-```
+```mcf
 bossbar foo:newboss {
     get max|players|value|visible ##bossbar get
     remove 
@@ -607,7 +613,7 @@ bossbar foo:newboss {
 
 将有关物品的操作聚合在一起 `item` `give` `clear` `loot`
 
-```
+```mcf
 item{
     @e[]::armor.chest = xxx 4                        ##replace with
     @e[]::armor.chest = @s::armor.chest foo:modifier ##replace from
@@ -624,7 +630,7 @@ item{
 
 #### loot命令聚合
 
-```
+```mcf
 loot{
     < ~ ~ ~ > = ##spawn
     < ~ ~ ~ > += ##insert
@@ -642,20 +648,20 @@ loot{
 
 生成实体
 
-```
+```mcf
 entity(pig) < ~ ~ ~ > n{} 
           ##summon pig ~ ~ ~ {}
 ```
 
 设置mcf项目中会使用到的玩家假名，可以使用@xxxx来选中玩家
 
-```
+```mcf
 entity(player) xxxx
 ```
 
 初始化使用假名，而实际上指定了uuid，uuid可以在项目文件中配置/自动生成，可以使用@xxxx来选中该实体
 
-```
+```mcf
 entity(pig) < ~ ~ ~ > xxxx n{} 
 entity @xxxx{   
     .tp < ~ ~ ~ >
@@ -664,7 +670,7 @@ entity @xxxx{
 
 #### 对实体执行操作
 
-```
+```mcf
 entity{
     @s.tp < ~ ~ ~ >                                    ##tp
     @s.tag+= temp                                      ##tag
@@ -678,7 +684,7 @@ entity{
 
 对选择器选中的实体进行操作
 
-```
+```mcf
 entity @xxxx{
     .tp < ~ ~ ~ >
     .tag+= temp
@@ -689,7 +695,7 @@ entity @xxxx{
 
 TODO:取代UUID，这里直接用name进行运算
 
-```
+```mcf
 attr{
     @s::generic.attack_damage all             ##get
     @s::generic.attack_damage base *4         ##base get
@@ -706,7 +712,7 @@ attr{
 
 将方块操作 `setblock` `fill` `clone` 聚合在一起
 
-```
+```mcf
 block{
     < ~ ~ ~ > minecraft:stone[] keep                    ##setblock
     < ~ ~ ~ > < ~ ~ ~ > minecraft:stone[] keep          ##fill
@@ -720,7 +726,7 @@ block{
 
 相当于是entity命令聚合去掉框
 
-```
+```mcf
 @s.kill 
 @s.tag +=
 @s.tp @r
@@ -737,7 +743,7 @@ block{
 
 `#{ }#`输出到外界，自动替换为unfold()
 
-```
+```mcf
 {{
     const list = [1,2,3,4,5]
     for(let i of list){#{
@@ -778,11 +784,11 @@ nbt:可以省略，默认是nbt的类型
 
 类型信息是可以自己设计或者来自原版（例如生物），每一次modify from，其实就是把对应的类型信息转移到自己身上来。
 
-```
+```mcf
 interface test:foo n{
-	Name:"",
-	Age:17,
-	Information:{}
+  Name:"",
+  Age:17,
+  Information:{}
 }
 ```
 
@@ -796,15 +802,15 @@ NBT类型信息加上只对本类型操作的func，就相当于class了。
 
 前置的方式进行类型的标记
 
-```
+```mcf
 nbt:float foo:test::value = 32f
 ```
 
-### 函数
+### 进阶函数
 
 不带类型标记的函数
 
-```
+```mcf
 func test:fun1(a,b){
 	return c
 }
@@ -812,7 +818,7 @@ func test:fun1(a,b){
 
 带类型标记的函数
 
-```
+```mcf
 func test:func1(int a,int b) int {
 	
 }
@@ -820,7 +826,6 @@ func test:func1(int a,int b) int {
 
 函数执行
 
-```
+```mcf
 foo:test::value = func test:func1(a,b)
 ```
-

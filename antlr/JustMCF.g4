@@ -103,8 +103,8 @@ execStatement
 execStoreChild
     : '=>' scbIdentifier                                                                #execStoreResultScore
     | '?=>' scbIdentifier                                                               #execStoreSuccessScore
-    | '=>' dataIdentifier (NumberType '*' NUMBER)?                                  #execStoreResultData
-    | '?=>' dataIdentifier (NumberType '*' NUMBER)?                                 #execStoreSuccessData
+    | '=>' dataIdentifier (NumberType '*'? NUMBER)?                                  #execStoreResultData
+    | '?=>' dataIdentifier (NumberType '*'? NUMBER)?                                 #execStoreSuccessData
     | '=>' 'bossbar' nameSpaceBossbar value=('value'|'max')?                                   #execStoreResultBossbar
     | '?=>' 'bossbar' nameSpaceBossbar value=('value'|'max')?                                  #execStoreSuccessBossbar
     ;
@@ -384,14 +384,14 @@ lootSelectorStatementInner
     | lootIndependentStatementInnerReplaceEntity
     ;
 lootIndependentStatementInnerGive: ('+='|'give') lootSource;
-lootIndependentStatementInnerReplaceEntity: item_slot '+=' lootSource;
+lootIndependentStatementInnerReplaceEntity: item_slot '=' lootSource '*'? NUMBER?;
 lootSource
     :'fish' nameSpaceLoot pos3Identifier hand=('mainhand'|'offhand')? #lootSourceFishHand
-    |'fish' nameSpaceLoot pos3Identifier registerName? #lootSourceFishTool
+    |'fish' nameSpaceLoot pos3Identifier nameSpaceItem #lootSourceFishTool
     |'loot'? nameSpaceLoot #lootSourceLoot
     |'kill'? selector #lootSourceKill
     |'mine'? pos3Identifier hand=('mainhand'|'offhand')? #lootSourceMineHand
-    |'mine'? pos3Identifier registerName? #lootSourceMineTool
+    |'mine'? pos3Identifier nameSpaceItem #lootSourceMineTool
     ;
 itemStatementInner
     : selector giveAndClearIndependentStatementInner #itemSIGiveAndClear
@@ -406,31 +406,31 @@ itemSelectorStatementInner
     | lootSelectorStatementInner #itemSSILootInner
     ;
 itemIndependentStatementInner
-    : item_slot '=' registerName NUMBER? #itemISIReplaceWith
-    | item_slot '=' selector '::' item_slot nameSpaceItemModifier #itemISIReplaceFromEntity
-    | item_slot '=' pos3Identifier '::' item_slot nameSpaceItemModifier #itemISIReplaceFromBlock
+    : item_slot '=' nameSpaceItem NUMBER? #itemISIReplaceWith
+    | item_slot '=' selector '::' item_slot nameSpaceItemModifier? #itemISIReplaceFromEntity
+    | item_slot '=' pos3Identifier '::' item_slot nameSpaceItemModifier? #itemISIReplaceFromBlock
     | item_slot '+=' nameSpaceItemModifier #itemISIModify
     ;
 giveAndClearIndependentStatementInner
-    : ('+='|'give') registerName NUMBER? #giveISI
+    : ('+='|'give') nameSpaceItem NUMBER? #giveISI
     | ('-='|'clear') item_predicate NUMBER? #clearISI
     ;
 
 attrStatement
     : 'attr' '{'attrStatementInner* '}' #attrSCompound
-    | 'attr' selector '{'attrIndependentStatementInner* '}' #attrSSelector
+    | 'attr' selector '{'attrIndependentStatementInner* '}' #attrSSelectorCompound
     ;
 attrStatementInner
     : selector '::' attrIndependentStatementInner #attrSISingle
     | selector '{'attrIndependentStatementInner* '}' #attrSISelectorCompound
     ;
 attrIndependentStatementInner
-    : registerName 'all'? ('*'NUMBER)? #attrISIGet
-    | registerName 'base' ('*'NUMBER)? #attrISIGetBase
+    : registerName 'all'? ('*'?NUMBER)? #attrISIGet
+    | registerName 'base' ('*'?NUMBER)? #attrISIGetBase
     | registerName 'base' '=' NUMBER #attrISISetBase
     | registerName '+=' UUID16_ acceptableName '(' op=('+'|'*+'|'*') NUMBER ')' #attrISIModifierAdd
     | registerName '-=' UUID16_ #attrISIModifierRemove
-    | registerName UUID16_ ('*'NUMBER)? #attrISIModifierGet
+    | registerName UUID16_ ('*'?NUMBER)? #attrISIModifierGet
     ;
 
 entityStatement
