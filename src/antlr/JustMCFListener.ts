@@ -3,9 +3,9 @@
 
 import { ParseTreeListener } from "antlr4ts/tree/ParseTreeListener";
 
-import { EffectISIGiveContext } from "./JustMCFParser";
 import { EffectISIClearContext } from "./JustMCFParser";
-import { EffectISIClearSpContext } from "./JustMCFParser";
+import { EffectISIGiveContext } from "./JustMCFParser";
+import { EffectISIGiveSpContext } from "./JustMCFParser";
 import { EffectISIClearAllContext } from "./JustMCFParser";
 import { GiveISIContext } from "./JustMCFParser";
 import { ClearISIContext } from "./JustMCFParser";
@@ -69,6 +69,7 @@ import { ItemSSIItemContext } from "./JustMCFParser";
 import { ItemSSILootInnerContext } from "./JustMCFParser";
 import { EntitySDeclarePlayerContext } from "./JustMCFParser";
 import { EntitySDeclareContext } from "./JustMCFParser";
+import { EntitySDeclareWithNameContext } from "./JustMCFParser";
 import { EntitySCompoundContext } from "./JustMCFParser";
 import { EntitySSelectorCompoundContext } from "./JustMCFParser";
 import { BossbarSIGetContext } from "./JustMCFParser";
@@ -134,6 +135,7 @@ import { ExecNamedRunContext } from "./JustMCFParser";
 import { ExecAnonymousRunContext } from "./JustMCFParser";
 import { DisplaySCompoundContext } from "./JustMCFParser";
 import { DisplaySSelectorCompoundContext } from "./JustMCFParser";
+import { EntityDeclareSITagContext } from "./JustMCFParser";
 import { TitleSCompoundContext } from "./JustMCFParser";
 import { TitleSSelectorCompoundContext } from "./JustMCFParser";
 import { NameSpaceSettingsFuncContext } from "./JustMCFParser";
@@ -141,6 +143,7 @@ import { NameSpaceSettingsBlockContext } from "./JustMCFParser";
 import { NameSpaceSettingsStorageContext } from "./JustMCFParser";
 import { NameSpaceSettingsBossbarContext } from "./JustMCFParser";
 import { NameSpaceSettingsBiomeContext } from "./JustMCFParser";
+import { NameSpaceSettingsEntityContext } from "./JustMCFParser";
 import { NameSpaceSettingsPredicateContext } from "./JustMCFParser";
 import { NameSpaceSettingsDimContext } from "./JustMCFParser";
 import { NameSpaceSettingsItemContext } from "./JustMCFParser";
@@ -191,13 +194,13 @@ import { DataRemoveContext } from "./JustMCFParser";
 import { BossbarOpExprGetContext } from "./JustMCFParser";
 import { BossbarOpExprAssignValueContext } from "./JustMCFParser";
 import { BossbarOpExprAssignMaxContext } from "./JustMCFParser";
+import { BlockSISetblockContext } from "./JustMCFParser";
+import { BlockSIFillContext } from "./JustMCFParser";
+import { BlockSIFillReplaceContext } from "./JustMCFParser";
+import { BlockSICloneContext } from "./JustMCFParser";
+import { BlockSICloneFilteredContext } from "./JustMCFParser";
 import { AttrSCompoundContext } from "./JustMCFParser";
 import { AttrSSelectorCompoundContext } from "./JustMCFParser";
-import { BlockSSetblockContext } from "./JustMCFParser";
-import { BlockSFillContext } from "./JustMCFParser";
-import { BlockSFillReplaceContext } from "./JustMCFParser";
-import { BlockSCloneContext } from "./JustMCFParser";
-import { BlockSCloneFilteredContext } from "./JustMCFParser";
 import { ScbGetContext } from "./JustMCFParser";
 import { ScbAddContext } from "./JustMCFParser";
 import { ScbRemoveContext } from "./JustMCFParser";
@@ -282,6 +285,7 @@ import { NameSpaceBiomeContext } from "./JustMCFParser";
 import { NameSpaceDimContext } from "./JustMCFParser";
 import { NameSpacePredicateContext } from "./JustMCFParser";
 import { NameSpaceItemContext } from "./JustMCFParser";
+import { NameSpaceEntityContext } from "./JustMCFParser";
 import { NameSpaceLootContext } from "./JustMCFParser";
 import { NameSpaceItemModifierContext } from "./JustMCFParser";
 import { TagNameSpaceContext } from "./JustMCFParser";
@@ -328,6 +332,7 @@ import { AttrStatementContext } from "./JustMCFParser";
 import { AttrStatementInnerContext } from "./JustMCFParser";
 import { AttrIndependentStatementInnerContext } from "./JustMCFParser";
 import { EntityStatementContext } from "./JustMCFParser";
+import { EntityDeclareStatementInnerContext } from "./JustMCFParser";
 import { TagIndependentStatementInnerContext } from "./JustMCFParser";
 import { EffectIndependentStatementInnerContext } from "./JustMCFParser";
 import { TpIndependentStatementInnerContext } from "./JustMCFParser";
@@ -335,6 +340,7 @@ import { EntityIndependentStatementInnerContext } from "./JustMCFParser";
 import { EntityStatementInnerContext } from "./JustMCFParser";
 import { EntityExpressionContext } from "./JustMCFParser";
 import { BlockStatementContext } from "./JustMCFParser";
+import { BlockStatementInnerContext } from "./JustMCFParser";
 import { InterfaceStatementContext } from "./JustMCFParser";
 import { DataAssignExistExpressionContext } from "./JustMCFParser";
 import { ExistExpressionContext } from "./JustMCFParser";
@@ -368,19 +374,6 @@ import { JsonValueContext } from "./JustMCFParser";
  */
 export interface JustMCFListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by the `effectISIGive`
-	 * labeled alternative in `JustMCFParser.effectIndependentStatementInner`.
-	 * @param ctx the parse tree
-	 */
-	enterEffectISIGive?: (ctx: EffectISIGiveContext) => void;
-	/**
-	 * Exit a parse tree produced by the `effectISIGive`
-	 * labeled alternative in `JustMCFParser.effectIndependentStatementInner`.
-	 * @param ctx the parse tree
-	 */
-	exitEffectISIGive?: (ctx: EffectISIGiveContext) => void;
-
-	/**
 	 * Enter a parse tree produced by the `effectISIClear`
 	 * labeled alternative in `JustMCFParser.effectIndependentStatementInner`.
 	 * @param ctx the parse tree
@@ -394,17 +387,30 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitEffectISIClear?: (ctx: EffectISIClearContext) => void;
 
 	/**
-	 * Enter a parse tree produced by the `effectISIClearSp`
+	 * Enter a parse tree produced by the `effectISIGive`
 	 * labeled alternative in `JustMCFParser.effectIndependentStatementInner`.
 	 * @param ctx the parse tree
 	 */
-	enterEffectISIClearSp?: (ctx: EffectISIClearSpContext) => void;
+	enterEffectISIGive?: (ctx: EffectISIGiveContext) => void;
 	/**
-	 * Exit a parse tree produced by the `effectISIClearSp`
+	 * Exit a parse tree produced by the `effectISIGive`
 	 * labeled alternative in `JustMCFParser.effectIndependentStatementInner`.
 	 * @param ctx the parse tree
 	 */
-	exitEffectISIClearSp?: (ctx: EffectISIClearSpContext) => void;
+	exitEffectISIGive?: (ctx: EffectISIGiveContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `effectISIGiveSp`
+	 * labeled alternative in `JustMCFParser.effectIndependentStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	enterEffectISIGiveSp?: (ctx: EffectISIGiveSpContext) => void;
+	/**
+	 * Exit a parse tree produced by the `effectISIGiveSp`
+	 * labeled alternative in `JustMCFParser.effectIndependentStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	exitEffectISIGiveSp?: (ctx: EffectISIGiveSpContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `effectISIClearAll`
@@ -1224,6 +1230,19 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitEntitySDeclare?: (ctx: EntitySDeclareContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `entitySDeclareWithName`
+	 * labeled alternative in `JustMCFParser.entityStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterEntitySDeclareWithName?: (ctx: EntitySDeclareWithNameContext) => void;
+	/**
+	 * Exit a parse tree produced by the `entitySDeclareWithName`
+	 * labeled alternative in `JustMCFParser.entityStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitEntitySDeclareWithName?: (ctx: EntitySDeclareWithNameContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `entitySCompound`
@@ -2071,6 +2090,19 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitDisplaySSelectorCompound?: (ctx: DisplaySSelectorCompoundContext) => void;
 
 	/**
+	 * Enter a parse tree produced by the `entityDeclareSITag`
+	 * labeled alternative in `JustMCFParser.entityDeclareStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	enterEntityDeclareSITag?: (ctx: EntityDeclareSITagContext) => void;
+	/**
+	 * Exit a parse tree produced by the `entityDeclareSITag`
+	 * labeled alternative in `JustMCFParser.entityDeclareStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	exitEntityDeclareSITag?: (ctx: EntityDeclareSITagContext) => void;
+
+	/**
 	 * Enter a parse tree produced by the `titleSCompound`
 	 * labeled alternative in `JustMCFParser.titleStatement`.
 	 * @param ctx the parse tree
@@ -2160,6 +2192,19 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitNameSpaceSettingsBiome?: (ctx: NameSpaceSettingsBiomeContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `nameSpaceSettingsEntity`
+	 * labeled alternative in `JustMCFParser.nameSpaceSettings`.
+	 * @param ctx the parse tree
+	 */
+	enterNameSpaceSettingsEntity?: (ctx: NameSpaceSettingsEntityContext) => void;
+	/**
+	 * Exit a parse tree produced by the `nameSpaceSettingsEntity`
+	 * labeled alternative in `JustMCFParser.nameSpaceSettings`.
+	 * @param ctx the parse tree
+	 */
+	exitNameSpaceSettingsEntity?: (ctx: NameSpaceSettingsEntityContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `nameSpaceSettingsPredicate`
@@ -2812,6 +2857,71 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitBossbarOpExprAssignMax?: (ctx: BossbarOpExprAssignMaxContext) => void;
 
 	/**
+	 * Enter a parse tree produced by the `blockSISetblock`
+	 * labeled alternative in `JustMCFParser.blockStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	enterBlockSISetblock?: (ctx: BlockSISetblockContext) => void;
+	/**
+	 * Exit a parse tree produced by the `blockSISetblock`
+	 * labeled alternative in `JustMCFParser.blockStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	exitBlockSISetblock?: (ctx: BlockSISetblockContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `blockSIFill`
+	 * labeled alternative in `JustMCFParser.blockStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	enterBlockSIFill?: (ctx: BlockSIFillContext) => void;
+	/**
+	 * Exit a parse tree produced by the `blockSIFill`
+	 * labeled alternative in `JustMCFParser.blockStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	exitBlockSIFill?: (ctx: BlockSIFillContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `blockSIFillReplace`
+	 * labeled alternative in `JustMCFParser.blockStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	enterBlockSIFillReplace?: (ctx: BlockSIFillReplaceContext) => void;
+	/**
+	 * Exit a parse tree produced by the `blockSIFillReplace`
+	 * labeled alternative in `JustMCFParser.blockStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	exitBlockSIFillReplace?: (ctx: BlockSIFillReplaceContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `blockSIClone`
+	 * labeled alternative in `JustMCFParser.blockStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	enterBlockSIClone?: (ctx: BlockSICloneContext) => void;
+	/**
+	 * Exit a parse tree produced by the `blockSIClone`
+	 * labeled alternative in `JustMCFParser.blockStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	exitBlockSIClone?: (ctx: BlockSICloneContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `blockSICloneFiltered`
+	 * labeled alternative in `JustMCFParser.blockStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	enterBlockSICloneFiltered?: (ctx: BlockSICloneFilteredContext) => void;
+	/**
+	 * Exit a parse tree produced by the `blockSICloneFiltered`
+	 * labeled alternative in `JustMCFParser.blockStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	exitBlockSICloneFiltered?: (ctx: BlockSICloneFilteredContext) => void;
+
+	/**
 	 * Enter a parse tree produced by the `attrSCompound`
 	 * labeled alternative in `JustMCFParser.attrStatement`.
 	 * @param ctx the parse tree
@@ -2836,71 +2946,6 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitAttrSSelectorCompound?: (ctx: AttrSSelectorCompoundContext) => void;
-
-	/**
-	 * Enter a parse tree produced by the `blockSSetblock`
-	 * labeled alternative in `JustMCFParser.blockStatement`.
-	 * @param ctx the parse tree
-	 */
-	enterBlockSSetblock?: (ctx: BlockSSetblockContext) => void;
-	/**
-	 * Exit a parse tree produced by the `blockSSetblock`
-	 * labeled alternative in `JustMCFParser.blockStatement`.
-	 * @param ctx the parse tree
-	 */
-	exitBlockSSetblock?: (ctx: BlockSSetblockContext) => void;
-
-	/**
-	 * Enter a parse tree produced by the `blockSFill`
-	 * labeled alternative in `JustMCFParser.blockStatement`.
-	 * @param ctx the parse tree
-	 */
-	enterBlockSFill?: (ctx: BlockSFillContext) => void;
-	/**
-	 * Exit a parse tree produced by the `blockSFill`
-	 * labeled alternative in `JustMCFParser.blockStatement`.
-	 * @param ctx the parse tree
-	 */
-	exitBlockSFill?: (ctx: BlockSFillContext) => void;
-
-	/**
-	 * Enter a parse tree produced by the `blockSFillReplace`
-	 * labeled alternative in `JustMCFParser.blockStatement`.
-	 * @param ctx the parse tree
-	 */
-	enterBlockSFillReplace?: (ctx: BlockSFillReplaceContext) => void;
-	/**
-	 * Exit a parse tree produced by the `blockSFillReplace`
-	 * labeled alternative in `JustMCFParser.blockStatement`.
-	 * @param ctx the parse tree
-	 */
-	exitBlockSFillReplace?: (ctx: BlockSFillReplaceContext) => void;
-
-	/**
-	 * Enter a parse tree produced by the `blockSClone`
-	 * labeled alternative in `JustMCFParser.blockStatement`.
-	 * @param ctx the parse tree
-	 */
-	enterBlockSClone?: (ctx: BlockSCloneContext) => void;
-	/**
-	 * Exit a parse tree produced by the `blockSClone`
-	 * labeled alternative in `JustMCFParser.blockStatement`.
-	 * @param ctx the parse tree
-	 */
-	exitBlockSClone?: (ctx: BlockSCloneContext) => void;
-
-	/**
-	 * Enter a parse tree produced by the `blockSCloneFiltered`
-	 * labeled alternative in `JustMCFParser.blockStatement`.
-	 * @param ctx the parse tree
-	 */
-	enterBlockSCloneFiltered?: (ctx: BlockSCloneFilteredContext) => void;
-	/**
-	 * Exit a parse tree produced by the `blockSCloneFiltered`
-	 * labeled alternative in `JustMCFParser.blockStatement`.
-	 * @param ctx the parse tree
-	 */
-	exitBlockSCloneFiltered?: (ctx: BlockSCloneFilteredContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `scbGet`
@@ -3901,6 +3946,17 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitNameSpaceItem?: (ctx: NameSpaceItemContext) => void;
 
 	/**
+	 * Enter a parse tree produced by `JustMCFParser.nameSpaceEntity`.
+	 * @param ctx the parse tree
+	 */
+	enterNameSpaceEntity?: (ctx: NameSpaceEntityContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.nameSpaceEntity`.
+	 * @param ctx the parse tree
+	 */
+	exitNameSpaceEntity?: (ctx: NameSpaceEntityContext) => void;
+
+	/**
 	 * Enter a parse tree produced by `JustMCFParser.nameSpaceLoot`.
 	 * @param ctx the parse tree
 	 */
@@ -4407,6 +4463,17 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitEntityStatement?: (ctx: EntityStatementContext) => void;
 
 	/**
+	 * Enter a parse tree produced by `JustMCFParser.entityDeclareStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	enterEntityDeclareStatementInner?: (ctx: EntityDeclareStatementInnerContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.entityDeclareStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	exitEntityDeclareStatementInner?: (ctx: EntityDeclareStatementInnerContext) => void;
+
+	/**
 	 * Enter a parse tree produced by `JustMCFParser.tagIndependentStatementInner`.
 	 * @param ctx the parse tree
 	 */
@@ -4482,6 +4549,17 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitBlockStatement?: (ctx: BlockStatementContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.blockStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	enterBlockStatementInner?: (ctx: BlockStatementInnerContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.blockStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	exitBlockStatementInner?: (ctx: BlockStatementInnerContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `JustMCFParser.interfaceStatement`.

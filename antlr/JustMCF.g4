@@ -48,6 +48,7 @@ nameSpaceSettings
     | type='storage' '=' acceptableName #nameSpaceSettingsStorage
     | type='bossbar' '='  acceptableName #nameSpaceSettingsBossbar
     | type='biome' '=' acceptableName #nameSpaceSettingsBiome
+    | type='entity' '=' acceptableName #nameSpaceSettingsEntity
     | type='predicate' '=' acceptableName #nameSpaceSettingsPredicate
     | type=('dim'|'dimension') '=' acceptableName #nameSpaceSettingsDim
     | type='item' '=' acceptableName #nameSpaceSettingsItem
@@ -236,6 +237,7 @@ nameSpaceBiome:nameSpace;
 nameSpaceDim:nameSpace;
 nameSpacePredicate:nameSpace;
 nameSpaceItem:nameSpace;
+nameSpaceEntity:nameSpace;
 nameSpaceLoot:nameSpace;
 nameSpaceItemModifier:nameSpace;
 tagNameSpace
@@ -434,20 +436,24 @@ attrIndependentStatementInner
     ;
 
 entityStatement
-    : 'entity' '(' 'player' ')' acceptableName #entitySDeclarePlayer
-    | 'entity' '(' type=registerName ')' pos3Identifier? acceptableName nbt? #entitySDeclare
+    : 'entity' '(' 'player' ')' fake='#'? acceptableName #entitySDeclarePlayer
+    | 'entity' '(' type=nameSpaceEntity ')' pos3Identifier nbt? ('{' ('.'? entityDeclareStatementInner)* '}')?  #entitySDeclare
+    | 'entity' '(' type=nameSpaceEntity ')' pos3Identifier? acceptableName nbt? '{'('.'? entityDeclareStatementInner)* ('.' entityIndependentStatementInner)* '}'? #entitySDeclareWithName
     | 'entity' '{'entityStatementInner* '}' #entitySCompound
-    | 'entity' selector '{' ('.' entityIndependentStatementInner) '}' #entitySSelectorCompound
+    | 'entity' selector '{' ('.' entityIndependentStatementInner)* '}' #entitySSelectorCompound
+    ;
+entityDeclareStatementInner
+    : 'tag' '=' acceptableName (',' acceptableName)* #entityDeclareSITag
     ;
 tagIndependentStatementInner
-    :'tag' ('+='|'add') acceptableName #tagISIAdd
+    : 'tag' ('+='|'add') acceptableName #tagISIAdd
     | 'tag' ('-='|'remove') acceptableName #tagISIRemove
     | 'tag' 'list' #tagISIList
     ;
 effectIndependentStatementInner
-    : 'effect' ('+='|'give') acceptableName #effectISIGive
-    | 'effect' ('-='|'clear') acceptableName second=NUMBER? amplifier=NUMBER? BOOL? #effectISIClear
-    | 'effect' ('-='|'clear') acceptableName ('(' amplifier=NUMBER')')? second=NUMBER? BOOL? #effectISIClearSp
+    : 'effect' ('-='|'clear') acceptableName #effectISIClear
+    | 'effect' ('+='|'give') acceptableName second=NUMBER? amplifier=NUMBER? BOOL? #effectISIGive
+    | 'effect' ('+='|'give') acceptableName ('(' amplifier=NUMBER')')? second=NUMBER? BOOL? #effectISIGiveSp
     | 'effect' 'clear' #effectISIClearAll
     ;
 tpIndependentStatementInner
@@ -456,7 +462,7 @@ tpIndependentStatementInner
     | 'tp' pos5Identifier #TpISIRotated
     | 'tp' pos3Identifier pos2Identifier #TpISIRotatedDiv
     | 'tp' pos3Identifier 'facing' pos3Identifier #TpISIFacing
-    | 'tp' pos3Identifier 'facing' selector ('eyes'| 'feet')? #TpISIFacingEntity
+    | 'tp' pos3Identifier 'facing' selector anchor=('eyes'| 'feet')? #TpISIFacingEntity
     ;
 entityIndependentStatementInner
     : giveAndClearIndependentStatementInner  #entityISIGiveAndClear
@@ -478,18 +484,21 @@ entityIndependentStatementInner
     ;
 entityStatementInner
     : entityExpression #entitySIEntityExpression
-    | selector '{' ('.' entityIndependentStatementInner) '}'  #entitySISelectorCompound
+    | selector '{' ('.' entityIndependentStatementInner)* '}'  #entitySISelectorCompound
     ;
 entityExpression
     : selector '.' entityIndependentStatementInner
     ;
-
 blockStatement
-    : pos3Identifier blockIdentifier mod=('destroy'|'keep'|'replace')? #blockSSetblock
-    | pos3Identifier pos3Identifier blockIdentifier mod=('destroy'|'hollow'|'keep'|'outline')? #blockSFill
-    | pos3Identifier pos3Identifier blockIdentifier 'replace' block_predicate #blockSFillReplace
-    | pos3Identifier pos3Identifier pos3Identifier masked_mod=('replace'|'masked')? mod=('force'|'move'|'normal')? #blockSClone
-    | pos3Identifier pos3Identifier pos3Identifier 'filtered ' block_predicate mod=('force'|'move'|'normal')? #blockSCloneFiltered
+    : 'block' '{' blockStatementInner* '}'
+    ;
+
+blockStatementInner
+    : pos3Identifier blockIdentifier mod=('destroy'|'keep'|'replace')? #blockSISetblock
+    | pos3Identifier pos3Identifier blockIdentifier mod=('destroy'|'hollow'|'keep'|'outline')? #blockSIFill
+    | pos3Identifier pos3Identifier blockIdentifier 'replace' block_predicate #blockSIFillReplace
+    | pos3Identifier pos3Identifier pos3Identifier masked_mod=('replace'|'masked')? mod=('force'|'move'|'normal')? #blockSIClone
+    | pos3Identifier pos3Identifier pos3Identifier 'filtered' block_predicate mod=('force'|'move'|'normal')? #blockSICloneFiltered
     ;
 interfaceStatement
     : 'interface' nameSpaceStorage nbt
