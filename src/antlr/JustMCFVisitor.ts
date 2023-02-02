@@ -53,7 +53,9 @@ import { ExecIfBlocksContext } from "./JustMCFParser";
 import { ExecIfDataContext } from "./JustMCFParser";
 import { ExecIfBiomeContext } from "./JustMCFParser";
 import { ExecStoreContext } from "./JustMCFParser";
+import { DataStorageLocalContext } from "./JustMCFParser";
 import { DataStorageContext } from "./JustMCFParser";
+import { DataStorageWithEnvContext } from "./JustMCFParser";
 import { DataEntityContext } from "./JustMCFParser";
 import { DataBlockContext } from "./JustMCFParser";
 import { AttrISIGetContext } from "./JustMCFParser";
@@ -86,8 +88,11 @@ import { TitleISIJsonContext } from "./JustMCFParser";
 import { TitleISIClearContext } from "./JustMCFParser";
 import { TitleISIResetContext } from "./JustMCFParser";
 import { TitleISITimesContext } from "./JustMCFParser";
+import { InterfaceSNamespaceContext } from "./JustMCFParser";
+import { InterfaceSIdentifierContext } from "./JustMCFParser";
 import { ExistExpressionExecContext } from "./JustMCFParser";
 import { ExistExpressionIdContext } from "./JustMCFParser";
+import { ExisitExpressionFuncRunContext } from "./JustMCFParser";
 import { ExistExpressionTrueContext } from "./JustMCFParser";
 import { ExistExpressionFalseContext } from "./JustMCFParser";
 import { ExistExpressionNotContext } from "./JustMCFParser";
@@ -95,6 +100,7 @@ import { ExistExpressionBitAndContext } from "./JustMCFParser";
 import { ExistExpressionBitOrContext } from "./JustMCFParser";
 import { ExistExpressionAndContext } from "./JustMCFParser";
 import { ExistExpressionOrContext } from "./JustMCFParser";
+import { ExistExpressionParenContext } from "./JustMCFParser";
 import { LootSourceFishHandContext } from "./JustMCFParser";
 import { LootSourceFishToolContext } from "./JustMCFParser";
 import { LootSourceLootContext } from "./JustMCFParser";
@@ -155,6 +161,7 @@ import { NoInExecStatementFuncContext } from "./JustMCFParser";
 import { NoInExecStatementRunFuncContext } from "./JustMCFParser";
 import { NoInExecStatementFuncImproveContext } from "./JustMCFParser";
 import { NoInExecStatementNameSpaceContext } from "./JustMCFParser";
+import { NoInExecStatementInterfaceContext } from "./JustMCFParser";
 import { NoInExecStatementStoreContext } from "./JustMCFParser";
 import { EntityISIGiveAndClearContext } from "./JustMCFParser";
 import { EntityISIKillContext } from "./JustMCFParser";
@@ -224,10 +231,12 @@ import { DisplaySIScbContext } from "./JustMCFParser";
 import { DisplaySIBossbarContext } from "./JustMCFParser";
 import { DisplaySISelectorSingleContext } from "./JustMCFParser";
 import { DisplaySISelectorCompoundContext } from "./JustMCFParser";
-import { WhileStatementExistContext } from "./JustMCFParser";
 import { WhileStatementExecContext } from "./JustMCFParser";
+import { WhileStatementExistContext } from "./JustMCFParser";
 import { FuncTagSettingsReplaceContext } from "./JustMCFParser";
 import { FuncTagSettingsReplacedContext } from "./JustMCFParser";
+import { DataSCompoundContext } from "./JustMCFParser";
+import { DataSIdentifierCompoundContext } from "./JustMCFParser";
 import { DisplayISITitleSingleContext } from "./JustMCFParser";
 import { DisplayISITitleCompoundContext } from "./JustMCFParser";
 import { DisplayISITextContext } from "./JustMCFParser";
@@ -254,8 +263,9 @@ import { FuncStatementContext } from "./JustMCFParser";
 import { FuncImproveStatementContext } from "./JustMCFParser";
 import { FuncImproveParamContext } from "./JustMCFParser";
 import { FuncImproveStatementInnerContext } from "./JustMCFParser";
-import { ReturnStatementContext } from "./JustMCFParser";
+import { YeildStatementContext } from "./JustMCFParser";
 import { FuncRunStatementContext } from "./JustMCFParser";
+import { FuncImproveRunStatementContext } from "./JustMCFParser";
 import { FuncImproveRunExpressionContext } from "./JustMCFParser";
 import { FuncImproveRunParamContext } from "./JustMCFParser";
 import { ExecStatementContext } from "./JustMCFParser";
@@ -266,6 +276,7 @@ import { MatchPartContext } from "./JustMCFParser";
 import { DataIdentifierContext } from "./JustMCFParser";
 import { DataMergeExpressionContext } from "./JustMCFParser";
 import { DataOperationExpressionContext } from "./JustMCFParser";
+import { DataRightValueContext } from "./JustMCFParser";
 import { ScbOperationExpressionContext } from "./JustMCFParser";
 import { ScbSingleOperationExpressionContext } from "./JustMCFParser";
 import { ScbIdentifierContext } from "./JustMCFParser";
@@ -345,6 +356,7 @@ import { InterfaceStatementContext } from "./JustMCFParser";
 import { DataAssignExistExpressionContext } from "./JustMCFParser";
 import { ExistExpressionContext } from "./JustMCFParser";
 import { IfStatementContext } from "./JustMCFParser";
+import { IfElseIfStatementContext } from "./JustMCFParser";
 import { WhileStatementContext } from "./JustMCFParser";
 import { ForStatementContext } from "./JustMCFParser";
 import { NbtContext } from "./JustMCFParser";
@@ -777,12 +789,28 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitExecStore?: (ctx: ExecStoreContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by the `dataStorageLocal`
+	 * labeled alternative in `JustMCFParser.dataIdentifier`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataStorageLocal?: (ctx: DataStorageLocalContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by the `dataStorage`
 	 * labeled alternative in `JustMCFParser.dataIdentifier`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	visitDataStorage?: (ctx: DataStorageContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `dataStorageWithEnv`
+	 * labeled alternative in `JustMCFParser.dataIdentifier`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataStorageWithEnv?: (ctx: DataStorageWithEnvContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `dataEntity`
@@ -1041,6 +1069,22 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitTitleISITimes?: (ctx: TitleISITimesContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by the `interfaceSNamespace`
+	 * labeled alternative in `JustMCFParser.interfaceStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitInterfaceSNamespace?: (ctx: InterfaceSNamespaceContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `interfaceSIdentifier`
+	 * labeled alternative in `JustMCFParser.interfaceStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitInterfaceSIdentifier?: (ctx: InterfaceSIdentifierContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by the `existExpressionExec`
 	 * labeled alternative in `JustMCFParser.existExpression`.
 	 * @param ctx the parse tree
@@ -1055,6 +1099,14 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitExistExpressionId?: (ctx: ExistExpressionIdContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `exisitExpressionFuncRun`
+	 * labeled alternative in `JustMCFParser.existExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitExisitExpressionFuncRun?: (ctx: ExisitExpressionFuncRunContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `existExpressionTrue`
@@ -1111,6 +1163,14 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitExistExpressionOr?: (ctx: ExistExpressionOrContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `existExpressionParen`
+	 * labeled alternative in `JustMCFParser.existExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitExistExpressionParen?: (ctx: ExistExpressionParenContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `lootSourceFishHand`
@@ -1591,6 +1651,14 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitNoInExecStatementNameSpace?: (ctx: NoInExecStatementNameSpaceContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `noInExecStatementInterface`
+	 * labeled alternative in `JustMCFParser.noInExecStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNoInExecStatementInterface?: (ctx: NoInExecStatementInterfaceContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `noInExecStatementStore`
@@ -2145,20 +2213,20 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitDisplaySISelectorCompound?: (ctx: DisplaySISelectorCompoundContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by the `whileStatementExist`
-	 * labeled alternative in `JustMCFParser.whileStatement`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitWhileStatementExist?: (ctx: WhileStatementExistContext) => Result;
-
-	/**
 	 * Visit a parse tree produced by the `whileStatementExec`
 	 * labeled alternative in `JustMCFParser.whileStatement`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	visitWhileStatementExec?: (ctx: WhileStatementExecContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `whileStatementExist`
+	 * labeled alternative in `JustMCFParser.whileStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitWhileStatementExist?: (ctx: WhileStatementExistContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `funcTagSettingsReplace`
@@ -2175,6 +2243,22 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitFuncTagSettingsReplaced?: (ctx: FuncTagSettingsReplacedContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `dataSCompound`
+	 * labeled alternative in `JustMCFParser.dataStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataSCompound?: (ctx: DataSCompoundContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `dataSIdentifierCompound`
+	 * labeled alternative in `JustMCFParser.dataStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataSIdentifierCompound?: (ctx: DataSIdentifierCompoundContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `displayISITitleSingle`
@@ -2369,11 +2453,11 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitFuncImproveStatementInner?: (ctx: FuncImproveStatementInnerContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `JustMCFParser.returnStatement`.
+	 * Visit a parse tree produced by `JustMCFParser.yeildStatement`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitReturnStatement?: (ctx: ReturnStatementContext) => Result;
+	visitYeildStatement?: (ctx: YeildStatementContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.funcRunStatement`.
@@ -2381,6 +2465,13 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitFuncRunStatement?: (ctx: FuncRunStatementContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.funcImproveRunStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitFuncImproveRunStatement?: (ctx: FuncImproveRunStatementContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.funcImproveRunExpression`.
@@ -2451,6 +2542,13 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitDataOperationExpression?: (ctx: DataOperationExpressionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.dataRightValue`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataRightValue?: (ctx: DataRightValueContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.scbOperationExpression`.
@@ -3004,6 +3102,13 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitIfStatement?: (ctx: IfStatementContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.ifElseIfStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitIfElseIfStatement?: (ctx: IfElseIfStatementContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.whileStatement`.

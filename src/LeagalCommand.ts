@@ -13,7 +13,7 @@ const leagalCommands = [
     'clone',
     'connect',
     'damage',
-    'data',
+//    'data',
     'datapack',
     'daylock',
     'debug',
@@ -38,13 +38,13 @@ const leagalCommands = [
     'give',
     'help',
     'immutableworld',
-    'item',
+//    'item',
     'jfr',
     'kick',
     'kill',
     'list',
     'locate',
-    'loot',
+//    'loot',
     'me',
     'mobevent',
     'msg',
@@ -113,32 +113,23 @@ const leagalCommands = [
     '#'
 ]
 const improvedCommand = [
-    'item',
-    'data',
-    'loot',
+    ['item',String.raw`(modify|replace)`],
+    ['data',String.raw`(get|merge|modify|remove)`],
+    ['loot',String.raw`(give|insert|spawn|replace)`],
+    ['title', String.raw`@(p|a|r|s|e)(\[(.)+?\])?\s(clear|reset|title|subtitle|actionbar|times)`],
+    ['bossbar', String.raw`(add|get|list|remove|set)`]
+
 ]
 
 export function convertLeagalCommands(code: string):string {
     let resCode = code
-    for (const commandToken of improvedCommand) {
-        const regex = new RegExp(String.raw`(?<=\n\s*)${commandToken}\s*\{`, 'g')
-        resCode = resCode.replace(regex,`++${commandToken} {`)
-    }
-    {
-        const regex = /(?<=\n\s*)(?<![A-Z0-9a-z\-_+.])(?<!\+\+)title(?=\s@(p|a|r|s|e)(\[(.)+?\])?\s(clear|reset|title|subtitle|actionbar|times)(\s|\n))/g
-        resCode = resCode.replace(regex,`/title`)
-    }
-    {
-        const regex = /(?<=\n\s*)(?<![A-Z0-9a-z\-_+.])(?<!\+\+)bossbar(?=\s(add|get|list|remove|set)(\s|\n))/g
-        resCode = resCode.replace(regex,`/bossbar`)
+    for (const [commandToken,params] of improvedCommand) {
+        const regex = new RegExp(String.raw`(?<=(\n|'->')\s*)(?<![A-Z0-9a-z\-_+.])${commandToken}(?=\s${params})(\s|\n)`, 'g')
+        resCode = resCode.replace(regex,`/${commandToken}`)
     }
     for (const commandToken of leagalCommands) {
         const regex = new RegExp(String.raw`(?<=\n\s*)(?<![A-Z0-9a-z\-_+.])(?<!\+\+)${commandToken}\s`, 'g')
         resCode = resCode.replace(regex, `/${commandToken} `)
-    }
-    for (const commandToken of improvedCommand) {
-        const regex = new RegExp(String.raw`\+\+${commandToken} \{`, 'g')
-        resCode = resCode.replace(regex,`${commandToken} {`)
     }
     return resCode
 }

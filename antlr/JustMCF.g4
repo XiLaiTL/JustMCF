@@ -5,9 +5,14 @@ fileStatementInner
     : nameSpaceStatement
     | nameSpaceStatementInner
     ;
-statementInner: statement|noInExecStatement;
+statementInner: noInExecStatement|statement;
 statement
-    : execStatement
+    : ifStatement
+    | forStatement
+    | whileStatement
+    | funcRunStatement
+    | funcImproveRunStatement
+    | execStatement
     | dataOperationExpression
     | dataAssignExistExpression
     | scbOperationExpression
@@ -23,11 +28,6 @@ statement
     | attrStatement
     | entityStatement
     | blockStatement
-    | ifStatement
-    | forStatement
-    | whileStatement
-    | funcRunStatement
-    | funcImproveRunExpression
     | leagalCommand
     ;
 noInExecStatement
@@ -35,6 +35,7 @@ noInExecStatement
     | left='->' funcStatement  #noInExecStatementRunFunc
     | funcImproveStatement #noInExecStatementFuncImprove
     | nameSpaceStatement  #noInExecStatementNameSpace
+    | interfaceStatement #noInExecStatementInterface
     | statement execStoreChild+ #noInExecStatementStore
     ;
 leagalCommand : LeagalCommand;
@@ -60,6 +61,7 @@ nameSpaceSettings
 nameSpaceStatementInner
     : funcTagStatement
     | funcTagStatementInner
+    | interfaceStatement
     ;
 funcTagStatement
     : 'func' tagNameSpaceFunc('[' (funcTagSettings ','?)* ']')? '{' funcTagStatementInner* '}'
@@ -84,15 +86,16 @@ funcImproveParam
     ;
 funcImproveStatementInner
     : statementInner
-    | returnStatement
+    | yeildStatement
     ;
-returnStatement
-    : 'return' dataIdentifier
+yeildStatement
+    : 'yeild' dataIdentifier
     ;
 funcRunStatement
     : 'func' nameSpaceFunc
     | 'func' tagNameSpaceFunc
     ;
+funcImproveRunStatement: funcImproveRunExpression;
 funcImproveRunExpression: 'func' nameSpaceFunc '('funcImproveRunParam (',' funcImproveRunParam)* ')';
 funcImproveRunParam
     : dataIdentifier
@@ -148,7 +151,9 @@ matchPart
     ;
 
 dataIdentifier
-    : nameSpaceStorage '::' nbtPath                                                                          #dataStorage
+    : 'local' '::' nbtPath                                                                            #dataStorageLocal
+    | nameSpaceStorage '::' nbtPath                                                                   #dataStorage
+    | acceptableName                                                                                  #dataStorageWithEnv
     | selector '::' nbtPath                                                                           #dataEntity
     | pos3Identifier '::' nbtPath                                                                     #dataBlock
     ;
@@ -159,19 +164,23 @@ dataMergeExpression
     ;
 
 dataOperationExpression
-    : dataIdentifier                                                                                  #dataGet
+    : dataIdentifier ('*'? NUMBER)?                                                                                 #dataGet
     | dataMergeExpression                                                                             #dataMerge
     | dataIdentifier '|=' nbt                                                                         #dataModifyMergeValue
-    | dataIdentifier '|=' dataIdentifier                                                              #dataModifyMergeFrom
+    | dataIdentifier '|=' dataRightValue                                                              #dataModifyMergeFrom
     | typeName? dataIdentifier '=' nbt                                                                          #dataModifySetValue
-    | typeName? dataIdentifier '=' dataIdentifier                                                               #dataModifySetFrom
+    | typeName? dataIdentifier '=' dataRightValue                                                               #dataModifySetFrom
     | dataIdentifier '..' nbt                                                                         #dataModifyAppendValue
-    | dataIdentifier '..' dataIdentifier                                                              #dataModifyAppendFrom
+    | dataIdentifier '..' dataRightValue                                                              #dataModifyAppendFrom
     | dataIdentifier '..0' nbt                                                                        #dataModifyPrependValue
-    | dataIdentifier '..0' dataIdentifier                                                             #dataModifyPrependFrom
+    | dataIdentifier '..0' dataRightValue                                                             #dataModifyPrependFrom
     | dataIdentifier '..' NUMBER nbt                                                                  #dataModifyInsertValue
-    | dataIdentifier '..' NUMBER dataIdentifier                                                       #dataModifyInsertFrom
+    | dataIdentifier '..' NUMBER dataRightValue                                                       #dataModifyInsertFrom
     | dataIdentifier 'remove'                                                                         #dataRemove
+    ;
+dataRightValue
+    : dataIdentifier
+    | funcImproveRunExpression
     ;
 
 scbOperationExpression
@@ -249,19 +258,19 @@ tagNameSpaceFunc:tagNameSpace;
 tagNameSpaceEntity:tagNameSpace;
 registerName: (acceptableName ':')? acceptableName;
 
-Key:  'namsp'|'namespace'
+Key:  'namsp'|'namespace'|'local'
     | 'exec' | 'align' | 'anchored' | 'eyes'| 'feet'|'in' |'as' |'at' |'facing' | 'postitioned' | 'pos' | 'rotated' |'rot'|'if'|'unless'|'all' | 'masked' |'biome'|'value'|'max'
     | 'entity' | 'score' |'predicate' |'block' |'blocks' 
     | 'scb' | 'displayname'|'rendertype'|'display'|'enable'|'list'
     | 'data' | 'reset' |'add'| 'remove'
-    | 'func' | 'tagged' |'return'
+    | 'func' | 'tagged' 
     | 'default'|'player'|'players'
     | 'bossbar'|'visible'|'blue'|'green'|'pink'|'purple'|'red'|'white'|'yellow'|'color'|'name'|'style'|'notched_6'|'notched_10'|'notched_12'|'notched_20'|'progress'|'set'
     | 'title'|'subtitle'|'actionbar'|'times'
     | 'text'|'item'|'loot'|'give'|'clear'|'fish'|'kill'|'mine'|'mainhand'|'offhand'
     | 'attr'|'base'|'destroy'|'keep'|'replace'|'hollow'|'outline'|'force'|'move'|'normal'
     | 'interface'
-    | 'while'|'for'
+    | 'while'|'for'|'yeild'|'break'|'return'
     | 'replaced'
     | 'dim'|'dimension'|'item_modifier'
     ;
@@ -286,7 +295,10 @@ block_predicate
 UUID16_:   HEX{1,8} '-'HEX{1,4}'-'HEX{1,4}'-'HEX{1,4}'-'HEX{1,12}  ;
 
 
-dataStatement: 'data' '{' dataOperationExpression* '}';
+dataStatement
+    : 'data' '{' dataOperationExpression* '}'                #dataSCompound
+    | 'data' nameSpaceStorage('::'acceptableName)? '{' dataOperationExpression* '}' #dataSIdentifierCompound
+    ;
 
 scbPlayerStatement: 'scb' '{' scbPlayerStatementInner* '}';
 scbPlayerStatementInner
@@ -501,7 +513,8 @@ blockStatementInner
     | pos3Identifier pos3Identifier pos3Identifier 'filtered' block_predicate mod=('force'|'move'|'normal')? #blockSICloneFiltered
     ;
 interfaceStatement
-    : 'interface' nameSpaceStorage nbt
+    : 'interface' nameSpaceStorage nbt #interfaceSNamespace
+    | 'interface' dataIdentifier nbt #interfaceSIdentifier
     ;
 dataAssignExistExpression
     : dataIdentifier '=' existExpression
@@ -509,6 +522,7 @@ dataAssignExistExpression
 existExpression
     : '{'execChild* '}' #existExpressionExec
     | dataIdentifier #existExpressionId
+    | funcImproveRunExpression #exisitExpressionFuncRun
     | 'true' #existExpressionTrue
     | 'false' #existExpressionFalse
     |'!' existExpression #existExpressionNot
@@ -516,13 +530,17 @@ existExpression
     | existExpression op='|' existExpression #existExpressionBitOr
     | existExpression op='&&' existExpression #existExpressionAnd
     | existExpression op='||' existExpression #existExpressionOr
+    | '(' existExpression ')' #existExpressionParen
     ;
 ifStatement
-    : 'if' '(' existExpression ')' execRunChild ('else' execRunChild )?
+    : 'if' existExpression execRunChild ( ifElseIfStatement )* ('else' execRunChild )?
+    ;
+ifElseIfStatement
+    : 'else' 'if' existExpression execRunChild
     ;
 whileStatement
-    : 'while' '(' existExpression ')' execRunChild #whileStatementExist
-    | 'while' '{' execChild* '}' execRunChild #whileStatementExec
+    : 'while' '{' execChild* '}' execRunChild #whileStatementExec
+    | 'while'  existExpression execRunChild #whileStatementExist
     ;
 forStatement
     : 'for' '{' dataOperationExpression '}' execRunChild

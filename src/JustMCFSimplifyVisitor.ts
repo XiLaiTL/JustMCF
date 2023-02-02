@@ -1,116 +1,15 @@
 import { ParseTree } from 'antlr4ts/tree/ParseTree';
-import { FuncTagSettingsReplaceContext, FuncTagSettingsReplacedContext, FuncTagSIFuncImproveSContext, FuncTagSIFuncSContext, FuncTagSIFuncTagSContext, NameSpaceBiomeContext, NameSpaceBlockContext, NameSpaceBossbarContext, NameSpaceDimContext, NameSpaceFuncContext, NameSpaceItemContext, NameSpaceItemModifierContext, NameSpaceLootContext, NameSpacePredicateContext, NameSpaceSettingsBiomeContext, NameSpaceSettingsBossbarContext, NameSpaceSettingsDefaultContext, NameSpaceSettingsDimContext, NameSpaceSettingsItemContext, NameSpaceSettingsItemModifierContext, NameSpaceSettingsJustDefaultContext, NameSpaceSettingsLootContext, NameSpaceSettingsPredicateContext, NameSpaceSettingsStorageContext, NameSpaceStorageContext, TagNameSpaceBlockContext, TagNameSpaceContext, TagNameSpaceEntityContext, TagNameSpaceFuncContext, TagNameSpaceItemContext, ScbPlayerSIScbListContext, ScbObjSDeclareSingleContext, CriterionContext, BossbarSDeclareContext, BossbarSOperationContext, BossbarSIGetContext, BossbarSISetColorContext, BossbarSISetMaxContext, BossbarSISetNameContext, BossbarSISetPlayerContext, BossbarSISetPlayerNullContext, BossbarSISetStyleContext, BossbarSISetValueContext, BossbarSISetVisibleContext, BossbarOpExprGetContext, BossbarOpExprAssignValueContext, BossbarOpExprAssignMaxContext, TitleSCompoundContext, BossbarSIRemoveContext, BossbarStatementInnerContext, TitleSSelectorCompoundContext, TitleSISelectorSingleContext, TitleSISelectorCompoundContext, TitleSSIJsonContext, TitleSSIClearContext, TitleSSIResetContext, TitleSSITimesContext, TitleISIJsonContext, TitleISIClearContext, TitleISIResetContext, TitleISITimesContext, TitleSelectorStatementInnerContext, DisplaySCompoundContext, AttrISIGetBaseContext, AttrISIGetContext, AttrISIModifierAddContext, AttrISIModifierGetContext, AttrISIModifierRemoveContext, AttrISISetBaseContext, AttrSCompoundContext, AttrSISelectorCompoundContext, AttrSISingleContext, AttrSSelectorCompoundContext, BlockSICloneContext, BlockSICloneFilteredContext, BlockSIFillContext, BlockSIFillReplaceContext, BlockSISetblockContext, ClearISIContext, DisplayISIBossbarContext, DisplayISITextContext, DisplayISITitleCompoundContext, DisplayISITitleSingleContext, DisplaySIBossbarContext, DisplaySIScbContext, DisplaySISelectorCompoundContext, DisplaySISelectorSingleContext, DisplaySSelectorCompoundContext, EffectISIClearAllContext, EffectISIClearContext, EffectISIGiveSpContext, EffectISIGiveContext, EntityISIAttrCompoundContext, EntityISIAttrSingleContext, EntityISIDisplayCompoundContext, EntityISIDisplaySingleContext, EntityISIEffectContext, EntityISIExecContext, EntityISIGiveAndClearContext, EntityISIItemCompoundContext, EntityISIItemSingleContext, EntityISIKillContext, EntityISILootCompoundContext, EntityISILootGiveSingleContext, EntityISILootSingleContext, EntityISITagContext, EntityISITitleCompoundContext, EntityISITpContext, EntitySCompoundContext, EntitySDeclareContext, EntitySDeclarePlayerContext, EntitySIEntityExpressionContext, EntitySISelectorCompoundContext, EntitySSelectorCompoundContext, GiveISIContext, ItemISIModifyContext, ItemISIReplaceFromBlockContext, ItemISIReplaceFromEntityContext, ItemISIReplaceWithContext, ItemSCompoundContext, ItemSIBlockContext, ItemSIEntityContext, ItemSIGiveAndClearContext, ItemSILootInnerContext, ItemSISelectorNestContext, ItemSSelectorCompoundContext, ItemSSIGiveAndClearContext, ItemSSIItemContext, ItemSSILootInnerContext, LootSCompoundContext, LootSIGiveContext, LootSIInsertContext, LootSIReplaceBlockContext, LootSIReplaceEntityContext, LootSISelectorNestContext, LootSISpawnContext, LootSourceFishHandContext, LootSourceFishToolContext, LootSourceKillContext, LootSourceLootContext, LootSourceMineHandContext, LootSourceMineToolContext, LootSSelectorCompoundContext, TagISIAddContext, TagISIListContext, TagISIRemoveContext, TpISIDestinationContext, TpISIFacingContext, TpISIFacingEntityContext, TpISIPosContext, TpISIRotatedContext, TpISIRotatedDivContext, LootIndependentStatementInnerGiveContext, LootIndependentStatementInnerReplaceEntityContext, Item_slotContext, Item_predicateContext, SnbtContext, Block_predicateContext, BlockStatementContext, NameSpaceEntityContext, NameSpaceSettingsEntityContext, EntitySDeclareWithNameContext, EntityDeclareSITagContext } from './antlr/JustMCFParser';
-import { ScbFuncExpressionContext } from "./antlr/JustMCFParser";
-import { ScbOptMulDivModExpressionContext } from "./antlr/JustMCFParser";
-import { ScbOptAddSubExpressionContext } from "./antlr/JustMCFParser";
-import { ScbTempNumberExpressionContext } from "./antlr/JustMCFParser";
-import { ScbIdExpressionContext } from "./antlr/JustMCFParser";
-import { ScbParenExpressionContext } from "./antlr/JustMCFParser";
-import { ExecWithRunOrChildContext } from "./antlr/JustMCFParser";
-import { ExecWithoutRunOrChildContext } from "./antlr/JustMCFParser";
-import { ScbSIRemoveContext } from "./antlr/JustMCFParser";
-import { ScbSIDisplaynameContext } from "./antlr/JustMCFParser";
-import { ScbSIRendertypeContext } from "./antlr/JustMCFParser";
-import { ScbSIDisplayContext } from "./antlr/JustMCFParser";
-import { ExecAlignContext } from "./antlr/JustMCFParser";
-import { ExecAnchoredContext } from "./antlr/JustMCFParser";
-import { ExecInContext } from "./antlr/JustMCFParser";
-import { ExecAsContext } from "./antlr/JustMCFParser";
-import { ExecAtContext } from "./antlr/JustMCFParser";
-import { ExecFacingPosContext } from "./antlr/JustMCFParser";
-import { ExecFacingEntityContext } from "./antlr/JustMCFParser";
-import { ExecPositionedPosContext } from "./antlr/JustMCFParser";
-import { ExecPostionedAsContext } from "./antlr/JustMCFParser";
-import { ExecRotatedPosContext } from "./antlr/JustMCFParser";
-import { ExecRotatedAsContext } from "./antlr/JustMCFParser";
-import { ExecIfEntityContext } from "./antlr/JustMCFParser";
-import { ExecIfScoreContext } from "./antlr/JustMCFParser";
-import { ExecIfScoreMatchesContext } from "./antlr/JustMCFParser";
-import { ExecPredicateContext } from "./antlr/JustMCFParser";
-import { ExecIfBlockContext } from "./antlr/JustMCFParser";
-import { ExecIfBlocksContext } from "./antlr/JustMCFParser";
-import { ExecIfDataContext } from "./antlr/JustMCFParser";
-import { ExecIfBiomeContext } from "./antlr/JustMCFParser";
-import { ExecStoreContext } from "./antlr/JustMCFParser";
-import { DataStorageContext } from "./antlr/JustMCFParser";
-import { DataEntityContext } from "./antlr/JustMCFParser";
-import { DataBlockContext } from "./antlr/JustMCFParser";
-import { ExecStoreResultScoreContext } from "./antlr/JustMCFParser";
-import { ExecStoreSuccessScoreContext } from "./antlr/JustMCFParser";
-import { ExecStoreResultDataContext } from "./antlr/JustMCFParser";
-import { ExecStoreSuccessDataContext } from "./antlr/JustMCFParser";
-import { ExecStoreResultBossbarContext } from "./antlr/JustMCFParser";
-import { ExecStoreSuccessBossbarContext } from "./antlr/JustMCFParser";
-import { DataMergeStorageContext } from "./antlr/JustMCFParser";
-import { DataMergeEntityContext } from "./antlr/JustMCFParser";
-import { DataMergeBlockContext } from "./antlr/JustMCFParser";
-import { ExecDirectRunContext } from "./antlr/JustMCFParser";
-import { ExecNamedRunContext } from "./antlr/JustMCFParser";
-import { ExecAnonymousRunContext } from "./antlr/JustMCFParser";
-import { NameSpaceSettingsFuncContext } from "./antlr/JustMCFParser";
-import { NameSpaceSettingsBlockContext } from "./antlr/JustMCFParser";
-import { NoInExecStatementRunFuncContext } from "./antlr/JustMCFParser";
-import { NoInExecStatementStoreContext } from "./antlr/JustMCFParser";
-import { DataGetContext } from "./antlr/JustMCFParser";
-import { DataModifyMergeValueContext } from "./antlr/JustMCFParser";
-import { DataModifyMergeFromContext } from "./antlr/JustMCFParser";
-import { DataModifySetValueContext } from "./antlr/JustMCFParser";
-import { DataModifySetFromContext } from "./antlr/JustMCFParser";
-import { DataModifyAppendValueContext } from "./antlr/JustMCFParser";
-import { DataModifyAppendFromContext } from "./antlr/JustMCFParser";
-import { DataModifyPrependValueContext } from "./antlr/JustMCFParser";
-import { DataModifyPrependFromContext } from "./antlr/JustMCFParser";
-import { DataModifyInsertValueContext } from "./antlr/JustMCFParser";
-import { DataModifyInsertFromContext } from "./antlr/JustMCFParser";
-import { DataRemoveContext } from "./antlr/JustMCFParser";
-import { ScbGetContext } from "./antlr/JustMCFParser";
-import { ScbAddContext } from "./antlr/JustMCFParser";
-import { ScbRemoveContext } from "./antlr/JustMCFParser";
-import { ScbSetContext } from "./antlr/JustMCFParser";
-import { ScbOptAddAssignContext } from "./antlr/JustMCFParser";
-import { ScbOptSubAssignContext } from "./antlr/JustMCFParser";
-import { ScbOptMulAssignContext } from "./antlr/JustMCFParser";
-import { ScbOptDivAssignContext } from "./antlr/JustMCFParser";
-import { ScbOptModAssignContext } from "./antlr/JustMCFParser";
-import { ScbOptExcFuncContext } from "./antlr/JustMCFParser";
-import { ScbOptMinFuncContext } from "./antlr/JustMCFParser";
-import { ScbOptMaxFuncContext } from "./antlr/JustMCFParser";
-import { ScbOptAssignContext } from "./antlr/JustMCFParser";
-import { ScbResetContext } from "./antlr/JustMCFParser";
-import { ScbOptExpressionContext } from "./antlr/JustMCFParser";
-import { ScbObjSDeclareWithNameContext } from "./antlr/JustMCFParser";
-import { ScbObjSDeclareDefaultContext } from "./antlr/JustMCFParser";
-import { ScbObjSOperationContext } from "./antlr/JustMCFParser";
-import { McfFileContext } from "./antlr/JustMCFParser";
-import { LeagalCommandContext } from "./antlr/JustMCFParser";
-import { NameSpaceStatementContext } from "./antlr/JustMCFParser";
-import { FuncTagStatementContext } from "./antlr/JustMCFParser";
-import { FuncStatementContext } from "./antlr/JustMCFParser";
-import { FuncRunStatementContext } from "./antlr/JustMCFParser";
-import { MatchPartContext } from "./antlr/JustMCFParser";
-import { ScbSingleOperationExpressionContext } from "./antlr/JustMCFParser";
-import { ScbIdentifierContext } from "./antlr/JustMCFParser";
-import { Pos3IdentifierContext } from "./antlr/JustMCFParser";
-import { Pos2IdentifierContext } from "./antlr/JustMCFParser";
-import { Pos5IdentifierContext } from "./antlr/JustMCFParser";
-import { Pos1Context } from "./antlr/JustMCFParser";
-import { BlockIdentifierContext } from "./antlr/JustMCFParser";
-import { BlockstateContext } from "./antlr/JustMCFParser";
-import { SelectorContext } from "./antlr/JustMCFParser";
-import { NameSpaceContext } from "./antlr/JustMCFParser";
-import { RegisterNameContext } from "./antlr/JustMCFParser";
-import { AcceptableNameContext } from "./antlr/JustMCFParser";
-import { NbtNameContext } from "./antlr/JustMCFParser";
-import { ResourceLocationContext } from "./antlr/JustMCFParser";
-import { DataStatementContext } from "./antlr/JustMCFParser";
-import { ScbPlayerStatementContext } from "./antlr/JustMCFParser";
-import { NbtContext } from "./antlr/JustMCFParser";
-import { JsonContext } from "./antlr/JustMCFParser";
-import { NbtPathContext } from "./antlr/JustMCFParser";
+import { FuncTagSettingsReplaceContext, FuncTagSettingsReplacedContext, FuncTagSIFuncImproveSContext, FuncTagSIFuncSContext, FuncTagSIFuncTagSContext, NameSpaceBiomeContext, NameSpaceBlockContext, NameSpaceBossbarContext, NameSpaceDimContext, NameSpaceFuncContext, NameSpaceItemContext, NameSpaceItemModifierContext, NameSpaceLootContext, NameSpacePredicateContext, NameSpaceSettingsBiomeContext, NameSpaceSettingsBossbarContext, NameSpaceSettingsDefaultContext, NameSpaceSettingsDimContext, NameSpaceSettingsItemContext, NameSpaceSettingsItemModifierContext, NameSpaceSettingsJustDefaultContext, NameSpaceSettingsLootContext, NameSpaceSettingsPredicateContext, NameSpaceSettingsStorageContext, NameSpaceStorageContext, TagNameSpaceBlockContext, TagNameSpaceContext, TagNameSpaceEntityContext, TagNameSpaceFuncContext, TagNameSpaceItemContext, ScbPlayerSIScbListContext, ScbObjSDeclareSingleContext, CriterionContext, BossbarSDeclareContext, BossbarSOperationContext, BossbarSIGetContext, BossbarSISetColorContext, BossbarSISetMaxContext, BossbarSISetNameContext, BossbarSISetPlayerContext, BossbarSISetPlayerNullContext, BossbarSISetStyleContext, BossbarSISetValueContext, BossbarSISetVisibleContext, BossbarOpExprGetContext, BossbarOpExprAssignValueContext, BossbarOpExprAssignMaxContext, TitleSCompoundContext, BossbarSIRemoveContext, BossbarStatementInnerContext, TitleSSelectorCompoundContext, TitleSISelectorSingleContext, TitleSISelectorCompoundContext, TitleSSIJsonContext, TitleSSIClearContext, TitleSSIResetContext, TitleSSITimesContext, TitleISIJsonContext, TitleISIClearContext, TitleISIResetContext, TitleISITimesContext, TitleSelectorStatementInnerContext, DisplaySCompoundContext, AttrISIGetBaseContext, AttrISIGetContext, AttrISIModifierAddContext, AttrISIModifierGetContext, AttrISIModifierRemoveContext, AttrISISetBaseContext, AttrSCompoundContext, AttrSISelectorCompoundContext, AttrSISingleContext, AttrSSelectorCompoundContext, BlockSICloneContext, BlockSICloneFilteredContext, BlockSIFillContext, BlockSIFillReplaceContext, BlockSISetblockContext, ClearISIContext, DisplayISIBossbarContext, DisplayISITextContext, DisplayISITitleCompoundContext, DisplayISITitleSingleContext, DisplaySIBossbarContext, DisplaySIScbContext, DisplaySISelectorCompoundContext, DisplaySISelectorSingleContext, DisplaySSelectorCompoundContext, EffectISIClearAllContext, EffectISIClearContext, EffectISIGiveSpContext, EffectISIGiveContext, EntityISIAttrCompoundContext, EntityISIAttrSingleContext, EntityISIDisplayCompoundContext, EntityISIDisplaySingleContext, EntityISIEffectContext, EntityISIExecContext, EntityISIGiveAndClearContext, EntityISIItemCompoundContext, EntityISIItemSingleContext, EntityISIKillContext, EntityISILootCompoundContext, EntityISILootGiveSingleContext, EntityISILootSingleContext, EntityISITagContext, EntityISITitleCompoundContext, EntityISITpContext, EntitySCompoundContext, EntitySDeclareContext, EntitySDeclarePlayerContext, EntitySIEntityExpressionContext, EntitySISelectorCompoundContext, EntitySSelectorCompoundContext, GiveISIContext, ItemISIModifyContext, ItemISIReplaceFromBlockContext, ItemISIReplaceFromEntityContext, ItemISIReplaceWithContext, ItemSCompoundContext, ItemSIBlockContext, ItemSIEntityContext, ItemSIGiveAndClearContext, ItemSILootInnerContext, ItemSISelectorNestContext, ItemSSelectorCompoundContext, ItemSSIGiveAndClearContext, ItemSSIItemContext, ItemSSILootInnerContext, LootSCompoundContext, LootSIGiveContext, LootSIInsertContext, LootSIReplaceBlockContext, LootSIReplaceEntityContext, LootSISelectorNestContext, LootSISpawnContext, LootSourceFishHandContext, LootSourceFishToolContext, LootSourceKillContext, LootSourceLootContext, LootSourceMineHandContext, LootSourceMineToolContext, LootSSelectorCompoundContext, TagISIAddContext, TagISIListContext, TagISIRemoveContext, TpISIDestinationContext, TpISIFacingContext, TpISIFacingEntityContext, TpISIPosContext, TpISIRotatedContext, TpISIRotatedDivContext, LootIndependentStatementInnerGiveContext, LootIndependentStatementInnerReplaceEntityContext, Item_slotContext, Item_predicateContext, SnbtContext, Block_predicateContext, BlockStatementContext, NameSpaceEntityContext, NameSpaceSettingsEntityContext, EntitySDeclareWithNameContext, EntityDeclareSITagContext, ExistExpressionExecContext, AcceptableNameContext, BlockIdentifierContext, BlockstateContext, DataBlockContext, DataEntityContext, DataGetContext, DataMergeBlockContext, DataMergeEntityContext, DataMergeStorageContext, DataModifyAppendFromContext, DataModifyAppendValueContext, DataModifyInsertFromContext, DataModifyInsertValueContext, DataModifyMergeFromContext, DataModifyMergeValueContext, DataModifyPrependFromContext, DataModifyPrependValueContext, DataModifySetFromContext, DataModifySetValueContext, DataRemoveContext, DataStatementContext, DataStorageContext, ExecAlignContext, ExecAnchoredContext, ExecAnonymousRunContext, ExecAsContext, ExecAtContext, ExecDirectRunContext, ExecFacingEntityContext, ExecFacingPosContext, ExecIfBiomeContext, ExecIfBlockContext, ExecIfBlocksContext, ExecIfDataContext, ExecIfEntityContext, ExecIfScoreContext, ExecIfScoreMatchesContext, ExecInContext, ExecNamedRunContext, ExecPositionedPosContext, ExecPostionedAsContext, ExecPredicateContext, ExecRotatedAsContext, ExecRotatedPosContext, ExecStoreContext, ExecStoreResultBossbarContext, ExecStoreResultDataContext, ExecStoreResultScoreContext, ExecStoreSuccessBossbarContext, ExecStoreSuccessDataContext, ExecStoreSuccessScoreContext, ExecWithoutRunOrChildContext, ExecWithRunOrChildContext, ExistExpressionAndContext, ExistExpressionBitAndContext, ExistExpressionBitOrContext, ExistExpressionFalseContext, ExistExpressionIdContext, ExistExpressionNotContext, ExistExpressionOrContext, ExistExpressionTrueContext, FuncRunStatementContext, FuncStatementContext, FuncTagStatementContext, JsonContext, LeagalCommandContext, MatchPartContext, McfFileContext, NameSpaceContext, NameSpaceSettingsBlockContext, NameSpaceSettingsFuncContext, NameSpaceStatementContext, NbtContext, NbtNameContext, NbtPathContext, NoInExecStatementRunFuncContext, NoInExecStatementStoreContext, Pos1Context, Pos2IdentifierContext, Pos3IdentifierContext, Pos5IdentifierContext, RegisterNameContext, ResourceLocationContext, ScbAddContext, ScbFuncExpressionContext, ScbGetContext, ScbIdentifierContext, ScbIdExpressionContext, ScbObjSDeclareDefaultContext, ScbObjSDeclareWithNameContext, ScbObjSOperationContext, ScbOptAddAssignContext, ScbOptAddSubExpressionContext, ScbOptAssignContext, ScbOptDivAssignContext, ScbOptExcFuncContext, ScbOptExpressionContext, ScbOptMaxFuncContext, ScbOptMinFuncContext, ScbOptModAssignContext, ScbOptMulAssignContext, ScbOptMulDivModExpressionContext, ScbOptSubAssignContext, ScbParenExpressionContext, ScbPlayerStatementContext, ScbRemoveContext, ScbResetContext, ScbSetContext, ScbSIDisplayContext, ScbSIDisplaynameContext, ScbSingleOperationExpressionContext, ScbSIRemoveContext, ScbSIRendertypeContext, ScbTempNumberExpressionContext, SelectorContext, WhileStatementExecContext, WhileStatementExistContext, IfStatementContext, ForStatementContext, DataSCompoundContext, DataSIdentifierCompoundContext, DataStorageWithEnvContext, DataStorageLocalContext, FuncImproveStatementContext, FuncImproveParamContext, YeildStatementContext, FuncImproveRunExpressionContext, ExisitExpressionFuncRunContext, FuncImproveRunStatementContext, DataAssignExistExpressionContext, ExistExpressionParenContext, InterfaceStatementContext, InterfaceSIdentifierContext, InterfaceSNamespaceContext, ExistExpressionContext } from './antlr/JustMCFParser';
 import { JustMCFVisitor } from "./antlr/JustMCFVisitor";
 import { AbstractParseTreeVisitor } from "antlr4ts/tree/AbstractParseTreeVisitor";
 import { UUID } from './lib/UUIDUtils';
+import { type } from 'os';
 
+export interface improveFunctionType{
+    namespace: string,
+    inputType: { name: string, type: string }[],
+    outputType: string
+}
 export interface namespaceInfo{
     block?: string,
     func?: string,
@@ -134,6 +33,13 @@ export interface option {
         useConstNumberScbObjective?: boolean,
         constNumberScbObjectiveName?: string
     },
+    variableSpace?: {
+        stackNamespaceId?: string,
+        commonIO?: boolean,
+    }
+    existExpression?: {
+        everyConditionNewFunctionFile?: boolean,
+    }
     entityNameMap?: {
         [name:string]:string
     }
@@ -145,30 +51,58 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     }
 
     //all mcfunction files
-    private mcfunction: { [mcfunctionFileName: string]: string[] } = {};
+    private mcfunctions: { [mcfunctionFileName: string]: string[] } = {};
     //all function tags
-    private functionTag: { [functionTagFileName: string]: {replace:boolean,values:string[]} } = {};
-    //const number will register in init.mcfunction
-    private constScbInitFunc: number[] = [];
+    private functionTags: { [functionTagFileName: string]: { replace: boolean, values: string[] } } = {};
+    //all improve functions' types
+    private improveFunctionTypes: { [functionName: string]: improveFunctionType } = {};
 
     //all namespace `namespace`
     private namespace: namespaceInfo[] = [];
 
     //function namespace id `namespace:resource_loaction`  + number
-    private anonymousFunctionFatherNamespaceTimes: { [mcfunctionFileName: string]: number } = {};
-
-    getNewTempFunctionNamespace() {
-        const namespace = this.tempFunctionNamespace[this.tempFunctionNamespace.length - 1]
-        if (this.anonymousFunctionFatherNamespaceTimes[namespace] === undefined)
-            this.anonymousFunctionFatherNamespaceTimes[namespace] = 0
+    private anonymousFunctionFatherNamespaceIdTimes: { [mcfunctionFileName: string]: number } = {};
+    //function namespace stack, to remember the namespace to be used in anonymous function
+    private tempFunctionNamespaceIdStack: string[] = [];
+    getNewTempFunctionNamespaceId() {
+        const namespace = this.tempFunctionNamespaceIdStack[this.tempFunctionNamespaceIdStack.length - 1]
+        if (this.anonymousFunctionFatherNamespaceIdTimes[namespace] === undefined)
+            this.anonymousFunctionFatherNamespaceIdTimes[namespace] = 0
         else
-            this.anonymousFunctionFatherNamespaceTimes[namespace] += 1
-        return `${namespace}/${this.anonymousFunctionFatherNamespaceTimes[namespace]}`
+            this.anonymousFunctionFatherNamespaceIdTimes[namespace] += 1
+        return `${namespace}/${this.anonymousFunctionFatherNamespaceIdTimes[namespace]}`
     }
-    //function namespace stack
-    private tempFunctionNamespace: string[] = [];
+    //if the function is used exist expression, it should add exist_stack_frame
+    private isUsedExistExpression: { [namespace: string]: boolean } = {};    
+    //improve function namespace stack, used in return statement
+    private improveFunctionNamespaceIdStack: string[] = [];
 
+    //data storage identifier stack
+    private dataStorageIdentifierStack: [namespaceId:string,nbtPath:string][] = [];
+    getDataStorageIdentifier() {
+        return this.dataStorageIdentifierStack[this.dataStorageIdentifierStack.length - 1]
+    }
+
+    //all entity name, key: name, value: "player" or hex uuid_
     private entityNameMap: { [name: string]: string } = {}
+
+    //const number will register in init.mcfunction
+    private constScbInitFunc: number[] = [];
+
+    //the scb player tagetName pool
+    private tempScbTargetName: number[] = [];
+    private tempScbTargetNameUsed: number[] = [];
+    removeUnusedTempScbTargetName(rightTempNumber: number) {
+        this.tempScbTargetName.remove(rightTempNumber)
+        this.tempScbTargetNameUsed.push(rightTempNumber)
+    }
+    getVaildTempScbTargetName(): [number, string] {
+        let tempNumber = this.tempScbTargetName.length
+        if (this.tempScbTargetNameUsed.length > 0) { tempNumber = this.tempScbTargetNameUsed.pop()!! }
+        this.tempScbTargetName.push(tempNumber)
+        return [tempNumber, `${'temp' + tempNumber} ${this._option.scbExpression?.tempScbObjectiveName}`]
+    }
+    private tempExistName: number = 0;
 
     private _option: option = {
         scbExpression: {
@@ -188,56 +122,54 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
             loot: "minecraft",
             bossbar: "minecraft",
             entity: "minecraft"
+        },
+        variableSpace: {
+            stackNamespaceId:"justmcf:program",
+            commonIO:false
+        },
+        existExpression: {
+            everyConditionNewFunctionFile:true
         }
     }
     public set option(val: option) {
         this._option = {
-            scbExpression: {
-                ...this._option.scbExpression, ...val.scbExpression
-            },
-            namespace: {
-                ...this._option.namespace, ...val.namespace
-            },
-            entityNameMap: {
-                ...val.entityNameMap
-            }
+            scbExpression: {...this._option.scbExpression, ...val.scbExpression},
+            namespace: {...this._option.namespace, ...val.namespace},
+            entityNameMap: {...val.entityNameMap},
+            variableSpace: {...this._option.variableSpace,...val.variableSpace},
+            existExpression: {...this._option.existExpression,...val.existExpression}
         }
         this.namespace.push({ ...this._option.namespace }) 
+        this.dataStorageIdentifierStack.push([this.namespace[0].storage!!,""])
         this.entityNameMap = this.entityNameMap
     }
 
-    private tempScbTargetName: number[] = [];
-    private tempScbTargetNameUsed: number[] = [];
-    removeUnusedTempScbTargetName(rightTempNumber: number) {
-        this.tempScbTargetName.remove(rightTempNumber)
-        this.tempScbTargetNameUsed.push(rightTempNumber)
-    }
-    getVaildTempScbTargetName(): [number, string] {
-        let tempNumber = this.tempScbTargetName.length
-        if (this.tempScbTargetNameUsed.length > 0) { tempNumber = this.tempScbTargetNameUsed.pop()!! }
-        this.tempScbTargetName.push(tempNumber)
-        return [tempNumber, `${'temp' + tempNumber} ${this._option.scbExpression?.tempScbObjectiveName}`]
-    }
-
     createInitFunc() {
-        if (this.mcfunction["init"] === undefined) this.mcfunction["init"] = []
+        if (this.mcfunctions["init"] === undefined) this.mcfunctions["init"] = []
         for (const num of this.constScbInitFunc) {
-            this.mcfunction["init"].push(`scoreboard players set ${num} ${this._option.scbExpression?.constNumberScbObjectiveName} ${num}`)
+            this.mcfunctions["init"].push(`scoreboard players set ${num} ${this._option.scbExpression?.constNumberScbObjectiveName} ${num}`)
         }
     }
     printAllMcfunction(dealCommand: (code: string) => string) {
         this.createInitFunc()
-        for (const mcfunctionFileName in this.mcfunction) {
+        for (const mcfunctionFileName in this.mcfunctions) {
             console.log(mcfunctionFileName)
-            for (const command of this.mcfunction[mcfunctionFileName]) {
+            for (const command of this.mcfunctions[mcfunctionFileName]) {
                 console.log(`   ${dealCommand(command)}`)
-                //TODO: add the commands which had deal to list
+                //TODO add the commands which had deal to list
             }
         }
     }
 
 /* Deal the Identifiers */
     // visitDataIdentifier?: ((ctx: DataIdentifierContext) => string[]) | undefined;
+    visitDataStorageLocal(ctx: DataStorageLocalContext){
+        return [`storage ${this._option.variableSpace?.stackNamespaceId!!} stack_frame[0].${this.v(ctx.nbtPath())}`]
+    }
+    visitDataStorageWithEnv(ctx: DataStorageWithEnvContext) {
+        const [namespace,nbtpath] = this.getDataStorageIdentifier()
+        return [`storage ${namespace} ${nbtpath!=""?nbtpath+".":""}${this.v(ctx.acceptableName())}`]
+    }
     visitDataStorage(ctx: DataStorageContext) { return [`storage ${this.v(ctx.nameSpaceStorage())} ${this.v(ctx.nbtPath())}`] }
     visitDataEntity(ctx: DataEntityContext) { return [`entity ${this.v(ctx.selector())} ${this.v(ctx.nbtPath())}`] }
     visitDataBlock(ctx: DataBlockContext) { return [`block ${this.v(ctx.pos3Identifier())} ${this.v(ctx.nbtPath())}`] }
@@ -253,7 +185,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         return [block]
     }
     visitBlockstate(ctx: BlockstateContext) { return [ctx.text] }
-    //TODO: need to use UUID map and need environment
+    
     visitSelector(ctx: SelectorContext) {
         if (/^@s$/.test(ctx.text)) { return [ctx.text, "final"] }
         else if (/@[parse]/.test(ctx.text)) {
@@ -378,10 +310,10 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         const name = this.v(ctx.tagNameSpaceFunc())
         for (const funcTagStatementSetting of ctx.funcTagSettings()) {
             const [key, value] = this.visit(funcTagStatementSetting)
-            this.functionTag[name]["replace"] = value=="true"
+            this.functionTags[name]["replace"] = value=="true"
         }
         for (const funcTagStatementInner of ctx.funcTagStatementInner()) {
-            this.functionTag[name].values.push(this.v(funcTagStatementInner))
+            this.functionTags[name].values.push(this.v(funcTagStatementInner))
         }
         return []
     }
@@ -409,13 +341,13 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         const namespace = this.v(ctx.nameSpaceFunc())
         for (const tagNameSpaceContext of ctx.tagNameSpaceFunc()) {
             const tagName = this.v(tagNameSpaceContext)
-            this.functionTag[tagName].values.push(namespace)
+            this.functionTags[tagName].values.push(namespace)
         }
-        this.tempFunctionNamespace.push(namespace) //use for child anonymous func
+        this.tempFunctionNamespaceIdStack.push(namespace) //use for child anonymous func
 
-        this.mcfunction[namespace] = ctx.statementInner().flatMap(context => this.visit(context))
+        this.mcfunctions[namespace] = ctx.statementInner().flatMap(context => this.visit(context))
         
-        this.tempFunctionNamespace.pop()
+        this.tempFunctionNamespaceIdStack.pop()
         return []
     }
 
@@ -425,23 +357,23 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         return [`function ${namespace}`]
     }
     visitExecAnonymousRun(ctx: ExecAnonymousRunContext) {
-        const namespace = this.getNewTempFunctionNamespace()
-        this.tempFunctionNamespace.push(namespace) //use for child anonymous func
+        const namespace = this.getNewTempFunctionNamespaceId()
+        this.tempFunctionNamespaceIdStack.push(namespace) //use for child anonymous func
 
-        this.mcfunction[namespace] = ctx.statementInner().flatMap(context=>this.visit(context))
+        this.mcfunctions[namespace] = ctx.statementInner().flatMap(context=>this.visit(context))
         
-        this.tempFunctionNamespace.pop()
+        this.tempFunctionNamespaceIdStack.pop()
         return [`function ${namespace}`]
     }
     visitExecDirectRun(ctx: ExecDirectRunContext) {
         const commands = this.visit(ctx.statement())
         if (commands.length > 1) {
-            const namespace = this.getNewTempFunctionNamespace()
-            this.tempFunctionNamespace.push(namespace) //use for child anonymous func
+            const namespace = this.getNewTempFunctionNamespaceId()
+            this.tempFunctionNamespaceIdStack.push(namespace) //use for child anonymous func
 
-            this.mcfunction[namespace] = commands
+            this.mcfunctions[namespace] = commands
 
-            this.tempFunctionNamespace.pop()
+            this.tempFunctionNamespaceIdStack.pop()
             return [`function ${namespace}`]
         }
         else {
@@ -454,7 +386,85 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         else 
             return [`function ${this.v(ctx.tagNameSpaceFunc()!!)}`]
     }
+
+    visitFuncImproveStatement(ctx: FuncImproveStatementContext) {
+        //TODO: type check
+        //TODO: default params and params template
+        const namespace = this.v(ctx.nameSpaceFunc())
+        const preCommands: string[] = [];
+        let ifCommand = ""
+        const inputSourceNamespace = this._option.variableSpace?.commonIO
+            ? this._option.variableSpace.stackNamespaceId
+            : namespace;
+        const resStorageNamespace = inputSourceNamespace
+
+        const params: { name: string, type: string }[] =
+            ctx.funcImproveParam().map(context => {
+                const name = this.v(context.acceptableName())
+                const type = context.typeName() !== undefined ? this.v(context.typeName()!!) : "nbt";
+                preCommands.push(`data motify storage ${this._option.variableSpace?.stackNamespaceId} stack_frame[0].${name} set from storage ${inputSourceNamespace} input.${name}`)
+                ifCommand = `${ifCommand} if data storage ${inputSourceNamespace} input.${name}`
+                return { name: name, type: type }
+            });
+        const resType = ctx.typeName()!==undefined?this.v(ctx.typeName()!!):"unit"
+        this.improveFunctionTypes[namespace] = {
+            namespace: namespace,
+            inputType: params,
+            outputType:resType
+        }
+        this.improveFunctionNamespaceIdStack.push(namespace)
+        this.tempFunctionNamespaceIdStack.push(namespace)
+
+        const startCommand = (ifCommand!=""?`execute ${ifCommand} run `:"")+ `function ${namespace}/start`
+
+        this.mcfunctions[namespace] = [
+            `data remove storage ${resStorageNamespace} output`,
+            `data modify storage ${this._option.variableSpace?.stackNamespaceId} stack_frame prepend value {}`, // 为子函数创建变量内存空间
+            ...preCommands,
+            startCommand, // 给子函数打电话
+            `data remove storage ${this._option.variableSpace?.stackNamespaceId} stack_frame[0]`, // 销毁子函数的变量内存空间
+        ]
+
+        this.mcfunctions[`${namespace}/start`] = ctx.funcImproveStatementInner().flatMap(context=>this.visit(context))
+
+        this.tempFunctionNamespaceIdStack.pop()
+        this.improveFunctionNamespaceIdStack.pop()
+        return []
+    }
+    visitYeildStatement(ctx: YeildStatementContext) {
+        //TODO: type check
+        const resStorageNamespace = this._option.variableSpace?.commonIO
+            ? this._option.variableSpace.stackNamespaceId
+            : this.improveFunctionNamespaceIdStack[this.improveFunctionNamespaceIdStack.length - 1]
+            
+        return [`data modify storage ${resStorageNamespace} output set from ${this.v(ctx.dataIdentifier())}`]
+    }
+    //visitFuncImproveParam(ctx: FuncImproveParamContext) {return []}
+    visitFuncImproveRunStatement(ctx: FuncImproveRunStatementContext) {
+        return this.visit(ctx.funcImproveRunExpression()).slice(1)
+    }
+    visitFuncImproveRunExpression(ctx: FuncImproveRunExpressionContext) {
+        const namespace = this.v(ctx.nameSpaceFunc())
+        if(ctx.funcImproveRunParam().length<this.improveFunctionTypes[namespace].inputType.length) throw new JustMCFSimplifyError("the called function params were less than its definition")
+        const inputSourceNamespace = this._option.variableSpace?.commonIO
+            ? this._option.variableSpace.stackNamespaceId
+            : namespace;
+        const resStorageNamespace = inputSourceNamespace
+        const clearInputCommand = `data remove storage ${inputSourceNamespace} input`
+        let ifCommand = ""
+        const setParamsCommands = ctx.funcImproveRunParam().map((context, i) => {
+            const sourceIdentifier = this.v(context.dataIdentifier())
+            ifCommand = ifCommand = `${ifCommand} if data storage ${sourceIdentifier}`
+            return `data modify storage ${inputSourceNamespace} input.${this.improveFunctionTypes[namespace].inputType[i].name} set from ${sourceIdentifier}` 
+        })
+        const startCommand = (ifCommand!=""?`execute ${ifCommand} run `:"")+`function ${namespace}`
+        return [`storage ${resStorageNamespace} output`,clearInputCommand,...setParamsCommands,startCommand]
+    }
+
     visitLeagalCommand(ctx: LeagalCommandContext) {return [ctx.text]}
+
+
+
 
 /* Execute Statement */
     // visitExecStatement?: ((ctx: ExecStatementContext) => string[]) | undefined;
@@ -543,21 +553,42 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitDataMergeStorage(ctx: DataMergeStorageContext) { return [`data merge storage ${this.v(ctx.nameSpaceStorage())} ${this.v(ctx.nbt())}`] }
     visitDataMergeEntity(ctx: DataMergeEntityContext) { return [`data merge entity ${this.v(ctx.selector())} ${this.v(ctx.nbt())}`] }
     visitDataMergeBlock(ctx: DataMergeBlockContext) { return [`data merge block ${this.v(ctx.pos3Identifier())} ${this.v(ctx.nbt())}`] }
-    visitDataGet(ctx: DataGetContext) { return [`data get ${this.v(ctx.dataIdentifier())}`] }
+    visitDataGet(ctx: DataGetContext) { return [`data get ${this.v(ctx.dataIdentifier())}`+ctx.NUMBER()!==undefined?` ${ctx.NUMBER()?.text}`:""] }
     visitDataModifyMergeValue(ctx: DataModifyMergeValueContext) { return [`data modify ${this.v(ctx.dataIdentifier())} merge value ${this.v(ctx.nbt())}`] }
-    visitDataModifyMergeFrom(ctx: DataModifyMergeFromContext) { return [`data modify ${this.v(ctx.dataIdentifier(0))} merge from ${this.v(ctx.dataIdentifier(1))}`] }
+    visitDataModifyMergeFrom(ctx: DataModifyMergeFromContext) {
+        const commands = this.visit(ctx.dataRightValue())
+        return [...commands.slice(1), `data modify ${this.v(ctx.dataIdentifier())} merge from ${commands[0]}`]
+    }
     visitDataModifySetValue(ctx: DataModifySetValueContext) { return [`data modify ${this.v(ctx.dataIdentifier())} set value ${this.v(ctx.nbt())}`] }
-    visitDataModifySetFrom(ctx: DataModifySetFromContext) { return [`data modify ${this.v(ctx.dataIdentifier(0))} set from ${this.v(ctx.dataIdentifier(1))}`] }
+    visitDataModifySetFrom(ctx: DataModifySetFromContext) {
+        const commands = this.visit(ctx.dataRightValue())
+        return [...commands.slice(1),`data modify ${this.v(ctx.dataIdentifier())} set from ${commands[0]}`]
+    }
     visitDataModifyAppendValue(ctx: DataModifyAppendValueContext) { return [`data modify ${this.v(ctx.dataIdentifier())} append value ${this.v(ctx.nbt())}`] }
-    visitDataModifyAppendFrom(ctx: DataModifyAppendFromContext) { return [`data modify ${this.v(ctx.dataIdentifier(0))} append from ${this.v(ctx.dataIdentifier(1))}`] }
+    visitDataModifyAppendFrom(ctx: DataModifyAppendFromContext) {
+        const commands = this.visit(ctx.dataRightValue())
+        return [...commands.slice(1),`data modify ${this.v(ctx.dataIdentifier())} append from ${commands[0]}`]
+    }
     visitDataModifyPrependValue(ctx: DataModifyPrependValueContext) { return [`data modify ${this.v(ctx.dataIdentifier())} prepend value ${this.v(ctx.nbt())}`] }
-    visitDataModifyPrependFrom(ctx: DataModifyPrependFromContext) { return [`data modify ${this.v(ctx.dataIdentifier(0))} prepend from ${this.v(ctx.dataIdentifier(1))}`] }
+    visitDataModifyPrependFrom(ctx: DataModifyPrependFromContext) {
+        const commands = this.visit(ctx.dataRightValue())
+        return [...commands.slice(1),`data modify ${this.v(ctx.dataIdentifier())} prepend from ${commands[0]}`]
+    }
     visitDataModifyInsertValue(ctx: DataModifyInsertValueContext) { return [`data modify ${this.v(ctx.dataIdentifier())} insert value ${this.v(ctx.nbt())}`] }
-    visitDataModifyInsertFrom(ctx: DataModifyInsertFromContext) { return [`data modify ${this.v(ctx.dataIdentifier(0))} insert from ${this.v(ctx.dataIdentifier(1))}`] }
+    visitDataModifyInsertFrom(ctx: DataModifyInsertFromContext) {
+        const commands = this.visit(ctx.dataRightValue())
+        return [...commands.slice(1),`data modify ${this.v(ctx.dataIdentifier())} insert from ${commands[0]}`]
+    }
     visitDataRemove(ctx: DataRemoveContext) { return [`data remove ${this.v(ctx.dataIdentifier())}`] }
 
-    visitDataStatement(ctx: DataStatementContext) {
+    visitDataSCompound(ctx: DataSCompoundContext) {
         return ctx.dataOperationExpression().flatMap(context=>this.visit(context))
+    }
+    visitDataSIdentifierCompound(ctx: DataSIdentifierCompoundContext) {
+        this.dataStorageIdentifierStack.push([this.v(ctx.nameSpaceStorage()), ctx.acceptableName() === undefined ? "" : this.v(ctx.acceptableName()!!)])
+        const commands = ctx.dataOperationExpression().flatMap(context=>this.visit(context))
+        this.dataStorageIdentifierStack.pop()
+        return commands
     }
 /* Scb Statement */
     // visitScbOperationExpression?: ((ctx: ScbOperationExpressionContext) => string[]) | undefined;
@@ -953,6 +984,180 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         return [`clone ${this.v(ctx.pos3Identifier(0))} ${this.v(ctx.pos3Identifier(1))} ${this.v(ctx.pos3Identifier(2))} filtered ${this.v(ctx.block_predicate())}`+ctx._mod.text!==undefined?` ${ctx._mod.text}`:""]
     }
 
+    visitDataAssignExistExpression(ctx: DataAssignExistExpressionContext){
+        return []
+    }
+
+    visitExistExpressionOperationUtils(ctx: ExistExpressionBitAndContext | ExistExpressionBitAndContext | ExistExpressionBitOrContext | ExistExpressionOrContext) {
+        const left = this.visit(ctx.existExpression(0) as ExistExpressionContext)
+        const leftName = left[0]
+        const right = this.visit(ctx.existExpression(1) as ExistExpressionContext)
+        const rightName = right[0]
+        const mos = (leftName == "true" ? "1": leftName == "false" ? "0" : "2") + (rightName == "true" ? "1": rightName == "false" ? "0" : "2");
+        switch (ctx._op.text) {
+            case "&": {
+                switch (mos) {
+                    case "00": {return ["false",...left.slice(1),...right.slice(1)] } break;
+                    case "01": {return ["false",...left.slice(1),...right.slice(1)] } break;
+                    case "10": {return ["false",...left.slice(1),...right.slice(1)]} break;
+                    case "11": {return ["true",...left.slice(1),...right.slice(1)] } break;
+                    case "02": {return ["false",...left.slice(1),...right.slice(1)]} break;
+                    case "12": {return [rightName,...left.slice(1),...right.slice(1)]} break;
+                    case "20": {return ["false",...left.slice(1),...right.slice(1)] } break;
+                    case "21": {return [leftName,...left.slice(1),...right.slice(1)] } break;
+                    case "22": {
+                        return [`temp${++this.tempExistName}`,
+                            `data remove storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${this.tempExistName}`,
+                            ...left.slice(1), ...right.slice(1),
+                            `execute if data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].${leftName} if data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].${rightName} run data modify storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${this.tempExistName} set value 1b`]
+                    } break;
+                }
+            } break;
+            case "|": {
+                switch (mos) {
+                    case "00": {return ["false",...left.slice(1),...right.slice(1)] } break;
+                    case "01": {return ["true",...left.slice(1),...right.slice(1)] } break;
+                    case "10": {return ["true",...left.slice(1),...right.slice(1)]} break;
+                    case "11": {return ["true",...left.slice(1),...right.slice(1)] } break;
+                    case "02": {return [rightName,...left.slice(1),...right.slice(1)]} break;
+                    case "12": {return ["true",...left.slice(1),...right.slice(1)]} break;
+                    case "20": {return [leftName,...left.slice(1),...right.slice(1)] } break;
+                    case "21": {return ["true",...left.slice(1),...right.slice(1)] } break;
+                    case "22": {
+                        return [`temp${++this.tempExistName}`,
+                            `data remove storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${this.tempExistName}`,
+                            ...left.slice(1), ...right.slice(1),
+                            `execute if data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].${leftName} run data modify storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${this.tempExistName} set value 1b`,
+                            `execute if data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].${rightName} run data modify storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${this.tempExistName} set value 1b`]
+                    } break;
+                }
+            } break;
+            case '&&': {
+                switch (mos) {
+                    case "00": {return ["false",...left.slice(1)] } break;
+                    case "01": {return ["false",...left.slice(1)] } break;
+                    case "10": {return ["false",...left.slice(1),...right.slice(1)]} break;
+                    case "11": {return ["true",...left.slice(1),...right.slice(1)] } break;
+                    case "02": {return ["false",...left.slice(1)]} break;
+                    case "12": {return [rightName,...left.slice(1),...right.slice(1)]} break;
+                    case "20": {return ["false",...left.slice(1),...right.slice(1)] } break;
+                    case "21": {return [leftName,...left.slice(1),...right.slice(1)] } break;
+                    case "22": {
+                        const newExprName = ++this.tempExistName
+                        if (this._option.existExpression?.everyConditionNewFunctionFile&&right.length>2) {
+                            const namespace = this.getNewTempFunctionNamespaceId()
+                            this.tempFunctionNamespaceIdStack.push(namespace)
+
+                            this.mcfunctions[namespace] = right.slice(1)
+
+                            this.tempFunctionNamespaceIdStack.pop()
+                            return [`temp${newExprName}`,
+                                /* bool a=false */                 `data remove storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName}`,
+                                /* getcond1 */                     ...left.slice(1),
+                                /* if cond1 -> a=true */           `execute if data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].${leftName} run data modify storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName} set value 1b`,
+                                /* if a -> getcond2 */             `execute if data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName} run function ${namespace}`,
+                                /* if a unless cond2 -> a=false */ `execute if data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName} unless data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].${rightName} run data remove storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName}`
+                            ]
+                        }
+                        else {
+                            return [`temp${newExprName}`,
+                                `data remove storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName}`,
+                                ...left.slice(1),
+                                `execute if data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].${leftName} run data modify storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName} set value 1b`,
+                                ...right.slice(1).map(command => `execute if data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName} run ${command}`),
+                                `execute if data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName} unless data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].${rightName} run data remove storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName}`
+                            ]
+                        }
+                        
+                    } break;
+                }
+            } break;
+            case '||': {
+                switch (mos) {
+                    case "00": { return ["false", ...left.slice(1),...right.slice(1)] } break;
+                    case "01": { return ["true", ...left.slice(1),...right.slice(1)] } break;
+                    case "10": { return ["true", ...left.slice(1)] } break;
+                    case "11": { return ["true", ...left.slice(1)] } break;
+                    case "02": { return [rightName, ...left.slice(1),...right.slice(1)] } break;
+                    case "12": { return ["true", ...left.slice(1)] } break;
+                    case "20": { return [leftName, ...left.slice(1), ...right.slice(1)] } break;
+                    case "21": { return ["true", ...left.slice(1), ...right.slice(1)] } break;
+                    case "22": {
+                        const newExprName = ++this.tempExistName
+                        if (this._option.existExpression?.everyConditionNewFunctionFile&&right.length>2) {
+                            const namespace = this.getNewTempFunctionNamespaceId()
+                            this.tempFunctionNamespaceIdStack.push(namespace)
+
+                            this.mcfunctions[namespace] = right.slice(1)
+
+                            this.tempFunctionNamespaceIdStack.pop()
+                            return [`temp${newExprName}`,
+                                /* bool a=false */                `data remove storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName}`,
+                                /* getcond1 */                    ...left.slice(1),
+                                /* if cond1 -> a=true */          `execute if data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].${leftName} run data modify storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName} set value 1b`,
+                                /* unless a -> getcond2 */        `execute unless data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName} run function ${namespace}`,
+                                /* unless a if cond2- > a=true */ `execute unless data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName} if data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].${rightName} run data modify storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName} set value 1b`
+                                ]
+                        }
+                        else {
+                            return [`temp${newExprName}`,
+                            `data remove storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName}`,
+                            ...left.slice(1),
+                            `execute unless data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].${leftName} run data modify storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName} set value 1b`,
+                            ...right.slice(1).map(command => `execute unless data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName} run ${command}`),
+                            `execute unless data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName} if data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].${rightName} run data modify storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${newExprName} set value 1b`
+                            ]
+                        }
+                        
+                    } break;
+                }
+            } break; 
+        }
+        return []
+    }
+
+    visitExistExpressionExec(ctx: ExistExpressionExecContext) {
+        let command = "execute"
+        for (const context of ctx.execChild()) {
+            command = `${command} ${this.v(context)}`
+        }
+        return [`temp${++this.tempExistName}`,`${command} run data data modify ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${this.tempExistName} set value 1b`]
+    }
+    visitExisitExpressionFuncRun(ctx: ExisitExpressionFuncRunContext) {
+        const res = this.visit(ctx)
+        return [`temp${++this.tempExistName}`,...res.slice(1),`execute if data ${res[0]} run data modify ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${this.tempExistName} set value 1b`]
+    }
+    visitExistExpressionId(ctx: ExistExpressionIdContext) {
+        return [`temp${++this.tempExistName}`,`execute if data ${this.v(ctx.dataIdentifier())} run data modify ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${this.tempExistName} set value 1b`]
+    }
+    visitExistExpressionTrue(ctx: ExistExpressionTrueContext){return ["true"]}
+    visitExistExpressionFalse(ctx: ExistExpressionFalseContext){return ["false"]}
+    visitExistExpressionNot(ctx: ExistExpressionNotContext) {
+        const res = this.visit(ctx.existExpression())
+        if (res[0] == "true") { res[0] = "false"; return res }
+        else if (res[0] == "false") { res[0] = "true"; return res }
+        else {
+            return [`temp${++this.tempExistName}`,
+                `data remove storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${this.tempExistName}`,
+                ...res.slice(1),
+                `execute unless data storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].${res[0]} run data modify storage ${this._option.variableSpace?.stackNamespaceId} exist_stack_frame[0].temp${this.tempExistName} set value 1b`]
+        }
+    }
+    visitExistExpressionBitAnd(ctx: ExistExpressionBitAndContext) {return this.visitExistExpressionOperationUtils(ctx)}
+    visitExistExpressionBitOr(ctx: ExistExpressionBitOrContext) {return this.visitExistExpressionOperationUtils(ctx)}
+    visitExistExpressionAnd(ctx: ExistExpressionAndContext) {return this.visitExistExpressionOperationUtils(ctx)}
+    visitExistExpressionOr(ctx: ExistExpressionOrContext) {return this.visitExistExpressionOperationUtils(ctx)}
+    visitExistExpressionParen(ctx: ExistExpressionParenContext){return this.visit(ctx.existExpression())}
+
+    visitIfStatement(ctx: IfStatementContext){return []}
+    visitWhileStatementExist(ctx: WhileStatementExistContext) { return [] }
+    visitWhileStatementExec(ctx: WhileStatementExecContext) { return [] }
+    visitForStatement(ctx: ForStatementContext){ return []}
+
+    //TODO: type check
+    visitInterfaceSIdentifier(ctx: InterfaceSIdentifierContext) {return[`data modify ${this.v(ctx.dataIdentifier())} set value ${this.v(ctx.nbt())}`] }
+    visitInterfaceSNamespace(ctx: InterfaceSNamespaceContext) {return [`data merge storage ${this.v(ctx.nameSpaceStorage())} set value ${this.v(ctx.nbt())}`]}
+
 
     visitNbt(ctx: NbtContext) { return [ctx.text.replace("n{", "{").replace("n[", "[")] }
     visitJson(ctx: JsonContext) { return [ctx.text.replace("j{", "{").replace("j[", "[")] }
@@ -982,13 +1187,13 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
                 this.visit(context).map(command => command.replace("$$", selector)))
         }
         else {
-            const namespace = this.getNewTempFunctionNamespace()
-            this.tempFunctionNamespace.push(namespace) //use for child anonymous func
+            const namespace = this.getNewTempFunctionNamespaceId()
+            this.tempFunctionNamespaceIdStack.push(namespace) //use for child anonymous func
 
-            this.mcfunction[namespace] = nodes.flatMap(context =>
+            this.mcfunctions[namespace] = nodes.flatMap(context =>
                 this.visit(context).map(command => command.replace("$$", "@s")))
             
-            this.tempFunctionNamespace.pop()
+            this.tempFunctionNamespaceIdStack.pop()
 
             return [`execute as ${selector} run function ${namespace}`]
         }

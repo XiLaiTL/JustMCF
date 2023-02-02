@@ -12,9 +12,7 @@ export class ArrayHelper {
      * @returns 合并后的数组1的长度
      */
     static pushAll <T>(arr: T[], arrRight: T[]): number {
-        let len = arr.length
-        for (const elem of arrRight) len = arr.push(elem)
-        return len
+        return arr.push(...arrRight)
     }
     /**
      * 删除元素

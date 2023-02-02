@@ -53,7 +53,9 @@ import { ExecIfBlocksContext } from "./JustMCFParser";
 import { ExecIfDataContext } from "./JustMCFParser";
 import { ExecIfBiomeContext } from "./JustMCFParser";
 import { ExecStoreContext } from "./JustMCFParser";
+import { DataStorageLocalContext } from "./JustMCFParser";
 import { DataStorageContext } from "./JustMCFParser";
+import { DataStorageWithEnvContext } from "./JustMCFParser";
 import { DataEntityContext } from "./JustMCFParser";
 import { DataBlockContext } from "./JustMCFParser";
 import { AttrISIGetContext } from "./JustMCFParser";
@@ -86,8 +88,11 @@ import { TitleISIJsonContext } from "./JustMCFParser";
 import { TitleISIClearContext } from "./JustMCFParser";
 import { TitleISIResetContext } from "./JustMCFParser";
 import { TitleISITimesContext } from "./JustMCFParser";
+import { InterfaceSNamespaceContext } from "./JustMCFParser";
+import { InterfaceSIdentifierContext } from "./JustMCFParser";
 import { ExistExpressionExecContext } from "./JustMCFParser";
 import { ExistExpressionIdContext } from "./JustMCFParser";
+import { ExisitExpressionFuncRunContext } from "./JustMCFParser";
 import { ExistExpressionTrueContext } from "./JustMCFParser";
 import { ExistExpressionFalseContext } from "./JustMCFParser";
 import { ExistExpressionNotContext } from "./JustMCFParser";
@@ -95,6 +100,7 @@ import { ExistExpressionBitAndContext } from "./JustMCFParser";
 import { ExistExpressionBitOrContext } from "./JustMCFParser";
 import { ExistExpressionAndContext } from "./JustMCFParser";
 import { ExistExpressionOrContext } from "./JustMCFParser";
+import { ExistExpressionParenContext } from "./JustMCFParser";
 import { LootSourceFishHandContext } from "./JustMCFParser";
 import { LootSourceFishToolContext } from "./JustMCFParser";
 import { LootSourceLootContext } from "./JustMCFParser";
@@ -155,6 +161,7 @@ import { NoInExecStatementFuncContext } from "./JustMCFParser";
 import { NoInExecStatementRunFuncContext } from "./JustMCFParser";
 import { NoInExecStatementFuncImproveContext } from "./JustMCFParser";
 import { NoInExecStatementNameSpaceContext } from "./JustMCFParser";
+import { NoInExecStatementInterfaceContext } from "./JustMCFParser";
 import { NoInExecStatementStoreContext } from "./JustMCFParser";
 import { EntityISIGiveAndClearContext } from "./JustMCFParser";
 import { EntityISIKillContext } from "./JustMCFParser";
@@ -224,10 +231,12 @@ import { DisplaySIScbContext } from "./JustMCFParser";
 import { DisplaySIBossbarContext } from "./JustMCFParser";
 import { DisplaySISelectorSingleContext } from "./JustMCFParser";
 import { DisplaySISelectorCompoundContext } from "./JustMCFParser";
-import { WhileStatementExistContext } from "./JustMCFParser";
 import { WhileStatementExecContext } from "./JustMCFParser";
+import { WhileStatementExistContext } from "./JustMCFParser";
 import { FuncTagSettingsReplaceContext } from "./JustMCFParser";
 import { FuncTagSettingsReplacedContext } from "./JustMCFParser";
+import { DataSCompoundContext } from "./JustMCFParser";
+import { DataSIdentifierCompoundContext } from "./JustMCFParser";
 import { DisplayISITitleSingleContext } from "./JustMCFParser";
 import { DisplayISITitleCompoundContext } from "./JustMCFParser";
 import { DisplayISITextContext } from "./JustMCFParser";
@@ -254,8 +263,9 @@ import { FuncStatementContext } from "./JustMCFParser";
 import { FuncImproveStatementContext } from "./JustMCFParser";
 import { FuncImproveParamContext } from "./JustMCFParser";
 import { FuncImproveStatementInnerContext } from "./JustMCFParser";
-import { ReturnStatementContext } from "./JustMCFParser";
+import { YeildStatementContext } from "./JustMCFParser";
 import { FuncRunStatementContext } from "./JustMCFParser";
+import { FuncImproveRunStatementContext } from "./JustMCFParser";
 import { FuncImproveRunExpressionContext } from "./JustMCFParser";
 import { FuncImproveRunParamContext } from "./JustMCFParser";
 import { ExecStatementContext } from "./JustMCFParser";
@@ -266,6 +276,7 @@ import { MatchPartContext } from "./JustMCFParser";
 import { DataIdentifierContext } from "./JustMCFParser";
 import { DataMergeExpressionContext } from "./JustMCFParser";
 import { DataOperationExpressionContext } from "./JustMCFParser";
+import { DataRightValueContext } from "./JustMCFParser";
 import { ScbOperationExpressionContext } from "./JustMCFParser";
 import { ScbSingleOperationExpressionContext } from "./JustMCFParser";
 import { ScbIdentifierContext } from "./JustMCFParser";
@@ -345,6 +356,7 @@ import { InterfaceStatementContext } from "./JustMCFParser";
 import { DataAssignExistExpressionContext } from "./JustMCFParser";
 import { ExistExpressionContext } from "./JustMCFParser";
 import { IfStatementContext } from "./JustMCFParser";
+import { IfElseIfStatementContext } from "./JustMCFParser";
 import { WhileStatementContext } from "./JustMCFParser";
 import { ForStatementContext } from "./JustMCFParser";
 import { NbtContext } from "./JustMCFParser";
@@ -1024,6 +1036,19 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitExecStore?: (ctx: ExecStoreContext) => void;
 
 	/**
+	 * Enter a parse tree produced by the `dataStorageLocal`
+	 * labeled alternative in `JustMCFParser.dataIdentifier`.
+	 * @param ctx the parse tree
+	 */
+	enterDataStorageLocal?: (ctx: DataStorageLocalContext) => void;
+	/**
+	 * Exit a parse tree produced by the `dataStorageLocal`
+	 * labeled alternative in `JustMCFParser.dataIdentifier`.
+	 * @param ctx the parse tree
+	 */
+	exitDataStorageLocal?: (ctx: DataStorageLocalContext) => void;
+
+	/**
 	 * Enter a parse tree produced by the `dataStorage`
 	 * labeled alternative in `JustMCFParser.dataIdentifier`.
 	 * @param ctx the parse tree
@@ -1035,6 +1060,19 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitDataStorage?: (ctx: DataStorageContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `dataStorageWithEnv`
+	 * labeled alternative in `JustMCFParser.dataIdentifier`.
+	 * @param ctx the parse tree
+	 */
+	enterDataStorageWithEnv?: (ctx: DataStorageWithEnvContext) => void;
+	/**
+	 * Exit a parse tree produced by the `dataStorageWithEnv`
+	 * labeled alternative in `JustMCFParser.dataIdentifier`.
+	 * @param ctx the parse tree
+	 */
+	exitDataStorageWithEnv?: (ctx: DataStorageWithEnvContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `dataEntity`
@@ -1453,6 +1491,32 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitTitleISITimes?: (ctx: TitleISITimesContext) => void;
 
 	/**
+	 * Enter a parse tree produced by the `interfaceSNamespace`
+	 * labeled alternative in `JustMCFParser.interfaceStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterInterfaceSNamespace?: (ctx: InterfaceSNamespaceContext) => void;
+	/**
+	 * Exit a parse tree produced by the `interfaceSNamespace`
+	 * labeled alternative in `JustMCFParser.interfaceStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitInterfaceSNamespace?: (ctx: InterfaceSNamespaceContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `interfaceSIdentifier`
+	 * labeled alternative in `JustMCFParser.interfaceStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterInterfaceSIdentifier?: (ctx: InterfaceSIdentifierContext) => void;
+	/**
+	 * Exit a parse tree produced by the `interfaceSIdentifier`
+	 * labeled alternative in `JustMCFParser.interfaceStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitInterfaceSIdentifier?: (ctx: InterfaceSIdentifierContext) => void;
+
+	/**
 	 * Enter a parse tree produced by the `existExpressionExec`
 	 * labeled alternative in `JustMCFParser.existExpression`.
 	 * @param ctx the parse tree
@@ -1477,6 +1541,19 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitExistExpressionId?: (ctx: ExistExpressionIdContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `exisitExpressionFuncRun`
+	 * labeled alternative in `JustMCFParser.existExpression`.
+	 * @param ctx the parse tree
+	 */
+	enterExisitExpressionFuncRun?: (ctx: ExisitExpressionFuncRunContext) => void;
+	/**
+	 * Exit a parse tree produced by the `exisitExpressionFuncRun`
+	 * labeled alternative in `JustMCFParser.existExpression`.
+	 * @param ctx the parse tree
+	 */
+	exitExisitExpressionFuncRun?: (ctx: ExisitExpressionFuncRunContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `existExpressionTrue`
@@ -1568,6 +1645,19 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitExistExpressionOr?: (ctx: ExistExpressionOrContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `existExpressionParen`
+	 * labeled alternative in `JustMCFParser.existExpression`.
+	 * @param ctx the parse tree
+	 */
+	enterExistExpressionParen?: (ctx: ExistExpressionParenContext) => void;
+	/**
+	 * Exit a parse tree produced by the `existExpressionParen`
+	 * labeled alternative in `JustMCFParser.existExpression`.
+	 * @param ctx the parse tree
+	 */
+	exitExistExpressionParen?: (ctx: ExistExpressionParenContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `lootSourceFishHand`
@@ -2348,6 +2438,19 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitNoInExecStatementNameSpace?: (ctx: NoInExecStatementNameSpaceContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `noInExecStatementInterface`
+	 * labeled alternative in `JustMCFParser.noInExecStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterNoInExecStatementInterface?: (ctx: NoInExecStatementInterfaceContext) => void;
+	/**
+	 * Exit a parse tree produced by the `noInExecStatementInterface`
+	 * labeled alternative in `JustMCFParser.noInExecStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitNoInExecStatementInterface?: (ctx: NoInExecStatementInterfaceContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `noInExecStatementStore`
@@ -3247,19 +3350,6 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitDisplaySISelectorCompound?: (ctx: DisplaySISelectorCompoundContext) => void;
 
 	/**
-	 * Enter a parse tree produced by the `whileStatementExist`
-	 * labeled alternative in `JustMCFParser.whileStatement`.
-	 * @param ctx the parse tree
-	 */
-	enterWhileStatementExist?: (ctx: WhileStatementExistContext) => void;
-	/**
-	 * Exit a parse tree produced by the `whileStatementExist`
-	 * labeled alternative in `JustMCFParser.whileStatement`.
-	 * @param ctx the parse tree
-	 */
-	exitWhileStatementExist?: (ctx: WhileStatementExistContext) => void;
-
-	/**
 	 * Enter a parse tree produced by the `whileStatementExec`
 	 * labeled alternative in `JustMCFParser.whileStatement`.
 	 * @param ctx the parse tree
@@ -3271,6 +3361,19 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitWhileStatementExec?: (ctx: WhileStatementExecContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `whileStatementExist`
+	 * labeled alternative in `JustMCFParser.whileStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterWhileStatementExist?: (ctx: WhileStatementExistContext) => void;
+	/**
+	 * Exit a parse tree produced by the `whileStatementExist`
+	 * labeled alternative in `JustMCFParser.whileStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitWhileStatementExist?: (ctx: WhileStatementExistContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `funcTagSettingsReplace`
@@ -3297,6 +3400,32 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitFuncTagSettingsReplaced?: (ctx: FuncTagSettingsReplacedContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `dataSCompound`
+	 * labeled alternative in `JustMCFParser.dataStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterDataSCompound?: (ctx: DataSCompoundContext) => void;
+	/**
+	 * Exit a parse tree produced by the `dataSCompound`
+	 * labeled alternative in `JustMCFParser.dataStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitDataSCompound?: (ctx: DataSCompoundContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `dataSIdentifierCompound`
+	 * labeled alternative in `JustMCFParser.dataStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterDataSIdentifierCompound?: (ctx: DataSIdentifierCompoundContext) => void;
+	/**
+	 * Exit a parse tree produced by the `dataSIdentifierCompound`
+	 * labeled alternative in `JustMCFParser.dataStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitDataSIdentifierCompound?: (ctx: DataSIdentifierCompoundContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `displayISITitleSingle`
@@ -3605,15 +3734,15 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitFuncImproveStatementInner?: (ctx: FuncImproveStatementInnerContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `JustMCFParser.returnStatement`.
+	 * Enter a parse tree produced by `JustMCFParser.yeildStatement`.
 	 * @param ctx the parse tree
 	 */
-	enterReturnStatement?: (ctx: ReturnStatementContext) => void;
+	enterYeildStatement?: (ctx: YeildStatementContext) => void;
 	/**
-	 * Exit a parse tree produced by `JustMCFParser.returnStatement`.
+	 * Exit a parse tree produced by `JustMCFParser.yeildStatement`.
 	 * @param ctx the parse tree
 	 */
-	exitReturnStatement?: (ctx: ReturnStatementContext) => void;
+	exitYeildStatement?: (ctx: YeildStatementContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `JustMCFParser.funcRunStatement`.
@@ -3625,6 +3754,17 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitFuncRunStatement?: (ctx: FuncRunStatementContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.funcImproveRunStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterFuncImproveRunStatement?: (ctx: FuncImproveRunStatementContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.funcImproveRunStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitFuncImproveRunStatement?: (ctx: FuncImproveRunStatementContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `JustMCFParser.funcImproveRunExpression`.
@@ -3735,6 +3875,17 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitDataOperationExpression?: (ctx: DataOperationExpressionContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.dataRightValue`.
+	 * @param ctx the parse tree
+	 */
+	enterDataRightValue?: (ctx: DataRightValueContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.dataRightValue`.
+	 * @param ctx the parse tree
+	 */
+	exitDataRightValue?: (ctx: DataRightValueContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `JustMCFParser.scbOperationExpression`.
@@ -4604,6 +4755,17 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitIfStatement?: (ctx: IfStatementContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.ifElseIfStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterIfElseIfStatement?: (ctx: IfElseIfStatementContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.ifElseIfStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitIfElseIfStatement?: (ctx: IfElseIfStatementContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `JustMCFParser.whileStatement`.

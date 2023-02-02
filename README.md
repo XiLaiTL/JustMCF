@@ -412,13 +412,16 @@ foo:stor::bool_1 = false
 
 #### 逻辑运算符
 
+优先级和表格顺序一致
+
 | 符号 | 描述           | 实现                                                         |
 | ---- | -------------- | ------------------------------------------------------------ |
-| &&   | 可以熔断的且   | bool a=false;<br/>if xxxx1-> a= true;<br/>if a unless xxxx2 -> a = false;<br/> |
-| \|\| | 可以熔断的或   | bool a=false;<br/>if xxxx1->a=true;<br/>unless a if xxxx2->a=true;<br/> |
 | !    |                |                                                              |
-| &    | 不可以熔断的且 |                                                              |
-| \|   | 不可以熔断的或 |                                                              |
+| &    | 不可以熔断的且 | bool a=false;<br />getcond1;<br />getcond2;<br />if cond1 if cond2 -> a=true;<br /> |
+| \|   | 不可以熔断的或 | bool a=false;<br />getcond1;<br />getcond2;<br />if cond1 -> a=true;<br />if cond2 -> a=true;<br /> |
+| &&   | 可以熔断的且   | bool a=false;<br/>getcond1;<br />if cond1 -> a=true;<br/>if a -> getcond2;<br />if a unless cond2 -> a=false;<br/> |
+| \|\| | 可以熔断的或   | bool a=false;<br />getcond1;<br/>if cond1 -> a=true;<br/>unless a -> getcond2;<br/>unless a if cond2 -> a=true;<br/> |
+
 
 #### if语句
 
@@ -812,7 +815,7 @@ nbt:float foo:test::value = 32f
 
 ```mcf
 func test:fun1(a,b){
-	return c
+	yeild c
 }
 ```
 
