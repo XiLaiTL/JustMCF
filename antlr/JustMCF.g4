@@ -533,10 +533,11 @@ existExpression
     | '(' existExpression ')' #existExpressionParen
     ;
 ifStatement
-    : 'if' existExpression execRunChild ( ifElseIfStatement )* ('else' execRunChild )?
+    : 'if' existExpression execRunChild ifElseStatement?
     ;
-ifElseIfStatement
-    : 'else' 'if' existExpression execRunChild
+ifElseStatement
+    : 'else' execRunChild #ifElseExec
+    | 'else' ifStatement #ifElseSIfS
     ;
 whileStatement
     : 'while' '{' execChild* '}' execRunChild #whileStatementExec

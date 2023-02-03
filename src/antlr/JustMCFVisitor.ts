@@ -88,6 +88,8 @@ import { TitleISIJsonContext } from "./JustMCFParser";
 import { TitleISIClearContext } from "./JustMCFParser";
 import { TitleISIResetContext } from "./JustMCFParser";
 import { TitleISITimesContext } from "./JustMCFParser";
+import { IfElseExecContext } from "./JustMCFParser";
+import { IfElseSIfSContext } from "./JustMCFParser";
 import { InterfaceSNamespaceContext } from "./JustMCFParser";
 import { InterfaceSIdentifierContext } from "./JustMCFParser";
 import { ExistExpressionExecContext } from "./JustMCFParser";
@@ -356,7 +358,7 @@ import { InterfaceStatementContext } from "./JustMCFParser";
 import { DataAssignExistExpressionContext } from "./JustMCFParser";
 import { ExistExpressionContext } from "./JustMCFParser";
 import { IfStatementContext } from "./JustMCFParser";
-import { IfElseIfStatementContext } from "./JustMCFParser";
+import { IfElseStatementContext } from "./JustMCFParser";
 import { WhileStatementContext } from "./JustMCFParser";
 import { ForStatementContext } from "./JustMCFParser";
 import { NbtContext } from "./JustMCFParser";
@@ -1067,6 +1069,22 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitTitleISITimes?: (ctx: TitleISITimesContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `ifElseExec`
+	 * labeled alternative in `JustMCFParser.ifElseStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitIfElseExec?: (ctx: IfElseExecContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `ifElseSIfS`
+	 * labeled alternative in `JustMCFParser.ifElseStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitIfElseSIfS?: (ctx: IfElseSIfSContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `interfaceSNamespace`
@@ -3104,11 +3122,11 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitIfStatement?: (ctx: IfStatementContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `JustMCFParser.ifElseIfStatement`.
+	 * Visit a parse tree produced by `JustMCFParser.ifElseStatement`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitIfElseIfStatement?: (ctx: IfElseIfStatementContext) => Result;
+	visitIfElseStatement?: (ctx: IfElseStatementContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.whileStatement`.

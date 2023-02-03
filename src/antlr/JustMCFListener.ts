@@ -88,6 +88,8 @@ import { TitleISIJsonContext } from "./JustMCFParser";
 import { TitleISIClearContext } from "./JustMCFParser";
 import { TitleISIResetContext } from "./JustMCFParser";
 import { TitleISITimesContext } from "./JustMCFParser";
+import { IfElseExecContext } from "./JustMCFParser";
+import { IfElseSIfSContext } from "./JustMCFParser";
 import { InterfaceSNamespaceContext } from "./JustMCFParser";
 import { InterfaceSIdentifierContext } from "./JustMCFParser";
 import { ExistExpressionExecContext } from "./JustMCFParser";
@@ -356,7 +358,7 @@ import { InterfaceStatementContext } from "./JustMCFParser";
 import { DataAssignExistExpressionContext } from "./JustMCFParser";
 import { ExistExpressionContext } from "./JustMCFParser";
 import { IfStatementContext } from "./JustMCFParser";
-import { IfElseIfStatementContext } from "./JustMCFParser";
+import { IfElseStatementContext } from "./JustMCFParser";
 import { WhileStatementContext } from "./JustMCFParser";
 import { ForStatementContext } from "./JustMCFParser";
 import { NbtContext } from "./JustMCFParser";
@@ -1489,6 +1491,32 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitTitleISITimes?: (ctx: TitleISITimesContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `ifElseExec`
+	 * labeled alternative in `JustMCFParser.ifElseStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterIfElseExec?: (ctx: IfElseExecContext) => void;
+	/**
+	 * Exit a parse tree produced by the `ifElseExec`
+	 * labeled alternative in `JustMCFParser.ifElseStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitIfElseExec?: (ctx: IfElseExecContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `ifElseSIfS`
+	 * labeled alternative in `JustMCFParser.ifElseStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterIfElseSIfS?: (ctx: IfElseSIfSContext) => void;
+	/**
+	 * Exit a parse tree produced by the `ifElseSIfS`
+	 * labeled alternative in `JustMCFParser.ifElseStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitIfElseSIfS?: (ctx: IfElseSIfSContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `interfaceSNamespace`
@@ -4757,15 +4785,15 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitIfStatement?: (ctx: IfStatementContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `JustMCFParser.ifElseIfStatement`.
+	 * Enter a parse tree produced by `JustMCFParser.ifElseStatement`.
 	 * @param ctx the parse tree
 	 */
-	enterIfElseIfStatement?: (ctx: IfElseIfStatementContext) => void;
+	enterIfElseStatement?: (ctx: IfElseStatementContext) => void;
 	/**
-	 * Exit a parse tree produced by `JustMCFParser.ifElseIfStatement`.
+	 * Exit a parse tree produced by `JustMCFParser.ifElseStatement`.
 	 * @param ctx the parse tree
 	 */
-	exitIfElseIfStatement?: (ctx: IfElseIfStatementContext) => void;
+	exitIfElseStatement?: (ctx: IfElseStatementContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `JustMCFParser.whileStatement`.
