@@ -1,4 +1,7 @@
-import {} from '../@types/ArrayTypes'
+/** 
+ * author: 下雨天的, XiLaiTL
+ * source: https://www.jianshu.com/p/61516a01a0df*/
+import type { } from '../@types/ArrayTypes'
 
 /**
  * 数组操作函数

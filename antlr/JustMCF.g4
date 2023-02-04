@@ -292,7 +292,7 @@ block_predicate
     : (nameSpaceBlock| tagNameSpaceBlock) blockstate? (snbt|nbt)?
     ; 
 
-UUID16_:   HEX{1,8} '-'HEX{1,4}'-'HEX{1,4}'-'HEX{1,4}'-'HEX{1,12}  ;
+UUID16_:   HEX1_8 '-'HEX1_4'-'HEX1_4'-'HEX1_4'-'HEX1_12  ;
 
 
 dataStatement
@@ -635,6 +635,20 @@ fragment SAFECODEPOINT
     : ~ ["\\\u0000-\u001F]
     ;
 
+fragment HEX1_4
+    : HEX
+    | HEX HEX
+    | HEX HEX HEX
+    | HEX HEX HEX HEX
+    ;
+fragment HEX1_8
+    : HEX
+    | HEX1_4 HEX1_4
+    ;
+fragment HEX1_12
+    : HEX1_8
+    | HEX1_4 HEX1_8
+    ;
 
 NUMBER
     : '-'? INT ('.' [0-9] +)? EXP?

@@ -45,4 +45,4 @@ declare global {
         convertAll<TOutput>(converter: (v: T) => TOutput): TOutput[]
     }
 }
-export { }
+export type { }

@@ -1,25 +1,41 @@
 {
   "name": "just-mcf",
   "version": "0.0.1",
-  "description": "",
+  "description": "A language framework on Minecraft Java Edition datapack mcfunction improvement",
+  "keywords": [
+    "cli",
+    "mcfunction",
+    "Minecraft",
+    "datapack"
+  ],
+  "author": "XiLaiTL",
+  "license": "GPL",
   "main": "build/index.js",
   "types": "build/index.d.ts",
-  "type": "commonjs",
+  "type": "module",
+  "bin": {
+    "mcf": "build/index.js"
+  },
+  "exports": "./build/index.js",
   "scripts": {
     "antlr": "antlr4ts -o ./src/antlr -visitor ./antlr/JustMCF.g4",
     "build": "tsc",
+    "typecheck": "tsc --noEmit",
     "watch": "tsc --watch",
-    "start": "node ./build/index.js",
-    "quick-start": "ts-node-esm ./src/index.ts",
+    "start": "node --experimental-specifier-resolution=node ./build/index.js init",
+    "quick-start": "ts-node-esm --experimental-specifier-resolution=node ./src/index.ts init",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run"
   },
-  "keywords": [],
-  "author": "XiLaiTL",
-  "license": "GPL",
   "dependencies": {
+    "@types/inquirer": "^9.0.3",
     "antlr4ts": "0.5.0-alpha.4",
+    "commander": "^10.0.0",
+    "i18next": "^22.4.9",
+    "i18next-fs-backend": "^2.1.1",
+    "inquirer": "^9.1.4",
+    "pkg-types": "^1.0.1",
     "typescript": "^4.9.4"
   },
   "devDependencies": {
