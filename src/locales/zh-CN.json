@@ -8,7 +8,7 @@
   "init.file": "文件 | 设置编译时文件生成的模式",
   "init.file.function_tag_generate_mode": "设置函数标签生成的模式，覆盖原来的或者追加到原来文件的末尾，或者跳过，或者追加到原来文件的前面？",
   "init.file.mcfunction_generate_mode": "设置函数生成的模式，覆盖原来的或者追加到原来文件的末尾，或者跳过，或者追加到原来文件的前面？",
-  "init.function_statement.common_i_o": "所有函数共用输入输出的storage吗？选否将为各个函数使用不同的空间",
+  "init.function_statement.common_io": "所有函数共用输入输出的storage吗？选否将为各个函数使用不同的空间",
   "init.function_statement": "Function 语句 | 设置函数语句",
   "init.function_statement.flat_when_one_command": "如果将要生成的函数文件只有一条命令，是否将它扁平化到execute命令的run后面？",
   "init.function_statement.stack_namespace_id": "设置函数使用storage栈的的命名空间ID，格式为namespace:id",

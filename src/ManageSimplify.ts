@@ -7,8 +7,12 @@ import { convertBackLeagalCommands, convertLeagalCommands } from './ManageLeagal
 import { JustMCFResult } from './JustMCFResult';
 
 
-export function execute(code: string) {
-    const evalScriptCode = evalAndReplace(code)
+export function execute(code: TemplateStringsArray | string) {
+    let codeShouldWork: string = code[0]
+    if (typeof code == "string") {
+        codeShouldWork = code as string
+    }
+    const evalScriptCode = evalAndReplace(codeShouldWork)
     const leagalCommandConvertCode = convertLeagalCommands(evalScriptCode)
 
     const input = CharStreams.fromString(leagalCommandConvertCode)

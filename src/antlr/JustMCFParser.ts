@@ -93,125 +93,126 @@ export class JustMCFParser extends Parser {
 	public static readonly STRING = 63;
 	public static readonly UUID16_ = 64;
 	public static readonly NUMBER = 65;
-	public static readonly WS = 66;
-	public static readonly LeagalCommand = 67;
-	public static readonly LineComment = 68;
-	public static readonly BlockComment = 69;
-	public static readonly NAMSP = 70;
-	public static readonly NAMESPACE = 71;
-	public static readonly LOCAL = 72;
-	public static readonly EXEC = 73;
-	public static readonly ALIGN = 74;
-	public static readonly ANCHORED = 75;
-	public static readonly EYES = 76;
-	public static readonly FEET = 77;
-	public static readonly IN = 78;
-	public static readonly AS = 79;
-	public static readonly AT = 80;
-	public static readonly FACING = 81;
-	public static readonly POSITIONED = 82;
-	public static readonly POS = 83;
-	public static readonly ROTATED = 84;
-	public static readonly ROT = 85;
-	public static readonly IF = 86;
-	public static readonly UNLESS = 87;
-	public static readonly ALL = 88;
-	public static readonly MASKED = 89;
-	public static readonly BIOME = 90;
-	public static readonly VALUE = 91;
-	public static readonly MAX = 92;
-	public static readonly ENTITY = 93;
-	public static readonly SCORE = 94;
-	public static readonly PREDICATE = 95;
-	public static readonly BLOCK = 96;
-	public static readonly BLOCKS = 97;
-	public static readonly MATCHES = 98;
-	public static readonly SCB = 99;
-	public static readonly DISPLAYNAME = 100;
-	public static readonly RENDERTYPE = 101;
-	public static readonly DISPLAY = 102;
-	public static readonly ENABLE = 103;
-	public static readonly LIST = 104;
-	public static readonly HEARTS = 105;
-	public static readonly INTEGER = 106;
-	public static readonly DATA = 107;
-	public static readonly STORAGE = 108;
-	public static readonly RESET = 109;
-	public static readonly ADD = 110;
-	public static readonly REMOVE = 111;
-	public static readonly FUNC = 112;
-	public static readonly TAGGED = 113;
-	public static readonly DEFAULT = 114;
-	public static readonly PLAYER = 115;
-	public static readonly PLAYERS = 116;
-	public static readonly BOSSBAR = 117;
-	public static readonly VISIBLE = 118;
-	public static readonly BLUE = 119;
-	public static readonly GREEN = 120;
-	public static readonly PINK = 121;
-	public static readonly PURPLE = 122;
-	public static readonly RED = 123;
-	public static readonly WHITE = 124;
-	public static readonly YELLOW = 125;
-	public static readonly COLOR = 126;
-	public static readonly NAME = 127;
-	public static readonly STYLE = 128;
-	public static readonly NOTCHED_6 = 129;
-	public static readonly NOTCHED_10 = 130;
-	public static readonly NOTCHED_12 = 131;
-	public static readonly NOTCHED_20 = 132;
-	public static readonly PROGRESS = 133;
-	public static readonly SET = 134;
-	public static readonly TITLE = 135;
-	public static readonly SUBTITLE = 136;
-	public static readonly ACTIONBAR = 137;
-	public static readonly TIMES = 138;
-	public static readonly TEXT = 139;
-	public static readonly ITEM = 140;
-	public static readonly LOOT = 141;
-	public static readonly GIVE = 142;
-	public static readonly CLEAR = 143;
-	public static readonly FISH = 144;
-	public static readonly KILL = 145;
-	public static readonly MINE = 146;
-	public static readonly MAINHAND = 147;
-	public static readonly OFFHAND = 148;
-	public static readonly EFFECT = 149;
-	public static readonly TAG = 150;
-	public static readonly TP = 151;
-	public static readonly GET = 152;
-	public static readonly ATTR = 153;
-	public static readonly BASE = 154;
-	public static readonly DESTROY = 155;
-	public static readonly KEEP = 156;
-	public static readonly REPLACE = 157;
-	public static readonly HOLLOW = 158;
-	public static readonly OUTLINE = 159;
-	public static readonly FORCE = 160;
-	public static readonly MOVE = 161;
-	public static readonly NORMAL = 162;
-	public static readonly FILTERED = 163;
-	public static readonly INTERFACE = 164;
-	public static readonly WHILE = 165;
-	public static readonly ELSE = 166;
-	public static readonly FOR = 167;
-	public static readonly YEILD = 168;
-	public static readonly BREAK = 169;
-	public static readonly RETURN = 170;
-	public static readonly REPLACED = 171;
-	public static readonly DIM = 172;
-	public static readonly DIMENSION = 173;
-	public static readonly ITEM_MODIFIER = 174;
-	public static readonly Pos1 = 175;
-	public static readonly Selector = 176;
-	public static readonly BYTE = 177;
-	public static readonly SHORT = 178;
-	public static readonly INT_ = 179;
-	public static readonly LONG = 180;
-	public static readonly FLOAT = 181;
-	public static readonly DOUBLE = 182;
-	public static readonly AcceptableName = 183;
-	public static readonly NBTName = 184;
+	public static readonly NUMBER_INT = 66;
+	public static readonly WS = 67;
+	public static readonly LeagalCommand = 68;
+	public static readonly LineComment = 69;
+	public static readonly BlockComment = 70;
+	public static readonly NAMSP = 71;
+	public static readonly NAMESPACE = 72;
+	public static readonly LOCAL = 73;
+	public static readonly EXEC = 74;
+	public static readonly ALIGN = 75;
+	public static readonly ANCHORED = 76;
+	public static readonly EYES = 77;
+	public static readonly FEET = 78;
+	public static readonly IN = 79;
+	public static readonly AS = 80;
+	public static readonly AT = 81;
+	public static readonly FACING = 82;
+	public static readonly POSITIONED = 83;
+	public static readonly POS = 84;
+	public static readonly ROTATED = 85;
+	public static readonly ROT = 86;
+	public static readonly IF = 87;
+	public static readonly UNLESS = 88;
+	public static readonly ALL = 89;
+	public static readonly MASKED = 90;
+	public static readonly BIOME = 91;
+	public static readonly VALUE = 92;
+	public static readonly MAX = 93;
+	public static readonly ENTITY = 94;
+	public static readonly SCORE = 95;
+	public static readonly PREDICATE = 96;
+	public static readonly BLOCK = 97;
+	public static readonly BLOCKS = 98;
+	public static readonly MATCHES = 99;
+	public static readonly SCB = 100;
+	public static readonly DISPLAYNAME = 101;
+	public static readonly RENDERTYPE = 102;
+	public static readonly DISPLAY = 103;
+	public static readonly ENABLE = 104;
+	public static readonly LIST = 105;
+	public static readonly HEARTS = 106;
+	public static readonly INTEGER = 107;
+	public static readonly DATA = 108;
+	public static readonly STORAGE = 109;
+	public static readonly RESET = 110;
+	public static readonly ADD = 111;
+	public static readonly REMOVE = 112;
+	public static readonly FUNC = 113;
+	public static readonly TAGGED = 114;
+	public static readonly DEFAULT = 115;
+	public static readonly PLAYER = 116;
+	public static readonly PLAYERS = 117;
+	public static readonly BOSSBAR = 118;
+	public static readonly VISIBLE = 119;
+	public static readonly BLUE = 120;
+	public static readonly GREEN = 121;
+	public static readonly PINK = 122;
+	public static readonly PURPLE = 123;
+	public static readonly RED = 124;
+	public static readonly WHITE = 125;
+	public static readonly YELLOW = 126;
+	public static readonly COLOR = 127;
+	public static readonly NAME = 128;
+	public static readonly STYLE = 129;
+	public static readonly NOTCHED_6 = 130;
+	public static readonly NOTCHED_10 = 131;
+	public static readonly NOTCHED_12 = 132;
+	public static readonly NOTCHED_20 = 133;
+	public static readonly PROGRESS = 134;
+	public static readonly SET = 135;
+	public static readonly TITLE = 136;
+	public static readonly SUBTITLE = 137;
+	public static readonly ACTIONBAR = 138;
+	public static readonly TIMES = 139;
+	public static readonly TEXT = 140;
+	public static readonly ITEM = 141;
+	public static readonly LOOT = 142;
+	public static readonly GIVE = 143;
+	public static readonly CLEAR = 144;
+	public static readonly FISH = 145;
+	public static readonly KILL = 146;
+	public static readonly MINE = 147;
+	public static readonly MAINHAND = 148;
+	public static readonly OFFHAND = 149;
+	public static readonly EFFECT = 150;
+	public static readonly TAG = 151;
+	public static readonly TP = 152;
+	public static readonly GET = 153;
+	public static readonly ATTR = 154;
+	public static readonly BASE = 155;
+	public static readonly DESTROY = 156;
+	public static readonly KEEP = 157;
+	public static readonly REPLACE = 158;
+	public static readonly HOLLOW = 159;
+	public static readonly OUTLINE = 160;
+	public static readonly FORCE = 161;
+	public static readonly MOVE = 162;
+	public static readonly NORMAL = 163;
+	public static readonly FILTERED = 164;
+	public static readonly INTERFACE = 165;
+	public static readonly WHILE = 166;
+	public static readonly ELSE = 167;
+	public static readonly FOR = 168;
+	public static readonly YEILD = 169;
+	public static readonly BREAK = 170;
+	public static readonly RETURN = 171;
+	public static readonly REPLACED = 172;
+	public static readonly DIM = 173;
+	public static readonly DIMENSION = 174;
+	public static readonly ITEM_MODIFIER = 175;
+	public static readonly Pos1 = 176;
+	public static readonly Selector = 177;
+	public static readonly BYTE = 178;
+	public static readonly SHORT = 179;
+	public static readonly INT_ = 180;
+	public static readonly LONG = 181;
+	public static readonly FLOAT = 182;
+	public static readonly DOUBLE = 183;
+	public static readonly AcceptableName = 184;
+	public static readonly NBTName = 185;
 	public static readonly RULE_mcfFile = 0;
 	public static readonly RULE_fileStatementInner = 1;
 	public static readonly RULE_statementInner = 2;
@@ -243,10 +244,10 @@ export class JustMCFParser extends Parser {
 	public static readonly RULE_dataMergeExpression = 28;
 	public static readonly RULE_dataOperationExpression = 29;
 	public static readonly RULE_dataRightValue = 30;
-	public static readonly RULE_scbOperationExpression = 31;
-	public static readonly RULE_scbSingleOperationExpression = 32;
-	public static readonly RULE_scbIdentifier = 33;
-	public static readonly RULE_dataStatement = 34;
+	public static readonly RULE_dataStatement = 31;
+	public static readonly RULE_scbOperationExpression = 32;
+	public static readonly RULE_scbSingleOperationExpression = 33;
+	public static readonly RULE_scbIdentifier = 34;
 	public static readonly RULE_scbPlayerStatement = 35;
 	public static readonly RULE_scbPlayerStatementInner = 36;
 	public static readonly RULE_scbObjectiveStatement = 37;
@@ -357,8 +358,8 @@ export class JustMCFParser extends Parser {
 		"yeildStatement", "funcRunStatement", "funcImproveRunStatement", "funcImproveRunExpression", 
 		"funcImproveRunParam", "execStatement", "execStoreChild", "execRunChild", 
 		"execChild", "matchPart", "scbCompareNumber", "dataIdentifier", "dataMergeExpression", 
-		"dataOperationExpression", "dataRightValue", "scbOperationExpression", 
-		"scbSingleOperationExpression", "scbIdentifier", "dataStatement", "scbPlayerStatement", 
+		"dataOperationExpression", "dataRightValue", "dataStatement", "scbOperationExpression", 
+		"scbSingleOperationExpression", "scbIdentifier", "scbPlayerStatement", 
 		"scbPlayerStatementInner", "scbObjectiveStatement", "scbStatementInner", 
 		"bossbarStatement", "bossbarStatementInner", "bossbarOperationExpression", 
 		"titleStatement", "titleStatementInner", "titleSelectorStatementInner", 
@@ -395,20 +396,20 @@ export class JustMCFParser extends Parser {
 		"'[I;'", "'[L;'", "'j{'", "'j['", "'<'", "'>'", "'@'", undefined, undefined, 
 		undefined, undefined, undefined, undefined, undefined, "'true'", "'false'", 
 		"'null'", undefined, undefined, undefined, undefined, undefined, undefined, 
-		undefined, "'namsp'", "'namespace'", "'local'", "'exec'", "'align'", "'anchored'", 
-		"'eyes'", "'feet'", "'in'", "'as'", "'at'", "'facing'", "'positioned'", 
-		"'pos'", "'rotated'", "'rot'", "'if'", "'unless'", "'all'", "'masked'", 
-		"'biome'", "'value'", "'max'", "'entity'", "'score'", "'predicate'", "'block'", 
-		"'blocks'", "'matches'", "'scb'", "'displayname'", "'rendertype'", "'display'", 
-		"'enable'", "'list'", "'hearts'", "'integer'", "'data'", "'storage'", 
-		"'reset'", "'add'", "'remove'", "'func'", "'tagged'", "'default'", "'player'", 
-		"'players'", "'bossbar'", "'visible'", "'blue'", "'green'", "'pink'", 
-		"'purple'", "'red'", "'white'", "'yellow'", "'color'", "'name'", "'style'", 
-		"'notched_6'", "'notched_10'", "'notched_12'", "'notched_20'", "'progress'", 
-		"'set'", "'title'", "'subtitle'", "'actionbar'", "'times'", "'text'", 
-		"'item'", "'loot'", "'give'", "'clear'", "'fish'", "'kill'", "'mine'", 
-		"'mainhand'", "'offhand'", "'effect'", "'tag'", "'tp'", "'get'", "'attr'", 
-		"'base'", "'destroy'", "'keep'", "'replace'", "'hollow'", "'outline'", 
+		undefined, undefined, "'namsp'", "'namespace'", "'local'", "'exec'", "'align'", 
+		"'anchored'", "'eyes'", "'feet'", "'in'", "'as'", "'at'", "'facing'", 
+		"'positioned'", "'pos'", "'rotated'", "'rot'", "'if'", "'unless'", "'all'", 
+		"'masked'", "'biome'", "'value'", "'max'", "'entity'", "'score'", "'predicate'", 
+		"'block'", "'blocks'", "'matches'", "'scb'", "'displayname'", "'rendertype'", 
+		"'display'", "'enable'", "'list'", "'hearts'", "'integer'", "'data'", 
+		"'storage'", "'reset'", "'add'", "'remove'", "'func'", "'tagged'", "'default'", 
+		"'player'", "'players'", "'bossbar'", "'visible'", "'blue'", "'green'", 
+		"'pink'", "'purple'", "'red'", "'white'", "'yellow'", "'color'", "'name'", 
+		"'style'", "'notched_6'", "'notched_10'", "'notched_12'", "'notched_20'", 
+		"'progress'", "'set'", "'title'", "'subtitle'", "'actionbar'", "'times'", 
+		"'text'", "'item'", "'loot'", "'give'", "'clear'", "'fish'", "'kill'", 
+		"'mine'", "'mainhand'", "'offhand'", "'effect'", "'tag'", "'tp'", "'get'", 
+		"'attr'", "'base'", "'destroy'", "'keep'", "'replace'", "'hollow'", "'outline'", 
 		"'force'", "'move'", "'normal'", "'filtered'", "'interface'", "'while'", 
 		"'else'", "'for'", "'yeild'", "'break'", "'return'", "'replaced'", "'dim'", 
 		"'dimension'", "'item_modifier'", undefined, undefined, "'byte'", "'short'", 
@@ -424,22 +425,23 @@ export class JustMCFParser extends Parser {
 		undefined, undefined, undefined, undefined, undefined, undefined, undefined, 
 		undefined, undefined, undefined, undefined, "CompareOperation", "ByteNumber", 
 		"ShortNumber", "LongNumber", "FloatNumber", "DoubleNumber", "STRING2", 
-		"TRUE", "FALSE", "NULL", "STRING", "UUID16_", "NUMBER", "WS", "LeagalCommand", 
-		"LineComment", "BlockComment", "NAMSP", "NAMESPACE", "LOCAL", "EXEC", 
-		"ALIGN", "ANCHORED", "EYES", "FEET", "IN", "AS", "AT", "FACING", "POSITIONED", 
-		"POS", "ROTATED", "ROT", "IF", "UNLESS", "ALL", "MASKED", "BIOME", "VALUE", 
-		"MAX", "ENTITY", "SCORE", "PREDICATE", "BLOCK", "BLOCKS", "MATCHES", "SCB", 
-		"DISPLAYNAME", "RENDERTYPE", "DISPLAY", "ENABLE", "LIST", "HEARTS", "INTEGER", 
-		"DATA", "STORAGE", "RESET", "ADD", "REMOVE", "FUNC", "TAGGED", "DEFAULT", 
-		"PLAYER", "PLAYERS", "BOSSBAR", "VISIBLE", "BLUE", "GREEN", "PINK", "PURPLE", 
-		"RED", "WHITE", "YELLOW", "COLOR", "NAME", "STYLE", "NOTCHED_6", "NOTCHED_10", 
-		"NOTCHED_12", "NOTCHED_20", "PROGRESS", "SET", "TITLE", "SUBTITLE", "ACTIONBAR", 
-		"TIMES", "TEXT", "ITEM", "LOOT", "GIVE", "CLEAR", "FISH", "KILL", "MINE", 
-		"MAINHAND", "OFFHAND", "EFFECT", "TAG", "TP", "GET", "ATTR", "BASE", "DESTROY", 
-		"KEEP", "REPLACE", "HOLLOW", "OUTLINE", "FORCE", "MOVE", "NORMAL", "FILTERED", 
-		"INTERFACE", "WHILE", "ELSE", "FOR", "YEILD", "BREAK", "RETURN", "REPLACED", 
-		"DIM", "DIMENSION", "ITEM_MODIFIER", "Pos1", "Selector", "BYTE", "SHORT", 
-		"INT_", "LONG", "FLOAT", "DOUBLE", "AcceptableName", "NBTName",
+		"TRUE", "FALSE", "NULL", "STRING", "UUID16_", "NUMBER", "NUMBER_INT", 
+		"WS", "LeagalCommand", "LineComment", "BlockComment", "NAMSP", "NAMESPACE", 
+		"LOCAL", "EXEC", "ALIGN", "ANCHORED", "EYES", "FEET", "IN", "AS", "AT", 
+		"FACING", "POSITIONED", "POS", "ROTATED", "ROT", "IF", "UNLESS", "ALL", 
+		"MASKED", "BIOME", "VALUE", "MAX", "ENTITY", "SCORE", "PREDICATE", "BLOCK", 
+		"BLOCKS", "MATCHES", "SCB", "DISPLAYNAME", "RENDERTYPE", "DISPLAY", "ENABLE", 
+		"LIST", "HEARTS", "INTEGER", "DATA", "STORAGE", "RESET", "ADD", "REMOVE", 
+		"FUNC", "TAGGED", "DEFAULT", "PLAYER", "PLAYERS", "BOSSBAR", "VISIBLE", 
+		"BLUE", "GREEN", "PINK", "PURPLE", "RED", "WHITE", "YELLOW", "COLOR", 
+		"NAME", "STYLE", "NOTCHED_6", "NOTCHED_10", "NOTCHED_12", "NOTCHED_20", 
+		"PROGRESS", "SET", "TITLE", "SUBTITLE", "ACTIONBAR", "TIMES", "TEXT", 
+		"ITEM", "LOOT", "GIVE", "CLEAR", "FISH", "KILL", "MINE", "MAINHAND", "OFFHAND", 
+		"EFFECT", "TAG", "TP", "GET", "ATTR", "BASE", "DESTROY", "KEEP", "REPLACE", 
+		"HOLLOW", "OUTLINE", "FORCE", "MOVE", "NORMAL", "FILTERED", "INTERFACE", 
+		"WHILE", "ELSE", "FOR", "YEILD", "BREAK", "RETURN", "REPLACED", "DIM", 
+		"DIMENSION", "ITEM_MODIFIER", "Pos1", "Selector", "BYTE", "SHORT", "INT_", 
+		"LONG", "FLOAT", "DOUBLE", "AcceptableName", "NBTName",
 	];
 	public static readonly VOCABULARY: Vocabulary = new VocabularyImpl(JustMCFParser._LITERAL_NAMES, JustMCFParser._SYMBOLIC_NAMES, []);
 
@@ -927,7 +929,7 @@ export class JustMCFParser extends Parser {
 			this.state = 328;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			if (((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)) | (1 << (JustMCFParser.AcceptableName - 167)))) !== 0)) {
+			if (((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)) | (1 << (JustMCFParser.AcceptableName - 168)))) !== 0)) {
 				{
 				this.state = 327;
 				this.acceptableName();
@@ -944,7 +946,7 @@ export class JustMCFParser extends Parser {
 				this.state = 337;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (((((_la - 90)) & ~0x1F) === 0 && ((1 << (_la - 90)) & ((1 << (JustMCFParser.BIOME - 90)) | (1 << (JustMCFParser.ENTITY - 90)) | (1 << (JustMCFParser.PREDICATE - 90)) | (1 << (JustMCFParser.BLOCK - 90)) | (1 << (JustMCFParser.STORAGE - 90)) | (1 << (JustMCFParser.FUNC - 90)) | (1 << (JustMCFParser.DEFAULT - 90)) | (1 << (JustMCFParser.BOSSBAR - 90)))) !== 0) || _la === JustMCFParser.ITEM || _la === JustMCFParser.LOOT || ((((_la - 172)) & ~0x1F) === 0 && ((1 << (_la - 172)) & ((1 << (JustMCFParser.DIM - 172)) | (1 << (JustMCFParser.DIMENSION - 172)) | (1 << (JustMCFParser.ITEM_MODIFIER - 172)))) !== 0)) {
+				while (((((_la - 91)) & ~0x1F) === 0 && ((1 << (_la - 91)) & ((1 << (JustMCFParser.BIOME - 91)) | (1 << (JustMCFParser.ENTITY - 91)) | (1 << (JustMCFParser.PREDICATE - 91)) | (1 << (JustMCFParser.BLOCK - 91)) | (1 << (JustMCFParser.STORAGE - 91)) | (1 << (JustMCFParser.FUNC - 91)) | (1 << (JustMCFParser.DEFAULT - 91)) | (1 << (JustMCFParser.BOSSBAR - 91)))) !== 0) || _la === JustMCFParser.ITEM || _la === JustMCFParser.LOOT || ((((_la - 173)) & ~0x1F) === 0 && ((1 << (_la - 173)) & ((1 << (JustMCFParser.DIM - 173)) | (1 << (JustMCFParser.DIMENSION - 173)) | (1 << (JustMCFParser.ITEM_MODIFIER - 173)))) !== 0)) {
 					{
 					{
 					this.state = 331;
@@ -1299,23 +1301,51 @@ export class JustMCFParser extends Parser {
 				}
 			}
 
-			this.state = 411;
+			this.state = 420;
+			this._errHandler.sync(this);
+			_la = this._input.LA(1);
+			if (_la === JustMCFParser.TAGGED) {
+				{
+				this.state = 411;
+				this.match(JustMCFParser.TAGGED);
+				this.state = 412;
+				this.tagNameSpaceFunc();
+				this.state = 417;
+				this._errHandler.sync(this);
+				_la = this._input.LA(1);
+				while (_la === JustMCFParser.T__2) {
+					{
+					{
+					this.state = 413;
+					this.match(JustMCFParser.T__2);
+					this.state = 414;
+					this.tagNameSpaceFunc();
+					}
+					}
+					this.state = 419;
+					this._errHandler.sync(this);
+					_la = this._input.LA(1);
+				}
+				}
+			}
+
+			this.state = 422;
 			this.match(JustMCFParser.T__4);
-			this.state = 415;
+			this.state = 426;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			while (_la === JustMCFParser.FUNC) {
 				{
 				{
-				this.state = 412;
+				this.state = 423;
 				this.funcTagStatementInner();
 				}
 				}
-				this.state = 417;
+				this.state = 428;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
-			this.state = 418;
+			this.state = 429;
 			this.match(JustMCFParser.T__5);
 			}
 		}
@@ -1338,18 +1368,18 @@ export class JustMCFParser extends Parser {
 		let _localctx: FuncTagSettingsContext = new FuncTagSettingsContext(this._ctx, this.state);
 		this.enterRule(_localctx, 20, JustMCFParser.RULE_funcTagSettings);
 		try {
-			this.state = 424;
+			this.state = 435;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
 			case JustMCFParser.REPLACE:
 				_localctx = new FuncTagSettingsReplaceContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 420;
+				this.state = 431;
 				this.match(JustMCFParser.REPLACE);
-				this.state = 421;
+				this.state = 432;
 				this.match(JustMCFParser.T__6);
-				this.state = 422;
+				this.state = 433;
 				this.boolValue();
 				}
 				break;
@@ -1357,7 +1387,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new FuncTagSettingsReplacedContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 423;
+				this.state = 434;
 				this.match(JustMCFParser.REPLACED);
 				}
 				break;
@@ -1384,32 +1414,41 @@ export class JustMCFParser extends Parser {
 		let _localctx: FuncTagStatementInnerContext = new FuncTagStatementInnerContext(this._ctx, this.state);
 		this.enterRule(_localctx, 22, JustMCFParser.RULE_funcTagStatementInner);
 		try {
-			this.state = 429;
+			this.state = 441;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 18, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 20, this._ctx) ) {
 			case 1:
 				_localctx = new FuncTagSIFuncSContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 426;
+				this.state = 437;
 				this.funcStatement();
 				}
 				break;
 
 			case 2:
-				_localctx = new FuncTagSIFuncImproveSContext(_localctx);
+				_localctx = new FuncTagSIFuncRunSContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 427;
-				this.funcImproveStatement();
+				this.state = 438;
+				this.funcRunStatement();
 				}
 				break;
 
 			case 3:
-				_localctx = new FuncTagSIFuncTagSContext(_localctx);
+				_localctx = new FuncTagSIFuncImproveSContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 428;
+				this.state = 439;
+				this.funcImproveStatement();
+				}
+				break;
+
+			case 4:
+				_localctx = new FuncTagSIFuncTagSContext(_localctx);
+				this.enterOuterAlt(_localctx, 4);
+				{
+				this.state = 440;
 				this.funcTagStatement();
 				}
 				break;
@@ -1437,55 +1476,55 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 431;
+			this.state = 443;
 			this.match(JustMCFParser.FUNC);
-			this.state = 432;
+			this.state = 444;
 			this.nameSpaceFunc();
-			this.state = 442;
+			this.state = 454;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			if (_la === JustMCFParser.TAGGED) {
 				{
-				this.state = 433;
+				this.state = 445;
 				this.match(JustMCFParser.TAGGED);
-				this.state = 434;
+				this.state = 446;
 				this.tagNameSpaceFunc();
-				this.state = 439;
+				this.state = 451;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (_la === JustMCFParser.T__2) {
 					{
 					{
-					this.state = 435;
+					this.state = 447;
 					this.match(JustMCFParser.T__2);
-					this.state = 436;
+					this.state = 448;
 					this.tagNameSpaceFunc();
 					}
 					}
-					this.state = 441;
+					this.state = 453;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
 				}
 			}
 
-			this.state = 444;
+			this.state = 456;
 			this.match(JustMCFParser.T__4);
-			this.state = 448;
+			this.state = 460;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while (_la === JustMCFParser.T__0 || _la === JustMCFParser.T__4 || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || ((((_la - 67)) & ~0x1F) === 0 && ((1 << (_la - 67)) & ((1 << (JustMCFParser.LeagalCommand - 67)) | (1 << (JustMCFParser.NAMSP - 67)) | (1 << (JustMCFParser.NAMESPACE - 67)) | (1 << (JustMCFParser.LOCAL - 67)) | (1 << (JustMCFParser.EXEC - 67)) | (1 << (JustMCFParser.ALIGN - 67)) | (1 << (JustMCFParser.ANCHORED - 67)) | (1 << (JustMCFParser.EYES - 67)) | (1 << (JustMCFParser.FEET - 67)) | (1 << (JustMCFParser.IN - 67)) | (1 << (JustMCFParser.AS - 67)) | (1 << (JustMCFParser.AT - 67)) | (1 << (JustMCFParser.FACING - 67)) | (1 << (JustMCFParser.POSITIONED - 67)) | (1 << (JustMCFParser.POS - 67)) | (1 << (JustMCFParser.ROTATED - 67)) | (1 << (JustMCFParser.ROT - 67)) | (1 << (JustMCFParser.IF - 67)) | (1 << (JustMCFParser.UNLESS - 67)) | (1 << (JustMCFParser.ALL - 67)) | (1 << (JustMCFParser.MASKED - 67)) | (1 << (JustMCFParser.BIOME - 67)) | (1 << (JustMCFParser.VALUE - 67)) | (1 << (JustMCFParser.MAX - 67)) | (1 << (JustMCFParser.ENTITY - 67)) | (1 << (JustMCFParser.SCORE - 67)) | (1 << (JustMCFParser.PREDICATE - 67)) | (1 << (JustMCFParser.BLOCK - 67)) | (1 << (JustMCFParser.BLOCKS - 67)))) !== 0) || ((((_la - 99)) & ~0x1F) === 0 && ((1 << (_la - 99)) & ((1 << (JustMCFParser.SCB - 99)) | (1 << (JustMCFParser.DISPLAYNAME - 99)) | (1 << (JustMCFParser.RENDERTYPE - 99)) | (1 << (JustMCFParser.DISPLAY - 99)) | (1 << (JustMCFParser.ENABLE - 99)) | (1 << (JustMCFParser.LIST - 99)) | (1 << (JustMCFParser.DATA - 99)) | (1 << (JustMCFParser.STORAGE - 99)) | (1 << (JustMCFParser.RESET - 99)) | (1 << (JustMCFParser.ADD - 99)) | (1 << (JustMCFParser.REMOVE - 99)) | (1 << (JustMCFParser.FUNC - 99)) | (1 << (JustMCFParser.TAGGED - 99)) | (1 << (JustMCFParser.DEFAULT - 99)) | (1 << (JustMCFParser.PLAYER - 99)) | (1 << (JustMCFParser.PLAYERS - 99)) | (1 << (JustMCFParser.BOSSBAR - 99)) | (1 << (JustMCFParser.VISIBLE - 99)) | (1 << (JustMCFParser.BLUE - 99)) | (1 << (JustMCFParser.GREEN - 99)) | (1 << (JustMCFParser.PINK - 99)) | (1 << (JustMCFParser.PURPLE - 99)) | (1 << (JustMCFParser.RED - 99)) | (1 << (JustMCFParser.WHITE - 99)) | (1 << (JustMCFParser.YELLOW - 99)) | (1 << (JustMCFParser.COLOR - 99)) | (1 << (JustMCFParser.NAME - 99)) | (1 << (JustMCFParser.STYLE - 99)) | (1 << (JustMCFParser.NOTCHED_6 - 99)) | (1 << (JustMCFParser.NOTCHED_10 - 99)))) !== 0) || ((((_la - 131)) & ~0x1F) === 0 && ((1 << (_la - 131)) & ((1 << (JustMCFParser.NOTCHED_12 - 131)) | (1 << (JustMCFParser.NOTCHED_20 - 131)) | (1 << (JustMCFParser.PROGRESS - 131)) | (1 << (JustMCFParser.SET - 131)) | (1 << (JustMCFParser.TITLE - 131)) | (1 << (JustMCFParser.SUBTITLE - 131)) | (1 << (JustMCFParser.ACTIONBAR - 131)) | (1 << (JustMCFParser.TIMES - 131)) | (1 << (JustMCFParser.TEXT - 131)) | (1 << (JustMCFParser.ITEM - 131)) | (1 << (JustMCFParser.LOOT - 131)) | (1 << (JustMCFParser.GIVE - 131)) | (1 << (JustMCFParser.CLEAR - 131)) | (1 << (JustMCFParser.FISH - 131)) | (1 << (JustMCFParser.KILL - 131)) | (1 << (JustMCFParser.MINE - 131)) | (1 << (JustMCFParser.MAINHAND - 131)) | (1 << (JustMCFParser.OFFHAND - 131)) | (1 << (JustMCFParser.EFFECT - 131)) | (1 << (JustMCFParser.TAG - 131)) | (1 << (JustMCFParser.TP - 131)) | (1 << (JustMCFParser.GET - 131)) | (1 << (JustMCFParser.ATTR - 131)) | (1 << (JustMCFParser.BASE - 131)) | (1 << (JustMCFParser.DESTROY - 131)) | (1 << (JustMCFParser.KEEP - 131)) | (1 << (JustMCFParser.REPLACE - 131)) | (1 << (JustMCFParser.HOLLOW - 131)) | (1 << (JustMCFParser.OUTLINE - 131)) | (1 << (JustMCFParser.FORCE - 131)) | (1 << (JustMCFParser.MOVE - 131)) | (1 << (JustMCFParser.NORMAL - 131)))) !== 0) || ((((_la - 163)) & ~0x1F) === 0 && ((1 << (_la - 163)) & ((1 << (JustMCFParser.FILTERED - 163)) | (1 << (JustMCFParser.INTERFACE - 163)) | (1 << (JustMCFParser.WHILE - 163)) | (1 << (JustMCFParser.FOR - 163)) | (1 << (JustMCFParser.YEILD - 163)) | (1 << (JustMCFParser.BREAK - 163)) | (1 << (JustMCFParser.RETURN - 163)) | (1 << (JustMCFParser.REPLACED - 163)) | (1 << (JustMCFParser.DIM - 163)) | (1 << (JustMCFParser.DIMENSION - 163)) | (1 << (JustMCFParser.ITEM_MODIFIER - 163)) | (1 << (JustMCFParser.Selector - 163)) | (1 << (JustMCFParser.BYTE - 163)) | (1 << (JustMCFParser.SHORT - 163)) | (1 << (JustMCFParser.INT_ - 163)) | (1 << (JustMCFParser.LONG - 163)) | (1 << (JustMCFParser.FLOAT - 163)) | (1 << (JustMCFParser.DOUBLE - 163)) | (1 << (JustMCFParser.AcceptableName - 163)) | (1 << (JustMCFParser.NBTName - 163)))) !== 0)) {
+			while (_la === JustMCFParser.T__0 || _la === JustMCFParser.T__4 || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || ((((_la - 68)) & ~0x1F) === 0 && ((1 << (_la - 68)) & ((1 << (JustMCFParser.LeagalCommand - 68)) | (1 << (JustMCFParser.NAMSP - 68)) | (1 << (JustMCFParser.NAMESPACE - 68)) | (1 << (JustMCFParser.LOCAL - 68)) | (1 << (JustMCFParser.EXEC - 68)) | (1 << (JustMCFParser.ALIGN - 68)) | (1 << (JustMCFParser.ANCHORED - 68)) | (1 << (JustMCFParser.EYES - 68)) | (1 << (JustMCFParser.FEET - 68)) | (1 << (JustMCFParser.IN - 68)) | (1 << (JustMCFParser.AS - 68)) | (1 << (JustMCFParser.AT - 68)) | (1 << (JustMCFParser.FACING - 68)) | (1 << (JustMCFParser.POSITIONED - 68)) | (1 << (JustMCFParser.POS - 68)) | (1 << (JustMCFParser.ROTATED - 68)) | (1 << (JustMCFParser.ROT - 68)) | (1 << (JustMCFParser.IF - 68)) | (1 << (JustMCFParser.UNLESS - 68)) | (1 << (JustMCFParser.ALL - 68)) | (1 << (JustMCFParser.MASKED - 68)) | (1 << (JustMCFParser.BIOME - 68)) | (1 << (JustMCFParser.VALUE - 68)) | (1 << (JustMCFParser.MAX - 68)) | (1 << (JustMCFParser.ENTITY - 68)) | (1 << (JustMCFParser.SCORE - 68)) | (1 << (JustMCFParser.PREDICATE - 68)) | (1 << (JustMCFParser.BLOCK - 68)) | (1 << (JustMCFParser.BLOCKS - 68)))) !== 0) || ((((_la - 100)) & ~0x1F) === 0 && ((1 << (_la - 100)) & ((1 << (JustMCFParser.SCB - 100)) | (1 << (JustMCFParser.DISPLAYNAME - 100)) | (1 << (JustMCFParser.RENDERTYPE - 100)) | (1 << (JustMCFParser.DISPLAY - 100)) | (1 << (JustMCFParser.ENABLE - 100)) | (1 << (JustMCFParser.LIST - 100)) | (1 << (JustMCFParser.DATA - 100)) | (1 << (JustMCFParser.STORAGE - 100)) | (1 << (JustMCFParser.RESET - 100)) | (1 << (JustMCFParser.ADD - 100)) | (1 << (JustMCFParser.REMOVE - 100)) | (1 << (JustMCFParser.FUNC - 100)) | (1 << (JustMCFParser.TAGGED - 100)) | (1 << (JustMCFParser.DEFAULT - 100)) | (1 << (JustMCFParser.PLAYER - 100)) | (1 << (JustMCFParser.PLAYERS - 100)) | (1 << (JustMCFParser.BOSSBAR - 100)) | (1 << (JustMCFParser.VISIBLE - 100)) | (1 << (JustMCFParser.BLUE - 100)) | (1 << (JustMCFParser.GREEN - 100)) | (1 << (JustMCFParser.PINK - 100)) | (1 << (JustMCFParser.PURPLE - 100)) | (1 << (JustMCFParser.RED - 100)) | (1 << (JustMCFParser.WHITE - 100)) | (1 << (JustMCFParser.YELLOW - 100)) | (1 << (JustMCFParser.COLOR - 100)) | (1 << (JustMCFParser.NAME - 100)) | (1 << (JustMCFParser.STYLE - 100)) | (1 << (JustMCFParser.NOTCHED_6 - 100)) | (1 << (JustMCFParser.NOTCHED_10 - 100)))) !== 0) || ((((_la - 132)) & ~0x1F) === 0 && ((1 << (_la - 132)) & ((1 << (JustMCFParser.NOTCHED_12 - 132)) | (1 << (JustMCFParser.NOTCHED_20 - 132)) | (1 << (JustMCFParser.PROGRESS - 132)) | (1 << (JustMCFParser.SET - 132)) | (1 << (JustMCFParser.TITLE - 132)) | (1 << (JustMCFParser.SUBTITLE - 132)) | (1 << (JustMCFParser.ACTIONBAR - 132)) | (1 << (JustMCFParser.TIMES - 132)) | (1 << (JustMCFParser.TEXT - 132)) | (1 << (JustMCFParser.ITEM - 132)) | (1 << (JustMCFParser.LOOT - 132)) | (1 << (JustMCFParser.GIVE - 132)) | (1 << (JustMCFParser.CLEAR - 132)) | (1 << (JustMCFParser.FISH - 132)) | (1 << (JustMCFParser.KILL - 132)) | (1 << (JustMCFParser.MINE - 132)) | (1 << (JustMCFParser.MAINHAND - 132)) | (1 << (JustMCFParser.OFFHAND - 132)) | (1 << (JustMCFParser.EFFECT - 132)) | (1 << (JustMCFParser.TAG - 132)) | (1 << (JustMCFParser.TP - 132)) | (1 << (JustMCFParser.GET - 132)) | (1 << (JustMCFParser.ATTR - 132)) | (1 << (JustMCFParser.BASE - 132)) | (1 << (JustMCFParser.DESTROY - 132)) | (1 << (JustMCFParser.KEEP - 132)) | (1 << (JustMCFParser.REPLACE - 132)) | (1 << (JustMCFParser.HOLLOW - 132)) | (1 << (JustMCFParser.OUTLINE - 132)) | (1 << (JustMCFParser.FORCE - 132)) | (1 << (JustMCFParser.MOVE - 132)) | (1 << (JustMCFParser.NORMAL - 132)))) !== 0) || ((((_la - 164)) & ~0x1F) === 0 && ((1 << (_la - 164)) & ((1 << (JustMCFParser.FILTERED - 164)) | (1 << (JustMCFParser.INTERFACE - 164)) | (1 << (JustMCFParser.WHILE - 164)) | (1 << (JustMCFParser.FOR - 164)) | (1 << (JustMCFParser.YEILD - 164)) | (1 << (JustMCFParser.BREAK - 164)) | (1 << (JustMCFParser.RETURN - 164)) | (1 << (JustMCFParser.REPLACED - 164)) | (1 << (JustMCFParser.DIM - 164)) | (1 << (JustMCFParser.DIMENSION - 164)) | (1 << (JustMCFParser.ITEM_MODIFIER - 164)) | (1 << (JustMCFParser.Selector - 164)) | (1 << (JustMCFParser.BYTE - 164)) | (1 << (JustMCFParser.SHORT - 164)) | (1 << (JustMCFParser.INT_ - 164)) | (1 << (JustMCFParser.LONG - 164)) | (1 << (JustMCFParser.FLOAT - 164)) | (1 << (JustMCFParser.DOUBLE - 164)) | (1 << (JustMCFParser.AcceptableName - 164)) | (1 << (JustMCFParser.NBTName - 164)))) !== 0)) {
 				{
 				{
-				this.state = 445;
+				this.state = 457;
 				this.statementInner();
 				}
 				}
-				this.state = 450;
+				this.state = 462;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
-			this.state = 451;
+			this.state = 463;
 			this.match(JustMCFParser.T__5);
 			}
 		}
@@ -1511,59 +1550,59 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 453;
+			this.state = 465;
 			this.match(JustMCFParser.FUNC);
-			this.state = 454;
+			this.state = 466;
 			this.nameSpaceFunc();
-			this.state = 455;
+			this.state = 467;
 			this.match(JustMCFParser.T__7);
-			this.state = 456;
+			this.state = 468;
 			this.funcImproveParam();
-			this.state = 461;
+			this.state = 473;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			while (_la === JustMCFParser.T__2) {
 				{
 				{
-				this.state = 457;
+				this.state = 469;
 				this.match(JustMCFParser.T__2);
-				this.state = 458;
+				this.state = 470;
 				this.funcImproveParam();
 				}
 				}
-				this.state = 463;
+				this.state = 475;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
-			this.state = 464;
+			this.state = 476;
 			this.match(JustMCFParser.T__8);
-			this.state = 466;
+			this.state = 478;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			if (((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)) | (1 << (JustMCFParser.AcceptableName - 167)))) !== 0)) {
+			if (((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)) | (1 << (JustMCFParser.AcceptableName - 168)))) !== 0)) {
 				{
-				this.state = 465;
+				this.state = 477;
 				this.typeName();
 				}
 			}
 
-			this.state = 468;
+			this.state = 480;
 			this.match(JustMCFParser.T__4);
-			this.state = 472;
+			this.state = 484;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while (_la === JustMCFParser.T__0 || _la === JustMCFParser.T__4 || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || ((((_la - 67)) & ~0x1F) === 0 && ((1 << (_la - 67)) & ((1 << (JustMCFParser.LeagalCommand - 67)) | (1 << (JustMCFParser.NAMSP - 67)) | (1 << (JustMCFParser.NAMESPACE - 67)) | (1 << (JustMCFParser.LOCAL - 67)) | (1 << (JustMCFParser.EXEC - 67)) | (1 << (JustMCFParser.ALIGN - 67)) | (1 << (JustMCFParser.ANCHORED - 67)) | (1 << (JustMCFParser.EYES - 67)) | (1 << (JustMCFParser.FEET - 67)) | (1 << (JustMCFParser.IN - 67)) | (1 << (JustMCFParser.AS - 67)) | (1 << (JustMCFParser.AT - 67)) | (1 << (JustMCFParser.FACING - 67)) | (1 << (JustMCFParser.POSITIONED - 67)) | (1 << (JustMCFParser.POS - 67)) | (1 << (JustMCFParser.ROTATED - 67)) | (1 << (JustMCFParser.ROT - 67)) | (1 << (JustMCFParser.IF - 67)) | (1 << (JustMCFParser.UNLESS - 67)) | (1 << (JustMCFParser.ALL - 67)) | (1 << (JustMCFParser.MASKED - 67)) | (1 << (JustMCFParser.BIOME - 67)) | (1 << (JustMCFParser.VALUE - 67)) | (1 << (JustMCFParser.MAX - 67)) | (1 << (JustMCFParser.ENTITY - 67)) | (1 << (JustMCFParser.SCORE - 67)) | (1 << (JustMCFParser.PREDICATE - 67)) | (1 << (JustMCFParser.BLOCK - 67)) | (1 << (JustMCFParser.BLOCKS - 67)))) !== 0) || ((((_la - 99)) & ~0x1F) === 0 && ((1 << (_la - 99)) & ((1 << (JustMCFParser.SCB - 99)) | (1 << (JustMCFParser.DISPLAYNAME - 99)) | (1 << (JustMCFParser.RENDERTYPE - 99)) | (1 << (JustMCFParser.DISPLAY - 99)) | (1 << (JustMCFParser.ENABLE - 99)) | (1 << (JustMCFParser.LIST - 99)) | (1 << (JustMCFParser.DATA - 99)) | (1 << (JustMCFParser.STORAGE - 99)) | (1 << (JustMCFParser.RESET - 99)) | (1 << (JustMCFParser.ADD - 99)) | (1 << (JustMCFParser.REMOVE - 99)) | (1 << (JustMCFParser.FUNC - 99)) | (1 << (JustMCFParser.TAGGED - 99)) | (1 << (JustMCFParser.DEFAULT - 99)) | (1 << (JustMCFParser.PLAYER - 99)) | (1 << (JustMCFParser.PLAYERS - 99)) | (1 << (JustMCFParser.BOSSBAR - 99)) | (1 << (JustMCFParser.VISIBLE - 99)) | (1 << (JustMCFParser.BLUE - 99)) | (1 << (JustMCFParser.GREEN - 99)) | (1 << (JustMCFParser.PINK - 99)) | (1 << (JustMCFParser.PURPLE - 99)) | (1 << (JustMCFParser.RED - 99)) | (1 << (JustMCFParser.WHITE - 99)) | (1 << (JustMCFParser.YELLOW - 99)) | (1 << (JustMCFParser.COLOR - 99)) | (1 << (JustMCFParser.NAME - 99)) | (1 << (JustMCFParser.STYLE - 99)) | (1 << (JustMCFParser.NOTCHED_6 - 99)) | (1 << (JustMCFParser.NOTCHED_10 - 99)))) !== 0) || ((((_la - 131)) & ~0x1F) === 0 && ((1 << (_la - 131)) & ((1 << (JustMCFParser.NOTCHED_12 - 131)) | (1 << (JustMCFParser.NOTCHED_20 - 131)) | (1 << (JustMCFParser.PROGRESS - 131)) | (1 << (JustMCFParser.SET - 131)) | (1 << (JustMCFParser.TITLE - 131)) | (1 << (JustMCFParser.SUBTITLE - 131)) | (1 << (JustMCFParser.ACTIONBAR - 131)) | (1 << (JustMCFParser.TIMES - 131)) | (1 << (JustMCFParser.TEXT - 131)) | (1 << (JustMCFParser.ITEM - 131)) | (1 << (JustMCFParser.LOOT - 131)) | (1 << (JustMCFParser.GIVE - 131)) | (1 << (JustMCFParser.CLEAR - 131)) | (1 << (JustMCFParser.FISH - 131)) | (1 << (JustMCFParser.KILL - 131)) | (1 << (JustMCFParser.MINE - 131)) | (1 << (JustMCFParser.MAINHAND - 131)) | (1 << (JustMCFParser.OFFHAND - 131)) | (1 << (JustMCFParser.EFFECT - 131)) | (1 << (JustMCFParser.TAG - 131)) | (1 << (JustMCFParser.TP - 131)) | (1 << (JustMCFParser.GET - 131)) | (1 << (JustMCFParser.ATTR - 131)) | (1 << (JustMCFParser.BASE - 131)) | (1 << (JustMCFParser.DESTROY - 131)) | (1 << (JustMCFParser.KEEP - 131)) | (1 << (JustMCFParser.REPLACE - 131)) | (1 << (JustMCFParser.HOLLOW - 131)) | (1 << (JustMCFParser.OUTLINE - 131)) | (1 << (JustMCFParser.FORCE - 131)) | (1 << (JustMCFParser.MOVE - 131)) | (1 << (JustMCFParser.NORMAL - 131)))) !== 0) || ((((_la - 163)) & ~0x1F) === 0 && ((1 << (_la - 163)) & ((1 << (JustMCFParser.FILTERED - 163)) | (1 << (JustMCFParser.INTERFACE - 163)) | (1 << (JustMCFParser.WHILE - 163)) | (1 << (JustMCFParser.FOR - 163)) | (1 << (JustMCFParser.YEILD - 163)) | (1 << (JustMCFParser.BREAK - 163)) | (1 << (JustMCFParser.RETURN - 163)) | (1 << (JustMCFParser.REPLACED - 163)) | (1 << (JustMCFParser.DIM - 163)) | (1 << (JustMCFParser.DIMENSION - 163)) | (1 << (JustMCFParser.ITEM_MODIFIER - 163)) | (1 << (JustMCFParser.Selector - 163)) | (1 << (JustMCFParser.BYTE - 163)) | (1 << (JustMCFParser.SHORT - 163)) | (1 << (JustMCFParser.INT_ - 163)) | (1 << (JustMCFParser.LONG - 163)) | (1 << (JustMCFParser.FLOAT - 163)) | (1 << (JustMCFParser.DOUBLE - 163)) | (1 << (JustMCFParser.AcceptableName - 163)) | (1 << (JustMCFParser.NBTName - 163)))) !== 0)) {
+			while (_la === JustMCFParser.T__0 || _la === JustMCFParser.T__4 || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || ((((_la - 68)) & ~0x1F) === 0 && ((1 << (_la - 68)) & ((1 << (JustMCFParser.LeagalCommand - 68)) | (1 << (JustMCFParser.NAMSP - 68)) | (1 << (JustMCFParser.NAMESPACE - 68)) | (1 << (JustMCFParser.LOCAL - 68)) | (1 << (JustMCFParser.EXEC - 68)) | (1 << (JustMCFParser.ALIGN - 68)) | (1 << (JustMCFParser.ANCHORED - 68)) | (1 << (JustMCFParser.EYES - 68)) | (1 << (JustMCFParser.FEET - 68)) | (1 << (JustMCFParser.IN - 68)) | (1 << (JustMCFParser.AS - 68)) | (1 << (JustMCFParser.AT - 68)) | (1 << (JustMCFParser.FACING - 68)) | (1 << (JustMCFParser.POSITIONED - 68)) | (1 << (JustMCFParser.POS - 68)) | (1 << (JustMCFParser.ROTATED - 68)) | (1 << (JustMCFParser.ROT - 68)) | (1 << (JustMCFParser.IF - 68)) | (1 << (JustMCFParser.UNLESS - 68)) | (1 << (JustMCFParser.ALL - 68)) | (1 << (JustMCFParser.MASKED - 68)) | (1 << (JustMCFParser.BIOME - 68)) | (1 << (JustMCFParser.VALUE - 68)) | (1 << (JustMCFParser.MAX - 68)) | (1 << (JustMCFParser.ENTITY - 68)) | (1 << (JustMCFParser.SCORE - 68)) | (1 << (JustMCFParser.PREDICATE - 68)) | (1 << (JustMCFParser.BLOCK - 68)) | (1 << (JustMCFParser.BLOCKS - 68)))) !== 0) || ((((_la - 100)) & ~0x1F) === 0 && ((1 << (_la - 100)) & ((1 << (JustMCFParser.SCB - 100)) | (1 << (JustMCFParser.DISPLAYNAME - 100)) | (1 << (JustMCFParser.RENDERTYPE - 100)) | (1 << (JustMCFParser.DISPLAY - 100)) | (1 << (JustMCFParser.ENABLE - 100)) | (1 << (JustMCFParser.LIST - 100)) | (1 << (JustMCFParser.DATA - 100)) | (1 << (JustMCFParser.STORAGE - 100)) | (1 << (JustMCFParser.RESET - 100)) | (1 << (JustMCFParser.ADD - 100)) | (1 << (JustMCFParser.REMOVE - 100)) | (1 << (JustMCFParser.FUNC - 100)) | (1 << (JustMCFParser.TAGGED - 100)) | (1 << (JustMCFParser.DEFAULT - 100)) | (1 << (JustMCFParser.PLAYER - 100)) | (1 << (JustMCFParser.PLAYERS - 100)) | (1 << (JustMCFParser.BOSSBAR - 100)) | (1 << (JustMCFParser.VISIBLE - 100)) | (1 << (JustMCFParser.BLUE - 100)) | (1 << (JustMCFParser.GREEN - 100)) | (1 << (JustMCFParser.PINK - 100)) | (1 << (JustMCFParser.PURPLE - 100)) | (1 << (JustMCFParser.RED - 100)) | (1 << (JustMCFParser.WHITE - 100)) | (1 << (JustMCFParser.YELLOW - 100)) | (1 << (JustMCFParser.COLOR - 100)) | (1 << (JustMCFParser.NAME - 100)) | (1 << (JustMCFParser.STYLE - 100)) | (1 << (JustMCFParser.NOTCHED_6 - 100)) | (1 << (JustMCFParser.NOTCHED_10 - 100)))) !== 0) || ((((_la - 132)) & ~0x1F) === 0 && ((1 << (_la - 132)) & ((1 << (JustMCFParser.NOTCHED_12 - 132)) | (1 << (JustMCFParser.NOTCHED_20 - 132)) | (1 << (JustMCFParser.PROGRESS - 132)) | (1 << (JustMCFParser.SET - 132)) | (1 << (JustMCFParser.TITLE - 132)) | (1 << (JustMCFParser.SUBTITLE - 132)) | (1 << (JustMCFParser.ACTIONBAR - 132)) | (1 << (JustMCFParser.TIMES - 132)) | (1 << (JustMCFParser.TEXT - 132)) | (1 << (JustMCFParser.ITEM - 132)) | (1 << (JustMCFParser.LOOT - 132)) | (1 << (JustMCFParser.GIVE - 132)) | (1 << (JustMCFParser.CLEAR - 132)) | (1 << (JustMCFParser.FISH - 132)) | (1 << (JustMCFParser.KILL - 132)) | (1 << (JustMCFParser.MINE - 132)) | (1 << (JustMCFParser.MAINHAND - 132)) | (1 << (JustMCFParser.OFFHAND - 132)) | (1 << (JustMCFParser.EFFECT - 132)) | (1 << (JustMCFParser.TAG - 132)) | (1 << (JustMCFParser.TP - 132)) | (1 << (JustMCFParser.GET - 132)) | (1 << (JustMCFParser.ATTR - 132)) | (1 << (JustMCFParser.BASE - 132)) | (1 << (JustMCFParser.DESTROY - 132)) | (1 << (JustMCFParser.KEEP - 132)) | (1 << (JustMCFParser.REPLACE - 132)) | (1 << (JustMCFParser.HOLLOW - 132)) | (1 << (JustMCFParser.OUTLINE - 132)) | (1 << (JustMCFParser.FORCE - 132)) | (1 << (JustMCFParser.MOVE - 132)) | (1 << (JustMCFParser.NORMAL - 132)))) !== 0) || ((((_la - 164)) & ~0x1F) === 0 && ((1 << (_la - 164)) & ((1 << (JustMCFParser.FILTERED - 164)) | (1 << (JustMCFParser.INTERFACE - 164)) | (1 << (JustMCFParser.WHILE - 164)) | (1 << (JustMCFParser.FOR - 164)) | (1 << (JustMCFParser.YEILD - 164)) | (1 << (JustMCFParser.BREAK - 164)) | (1 << (JustMCFParser.RETURN - 164)) | (1 << (JustMCFParser.REPLACED - 164)) | (1 << (JustMCFParser.DIM - 164)) | (1 << (JustMCFParser.DIMENSION - 164)) | (1 << (JustMCFParser.ITEM_MODIFIER - 164)) | (1 << (JustMCFParser.Selector - 164)) | (1 << (JustMCFParser.BYTE - 164)) | (1 << (JustMCFParser.SHORT - 164)) | (1 << (JustMCFParser.INT_ - 164)) | (1 << (JustMCFParser.LONG - 164)) | (1 << (JustMCFParser.FLOAT - 164)) | (1 << (JustMCFParser.DOUBLE - 164)) | (1 << (JustMCFParser.AcceptableName - 164)) | (1 << (JustMCFParser.NBTName - 164)))) !== 0)) {
 				{
 				{
-				this.state = 469;
+				this.state = 481;
 				this.funcImproveStatementInner();
 				}
 				}
-				this.state = 474;
+				this.state = 486;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
-			this.state = 475;
+			this.state = 487;
 			this.match(JustMCFParser.T__5);
 			}
 		}
@@ -1588,17 +1627,17 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 478;
+			this.state = 490;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 25, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 27, this._ctx) ) {
 			case 1:
 				{
-				this.state = 477;
+				this.state = 489;
 				this.typeName();
 				}
 				break;
 			}
-			this.state = 480;
+			this.state = 492;
 			this.acceptableName();
 			}
 		}
@@ -1621,13 +1660,13 @@ export class JustMCFParser extends Parser {
 		let _localctx: FuncImproveStatementInnerContext = new FuncImproveStatementInnerContext(this._ctx, this.state);
 		this.enterRule(_localctx, 30, JustMCFParser.RULE_funcImproveStatementInner);
 		try {
-			this.state = 484;
+			this.state = 496;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 26, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 28, this._ctx) ) {
 			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 482;
+				this.state = 494;
 				this.statementInner();
 				}
 				break;
@@ -1635,7 +1674,7 @@ export class JustMCFParser extends Parser {
 			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 483;
+				this.state = 495;
 				this.yeildStatement();
 				}
 				break;
@@ -1662,9 +1701,9 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 486;
+			this.state = 498;
 			this.match(JustMCFParser.YEILD);
-			this.state = 487;
+			this.state = 499;
 			this.dataIdentifier();
 			}
 		}
@@ -1687,15 +1726,15 @@ export class JustMCFParser extends Parser {
 		let _localctx: FuncRunStatementContext = new FuncRunStatementContext(this._ctx, this.state);
 		this.enterRule(_localctx, 34, JustMCFParser.RULE_funcRunStatement);
 		try {
-			this.state = 493;
+			this.state = 505;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 27, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 29, this._ctx) ) {
 			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 489;
+				this.state = 501;
 				this.match(JustMCFParser.FUNC);
-				this.state = 490;
+				this.state = 502;
 				this.nameSpaceFunc();
 				}
 				break;
@@ -1703,9 +1742,9 @@ export class JustMCFParser extends Parser {
 			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 491;
+				this.state = 503;
 				this.match(JustMCFParser.FUNC);
-				this.state = 492;
+				this.state = 504;
 				this.tagNameSpaceFunc();
 				}
 				break;
@@ -1732,7 +1771,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 495;
+			this.state = 507;
 			this.funcImproveRunExpression();
 			}
 		}
@@ -1758,31 +1797,31 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 497;
+			this.state = 509;
 			this.match(JustMCFParser.FUNC);
-			this.state = 498;
+			this.state = 510;
 			this.nameSpaceFunc();
-			this.state = 499;
+			this.state = 511;
 			this.match(JustMCFParser.T__7);
-			this.state = 500;
+			this.state = 512;
 			this.funcImproveRunParam();
-			this.state = 505;
+			this.state = 517;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			while (_la === JustMCFParser.T__2) {
 				{
 				{
-				this.state = 501;
+				this.state = 513;
 				this.match(JustMCFParser.T__2);
-				this.state = 502;
+				this.state = 514;
 				this.funcImproveRunParam();
 				}
 				}
-				this.state = 507;
+				this.state = 519;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
-			this.state = 508;
+			this.state = 520;
 			this.match(JustMCFParser.T__8);
 			}
 		}
@@ -1807,7 +1846,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 510;
+			this.state = 522;
 			this.dataIdentifier();
 			}
 		}
@@ -1832,91 +1871,91 @@ export class JustMCFParser extends Parser {
 		let _la: number;
 		try {
 			let _alt: number;
-			this.state = 548;
+			this.state = 560;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 35, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 37, this._ctx) ) {
 			case 1:
 				_localctx = new ExecWithRunOrChildContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 513;
+				this.state = 525;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.EXEC) {
 					{
-					this.state = 512;
+					this.state = 524;
 					this.match(JustMCFParser.EXEC);
 					}
 				}
 
-				this.state = 515;
+				this.state = 527;
 				this.match(JustMCFParser.T__4);
-				this.state = 519;
+				this.state = 531;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === JustMCFParser.T__9 || _la === JustMCFParser.T__10 || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || ((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.Selector - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)) | (1 << (JustMCFParser.AcceptableName - 167)) | (1 << (JustMCFParser.NBTName - 167)))) !== 0)) {
+				while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << JustMCFParser.T__4) | (1 << JustMCFParser.T__9) | (1 << JustMCFParser.T__10))) !== 0) || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || ((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.Selector - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)) | (1 << (JustMCFParser.AcceptableName - 168)) | (1 << (JustMCFParser.NBTName - 168)))) !== 0)) {
 					{
 					{
-					this.state = 516;
+					this.state = 528;
 					this.execChild();
 					}
 					}
-					this.state = 521;
+					this.state = 533;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 522;
+				this.state = 534;
 				this.match(JustMCFParser.T__5);
-				this.state = 526;
-				this._errHandler.sync(this);
-				_alt = this.interpreter.adaptivePredict(this._input, 31, this._ctx);
-				while (_alt !== 2 && _alt !== ATN.INVALID_ALT_NUMBER) {
-					if (_alt === 1) {
-						{
-						{
-						this.state = 523;
-						this.execStoreChild();
-						}
-						}
-					}
-					this.state = 528;
-					this._errHandler.sync(this);
-					_alt = this.interpreter.adaptivePredict(this._input, 31, this._ctx);
-				}
-				this.state = 531;
-				this._errHandler.sync(this);
-				switch (this._input.LA(1)) {
-				case JustMCFParser.T__0:
-					{
-					this.state = 529;
-					this.execRunChild();
-					}
-					break;
-				case JustMCFParser.T__9:
-				case JustMCFParser.T__10:
-					{
-					this.state = 530;
-					this.execStoreChild();
-					}
-					break;
-				default:
-					throw new NoViableAltException(this);
-				}
-				this.state = 536;
+				this.state = 538;
 				this._errHandler.sync(this);
 				_alt = this.interpreter.adaptivePredict(this._input, 33, this._ctx);
 				while (_alt !== 2 && _alt !== ATN.INVALID_ALT_NUMBER) {
 					if (_alt === 1) {
 						{
 						{
-						this.state = 533;
+						this.state = 535;
 						this.execStoreChild();
 						}
 						}
 					}
-					this.state = 538;
+					this.state = 540;
 					this._errHandler.sync(this);
 					_alt = this.interpreter.adaptivePredict(this._input, 33, this._ctx);
+				}
+				this.state = 543;
+				this._errHandler.sync(this);
+				switch (this._input.LA(1)) {
+				case JustMCFParser.T__0:
+					{
+					this.state = 541;
+					this.execRunChild();
+					}
+					break;
+				case JustMCFParser.T__9:
+				case JustMCFParser.T__10:
+					{
+					this.state = 542;
+					this.execStoreChild();
+					}
+					break;
+				default:
+					throw new NoViableAltException(this);
+				}
+				this.state = 548;
+				this._errHandler.sync(this);
+				_alt = this.interpreter.adaptivePredict(this._input, 35, this._ctx);
+				while (_alt !== 2 && _alt !== ATN.INVALID_ALT_NUMBER) {
+					if (_alt === 1) {
+						{
+						{
+						this.state = 545;
+						this.execStoreChild();
+						}
+						}
+					}
+					this.state = 550;
+					this._errHandler.sync(this);
+					_alt = this.interpreter.adaptivePredict(this._input, 35, this._ctx);
 				}
 				}
 				break;
@@ -1925,25 +1964,25 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecWithoutRunOrChildContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 539;
+				this.state = 551;
 				this.match(JustMCFParser.EXEC);
-				this.state = 540;
+				this.state = 552;
 				this.match(JustMCFParser.T__4);
-				this.state = 542;
+				this.state = 554;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				do {
 					{
 					{
-					this.state = 541;
+					this.state = 553;
 					this.execChild();
 					}
 					}
-					this.state = 544;
+					this.state = 556;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
-				} while (_la === JustMCFParser.T__9 || _la === JustMCFParser.T__10 || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || ((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.Selector - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)) | (1 << (JustMCFParser.AcceptableName - 167)) | (1 << (JustMCFParser.NBTName - 167)))) !== 0));
-				this.state = 546;
+				} while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << JustMCFParser.T__4) | (1 << JustMCFParser.T__9) | (1 << JustMCFParser.T__10))) !== 0) || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || ((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.Selector - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)) | (1 << (JustMCFParser.AcceptableName - 168)) | (1 << (JustMCFParser.NBTName - 168)))) !== 0));
+				this.state = 558;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -1969,16 +2008,16 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 44, JustMCFParser.RULE_execStoreChild);
 		let _la: number;
 		try {
-			this.state = 586;
+			this.state = 598;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 42, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 44, this._ctx) ) {
 			case 1:
 				_localctx = new ExecStoreResultScoreContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 550;
+				this.state = 562;
 				this.match(JustMCFParser.T__9);
-				this.state = 551;
+				this.state = 563;
 				this.scbIdentifier();
 				}
 				break;
@@ -1987,9 +2026,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecStoreSuccessScoreContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 552;
+				this.state = 564;
 				this.match(JustMCFParser.T__10);
-				this.state = 553;
+				this.state = 565;
 				this.scbIdentifier();
 				}
 				break;
@@ -1998,28 +2037,28 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecStoreResultDataContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 554;
+				this.state = 566;
 				this.match(JustMCFParser.T__9);
-				this.state = 555;
+				this.state = 567;
 				this.dataIdentifier();
-				this.state = 562;
+				this.state = 574;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 37, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 39, this._ctx) ) {
 				case 1:
 					{
-					this.state = 556;
+					this.state = 568;
 					this.numberType();
-					this.state = 558;
+					this.state = 570;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 					if (_la === JustMCFParser.T__11) {
 						{
-						this.state = 557;
+						this.state = 569;
 						this.match(JustMCFParser.T__11);
 						}
 					}
 
-					this.state = 560;
+					this.state = 572;
 					this.match(JustMCFParser.NUMBER);
 					}
 					break;
@@ -2031,28 +2070,28 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecStoreSuccessDataContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 564;
+				this.state = 576;
 				this.match(JustMCFParser.T__10);
-				this.state = 565;
+				this.state = 577;
 				this.dataIdentifier();
-				this.state = 572;
+				this.state = 584;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 39, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 41, this._ctx) ) {
 				case 1:
 					{
-					this.state = 566;
+					this.state = 578;
 					this.numberType();
-					this.state = 568;
+					this.state = 580;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 					if (_la === JustMCFParser.T__11) {
 						{
-						this.state = 567;
+						this.state = 579;
 						this.match(JustMCFParser.T__11);
 						}
 					}
 
-					this.state = 570;
+					this.state = 582;
 					this.match(JustMCFParser.NUMBER);
 					}
 					break;
@@ -2064,18 +2103,18 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecStoreResultBossbarContext(_localctx);
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 574;
+				this.state = 586;
 				this.match(JustMCFParser.T__9);
-				this.state = 575;
+				this.state = 587;
 				this.match(JustMCFParser.BOSSBAR);
-				this.state = 576;
+				this.state = 588;
 				this.nameSpaceBossbar();
-				this.state = 578;
+				this.state = 590;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 40, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 42, this._ctx) ) {
 				case 1:
 					{
-					this.state = 577;
+					this.state = 589;
 					(_localctx as ExecStoreResultBossbarContext)._value = this._input.LT(1);
 					_la = this._input.LA(1);
 					if (!(_la === JustMCFParser.VALUE || _la === JustMCFParser.MAX)) {
@@ -2098,18 +2137,18 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecStoreSuccessBossbarContext(_localctx);
 				this.enterOuterAlt(_localctx, 6);
 				{
-				this.state = 580;
+				this.state = 592;
 				this.match(JustMCFParser.T__10);
-				this.state = 581;
+				this.state = 593;
 				this.match(JustMCFParser.BOSSBAR);
-				this.state = 582;
+				this.state = 594;
 				this.nameSpaceBossbar();
-				this.state = 584;
+				this.state = 596;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 41, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 43, this._ctx) ) {
 				case 1:
 					{
-					this.state = 583;
+					this.state = 595;
 					(_localctx as ExecStoreSuccessBossbarContext)._value = this._input.LT(1);
 					_la = this._input.LA(1);
 					if (!(_la === JustMCFParser.VALUE || _la === JustMCFParser.MAX)) {
@@ -2149,16 +2188,16 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 46, JustMCFParser.RULE_execRunChild);
 		let _la: number;
 		try {
-			this.state = 604;
+			this.state = 616;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 45, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 47, this._ctx) ) {
 			case 1:
 				_localctx = new ExecDirectRunContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 588;
+				this.state = 600;
 				this.match(JustMCFParser.T__0);
-				this.state = 589;
+				this.state = 601;
 				this.statement();
 				}
 				break;
@@ -2167,9 +2206,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecNamedRunContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 590;
+				this.state = 602;
 				this.match(JustMCFParser.T__0);
-				this.state = 591;
+				this.state = 603;
 				this.funcStatement();
 				}
 				break;
@@ -2178,35 +2217,35 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecAnonymousRunContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 592;
+				this.state = 604;
 				this.match(JustMCFParser.T__0);
-				this.state = 594;
+				this.state = 606;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.FUNC) {
 					{
-					this.state = 593;
+					this.state = 605;
 					this.match(JustMCFParser.FUNC);
 					}
 				}
 
-				this.state = 596;
+				this.state = 608;
 				this.match(JustMCFParser.T__4);
-				this.state = 600;
+				this.state = 612;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === JustMCFParser.T__0 || _la === JustMCFParser.T__4 || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || ((((_la - 67)) & ~0x1F) === 0 && ((1 << (_la - 67)) & ((1 << (JustMCFParser.LeagalCommand - 67)) | (1 << (JustMCFParser.NAMSP - 67)) | (1 << (JustMCFParser.NAMESPACE - 67)) | (1 << (JustMCFParser.LOCAL - 67)) | (1 << (JustMCFParser.EXEC - 67)) | (1 << (JustMCFParser.ALIGN - 67)) | (1 << (JustMCFParser.ANCHORED - 67)) | (1 << (JustMCFParser.EYES - 67)) | (1 << (JustMCFParser.FEET - 67)) | (1 << (JustMCFParser.IN - 67)) | (1 << (JustMCFParser.AS - 67)) | (1 << (JustMCFParser.AT - 67)) | (1 << (JustMCFParser.FACING - 67)) | (1 << (JustMCFParser.POSITIONED - 67)) | (1 << (JustMCFParser.POS - 67)) | (1 << (JustMCFParser.ROTATED - 67)) | (1 << (JustMCFParser.ROT - 67)) | (1 << (JustMCFParser.IF - 67)) | (1 << (JustMCFParser.UNLESS - 67)) | (1 << (JustMCFParser.ALL - 67)) | (1 << (JustMCFParser.MASKED - 67)) | (1 << (JustMCFParser.BIOME - 67)) | (1 << (JustMCFParser.VALUE - 67)) | (1 << (JustMCFParser.MAX - 67)) | (1 << (JustMCFParser.ENTITY - 67)) | (1 << (JustMCFParser.SCORE - 67)) | (1 << (JustMCFParser.PREDICATE - 67)) | (1 << (JustMCFParser.BLOCK - 67)) | (1 << (JustMCFParser.BLOCKS - 67)))) !== 0) || ((((_la - 99)) & ~0x1F) === 0 && ((1 << (_la - 99)) & ((1 << (JustMCFParser.SCB - 99)) | (1 << (JustMCFParser.DISPLAYNAME - 99)) | (1 << (JustMCFParser.RENDERTYPE - 99)) | (1 << (JustMCFParser.DISPLAY - 99)) | (1 << (JustMCFParser.ENABLE - 99)) | (1 << (JustMCFParser.LIST - 99)) | (1 << (JustMCFParser.DATA - 99)) | (1 << (JustMCFParser.STORAGE - 99)) | (1 << (JustMCFParser.RESET - 99)) | (1 << (JustMCFParser.ADD - 99)) | (1 << (JustMCFParser.REMOVE - 99)) | (1 << (JustMCFParser.FUNC - 99)) | (1 << (JustMCFParser.TAGGED - 99)) | (1 << (JustMCFParser.DEFAULT - 99)) | (1 << (JustMCFParser.PLAYER - 99)) | (1 << (JustMCFParser.PLAYERS - 99)) | (1 << (JustMCFParser.BOSSBAR - 99)) | (1 << (JustMCFParser.VISIBLE - 99)) | (1 << (JustMCFParser.BLUE - 99)) | (1 << (JustMCFParser.GREEN - 99)) | (1 << (JustMCFParser.PINK - 99)) | (1 << (JustMCFParser.PURPLE - 99)) | (1 << (JustMCFParser.RED - 99)) | (1 << (JustMCFParser.WHITE - 99)) | (1 << (JustMCFParser.YELLOW - 99)) | (1 << (JustMCFParser.COLOR - 99)) | (1 << (JustMCFParser.NAME - 99)) | (1 << (JustMCFParser.STYLE - 99)) | (1 << (JustMCFParser.NOTCHED_6 - 99)) | (1 << (JustMCFParser.NOTCHED_10 - 99)))) !== 0) || ((((_la - 131)) & ~0x1F) === 0 && ((1 << (_la - 131)) & ((1 << (JustMCFParser.NOTCHED_12 - 131)) | (1 << (JustMCFParser.NOTCHED_20 - 131)) | (1 << (JustMCFParser.PROGRESS - 131)) | (1 << (JustMCFParser.SET - 131)) | (1 << (JustMCFParser.TITLE - 131)) | (1 << (JustMCFParser.SUBTITLE - 131)) | (1 << (JustMCFParser.ACTIONBAR - 131)) | (1 << (JustMCFParser.TIMES - 131)) | (1 << (JustMCFParser.TEXT - 131)) | (1 << (JustMCFParser.ITEM - 131)) | (1 << (JustMCFParser.LOOT - 131)) | (1 << (JustMCFParser.GIVE - 131)) | (1 << (JustMCFParser.CLEAR - 131)) | (1 << (JustMCFParser.FISH - 131)) | (1 << (JustMCFParser.KILL - 131)) | (1 << (JustMCFParser.MINE - 131)) | (1 << (JustMCFParser.MAINHAND - 131)) | (1 << (JustMCFParser.OFFHAND - 131)) | (1 << (JustMCFParser.EFFECT - 131)) | (1 << (JustMCFParser.TAG - 131)) | (1 << (JustMCFParser.TP - 131)) | (1 << (JustMCFParser.GET - 131)) | (1 << (JustMCFParser.ATTR - 131)) | (1 << (JustMCFParser.BASE - 131)) | (1 << (JustMCFParser.DESTROY - 131)) | (1 << (JustMCFParser.KEEP - 131)) | (1 << (JustMCFParser.REPLACE - 131)) | (1 << (JustMCFParser.HOLLOW - 131)) | (1 << (JustMCFParser.OUTLINE - 131)) | (1 << (JustMCFParser.FORCE - 131)) | (1 << (JustMCFParser.MOVE - 131)) | (1 << (JustMCFParser.NORMAL - 131)))) !== 0) || ((((_la - 163)) & ~0x1F) === 0 && ((1 << (_la - 163)) & ((1 << (JustMCFParser.FILTERED - 163)) | (1 << (JustMCFParser.INTERFACE - 163)) | (1 << (JustMCFParser.WHILE - 163)) | (1 << (JustMCFParser.FOR - 163)) | (1 << (JustMCFParser.YEILD - 163)) | (1 << (JustMCFParser.BREAK - 163)) | (1 << (JustMCFParser.RETURN - 163)) | (1 << (JustMCFParser.REPLACED - 163)) | (1 << (JustMCFParser.DIM - 163)) | (1 << (JustMCFParser.DIMENSION - 163)) | (1 << (JustMCFParser.ITEM_MODIFIER - 163)) | (1 << (JustMCFParser.Selector - 163)) | (1 << (JustMCFParser.BYTE - 163)) | (1 << (JustMCFParser.SHORT - 163)) | (1 << (JustMCFParser.INT_ - 163)) | (1 << (JustMCFParser.LONG - 163)) | (1 << (JustMCFParser.FLOAT - 163)) | (1 << (JustMCFParser.DOUBLE - 163)) | (1 << (JustMCFParser.AcceptableName - 163)) | (1 << (JustMCFParser.NBTName - 163)))) !== 0)) {
+				while (_la === JustMCFParser.T__0 || _la === JustMCFParser.T__4 || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || ((((_la - 68)) & ~0x1F) === 0 && ((1 << (_la - 68)) & ((1 << (JustMCFParser.LeagalCommand - 68)) | (1 << (JustMCFParser.NAMSP - 68)) | (1 << (JustMCFParser.NAMESPACE - 68)) | (1 << (JustMCFParser.LOCAL - 68)) | (1 << (JustMCFParser.EXEC - 68)) | (1 << (JustMCFParser.ALIGN - 68)) | (1 << (JustMCFParser.ANCHORED - 68)) | (1 << (JustMCFParser.EYES - 68)) | (1 << (JustMCFParser.FEET - 68)) | (1 << (JustMCFParser.IN - 68)) | (1 << (JustMCFParser.AS - 68)) | (1 << (JustMCFParser.AT - 68)) | (1 << (JustMCFParser.FACING - 68)) | (1 << (JustMCFParser.POSITIONED - 68)) | (1 << (JustMCFParser.POS - 68)) | (1 << (JustMCFParser.ROTATED - 68)) | (1 << (JustMCFParser.ROT - 68)) | (1 << (JustMCFParser.IF - 68)) | (1 << (JustMCFParser.UNLESS - 68)) | (1 << (JustMCFParser.ALL - 68)) | (1 << (JustMCFParser.MASKED - 68)) | (1 << (JustMCFParser.BIOME - 68)) | (1 << (JustMCFParser.VALUE - 68)) | (1 << (JustMCFParser.MAX - 68)) | (1 << (JustMCFParser.ENTITY - 68)) | (1 << (JustMCFParser.SCORE - 68)) | (1 << (JustMCFParser.PREDICATE - 68)) | (1 << (JustMCFParser.BLOCK - 68)) | (1 << (JustMCFParser.BLOCKS - 68)))) !== 0) || ((((_la - 100)) & ~0x1F) === 0 && ((1 << (_la - 100)) & ((1 << (JustMCFParser.SCB - 100)) | (1 << (JustMCFParser.DISPLAYNAME - 100)) | (1 << (JustMCFParser.RENDERTYPE - 100)) | (1 << (JustMCFParser.DISPLAY - 100)) | (1 << (JustMCFParser.ENABLE - 100)) | (1 << (JustMCFParser.LIST - 100)) | (1 << (JustMCFParser.DATA - 100)) | (1 << (JustMCFParser.STORAGE - 100)) | (1 << (JustMCFParser.RESET - 100)) | (1 << (JustMCFParser.ADD - 100)) | (1 << (JustMCFParser.REMOVE - 100)) | (1 << (JustMCFParser.FUNC - 100)) | (1 << (JustMCFParser.TAGGED - 100)) | (1 << (JustMCFParser.DEFAULT - 100)) | (1 << (JustMCFParser.PLAYER - 100)) | (1 << (JustMCFParser.PLAYERS - 100)) | (1 << (JustMCFParser.BOSSBAR - 100)) | (1 << (JustMCFParser.VISIBLE - 100)) | (1 << (JustMCFParser.BLUE - 100)) | (1 << (JustMCFParser.GREEN - 100)) | (1 << (JustMCFParser.PINK - 100)) | (1 << (JustMCFParser.PURPLE - 100)) | (1 << (JustMCFParser.RED - 100)) | (1 << (JustMCFParser.WHITE - 100)) | (1 << (JustMCFParser.YELLOW - 100)) | (1 << (JustMCFParser.COLOR - 100)) | (1 << (JustMCFParser.NAME - 100)) | (1 << (JustMCFParser.STYLE - 100)) | (1 << (JustMCFParser.NOTCHED_6 - 100)) | (1 << (JustMCFParser.NOTCHED_10 - 100)))) !== 0) || ((((_la - 132)) & ~0x1F) === 0 && ((1 << (_la - 132)) & ((1 << (JustMCFParser.NOTCHED_12 - 132)) | (1 << (JustMCFParser.NOTCHED_20 - 132)) | (1 << (JustMCFParser.PROGRESS - 132)) | (1 << (JustMCFParser.SET - 132)) | (1 << (JustMCFParser.TITLE - 132)) | (1 << (JustMCFParser.SUBTITLE - 132)) | (1 << (JustMCFParser.ACTIONBAR - 132)) | (1 << (JustMCFParser.TIMES - 132)) | (1 << (JustMCFParser.TEXT - 132)) | (1 << (JustMCFParser.ITEM - 132)) | (1 << (JustMCFParser.LOOT - 132)) | (1 << (JustMCFParser.GIVE - 132)) | (1 << (JustMCFParser.CLEAR - 132)) | (1 << (JustMCFParser.FISH - 132)) | (1 << (JustMCFParser.KILL - 132)) | (1 << (JustMCFParser.MINE - 132)) | (1 << (JustMCFParser.MAINHAND - 132)) | (1 << (JustMCFParser.OFFHAND - 132)) | (1 << (JustMCFParser.EFFECT - 132)) | (1 << (JustMCFParser.TAG - 132)) | (1 << (JustMCFParser.TP - 132)) | (1 << (JustMCFParser.GET - 132)) | (1 << (JustMCFParser.ATTR - 132)) | (1 << (JustMCFParser.BASE - 132)) | (1 << (JustMCFParser.DESTROY - 132)) | (1 << (JustMCFParser.KEEP - 132)) | (1 << (JustMCFParser.REPLACE - 132)) | (1 << (JustMCFParser.HOLLOW - 132)) | (1 << (JustMCFParser.OUTLINE - 132)) | (1 << (JustMCFParser.FORCE - 132)) | (1 << (JustMCFParser.MOVE - 132)) | (1 << (JustMCFParser.NORMAL - 132)))) !== 0) || ((((_la - 164)) & ~0x1F) === 0 && ((1 << (_la - 164)) & ((1 << (JustMCFParser.FILTERED - 164)) | (1 << (JustMCFParser.INTERFACE - 164)) | (1 << (JustMCFParser.WHILE - 164)) | (1 << (JustMCFParser.FOR - 164)) | (1 << (JustMCFParser.YEILD - 164)) | (1 << (JustMCFParser.BREAK - 164)) | (1 << (JustMCFParser.RETURN - 164)) | (1 << (JustMCFParser.REPLACED - 164)) | (1 << (JustMCFParser.DIM - 164)) | (1 << (JustMCFParser.DIMENSION - 164)) | (1 << (JustMCFParser.ITEM_MODIFIER - 164)) | (1 << (JustMCFParser.Selector - 164)) | (1 << (JustMCFParser.BYTE - 164)) | (1 << (JustMCFParser.SHORT - 164)) | (1 << (JustMCFParser.INT_ - 164)) | (1 << (JustMCFParser.LONG - 164)) | (1 << (JustMCFParser.FLOAT - 164)) | (1 << (JustMCFParser.DOUBLE - 164)) | (1 << (JustMCFParser.AcceptableName - 164)) | (1 << (JustMCFParser.NBTName - 164)))) !== 0)) {
 					{
 					{
-					this.state = 597;
+					this.state = 609;
 					this.statementInner();
 					}
 					}
-					this.state = 602;
+					this.state = 614;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 603;
+				this.state = 615;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -2232,16 +2271,16 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 48, JustMCFParser.RULE_execChild);
 		let _la: number;
 		try {
-			this.state = 703;
+			this.state = 715;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 63, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 65, this._ctx) ) {
 			case 1:
 				_localctx = new ExecAlignContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 606;
+				this.state = 618;
 				this.match(JustMCFParser.ALIGN);
-				this.state = 607;
+				this.state = 619;
 				this.match(JustMCFParser.AcceptableName);
 				}
 				break;
@@ -2250,9 +2289,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecAnchoredContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 608;
+				this.state = 620;
 				this.match(JustMCFParser.ANCHORED);
-				this.state = 609;
+				this.state = 621;
 				(_localctx as ExecAnchoredContext)._anchor = this._input.LT(1);
 				_la = this._input.LA(1);
 				if (!(_la === JustMCFParser.EYES || _la === JustMCFParser.FEET)) {
@@ -2272,9 +2311,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecInContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 610;
+				this.state = 622;
 				this.match(JustMCFParser.IN);
-				this.state = 611;
+				this.state = 623;
 				this.nameSpaceDim();
 				}
 				break;
@@ -2283,9 +2322,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecAsContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 612;
+				this.state = 624;
 				this.match(JustMCFParser.AS);
-				this.state = 613;
+				this.state = 625;
 				this.selector();
 				}
 				break;
@@ -2294,9 +2333,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecAtContext(_localctx);
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 614;
+				this.state = 626;
 				this.match(JustMCFParser.AT);
-				this.state = 615;
+				this.state = 627;
 				this.selector();
 				}
 				break;
@@ -2305,9 +2344,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecFacingPosContext(_localctx);
 				this.enterOuterAlt(_localctx, 6);
 				{
-				this.state = 616;
+				this.state = 628;
 				this.match(JustMCFParser.FACING);
-				this.state = 617;
+				this.state = 629;
 				this.pos3Identifier();
 				}
 				break;
@@ -2316,11 +2355,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecFacingEntityContext(_localctx);
 				this.enterOuterAlt(_localctx, 7);
 				{
-				this.state = 618;
+				this.state = 630;
 				this.match(JustMCFParser.FACING);
-				this.state = 619;
+				this.state = 631;
 				this.selector();
-				this.state = 620;
+				this.state = 632;
 				(_localctx as ExecFacingEntityContext)._anchor = this._input.LT(1);
 				_la = this._input.LA(1);
 				if (!(_la === JustMCFParser.EYES || _la === JustMCFParser.FEET)) {
@@ -2340,7 +2379,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecPositionedPosContext(_localctx);
 				this.enterOuterAlt(_localctx, 8);
 				{
-				this.state = 622;
+				this.state = 634;
 				_la = this._input.LA(1);
 				if (!(_la === JustMCFParser.POSITIONED || _la === JustMCFParser.POS)) {
 				this._errHandler.recoverInline(this);
@@ -2352,7 +2391,7 @@ export class JustMCFParser extends Parser {
 					this._errHandler.reportMatch(this);
 					this.consume();
 				}
-				this.state = 623;
+				this.state = 635;
 				this.pos3Identifier();
 				}
 				break;
@@ -2361,7 +2400,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecPostionedAsContext(_localctx);
 				this.enterOuterAlt(_localctx, 9);
 				{
-				this.state = 624;
+				this.state = 636;
 				_la = this._input.LA(1);
 				if (!(_la === JustMCFParser.POSITIONED || _la === JustMCFParser.POS)) {
 				this._errHandler.recoverInline(this);
@@ -2373,7 +2412,7 @@ export class JustMCFParser extends Parser {
 					this._errHandler.reportMatch(this);
 					this.consume();
 				}
-				this.state = 625;
+				this.state = 637;
 				this.selector();
 				}
 				break;
@@ -2382,7 +2421,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecRotatedPosContext(_localctx);
 				this.enterOuterAlt(_localctx, 10);
 				{
-				this.state = 626;
+				this.state = 638;
 				_la = this._input.LA(1);
 				if (!(_la === JustMCFParser.ROTATED || _la === JustMCFParser.ROT)) {
 				this._errHandler.recoverInline(this);
@@ -2394,7 +2433,7 @@ export class JustMCFParser extends Parser {
 					this._errHandler.reportMatch(this);
 					this.consume();
 				}
-				this.state = 627;
+				this.state = 639;
 				this.pos2Identifier();
 				}
 				break;
@@ -2403,7 +2442,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecRotatedAsContext(_localctx);
 				this.enterOuterAlt(_localctx, 11);
 				{
-				this.state = 628;
+				this.state = 640;
 				_la = this._input.LA(1);
 				if (!(_la === JustMCFParser.ROTATED || _la === JustMCFParser.ROT)) {
 				this._errHandler.recoverInline(this);
@@ -2415,7 +2454,7 @@ export class JustMCFParser extends Parser {
 					this._errHandler.reportMatch(this);
 					this.consume();
 				}
-				this.state = 629;
+				this.state = 641;
 				this.selector();
 				}
 				break;
@@ -2424,12 +2463,12 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecIfEntityContext(_localctx);
 				this.enterOuterAlt(_localctx, 12);
 				{
-				this.state = 631;
+				this.state = 643;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.IF || _la === JustMCFParser.UNLESS) {
 					{
-					this.state = 630;
+					this.state = 642;
 					(_localctx as ExecIfEntityContext)._cond = this._input.LT(1);
 					_la = this._input.LA(1);
 					if (!(_la === JustMCFParser.IF || _la === JustMCFParser.UNLESS)) {
@@ -2445,17 +2484,17 @@ export class JustMCFParser extends Parser {
 					}
 				}
 
-				this.state = 634;
+				this.state = 646;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.ENTITY) {
 					{
-					this.state = 633;
+					this.state = 645;
 					this.match(JustMCFParser.ENTITY);
 					}
 				}
 
-				this.state = 636;
+				this.state = 648;
 				this.selector();
 				}
 				break;
@@ -2464,12 +2503,12 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecIfScoreContext(_localctx);
 				this.enterOuterAlt(_localctx, 13);
 				{
-				this.state = 638;
+				this.state = 650;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 48, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 50, this._ctx) ) {
 				case 1:
 					{
-					this.state = 637;
+					this.state = 649;
 					(_localctx as ExecIfScoreContext)._cond = this._input.LT(1);
 					_la = this._input.LA(1);
 					if (!(_la === JustMCFParser.IF || _la === JustMCFParser.UNLESS)) {
@@ -2485,21 +2524,21 @@ export class JustMCFParser extends Parser {
 					}
 					break;
 				}
-				this.state = 641;
+				this.state = 653;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 49, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 51, this._ctx) ) {
 				case 1:
 					{
-					this.state = 640;
+					this.state = 652;
 					this.match(JustMCFParser.SCORE);
 					}
 					break;
 				}
-				this.state = 643;
+				this.state = 655;
 				this.scbIdentifier();
-				this.state = 644;
+				this.state = 656;
 				this.match(JustMCFParser.CompareOperation);
-				this.state = 645;
+				this.state = 657;
 				this.scbIdentifier();
 				}
 				break;
@@ -2508,12 +2547,12 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecIfScoreMatchesContext(_localctx);
 				this.enterOuterAlt(_localctx, 14);
 				{
-				this.state = 648;
+				this.state = 660;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 50, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 52, this._ctx) ) {
 				case 1:
 					{
-					this.state = 647;
+					this.state = 659;
 					(_localctx as ExecIfScoreMatchesContext)._cond = this._input.LT(1);
 					_la = this._input.LA(1);
 					if (!(_la === JustMCFParser.IF || _la === JustMCFParser.UNLESS)) {
@@ -2529,44 +2568,44 @@ export class JustMCFParser extends Parser {
 					}
 					break;
 				}
-				this.state = 651;
+				this.state = 663;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 51, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 53, this._ctx) ) {
 				case 1:
 					{
-					this.state = 650;
+					this.state = 662;
 					this.match(JustMCFParser.SCORE);
 					}
 					break;
 				}
-				this.state = 653;
+				this.state = 665;
 				this.scbIdentifier();
-				this.state = 659;
+				this.state = 671;
 				this._errHandler.sync(this);
 				switch (this._input.LA(1)) {
 				case JustMCFParser.T__12:
-				case JustMCFParser.NUMBER:
+				case JustMCFParser.NUMBER_INT:
 				case JustMCFParser.MATCHES:
 					{
 					{
-					this.state = 655;
+					this.state = 667;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 					if (_la === JustMCFParser.MATCHES) {
 						{
-						this.state = 654;
+						this.state = 666;
 						this.match(JustMCFParser.MATCHES);
 						}
 					}
 
-					this.state = 657;
+					this.state = 669;
 					this.matchPart();
 					}
 					}
 					break;
 				case JustMCFParser.CompareOperation:
 					{
-					this.state = 658;
+					this.state = 670;
 					this.scbCompareNumber();
 					}
 					break;
@@ -2580,12 +2619,12 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecIfBlockContext(_localctx);
 				this.enterOuterAlt(_localctx, 15);
 				{
-				this.state = 662;
+				this.state = 674;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.IF || _la === JustMCFParser.UNLESS) {
 					{
-					this.state = 661;
+					this.state = 673;
 					(_localctx as ExecIfBlockContext)._cond = this._input.LT(1);
 					_la = this._input.LA(1);
 					if (!(_la === JustMCFParser.IF || _la === JustMCFParser.UNLESS)) {
@@ -2601,19 +2640,19 @@ export class JustMCFParser extends Parser {
 					}
 				}
 
-				this.state = 665;
+				this.state = 677;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.BLOCK) {
 					{
-					this.state = 664;
+					this.state = 676;
 					this.match(JustMCFParser.BLOCK);
 					}
 				}
 
-				this.state = 667;
+				this.state = 679;
 				this.pos3Identifier();
-				this.state = 668;
+				this.state = 680;
 				this.blockIdentifier();
 				}
 				break;
@@ -2622,12 +2661,12 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecIfBlocksContext(_localctx);
 				this.enterOuterAlt(_localctx, 16);
 				{
-				this.state = 671;
+				this.state = 683;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.IF || _la === JustMCFParser.UNLESS) {
 					{
-					this.state = 670;
+					this.state = 682;
 					(_localctx as ExecIfBlocksContext)._cond = this._input.LT(1);
 					_la = this._input.LA(1);
 					if (!(_la === JustMCFParser.IF || _la === JustMCFParser.UNLESS)) {
@@ -2643,23 +2682,23 @@ export class JustMCFParser extends Parser {
 					}
 				}
 
-				this.state = 674;
+				this.state = 686;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.BLOCKS) {
 					{
-					this.state = 673;
+					this.state = 685;
 					this.match(JustMCFParser.BLOCKS);
 					}
 				}
 
-				this.state = 676;
+				this.state = 688;
 				this.pos3Identifier();
-				this.state = 677;
+				this.state = 689;
 				this.pos3Identifier();
-				this.state = 678;
+				this.state = 690;
 				this.pos3Identifier();
-				this.state = 679;
+				this.state = 691;
 				(_localctx as ExecIfBlocksContext)._scan_mode = this._input.LT(1);
 				_la = this._input.LA(1);
 				if (!(_la === JustMCFParser.ALL || _la === JustMCFParser.MASKED)) {
@@ -2679,12 +2718,12 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecIfDataContext(_localctx);
 				this.enterOuterAlt(_localctx, 17);
 				{
-				this.state = 682;
+				this.state = 694;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 58, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 60, this._ctx) ) {
 				case 1:
 					{
-					this.state = 681;
+					this.state = 693;
 					(_localctx as ExecIfDataContext)._cond = this._input.LT(1);
 					_la = this._input.LA(1);
 					if (!(_la === JustMCFParser.IF || _la === JustMCFParser.UNLESS)) {
@@ -2700,17 +2739,17 @@ export class JustMCFParser extends Parser {
 					}
 					break;
 				}
-				this.state = 685;
+				this.state = 697;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 59, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 61, this._ctx) ) {
 				case 1:
 					{
-					this.state = 684;
+					this.state = 696;
 					this.match(JustMCFParser.DATA);
 					}
 					break;
 				}
-				this.state = 687;
+				this.state = 699;
 				this.dataIdentifier();
 				}
 				break;
@@ -2719,12 +2758,12 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecIfBiomeContext(_localctx);
 				this.enterOuterAlt(_localctx, 18);
 				{
-				this.state = 689;
+				this.state = 701;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.IF || _la === JustMCFParser.UNLESS) {
 					{
-					this.state = 688;
+					this.state = 700;
 					(_localctx as ExecIfBiomeContext)._cond = this._input.LT(1);
 					_la = this._input.LA(1);
 					if (!(_la === JustMCFParser.IF || _la === JustMCFParser.UNLESS)) {
@@ -2740,11 +2779,11 @@ export class JustMCFParser extends Parser {
 					}
 				}
 
-				this.state = 691;
+				this.state = 703;
 				this.match(JustMCFParser.BIOME);
-				this.state = 692;
+				this.state = 704;
 				this.pos3Identifier();
-				this.state = 693;
+				this.state = 705;
 				this.nameSpaceBiome();
 				}
 				break;
@@ -2753,12 +2792,12 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecPredicateContext(_localctx);
 				this.enterOuterAlt(_localctx, 19);
 				{
-				this.state = 696;
+				this.state = 708;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 61, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 63, this._ctx) ) {
 				case 1:
 					{
-					this.state = 695;
+					this.state = 707;
 					(_localctx as ExecPredicateContext)._cond = this._input.LT(1);
 					_la = this._input.LA(1);
 					if (!(_la === JustMCFParser.IF || _la === JustMCFParser.UNLESS)) {
@@ -2774,17 +2813,17 @@ export class JustMCFParser extends Parser {
 					}
 					break;
 				}
-				this.state = 699;
+				this.state = 711;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 62, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 64, this._ctx) ) {
 				case 1:
 					{
-					this.state = 698;
+					this.state = 710;
 					this.match(JustMCFParser.PREDICATE);
 					}
 					break;
 				}
-				this.state = 701;
+				this.state = 713;
 				this.nameSpacePredicate();
 				}
 				break;
@@ -2793,7 +2832,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExecStoreContext(_localctx);
 				this.enterOuterAlt(_localctx, 20);
 				{
-				this.state = 702;
+				this.state = 714;
 				this.execStoreChild();
 				}
 				break;
@@ -2819,23 +2858,23 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 50, JustMCFParser.RULE_matchPart);
 		let _la: number;
 		try {
-			this.state = 713;
+			this.state = 725;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 65, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 67, this._ctx) ) {
 			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 705;
-				this.match(JustMCFParser.NUMBER);
-				this.state = 706;
+				this.state = 717;
+				this.match(JustMCFParser.NUMBER_INT);
+				this.state = 718;
 				this.match(JustMCFParser.T__12);
-				this.state = 708;
+				this.state = 720;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				if (_la === JustMCFParser.NUMBER) {
+				if (_la === JustMCFParser.NUMBER_INT) {
 					{
-					this.state = 707;
-					this.match(JustMCFParser.NUMBER);
+					this.state = 719;
+					this.match(JustMCFParser.NUMBER_INT);
 					}
 				}
 
@@ -2845,18 +2884,18 @@ export class JustMCFParser extends Parser {
 			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 710;
+				this.state = 722;
 				this.match(JustMCFParser.T__12);
-				this.state = 711;
-				this.match(JustMCFParser.NUMBER);
+				this.state = 723;
+				this.match(JustMCFParser.NUMBER_INT);
 				}
 				break;
 
 			case 3:
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 712;
-				this.match(JustMCFParser.NUMBER);
+				this.state = 724;
+				this.match(JustMCFParser.NUMBER_INT);
 				}
 				break;
 			}
@@ -2882,10 +2921,10 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 715;
+			this.state = 727;
 			this.match(JustMCFParser.CompareOperation);
-			this.state = 716;
-			this.match(JustMCFParser.NUMBER);
+			this.state = 728;
+			this.match(JustMCFParser.NUMBER_INT);
 			}
 		}
 		catch (re) {
@@ -2907,18 +2946,18 @@ export class JustMCFParser extends Parser {
 		let _localctx: DataIdentifierContext = new DataIdentifierContext(this._ctx, this.state);
 		this.enterRule(_localctx, 54, JustMCFParser.RULE_dataIdentifier);
 		try {
-			this.state = 734;
+			this.state = 746;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 66, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 68, this._ctx) ) {
 			case 1:
 				_localctx = new DataStorageLocalContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 718;
+				this.state = 730;
 				this.match(JustMCFParser.LOCAL);
-				this.state = 719;
+				this.state = 731;
 				this.match(JustMCFParser.T__13);
-				this.state = 720;
+				this.state = 732;
 				this.nbtPath();
 				}
 				break;
@@ -2927,11 +2966,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataStorageContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 721;
+				this.state = 733;
 				this.nameSpaceStorage();
-				this.state = 722;
+				this.state = 734;
 				this.match(JustMCFParser.T__13);
-				this.state = 723;
+				this.state = 735;
 				this.nbtPath();
 				}
 				break;
@@ -2940,8 +2979,8 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataStorageWithEnvContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 725;
-				this.acceptableName();
+				this.state = 737;
+				this.nbtPath();
 				}
 				break;
 
@@ -2949,11 +2988,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataEntityContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 726;
+				this.state = 738;
 				this.selector();
-				this.state = 727;
+				this.state = 739;
 				this.match(JustMCFParser.T__13);
-				this.state = 728;
+				this.state = 740;
 				this.nbtPath();
 				}
 				break;
@@ -2962,11 +3001,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataBlockContext(_localctx);
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 730;
+				this.state = 742;
 				this.pos3Identifier();
-				this.state = 731;
+				this.state = 743;
 				this.match(JustMCFParser.T__13);
-				this.state = 732;
+				this.state = 744;
 				this.nbtPath();
 				}
 				break;
@@ -2991,7 +3030,7 @@ export class JustMCFParser extends Parser {
 		let _localctx: DataMergeExpressionContext = new DataMergeExpressionContext(this._ctx, this.state);
 		this.enterRule(_localctx, 56, JustMCFParser.RULE_dataMergeExpression);
 		try {
-			this.state = 748;
+			this.state = 760;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
 			case JustMCFParser.NAMSP:
@@ -3105,11 +3144,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataMergeStorageContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 736;
+				this.state = 748;
 				this.nameSpaceStorage();
-				this.state = 737;
+				this.state = 749;
 				this.match(JustMCFParser.T__14);
-				this.state = 738;
+				this.state = 750;
 				this.nbt();
 				}
 				break;
@@ -3119,11 +3158,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataMergeEntityContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 740;
+				this.state = 752;
 				this.selector();
-				this.state = 741;
+				this.state = 753;
 				this.match(JustMCFParser.T__14);
-				this.state = 742;
+				this.state = 754;
 				this.nbt();
 				}
 				break;
@@ -3131,11 +3170,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataMergeBlockContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 744;
+				this.state = 756;
 				this.pos3Identifier();
-				this.state = 745;
+				this.state = 757;
 				this.match(JustMCFParser.T__14);
-				this.state = 746;
+				this.state = 758;
 				this.nbt();
 				}
 				break;
@@ -3163,31 +3202,31 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 58, JustMCFParser.RULE_dataOperationExpression);
 		let _la: number;
 		try {
-			this.state = 809;
+			this.state = 821;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 72, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 74, this._ctx) ) {
 			case 1:
 				_localctx = new DataGetContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 750;
+				this.state = 762;
 				this.dataIdentifier();
-				this.state = 755;
+				this.state = 767;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.T__11 || _la === JustMCFParser.NUMBER) {
 					{
-					this.state = 752;
+					this.state = 764;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 					if (_la === JustMCFParser.T__11) {
 						{
-						this.state = 751;
+						this.state = 763;
 						this.match(JustMCFParser.T__11);
 						}
 					}
 
-					this.state = 754;
+					this.state = 766;
 					this.match(JustMCFParser.NUMBER);
 					}
 				}
@@ -3199,7 +3238,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataMergeContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 757;
+				this.state = 769;
 				this.dataMergeExpression();
 				}
 				break;
@@ -3208,11 +3247,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataModifyMergeValueContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 758;
+				this.state = 770;
 				this.dataIdentifier();
-				this.state = 759;
+				this.state = 771;
 				this.match(JustMCFParser.T__14);
-				this.state = 760;
+				this.state = 772;
 				this.nbt();
 				}
 				break;
@@ -3221,11 +3260,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataModifyMergeFromContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 762;
+				this.state = 774;
 				this.dataIdentifier();
-				this.state = 763;
+				this.state = 775;
 				this.match(JustMCFParser.T__14);
-				this.state = 764;
+				this.state = 776;
 				this.dataRightValue();
 				}
 				break;
@@ -3234,21 +3273,21 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataModifySetValueContext(_localctx);
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 767;
+				this.state = 779;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 70, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 72, this._ctx) ) {
 				case 1:
 					{
-					this.state = 766;
+					this.state = 778;
 					this.typeName();
 					}
 					break;
 				}
-				this.state = 769;
+				this.state = 781;
 				this.dataIdentifier();
-				this.state = 770;
+				this.state = 782;
 				this.match(JustMCFParser.T__6);
-				this.state = 771;
+				this.state = 783;
 				this.nbt();
 				}
 				break;
@@ -3257,21 +3296,21 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataModifySetFromContext(_localctx);
 				this.enterOuterAlt(_localctx, 6);
 				{
-				this.state = 774;
+				this.state = 786;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 71, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 73, this._ctx) ) {
 				case 1:
 					{
-					this.state = 773;
+					this.state = 785;
 					this.typeName();
 					}
 					break;
 				}
-				this.state = 776;
+				this.state = 788;
 				this.dataIdentifier();
-				this.state = 777;
+				this.state = 789;
 				this.match(JustMCFParser.T__6);
-				this.state = 778;
+				this.state = 790;
 				this.dataRightValue();
 				}
 				break;
@@ -3280,11 +3319,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataModifyAppendValueContext(_localctx);
 				this.enterOuterAlt(_localctx, 7);
 				{
-				this.state = 780;
+				this.state = 792;
 				this.dataIdentifier();
-				this.state = 781;
+				this.state = 793;
 				this.match(JustMCFParser.T__12);
-				this.state = 782;
+				this.state = 794;
 				this.nbt();
 				}
 				break;
@@ -3293,11 +3332,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataModifyAppendFromContext(_localctx);
 				this.enterOuterAlt(_localctx, 8);
 				{
-				this.state = 784;
+				this.state = 796;
 				this.dataIdentifier();
-				this.state = 785;
+				this.state = 797;
 				this.match(JustMCFParser.T__12);
-				this.state = 786;
+				this.state = 798;
 				this.dataRightValue();
 				}
 				break;
@@ -3306,11 +3345,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataModifyPrependValueContext(_localctx);
 				this.enterOuterAlt(_localctx, 9);
 				{
-				this.state = 788;
+				this.state = 800;
 				this.dataIdentifier();
-				this.state = 789;
+				this.state = 801;
 				this.match(JustMCFParser.T__15);
-				this.state = 790;
+				this.state = 802;
 				this.nbt();
 				}
 				break;
@@ -3319,11 +3358,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataModifyPrependFromContext(_localctx);
 				this.enterOuterAlt(_localctx, 10);
 				{
-				this.state = 792;
+				this.state = 804;
 				this.dataIdentifier();
-				this.state = 793;
+				this.state = 805;
 				this.match(JustMCFParser.T__15);
-				this.state = 794;
+				this.state = 806;
 				this.dataRightValue();
 				}
 				break;
@@ -3332,13 +3371,13 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataModifyInsertValueContext(_localctx);
 				this.enterOuterAlt(_localctx, 11);
 				{
-				this.state = 796;
+				this.state = 808;
 				this.dataIdentifier();
-				this.state = 797;
+				this.state = 809;
 				this.match(JustMCFParser.T__12);
-				this.state = 798;
-				this.match(JustMCFParser.NUMBER);
-				this.state = 799;
+				this.state = 810;
+				this.match(JustMCFParser.NUMBER_INT);
+				this.state = 811;
 				this.nbt();
 				}
 				break;
@@ -3347,13 +3386,13 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataModifyInsertFromContext(_localctx);
 				this.enterOuterAlt(_localctx, 12);
 				{
-				this.state = 801;
+				this.state = 813;
 				this.dataIdentifier();
-				this.state = 802;
+				this.state = 814;
 				this.match(JustMCFParser.T__12);
-				this.state = 803;
-				this.match(JustMCFParser.NUMBER);
-				this.state = 804;
+				this.state = 815;
+				this.match(JustMCFParser.NUMBER_INT);
+				this.state = 816;
 				this.dataRightValue();
 				}
 				break;
@@ -3362,9 +3401,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new DataRemoveContext(_localctx);
 				this.enterOuterAlt(_localctx, 13);
 				{
-				this.state = 806;
+				this.state = 818;
 				this.dataIdentifier();
-				this.state = 807;
+				this.state = 819;
 				this.match(JustMCFParser.REMOVE);
 				}
 				break;
@@ -3389,13 +3428,13 @@ export class JustMCFParser extends Parser {
 		let _localctx: DataRightValueContext = new DataRightValueContext(this._ctx, this.state);
 		this.enterRule(_localctx, 60, JustMCFParser.RULE_dataRightValue);
 		try {
-			this.state = 813;
+			this.state = 825;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 73, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 75, this._ctx) ) {
 			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 811;
+				this.state = 823;
 				this.dataIdentifier();
 				}
 				break;
@@ -3403,8 +3442,100 @@ export class JustMCFParser extends Parser {
 			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 812;
+				this.state = 824;
 				this.funcImproveRunExpression();
+				}
+				break;
+			}
+		}
+		catch (re) {
+			if (re instanceof RecognitionException) {
+				_localctx.exception = re;
+				this._errHandler.reportError(this, re);
+				this._errHandler.recover(this, re);
+			} else {
+				throw re;
+			}
+		}
+		finally {
+			this.exitRule();
+		}
+		return _localctx;
+	}
+	// @RuleVersion(0)
+	public dataStatement(): DataStatementContext {
+		let _localctx: DataStatementContext = new DataStatementContext(this._ctx, this.state);
+		this.enterRule(_localctx, 62, JustMCFParser.RULE_dataStatement);
+		let _la: number;
+		try {
+			this.state = 851;
+			this._errHandler.sync(this);
+			switch ( this.interpreter.adaptivePredict(this._input, 79, this._ctx) ) {
+			case 1:
+				_localctx = new DataSCompoundContext(_localctx);
+				this.enterOuterAlt(_localctx, 1);
+				{
+				this.state = 827;
+				this.match(JustMCFParser.DATA);
+				this.state = 828;
+				this.match(JustMCFParser.T__4);
+				this.state = 832;
+				this._errHandler.sync(this);
+				_la = this._input.LA(1);
+				while (_la === JustMCFParser.T__4 || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || ((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.Selector - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)) | (1 << (JustMCFParser.AcceptableName - 168)) | (1 << (JustMCFParser.NBTName - 168)))) !== 0)) {
+					{
+					{
+					this.state = 829;
+					this.dataOperationExpression();
+					}
+					}
+					this.state = 834;
+					this._errHandler.sync(this);
+					_la = this._input.LA(1);
+				}
+				this.state = 835;
+				this.match(JustMCFParser.T__5);
+				}
+				break;
+
+			case 2:
+				_localctx = new DataSIdentifierCompoundContext(_localctx);
+				this.enterOuterAlt(_localctx, 2);
+				{
+				this.state = 836;
+				this.match(JustMCFParser.DATA);
+				this.state = 837;
+				this.nameSpaceStorage();
+				this.state = 840;
+				this._errHandler.sync(this);
+				_la = this._input.LA(1);
+				if (_la === JustMCFParser.T__13) {
+					{
+					this.state = 838;
+					this.match(JustMCFParser.T__13);
+					this.state = 839;
+					this.nbtPath();
+					}
+				}
+
+				this.state = 842;
+				this.match(JustMCFParser.T__4);
+				this.state = 846;
+				this._errHandler.sync(this);
+				_la = this._input.LA(1);
+				while (_la === JustMCFParser.T__4 || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || ((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.Selector - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)) | (1 << (JustMCFParser.AcceptableName - 168)) | (1 << (JustMCFParser.NBTName - 168)))) !== 0)) {
+					{
+					{
+					this.state = 843;
+					this.dataOperationExpression();
+					}
+					}
+					this.state = 848;
+					this._errHandler.sync(this);
+					_la = this._input.LA(1);
+				}
+				this.state = 849;
+				this.match(JustMCFParser.T__5);
 				}
 				break;
 			}
@@ -3426,16 +3557,16 @@ export class JustMCFParser extends Parser {
 	// @RuleVersion(0)
 	public scbOperationExpression(): ScbOperationExpressionContext {
 		let _localctx: ScbOperationExpressionContext = new ScbOperationExpressionContext(this._ctx, this.state);
-		this.enterRule(_localctx, 62, JustMCFParser.RULE_scbOperationExpression);
+		this.enterRule(_localctx, 64, JustMCFParser.RULE_scbOperationExpression);
 		try {
-			this.state = 874;
+			this.state = 912;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 74, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 80, this._ctx) ) {
 			case 1:
 				_localctx = new ScbGetContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 815;
+				this.state = 853;
 				this.scbIdentifier();
 				}
 				break;
@@ -3444,12 +3575,12 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbAddContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 816;
+				this.state = 854;
 				this.scbIdentifier();
-				this.state = 817;
+				this.state = 855;
 				this.match(JustMCFParser.T__16);
-				this.state = 818;
-				this.match(JustMCFParser.NUMBER);
+				this.state = 856;
+				this.match(JustMCFParser.NUMBER_INT);
 				}
 				break;
 
@@ -3457,12 +3588,12 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbRemoveContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 820;
+				this.state = 858;
 				this.scbIdentifier();
-				this.state = 821;
+				this.state = 859;
 				this.match(JustMCFParser.T__17);
-				this.state = 822;
-				this.match(JustMCFParser.NUMBER);
+				this.state = 860;
+				this.match(JustMCFParser.NUMBER_INT);
 				}
 				break;
 
@@ -3470,12 +3601,12 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbSetContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 824;
+				this.state = 862;
 				this.scbIdentifier();
-				this.state = 825;
+				this.state = 863;
 				this.match(JustMCFParser.T__6);
-				this.state = 826;
-				this.match(JustMCFParser.NUMBER);
+				this.state = 864;
+				this.match(JustMCFParser.NUMBER_INT);
 				}
 				break;
 
@@ -3483,11 +3614,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbOptAddAssignContext(_localctx);
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 828;
+				this.state = 866;
 				this.scbIdentifier();
-				this.state = 829;
+				this.state = 867;
 				this.match(JustMCFParser.T__16);
-				this.state = 830;
+				this.state = 868;
 				this.scbIdentifier();
 				}
 				break;
@@ -3496,11 +3627,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbOptSubAssignContext(_localctx);
 				this.enterOuterAlt(_localctx, 6);
 				{
-				this.state = 832;
+				this.state = 870;
 				this.scbIdentifier();
-				this.state = 833;
+				this.state = 871;
 				this.match(JustMCFParser.T__17);
-				this.state = 834;
+				this.state = 872;
 				this.scbIdentifier();
 				}
 				break;
@@ -3509,11 +3640,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbOptMulAssignContext(_localctx);
 				this.enterOuterAlt(_localctx, 7);
 				{
-				this.state = 836;
+				this.state = 874;
 				this.scbIdentifier();
-				this.state = 837;
+				this.state = 875;
 				this.match(JustMCFParser.T__18);
-				this.state = 838;
+				this.state = 876;
 				this.scbIdentifier();
 				}
 				break;
@@ -3522,11 +3653,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbOptDivAssignContext(_localctx);
 				this.enterOuterAlt(_localctx, 8);
 				{
-				this.state = 840;
+				this.state = 878;
 				this.scbIdentifier();
-				this.state = 841;
+				this.state = 879;
 				this.match(JustMCFParser.T__19);
-				this.state = 842;
+				this.state = 880;
 				this.scbIdentifier();
 				}
 				break;
@@ -3535,11 +3666,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbOptModAssignContext(_localctx);
 				this.enterOuterAlt(_localctx, 9);
 				{
-				this.state = 844;
+				this.state = 882;
 				this.scbIdentifier();
-				this.state = 845;
+				this.state = 883;
 				this.match(JustMCFParser.T__20);
-				this.state = 846;
+				this.state = 884;
 				this.scbIdentifier();
 				}
 				break;
@@ -3548,11 +3679,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbOptExcFuncContext(_localctx);
 				this.enterOuterAlt(_localctx, 10);
 				{
-				this.state = 848;
+				this.state = 886;
 				this.scbIdentifier();
-				this.state = 849;
+				this.state = 887;
 				this.match(JustMCFParser.T__21);
-				this.state = 850;
+				this.state = 888;
 				this.scbIdentifier();
 				}
 				break;
@@ -3561,11 +3692,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbOptMinFuncContext(_localctx);
 				this.enterOuterAlt(_localctx, 11);
 				{
-				this.state = 852;
+				this.state = 890;
 				this.scbIdentifier();
-				this.state = 853;
+				this.state = 891;
 				this.match(JustMCFParser.T__22);
-				this.state = 854;
+				this.state = 892;
 				this.scbIdentifier();
 				}
 				break;
@@ -3574,11 +3705,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbOptMaxFuncContext(_localctx);
 				this.enterOuterAlt(_localctx, 12);
 				{
-				this.state = 856;
+				this.state = 894;
 				this.scbIdentifier();
-				this.state = 857;
+				this.state = 895;
 				this.match(JustMCFParser.T__23);
-				this.state = 858;
+				this.state = 896;
 				this.scbIdentifier();
 				}
 				break;
@@ -3587,11 +3718,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbOptAssignContext(_localctx);
 				this.enterOuterAlt(_localctx, 13);
 				{
-				this.state = 860;
+				this.state = 898;
 				this.scbIdentifier();
-				this.state = 861;
+				this.state = 899;
 				this.match(JustMCFParser.T__6);
-				this.state = 862;
+				this.state = 900;
 				this.scbIdentifier();
 				}
 				break;
@@ -3600,9 +3731,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbResetContext(_localctx);
 				this.enterOuterAlt(_localctx, 14);
 				{
-				this.state = 864;
+				this.state = 902;
 				this.scbIdentifier();
-				this.state = 865;
+				this.state = 903;
 				this.match(JustMCFParser.RESET);
 				}
 				break;
@@ -3611,9 +3742,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbEnableContext(_localctx);
 				this.enterOuterAlt(_localctx, 15);
 				{
-				this.state = 867;
+				this.state = 905;
 				this.scbIdentifier();
-				this.state = 868;
+				this.state = 906;
 				this.match(JustMCFParser.ENABLE);
 				}
 				break;
@@ -3622,11 +3753,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbOptExpressionContext(_localctx);
 				this.enterOuterAlt(_localctx, 16);
 				{
-				this.state = 870;
+				this.state = 908;
 				this.scbIdentifier();
-				this.state = 871;
+				this.state = 909;
 				this.match(JustMCFParser.T__24);
-				this.state = 872;
+				this.state = 910;
 				this.scbSingleOperationExpression(0);
 				}
 				break;
@@ -3659,24 +3790,24 @@ export class JustMCFParser extends Parser {
 		let _parentState: number = this.state;
 		let _localctx: ScbSingleOperationExpressionContext = new ScbSingleOperationExpressionContext(this._ctx, _parentState);
 		let _prevctx: ScbSingleOperationExpressionContext = _localctx;
-		let _startState: number = 64;
-		this.enterRecursionRule(_localctx, 64, JustMCFParser.RULE_scbSingleOperationExpression, _p);
+		let _startState: number = 66;
+		this.enterRecursionRule(_localctx, 66, JustMCFParser.RULE_scbSingleOperationExpression, _p);
 		let _la: number;
 		try {
 			let _alt: number;
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 883;
+			this.state = 921;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
-			case JustMCFParser.NUMBER:
+			case JustMCFParser.NUMBER_INT:
 				{
 				_localctx = new ScbTempNumberExpressionContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
 
-				this.state = 877;
-				this.match(JustMCFParser.NUMBER);
+				this.state = 915;
+				this.match(JustMCFParser.NUMBER_INT);
 				}
 				break;
 			case JustMCFParser.T__32:
@@ -3795,7 +3926,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbIdExpressionContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
-				this.state = 878;
+				this.state = 916;
 				this.scbIdentifier();
 				}
 				break;
@@ -3804,11 +3935,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbParenExpressionContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
-				this.state = 879;
+				this.state = 917;
 				this.match(JustMCFParser.T__7);
-				this.state = 880;
+				this.state = 918;
 				this.scbSingleOperationExpression(0);
-				this.state = 881;
+				this.state = 919;
 				this.match(JustMCFParser.T__8);
 				}
 				break;
@@ -3816,9 +3947,9 @@ export class JustMCFParser extends Parser {
 				throw new NoViableAltException(this);
 			}
 			this._ctx._stop = this._input.tryLT(-1);
-			this.state = 896;
+			this.state = 934;
 			this._errHandler.sync(this);
-			_alt = this.interpreter.adaptivePredict(this._input, 77, this._ctx);
+			_alt = this.interpreter.adaptivePredict(this._input, 83, this._ctx);
 			while (_alt !== 2 && _alt !== ATN.INVALID_ALT_NUMBER) {
 				if (_alt === 1) {
 					if (this._parseListeners != null) {
@@ -3826,18 +3957,18 @@ export class JustMCFParser extends Parser {
 					}
 					_prevctx = _localctx;
 					{
-					this.state = 894;
+					this.state = 932;
 					this._errHandler.sync(this);
-					switch ( this.interpreter.adaptivePredict(this._input, 76, this._ctx) ) {
+					switch ( this.interpreter.adaptivePredict(this._input, 82, this._ctx) ) {
 					case 1:
 						{
 						_localctx = new ScbFuncExpressionContext(new ScbSingleOperationExpressionContext(_parentctx, _parentState));
 						this.pushNewRecursionContext(_localctx, _startState, JustMCFParser.RULE_scbSingleOperationExpression);
-						this.state = 885;
+						this.state = 923;
 						if (!(this.precpred(this._ctx, 6))) {
 							throw this.createFailedPredicateException("this.precpred(this._ctx, 6)");
 						}
-						this.state = 886;
+						this.state = 924;
 						(_localctx as ScbFuncExpressionContext)._op = this._input.LT(1);
 						_la = this._input.LA(1);
 						if (!(_la === JustMCFParser.T__22 || _la === JustMCFParser.T__23)) {
@@ -3850,7 +3981,7 @@ export class JustMCFParser extends Parser {
 							this._errHandler.reportMatch(this);
 							this.consume();
 						}
-						this.state = 887;
+						this.state = 925;
 						this.scbSingleOperationExpression(7);
 						}
 						break;
@@ -3859,11 +3990,11 @@ export class JustMCFParser extends Parser {
 						{
 						_localctx = new ScbOptMulDivModExpressionContext(new ScbSingleOperationExpressionContext(_parentctx, _parentState));
 						this.pushNewRecursionContext(_localctx, _startState, JustMCFParser.RULE_scbSingleOperationExpression);
-						this.state = 888;
+						this.state = 926;
 						if (!(this.precpred(this._ctx, 5))) {
 							throw this.createFailedPredicateException("this.precpred(this._ctx, 5)");
 						}
-						this.state = 889;
+						this.state = 927;
 						(_localctx as ScbOptMulDivModExpressionContext)._op = this._input.LT(1);
 						_la = this._input.LA(1);
 						if (!((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << JustMCFParser.T__11) | (1 << JustMCFParser.T__25) | (1 << JustMCFParser.T__26))) !== 0))) {
@@ -3876,7 +4007,7 @@ export class JustMCFParser extends Parser {
 							this._errHandler.reportMatch(this);
 							this.consume();
 						}
-						this.state = 890;
+						this.state = 928;
 						this.scbSingleOperationExpression(6);
 						}
 						break;
@@ -3885,11 +4016,11 @@ export class JustMCFParser extends Parser {
 						{
 						_localctx = new ScbOptAddSubExpressionContext(new ScbSingleOperationExpressionContext(_parentctx, _parentState));
 						this.pushNewRecursionContext(_localctx, _startState, JustMCFParser.RULE_scbSingleOperationExpression);
-						this.state = 891;
+						this.state = 929;
 						if (!(this.precpred(this._ctx, 4))) {
 							throw this.createFailedPredicateException("this.precpred(this._ctx, 4)");
 						}
-						this.state = 892;
+						this.state = 930;
 						(_localctx as ScbOptAddSubExpressionContext)._op = this._input.LT(1);
 						_la = this._input.LA(1);
 						if (!(_la === JustMCFParser.T__27 || _la === JustMCFParser.T__28)) {
@@ -3902,16 +4033,16 @@ export class JustMCFParser extends Parser {
 							this._errHandler.reportMatch(this);
 							this.consume();
 						}
-						this.state = 893;
+						this.state = 931;
 						this.scbSingleOperationExpression(5);
 						}
 						break;
 					}
 					}
 				}
-				this.state = 898;
+				this.state = 936;
 				this._errHandler.sync(this);
-				_alt = this.interpreter.adaptivePredict(this._input, 77, this._ctx);
+				_alt = this.interpreter.adaptivePredict(this._input, 83, this._ctx);
 			}
 			}
 		}
@@ -3932,9 +4063,9 @@ export class JustMCFParser extends Parser {
 	// @RuleVersion(0)
 	public scbIdentifier(): ScbIdentifierContext {
 		let _localctx: ScbIdentifierContext = new ScbIdentifierContext(this._ctx, this.state);
-		this.enterRule(_localctx, 66, JustMCFParser.RULE_scbIdentifier);
+		this.enterRule(_localctx, 68, JustMCFParser.RULE_scbIdentifier);
 		try {
-			this.state = 906;
+			this.state = 944;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
 			case JustMCFParser.NAMSP:
@@ -4048,9 +4179,9 @@ export class JustMCFParser extends Parser {
 			case JustMCFParser.NBTName:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 899;
+				this.state = 937;
 				this.nbtName();
-				this.state = 900;
+				this.state = 938;
 				this.selector();
 				}
 				break;
@@ -4059,108 +4190,16 @@ export class JustMCFParser extends Parser {
 			case JustMCFParser.Selector:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 902;
+				this.state = 940;
 				this.selector();
-				this.state = 903;
+				this.state = 941;
 				this.match(JustMCFParser.T__29);
-				this.state = 904;
+				this.state = 942;
 				this.nbtName();
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
-			}
-		}
-		catch (re) {
-			if (re instanceof RecognitionException) {
-				_localctx.exception = re;
-				this._errHandler.reportError(this, re);
-				this._errHandler.recover(this, re);
-			} else {
-				throw re;
-			}
-		}
-		finally {
-			this.exitRule();
-		}
-		return _localctx;
-	}
-	// @RuleVersion(0)
-	public dataStatement(): DataStatementContext {
-		let _localctx: DataStatementContext = new DataStatementContext(this._ctx, this.state);
-		this.enterRule(_localctx, 68, JustMCFParser.RULE_dataStatement);
-		let _la: number;
-		try {
-			this.state = 932;
-			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 82, this._ctx) ) {
-			case 1:
-				_localctx = new DataSCompoundContext(_localctx);
-				this.enterOuterAlt(_localctx, 1);
-				{
-				this.state = 908;
-				this.match(JustMCFParser.DATA);
-				this.state = 909;
-				this.match(JustMCFParser.T__4);
-				this.state = 913;
-				this._errHandler.sync(this);
-				_la = this._input.LA(1);
-				while (((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || ((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.Selector - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)) | (1 << (JustMCFParser.AcceptableName - 167)))) !== 0)) {
-					{
-					{
-					this.state = 910;
-					this.dataOperationExpression();
-					}
-					}
-					this.state = 915;
-					this._errHandler.sync(this);
-					_la = this._input.LA(1);
-				}
-				this.state = 916;
-				this.match(JustMCFParser.T__5);
-				}
-				break;
-
-			case 2:
-				_localctx = new DataSIdentifierCompoundContext(_localctx);
-				this.enterOuterAlt(_localctx, 2);
-				{
-				this.state = 917;
-				this.match(JustMCFParser.DATA);
-				this.state = 918;
-				this.nameSpaceStorage();
-				this.state = 921;
-				this._errHandler.sync(this);
-				_la = this._input.LA(1);
-				if (_la === JustMCFParser.T__13) {
-					{
-					this.state = 919;
-					this.match(JustMCFParser.T__13);
-					this.state = 920;
-					this.acceptableName();
-					}
-				}
-
-				this.state = 923;
-				this.match(JustMCFParser.T__4);
-				this.state = 927;
-				this._errHandler.sync(this);
-				_la = this._input.LA(1);
-				while (((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || ((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.Selector - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)) | (1 << (JustMCFParser.AcceptableName - 167)))) !== 0)) {
-					{
-					{
-					this.state = 924;
-					this.dataOperationExpression();
-					}
-					}
-					this.state = 929;
-					this._errHandler.sync(this);
-					_la = this._input.LA(1);
-				}
-				this.state = 930;
-				this.match(JustMCFParser.T__5);
-				}
-				break;
 			}
 		}
 		catch (re) {
@@ -4185,25 +4224,25 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 934;
+			this.state = 946;
 			this.match(JustMCFParser.SCB);
-			this.state = 935;
+			this.state = 947;
 			this.match(JustMCFParser.T__4);
-			this.state = 939;
+			this.state = 951;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			while (_la === JustMCFParser.T__32 || _la === JustMCFParser.T__51 || ((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.Selector - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)) | (1 << (JustMCFParser.AcceptableName - 167)) | (1 << (JustMCFParser.NBTName - 167)))) !== 0)) {
+			while (_la === JustMCFParser.T__32 || _la === JustMCFParser.T__51 || ((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.Selector - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)) | (1 << (JustMCFParser.AcceptableName - 168)) | (1 << (JustMCFParser.NBTName - 168)))) !== 0)) {
 				{
 				{
-				this.state = 936;
+				this.state = 948;
 				this.scbPlayerStatementInner();
 				}
 				}
-				this.state = 941;
+				this.state = 953;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
-			this.state = 942;
+			this.state = 954;
 			this.match(JustMCFParser.T__5);
 			}
 		}
@@ -4227,14 +4266,14 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 72, JustMCFParser.RULE_scbPlayerStatementInner);
 		let _la: number;
 		try {
-			this.state = 949;
+			this.state = 961;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 85, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 87, this._ctx) ) {
 			case 1:
 				_localctx = new ScbPlayerSIScbOperationExpressionContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 944;
+				this.state = 956;
 				this.scbOperationExpression();
 				}
 				break;
@@ -4243,17 +4282,17 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbPlayerSIScbListContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 946;
+				this.state = 958;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.T__32 || _la === JustMCFParser.T__51 || _la === JustMCFParser.Selector) {
 					{
-					this.state = 945;
+					this.state = 957;
 					this.selector();
 					}
 				}
 
-				this.state = 948;
+				this.state = 960;
 				this.match(JustMCFParser.LIST);
 				}
 				break;
@@ -4279,65 +4318,65 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 74, JustMCFParser.RULE_scbObjectiveStatement);
 		let _la: number;
 		try {
-			this.state = 1015;
+			this.state = 1027;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 96, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 98, this._ctx) ) {
 			case 1:
 				_localctx = new ScbObjSDeclareWithNameContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 951;
+				this.state = 963;
 				this.match(JustMCFParser.SCB);
-				this.state = 956;
+				this.state = 968;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.T__7) {
 					{
-					this.state = 952;
+					this.state = 964;
 					this.match(JustMCFParser.T__7);
-					this.state = 953;
+					this.state = 965;
 					this.criterion();
-					this.state = 954;
+					this.state = 966;
 					this.match(JustMCFParser.T__8);
 					}
 				}
 
-				this.state = 958;
+				this.state = 970;
 				this.acceptableName();
-				this.state = 959;
-				(_localctx as ScbObjSDeclareWithNameContext)._display = this.json();
 				this.state = 971;
+				(_localctx as ScbObjSDeclareWithNameContext)._display = this.json();
+				this.state = 983;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 89, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 91, this._ctx) ) {
 				case 1:
 					{
-					this.state = 960;
+					this.state = 972;
 					this.match(JustMCFParser.T__4);
-					this.state = 967;
+					this.state = 979;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
-					while (_la === JustMCFParser.T__30 || ((((_la - 100)) & ~0x1F) === 0 && ((1 << (_la - 100)) & ((1 << (JustMCFParser.DISPLAYNAME - 100)) | (1 << (JustMCFParser.RENDERTYPE - 100)) | (1 << (JustMCFParser.DISPLAY - 100)) | (1 << (JustMCFParser.REMOVE - 100)))) !== 0)) {
+					while (_la === JustMCFParser.T__30 || ((((_la - 101)) & ~0x1F) === 0 && ((1 << (_la - 101)) & ((1 << (JustMCFParser.DISPLAYNAME - 101)) | (1 << (JustMCFParser.RENDERTYPE - 101)) | (1 << (JustMCFParser.DISPLAY - 101)) | (1 << (JustMCFParser.REMOVE - 101)))) !== 0)) {
 						{
 						{
-						this.state = 962;
+						this.state = 974;
 						this._errHandler.sync(this);
 						_la = this._input.LA(1);
 						if (_la === JustMCFParser.T__30) {
 							{
-							this.state = 961;
+							this.state = 973;
 							this.match(JustMCFParser.T__30);
 							}
 						}
 
-						this.state = 964;
+						this.state = 976;
 						this.scbStatementInner();
 						}
 						}
-						this.state = 969;
+						this.state = 981;
 						this._errHandler.sync(this);
 						_la = this._input.LA(1);
 					}
-					this.state = 970;
+					this.state = 982;
 					this.match(JustMCFParser.T__5);
 					}
 					break;
@@ -4349,15 +4388,15 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbObjSDeclareSingleContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 973;
+				this.state = 985;
 				this.match(JustMCFParser.SCB);
-				this.state = 974;
+				this.state = 986;
 				this.match(JustMCFParser.T__7);
-				this.state = 975;
+				this.state = 987;
 				this.criterion();
-				this.state = 976;
+				this.state = 988;
 				this.match(JustMCFParser.T__8);
-				this.state = 977;
+				this.state = 989;
 				this.acceptableName();
 				}
 				break;
@@ -4366,58 +4405,58 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbObjSDeclareDefaultContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 979;
+				this.state = 991;
 				this.match(JustMCFParser.SCB);
-				this.state = 984;
+				this.state = 996;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.T__7) {
 					{
-					this.state = 980;
+					this.state = 992;
 					this.match(JustMCFParser.T__7);
-					this.state = 981;
+					this.state = 993;
 					this.criterion();
-					this.state = 982;
+					this.state = 994;
 					this.match(JustMCFParser.T__8);
 					}
 				}
 
-				this.state = 986;
+				this.state = 998;
 				this.acceptableName();
-				this.state = 987;
-				this.match(JustMCFParser.DEFAULT);
 				this.state = 999;
+				this.match(JustMCFParser.DEFAULT);
+				this.state = 1011;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 93, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 95, this._ctx) ) {
 				case 1:
 					{
-					this.state = 988;
+					this.state = 1000;
 					this.match(JustMCFParser.T__4);
-					this.state = 995;
+					this.state = 1007;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
-					while (_la === JustMCFParser.T__30 || ((((_la - 100)) & ~0x1F) === 0 && ((1 << (_la - 100)) & ((1 << (JustMCFParser.DISPLAYNAME - 100)) | (1 << (JustMCFParser.RENDERTYPE - 100)) | (1 << (JustMCFParser.DISPLAY - 100)) | (1 << (JustMCFParser.REMOVE - 100)))) !== 0)) {
+					while (_la === JustMCFParser.T__30 || ((((_la - 101)) & ~0x1F) === 0 && ((1 << (_la - 101)) & ((1 << (JustMCFParser.DISPLAYNAME - 101)) | (1 << (JustMCFParser.RENDERTYPE - 101)) | (1 << (JustMCFParser.DISPLAY - 101)) | (1 << (JustMCFParser.REMOVE - 101)))) !== 0)) {
 						{
 						{
-						this.state = 990;
+						this.state = 1002;
 						this._errHandler.sync(this);
 						_la = this._input.LA(1);
 						if (_la === JustMCFParser.T__30) {
 							{
-							this.state = 989;
+							this.state = 1001;
 							this.match(JustMCFParser.T__30);
 							}
 						}
 
-						this.state = 992;
+						this.state = 1004;
 						this.scbStatementInner();
 						}
 						}
-						this.state = 997;
+						this.state = 1009;
 						this._errHandler.sync(this);
 						_la = this._input.LA(1);
 					}
-					this.state = 998;
+					this.state = 1010;
 					this.match(JustMCFParser.T__5);
 					}
 					break;
@@ -4429,37 +4468,37 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbObjSOperationContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1001;
+				this.state = 1013;
 				this.match(JustMCFParser.SCB);
-				this.state = 1002;
+				this.state = 1014;
 				this.acceptableName();
-				this.state = 1003;
+				this.state = 1015;
 				this.match(JustMCFParser.T__4);
-				this.state = 1010;
+				this.state = 1022;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === JustMCFParser.T__30 || ((((_la - 100)) & ~0x1F) === 0 && ((1 << (_la - 100)) & ((1 << (JustMCFParser.DISPLAYNAME - 100)) | (1 << (JustMCFParser.RENDERTYPE - 100)) | (1 << (JustMCFParser.DISPLAY - 100)) | (1 << (JustMCFParser.REMOVE - 100)))) !== 0)) {
+				while (_la === JustMCFParser.T__30 || ((((_la - 101)) & ~0x1F) === 0 && ((1 << (_la - 101)) & ((1 << (JustMCFParser.DISPLAYNAME - 101)) | (1 << (JustMCFParser.RENDERTYPE - 101)) | (1 << (JustMCFParser.DISPLAY - 101)) | (1 << (JustMCFParser.REMOVE - 101)))) !== 0)) {
 					{
 					{
-					this.state = 1005;
+					this.state = 1017;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 					if (_la === JustMCFParser.T__30) {
 						{
-						this.state = 1004;
+						this.state = 1016;
 						this.match(JustMCFParser.T__30);
 						}
 					}
 
-					this.state = 1007;
+					this.state = 1019;
 					this.scbStatementInner();
 					}
 					}
-					this.state = 1012;
+					this.state = 1024;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1013;
+				this.state = 1025;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -4485,14 +4524,14 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 76, JustMCFParser.RULE_scbStatementInner);
 		let _la: number;
 		try {
-			this.state = 1024;
+			this.state = 1036;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
 			case JustMCFParser.REMOVE:
 				_localctx = new ScbSIRemoveContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1017;
+				this.state = 1029;
 				this.match(JustMCFParser.REMOVE);
 				}
 				break;
@@ -4500,9 +4539,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbSIDisplaynameContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1018;
+				this.state = 1030;
 				this.match(JustMCFParser.DISPLAYNAME);
-				this.state = 1019;
+				this.state = 1031;
 				this.json();
 				}
 				break;
@@ -4510,9 +4549,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbSIRendertypeContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1020;
+				this.state = 1032;
 				this.match(JustMCFParser.RENDERTYPE);
-				this.state = 1021;
+				this.state = 1033;
 				(_localctx as ScbSIRendertypeContext)._type = this._input.LT(1);
 				_la = this._input.LA(1);
 				if (!(_la === JustMCFParser.HEARTS || _la === JustMCFParser.INTEGER)) {
@@ -4531,9 +4570,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new ScbSIDisplayContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1022;
+				this.state = 1034;
 				this.match(JustMCFParser.DISPLAY);
-				this.state = 1023;
+				this.state = 1035;
 				this.acceptableName();
 				}
 				break;
@@ -4561,51 +4600,51 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 78, JustMCFParser.RULE_bossbarStatement);
 		let _la: number;
 		try {
-			this.state = 1056;
+			this.state = 1068;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 103, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 105, this._ctx) ) {
 			case 1:
 				_localctx = new BossbarSDeclareContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1026;
+				this.state = 1038;
 				this.match(JustMCFParser.BOSSBAR);
-				this.state = 1027;
+				this.state = 1039;
 				this.nameSpaceBossbar();
-				this.state = 1028;
-				this.json();
 				this.state = 1040;
+				this.json();
+				this.state = 1052;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.T__4) {
 					{
-					this.state = 1029;
+					this.state = 1041;
 					this.match(JustMCFParser.T__4);
-					this.state = 1036;
+					this.state = 1048;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
-					while (_la === JustMCFParser.T__30 || ((((_la - 91)) & ~0x1F) === 0 && ((1 << (_la - 91)) & ((1 << (JustMCFParser.VALUE - 91)) | (1 << (JustMCFParser.MAX - 91)) | (1 << (JustMCFParser.REMOVE - 91)) | (1 << (JustMCFParser.PLAYER - 91)) | (1 << (JustMCFParser.PLAYERS - 91)) | (1 << (JustMCFParser.VISIBLE - 91)))) !== 0) || ((((_la - 126)) & ~0x1F) === 0 && ((1 << (_la - 126)) & ((1 << (JustMCFParser.COLOR - 126)) | (1 << (JustMCFParser.NAME - 126)) | (1 << (JustMCFParser.STYLE - 126)) | (1 << (JustMCFParser.SET - 126)) | (1 << (JustMCFParser.GET - 126)))) !== 0)) {
+					while (_la === JustMCFParser.T__30 || ((((_la - 92)) & ~0x1F) === 0 && ((1 << (_la - 92)) & ((1 << (JustMCFParser.VALUE - 92)) | (1 << (JustMCFParser.MAX - 92)) | (1 << (JustMCFParser.REMOVE - 92)) | (1 << (JustMCFParser.PLAYER - 92)) | (1 << (JustMCFParser.PLAYERS - 92)) | (1 << (JustMCFParser.VISIBLE - 92)))) !== 0) || ((((_la - 127)) & ~0x1F) === 0 && ((1 << (_la - 127)) & ((1 << (JustMCFParser.COLOR - 127)) | (1 << (JustMCFParser.NAME - 127)) | (1 << (JustMCFParser.STYLE - 127)) | (1 << (JustMCFParser.SET - 127)) | (1 << (JustMCFParser.GET - 127)))) !== 0)) {
 						{
 						{
-						this.state = 1031;
+						this.state = 1043;
 						this._errHandler.sync(this);
 						_la = this._input.LA(1);
 						if (_la === JustMCFParser.T__30) {
 							{
-							this.state = 1030;
+							this.state = 1042;
 							this.match(JustMCFParser.T__30);
 							}
 						}
 
-						this.state = 1033;
+						this.state = 1045;
 						this.bossbarStatementInner();
 						}
 						}
-						this.state = 1038;
+						this.state = 1050;
 						this._errHandler.sync(this);
 						_la = this._input.LA(1);
 					}
-					this.state = 1039;
+					this.state = 1051;
 					this.match(JustMCFParser.T__5);
 					}
 				}
@@ -4617,37 +4656,37 @@ export class JustMCFParser extends Parser {
 				_localctx = new BossbarSOperationContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1042;
+				this.state = 1054;
 				this.match(JustMCFParser.BOSSBAR);
-				this.state = 1043;
+				this.state = 1055;
 				this.nameSpaceBossbar();
-				this.state = 1044;
+				this.state = 1056;
 				this.match(JustMCFParser.T__4);
-				this.state = 1051;
+				this.state = 1063;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === JustMCFParser.T__30 || ((((_la - 91)) & ~0x1F) === 0 && ((1 << (_la - 91)) & ((1 << (JustMCFParser.VALUE - 91)) | (1 << (JustMCFParser.MAX - 91)) | (1 << (JustMCFParser.REMOVE - 91)) | (1 << (JustMCFParser.PLAYER - 91)) | (1 << (JustMCFParser.PLAYERS - 91)) | (1 << (JustMCFParser.VISIBLE - 91)))) !== 0) || ((((_la - 126)) & ~0x1F) === 0 && ((1 << (_la - 126)) & ((1 << (JustMCFParser.COLOR - 126)) | (1 << (JustMCFParser.NAME - 126)) | (1 << (JustMCFParser.STYLE - 126)) | (1 << (JustMCFParser.SET - 126)) | (1 << (JustMCFParser.GET - 126)))) !== 0)) {
+				while (_la === JustMCFParser.T__30 || ((((_la - 92)) & ~0x1F) === 0 && ((1 << (_la - 92)) & ((1 << (JustMCFParser.VALUE - 92)) | (1 << (JustMCFParser.MAX - 92)) | (1 << (JustMCFParser.REMOVE - 92)) | (1 << (JustMCFParser.PLAYER - 92)) | (1 << (JustMCFParser.PLAYERS - 92)) | (1 << (JustMCFParser.VISIBLE - 92)))) !== 0) || ((((_la - 127)) & ~0x1F) === 0 && ((1 << (_la - 127)) & ((1 << (JustMCFParser.COLOR - 127)) | (1 << (JustMCFParser.NAME - 127)) | (1 << (JustMCFParser.STYLE - 127)) | (1 << (JustMCFParser.SET - 127)) | (1 << (JustMCFParser.GET - 127)))) !== 0)) {
 					{
 					{
-					this.state = 1046;
+					this.state = 1058;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 					if (_la === JustMCFParser.T__30) {
 						{
-						this.state = 1045;
+						this.state = 1057;
 						this.match(JustMCFParser.T__30);
 						}
 					}
 
-					this.state = 1048;
+					this.state = 1060;
 					this.bossbarStatementInner();
 					}
 					}
-					this.state = 1053;
+					this.state = 1065;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1054;
+				this.state = 1066;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -4673,27 +4712,27 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 80, JustMCFParser.RULE_bossbarStatementInner);
 		let _la: number;
 		try {
-			this.state = 1103;
+			this.state = 1115;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 113, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 115, this._ctx) ) {
 			case 1:
 				_localctx = new BossbarSIGetContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1059;
+				this.state = 1071;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.GET) {
 					{
-					this.state = 1058;
+					this.state = 1070;
 					this.match(JustMCFParser.GET);
 					}
 				}
 
-				this.state = 1061;
+				this.state = 1073;
 				(_localctx as BossbarSIGetContext)._type = this._input.LT(1);
 				_la = this._input.LA(1);
-				if (!(((((_la - 91)) & ~0x1F) === 0 && ((1 << (_la - 91)) & ((1 << (JustMCFParser.VALUE - 91)) | (1 << (JustMCFParser.MAX - 91)) | (1 << (JustMCFParser.PLAYER - 91)) | (1 << (JustMCFParser.VISIBLE - 91)))) !== 0))) {
+				if (!(((((_la - 92)) & ~0x1F) === 0 && ((1 << (_la - 92)) & ((1 << (JustMCFParser.VALUE - 92)) | (1 << (JustMCFParser.MAX - 92)) | (1 << (JustMCFParser.PLAYER - 92)) | (1 << (JustMCFParser.VISIBLE - 92)))) !== 0))) {
 					(_localctx as BossbarSIGetContext)._type = this._errHandler.recoverInline(this);
 				} else {
 					if (this._input.LA(1) === Token.EOF) {
@@ -4710,7 +4749,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new BossbarSIRemoveContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1062;
+				this.state = 1074;
 				this.match(JustMCFParser.REMOVE);
 				}
 				break;
@@ -4719,22 +4758,22 @@ export class JustMCFParser extends Parser {
 				_localctx = new BossbarSISetColorContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1064;
+				this.state = 1076;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.SET) {
 					{
-					this.state = 1063;
+					this.state = 1075;
 					this.match(JustMCFParser.SET);
 					}
 				}
 
-				this.state = 1066;
+				this.state = 1078;
 				this.match(JustMCFParser.COLOR);
-				this.state = 1067;
+				this.state = 1079;
 				(_localctx as BossbarSISetColorContext)._color = this._input.LT(1);
 				_la = this._input.LA(1);
-				if (!(((((_la - 119)) & ~0x1F) === 0 && ((1 << (_la - 119)) & ((1 << (JustMCFParser.BLUE - 119)) | (1 << (JustMCFParser.GREEN - 119)) | (1 << (JustMCFParser.PINK - 119)) | (1 << (JustMCFParser.PURPLE - 119)) | (1 << (JustMCFParser.RED - 119)) | (1 << (JustMCFParser.WHITE - 119)) | (1 << (JustMCFParser.YELLOW - 119)))) !== 0))) {
+				if (!(((((_la - 120)) & ~0x1F) === 0 && ((1 << (_la - 120)) & ((1 << (JustMCFParser.BLUE - 120)) | (1 << (JustMCFParser.GREEN - 120)) | (1 << (JustMCFParser.PINK - 120)) | (1 << (JustMCFParser.PURPLE - 120)) | (1 << (JustMCFParser.RED - 120)) | (1 << (JustMCFParser.WHITE - 120)) | (1 << (JustMCFParser.YELLOW - 120)))) !== 0))) {
 					(_localctx as BossbarSISetColorContext)._color = this._errHandler.recoverInline(this);
 				} else {
 					if (this._input.LA(1) === Token.EOF) {
@@ -4751,19 +4790,19 @@ export class JustMCFParser extends Parser {
 				_localctx = new BossbarSISetMaxContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1069;
+				this.state = 1081;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.SET) {
 					{
-					this.state = 1068;
+					this.state = 1080;
 					this.match(JustMCFParser.SET);
 					}
 				}
 
-				this.state = 1071;
+				this.state = 1083;
 				this.match(JustMCFParser.MAX);
-				this.state = 1072;
+				this.state = 1084;
 				this.match(JustMCFParser.NUMBER);
 				}
 				break;
@@ -4772,19 +4811,19 @@ export class JustMCFParser extends Parser {
 				_localctx = new BossbarSISetNameContext(_localctx);
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 1074;
+				this.state = 1086;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.SET) {
 					{
-					this.state = 1073;
+					this.state = 1085;
 					this.match(JustMCFParser.SET);
 					}
 				}
 
-				this.state = 1076;
+				this.state = 1088;
 				this.match(JustMCFParser.NAME);
-				this.state = 1077;
+				this.state = 1089;
 				this.json();
 				}
 				break;
@@ -4793,19 +4832,19 @@ export class JustMCFParser extends Parser {
 				_localctx = new BossbarSISetPlayerContext(_localctx);
 				this.enterOuterAlt(_localctx, 6);
 				{
-				this.state = 1079;
+				this.state = 1091;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.SET) {
 					{
-					this.state = 1078;
+					this.state = 1090;
 					this.match(JustMCFParser.SET);
 					}
 				}
 
-				this.state = 1081;
+				this.state = 1093;
 				this.match(JustMCFParser.PLAYERS);
-				this.state = 1082;
+				this.state = 1094;
 				this.selector();
 				}
 				break;
@@ -4814,19 +4853,19 @@ export class JustMCFParser extends Parser {
 				_localctx = new BossbarSISetPlayerNullContext(_localctx);
 				this.enterOuterAlt(_localctx, 7);
 				{
-				this.state = 1084;
+				this.state = 1096;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.SET) {
 					{
-					this.state = 1083;
+					this.state = 1095;
 					this.match(JustMCFParser.SET);
 					}
 				}
 
-				this.state = 1086;
+				this.state = 1098;
 				this.match(JustMCFParser.PLAYERS);
-				this.state = 1087;
+				this.state = 1099;
 				this.match(JustMCFParser.DEFAULT);
 				}
 				break;
@@ -4835,22 +4874,22 @@ export class JustMCFParser extends Parser {
 				_localctx = new BossbarSISetStyleContext(_localctx);
 				this.enterOuterAlt(_localctx, 8);
 				{
-				this.state = 1089;
+				this.state = 1101;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.SET) {
 					{
-					this.state = 1088;
+					this.state = 1100;
 					this.match(JustMCFParser.SET);
 					}
 				}
 
-				this.state = 1091;
+				this.state = 1103;
 				this.match(JustMCFParser.STYLE);
-				this.state = 1092;
+				this.state = 1104;
 				(_localctx as BossbarSISetStyleContext)._style = this._input.LT(1);
 				_la = this._input.LA(1);
-				if (!(((((_la - 129)) & ~0x1F) === 0 && ((1 << (_la - 129)) & ((1 << (JustMCFParser.NOTCHED_6 - 129)) | (1 << (JustMCFParser.NOTCHED_10 - 129)) | (1 << (JustMCFParser.NOTCHED_12 - 129)) | (1 << (JustMCFParser.NOTCHED_20 - 129)) | (1 << (JustMCFParser.PROGRESS - 129)))) !== 0))) {
+				if (!(((((_la - 130)) & ~0x1F) === 0 && ((1 << (_la - 130)) & ((1 << (JustMCFParser.NOTCHED_6 - 130)) | (1 << (JustMCFParser.NOTCHED_10 - 130)) | (1 << (JustMCFParser.NOTCHED_12 - 130)) | (1 << (JustMCFParser.NOTCHED_20 - 130)) | (1 << (JustMCFParser.PROGRESS - 130)))) !== 0))) {
 					(_localctx as BossbarSISetStyleContext)._style = this._errHandler.recoverInline(this);
 				} else {
 					if (this._input.LA(1) === Token.EOF) {
@@ -4867,19 +4906,19 @@ export class JustMCFParser extends Parser {
 				_localctx = new BossbarSISetValueContext(_localctx);
 				this.enterOuterAlt(_localctx, 9);
 				{
-				this.state = 1094;
+				this.state = 1106;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.SET) {
 					{
-					this.state = 1093;
+					this.state = 1105;
 					this.match(JustMCFParser.SET);
 					}
 				}
 
-				this.state = 1096;
+				this.state = 1108;
 				this.match(JustMCFParser.VALUE);
-				this.state = 1097;
+				this.state = 1109;
 				this.match(JustMCFParser.NUMBER);
 				}
 				break;
@@ -4888,19 +4927,19 @@ export class JustMCFParser extends Parser {
 				_localctx = new BossbarSISetVisibleContext(_localctx);
 				this.enterOuterAlt(_localctx, 10);
 				{
-				this.state = 1099;
+				this.state = 1111;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.SET) {
 					{
-					this.state = 1098;
+					this.state = 1110;
 					this.match(JustMCFParser.SET);
 					}
 				}
 
-				this.state = 1101;
+				this.state = 1113;
 				this.match(JustMCFParser.VISIBLE);
-				this.state = 1102;
+				this.state = 1114;
 				this.boolValue();
 				}
 				break;
@@ -4926,26 +4965,26 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 82, JustMCFParser.RULE_bossbarOperationExpression);
 		let _la: number;
 		try {
-			this.state = 1124;
+			this.state = 1136;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 116, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 118, this._ctx) ) {
 			case 1:
 				_localctx = new BossbarOpExprGetContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1105;
+				this.state = 1117;
 				this.match(JustMCFParser.BOSSBAR);
-				this.state = 1106;
+				this.state = 1118;
 				this.nameSpaceBossbar();
-				this.state = 1108;
+				this.state = 1120;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 114, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 116, this._ctx) ) {
 				case 1:
 					{
-					this.state = 1107;
+					this.state = 1119;
 					(_localctx as BossbarOpExprGetContext)._type = this._input.LT(1);
 					_la = this._input.LA(1);
-					if (!(((((_la - 91)) & ~0x1F) === 0 && ((1 << (_la - 91)) & ((1 << (JustMCFParser.VALUE - 91)) | (1 << (JustMCFParser.MAX - 91)) | (1 << (JustMCFParser.PLAYER - 91)) | (1 << (JustMCFParser.VISIBLE - 91)))) !== 0))) {
+					if (!(((((_la - 92)) & ~0x1F) === 0 && ((1 << (_la - 92)) & ((1 << (JustMCFParser.VALUE - 92)) | (1 << (JustMCFParser.MAX - 92)) | (1 << (JustMCFParser.PLAYER - 92)) | (1 << (JustMCFParser.VISIBLE - 92)))) !== 0))) {
 						(_localctx as BossbarOpExprGetContext)._type = this._errHandler.recoverInline(this);
 					} else {
 						if (this._input.LA(1) === Token.EOF) {
@@ -4965,23 +5004,23 @@ export class JustMCFParser extends Parser {
 				_localctx = new BossbarOpExprAssignValueContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1110;
+				this.state = 1122;
 				this.match(JustMCFParser.BOSSBAR);
-				this.state = 1111;
+				this.state = 1123;
 				this.nameSpaceBossbar();
-				this.state = 1113;
+				this.state = 1125;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.VALUE) {
 					{
-					this.state = 1112;
+					this.state = 1124;
 					this.match(JustMCFParser.VALUE);
 					}
 				}
 
-				this.state = 1115;
+				this.state = 1127;
 				this.match(JustMCFParser.T__6);
-				this.state = 1116;
+				this.state = 1128;
 				this.match(JustMCFParser.NUMBER);
 				}
 				break;
@@ -4990,15 +5029,15 @@ export class JustMCFParser extends Parser {
 				_localctx = new BossbarOpExprAssignMaxContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1118;
+				this.state = 1130;
 				this.match(JustMCFParser.BOSSBAR);
-				this.state = 1119;
+				this.state = 1131;
 				this.nameSpaceBossbar();
-				this.state = 1120;
+				this.state = 1132;
 				this.match(JustMCFParser.MAX);
-				this.state = 1121;
+				this.state = 1133;
 				this.match(JustMCFParser.T__6);
-				this.state = 1122;
+				this.state = 1134;
 				this.match(JustMCFParser.NUMBER);
 				}
 				break;
@@ -5024,32 +5063,32 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 84, JustMCFParser.RULE_titleStatement);
 		let _la: number;
 		try {
-			this.state = 1149;
+			this.state = 1161;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 120, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 122, this._ctx) ) {
 			case 1:
 				_localctx = new TitleSCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1126;
+				this.state = 1138;
 				this.match(JustMCFParser.TITLE);
-				this.state = 1127;
+				this.state = 1139;
 				this.match(JustMCFParser.T__4);
-				this.state = 1131;
+				this.state = 1143;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (_la === JustMCFParser.T__32 || _la === JustMCFParser.T__51 || _la === JustMCFParser.Selector) {
 					{
 					{
-					this.state = 1128;
+					this.state = 1140;
 					this.titleStatementInner();
 					}
 					}
-					this.state = 1133;
+					this.state = 1145;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1134;
+				this.state = 1146;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -5058,37 +5097,37 @@ export class JustMCFParser extends Parser {
 				_localctx = new TitleSSelectorCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1135;
+				this.state = 1147;
 				this.match(JustMCFParser.TITLE);
-				this.state = 1136;
+				this.state = 1148;
 				this.selector();
-				this.state = 1137;
+				this.state = 1149;
 				this.match(JustMCFParser.T__4);
-				this.state = 1144;
+				this.state = 1156;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === JustMCFParser.T__30 || ((((_la - 109)) & ~0x1F) === 0 && ((1 << (_la - 109)) & ((1 << (JustMCFParser.RESET - 109)) | (1 << (JustMCFParser.TITLE - 109)) | (1 << (JustMCFParser.SUBTITLE - 109)) | (1 << (JustMCFParser.ACTIONBAR - 109)) | (1 << (JustMCFParser.TIMES - 109)))) !== 0) || _la === JustMCFParser.CLEAR) {
+				while (_la === JustMCFParser.T__30 || ((((_la - 110)) & ~0x1F) === 0 && ((1 << (_la - 110)) & ((1 << (JustMCFParser.RESET - 110)) | (1 << (JustMCFParser.TITLE - 110)) | (1 << (JustMCFParser.SUBTITLE - 110)) | (1 << (JustMCFParser.ACTIONBAR - 110)) | (1 << (JustMCFParser.TIMES - 110)))) !== 0) || _la === JustMCFParser.CLEAR) {
 					{
 					{
-					this.state = 1139;
+					this.state = 1151;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 					if (_la === JustMCFParser.T__30) {
 						{
-						this.state = 1138;
+						this.state = 1150;
 						this.match(JustMCFParser.T__30);
 						}
 					}
 
-					this.state = 1141;
+					this.state = 1153;
 					this.titleSelectorStatementInner();
 					}
 					}
-					this.state = 1146;
+					this.state = 1158;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1147;
+				this.state = 1159;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -5114,18 +5153,18 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 86, JustMCFParser.RULE_titleStatementInner);
 		let _la: number;
 		try {
-			this.state = 1168;
+			this.state = 1180;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 123, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 125, this._ctx) ) {
 			case 1:
 				_localctx = new TitleSISelectorSingleContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1151;
+				this.state = 1163;
 				this.selector();
-				this.state = 1152;
+				this.state = 1164;
 				this.match(JustMCFParser.T__30);
-				this.state = 1153;
+				this.state = 1165;
 				this.titleIndependentStatementInner();
 				}
 				break;
@@ -5134,35 +5173,35 @@ export class JustMCFParser extends Parser {
 				_localctx = new TitleSISelectorCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1155;
+				this.state = 1167;
 				this.selector();
-				this.state = 1156;
+				this.state = 1168;
 				this.match(JustMCFParser.T__4);
-				this.state = 1163;
+				this.state = 1175;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === JustMCFParser.T__30 || ((((_la - 109)) & ~0x1F) === 0 && ((1 << (_la - 109)) & ((1 << (JustMCFParser.RESET - 109)) | (1 << (JustMCFParser.TITLE - 109)) | (1 << (JustMCFParser.SUBTITLE - 109)) | (1 << (JustMCFParser.ACTIONBAR - 109)) | (1 << (JustMCFParser.TIMES - 109)))) !== 0) || _la === JustMCFParser.CLEAR) {
+				while (_la === JustMCFParser.T__30 || ((((_la - 110)) & ~0x1F) === 0 && ((1 << (_la - 110)) & ((1 << (JustMCFParser.RESET - 110)) | (1 << (JustMCFParser.TITLE - 110)) | (1 << (JustMCFParser.SUBTITLE - 110)) | (1 << (JustMCFParser.ACTIONBAR - 110)) | (1 << (JustMCFParser.TIMES - 110)))) !== 0) || _la === JustMCFParser.CLEAR) {
 					{
 					{
-					this.state = 1158;
+					this.state = 1170;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 					if (_la === JustMCFParser.T__30) {
 						{
-						this.state = 1157;
+						this.state = 1169;
 						this.match(JustMCFParser.T__30);
 						}
 					}
 
-					this.state = 1160;
+					this.state = 1172;
 					this.titleSelectorStatementInner();
 					}
 					}
-					this.state = 1165;
+					this.state = 1177;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1166;
+				this.state = 1178;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -5188,7 +5227,7 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 88, JustMCFParser.RULE_titleSelectorStatementInner);
 		let _la: number;
 		try {
-			this.state = 1178;
+			this.state = 1190;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
 			case JustMCFParser.TITLE:
@@ -5197,10 +5236,10 @@ export class JustMCFParser extends Parser {
 				_localctx = new TitleSSIJsonContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1170;
+				this.state = 1182;
 				(_localctx as TitleSSIJsonContext)._pos = this._input.LT(1);
 				_la = this._input.LA(1);
-				if (!(((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)))) !== 0))) {
+				if (!(((((_la - 136)) & ~0x1F) === 0 && ((1 << (_la - 136)) & ((1 << (JustMCFParser.TITLE - 136)) | (1 << (JustMCFParser.SUBTITLE - 136)) | (1 << (JustMCFParser.ACTIONBAR - 136)))) !== 0))) {
 					(_localctx as TitleSSIJsonContext)._pos = this._errHandler.recoverInline(this);
 				} else {
 					if (this._input.LA(1) === Token.EOF) {
@@ -5210,7 +5249,7 @@ export class JustMCFParser extends Parser {
 					this._errHandler.reportMatch(this);
 					this.consume();
 				}
-				this.state = 1171;
+				this.state = 1183;
 				this.json();
 				}
 				break;
@@ -5218,7 +5257,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new TitleSSIClearContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1172;
+				this.state = 1184;
 				this.match(JustMCFParser.CLEAR);
 				}
 				break;
@@ -5226,7 +5265,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new TitleSSIResetContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1173;
+				this.state = 1185;
 				this.match(JustMCFParser.RESET);
 				}
 				break;
@@ -5234,13 +5273,13 @@ export class JustMCFParser extends Parser {
 				_localctx = new TitleSSITimesContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1174;
+				this.state = 1186;
 				this.match(JustMCFParser.TIMES);
-				this.state = 1175;
+				this.state = 1187;
 				this.match(JustMCFParser.NUMBER);
-				this.state = 1176;
+				this.state = 1188;
 				this.match(JustMCFParser.NUMBER);
-				this.state = 1177;
+				this.state = 1189;
 				this.match(JustMCFParser.NUMBER);
 				}
 				break;
@@ -5268,17 +5307,17 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 90, JustMCFParser.RULE_titleIndependentStatementInner);
 		let _la: number;
 		try {
-			this.state = 1194;
+			this.state = 1206;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 125, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 127, this._ctx) ) {
 			case 1:
 				_localctx = new TitleISIJsonContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1180;
+				this.state = 1192;
 				(_localctx as TitleISIJsonContext)._pos = this._input.LT(1);
 				_la = this._input.LA(1);
-				if (!(((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)))) !== 0))) {
+				if (!(((((_la - 136)) & ~0x1F) === 0 && ((1 << (_la - 136)) & ((1 << (JustMCFParser.TITLE - 136)) | (1 << (JustMCFParser.SUBTITLE - 136)) | (1 << (JustMCFParser.ACTIONBAR - 136)))) !== 0))) {
 					(_localctx as TitleISIJsonContext)._pos = this._errHandler.recoverInline(this);
 				} else {
 					if (this._input.LA(1) === Token.EOF) {
@@ -5288,7 +5327,7 @@ export class JustMCFParser extends Parser {
 					this._errHandler.reportMatch(this);
 					this.consume();
 				}
-				this.state = 1181;
+				this.state = 1193;
 				this.json();
 				}
 				break;
@@ -5297,11 +5336,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new TitleISIClearContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1182;
+				this.state = 1194;
 				this.match(JustMCFParser.TITLE);
-				this.state = 1183;
+				this.state = 1195;
 				this.match(JustMCFParser.T__30);
-				this.state = 1184;
+				this.state = 1196;
 				this.match(JustMCFParser.CLEAR);
 				}
 				break;
@@ -5310,11 +5349,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new TitleISIResetContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1185;
+				this.state = 1197;
 				this.match(JustMCFParser.TITLE);
-				this.state = 1186;
+				this.state = 1198;
 				this.match(JustMCFParser.T__30);
-				this.state = 1187;
+				this.state = 1199;
 				this.match(JustMCFParser.RESET);
 				}
 				break;
@@ -5323,17 +5362,17 @@ export class JustMCFParser extends Parser {
 				_localctx = new TitleISITimesContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1188;
+				this.state = 1200;
 				this.match(JustMCFParser.TITLE);
-				this.state = 1189;
+				this.state = 1201;
 				this.match(JustMCFParser.T__30);
-				this.state = 1190;
+				this.state = 1202;
 				this.match(JustMCFParser.TIMES);
-				this.state = 1191;
+				this.state = 1203;
 				this.match(JustMCFParser.NUMBER);
-				this.state = 1192;
+				this.state = 1204;
 				this.match(JustMCFParser.NUMBER);
-				this.state = 1193;
+				this.state = 1205;
 				this.match(JustMCFParser.NUMBER);
 				}
 				break;
@@ -5359,32 +5398,32 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 92, JustMCFParser.RULE_displayStatement);
 		let _la: number;
 		try {
-			this.state = 1219;
+			this.state = 1231;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 129, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 131, this._ctx) ) {
 			case 1:
 				_localctx = new DisplaySCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1196;
+				this.state = 1208;
 				this.match(JustMCFParser.DISPLAY);
-				this.state = 1197;
+				this.state = 1209;
 				this.match(JustMCFParser.T__4);
-				this.state = 1201;
+				this.state = 1213;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (_la === JustMCFParser.T__32 || _la === JustMCFParser.T__51 || _la === JustMCFParser.SCB || _la === JustMCFParser.BOSSBAR || _la === JustMCFParser.Selector) {
 					{
 					{
-					this.state = 1198;
+					this.state = 1210;
 					this.displayStatementInner();
 					}
 					}
-					this.state = 1203;
+					this.state = 1215;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1204;
+				this.state = 1216;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -5393,37 +5432,37 @@ export class JustMCFParser extends Parser {
 				_localctx = new DisplaySSelectorCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1205;
+				this.state = 1217;
 				this.match(JustMCFParser.DISPLAY);
-				this.state = 1206;
+				this.state = 1218;
 				this.selector();
-				this.state = 1207;
+				this.state = 1219;
 				this.match(JustMCFParser.T__4);
-				this.state = 1214;
+				this.state = 1226;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === JustMCFParser.T__30 || ((((_la - 117)) & ~0x1F) === 0 && ((1 << (_la - 117)) & ((1 << (JustMCFParser.BOSSBAR - 117)) | (1 << (JustMCFParser.TITLE - 117)) | (1 << (JustMCFParser.SUBTITLE - 117)) | (1 << (JustMCFParser.ACTIONBAR - 117)) | (1 << (JustMCFParser.TEXT - 117)))) !== 0)) {
+				while (_la === JustMCFParser.T__30 || ((((_la - 118)) & ~0x1F) === 0 && ((1 << (_la - 118)) & ((1 << (JustMCFParser.BOSSBAR - 118)) | (1 << (JustMCFParser.TITLE - 118)) | (1 << (JustMCFParser.SUBTITLE - 118)) | (1 << (JustMCFParser.ACTIONBAR - 118)) | (1 << (JustMCFParser.TEXT - 118)))) !== 0)) {
 					{
 					{
-					this.state = 1209;
+					this.state = 1221;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 					if (_la === JustMCFParser.T__30) {
 						{
-						this.state = 1208;
+						this.state = 1220;
 						this.match(JustMCFParser.T__30);
 						}
 					}
 
-					this.state = 1211;
+					this.state = 1223;
 					this.displayIndependentStatementInner();
 					}
 					}
-					this.state = 1216;
+					this.state = 1228;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1217;
+				this.state = 1229;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -5449,14 +5488,14 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 94, JustMCFParser.RULE_displayStatementInner);
 		let _la: number;
 		try {
-			this.state = 1240;
+			this.state = 1252;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 132, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 134, this._ctx) ) {
 			case 1:
 				_localctx = new DisplaySIScbContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1221;
+				this.state = 1233;
 				this.scbObjectiveStatement();
 				}
 				break;
@@ -5465,7 +5504,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new DisplaySIBossbarContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1222;
+				this.state = 1234;
 				this.bossbarStatement();
 				}
 				break;
@@ -5474,11 +5513,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new DisplaySISelectorSingleContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1223;
+				this.state = 1235;
 				this.selector();
-				this.state = 1224;
+				this.state = 1236;
 				this.match(JustMCFParser.T__30);
-				this.state = 1225;
+				this.state = 1237;
 				this.displayIndependentStatementInner();
 				}
 				break;
@@ -5487,35 +5526,35 @@ export class JustMCFParser extends Parser {
 				_localctx = new DisplaySISelectorCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1227;
+				this.state = 1239;
 				this.selector();
-				this.state = 1228;
+				this.state = 1240;
 				this.match(JustMCFParser.T__4);
-				this.state = 1235;
+				this.state = 1247;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === JustMCFParser.T__30 || ((((_la - 117)) & ~0x1F) === 0 && ((1 << (_la - 117)) & ((1 << (JustMCFParser.BOSSBAR - 117)) | (1 << (JustMCFParser.TITLE - 117)) | (1 << (JustMCFParser.SUBTITLE - 117)) | (1 << (JustMCFParser.ACTIONBAR - 117)) | (1 << (JustMCFParser.TEXT - 117)))) !== 0)) {
+				while (_la === JustMCFParser.T__30 || ((((_la - 118)) & ~0x1F) === 0 && ((1 << (_la - 118)) & ((1 << (JustMCFParser.BOSSBAR - 118)) | (1 << (JustMCFParser.TITLE - 118)) | (1 << (JustMCFParser.SUBTITLE - 118)) | (1 << (JustMCFParser.ACTIONBAR - 118)) | (1 << (JustMCFParser.TEXT - 118)))) !== 0)) {
 					{
 					{
-					this.state = 1230;
+					this.state = 1242;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 					if (_la === JustMCFParser.T__30) {
 						{
-						this.state = 1229;
+						this.state = 1241;
 						this.match(JustMCFParser.T__30);
 						}
 					}
 
-					this.state = 1232;
+					this.state = 1244;
 					this.displayIndependentStatementInner();
 					}
 					}
-					this.state = 1237;
+					this.state = 1249;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1238;
+				this.state = 1250;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -5541,14 +5580,14 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 96, JustMCFParser.RULE_displayIndependentStatementInner);
 		let _la: number;
 		try {
-			this.state = 1258;
+			this.state = 1270;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 134, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 136, this._ctx) ) {
 			case 1:
 				_localctx = new DisplayISITitleSingleContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1242;
+				this.state = 1254;
 				this.titleIndependentStatementInner();
 				}
 				break;
@@ -5557,25 +5596,25 @@ export class JustMCFParser extends Parser {
 				_localctx = new DisplayISITitleCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1243;
+				this.state = 1255;
 				this.match(JustMCFParser.TITLE);
-				this.state = 1244;
+				this.state = 1256;
 				this.match(JustMCFParser.T__4);
-				this.state = 1248;
+				this.state = 1260;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (((((_la - 109)) & ~0x1F) === 0 && ((1 << (_la - 109)) & ((1 << (JustMCFParser.RESET - 109)) | (1 << (JustMCFParser.TITLE - 109)) | (1 << (JustMCFParser.SUBTITLE - 109)) | (1 << (JustMCFParser.ACTIONBAR - 109)) | (1 << (JustMCFParser.TIMES - 109)))) !== 0) || _la === JustMCFParser.CLEAR) {
+				while (((((_la - 110)) & ~0x1F) === 0 && ((1 << (_la - 110)) & ((1 << (JustMCFParser.RESET - 110)) | (1 << (JustMCFParser.TITLE - 110)) | (1 << (JustMCFParser.SUBTITLE - 110)) | (1 << (JustMCFParser.ACTIONBAR - 110)) | (1 << (JustMCFParser.TIMES - 110)))) !== 0) || _la === JustMCFParser.CLEAR) {
 					{
 					{
-					this.state = 1245;
+					this.state = 1257;
 					this.titleSelectorStatementInner();
 					}
 					}
-					this.state = 1250;
+					this.state = 1262;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1251;
+				this.state = 1263;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -5584,9 +5623,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new DisplayISITextContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1252;
+				this.state = 1264;
 				this.match(JustMCFParser.TEXT);
-				this.state = 1253;
+				this.state = 1265;
 				this.json();
 				}
 				break;
@@ -5595,11 +5634,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new DisplayISIBossbarContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1254;
+				this.state = 1266;
 				this.match(JustMCFParser.BOSSBAR);
-				this.state = 1255;
+				this.state = 1267;
 				this.nameSpaceBossbar();
-				this.state = 1256;
+				this.state = 1268;
 				this.json();
 				}
 				break;
@@ -5625,32 +5664,32 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 98, JustMCFParser.RULE_itemStatement);
 		let _la: number;
 		try {
-			this.state = 1280;
+			this.state = 1292;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 137, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 139, this._ctx) ) {
 			case 1:
 				_localctx = new ItemSCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1260;
+				this.state = 1272;
 				this.match(JustMCFParser.ITEM);
-				this.state = 1261;
+				this.state = 1273;
 				this.match(JustMCFParser.T__4);
-				this.state = 1265;
+				this.state = 1277;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || _la === JustMCFParser.Selector) {
 					{
 					{
-					this.state = 1262;
+					this.state = 1274;
 					this.itemStatementInner();
 					}
 					}
-					this.state = 1267;
+					this.state = 1279;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1268;
+				this.state = 1280;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -5659,27 +5698,27 @@ export class JustMCFParser extends Parser {
 				_localctx = new ItemSSelectorCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1269;
+				this.state = 1281;
 				this.match(JustMCFParser.ITEM);
-				this.state = 1270;
+				this.state = 1282;
 				this.selector();
-				this.state = 1271;
+				this.state = 1283;
 				this.match(JustMCFParser.T__4);
-				this.state = 1275;
+				this.state = 1287;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === JustMCFParser.T__16 || _la === JustMCFParser.T__17 || ((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)) | (1 << (JustMCFParser.AcceptableName - 167)))) !== 0)) {
+				while (_la === JustMCFParser.T__16 || _la === JustMCFParser.T__17 || ((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)) | (1 << (JustMCFParser.AcceptableName - 168)))) !== 0)) {
 					{
 					{
-					this.state = 1272;
+					this.state = 1284;
 					this.itemSelectorStatementInner();
 					}
 					}
-					this.state = 1277;
+					this.state = 1289;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1278;
+				this.state = 1290;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -5705,32 +5744,32 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 100, JustMCFParser.RULE_lootStatement);
 		let _la: number;
 		try {
-			this.state = 1302;
+			this.state = 1314;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 140, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 142, this._ctx) ) {
 			case 1:
 				_localctx = new LootSCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1282;
+				this.state = 1294;
 				this.match(JustMCFParser.LOOT);
-				this.state = 1283;
+				this.state = 1295;
 				this.match(JustMCFParser.T__4);
-				this.state = 1287;
+				this.state = 1299;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || _la === JustMCFParser.Selector) {
 					{
 					{
-					this.state = 1284;
+					this.state = 1296;
 					this.lootStatementInner();
 					}
 					}
-					this.state = 1289;
+					this.state = 1301;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1290;
+				this.state = 1302;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -5739,27 +5778,27 @@ export class JustMCFParser extends Parser {
 				_localctx = new LootSSelectorCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1291;
+				this.state = 1303;
 				this.match(JustMCFParser.LOOT);
-				this.state = 1292;
+				this.state = 1304;
 				this.selector();
-				this.state = 1293;
+				this.state = 1305;
 				this.match(JustMCFParser.T__4);
-				this.state = 1297;
+				this.state = 1309;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === JustMCFParser.T__16 || ((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)) | (1 << (JustMCFParser.AcceptableName - 167)))) !== 0)) {
+				while (_la === JustMCFParser.T__16 || ((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)) | (1 << (JustMCFParser.AcceptableName - 168)))) !== 0)) {
 					{
 					{
-					this.state = 1294;
+					this.state = 1306;
 					this.lootSelectorStatementInner();
 					}
 					}
-					this.state = 1299;
+					this.state = 1311;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1300;
+				this.state = 1312;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -5785,18 +5824,18 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 102, JustMCFParser.RULE_lootStatementInner);
 		let _la: number;
 		try {
-			this.state = 1333;
+			this.state = 1345;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 142, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 144, this._ctx) ) {
 			case 1:
 				_localctx = new LootSIInsertContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1304;
+				this.state = 1316;
 				this.pos3Identifier();
-				this.state = 1305;
+				this.state = 1317;
 				this.match(JustMCFParser.T__16);
-				this.state = 1306;
+				this.state = 1318;
 				this.lootSource();
 				}
 				break;
@@ -5805,11 +5844,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new LootSISpawnContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1308;
+				this.state = 1320;
 				this.pos3Identifier();
-				this.state = 1309;
+				this.state = 1321;
 				this.match(JustMCFParser.T__6);
-				this.state = 1310;
+				this.state = 1322;
 				this.lootSource();
 				}
 				break;
@@ -5818,11 +5857,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new LootSIReplaceBlockContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1312;
+				this.state = 1324;
 				this.pos3Identifier();
-				this.state = 1313;
+				this.state = 1325;
 				this.match(JustMCFParser.T__13);
-				this.state = 1314;
+				this.state = 1326;
 				this.lootIndependentStatementInnerReplaceEntity();
 				}
 				break;
@@ -5831,9 +5870,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new LootSIGiveContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1316;
+				this.state = 1328;
 				this.selector();
-				this.state = 1317;
+				this.state = 1329;
 				this.lootIndependentStatementInnerGive();
 				}
 				break;
@@ -5842,11 +5881,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new LootSIReplaceEntityContext(_localctx);
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 1319;
+				this.state = 1331;
 				this.selector();
-				this.state = 1320;
+				this.state = 1332;
 				this.match(JustMCFParser.T__13);
-				this.state = 1321;
+				this.state = 1333;
 				this.lootIndependentStatementInnerReplaceEntity();
 				}
 				break;
@@ -5855,25 +5894,25 @@ export class JustMCFParser extends Parser {
 				_localctx = new LootSISelectorNestContext(_localctx);
 				this.enterOuterAlt(_localctx, 6);
 				{
-				this.state = 1323;
+				this.state = 1335;
 				this.selector();
-				this.state = 1324;
+				this.state = 1336;
 				this.match(JustMCFParser.T__4);
-				this.state = 1328;
+				this.state = 1340;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === JustMCFParser.T__16 || ((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)) | (1 << (JustMCFParser.AcceptableName - 167)))) !== 0)) {
+				while (_la === JustMCFParser.T__16 || ((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)) | (1 << (JustMCFParser.AcceptableName - 168)))) !== 0)) {
 					{
 					{
-					this.state = 1325;
+					this.state = 1337;
 					this.lootSelectorStatementInner();
 					}
 					}
-					this.state = 1330;
+					this.state = 1342;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1331;
+				this.state = 1343;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -5898,13 +5937,13 @@ export class JustMCFParser extends Parser {
 		let _localctx: LootSelectorStatementInnerContext = new LootSelectorStatementInnerContext(this._ctx, this.state);
 		this.enterRule(_localctx, 104, JustMCFParser.RULE_lootSelectorStatementInner);
 		try {
-			this.state = 1337;
+			this.state = 1349;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 143, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 145, this._ctx) ) {
 			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1335;
+				this.state = 1347;
 				this.lootIndependentStatementInnerGive();
 				}
 				break;
@@ -5912,7 +5951,7 @@ export class JustMCFParser extends Parser {
 			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1336;
+				this.state = 1348;
 				this.lootIndependentStatementInnerReplaceEntity();
 				}
 				break;
@@ -5940,7 +5979,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 1339;
+			this.state = 1351;
 			_la = this._input.LA(1);
 			if (!(_la === JustMCFParser.T__16 || _la === JustMCFParser.GIVE)) {
 			this._errHandler.recoverInline(this);
@@ -5952,7 +5991,7 @@ export class JustMCFParser extends Parser {
 				this._errHandler.reportMatch(this);
 				this.consume();
 			}
-			this.state = 1340;
+			this.state = 1352;
 			this.lootSource();
 			}
 		}
@@ -5978,29 +6017,29 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 1342;
+			this.state = 1354;
 			this.item_slot();
-			this.state = 1343;
+			this.state = 1355;
 			this.match(JustMCFParser.T__6);
-			this.state = 1344;
+			this.state = 1356;
 			this.lootSource();
-			this.state = 1346;
+			this.state = 1358;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			if (_la === JustMCFParser.T__11) {
 				{
-				this.state = 1345;
+				this.state = 1357;
 				this.match(JustMCFParser.T__11);
 				}
 			}
 
-			this.state = 1349;
+			this.state = 1361;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
-			if (_la === JustMCFParser.NUMBER) {
+			if (_la === JustMCFParser.NUMBER_INT) {
 				{
-				this.state = 1348;
-				this.match(JustMCFParser.NUMBER);
+				this.state = 1360;
+				this.match(JustMCFParser.NUMBER_INT);
 				}
 			}
 
@@ -6026,25 +6065,25 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 110, JustMCFParser.RULE_lootSource);
 		let _la: number;
 		try {
-			this.state = 1383;
+			this.state = 1395;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 152, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 154, this._ctx) ) {
 			case 1:
 				_localctx = new LootSourceFishHandContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1351;
+				this.state = 1363;
 				this.match(JustMCFParser.FISH);
-				this.state = 1352;
+				this.state = 1364;
 				this.nameSpaceLoot();
-				this.state = 1353;
+				this.state = 1365;
 				this.pos3Identifier();
-				this.state = 1355;
+				this.state = 1367;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 146, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 148, this._ctx) ) {
 				case 1:
 					{
-					this.state = 1354;
+					this.state = 1366;
 					(_localctx as LootSourceFishHandContext)._hand = this._input.LT(1);
 					_la = this._input.LA(1);
 					if (!(_la === JustMCFParser.MAINHAND || _la === JustMCFParser.OFFHAND)) {
@@ -6067,13 +6106,13 @@ export class JustMCFParser extends Parser {
 				_localctx = new LootSourceFishToolContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1357;
+				this.state = 1369;
 				this.match(JustMCFParser.FISH);
-				this.state = 1358;
+				this.state = 1370;
 				this.nameSpaceLoot();
-				this.state = 1359;
+				this.state = 1371;
 				this.pos3Identifier();
-				this.state = 1360;
+				this.state = 1372;
 				this.nameSpaceItem();
 				}
 				break;
@@ -6082,17 +6121,17 @@ export class JustMCFParser extends Parser {
 				_localctx = new LootSourceLootContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1363;
+				this.state = 1375;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 147, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 149, this._ctx) ) {
 				case 1:
 					{
-					this.state = 1362;
+					this.state = 1374;
 					this.match(JustMCFParser.LOOT);
 					}
 					break;
 				}
-				this.state = 1365;
+				this.state = 1377;
 				this.nameSpaceLoot();
 				}
 				break;
@@ -6101,17 +6140,17 @@ export class JustMCFParser extends Parser {
 				_localctx = new LootSourceKillContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1367;
+				this.state = 1379;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.KILL) {
 					{
-					this.state = 1366;
+					this.state = 1378;
 					this.match(JustMCFParser.KILL);
 					}
 				}
 
-				this.state = 1369;
+				this.state = 1381;
 				this.selector();
 				}
 				break;
@@ -6120,24 +6159,24 @@ export class JustMCFParser extends Parser {
 				_localctx = new LootSourceMineHandContext(_localctx);
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 1371;
+				this.state = 1383;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.MINE) {
 					{
-					this.state = 1370;
+					this.state = 1382;
 					this.match(JustMCFParser.MINE);
 					}
 				}
 
-				this.state = 1373;
+				this.state = 1385;
 				this.pos3Identifier();
-				this.state = 1375;
+				this.state = 1387;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 150, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 152, this._ctx) ) {
 				case 1:
 					{
-					this.state = 1374;
+					this.state = 1386;
 					(_localctx as LootSourceMineHandContext)._hand = this._input.LT(1);
 					_la = this._input.LA(1);
 					if (!(_la === JustMCFParser.MAINHAND || _la === JustMCFParser.OFFHAND)) {
@@ -6160,19 +6199,19 @@ export class JustMCFParser extends Parser {
 				_localctx = new LootSourceMineToolContext(_localctx);
 				this.enterOuterAlt(_localctx, 6);
 				{
-				this.state = 1378;
+				this.state = 1390;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.MINE) {
 					{
-					this.state = 1377;
+					this.state = 1389;
 					this.match(JustMCFParser.MINE);
 					}
 				}
 
-				this.state = 1380;
+				this.state = 1392;
 				this.pos3Identifier();
-				this.state = 1381;
+				this.state = 1393;
 				this.nameSpaceItem();
 				}
 				break;
@@ -6198,16 +6237,16 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 112, JustMCFParser.RULE_itemStatementInner);
 		let _la: number;
 		try {
-			this.state = 1407;
+			this.state = 1419;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 154, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 156, this._ctx) ) {
 			case 1:
 				_localctx = new ItemSIGiveAndClearContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1385;
+				this.state = 1397;
 				this.selector();
-				this.state = 1386;
+				this.state = 1398;
 				this.giveAndClearIndependentStatementInner();
 				}
 				break;
@@ -6216,11 +6255,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new ItemSIEntityContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1388;
+				this.state = 1400;
 				this.selector();
-				this.state = 1389;
+				this.state = 1401;
 				this.match(JustMCFParser.T__13);
-				this.state = 1390;
+				this.state = 1402;
 				this.itemIndependentStatementInner();
 				}
 				break;
@@ -6229,11 +6268,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new ItemSIBlockContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1392;
+				this.state = 1404;
 				this.pos3Identifier();
-				this.state = 1393;
+				this.state = 1405;
 				this.match(JustMCFParser.T__13);
-				this.state = 1394;
+				this.state = 1406;
 				this.itemIndependentStatementInner();
 				}
 				break;
@@ -6242,7 +6281,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new ItemSILootInnerContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1396;
+				this.state = 1408;
 				this.lootStatementInner();
 				}
 				break;
@@ -6251,25 +6290,25 @@ export class JustMCFParser extends Parser {
 				_localctx = new ItemSISelectorNestContext(_localctx);
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 1397;
+				this.state = 1409;
 				this.selector();
-				this.state = 1398;
+				this.state = 1410;
 				this.match(JustMCFParser.T__4);
-				this.state = 1402;
+				this.state = 1414;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === JustMCFParser.T__16 || _la === JustMCFParser.T__17 || ((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)) | (1 << (JustMCFParser.AcceptableName - 167)))) !== 0)) {
+				while (_la === JustMCFParser.T__16 || _la === JustMCFParser.T__17 || ((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)) | (1 << (JustMCFParser.AcceptableName - 168)))) !== 0)) {
 					{
 					{
-					this.state = 1399;
+					this.state = 1411;
 					this.itemSelectorStatementInner();
 					}
 					}
-					this.state = 1404;
+					this.state = 1416;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1405;
+				this.state = 1417;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -6294,14 +6333,14 @@ export class JustMCFParser extends Parser {
 		let _localctx: ItemSelectorStatementInnerContext = new ItemSelectorStatementInnerContext(this._ctx, this.state);
 		this.enterRule(_localctx, 114, JustMCFParser.RULE_itemSelectorStatementInner);
 		try {
-			this.state = 1412;
+			this.state = 1424;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 155, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 157, this._ctx) ) {
 			case 1:
 				_localctx = new ItemSSIGiveAndClearContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1409;
+				this.state = 1421;
 				this.giveAndClearIndependentStatementInner();
 				}
 				break;
@@ -6310,7 +6349,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new ItemSSIItemContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1410;
+				this.state = 1422;
 				this.itemIndependentStatementInner();
 				}
 				break;
@@ -6319,7 +6358,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new ItemSSILootInnerContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1411;
+				this.state = 1423;
 				this.lootSelectorStatementInner();
 				}
 				break;
@@ -6345,26 +6384,26 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 116, JustMCFParser.RULE_itemIndependentStatementInner);
 		let _la: number;
 		try {
-			this.state = 1440;
+			this.state = 1452;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 159, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 161, this._ctx) ) {
 			case 1:
 				_localctx = new ItemISIReplaceWithContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1414;
+				this.state = 1426;
 				this.item_slot();
-				this.state = 1415;
+				this.state = 1427;
 				this.match(JustMCFParser.T__6);
-				this.state = 1416;
+				this.state = 1428;
 				this.nameSpaceItem();
-				this.state = 1418;
+				this.state = 1430;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				if (_la === JustMCFParser.NUMBER) {
+				if (_la === JustMCFParser.NUMBER_INT) {
 					{
-					this.state = 1417;
-					this.match(JustMCFParser.NUMBER);
+					this.state = 1429;
+					this.match(JustMCFParser.NUMBER_INT);
 					}
 				}
 
@@ -6375,22 +6414,22 @@ export class JustMCFParser extends Parser {
 				_localctx = new ItemISIReplaceFromEntityContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1420;
+				this.state = 1432;
 				this.item_slot();
-				this.state = 1421;
+				this.state = 1433;
 				this.match(JustMCFParser.T__6);
-				this.state = 1422;
+				this.state = 1434;
 				this.selector();
-				this.state = 1423;
+				this.state = 1435;
 				this.match(JustMCFParser.T__13);
-				this.state = 1424;
+				this.state = 1436;
 				this.item_slot();
-				this.state = 1426;
+				this.state = 1438;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 157, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 159, this._ctx) ) {
 				case 1:
 					{
-					this.state = 1425;
+					this.state = 1437;
 					this.nameSpaceItemModifier();
 					}
 					break;
@@ -6402,22 +6441,22 @@ export class JustMCFParser extends Parser {
 				_localctx = new ItemISIReplaceFromBlockContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1428;
+				this.state = 1440;
 				this.item_slot();
-				this.state = 1429;
+				this.state = 1441;
 				this.match(JustMCFParser.T__6);
-				this.state = 1430;
+				this.state = 1442;
 				this.pos3Identifier();
-				this.state = 1431;
+				this.state = 1443;
 				this.match(JustMCFParser.T__13);
-				this.state = 1432;
+				this.state = 1444;
 				this.item_slot();
-				this.state = 1434;
+				this.state = 1446;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 158, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 160, this._ctx) ) {
 				case 1:
 					{
-					this.state = 1433;
+					this.state = 1445;
 					this.nameSpaceItemModifier();
 					}
 					break;
@@ -6429,11 +6468,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new ItemISIModifyContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1436;
+				this.state = 1448;
 				this.item_slot();
-				this.state = 1437;
+				this.state = 1449;
 				this.match(JustMCFParser.T__16);
-				this.state = 1438;
+				this.state = 1450;
 				this.nameSpaceItemModifier();
 				}
 				break;
@@ -6459,7 +6498,7 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 118, JustMCFParser.RULE_giveAndClearIndependentStatementInner);
 		let _la: number;
 		try {
-			this.state = 1452;
+			this.state = 1464;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
 			case JustMCFParser.T__16:
@@ -6467,7 +6506,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new GiveISIContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1442;
+				this.state = 1454;
 				_la = this._input.LA(1);
 				if (!(_la === JustMCFParser.T__16 || _la === JustMCFParser.GIVE)) {
 				this._errHandler.recoverInline(this);
@@ -6479,15 +6518,15 @@ export class JustMCFParser extends Parser {
 					this._errHandler.reportMatch(this);
 					this.consume();
 				}
-				this.state = 1443;
+				this.state = 1455;
 				this.nameSpaceItem();
-				this.state = 1445;
+				this.state = 1457;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				if (_la === JustMCFParser.NUMBER) {
+				if (_la === JustMCFParser.NUMBER_INT) {
 					{
-					this.state = 1444;
-					this.match(JustMCFParser.NUMBER);
+					this.state = 1456;
+					this.match(JustMCFParser.NUMBER_INT);
 					}
 				}
 
@@ -6498,7 +6537,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new ClearISIContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1447;
+				this.state = 1459;
 				_la = this._input.LA(1);
 				if (!(_la === JustMCFParser.T__17 || _la === JustMCFParser.CLEAR)) {
 				this._errHandler.recoverInline(this);
@@ -6510,15 +6549,15 @@ export class JustMCFParser extends Parser {
 					this._errHandler.reportMatch(this);
 					this.consume();
 				}
-				this.state = 1448;
+				this.state = 1460;
 				this.item_predicate();
-				this.state = 1450;
+				this.state = 1462;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				if (_la === JustMCFParser.NUMBER) {
+				if (_la === JustMCFParser.NUMBER_INT) {
 					{
-					this.state = 1449;
-					this.match(JustMCFParser.NUMBER);
+					this.state = 1461;
+					this.match(JustMCFParser.NUMBER_INT);
 					}
 				}
 
@@ -6548,32 +6587,32 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 120, JustMCFParser.RULE_attrStatement);
 		let _la: number;
 		try {
-			this.state = 1474;
+			this.state = 1486;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 165, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 167, this._ctx) ) {
 			case 1:
 				_localctx = new AttrSCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1454;
+				this.state = 1466;
 				this.match(JustMCFParser.ATTR);
-				this.state = 1455;
+				this.state = 1467;
 				this.match(JustMCFParser.T__4);
-				this.state = 1459;
+				this.state = 1471;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (_la === JustMCFParser.T__32 || _la === JustMCFParser.T__51 || _la === JustMCFParser.Selector) {
 					{
 					{
-					this.state = 1456;
+					this.state = 1468;
 					this.attrStatementInner();
 					}
 					}
-					this.state = 1461;
+					this.state = 1473;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1462;
+				this.state = 1474;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -6582,27 +6621,27 @@ export class JustMCFParser extends Parser {
 				_localctx = new AttrSSelectorCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1463;
+				this.state = 1475;
 				this.match(JustMCFParser.ATTR);
-				this.state = 1464;
+				this.state = 1476;
 				this.selector();
-				this.state = 1465;
+				this.state = 1477;
 				this.match(JustMCFParser.T__4);
-				this.state = 1469;
+				this.state = 1481;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)) | (1 << (JustMCFParser.AcceptableName - 167)))) !== 0)) {
+				while (((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)) | (1 << (JustMCFParser.AcceptableName - 168)))) !== 0)) {
 					{
 					{
-					this.state = 1466;
+					this.state = 1478;
 					this.attrIndependentStatementInner();
 					}
 					}
-					this.state = 1471;
+					this.state = 1483;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1472;
+				this.state = 1484;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -6628,18 +6667,18 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 122, JustMCFParser.RULE_attrStatementInner);
 		let _la: number;
 		try {
-			this.state = 1490;
+			this.state = 1502;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 167, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 169, this._ctx) ) {
 			case 1:
 				_localctx = new AttrSISingleContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1476;
+				this.state = 1488;
 				this.selector();
-				this.state = 1477;
+				this.state = 1489;
 				this.match(JustMCFParser.T__13);
-				this.state = 1478;
+				this.state = 1490;
 				this.attrIndependentStatementInner();
 				}
 				break;
@@ -6648,25 +6687,25 @@ export class JustMCFParser extends Parser {
 				_localctx = new AttrSISelectorCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1480;
+				this.state = 1492;
 				this.selector();
-				this.state = 1481;
+				this.state = 1493;
 				this.match(JustMCFParser.T__4);
-				this.state = 1485;
+				this.state = 1497;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)) | (1 << (JustMCFParser.AcceptableName - 167)))) !== 0)) {
+				while (((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)) | (1 << (JustMCFParser.AcceptableName - 168)))) !== 0)) {
 					{
 					{
-					this.state = 1482;
+					this.state = 1494;
 					this.attrIndependentStatementInner();
 					}
 					}
-					this.state = 1487;
+					this.state = 1499;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1488;
+				this.state = 1500;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -6692,41 +6731,41 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 124, JustMCFParser.RULE_attrIndependentStatementInner);
 		let _la: number;
 		try {
-			this.state = 1536;
+			this.state = 1548;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 175, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 177, this._ctx) ) {
 			case 1:
 				_localctx = new AttrISIGetContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1492;
+				this.state = 1504;
 				this.registerName();
-				this.state = 1494;
+				this.state = 1506;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 168, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 170, this._ctx) ) {
 				case 1:
 					{
-					this.state = 1493;
+					this.state = 1505;
 					this.match(JustMCFParser.ALL);
 					}
 					break;
 				}
-				this.state = 1500;
+				this.state = 1512;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.T__11 || _la === JustMCFParser.NUMBER) {
 					{
-					this.state = 1497;
+					this.state = 1509;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 					if (_la === JustMCFParser.T__11) {
 						{
-						this.state = 1496;
+						this.state = 1508;
 						this.match(JustMCFParser.T__11);
 						}
 					}
 
-					this.state = 1499;
+					this.state = 1511;
 					this.match(JustMCFParser.NUMBER);
 					}
 				}
@@ -6738,26 +6777,26 @@ export class JustMCFParser extends Parser {
 				_localctx = new AttrISIGetBaseContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1502;
+				this.state = 1514;
 				this.registerName();
-				this.state = 1503;
+				this.state = 1515;
 				this.match(JustMCFParser.BASE);
-				this.state = 1508;
+				this.state = 1520;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.T__11 || _la === JustMCFParser.NUMBER) {
 					{
-					this.state = 1505;
+					this.state = 1517;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 					if (_la === JustMCFParser.T__11) {
 						{
-						this.state = 1504;
+						this.state = 1516;
 						this.match(JustMCFParser.T__11);
 						}
 					}
 
-					this.state = 1507;
+					this.state = 1519;
 					this.match(JustMCFParser.NUMBER);
 					}
 				}
@@ -6769,13 +6808,13 @@ export class JustMCFParser extends Parser {
 				_localctx = new AttrISISetBaseContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1510;
+				this.state = 1522;
 				this.registerName();
-				this.state = 1511;
+				this.state = 1523;
 				this.match(JustMCFParser.BASE);
-				this.state = 1512;
+				this.state = 1524;
 				this.match(JustMCFParser.T__6);
-				this.state = 1513;
+				this.state = 1525;
 				this.match(JustMCFParser.NUMBER);
 				}
 				break;
@@ -6784,17 +6823,17 @@ export class JustMCFParser extends Parser {
 				_localctx = new AttrISIModifierAddContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1515;
+				this.state = 1527;
 				this.registerName();
-				this.state = 1516;
+				this.state = 1528;
 				this.match(JustMCFParser.T__16);
-				this.state = 1517;
+				this.state = 1529;
 				this.match(JustMCFParser.UUID16_);
-				this.state = 1518;
+				this.state = 1530;
 				this.acceptableName();
-				this.state = 1519;
+				this.state = 1531;
 				this.match(JustMCFParser.T__7);
-				this.state = 1520;
+				this.state = 1532;
 				(_localctx as AttrISIModifierAddContext)._op = this._input.LT(1);
 				_la = this._input.LA(1);
 				if (!(((((_la - 12)) & ~0x1F) === 0 && ((1 << (_la - 12)) & ((1 << (JustMCFParser.T__11 - 12)) | (1 << (JustMCFParser.T__27 - 12)) | (1 << (JustMCFParser.T__31 - 12)))) !== 0))) {
@@ -6807,9 +6846,9 @@ export class JustMCFParser extends Parser {
 					this._errHandler.reportMatch(this);
 					this.consume();
 				}
-				this.state = 1521;
+				this.state = 1533;
 				this.match(JustMCFParser.NUMBER);
-				this.state = 1522;
+				this.state = 1534;
 				this.match(JustMCFParser.T__8);
 				}
 				break;
@@ -6818,11 +6857,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new AttrISIModifierRemoveContext(_localctx);
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 1524;
+				this.state = 1536;
 				this.registerName();
-				this.state = 1525;
+				this.state = 1537;
 				this.match(JustMCFParser.T__17);
-				this.state = 1526;
+				this.state = 1538;
 				this.match(JustMCFParser.UUID16_);
 				}
 				break;
@@ -6831,26 +6870,26 @@ export class JustMCFParser extends Parser {
 				_localctx = new AttrISIModifierGetContext(_localctx);
 				this.enterOuterAlt(_localctx, 6);
 				{
-				this.state = 1528;
+				this.state = 1540;
 				this.registerName();
-				this.state = 1529;
+				this.state = 1541;
 				this.match(JustMCFParser.UUID16_);
-				this.state = 1534;
+				this.state = 1546;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.T__11 || _la === JustMCFParser.NUMBER) {
 					{
-					this.state = 1531;
+					this.state = 1543;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 					if (_la === JustMCFParser.T__11) {
 						{
-						this.state = 1530;
+						this.state = 1542;
 						this.match(JustMCFParser.T__11);
 						}
 					}
 
-					this.state = 1533;
+					this.state = 1545;
 					this.match(JustMCFParser.NUMBER);
 					}
 				}
@@ -6880,48 +6919,48 @@ export class JustMCFParser extends Parser {
 		let _la: number;
 		try {
 			let _alt: number;
-			this.state = 1625;
+			this.state = 1637;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 190, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 192, this._ctx) ) {
 			case 1:
 				_localctx = new EntitySDeclarePlayerContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1538;
+				this.state = 1550;
 				this.match(JustMCFParser.ENTITY);
-				this.state = 1539;
+				this.state = 1551;
 				this.match(JustMCFParser.T__7);
-				this.state = 1540;
+				this.state = 1552;
 				this.match(JustMCFParser.PLAYER);
-				this.state = 1541;
+				this.state = 1553;
 				this.match(JustMCFParser.T__8);
-				this.state = 1542;
+				this.state = 1554;
 				this.playerName();
-				this.state = 1549;
+				this.state = 1561;
 				this._errHandler.sync(this);
-				_alt = this.interpreter.adaptivePredict(this._input, 177, this._ctx);
+				_alt = this.interpreter.adaptivePredict(this._input, 179, this._ctx);
 				while (_alt !== 2 && _alt !== ATN.INVALID_ALT_NUMBER) {
 					if (_alt === 1) {
 						{
 						{
-						this.state = 1544;
+						this.state = 1556;
 						this._errHandler.sync(this);
 						_la = this._input.LA(1);
 						if (_la === JustMCFParser.T__2) {
 							{
-							this.state = 1543;
+							this.state = 1555;
 							this.match(JustMCFParser.T__2);
 							}
 						}
 
-						this.state = 1546;
+						this.state = 1558;
 						this.playerName();
 						}
 						}
 					}
-					this.state = 1551;
+					this.state = 1563;
 					this._errHandler.sync(this);
-					_alt = this.interpreter.adaptivePredict(this._input, 177, this._ctx);
+					_alt = this.interpreter.adaptivePredict(this._input, 179, this._ctx);
 				}
 				}
 				break;
@@ -6930,58 +6969,58 @@ export class JustMCFParser extends Parser {
 				_localctx = new EntitySDeclareContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1552;
+				this.state = 1564;
 				this.match(JustMCFParser.ENTITY);
-				this.state = 1553;
+				this.state = 1565;
 				this.match(JustMCFParser.T__7);
-				this.state = 1554;
+				this.state = 1566;
 				(_localctx as EntitySDeclareContext)._type = this.nameSpaceEntity();
-				this.state = 1555;
+				this.state = 1567;
 				this.match(JustMCFParser.T__8);
-				this.state = 1556;
+				this.state = 1568;
 				this.pos3Identifier();
-				this.state = 1558;
+				this.state = 1570;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (((((_la - 40)) & ~0x1F) === 0 && ((1 << (_la - 40)) & ((1 << (JustMCFParser.T__39 - 40)) | (1 << (JustMCFParser.T__40 - 40)) | (1 << (JustMCFParser.T__41 - 40)) | (1 << (JustMCFParser.T__42 - 40)) | (1 << (JustMCFParser.T__43 - 40)) | (1 << (JustMCFParser.ByteNumber - 40)) | (1 << (JustMCFParser.ShortNumber - 40)) | (1 << (JustMCFParser.LongNumber - 40)) | (1 << (JustMCFParser.FloatNumber - 40)) | (1 << (JustMCFParser.DoubleNumber - 40)) | (1 << (JustMCFParser.STRING2 - 40)) | (1 << (JustMCFParser.STRING - 40)))) !== 0)) {
 					{
-					this.state = 1557;
+					this.state = 1569;
 					this.nbt();
 					}
 				}
 
-				this.state = 1571;
+				this.state = 1583;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 181, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 183, this._ctx) ) {
 				case 1:
 					{
-					this.state = 1560;
+					this.state = 1572;
 					this.match(JustMCFParser.T__4);
-					this.state = 1567;
+					this.state = 1579;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 					while (_la === JustMCFParser.T__30 || _la === JustMCFParser.TAG) {
 						{
 						{
-						this.state = 1562;
+						this.state = 1574;
 						this._errHandler.sync(this);
 						_la = this._input.LA(1);
 						if (_la === JustMCFParser.T__30) {
 							{
-							this.state = 1561;
+							this.state = 1573;
 							this.match(JustMCFParser.T__30);
 							}
 						}
 
-						this.state = 1564;
+						this.state = 1576;
 						this.entityDeclareStatementInner();
 						}
 						}
-						this.state = 1569;
+						this.state = 1581;
 						this._errHandler.sync(this);
 						_la = this._input.LA(1);
 					}
-					this.state = 1570;
+					this.state = 1582;
 					this.match(JustMCFParser.T__5);
 					}
 					break;
@@ -6993,88 +7032,88 @@ export class JustMCFParser extends Parser {
 				_localctx = new EntitySDeclareWithNameContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1573;
+				this.state = 1585;
 				this.match(JustMCFParser.ENTITY);
-				this.state = 1574;
+				this.state = 1586;
 				this.match(JustMCFParser.T__7);
-				this.state = 1575;
+				this.state = 1587;
 				(_localctx as EntitySDeclareWithNameContext)._type = this.nameSpaceEntity();
-				this.state = 1576;
+				this.state = 1588;
 				this.match(JustMCFParser.T__8);
-				this.state = 1578;
+				this.state = 1590;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.T__49) {
 					{
-					this.state = 1577;
+					this.state = 1589;
 					this.pos3Identifier();
 					}
 				}
 
-				this.state = 1580;
+				this.state = 1592;
 				this.acceptableName();
-				this.state = 1582;
+				this.state = 1594;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (((((_la - 40)) & ~0x1F) === 0 && ((1 << (_la - 40)) & ((1 << (JustMCFParser.T__39 - 40)) | (1 << (JustMCFParser.T__40 - 40)) | (1 << (JustMCFParser.T__41 - 40)) | (1 << (JustMCFParser.T__42 - 40)) | (1 << (JustMCFParser.T__43 - 40)) | (1 << (JustMCFParser.ByteNumber - 40)) | (1 << (JustMCFParser.ShortNumber - 40)) | (1 << (JustMCFParser.LongNumber - 40)) | (1 << (JustMCFParser.FloatNumber - 40)) | (1 << (JustMCFParser.DoubleNumber - 40)) | (1 << (JustMCFParser.STRING2 - 40)) | (1 << (JustMCFParser.STRING - 40)))) !== 0)) {
 					{
-					this.state = 1581;
+					this.state = 1593;
 					this.nbt();
 					}
 				}
 
-				this.state = 1584;
+				this.state = 1596;
 				this.match(JustMCFParser.T__4);
-				this.state = 1591;
+				this.state = 1603;
 				this._errHandler.sync(this);
-				_alt = this.interpreter.adaptivePredict(this._input, 185, this._ctx);
+				_alt = this.interpreter.adaptivePredict(this._input, 187, this._ctx);
 				while (_alt !== 2 && _alt !== ATN.INVALID_ALT_NUMBER) {
 					if (_alt === 1) {
 						{
 						{
-						this.state = 1586;
+						this.state = 1598;
 						this._errHandler.sync(this);
 						_la = this._input.LA(1);
 						if (_la === JustMCFParser.T__30) {
 							{
-							this.state = 1585;
+							this.state = 1597;
 							this.match(JustMCFParser.T__30);
 							}
 						}
 
-						this.state = 1588;
+						this.state = 1600;
 						this.entityDeclareStatementInner();
 						}
 						}
 					}
-					this.state = 1593;
+					this.state = 1605;
 					this._errHandler.sync(this);
-					_alt = this.interpreter.adaptivePredict(this._input, 185, this._ctx);
+					_alt = this.interpreter.adaptivePredict(this._input, 187, this._ctx);
 				}
-				this.state = 1598;
+				this.state = 1610;
 				this._errHandler.sync(this);
-				_alt = this.interpreter.adaptivePredict(this._input, 186, this._ctx);
+				_alt = this.interpreter.adaptivePredict(this._input, 188, this._ctx);
 				while (_alt !== 2 && _alt !== ATN.INVALID_ALT_NUMBER) {
 					if (_alt === 1) {
 						{
 						{
-						this.state = 1594;
+						this.state = 1606;
 						this.match(JustMCFParser.T__30);
-						this.state = 1595;
+						this.state = 1607;
 						this.entityIndependentStatementInner();
 						}
 						}
 					}
-					this.state = 1600;
+					this.state = 1612;
 					this._errHandler.sync(this);
-					_alt = this.interpreter.adaptivePredict(this._input, 186, this._ctx);
+					_alt = this.interpreter.adaptivePredict(this._input, 188, this._ctx);
 				}
-				this.state = 1602;
+				this.state = 1614;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 187, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 189, this._ctx) ) {
 				case 1:
 					{
-					this.state = 1601;
+					this.state = 1613;
 					this.match(JustMCFParser.T__5);
 					}
 					break;
@@ -7086,25 +7125,25 @@ export class JustMCFParser extends Parser {
 				_localctx = new EntitySCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1604;
+				this.state = 1616;
 				this.match(JustMCFParser.ENTITY);
-				this.state = 1605;
+				this.state = 1617;
 				this.match(JustMCFParser.T__4);
-				this.state = 1609;
+				this.state = 1621;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (_la === JustMCFParser.T__32 || _la === JustMCFParser.T__51 || _la === JustMCFParser.Selector) {
 					{
 					{
-					this.state = 1606;
+					this.state = 1618;
 					this.entityStatementInner();
 					}
 					}
-					this.state = 1611;
+					this.state = 1623;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1612;
+				this.state = 1624;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -7113,29 +7152,29 @@ export class JustMCFParser extends Parser {
 				_localctx = new EntitySSelectorCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 1613;
+				this.state = 1625;
 				this.match(JustMCFParser.ENTITY);
-				this.state = 1614;
+				this.state = 1626;
 				this.selector();
-				this.state = 1615;
+				this.state = 1627;
 				this.match(JustMCFParser.T__4);
-				this.state = 1620;
+				this.state = 1632;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (_la === JustMCFParser.T__30) {
 					{
 					{
-					this.state = 1616;
+					this.state = 1628;
 					this.match(JustMCFParser.T__30);
-					this.state = 1617;
+					this.state = 1629;
 					this.entityIndependentStatementInner();
 					}
 					}
-					this.state = 1622;
+					this.state = 1634;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1623;
+				this.state = 1635;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -7163,17 +7202,17 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 1628;
+			this.state = 1640;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			if (_la === JustMCFParser.T__32) {
 				{
-				this.state = 1627;
+				this.state = 1639;
 				_localctx._fake = this.match(JustMCFParser.T__32);
 				}
 			}
 
-			this.state = 1630;
+			this.state = 1642;
 			this.acceptableName();
 			}
 		}
@@ -7200,25 +7239,25 @@ export class JustMCFParser extends Parser {
 			_localctx = new EntityDeclareSITagContext(_localctx);
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 1632;
+			this.state = 1644;
 			this.match(JustMCFParser.TAG);
-			this.state = 1633;
+			this.state = 1645;
 			this.match(JustMCFParser.T__6);
-			this.state = 1634;
+			this.state = 1646;
 			this.acceptableName();
-			this.state = 1639;
+			this.state = 1651;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			while (_la === JustMCFParser.T__2) {
 				{
 				{
-				this.state = 1635;
+				this.state = 1647;
 				this.match(JustMCFParser.T__2);
-				this.state = 1636;
+				this.state = 1648;
 				this.acceptableName();
 				}
 				}
-				this.state = 1641;
+				this.state = 1653;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
@@ -7244,16 +7283,16 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 132, JustMCFParser.RULE_tagIndependentStatementInner);
 		let _la: number;
 		try {
-			this.state = 1650;
+			this.state = 1662;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 193, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 195, this._ctx) ) {
 			case 1:
 				_localctx = new TagISIAddContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1642;
+				this.state = 1654;
 				this.match(JustMCFParser.TAG);
-				this.state = 1643;
+				this.state = 1655;
 				_la = this._input.LA(1);
 				if (!(_la === JustMCFParser.T__16 || _la === JustMCFParser.ADD)) {
 				this._errHandler.recoverInline(this);
@@ -7265,7 +7304,7 @@ export class JustMCFParser extends Parser {
 					this._errHandler.reportMatch(this);
 					this.consume();
 				}
-				this.state = 1644;
+				this.state = 1656;
 				this.acceptableName();
 				}
 				break;
@@ -7274,9 +7313,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new TagISIRemoveContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1645;
+				this.state = 1657;
 				this.match(JustMCFParser.TAG);
-				this.state = 1646;
+				this.state = 1658;
 				_la = this._input.LA(1);
 				if (!(_la === JustMCFParser.T__17 || _la === JustMCFParser.REMOVE)) {
 				this._errHandler.recoverInline(this);
@@ -7288,7 +7327,7 @@ export class JustMCFParser extends Parser {
 					this._errHandler.reportMatch(this);
 					this.consume();
 				}
-				this.state = 1647;
+				this.state = 1659;
 				this.acceptableName();
 				}
 				break;
@@ -7297,9 +7336,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new TagISIListContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1648;
+				this.state = 1660;
 				this.match(JustMCFParser.TAG);
-				this.state = 1649;
+				this.state = 1661;
 				this.match(JustMCFParser.LIST);
 				}
 				break;
@@ -7325,16 +7364,16 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 134, JustMCFParser.RULE_effectIndependentStatementInner);
 		let _la: number;
 		try {
-			this.state = 1683;
+			this.state = 1695;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 200, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 202, this._ctx) ) {
 			case 1:
 				_localctx = new EffectISIClearContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1652;
+				this.state = 1664;
 				this.match(JustMCFParser.EFFECT);
-				this.state = 1653;
+				this.state = 1665;
 				_la = this._input.LA(1);
 				if (!(_la === JustMCFParser.T__17 || _la === JustMCFParser.CLEAR)) {
 				this._errHandler.recoverInline(this);
@@ -7346,7 +7385,7 @@ export class JustMCFParser extends Parser {
 					this._errHandler.reportMatch(this);
 					this.consume();
 				}
-				this.state = 1654;
+				this.state = 1666;
 				this.acceptableName();
 				}
 				break;
@@ -7354,59 +7393,6 @@ export class JustMCFParser extends Parser {
 			case 2:
 				_localctx = new EffectISIGiveContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
-				{
-				this.state = 1655;
-				this.match(JustMCFParser.EFFECT);
-				this.state = 1656;
-				_la = this._input.LA(1);
-				if (!(_la === JustMCFParser.T__16 || _la === JustMCFParser.GIVE)) {
-				this._errHandler.recoverInline(this);
-				} else {
-					if (this._input.LA(1) === Token.EOF) {
-						this.matchedEOF = true;
-					}
-
-					this._errHandler.reportMatch(this);
-					this.consume();
-				}
-				this.state = 1657;
-				this.acceptableName();
-				this.state = 1659;
-				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 194, this._ctx) ) {
-				case 1:
-					{
-					this.state = 1658;
-					(_localctx as EffectISIGiveContext)._second = this.match(JustMCFParser.NUMBER);
-					}
-					break;
-				}
-				this.state = 1662;
-				this._errHandler.sync(this);
-				_la = this._input.LA(1);
-				if (_la === JustMCFParser.NUMBER) {
-					{
-					this.state = 1661;
-					(_localctx as EffectISIGiveContext)._amplifier = this.match(JustMCFParser.NUMBER);
-					}
-				}
-
-				this.state = 1665;
-				this._errHandler.sync(this);
-				_la = this._input.LA(1);
-				if (_la === JustMCFParser.TRUE || _la === JustMCFParser.FALSE) {
-					{
-					this.state = 1664;
-					this.boolValue();
-					}
-				}
-
-				}
-				break;
-
-			case 3:
-				_localctx = new EffectISIGiveSpContext(_localctx);
-				this.enterOuterAlt(_localctx, 3);
 				{
 				this.state = 1667;
 				this.match(JustMCFParser.EFFECT);
@@ -7424,36 +7410,89 @@ export class JustMCFParser extends Parser {
 				}
 				this.state = 1669;
 				this.acceptableName();
-				this.state = 1673;
+				this.state = 1671;
 				this._errHandler.sync(this);
-				_la = this._input.LA(1);
-				if (_la === JustMCFParser.T__7) {
+				switch ( this.interpreter.adaptivePredict(this._input, 196, this._ctx) ) {
+				case 1:
 					{
 					this.state = 1670;
-					this.match(JustMCFParser.T__7);
-					this.state = 1671;
-					(_localctx as EffectISIGiveSpContext)._amplifier = this.match(JustMCFParser.NUMBER);
-					this.state = 1672;
-					this.match(JustMCFParser.T__8);
+					(_localctx as EffectISIGiveContext)._second = this.match(JustMCFParser.NUMBER);
 					}
+					break;
 				}
-
-				this.state = 1676;
+				this.state = 1674;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.NUMBER) {
 					{
-					this.state = 1675;
-					(_localctx as EffectISIGiveSpContext)._second = this.match(JustMCFParser.NUMBER);
+					this.state = 1673;
+					(_localctx as EffectISIGiveContext)._amplifier = this.match(JustMCFParser.NUMBER);
 					}
 				}
 
-				this.state = 1679;
+				this.state = 1677;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.TRUE || _la === JustMCFParser.FALSE) {
 					{
-					this.state = 1678;
+					this.state = 1676;
+					this.boolValue();
+					}
+				}
+
+				}
+				break;
+
+			case 3:
+				_localctx = new EffectISIGiveSpContext(_localctx);
+				this.enterOuterAlt(_localctx, 3);
+				{
+				this.state = 1679;
+				this.match(JustMCFParser.EFFECT);
+				this.state = 1680;
+				_la = this._input.LA(1);
+				if (!(_la === JustMCFParser.T__16 || _la === JustMCFParser.GIVE)) {
+				this._errHandler.recoverInline(this);
+				} else {
+					if (this._input.LA(1) === Token.EOF) {
+						this.matchedEOF = true;
+					}
+
+					this._errHandler.reportMatch(this);
+					this.consume();
+				}
+				this.state = 1681;
+				this.acceptableName();
+				this.state = 1685;
+				this._errHandler.sync(this);
+				_la = this._input.LA(1);
+				if (_la === JustMCFParser.T__7) {
+					{
+					this.state = 1682;
+					this.match(JustMCFParser.T__7);
+					this.state = 1683;
+					(_localctx as EffectISIGiveSpContext)._amplifier = this.match(JustMCFParser.NUMBER);
+					this.state = 1684;
+					this.match(JustMCFParser.T__8);
+					}
+				}
+
+				this.state = 1688;
+				this._errHandler.sync(this);
+				_la = this._input.LA(1);
+				if (_la === JustMCFParser.NUMBER) {
+					{
+					this.state = 1687;
+					(_localctx as EffectISIGiveSpContext)._second = this.match(JustMCFParser.NUMBER);
+					}
+				}
+
+				this.state = 1691;
+				this._errHandler.sync(this);
+				_la = this._input.LA(1);
+				if (_la === JustMCFParser.TRUE || _la === JustMCFParser.FALSE) {
+					{
+					this.state = 1690;
 					this.boolValue();
 					}
 				}
@@ -7465,9 +7504,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new EffectISIClearAllContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1681;
+				this.state = 1693;
 				this.match(JustMCFParser.EFFECT);
-				this.state = 1682;
+				this.state = 1694;
 				this.match(JustMCFParser.CLEAR);
 				}
 				break;
@@ -7493,16 +7532,16 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 136, JustMCFParser.RULE_tpIndependentStatementInner);
 		let _la: number;
 		try {
-			this.state = 1707;
+			this.state = 1719;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 202, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 204, this._ctx) ) {
 			case 1:
 				_localctx = new TpISIDestinationContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1685;
+				this.state = 1697;
 				this.match(JustMCFParser.TP);
-				this.state = 1686;
+				this.state = 1698;
 				this.selector();
 				}
 				break;
@@ -7511,9 +7550,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new TpISIPosContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1687;
+				this.state = 1699;
 				this.match(JustMCFParser.TP);
-				this.state = 1688;
+				this.state = 1700;
 				this.pos3Identifier();
 				}
 				break;
@@ -7522,9 +7561,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new TpISIRotatedContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1689;
+				this.state = 1701;
 				this.match(JustMCFParser.TP);
-				this.state = 1690;
+				this.state = 1702;
 				this.pos5Identifier();
 				}
 				break;
@@ -7533,11 +7572,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new TpISIRotatedDivContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1691;
+				this.state = 1703;
 				this.match(JustMCFParser.TP);
-				this.state = 1692;
+				this.state = 1704;
 				this.pos3Identifier();
-				this.state = 1693;
+				this.state = 1705;
 				this.pos2Identifier();
 				}
 				break;
@@ -7546,13 +7585,13 @@ export class JustMCFParser extends Parser {
 				_localctx = new TpISIFacingContext(_localctx);
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 1695;
+				this.state = 1707;
 				this.match(JustMCFParser.TP);
-				this.state = 1696;
+				this.state = 1708;
 				this.pos3Identifier();
-				this.state = 1697;
+				this.state = 1709;
 				this.match(JustMCFParser.FACING);
-				this.state = 1698;
+				this.state = 1710;
 				this.pos3Identifier();
 				}
 				break;
@@ -7561,20 +7600,20 @@ export class JustMCFParser extends Parser {
 				_localctx = new TpISIFacingEntityContext(_localctx);
 				this.enterOuterAlt(_localctx, 6);
 				{
-				this.state = 1700;
+				this.state = 1712;
 				this.match(JustMCFParser.TP);
-				this.state = 1701;
+				this.state = 1713;
 				this.pos3Identifier();
-				this.state = 1702;
+				this.state = 1714;
 				this.match(JustMCFParser.FACING);
-				this.state = 1703;
+				this.state = 1715;
 				this.selector();
-				this.state = 1705;
+				this.state = 1717;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 201, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 203, this._ctx) ) {
 				case 1:
 					{
-					this.state = 1704;
+					this.state = 1716;
 					(_localctx as TpISIFacingEntityContext)._anchor = this._input.LT(1);
 					_la = this._input.LA(1);
 					if (!(_la === JustMCFParser.EYES || _la === JustMCFParser.FEET)) {
@@ -7614,14 +7653,14 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 138, JustMCFParser.RULE_entityIndependentStatementInner);
 		let _la: number;
 		try {
-			this.state = 1772;
+			this.state = 1784;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 208, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 210, this._ctx) ) {
 			case 1:
 				_localctx = new EntityISIGiveAndClearContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1709;
+				this.state = 1721;
 				this.giveAndClearIndependentStatementInner();
 				}
 				break;
@@ -7630,7 +7669,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new EntityISIKillContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1710;
+				this.state = 1722;
 				this.match(JustMCFParser.KILL);
 				}
 				break;
@@ -7639,7 +7678,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new EntityISITagContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1711;
+				this.state = 1723;
 				this.tagIndependentStatementInner();
 				}
 				break;
@@ -7648,7 +7687,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new EntityISIEffectContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1712;
+				this.state = 1724;
 				this.effectIndependentStatementInner();
 				}
 				break;
@@ -7657,7 +7696,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new EntityISITpContext(_localctx);
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 1713;
+				this.state = 1725;
 				this.tpIndependentStatementInner();
 				}
 				break;
@@ -7666,25 +7705,25 @@ export class JustMCFParser extends Parser {
 				_localctx = new EntityISITitleCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 6);
 				{
-				this.state = 1714;
+				this.state = 1726;
 				this.match(JustMCFParser.TITLE);
-				this.state = 1715;
+				this.state = 1727;
 				this.match(JustMCFParser.T__4);
-				this.state = 1719;
+				this.state = 1731;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (((((_la - 109)) & ~0x1F) === 0 && ((1 << (_la - 109)) & ((1 << (JustMCFParser.RESET - 109)) | (1 << (JustMCFParser.TITLE - 109)) | (1 << (JustMCFParser.SUBTITLE - 109)) | (1 << (JustMCFParser.ACTIONBAR - 109)) | (1 << (JustMCFParser.TIMES - 109)))) !== 0) || _la === JustMCFParser.CLEAR) {
+				while (((((_la - 110)) & ~0x1F) === 0 && ((1 << (_la - 110)) & ((1 << (JustMCFParser.RESET - 110)) | (1 << (JustMCFParser.TITLE - 110)) | (1 << (JustMCFParser.SUBTITLE - 110)) | (1 << (JustMCFParser.ACTIONBAR - 110)) | (1 << (JustMCFParser.TIMES - 110)))) !== 0) || _la === JustMCFParser.CLEAR) {
 					{
 					{
-					this.state = 1716;
+					this.state = 1728;
 					this.titleSelectorStatementInner();
 					}
 					}
-					this.state = 1721;
+					this.state = 1733;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1722;
+				this.state = 1734;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -7693,25 +7732,25 @@ export class JustMCFParser extends Parser {
 				_localctx = new EntityISIDisplayCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 7);
 				{
-				this.state = 1723;
+				this.state = 1735;
 				this.match(JustMCFParser.DISPLAY);
-				this.state = 1724;
+				this.state = 1736;
 				this.match(JustMCFParser.T__4);
-				this.state = 1728;
+				this.state = 1740;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (((((_la - 117)) & ~0x1F) === 0 && ((1 << (_la - 117)) & ((1 << (JustMCFParser.BOSSBAR - 117)) | (1 << (JustMCFParser.TITLE - 117)) | (1 << (JustMCFParser.SUBTITLE - 117)) | (1 << (JustMCFParser.ACTIONBAR - 117)) | (1 << (JustMCFParser.TEXT - 117)))) !== 0)) {
+				while (((((_la - 118)) & ~0x1F) === 0 && ((1 << (_la - 118)) & ((1 << (JustMCFParser.BOSSBAR - 118)) | (1 << (JustMCFParser.TITLE - 118)) | (1 << (JustMCFParser.SUBTITLE - 118)) | (1 << (JustMCFParser.ACTIONBAR - 118)) | (1 << (JustMCFParser.TEXT - 118)))) !== 0)) {
 					{
 					{
-					this.state = 1725;
+					this.state = 1737;
 					this.displayIndependentStatementInner();
 					}
 					}
-					this.state = 1730;
+					this.state = 1742;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1731;
+				this.state = 1743;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -7720,7 +7759,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new EntityISIDisplaySingleContext(_localctx);
 				this.enterOuterAlt(_localctx, 8);
 				{
-				this.state = 1732;
+				this.state = 1744;
 				this.displayIndependentStatementInner();
 				}
 				break;
@@ -7729,11 +7768,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new EntityISIItemSingleContext(_localctx);
 				this.enterOuterAlt(_localctx, 9);
 				{
-				this.state = 1733;
+				this.state = 1745;
 				this.match(JustMCFParser.ITEM);
-				this.state = 1734;
+				this.state = 1746;
 				this.match(JustMCFParser.T__13);
-				this.state = 1735;
+				this.state = 1747;
 				this.itemIndependentStatementInner();
 				}
 				break;
@@ -7742,7 +7781,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new EntityISILootGiveSingleContext(_localctx);
 				this.enterOuterAlt(_localctx, 10);
 				{
-				this.state = 1736;
+				this.state = 1748;
 				_la = this._input.LA(1);
 				if (!(_la === JustMCFParser.ITEM || _la === JustMCFParser.LOOT)) {
 				this._errHandler.recoverInline(this);
@@ -7754,7 +7793,7 @@ export class JustMCFParser extends Parser {
 					this._errHandler.reportMatch(this);
 					this.consume();
 				}
-				this.state = 1737;
+				this.state = 1749;
 				this.lootIndependentStatementInnerGive();
 				}
 				break;
@@ -7763,7 +7802,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new EntityISILootSingleContext(_localctx);
 				this.enterOuterAlt(_localctx, 11);
 				{
-				this.state = 1738;
+				this.state = 1750;
 				_la = this._input.LA(1);
 				if (!(_la === JustMCFParser.ITEM || _la === JustMCFParser.LOOT)) {
 				this._errHandler.recoverInline(this);
@@ -7775,9 +7814,9 @@ export class JustMCFParser extends Parser {
 					this._errHandler.reportMatch(this);
 					this.consume();
 				}
-				this.state = 1739;
+				this.state = 1751;
 				this.match(JustMCFParser.T__13);
-				this.state = 1740;
+				this.state = 1752;
 				this.lootIndependentStatementInnerReplaceEntity();
 				}
 				break;
@@ -7786,25 +7825,25 @@ export class JustMCFParser extends Parser {
 				_localctx = new EntityISIItemCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 12);
 				{
-				this.state = 1741;
+				this.state = 1753;
 				this.match(JustMCFParser.ITEM);
-				this.state = 1742;
+				this.state = 1754;
 				this.match(JustMCFParser.T__4);
-				this.state = 1746;
+				this.state = 1758;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === JustMCFParser.T__16 || _la === JustMCFParser.T__17 || ((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)) | (1 << (JustMCFParser.AcceptableName - 167)))) !== 0)) {
+				while (_la === JustMCFParser.T__16 || _la === JustMCFParser.T__17 || ((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)) | (1 << (JustMCFParser.AcceptableName - 168)))) !== 0)) {
 					{
 					{
-					this.state = 1743;
+					this.state = 1755;
 					this.itemSelectorStatementInner();
 					}
 					}
-					this.state = 1748;
+					this.state = 1760;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1749;
+				this.state = 1761;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -7813,58 +7852,18 @@ export class JustMCFParser extends Parser {
 				_localctx = new EntityISILootCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 13);
 				{
-				this.state = 1750;
-				this.match(JustMCFParser.LOOT);
-				this.state = 1751;
-				this.match(JustMCFParser.T__4);
-				this.state = 1755;
-				this._errHandler.sync(this);
-				_la = this._input.LA(1);
-				while (_la === JustMCFParser.T__16 || ((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)) | (1 << (JustMCFParser.AcceptableName - 167)))) !== 0)) {
-					{
-					{
-					this.state = 1752;
-					this.lootSelectorStatementInner();
-					}
-					}
-					this.state = 1757;
-					this._errHandler.sync(this);
-					_la = this._input.LA(1);
-				}
-				this.state = 1758;
-				this.match(JustMCFParser.T__5);
-				}
-				break;
-
-			case 14:
-				_localctx = new EntityISIAttrSingleContext(_localctx);
-				this.enterOuterAlt(_localctx, 14);
-				{
-				this.state = 1759;
-				this.match(JustMCFParser.ATTR);
-				this.state = 1760;
-				this.match(JustMCFParser.T__13);
-				this.state = 1761;
-				this.attrIndependentStatementInner();
-				}
-				break;
-
-			case 15:
-				_localctx = new EntityISIAttrCompoundContext(_localctx);
-				this.enterOuterAlt(_localctx, 15);
-				{
 				this.state = 1762;
-				this.match(JustMCFParser.ATTR);
+				this.match(JustMCFParser.LOOT);
 				this.state = 1763;
 				this.match(JustMCFParser.T__4);
 				this.state = 1767;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)) | (1 << (JustMCFParser.AcceptableName - 167)))) !== 0)) {
+				while (_la === JustMCFParser.T__16 || ((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)) | (1 << (JustMCFParser.AcceptableName - 168)))) !== 0)) {
 					{
 					{
 					this.state = 1764;
-					this.attrIndependentStatementInner();
+					this.lootSelectorStatementInner();
 					}
 					}
 					this.state = 1769;
@@ -7876,11 +7875,51 @@ export class JustMCFParser extends Parser {
 				}
 				break;
 
+			case 14:
+				_localctx = new EntityISIAttrSingleContext(_localctx);
+				this.enterOuterAlt(_localctx, 14);
+				{
+				this.state = 1771;
+				this.match(JustMCFParser.ATTR);
+				this.state = 1772;
+				this.match(JustMCFParser.T__13);
+				this.state = 1773;
+				this.attrIndependentStatementInner();
+				}
+				break;
+
+			case 15:
+				_localctx = new EntityISIAttrCompoundContext(_localctx);
+				this.enterOuterAlt(_localctx, 15);
+				{
+				this.state = 1774;
+				this.match(JustMCFParser.ATTR);
+				this.state = 1775;
+				this.match(JustMCFParser.T__4);
+				this.state = 1779;
+				this._errHandler.sync(this);
+				_la = this._input.LA(1);
+				while (((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)) | (1 << (JustMCFParser.AcceptableName - 168)))) !== 0)) {
+					{
+					{
+					this.state = 1776;
+					this.attrIndependentStatementInner();
+					}
+					}
+					this.state = 1781;
+					this._errHandler.sync(this);
+					_la = this._input.LA(1);
+				}
+				this.state = 1782;
+				this.match(JustMCFParser.T__5);
+				}
+				break;
+
 			case 16:
 				_localctx = new EntityISIExecContext(_localctx);
 				this.enterOuterAlt(_localctx, 16);
 				{
-				this.state = 1771;
+				this.state = 1783;
 				this.execStatement();
 				}
 				break;
@@ -7906,14 +7945,14 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 140, JustMCFParser.RULE_entityStatementInner);
 		let _la: number;
 		try {
-			this.state = 1786;
+			this.state = 1798;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 210, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 212, this._ctx) ) {
 			case 1:
 				_localctx = new EntitySIEntityExpressionContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1774;
+				this.state = 1786;
 				this.entityExpression();
 				}
 				break;
@@ -7922,27 +7961,27 @@ export class JustMCFParser extends Parser {
 				_localctx = new EntitySISelectorCompoundContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1775;
+				this.state = 1787;
 				this.selector();
-				this.state = 1776;
+				this.state = 1788;
 				this.match(JustMCFParser.T__4);
-				this.state = 1781;
+				this.state = 1793;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (_la === JustMCFParser.T__30) {
 					{
 					{
-					this.state = 1777;
+					this.state = 1789;
 					this.match(JustMCFParser.T__30);
-					this.state = 1778;
+					this.state = 1790;
 					this.entityIndependentStatementInner();
 					}
 					}
-					this.state = 1783;
+					this.state = 1795;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1784;
+				this.state = 1796;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -7969,11 +8008,11 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 1788;
+			this.state = 1800;
 			this.selector();
-			this.state = 1789;
+			this.state = 1801;
 			this.match(JustMCFParser.T__30);
-			this.state = 1790;
+			this.state = 1802;
 			this.entityIndependentStatementInner();
 			}
 		}
@@ -7999,25 +8038,25 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 1792;
+			this.state = 1804;
 			this.match(JustMCFParser.BLOCK);
-			this.state = 1793;
+			this.state = 1805;
 			this.match(JustMCFParser.T__4);
-			this.state = 1797;
+			this.state = 1809;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			while (_la === JustMCFParser.T__49) {
 				{
 				{
-				this.state = 1794;
+				this.state = 1806;
 				this.blockStatementInner();
 				}
 				}
-				this.state = 1799;
+				this.state = 1811;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
-			this.state = 1800;
+			this.state = 1812;
 			this.match(JustMCFParser.T__5);
 			}
 		}
@@ -8041,26 +8080,26 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 146, JustMCFParser.RULE_blockStatementInner);
 		let _la: number;
 		try {
-			this.state = 1836;
+			this.state = 1848;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 217, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 219, this._ctx) ) {
 			case 1:
 				_localctx = new BlockSISetblockContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1802;
+				this.state = 1814;
 				this.pos3Identifier();
-				this.state = 1803;
+				this.state = 1815;
 				this.blockIdentifier();
-				this.state = 1805;
+				this.state = 1817;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				if (((((_la - 155)) & ~0x1F) === 0 && ((1 << (_la - 155)) & ((1 << (JustMCFParser.DESTROY - 155)) | (1 << (JustMCFParser.KEEP - 155)) | (1 << (JustMCFParser.REPLACE - 155)))) !== 0)) {
+				if (((((_la - 156)) & ~0x1F) === 0 && ((1 << (_la - 156)) & ((1 << (JustMCFParser.DESTROY - 156)) | (1 << (JustMCFParser.KEEP - 156)) | (1 << (JustMCFParser.REPLACE - 156)))) !== 0)) {
 					{
-					this.state = 1804;
+					this.state = 1816;
 					(_localctx as BlockSISetblockContext)._mod = this._input.LT(1);
 					_la = this._input.LA(1);
-					if (!(((((_la - 155)) & ~0x1F) === 0 && ((1 << (_la - 155)) & ((1 << (JustMCFParser.DESTROY - 155)) | (1 << (JustMCFParser.KEEP - 155)) | (1 << (JustMCFParser.REPLACE - 155)))) !== 0))) {
+					if (!(((((_la - 156)) & ~0x1F) === 0 && ((1 << (_la - 156)) & ((1 << (JustMCFParser.DESTROY - 156)) | (1 << (JustMCFParser.KEEP - 156)) | (1 << (JustMCFParser.REPLACE - 156)))) !== 0))) {
 						(_localctx as BlockSISetblockContext)._mod = this._errHandler.recoverInline(this);
 					} else {
 						if (this._input.LA(1) === Token.EOF) {
@@ -8080,21 +8119,21 @@ export class JustMCFParser extends Parser {
 				_localctx = new BlockSIFillContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1807;
+				this.state = 1819;
 				this.pos3Identifier();
-				this.state = 1808;
+				this.state = 1820;
 				this.pos3Identifier();
-				this.state = 1809;
+				this.state = 1821;
 				this.blockIdentifier();
-				this.state = 1811;
+				this.state = 1823;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				if (((((_la - 155)) & ~0x1F) === 0 && ((1 << (_la - 155)) & ((1 << (JustMCFParser.DESTROY - 155)) | (1 << (JustMCFParser.KEEP - 155)) | (1 << (JustMCFParser.HOLLOW - 155)) | (1 << (JustMCFParser.OUTLINE - 155)))) !== 0)) {
+				if (((((_la - 156)) & ~0x1F) === 0 && ((1 << (_la - 156)) & ((1 << (JustMCFParser.DESTROY - 156)) | (1 << (JustMCFParser.KEEP - 156)) | (1 << (JustMCFParser.HOLLOW - 156)) | (1 << (JustMCFParser.OUTLINE - 156)))) !== 0)) {
 					{
-					this.state = 1810;
+					this.state = 1822;
 					(_localctx as BlockSIFillContext)._mod = this._input.LT(1);
 					_la = this._input.LA(1);
-					if (!(((((_la - 155)) & ~0x1F) === 0 && ((1 << (_la - 155)) & ((1 << (JustMCFParser.DESTROY - 155)) | (1 << (JustMCFParser.KEEP - 155)) | (1 << (JustMCFParser.HOLLOW - 155)) | (1 << (JustMCFParser.OUTLINE - 155)))) !== 0))) {
+					if (!(((((_la - 156)) & ~0x1F) === 0 && ((1 << (_la - 156)) & ((1 << (JustMCFParser.DESTROY - 156)) | (1 << (JustMCFParser.KEEP - 156)) | (1 << (JustMCFParser.HOLLOW - 156)) | (1 << (JustMCFParser.OUTLINE - 156)))) !== 0))) {
 						(_localctx as BlockSIFillContext)._mod = this._errHandler.recoverInline(this);
 					} else {
 						if (this._input.LA(1) === Token.EOF) {
@@ -8114,15 +8153,15 @@ export class JustMCFParser extends Parser {
 				_localctx = new BlockSIFillReplaceContext(_localctx);
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1813;
+				this.state = 1825;
 				this.pos3Identifier();
-				this.state = 1814;
+				this.state = 1826;
 				this.pos3Identifier();
-				this.state = 1815;
+				this.state = 1827;
 				this.blockIdentifier();
-				this.state = 1816;
+				this.state = 1828;
 				this.match(JustMCFParser.REPLACE);
-				this.state = 1817;
+				this.state = 1829;
 				this.block_predicate();
 				}
 				break;
@@ -8131,18 +8170,18 @@ export class JustMCFParser extends Parser {
 				_localctx = new BlockSICloneContext(_localctx);
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1819;
+				this.state = 1831;
 				this.pos3Identifier();
-				this.state = 1820;
+				this.state = 1832;
 				this.pos3Identifier();
-				this.state = 1821;
+				this.state = 1833;
 				this.pos3Identifier();
-				this.state = 1823;
+				this.state = 1835;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				if (_la === JustMCFParser.MASKED || _la === JustMCFParser.REPLACE) {
 					{
-					this.state = 1822;
+					this.state = 1834;
 					(_localctx as BlockSICloneContext)._masked_mod = this._input.LT(1);
 					_la = this._input.LA(1);
 					if (!(_la === JustMCFParser.MASKED || _la === JustMCFParser.REPLACE)) {
@@ -8158,15 +8197,15 @@ export class JustMCFParser extends Parser {
 					}
 				}
 
-				this.state = 1826;
+				this.state = 1838;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				if (((((_la - 160)) & ~0x1F) === 0 && ((1 << (_la - 160)) & ((1 << (JustMCFParser.FORCE - 160)) | (1 << (JustMCFParser.MOVE - 160)) | (1 << (JustMCFParser.NORMAL - 160)))) !== 0)) {
+				if (((((_la - 161)) & ~0x1F) === 0 && ((1 << (_la - 161)) & ((1 << (JustMCFParser.FORCE - 161)) | (1 << (JustMCFParser.MOVE - 161)) | (1 << (JustMCFParser.NORMAL - 161)))) !== 0)) {
 					{
-					this.state = 1825;
+					this.state = 1837;
 					(_localctx as BlockSICloneContext)._mod = this._input.LT(1);
 					_la = this._input.LA(1);
-					if (!(((((_la - 160)) & ~0x1F) === 0 && ((1 << (_la - 160)) & ((1 << (JustMCFParser.FORCE - 160)) | (1 << (JustMCFParser.MOVE - 160)) | (1 << (JustMCFParser.NORMAL - 160)))) !== 0))) {
+					if (!(((((_la - 161)) & ~0x1F) === 0 && ((1 << (_la - 161)) & ((1 << (JustMCFParser.FORCE - 161)) | (1 << (JustMCFParser.MOVE - 161)) | (1 << (JustMCFParser.NORMAL - 161)))) !== 0))) {
 						(_localctx as BlockSICloneContext)._mod = this._errHandler.recoverInline(this);
 					} else {
 						if (this._input.LA(1) === Token.EOF) {
@@ -8186,25 +8225,25 @@ export class JustMCFParser extends Parser {
 				_localctx = new BlockSICloneFilteredContext(_localctx);
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 1828;
+				this.state = 1840;
 				this.pos3Identifier();
-				this.state = 1829;
+				this.state = 1841;
 				this.pos3Identifier();
-				this.state = 1830;
+				this.state = 1842;
 				this.pos3Identifier();
-				this.state = 1831;
+				this.state = 1843;
 				this.match(JustMCFParser.FILTERED);
-				this.state = 1832;
+				this.state = 1844;
 				this.block_predicate();
-				this.state = 1834;
+				this.state = 1846;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				if (((((_la - 160)) & ~0x1F) === 0 && ((1 << (_la - 160)) & ((1 << (JustMCFParser.FORCE - 160)) | (1 << (JustMCFParser.MOVE - 160)) | (1 << (JustMCFParser.NORMAL - 160)))) !== 0)) {
+				if (((((_la - 161)) & ~0x1F) === 0 && ((1 << (_la - 161)) & ((1 << (JustMCFParser.FORCE - 161)) | (1 << (JustMCFParser.MOVE - 161)) | (1 << (JustMCFParser.NORMAL - 161)))) !== 0)) {
 					{
-					this.state = 1833;
+					this.state = 1845;
 					(_localctx as BlockSICloneFilteredContext)._mod = this._input.LT(1);
 					_la = this._input.LA(1);
-					if (!(((((_la - 160)) & ~0x1F) === 0 && ((1 << (_la - 160)) & ((1 << (JustMCFParser.FORCE - 160)) | (1 << (JustMCFParser.MOVE - 160)) | (1 << (JustMCFParser.NORMAL - 160)))) !== 0))) {
+					if (!(((((_la - 161)) & ~0x1F) === 0 && ((1 << (_la - 161)) & ((1 << (JustMCFParser.FORCE - 161)) | (1 << (JustMCFParser.MOVE - 161)) | (1 << (JustMCFParser.NORMAL - 161)))) !== 0))) {
 						(_localctx as BlockSICloneFilteredContext)._mod = this._errHandler.recoverInline(this);
 					} else {
 						if (this._input.LA(1) === Token.EOF) {
@@ -8240,18 +8279,18 @@ export class JustMCFParser extends Parser {
 		let _localctx: InterfaceStatementContext = new InterfaceStatementContext(this._ctx, this.state);
 		this.enterRule(_localctx, 148, JustMCFParser.RULE_interfaceStatement);
 		try {
-			this.state = 1846;
+			this.state = 1858;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 218, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 220, this._ctx) ) {
 			case 1:
 				_localctx = new InterfaceSNamespaceContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1838;
+				this.state = 1850;
 				this.match(JustMCFParser.INTERFACE);
-				this.state = 1839;
+				this.state = 1851;
 				this.nameSpaceStorage();
-				this.state = 1840;
+				this.state = 1852;
 				this.nbt();
 				}
 				break;
@@ -8260,11 +8299,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new InterfaceSIdentifierContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1842;
+				this.state = 1854;
 				this.match(JustMCFParser.INTERFACE);
-				this.state = 1843;
+				this.state = 1855;
 				this.dataIdentifier();
-				this.state = 1844;
+				this.state = 1856;
 				this.nbt();
 				}
 				break;
@@ -8291,11 +8330,11 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 1848;
+			this.state = 1860;
 			this.dataIdentifier();
-			this.state = 1849;
+			this.state = 1861;
 			this.match(JustMCFParser.T__6);
-			this.state = 1850;
+			this.state = 1862;
 			this.existExpression(0);
 			}
 		}
@@ -8333,32 +8372,32 @@ export class JustMCFParser extends Parser {
 			let _alt: number;
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 1871;
+			this.state = 1883;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 220, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 222, this._ctx) ) {
 			case 1:
 				{
 				_localctx = new ExistExpressionExecContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
 
-				this.state = 1853;
+				this.state = 1865;
 				this.match(JustMCFParser.T__4);
-				this.state = 1857;
+				this.state = 1869;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === JustMCFParser.T__9 || _la === JustMCFParser.T__10 || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || ((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.Selector - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)) | (1 << (JustMCFParser.AcceptableName - 167)) | (1 << (JustMCFParser.NBTName - 167)))) !== 0)) {
+				while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << JustMCFParser.T__4) | (1 << JustMCFParser.T__9) | (1 << JustMCFParser.T__10))) !== 0) || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || ((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.Selector - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)) | (1 << (JustMCFParser.AcceptableName - 168)) | (1 << (JustMCFParser.NBTName - 168)))) !== 0)) {
 					{
 					{
-					this.state = 1854;
+					this.state = 1866;
 					this.execChild();
 					}
 					}
-					this.state = 1859;
+					this.state = 1871;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1860;
+				this.state = 1872;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -8368,7 +8407,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExistExpressionIdContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
-				this.state = 1861;
+				this.state = 1873;
 				this.dataIdentifier();
 				}
 				break;
@@ -8378,7 +8417,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExisitExpressionFuncRunContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
-				this.state = 1862;
+				this.state = 1874;
 				this.funcImproveRunExpression();
 				}
 				break;
@@ -8388,7 +8427,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExistExpressionTrueContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
-				this.state = 1863;
+				this.state = 1875;
 				this.match(JustMCFParser.TRUE);
 				}
 				break;
@@ -8398,7 +8437,7 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExistExpressionFalseContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
-				this.state = 1864;
+				this.state = 1876;
 				this.match(JustMCFParser.FALSE);
 				}
 				break;
@@ -8408,9 +8447,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExistExpressionNotContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
-				this.state = 1865;
+				this.state = 1877;
 				this.match(JustMCFParser.T__33);
-				this.state = 1866;
+				this.state = 1878;
 				this.existExpression(6);
 				}
 				break;
@@ -8420,19 +8459,19 @@ export class JustMCFParser extends Parser {
 				_localctx = new ExistExpressionParenContext(_localctx);
 				this._ctx = _localctx;
 				_prevctx = _localctx;
-				this.state = 1867;
+				this.state = 1879;
 				this.match(JustMCFParser.T__7);
-				this.state = 1868;
+				this.state = 1880;
 				this.existExpression(0);
-				this.state = 1869;
+				this.state = 1881;
 				this.match(JustMCFParser.T__8);
 				}
 				break;
 			}
 			this._ctx._stop = this._input.tryLT(-1);
-			this.state = 1887;
+			this.state = 1899;
 			this._errHandler.sync(this);
-			_alt = this.interpreter.adaptivePredict(this._input, 222, this._ctx);
+			_alt = this.interpreter.adaptivePredict(this._input, 224, this._ctx);
 			while (_alt !== 2 && _alt !== ATN.INVALID_ALT_NUMBER) {
 				if (_alt === 1) {
 					if (this._parseListeners != null) {
@@ -8440,20 +8479,20 @@ export class JustMCFParser extends Parser {
 					}
 					_prevctx = _localctx;
 					{
-					this.state = 1885;
+					this.state = 1897;
 					this._errHandler.sync(this);
-					switch ( this.interpreter.adaptivePredict(this._input, 221, this._ctx) ) {
+					switch ( this.interpreter.adaptivePredict(this._input, 223, this._ctx) ) {
 					case 1:
 						{
 						_localctx = new ExistExpressionBitAndContext(new ExistExpressionContext(_parentctx, _parentState));
 						this.pushNewRecursionContext(_localctx, _startState, JustMCFParser.RULE_existExpression);
-						this.state = 1873;
+						this.state = 1885;
 						if (!(this.precpred(this._ctx, 5))) {
 							throw this.createFailedPredicateException("this.precpred(this._ctx, 5)");
 						}
-						this.state = 1874;
+						this.state = 1886;
 						(_localctx as ExistExpressionBitAndContext)._op = this.match(JustMCFParser.T__34);
-						this.state = 1875;
+						this.state = 1887;
 						this.existExpression(6);
 						}
 						break;
@@ -8462,13 +8501,13 @@ export class JustMCFParser extends Parser {
 						{
 						_localctx = new ExistExpressionBitOrContext(new ExistExpressionContext(_parentctx, _parentState));
 						this.pushNewRecursionContext(_localctx, _startState, JustMCFParser.RULE_existExpression);
-						this.state = 1876;
+						this.state = 1888;
 						if (!(this.precpred(this._ctx, 4))) {
 							throw this.createFailedPredicateException("this.precpred(this._ctx, 4)");
 						}
-						this.state = 1877;
+						this.state = 1889;
 						(_localctx as ExistExpressionBitOrContext)._op = this.match(JustMCFParser.T__35);
-						this.state = 1878;
+						this.state = 1890;
 						this.existExpression(5);
 						}
 						break;
@@ -8477,13 +8516,13 @@ export class JustMCFParser extends Parser {
 						{
 						_localctx = new ExistExpressionAndContext(new ExistExpressionContext(_parentctx, _parentState));
 						this.pushNewRecursionContext(_localctx, _startState, JustMCFParser.RULE_existExpression);
-						this.state = 1879;
+						this.state = 1891;
 						if (!(this.precpred(this._ctx, 3))) {
 							throw this.createFailedPredicateException("this.precpred(this._ctx, 3)");
 						}
-						this.state = 1880;
+						this.state = 1892;
 						(_localctx as ExistExpressionAndContext)._op = this.match(JustMCFParser.T__36);
-						this.state = 1881;
+						this.state = 1893;
 						this.existExpression(4);
 						}
 						break;
@@ -8492,22 +8531,22 @@ export class JustMCFParser extends Parser {
 						{
 						_localctx = new ExistExpressionOrContext(new ExistExpressionContext(_parentctx, _parentState));
 						this.pushNewRecursionContext(_localctx, _startState, JustMCFParser.RULE_existExpression);
-						this.state = 1882;
+						this.state = 1894;
 						if (!(this.precpred(this._ctx, 2))) {
 							throw this.createFailedPredicateException("this.precpred(this._ctx, 2)");
 						}
-						this.state = 1883;
+						this.state = 1895;
 						(_localctx as ExistExpressionOrContext)._op = this.match(JustMCFParser.T__37);
-						this.state = 1884;
+						this.state = 1896;
 						this.existExpression(3);
 						}
 						break;
 					}
 					}
 				}
-				this.state = 1889;
+				this.state = 1901;
 				this._errHandler.sync(this);
-				_alt = this.interpreter.adaptivePredict(this._input, 222, this._ctx);
+				_alt = this.interpreter.adaptivePredict(this._input, 224, this._ctx);
 			}
 			}
 		}
@@ -8532,18 +8571,18 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 1890;
+			this.state = 1902;
 			this.match(JustMCFParser.IF);
-			this.state = 1891;
+			this.state = 1903;
 			this.existExpression(0);
-			this.state = 1892;
+			this.state = 1904;
 			this.execRunChild();
-			this.state = 1894;
+			this.state = 1906;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 223, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 225, this._ctx) ) {
 			case 1:
 				{
-				this.state = 1893;
+				this.state = 1905;
 				this.ifElseStatement();
 				}
 				break;
@@ -8569,16 +8608,16 @@ export class JustMCFParser extends Parser {
 		let _localctx: IfElseStatementContext = new IfElseStatementContext(this._ctx, this.state);
 		this.enterRule(_localctx, 156, JustMCFParser.RULE_ifElseStatement);
 		try {
-			this.state = 1900;
+			this.state = 1912;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 224, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 226, this._ctx) ) {
 			case 1:
 				_localctx = new IfElseExecContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1896;
+				this.state = 1908;
 				this.match(JustMCFParser.ELSE);
-				this.state = 1897;
+				this.state = 1909;
 				this.execRunChild();
 				}
 				break;
@@ -8587,9 +8626,9 @@ export class JustMCFParser extends Parser {
 				_localctx = new IfElseSIfSContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1898;
+				this.state = 1910;
 				this.match(JustMCFParser.ELSE);
-				this.state = 1899;
+				this.state = 1911;
 				this.ifStatement();
 				}
 				break;
@@ -8615,34 +8654,34 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 158, JustMCFParser.RULE_whileStatement);
 		let _la: number;
 		try {
-			this.state = 1916;
+			this.state = 1928;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 226, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 228, this._ctx) ) {
 			case 1:
 				_localctx = new WhileStatementExecContext(_localctx);
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1902;
+				this.state = 1914;
 				this.match(JustMCFParser.WHILE);
-				this.state = 1903;
+				this.state = 1915;
 				this.match(JustMCFParser.T__4);
-				this.state = 1907;
+				this.state = 1919;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
-				while (_la === JustMCFParser.T__9 || _la === JustMCFParser.T__10 || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || ((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.Selector - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)) | (1 << (JustMCFParser.AcceptableName - 167)) | (1 << (JustMCFParser.NBTName - 167)))) !== 0)) {
+				while ((((_la) & ~0x1F) === 0 && ((1 << _la) & ((1 << JustMCFParser.T__4) | (1 << JustMCFParser.T__9) | (1 << JustMCFParser.T__10))) !== 0) || ((((_la - 33)) & ~0x1F) === 0 && ((1 << (_la - 33)) & ((1 << (JustMCFParser.T__32 - 33)) | (1 << (JustMCFParser.T__49 - 33)) | (1 << (JustMCFParser.T__51 - 33)))) !== 0) || ((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.Selector - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)) | (1 << (JustMCFParser.AcceptableName - 168)) | (1 << (JustMCFParser.NBTName - 168)))) !== 0)) {
 					{
 					{
-					this.state = 1904;
+					this.state = 1916;
 					this.execChild();
 					}
 					}
-					this.state = 1909;
+					this.state = 1921;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1910;
+				this.state = 1922;
 				this.match(JustMCFParser.T__5);
-				this.state = 1911;
+				this.state = 1923;
 				this.execRunChild();
 				}
 				break;
@@ -8651,11 +8690,11 @@ export class JustMCFParser extends Parser {
 				_localctx = new WhileStatementExistContext(_localctx);
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1912;
+				this.state = 1924;
 				this.match(JustMCFParser.WHILE);
-				this.state = 1913;
+				this.state = 1925;
 				this.existExpression(0);
-				this.state = 1914;
+				this.state = 1926;
 				this.execRunChild();
 				}
 				break;
@@ -8682,15 +8721,15 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 1918;
+			this.state = 1930;
 			this.match(JustMCFParser.FOR);
-			this.state = 1919;
+			this.state = 1931;
 			this.match(JustMCFParser.T__4);
-			this.state = 1920;
+			this.state = 1932;
 			this.dataOperationExpression();
-			this.state = 1921;
+			this.state = 1933;
 			this.match(JustMCFParser.T__5);
-			this.state = 1922;
+			this.state = 1934;
 			this.execRunChild();
 			}
 		}
@@ -8715,7 +8754,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 1924;
+			this.state = 1936;
 			this.snbtValue();
 			}
 		}
@@ -8740,7 +8779,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 1926;
+			this.state = 1938;
 			this.jsonTextValue();
 			}
 		}
@@ -8764,13 +8803,13 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 166, JustMCFParser.RULE_nbtPath);
 		try {
 			let _alt: number;
-			this.state = 1949;
+			this.state = 1961;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 230, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 232, this._ctx) ) {
 			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1928;
+				this.state = 1940;
 				this.nbtName();
 				}
 				break;
@@ -8778,7 +8817,7 @@ export class JustMCFParser extends Parser {
 			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1929;
+				this.state = 1941;
 				this.nbtCompound();
 				}
 				break;
@@ -8786,9 +8825,9 @@ export class JustMCFParser extends Parser {
 			case 3:
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1930;
+				this.state = 1942;
 				this.nbtName();
-				this.state = 1931;
+				this.state = 1943;
 				this.nbtCompound();
 				}
 				break;
@@ -8796,30 +8835,30 @@ export class JustMCFParser extends Parser {
 			case 4:
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1933;
+				this.state = 1945;
 				this.nbtName();
-				this.state = 1940;
+				this.state = 1952;
 				this._errHandler.sync(this);
-				_alt = this.interpreter.adaptivePredict(this._input, 228, this._ctx);
+				_alt = this.interpreter.adaptivePredict(this._input, 230, this._ctx);
 				while (_alt !== 2 && _alt !== ATN.INVALID_ALT_NUMBER) {
 					if (_alt === 1) {
 						{
-						this.state = 1938;
+						this.state = 1950;
 						this._errHandler.sync(this);
 						switch (this._input.LA(1)) {
 						case JustMCFParser.T__1:
 							{
-							this.state = 1934;
+							this.state = 1946;
 							this.match(JustMCFParser.T__1);
-							this.state = 1935;
-							this.match(JustMCFParser.NUMBER);
-							this.state = 1936;
+							this.state = 1947;
+							this.match(JustMCFParser.NUMBER_INT);
+							this.state = 1948;
 							this.match(JustMCFParser.T__3);
 							}
 							break;
 						case JustMCFParser.T__38:
 							{
-							this.state = 1937;
+							this.state = 1949;
 							this.match(JustMCFParser.T__38);
 							}
 							break;
@@ -8828,20 +8867,20 @@ export class JustMCFParser extends Parser {
 						}
 						}
 					}
-					this.state = 1942;
+					this.state = 1954;
 					this._errHandler.sync(this);
-					_alt = this.interpreter.adaptivePredict(this._input, 228, this._ctx);
+					_alt = this.interpreter.adaptivePredict(this._input, 230, this._ctx);
 				}
-				this.state = 1947;
+				this.state = 1959;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 229, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 231, this._ctx) ) {
 				case 1:
 					{
-					this.state = 1943;
+					this.state = 1955;
 					this.match(JustMCFParser.T__1);
-					this.state = 1944;
+					this.state = 1956;
 					this.nbtCompound();
-					this.state = 1945;
+					this.state = 1957;
 					this.match(JustMCFParser.T__3);
 					}
 					break;
@@ -8870,33 +8909,33 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 168, JustMCFParser.RULE_snbtValue);
 		let _la: number;
 		try {
-			this.state = 2013;
+			this.state = 2025;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 236, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 238, this._ctx) ) {
 			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 1951;
+				this.state = 1963;
 				this.match(JustMCFParser.T__39);
-				this.state = 1952;
+				this.state = 1964;
 				this.nbtPair();
-				this.state = 1957;
+				this.state = 1969;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (_la === JustMCFParser.T__2) {
 					{
 					{
-					this.state = 1953;
+					this.state = 1965;
 					this.match(JustMCFParser.T__2);
-					this.state = 1954;
+					this.state = 1966;
 					this.nbtPair();
 					}
 					}
-					this.state = 1959;
+					this.state = 1971;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1960;
+				this.state = 1972;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -8904,9 +8943,9 @@ export class JustMCFParser extends Parser {
 			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 1962;
+				this.state = 1974;
 				this.match(JustMCFParser.T__39);
-				this.state = 1963;
+				this.state = 1975;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -8914,27 +8953,27 @@ export class JustMCFParser extends Parser {
 			case 3:
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 1964;
+				this.state = 1976;
 				this.match(JustMCFParser.T__40);
-				this.state = 1965;
+				this.state = 1977;
 				this.nbtValue();
-				this.state = 1970;
+				this.state = 1982;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (_la === JustMCFParser.T__2) {
 					{
 					{
-					this.state = 1966;
+					this.state = 1978;
 					this.match(JustMCFParser.T__2);
-					this.state = 1967;
+					this.state = 1979;
 					this.nbtValue();
 					}
 					}
-					this.state = 1972;
+					this.state = 1984;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1973;
+				this.state = 1985;
 				this.match(JustMCFParser.T__3);
 				}
 				break;
@@ -8942,9 +8981,9 @@ export class JustMCFParser extends Parser {
 			case 4:
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 1975;
+				this.state = 1987;
 				this.match(JustMCFParser.T__40);
-				this.state = 1976;
+				this.state = 1988;
 				this.match(JustMCFParser.T__3);
 				}
 				break;
@@ -8952,27 +8991,27 @@ export class JustMCFParser extends Parser {
 			case 5:
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 1977;
+				this.state = 1989;
 				this.match(JustMCFParser.T__41);
-				this.state = 1978;
+				this.state = 1990;
 				this.match(JustMCFParser.ByteNumber);
-				this.state = 1983;
+				this.state = 1995;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (_la === JustMCFParser.T__2) {
 					{
 					{
-					this.state = 1979;
+					this.state = 1991;
 					this.match(JustMCFParser.T__2);
-					this.state = 1980;
+					this.state = 1992;
 					this.match(JustMCFParser.ByteNumber);
 					}
 					}
-					this.state = 1985;
+					this.state = 1997;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1986;
+				this.state = 1998;
 				this.match(JustMCFParser.T__3);
 				}
 				break;
@@ -8980,27 +9019,27 @@ export class JustMCFParser extends Parser {
 			case 6:
 				this.enterOuterAlt(_localctx, 6);
 				{
-				this.state = 1987;
+				this.state = 1999;
 				this.match(JustMCFParser.T__42);
-				this.state = 1988;
-				this.match(JustMCFParser.NUMBER);
-				this.state = 1993;
+				this.state = 2000;
+				this.match(JustMCFParser.NUMBER_INT);
+				this.state = 2005;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (_la === JustMCFParser.T__2) {
 					{
 					{
-					this.state = 1989;
+					this.state = 2001;
 					this.match(JustMCFParser.T__2);
-					this.state = 1990;
-					this.match(JustMCFParser.NUMBER);
+					this.state = 2002;
+					this.match(JustMCFParser.NUMBER_INT);
 					}
 					}
-					this.state = 1995;
+					this.state = 2007;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 1996;
+				this.state = 2008;
 				this.match(JustMCFParser.T__3);
 				}
 				break;
@@ -9008,27 +9047,27 @@ export class JustMCFParser extends Parser {
 			case 7:
 				this.enterOuterAlt(_localctx, 7);
 				{
-				this.state = 1997;
+				this.state = 2009;
 				this.match(JustMCFParser.T__43);
-				this.state = 1998;
+				this.state = 2010;
 				this.match(JustMCFParser.LongNumber);
-				this.state = 2003;
+				this.state = 2015;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (_la === JustMCFParser.T__2) {
 					{
 					{
-					this.state = 1999;
+					this.state = 2011;
 					this.match(JustMCFParser.T__2);
-					this.state = 2000;
+					this.state = 2012;
 					this.match(JustMCFParser.LongNumber);
 					}
 					}
-					this.state = 2005;
+					this.state = 2017;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 2006;
+				this.state = 2018;
 				this.match(JustMCFParser.T__3);
 				}
 				break;
@@ -9036,7 +9075,7 @@ export class JustMCFParser extends Parser {
 			case 8:
 				this.enterOuterAlt(_localctx, 8);
 				{
-				this.state = 2007;
+				this.state = 2019;
 				this.nbtString();
 				}
 				break;
@@ -9044,7 +9083,7 @@ export class JustMCFParser extends Parser {
 			case 9:
 				this.enterOuterAlt(_localctx, 9);
 				{
-				this.state = 2008;
+				this.state = 2020;
 				this.match(JustMCFParser.ByteNumber);
 				}
 				break;
@@ -9052,7 +9091,7 @@ export class JustMCFParser extends Parser {
 			case 10:
 				this.enterOuterAlt(_localctx, 10);
 				{
-				this.state = 2009;
+				this.state = 2021;
 				this.match(JustMCFParser.ShortNumber);
 				}
 				break;
@@ -9060,7 +9099,7 @@ export class JustMCFParser extends Parser {
 			case 11:
 				this.enterOuterAlt(_localctx, 11);
 				{
-				this.state = 2010;
+				this.state = 2022;
 				this.match(JustMCFParser.LongNumber);
 				}
 				break;
@@ -9068,7 +9107,7 @@ export class JustMCFParser extends Parser {
 			case 12:
 				this.enterOuterAlt(_localctx, 12);
 				{
-				this.state = 2011;
+				this.state = 2023;
 				this.match(JustMCFParser.FloatNumber);
 				}
 				break;
@@ -9076,7 +9115,7 @@ export class JustMCFParser extends Parser {
 			case 13:
 				this.enterOuterAlt(_localctx, 13);
 				{
-				this.state = 2012;
+				this.state = 2024;
 				this.match(JustMCFParser.DoubleNumber);
 				}
 				break;
@@ -9103,7 +9142,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2015;
+			this.state = 2027;
 			this.nbtValue();
 			}
 		}
@@ -9127,33 +9166,33 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 172, JustMCFParser.RULE_nbtCompound);
 		let _la: number;
 		try {
-			this.state = 2030;
+			this.state = 2042;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 238, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 240, this._ctx) ) {
 			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 2017;
+				this.state = 2029;
 				this.match(JustMCFParser.T__4);
-				this.state = 2018;
+				this.state = 2030;
 				this.nbtPair();
-				this.state = 2023;
+				this.state = 2035;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (_la === JustMCFParser.T__2) {
 					{
 					{
-					this.state = 2019;
+					this.state = 2031;
 					this.match(JustMCFParser.T__2);
-					this.state = 2020;
+					this.state = 2032;
 					this.nbtPair();
 					}
 					}
-					this.state = 2025;
+					this.state = 2037;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 2026;
+				this.state = 2038;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -9161,9 +9200,9 @@ export class JustMCFParser extends Parser {
 			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 2028;
+				this.state = 2040;
 				this.match(JustMCFParser.T__4);
-				this.state = 2029;
+				this.state = 2041;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -9190,11 +9229,11 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2032;
+			this.state = 2044;
 			this.nbtName();
-			this.state = 2033;
+			this.state = 2045;
 			this.match(JustMCFParser.T__29);
-			this.state = 2034;
+			this.state = 2046;
 			this.nbtValue();
 			}
 		}
@@ -9218,33 +9257,33 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 176, JustMCFParser.RULE_nbtList);
 		let _la: number;
 		try {
-			this.state = 2049;
+			this.state = 2061;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 240, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 242, this._ctx) ) {
 			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 2036;
+				this.state = 2048;
 				this.match(JustMCFParser.T__1);
-				this.state = 2037;
+				this.state = 2049;
 				this.nbtValue();
-				this.state = 2042;
+				this.state = 2054;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (_la === JustMCFParser.T__2) {
 					{
 					{
-					this.state = 2038;
+					this.state = 2050;
 					this.match(JustMCFParser.T__2);
-					this.state = 2039;
+					this.state = 2051;
 					this.nbtValue();
 					}
 					}
-					this.state = 2044;
+					this.state = 2056;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 2045;
+				this.state = 2057;
 				this.match(JustMCFParser.T__3);
 				}
 				break;
@@ -9252,9 +9291,9 @@ export class JustMCFParser extends Parser {
 			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 2047;
+				this.state = 2059;
 				this.match(JustMCFParser.T__1);
-				this.state = 2048;
+				this.state = 2060;
 				this.match(JustMCFParser.T__3);
 				}
 				break;
@@ -9279,41 +9318,41 @@ export class JustMCFParser extends Parser {
 		let _localctx: NbtValueContext = new NbtValueContext(this._ctx, this.state);
 		this.enterRule(_localctx, 178, JustMCFParser.RULE_nbtValue);
 		try {
-			this.state = 2062;
+			this.state = 2074;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
 			case JustMCFParser.T__4:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 2051;
+				this.state = 2063;
 				this.nbtCompound();
 				}
 				break;
 			case JustMCFParser.T__1:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 2052;
+				this.state = 2064;
 				this.nbtList();
 				}
 				break;
 			case JustMCFParser.T__44:
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 2053;
+				this.state = 2065;
 				this.nbtByteArr();
 				}
 				break;
 			case JustMCFParser.T__45:
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 2054;
+				this.state = 2066;
 				this.nbtIntArr();
 				}
 				break;
 			case JustMCFParser.T__46:
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 2055;
+				this.state = 2067;
 				this.nbtLongArr();
 				}
 				break;
@@ -9321,42 +9360,42 @@ export class JustMCFParser extends Parser {
 			case JustMCFParser.STRING:
 				this.enterOuterAlt(_localctx, 6);
 				{
-				this.state = 2056;
+				this.state = 2068;
 				this.nbtString();
 				}
 				break;
 			case JustMCFParser.ByteNumber:
 				this.enterOuterAlt(_localctx, 7);
 				{
-				this.state = 2057;
+				this.state = 2069;
 				this.match(JustMCFParser.ByteNumber);
 				}
 				break;
 			case JustMCFParser.ShortNumber:
 				this.enterOuterAlt(_localctx, 8);
 				{
-				this.state = 2058;
+				this.state = 2070;
 				this.match(JustMCFParser.ShortNumber);
 				}
 				break;
 			case JustMCFParser.LongNumber:
 				this.enterOuterAlt(_localctx, 9);
 				{
-				this.state = 2059;
+				this.state = 2071;
 				this.match(JustMCFParser.LongNumber);
 				}
 				break;
 			case JustMCFParser.FloatNumber:
 				this.enterOuterAlt(_localctx, 10);
 				{
-				this.state = 2060;
+				this.state = 2072;
 				this.match(JustMCFParser.FloatNumber);
 				}
 				break;
 			case JustMCFParser.DoubleNumber:
 				this.enterOuterAlt(_localctx, 11);
 				{
-				this.state = 2061;
+				this.state = 2073;
 				this.match(JustMCFParser.DoubleNumber);
 				}
 				break;
@@ -9386,27 +9425,27 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2064;
+			this.state = 2076;
 			this.match(JustMCFParser.T__44);
-			this.state = 2065;
+			this.state = 2077;
 			this.match(JustMCFParser.ByteNumber);
-			this.state = 2070;
+			this.state = 2082;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			while (_la === JustMCFParser.T__2) {
 				{
 				{
-				this.state = 2066;
+				this.state = 2078;
 				this.match(JustMCFParser.T__2);
-				this.state = 2067;
+				this.state = 2079;
 				this.match(JustMCFParser.ByteNumber);
 				}
 				}
-				this.state = 2072;
+				this.state = 2084;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
-			this.state = 2073;
+			this.state = 2085;
 			this.match(JustMCFParser.T__3);
 			}
 		}
@@ -9432,27 +9471,27 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2075;
+			this.state = 2087;
 			this.match(JustMCFParser.T__45);
-			this.state = 2076;
-			this.match(JustMCFParser.NUMBER);
-			this.state = 2081;
+			this.state = 2088;
+			this.match(JustMCFParser.NUMBER_INT);
+			this.state = 2093;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			while (_la === JustMCFParser.T__2) {
 				{
 				{
-				this.state = 2077;
+				this.state = 2089;
 				this.match(JustMCFParser.T__2);
-				this.state = 2078;
-				this.match(JustMCFParser.NUMBER);
+				this.state = 2090;
+				this.match(JustMCFParser.NUMBER_INT);
 				}
 				}
-				this.state = 2083;
+				this.state = 2095;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
-			this.state = 2084;
+			this.state = 2096;
 			this.match(JustMCFParser.T__3);
 			}
 		}
@@ -9478,27 +9517,27 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2086;
+			this.state = 2098;
 			this.match(JustMCFParser.T__46);
-			this.state = 2087;
+			this.state = 2099;
 			this.match(JustMCFParser.LongNumber);
-			this.state = 2092;
+			this.state = 2104;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			while (_la === JustMCFParser.T__2) {
 				{
 				{
-				this.state = 2088;
+				this.state = 2100;
 				this.match(JustMCFParser.T__2);
-				this.state = 2089;
+				this.state = 2101;
 				this.match(JustMCFParser.LongNumber);
 				}
 				}
-				this.state = 2094;
+				this.state = 2106;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
-			this.state = 2095;
+			this.state = 2107;
 			this.match(JustMCFParser.T__3);
 			}
 		}
@@ -9524,7 +9563,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2097;
+			this.state = 2109;
 			_la = this._input.LA(1);
 			if (!(_la === JustMCFParser.STRING2 || _la === JustMCFParser.STRING)) {
 			this._errHandler.recoverInline(this);
@@ -9558,33 +9597,33 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 188, JustMCFParser.RULE_jsonTextValue);
 		let _la: number;
 		try {
-			this.state = 2130;
+			this.state = 2142;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 247, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 249, this._ctx) ) {
 			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 2099;
+				this.state = 2111;
 				this.match(JustMCFParser.T__47);
-				this.state = 2100;
+				this.state = 2112;
 				this.jsonPair();
-				this.state = 2105;
+				this.state = 2117;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (_la === JustMCFParser.T__2) {
 					{
 					{
-					this.state = 2101;
+					this.state = 2113;
 					this.match(JustMCFParser.T__2);
-					this.state = 2102;
+					this.state = 2114;
 					this.jsonPair();
 					}
 					}
-					this.state = 2107;
+					this.state = 2119;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 2108;
+				this.state = 2120;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -9592,9 +9631,9 @@ export class JustMCFParser extends Parser {
 			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 2110;
+				this.state = 2122;
 				this.match(JustMCFParser.T__47);
-				this.state = 2111;
+				this.state = 2123;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -9602,27 +9641,27 @@ export class JustMCFParser extends Parser {
 			case 3:
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 2112;
+				this.state = 2124;
 				this.match(JustMCFParser.T__48);
-				this.state = 2113;
+				this.state = 2125;
 				this.jsonValue();
-				this.state = 2118;
+				this.state = 2130;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (_la === JustMCFParser.T__2) {
 					{
 					{
-					this.state = 2114;
+					this.state = 2126;
 					this.match(JustMCFParser.T__2);
-					this.state = 2115;
+					this.state = 2127;
 					this.jsonValue();
 					}
 					}
-					this.state = 2120;
+					this.state = 2132;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 2121;
+				this.state = 2133;
 				this.match(JustMCFParser.T__3);
 				}
 				break;
@@ -9630,9 +9669,9 @@ export class JustMCFParser extends Parser {
 			case 4:
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 2123;
+				this.state = 2135;
 				this.match(JustMCFParser.T__1);
-				this.state = 2124;
+				this.state = 2136;
 				this.match(JustMCFParser.T__3);
 				}
 				break;
@@ -9640,7 +9679,7 @@ export class JustMCFParser extends Parser {
 			case 5:
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 2125;
+				this.state = 2137;
 				this.match(JustMCFParser.STRING);
 				}
 				break;
@@ -9648,7 +9687,7 @@ export class JustMCFParser extends Parser {
 			case 6:
 				this.enterOuterAlt(_localctx, 6);
 				{
-				this.state = 2126;
+				this.state = 2138;
 				this.match(JustMCFParser.NUMBER);
 				}
 				break;
@@ -9656,7 +9695,7 @@ export class JustMCFParser extends Parser {
 			case 7:
 				this.enterOuterAlt(_localctx, 7);
 				{
-				this.state = 2127;
+				this.state = 2139;
 				this.match(JustMCFParser.TRUE);
 				}
 				break;
@@ -9664,7 +9703,7 @@ export class JustMCFParser extends Parser {
 			case 8:
 				this.enterOuterAlt(_localctx, 8);
 				{
-				this.state = 2128;
+				this.state = 2140;
 				this.match(JustMCFParser.FALSE);
 				}
 				break;
@@ -9672,7 +9711,7 @@ export class JustMCFParser extends Parser {
 			case 9:
 				this.enterOuterAlt(_localctx, 9);
 				{
-				this.state = 2129;
+				this.state = 2141;
 				this.match(JustMCFParser.NULL);
 				}
 				break;
@@ -9699,7 +9738,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2132;
+			this.state = 2144;
 			this.jsonValue();
 			}
 		}
@@ -9723,33 +9762,33 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 192, JustMCFParser.RULE_jsonObj);
 		let _la: number;
 		try {
-			this.state = 2147;
+			this.state = 2159;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 249, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 251, this._ctx) ) {
 			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 2134;
+				this.state = 2146;
 				this.match(JustMCFParser.T__4);
-				this.state = 2135;
+				this.state = 2147;
 				this.jsonPair();
-				this.state = 2140;
+				this.state = 2152;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (_la === JustMCFParser.T__2) {
 					{
 					{
-					this.state = 2136;
+					this.state = 2148;
 					this.match(JustMCFParser.T__2);
-					this.state = 2137;
+					this.state = 2149;
 					this.jsonPair();
 					}
 					}
-					this.state = 2142;
+					this.state = 2154;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 2143;
+				this.state = 2155;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -9757,9 +9796,9 @@ export class JustMCFParser extends Parser {
 			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 2145;
+				this.state = 2157;
 				this.match(JustMCFParser.T__4);
-				this.state = 2146;
+				this.state = 2158;
 				this.match(JustMCFParser.T__5);
 				}
 				break;
@@ -9786,11 +9825,11 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2149;
+			this.state = 2161;
 			this.match(JustMCFParser.STRING);
-			this.state = 2150;
+			this.state = 2162;
 			this.match(JustMCFParser.T__29);
-			this.state = 2151;
+			this.state = 2163;
 			this.jsonValue();
 			}
 		}
@@ -9814,33 +9853,33 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 196, JustMCFParser.RULE_jsonArr);
 		let _la: number;
 		try {
-			this.state = 2166;
+			this.state = 2178;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 251, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 253, this._ctx) ) {
 			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 2153;
+				this.state = 2165;
 				this.match(JustMCFParser.T__1);
-				this.state = 2154;
+				this.state = 2166;
 				this.jsonValue();
-				this.state = 2159;
+				this.state = 2171;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 				while (_la === JustMCFParser.T__2) {
 					{
 					{
-					this.state = 2155;
+					this.state = 2167;
 					this.match(JustMCFParser.T__2);
-					this.state = 2156;
+					this.state = 2168;
 					this.jsonValue();
 					}
 					}
-					this.state = 2161;
+					this.state = 2173;
 					this._errHandler.sync(this);
 					_la = this._input.LA(1);
 				}
-				this.state = 2162;
+				this.state = 2174;
 				this.match(JustMCFParser.T__3);
 				}
 				break;
@@ -9848,9 +9887,9 @@ export class JustMCFParser extends Parser {
 			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 2164;
+				this.state = 2176;
 				this.match(JustMCFParser.T__1);
-				this.state = 2165;
+				this.state = 2177;
 				this.match(JustMCFParser.T__3);
 				}
 				break;
@@ -9875,55 +9914,55 @@ export class JustMCFParser extends Parser {
 		let _localctx: JsonValueContext = new JsonValueContext(this._ctx, this.state);
 		this.enterRule(_localctx, 198, JustMCFParser.RULE_jsonValue);
 		try {
-			this.state = 2175;
+			this.state = 2187;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
 			case JustMCFParser.STRING:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 2168;
+				this.state = 2180;
 				this.match(JustMCFParser.STRING);
 				}
 				break;
 			case JustMCFParser.NUMBER:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 2169;
+				this.state = 2181;
 				this.match(JustMCFParser.NUMBER);
 				}
 				break;
 			case JustMCFParser.T__4:
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 2170;
+				this.state = 2182;
 				this.jsonObj();
 				}
 				break;
 			case JustMCFParser.T__1:
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 2171;
+				this.state = 2183;
 				this.jsonArr();
 				}
 				break;
 			case JustMCFParser.TRUE:
 				this.enterOuterAlt(_localctx, 5);
 				{
-				this.state = 2172;
+				this.state = 2184;
 				this.match(JustMCFParser.TRUE);
 				}
 				break;
 			case JustMCFParser.FALSE:
 				this.enterOuterAlt(_localctx, 6);
 				{
-				this.state = 2173;
+				this.state = 2185;
 				this.match(JustMCFParser.FALSE);
 				}
 				break;
 			case JustMCFParser.NULL:
 				this.enterOuterAlt(_localctx, 7);
 				{
-				this.state = 2174;
+				this.state = 2186;
 				this.match(JustMCFParser.NULL);
 				}
 				break;
@@ -9953,7 +9992,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2177;
+			this.state = 2189;
 			_la = this._input.LA(1);
 			if (!(_la === JustMCFParser.TRUE || _la === JustMCFParser.FALSE)) {
 			this._errHandler.recoverInline(this);
@@ -9989,9 +10028,9 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2179;
+			this.state = 2191;
 			_la = this._input.LA(1);
-			if (!(((((_la - 70)) & ~0x1F) === 0 && ((1 << (_la - 70)) & ((1 << (JustMCFParser.NAMSP - 70)) | (1 << (JustMCFParser.NAMESPACE - 70)) | (1 << (JustMCFParser.LOCAL - 70)) | (1 << (JustMCFParser.EXEC - 70)) | (1 << (JustMCFParser.ALIGN - 70)) | (1 << (JustMCFParser.ANCHORED - 70)) | (1 << (JustMCFParser.EYES - 70)) | (1 << (JustMCFParser.FEET - 70)) | (1 << (JustMCFParser.IN - 70)) | (1 << (JustMCFParser.AS - 70)) | (1 << (JustMCFParser.AT - 70)) | (1 << (JustMCFParser.FACING - 70)) | (1 << (JustMCFParser.POSITIONED - 70)) | (1 << (JustMCFParser.POS - 70)) | (1 << (JustMCFParser.ROTATED - 70)) | (1 << (JustMCFParser.ROT - 70)) | (1 << (JustMCFParser.IF - 70)) | (1 << (JustMCFParser.UNLESS - 70)) | (1 << (JustMCFParser.ALL - 70)) | (1 << (JustMCFParser.MASKED - 70)) | (1 << (JustMCFParser.BIOME - 70)) | (1 << (JustMCFParser.VALUE - 70)) | (1 << (JustMCFParser.MAX - 70)) | (1 << (JustMCFParser.ENTITY - 70)) | (1 << (JustMCFParser.SCORE - 70)) | (1 << (JustMCFParser.PREDICATE - 70)) | (1 << (JustMCFParser.BLOCK - 70)) | (1 << (JustMCFParser.BLOCKS - 70)) | (1 << (JustMCFParser.SCB - 70)) | (1 << (JustMCFParser.DISPLAYNAME - 70)) | (1 << (JustMCFParser.RENDERTYPE - 70)))) !== 0) || ((((_la - 102)) & ~0x1F) === 0 && ((1 << (_la - 102)) & ((1 << (JustMCFParser.DISPLAY - 102)) | (1 << (JustMCFParser.ENABLE - 102)) | (1 << (JustMCFParser.LIST - 102)) | (1 << (JustMCFParser.DATA - 102)) | (1 << (JustMCFParser.STORAGE - 102)) | (1 << (JustMCFParser.RESET - 102)) | (1 << (JustMCFParser.ADD - 102)) | (1 << (JustMCFParser.REMOVE - 102)) | (1 << (JustMCFParser.FUNC - 102)) | (1 << (JustMCFParser.TAGGED - 102)) | (1 << (JustMCFParser.DEFAULT - 102)) | (1 << (JustMCFParser.PLAYER - 102)) | (1 << (JustMCFParser.PLAYERS - 102)) | (1 << (JustMCFParser.BOSSBAR - 102)) | (1 << (JustMCFParser.VISIBLE - 102)) | (1 << (JustMCFParser.BLUE - 102)) | (1 << (JustMCFParser.GREEN - 102)) | (1 << (JustMCFParser.PINK - 102)) | (1 << (JustMCFParser.PURPLE - 102)) | (1 << (JustMCFParser.RED - 102)) | (1 << (JustMCFParser.WHITE - 102)) | (1 << (JustMCFParser.YELLOW - 102)) | (1 << (JustMCFParser.COLOR - 102)) | (1 << (JustMCFParser.NAME - 102)) | (1 << (JustMCFParser.STYLE - 102)) | (1 << (JustMCFParser.NOTCHED_6 - 102)) | (1 << (JustMCFParser.NOTCHED_10 - 102)) | (1 << (JustMCFParser.NOTCHED_12 - 102)) | (1 << (JustMCFParser.NOTCHED_20 - 102)) | (1 << (JustMCFParser.PROGRESS - 102)))) !== 0) || ((((_la - 134)) & ~0x1F) === 0 && ((1 << (_la - 134)) & ((1 << (JustMCFParser.SET - 134)) | (1 << (JustMCFParser.TITLE - 134)) | (1 << (JustMCFParser.SUBTITLE - 134)) | (1 << (JustMCFParser.ACTIONBAR - 134)) | (1 << (JustMCFParser.TIMES - 134)) | (1 << (JustMCFParser.TEXT - 134)) | (1 << (JustMCFParser.ITEM - 134)) | (1 << (JustMCFParser.LOOT - 134)) | (1 << (JustMCFParser.GIVE - 134)) | (1 << (JustMCFParser.CLEAR - 134)) | (1 << (JustMCFParser.FISH - 134)) | (1 << (JustMCFParser.KILL - 134)) | (1 << (JustMCFParser.MINE - 134)) | (1 << (JustMCFParser.MAINHAND - 134)) | (1 << (JustMCFParser.OFFHAND - 134)) | (1 << (JustMCFParser.EFFECT - 134)) | (1 << (JustMCFParser.TAG - 134)) | (1 << (JustMCFParser.TP - 134)) | (1 << (JustMCFParser.GET - 134)) | (1 << (JustMCFParser.ATTR - 134)) | (1 << (JustMCFParser.BASE - 134)) | (1 << (JustMCFParser.DESTROY - 134)) | (1 << (JustMCFParser.KEEP - 134)) | (1 << (JustMCFParser.REPLACE - 134)) | (1 << (JustMCFParser.HOLLOW - 134)) | (1 << (JustMCFParser.OUTLINE - 134)) | (1 << (JustMCFParser.FORCE - 134)) | (1 << (JustMCFParser.MOVE - 134)) | (1 << (JustMCFParser.NORMAL - 134)) | (1 << (JustMCFParser.FILTERED - 134)) | (1 << (JustMCFParser.INTERFACE - 134)) | (1 << (JustMCFParser.WHILE - 134)))) !== 0) || ((((_la - 167)) & ~0x1F) === 0 && ((1 << (_la - 167)) & ((1 << (JustMCFParser.FOR - 167)) | (1 << (JustMCFParser.YEILD - 167)) | (1 << (JustMCFParser.BREAK - 167)) | (1 << (JustMCFParser.RETURN - 167)) | (1 << (JustMCFParser.REPLACED - 167)) | (1 << (JustMCFParser.DIM - 167)) | (1 << (JustMCFParser.DIMENSION - 167)) | (1 << (JustMCFParser.ITEM_MODIFIER - 167)) | (1 << (JustMCFParser.BYTE - 167)) | (1 << (JustMCFParser.SHORT - 167)) | (1 << (JustMCFParser.INT_ - 167)) | (1 << (JustMCFParser.LONG - 167)) | (1 << (JustMCFParser.FLOAT - 167)) | (1 << (JustMCFParser.DOUBLE - 167)))) !== 0))) {
+			if (!(((((_la - 71)) & ~0x1F) === 0 && ((1 << (_la - 71)) & ((1 << (JustMCFParser.NAMSP - 71)) | (1 << (JustMCFParser.NAMESPACE - 71)) | (1 << (JustMCFParser.LOCAL - 71)) | (1 << (JustMCFParser.EXEC - 71)) | (1 << (JustMCFParser.ALIGN - 71)) | (1 << (JustMCFParser.ANCHORED - 71)) | (1 << (JustMCFParser.EYES - 71)) | (1 << (JustMCFParser.FEET - 71)) | (1 << (JustMCFParser.IN - 71)) | (1 << (JustMCFParser.AS - 71)) | (1 << (JustMCFParser.AT - 71)) | (1 << (JustMCFParser.FACING - 71)) | (1 << (JustMCFParser.POSITIONED - 71)) | (1 << (JustMCFParser.POS - 71)) | (1 << (JustMCFParser.ROTATED - 71)) | (1 << (JustMCFParser.ROT - 71)) | (1 << (JustMCFParser.IF - 71)) | (1 << (JustMCFParser.UNLESS - 71)) | (1 << (JustMCFParser.ALL - 71)) | (1 << (JustMCFParser.MASKED - 71)) | (1 << (JustMCFParser.BIOME - 71)) | (1 << (JustMCFParser.VALUE - 71)) | (1 << (JustMCFParser.MAX - 71)) | (1 << (JustMCFParser.ENTITY - 71)) | (1 << (JustMCFParser.SCORE - 71)) | (1 << (JustMCFParser.PREDICATE - 71)) | (1 << (JustMCFParser.BLOCK - 71)) | (1 << (JustMCFParser.BLOCKS - 71)) | (1 << (JustMCFParser.SCB - 71)) | (1 << (JustMCFParser.DISPLAYNAME - 71)) | (1 << (JustMCFParser.RENDERTYPE - 71)))) !== 0) || ((((_la - 103)) & ~0x1F) === 0 && ((1 << (_la - 103)) & ((1 << (JustMCFParser.DISPLAY - 103)) | (1 << (JustMCFParser.ENABLE - 103)) | (1 << (JustMCFParser.LIST - 103)) | (1 << (JustMCFParser.DATA - 103)) | (1 << (JustMCFParser.STORAGE - 103)) | (1 << (JustMCFParser.RESET - 103)) | (1 << (JustMCFParser.ADD - 103)) | (1 << (JustMCFParser.REMOVE - 103)) | (1 << (JustMCFParser.FUNC - 103)) | (1 << (JustMCFParser.TAGGED - 103)) | (1 << (JustMCFParser.DEFAULT - 103)) | (1 << (JustMCFParser.PLAYER - 103)) | (1 << (JustMCFParser.PLAYERS - 103)) | (1 << (JustMCFParser.BOSSBAR - 103)) | (1 << (JustMCFParser.VISIBLE - 103)) | (1 << (JustMCFParser.BLUE - 103)) | (1 << (JustMCFParser.GREEN - 103)) | (1 << (JustMCFParser.PINK - 103)) | (1 << (JustMCFParser.PURPLE - 103)) | (1 << (JustMCFParser.RED - 103)) | (1 << (JustMCFParser.WHITE - 103)) | (1 << (JustMCFParser.YELLOW - 103)) | (1 << (JustMCFParser.COLOR - 103)) | (1 << (JustMCFParser.NAME - 103)) | (1 << (JustMCFParser.STYLE - 103)) | (1 << (JustMCFParser.NOTCHED_6 - 103)) | (1 << (JustMCFParser.NOTCHED_10 - 103)) | (1 << (JustMCFParser.NOTCHED_12 - 103)) | (1 << (JustMCFParser.NOTCHED_20 - 103)) | (1 << (JustMCFParser.PROGRESS - 103)))) !== 0) || ((((_la - 135)) & ~0x1F) === 0 && ((1 << (_la - 135)) & ((1 << (JustMCFParser.SET - 135)) | (1 << (JustMCFParser.TITLE - 135)) | (1 << (JustMCFParser.SUBTITLE - 135)) | (1 << (JustMCFParser.ACTIONBAR - 135)) | (1 << (JustMCFParser.TIMES - 135)) | (1 << (JustMCFParser.TEXT - 135)) | (1 << (JustMCFParser.ITEM - 135)) | (1 << (JustMCFParser.LOOT - 135)) | (1 << (JustMCFParser.GIVE - 135)) | (1 << (JustMCFParser.CLEAR - 135)) | (1 << (JustMCFParser.FISH - 135)) | (1 << (JustMCFParser.KILL - 135)) | (1 << (JustMCFParser.MINE - 135)) | (1 << (JustMCFParser.MAINHAND - 135)) | (1 << (JustMCFParser.OFFHAND - 135)) | (1 << (JustMCFParser.EFFECT - 135)) | (1 << (JustMCFParser.TAG - 135)) | (1 << (JustMCFParser.TP - 135)) | (1 << (JustMCFParser.GET - 135)) | (1 << (JustMCFParser.ATTR - 135)) | (1 << (JustMCFParser.BASE - 135)) | (1 << (JustMCFParser.DESTROY - 135)) | (1 << (JustMCFParser.KEEP - 135)) | (1 << (JustMCFParser.REPLACE - 135)) | (1 << (JustMCFParser.HOLLOW - 135)) | (1 << (JustMCFParser.OUTLINE - 135)) | (1 << (JustMCFParser.FORCE - 135)) | (1 << (JustMCFParser.MOVE - 135)) | (1 << (JustMCFParser.NORMAL - 135)) | (1 << (JustMCFParser.FILTERED - 135)) | (1 << (JustMCFParser.INTERFACE - 135)) | (1 << (JustMCFParser.WHILE - 135)))) !== 0) || ((((_la - 168)) & ~0x1F) === 0 && ((1 << (_la - 168)) & ((1 << (JustMCFParser.FOR - 168)) | (1 << (JustMCFParser.YEILD - 168)) | (1 << (JustMCFParser.BREAK - 168)) | (1 << (JustMCFParser.RETURN - 168)) | (1 << (JustMCFParser.REPLACED - 168)) | (1 << (JustMCFParser.DIM - 168)) | (1 << (JustMCFParser.DIMENSION - 168)) | (1 << (JustMCFParser.ITEM_MODIFIER - 168)) | (1 << (JustMCFParser.BYTE - 168)) | (1 << (JustMCFParser.SHORT - 168)) | (1 << (JustMCFParser.INT_ - 168)) | (1 << (JustMCFParser.LONG - 168)) | (1 << (JustMCFParser.FLOAT - 168)) | (1 << (JustMCFParser.DOUBLE - 168)))) !== 0))) {
 			this._errHandler.recoverInline(this);
 			} else {
 				if (this._input.LA(1) === Token.EOF) {
@@ -10024,15 +10063,15 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2181;
+			this.state = 2193;
 			this.match(JustMCFParser.T__49);
-			this.state = 2182;
+			this.state = 2194;
 			this.pos1();
-			this.state = 2183;
+			this.state = 2195;
 			this.pos1();
-			this.state = 2184;
+			this.state = 2196;
 			this.pos1();
-			this.state = 2185;
+			this.state = 2197;
 			this.match(JustMCFParser.T__50);
 			}
 		}
@@ -10057,13 +10096,13 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2187;
+			this.state = 2199;
 			this.match(JustMCFParser.T__49);
-			this.state = 2188;
+			this.state = 2200;
 			this.pos1();
-			this.state = 2189;
+			this.state = 2201;
 			this.pos1();
-			this.state = 2190;
+			this.state = 2202;
 			this.match(JustMCFParser.T__50);
 			}
 		}
@@ -10088,19 +10127,19 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2192;
+			this.state = 2204;
 			this.match(JustMCFParser.T__49);
-			this.state = 2193;
+			this.state = 2205;
 			this.pos1();
-			this.state = 2194;
+			this.state = 2206;
 			this.pos1();
-			this.state = 2195;
+			this.state = 2207;
 			this.pos1();
-			this.state = 2196;
+			this.state = 2208;
 			this.pos1();
-			this.state = 2197;
+			this.state = 2209;
 			this.pos1();
-			this.state = 2198;
+			this.state = 2210;
 			this.match(JustMCFParser.T__50);
 			}
 		}
@@ -10126,7 +10165,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2200;
+			this.state = 2212;
 			_la = this._input.LA(1);
 			if (!(_la === JustMCFParser.NUMBER || _la === JustMCFParser.Pos1)) {
 			this._errHandler.recoverInline(this);
@@ -10162,24 +10201,24 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2202;
+			this.state = 2214;
 			this.nameSpaceBlock();
-			this.state = 2204;
+			this.state = 2216;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			if (_la === JustMCFParser.T__1) {
 				{
-				this.state = 2203;
+				this.state = 2215;
 				this.blockstate();
 				}
 			}
 
-			this.state = 2207;
+			this.state = 2219;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			if (((((_la - 40)) & ~0x1F) === 0 && ((1 << (_la - 40)) & ((1 << (JustMCFParser.T__39 - 40)) | (1 << (JustMCFParser.T__40 - 40)) | (1 << (JustMCFParser.T__41 - 40)) | (1 << (JustMCFParser.T__42 - 40)) | (1 << (JustMCFParser.T__43 - 40)) | (1 << (JustMCFParser.ByteNumber - 40)) | (1 << (JustMCFParser.ShortNumber - 40)) | (1 << (JustMCFParser.LongNumber - 40)) | (1 << (JustMCFParser.FloatNumber - 40)) | (1 << (JustMCFParser.DoubleNumber - 40)) | (1 << (JustMCFParser.STRING2 - 40)) | (1 << (JustMCFParser.STRING - 40)))) !== 0)) {
 				{
-				this.state = 2206;
+				this.state = 2218;
 				this.nbt();
 				}
 			}
@@ -10208,9 +10247,9 @@ export class JustMCFParser extends Parser {
 			let _alt: number;
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2209;
+			this.state = 2221;
 			this.match(JustMCFParser.T__1);
-			this.state = 2211;
+			this.state = 2223;
 			this._errHandler.sync(this);
 			_alt = 1 + 1;
 			do {
@@ -10218,7 +10257,7 @@ export class JustMCFParser extends Parser {
 				case 1 + 1:
 					{
 					{
-					this.state = 2210;
+					this.state = 2222;
 					this.matchWildcard();
 					}
 					}
@@ -10226,11 +10265,11 @@ export class JustMCFParser extends Parser {
 				default:
 					throw new NoViableAltException(this);
 				}
-				this.state = 2213;
+				this.state = 2225;
 				this._errHandler.sync(this);
-				_alt = this.interpreter.adaptivePredict(this._input, 255, this._ctx);
+				_alt = this.interpreter.adaptivePredict(this._input, 257, this._ctx);
 			} while (_alt !== 1 && _alt !== ATN.INVALID_ALT_NUMBER);
-			this.state = 2215;
+			this.state = 2227;
 			this.match(JustMCFParser.T__3);
 			}
 		}
@@ -10254,22 +10293,22 @@ export class JustMCFParser extends Parser {
 		this.enterRule(_localctx, 216, JustMCFParser.RULE_selector);
 		try {
 			let _alt: number;
-			this.state = 2232;
+			this.state = 2244;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 258, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 260, this._ctx) ) {
 			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 2217;
+				this.state = 2229;
 				this.match(JustMCFParser.Selector);
-				this.state = 2225;
+				this.state = 2237;
 				this._errHandler.sync(this);
-				switch ( this.interpreter.adaptivePredict(this._input, 257, this._ctx) ) {
+				switch ( this.interpreter.adaptivePredict(this._input, 259, this._ctx) ) {
 				case 1:
 					{
-					this.state = 2218;
+					this.state = 2230;
 					this.match(JustMCFParser.T__1);
-					this.state = 2220;
+					this.state = 2232;
 					this._errHandler.sync(this);
 					_alt = 1 + 1;
 					do {
@@ -10277,7 +10316,7 @@ export class JustMCFParser extends Parser {
 						case 1 + 1:
 							{
 							{
-							this.state = 2219;
+							this.state = 2231;
 							this.matchWildcard();
 							}
 							}
@@ -10285,11 +10324,11 @@ export class JustMCFParser extends Parser {
 						default:
 							throw new NoViableAltException(this);
 						}
-						this.state = 2222;
+						this.state = 2234;
 						this._errHandler.sync(this);
-						_alt = this.interpreter.adaptivePredict(this._input, 256, this._ctx);
+						_alt = this.interpreter.adaptivePredict(this._input, 258, this._ctx);
 					} while (_alt !== 1 && _alt !== ATN.INVALID_ALT_NUMBER);
-					this.state = 2224;
+					this.state = 2236;
 					this.match(JustMCFParser.T__3);
 					}
 					break;
@@ -10300,9 +10339,9 @@ export class JustMCFParser extends Parser {
 			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 2227;
+				this.state = 2239;
 				this.match(JustMCFParser.T__51);
-				this.state = 2228;
+				this.state = 2240;
 				this.nbtName();
 				}
 				break;
@@ -10310,9 +10349,9 @@ export class JustMCFParser extends Parser {
 			case 3:
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 2229;
+				this.state = 2241;
 				this.match(JustMCFParser.T__32);
-				this.state = 2230;
+				this.state = 2242;
 				this.nbtName();
 				}
 				break;
@@ -10320,7 +10359,7 @@ export class JustMCFParser extends Parser {
 			case 4:
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 2231;
+				this.state = 2243;
 				this.match(JustMCFParser.T__32);
 				}
 				break;
@@ -10345,17 +10384,17 @@ export class JustMCFParser extends Parser {
 		let _localctx: NameSpaceContext = new NameSpaceContext(this._ctx, this.state);
 		this.enterRule(_localctx, 218, JustMCFParser.RULE_nameSpace);
 		try {
-			this.state = 2239;
+			this.state = 2251;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 259, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 261, this._ctx) ) {
 			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 2234;
+				this.state = 2246;
 				this.acceptableName();
-				this.state = 2235;
+				this.state = 2247;
 				_localctx._op = this.match(JustMCFParser.T__29);
-				this.state = 2236;
+				this.state = 2248;
 				this.resourceLocation();
 				}
 				break;
@@ -10363,7 +10402,7 @@ export class JustMCFParser extends Parser {
 			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 2238;
+				this.state = 2250;
 				this.resourceLocation();
 				}
 				break;
@@ -10390,7 +10429,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2241;
+			this.state = 2253;
 			this.nameSpace();
 			}
 		}
@@ -10415,7 +10454,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2243;
+			this.state = 2255;
 			this.nameSpace();
 			}
 		}
@@ -10440,7 +10479,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2245;
+			this.state = 2257;
 			this.nameSpace();
 			}
 		}
@@ -10465,7 +10504,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2247;
+			this.state = 2259;
 			this.nameSpace();
 			}
 		}
@@ -10490,7 +10529,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2249;
+			this.state = 2261;
 			this.nameSpace();
 			}
 		}
@@ -10515,7 +10554,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2251;
+			this.state = 2263;
 			this.nameSpace();
 			}
 		}
@@ -10540,7 +10579,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2253;
+			this.state = 2265;
 			this.nameSpace();
 			}
 		}
@@ -10565,7 +10604,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2255;
+			this.state = 2267;
 			this.nameSpace();
 			}
 		}
@@ -10590,7 +10629,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2257;
+			this.state = 2269;
 			this.nameSpace();
 			}
 		}
@@ -10615,7 +10654,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2259;
+			this.state = 2271;
 			this.nameSpace();
 			}
 		}
@@ -10640,7 +10679,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2261;
+			this.state = 2273;
 			this.nameSpace();
 			}
 		}
@@ -10665,9 +10704,9 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2263;
+			this.state = 2275;
 			this.match(JustMCFParser.T__32);
-			this.state = 2264;
+			this.state = 2276;
 			this.nameSpace();
 			}
 		}
@@ -10692,7 +10731,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2266;
+			this.state = 2278;
 			this.tagNameSpace();
 			}
 		}
@@ -10717,7 +10756,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2268;
+			this.state = 2280;
 			this.tagNameSpace();
 			}
 		}
@@ -10742,7 +10781,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2270;
+			this.state = 2282;
 			this.tagNameSpace();
 			}
 		}
@@ -10767,7 +10806,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2272;
+			this.state = 2284;
 			this.tagNameSpace();
 			}
 		}
@@ -10792,19 +10831,19 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2277;
+			this.state = 2289;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 260, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 262, this._ctx) ) {
 			case 1:
 				{
-				this.state = 2274;
+				this.state = 2286;
 				this.acceptableName();
-				this.state = 2275;
+				this.state = 2287;
 				this.match(JustMCFParser.T__29);
 				}
 				break;
 			}
-			this.state = 2279;
+			this.state = 2291;
 			this.acceptableName();
 			}
 		}
@@ -10830,9 +10869,9 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2281;
+			this.state = 2293;
 			_la = this._input.LA(1);
-			if (!(((((_la - 177)) & ~0x1F) === 0 && ((1 << (_la - 177)) & ((1 << (JustMCFParser.BYTE - 177)) | (1 << (JustMCFParser.SHORT - 177)) | (1 << (JustMCFParser.INT_ - 177)) | (1 << (JustMCFParser.LONG - 177)) | (1 << (JustMCFParser.FLOAT - 177)) | (1 << (JustMCFParser.DOUBLE - 177)))) !== 0))) {
+			if (!(((((_la - 178)) & ~0x1F) === 0 && ((1 << (_la - 178)) & ((1 << (JustMCFParser.BYTE - 178)) | (1 << (JustMCFParser.SHORT - 178)) | (1 << (JustMCFParser.INT_ - 178)) | (1 << (JustMCFParser.LONG - 178)) | (1 << (JustMCFParser.FLOAT - 178)) | (1 << (JustMCFParser.DOUBLE - 178)))) !== 0))) {
 			this._errHandler.recoverInline(this);
 			} else {
 				if (this._input.LA(1) === Token.EOF) {
@@ -10863,13 +10902,13 @@ export class JustMCFParser extends Parser {
 		let _localctx: AcceptableNameContext = new AcceptableNameContext(this._ctx, this.state);
 		this.enterRule(_localctx, 256, JustMCFParser.RULE_acceptableName);
 		try {
-			this.state = 2286;
+			this.state = 2298;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 261, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 263, this._ctx) ) {
 			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 2283;
+				this.state = 2295;
 				this.match(JustMCFParser.AcceptableName);
 				}
 				break;
@@ -10877,7 +10916,7 @@ export class JustMCFParser extends Parser {
 			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 2284;
+				this.state = 2296;
 				this.key();
 				}
 				break;
@@ -10885,7 +10924,7 @@ export class JustMCFParser extends Parser {
 			case 3:
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 2285;
+				this.state = 2297;
 				this.numberType();
 				}
 				break;
@@ -10912,7 +10951,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2288;
+			this.state = 2300;
 			this.nameSpace();
 			}
 		}
@@ -10935,13 +10974,13 @@ export class JustMCFParser extends Parser {
 		let _localctx: NbtNameContext = new NbtNameContext(this._ctx, this.state);
 		this.enterRule(_localctx, 260, JustMCFParser.RULE_nbtName);
 		try {
-			this.state = 2294;
+			this.state = 2306;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 262, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 264, this._ctx) ) {
 			case 1:
 				this.enterOuterAlt(_localctx, 1);
 				{
-				this.state = 2290;
+				this.state = 2302;
 				this.match(JustMCFParser.AcceptableName);
 				}
 				break;
@@ -10949,7 +10988,7 @@ export class JustMCFParser extends Parser {
 			case 2:
 				this.enterOuterAlt(_localctx, 2);
 				{
-				this.state = 2291;
+				this.state = 2303;
 				this.match(JustMCFParser.NBTName);
 				}
 				break;
@@ -10957,7 +10996,7 @@ export class JustMCFParser extends Parser {
 			case 3:
 				this.enterOuterAlt(_localctx, 3);
 				{
-				this.state = 2292;
+				this.state = 2304;
 				this.key();
 				}
 				break;
@@ -10965,7 +11004,7 @@ export class JustMCFParser extends Parser {
 			case 4:
 				this.enterOuterAlt(_localctx, 4);
 				{
-				this.state = 2293;
+				this.state = 2305;
 				this.numberType();
 				}
 				break;
@@ -10993,21 +11032,21 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2296;
+			this.state = 2308;
 			this.acceptableName();
-			this.state = 2301;
+			this.state = 2313;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			while (_la === JustMCFParser.T__25) {
 				{
 				{
-				this.state = 2297;
+				this.state = 2309;
 				this.match(JustMCFParser.T__25);
-				this.state = 2298;
+				this.state = 2310;
 				this.acceptableName();
 				}
 				}
-				this.state = 2303;
+				this.state = 2315;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
 			}
@@ -11035,28 +11074,28 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2307;
+			this.state = 2319;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 264, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 266, this._ctx) ) {
 			case 1:
 				{
-				this.state = 2304;
+				this.state = 2316;
 				this.acceptableName();
-				this.state = 2305;
+				this.state = 2317;
 				this.match(JustMCFParser.T__29);
 				}
 				break;
 			}
-			this.state = 2309;
+			this.state = 2321;
 			this.acceptableName();
-			this.state = 2312;
+			this.state = 2324;
 			this._errHandler.sync(this);
 			_la = this._input.LA(1);
 			if (_la === JustMCFParser.T__1) {
 				{
-				this.state = 2310;
+				this.state = 2322;
 				this.match(JustMCFParser.T__1);
-				this.state = 2311;
+				this.state = 2323;
 				this.match(JustMCFParser.T__3);
 				}
 			}
@@ -11084,7 +11123,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2314;
+			this.state = 2326;
 			this.acceptableName();
 			}
 		}
@@ -11109,7 +11148,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2318;
+			this.state = 2330;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
 			case JustMCFParser.NAMSP:
@@ -11221,32 +11260,32 @@ export class JustMCFParser extends Parser {
 			case JustMCFParser.DOUBLE:
 			case JustMCFParser.AcceptableName:
 				{
-				this.state = 2316;
+				this.state = 2328;
 				this.nameSpaceItem();
 				}
 				break;
 			case JustMCFParser.T__32:
 				{
-				this.state = 2317;
+				this.state = 2329;
 				this.tagNameSpaceItem();
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
-			this.state = 2322;
+			this.state = 2334;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 267, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 269, this._ctx) ) {
 			case 1:
 				{
-				this.state = 2320;
+				this.state = 2332;
 				this.snbt();
 				}
 				break;
 
 			case 2:
 				{
-				this.state = 2321;
+				this.state = 2333;
 				this.nbt();
 				}
 				break;
@@ -11274,7 +11313,7 @@ export class JustMCFParser extends Parser {
 		try {
 			this.enterOuterAlt(_localctx, 1);
 			{
-			this.state = 2326;
+			this.state = 2338;
 			this._errHandler.sync(this);
 			switch (this._input.LA(1)) {
 			case JustMCFParser.NAMSP:
@@ -11386,42 +11425,42 @@ export class JustMCFParser extends Parser {
 			case JustMCFParser.DOUBLE:
 			case JustMCFParser.AcceptableName:
 				{
-				this.state = 2324;
+				this.state = 2336;
 				this.nameSpaceBlock();
 				}
 				break;
 			case JustMCFParser.T__32:
 				{
-				this.state = 2325;
+				this.state = 2337;
 				this.tagNameSpaceBlock();
 				}
 				break;
 			default:
 				throw new NoViableAltException(this);
 			}
-			this.state = 2329;
+			this.state = 2341;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 269, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 271, this._ctx) ) {
 			case 1:
 				{
-				this.state = 2328;
+				this.state = 2340;
 				this.blockstate();
 				}
 				break;
 			}
-			this.state = 2333;
+			this.state = 2345;
 			this._errHandler.sync(this);
-			switch ( this.interpreter.adaptivePredict(this._input, 270, this._ctx) ) {
+			switch ( this.interpreter.adaptivePredict(this._input, 272, this._ctx) ) {
 			case 1:
 				{
-				this.state = 2331;
+				this.state = 2343;
 				this.snbt();
 				}
 				break;
 
 			case 2:
 				{
-				this.state = 2332;
+				this.state = 2344;
 				this.nbt();
 				}
 				break;
@@ -11445,7 +11484,7 @@ export class JustMCFParser extends Parser {
 
 	public sempred(_localctx: RuleContext, ruleIndex: number, predIndex: number): boolean {
 		switch (ruleIndex) {
-		case 32:
+		case 33:
 			return this.scbSingleOperationExpression_sempred(_localctx as ScbSingleOperationExpressionContext, predIndex);
 
 		case 76:
@@ -11485,7 +11524,7 @@ export class JustMCFParser extends Parser {
 
 	private static readonly _serializedATNSegments: number = 5;
 	private static readonly _serializedATNSegment0: string =
-		"\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x03\xBA\u0922\x04" +
+		"\x03\uC91D\uCABA\u058D\uAFBA\u4F53\u0607\uEA8B\uC241\x03\xBB\u092E\x04" +
 		"\x02\t\x02\x04\x03\t\x03\x04\x04\t\x04\x04\x05\t\x05\x04\x06\t\x06\x04" +
 		"\x07\t\x07\x04\b\t\b\x04\t\t\t\x04\n\t\n\x04\v\t\v\x04\f\t\f\x04\r\t\r" +
 		"\x04\x0E\t\x0E\x04\x0F\t\x0F\x04\x10\t\x10\x04\x11\t\x11\x04\x12\t\x12" +
@@ -11519,1237 +11558,1244 @@ export class JustMCFParser extends Parser {
 		"\t\x03\t\x03\t\x03\t\x03\t\x03\t\x03\t\x03\t\x03\t\x05\t\u0188\n\t\x03" +
 		"\n\x03\n\x03\n\x05\n\u018D\n\n\x03\v\x03\v\x03\v\x03\v\x03\v\x05\v\u0194" +
 		"\n\v\x07\v\u0196\n\v\f\v\x0E\v\u0199\v\v\x03\v\x05\v\u019C\n\v\x03\v\x03" +
-		"\v\x07\v\u01A0\n\v\f\v\x0E\v\u01A3\v\v\x03\v\x03\v\x03\f\x03\f\x03\f\x03" +
-		"\f\x05\f\u01AB\n\f\x03\r\x03\r\x03\r\x05\r\u01B0\n\r\x03\x0E\x03\x0E\x03" +
-		"\x0E\x03\x0E\x03\x0E\x03\x0E\x07\x0E\u01B8\n\x0E\f\x0E\x0E\x0E\u01BB\v" +
-		"\x0E\x05\x0E\u01BD\n\x0E\x03\x0E\x03\x0E\x07\x0E\u01C1\n\x0E\f\x0E\x0E" +
-		"\x0E\u01C4\v\x0E\x03\x0E\x03\x0E\x03\x0F\x03\x0F\x03\x0F\x03\x0F\x03\x0F" +
-		"\x03\x0F\x07\x0F\u01CE\n\x0F\f\x0F\x0E\x0F\u01D1\v\x0F\x03\x0F\x03\x0F" +
-		"\x05\x0F\u01D5\n\x0F\x03\x0F\x03\x0F\x07\x0F\u01D9\n\x0F\f\x0F\x0E\x0F" +
-		"\u01DC\v\x0F\x03\x0F\x03\x0F\x03\x10\x05\x10\u01E1\n\x10\x03\x10\x03\x10" +
-		"\x03\x11\x03\x11\x05\x11\u01E7\n\x11\x03\x12\x03\x12\x03\x12\x03\x13\x03" +
-		"\x13\x03\x13\x03\x13\x05\x13\u01F0\n\x13\x03\x14\x03\x14\x03\x15\x03\x15" +
-		"\x03\x15\x03\x15\x03\x15\x03\x15\x07\x15\u01FA\n\x15\f\x15\x0E\x15\u01FD" +
-		"\v\x15\x03\x15\x03\x15\x03\x16\x03\x16\x03\x17\x05\x17\u0204\n\x17\x03" +
-		"\x17\x03\x17\x07\x17\u0208\n\x17\f\x17\x0E\x17\u020B\v\x17\x03\x17\x03" +
-		"\x17\x07\x17\u020F\n\x17\f\x17\x0E\x17\u0212\v\x17\x03\x17\x03\x17\x05" +
-		"\x17\u0216\n\x17\x03\x17\x07\x17\u0219\n\x17\f\x17\x0E\x17\u021C\v\x17" +
-		"\x03\x17\x03\x17\x03\x17\x06\x17\u0221\n\x17\r\x17\x0E\x17\u0222\x03\x17" +
-		"\x03\x17\x05\x17\u0227\n\x17\x03\x18\x03\x18\x03\x18\x03\x18\x03\x18\x03" +
-		"\x18\x03\x18\x03\x18\x05\x18\u0231\n\x18\x03\x18\x03\x18\x05\x18\u0235" +
-		"\n\x18\x03\x18\x03\x18\x03\x18\x03\x18\x05\x18\u023B\n\x18\x03\x18\x03" +
-		"\x18\x05\x18\u023F\n\x18\x03\x18\x03\x18\x03\x18\x03\x18\x05\x18\u0245" +
-		"\n\x18\x03\x18\x03\x18\x03\x18\x03\x18\x05\x18\u024B\n\x18\x05\x18\u024D" +
-		"\n\x18\x03\x19\x03\x19\x03\x19\x03\x19\x03\x19\x03\x19\x05\x19\u0255\n" +
-		"\x19\x03\x19\x03\x19\x07\x19\u0259\n\x19\f\x19\x0E\x19\u025C\v\x19\x03" +
-		"\x19\x05\x19\u025F\n\x19\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x03\x1A" +
+		"\v\x03\v\x03\v\x07\v\u01A2\n\v\f\v\x0E\v\u01A5\v\v\x05\v\u01A7\n\v\x03" +
+		"\v\x03\v\x07\v\u01AB\n\v\f\v\x0E\v\u01AE\v\v\x03\v\x03\v\x03\f\x03\f\x03" +
+		"\f\x03\f\x05\f\u01B6\n\f\x03\r\x03\r\x03\r\x03\r\x05\r\u01BC\n\r\x03\x0E" +
+		"\x03\x0E\x03\x0E\x03\x0E\x03\x0E\x03\x0E\x07\x0E\u01C4\n\x0E\f\x0E\x0E" +
+		"\x0E\u01C7\v\x0E\x05\x0E\u01C9\n\x0E\x03\x0E\x03\x0E\x07\x0E\u01CD\n\x0E" +
+		"\f\x0E\x0E\x0E\u01D0\v\x0E\x03\x0E\x03\x0E\x03\x0F\x03\x0F\x03\x0F\x03" +
+		"\x0F\x03\x0F\x03\x0F\x07\x0F\u01DA\n\x0F\f\x0F\x0E\x0F\u01DD\v\x0F\x03" +
+		"\x0F\x03\x0F\x05\x0F\u01E1\n\x0F\x03\x0F\x03\x0F\x07\x0F\u01E5\n\x0F\f" +
+		"\x0F\x0E\x0F\u01E8\v\x0F\x03\x0F\x03\x0F\x03\x10\x05\x10\u01ED\n\x10\x03" +
+		"\x10\x03\x10\x03\x11\x03\x11\x05\x11\u01F3\n\x11\x03\x12\x03\x12\x03\x12" +
+		"\x03\x13\x03\x13\x03\x13\x03\x13\x05\x13\u01FC\n\x13\x03\x14\x03\x14\x03" +
+		"\x15\x03\x15\x03\x15\x03\x15\x03\x15\x03\x15\x07\x15\u0206\n\x15\f\x15" +
+		"\x0E\x15\u0209\v\x15\x03\x15\x03\x15\x03\x16\x03\x16\x03\x17\x05\x17\u0210" +
+		"\n\x17\x03\x17\x03\x17\x07\x17\u0214\n\x17\f\x17\x0E\x17\u0217\v\x17\x03" +
+		"\x17\x03\x17\x07\x17\u021B\n\x17\f\x17\x0E\x17\u021E\v\x17\x03\x17\x03" +
+		"\x17\x05\x17\u0222\n\x17\x03\x17\x07\x17\u0225\n\x17\f\x17\x0E\x17\u0228" +
+		"\v\x17\x03\x17\x03\x17\x03\x17\x06\x17\u022D\n\x17\r\x17\x0E\x17\u022E" +
+		"\x03\x17\x03\x17\x05\x17\u0233\n\x17\x03\x18\x03\x18\x03\x18\x03\x18\x03" +
+		"\x18\x03\x18\x03\x18\x03\x18\x05\x18\u023D\n\x18\x03\x18\x03\x18\x05\x18" +
+		"\u0241\n\x18\x03\x18\x03\x18\x03\x18\x03\x18\x05\x18\u0247\n\x18\x03\x18" +
+		"\x03\x18\x05\x18\u024B\n\x18\x03\x18\x03\x18\x03\x18\x03\x18\x05\x18\u0251" +
+		"\n\x18\x03\x18\x03\x18\x03\x18\x03\x18\x05\x18\u0257\n\x18\x05\x18\u0259" +
+		"\n\x18\x03\x19\x03\x19\x03\x19\x03\x19\x03\x19\x03\x19\x05\x19\u0261\n" +
+		"\x19\x03\x19\x03\x19\x07\x19\u0265\n\x19\f\x19\x0E\x19\u0268\v\x19\x03" +
+		"\x19\x05\x19\u026B\n\x19\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x03\x1A" +
 		"\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x03\x1A" +
 		"\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x03\x1A" +
-		"\x03\x1A\x05\x1A\u027A\n\x1A\x03\x1A\x05\x1A\u027D\n\x1A\x03\x1A\x03\x1A" +
-		"\x05\x1A\u0281\n\x1A\x03\x1A\x05\x1A\u0284\n\x1A\x03\x1A\x03\x1A\x03\x1A" +
-		"\x03\x1A\x03\x1A\x05\x1A\u028B\n\x1A\x03\x1A\x05\x1A\u028E\n\x1A\x03\x1A" +
-		"\x03\x1A\x05\x1A\u0292\n\x1A\x03\x1A\x03\x1A\x05\x1A\u0296\n\x1A\x03\x1A" +
-		"\x05\x1A\u0299\n\x1A\x03\x1A\x05\x1A\u029C\n\x1A\x03\x1A\x03\x1A\x03\x1A" +
-		"\x03\x1A\x05\x1A\u02A2\n\x1A\x03\x1A\x05\x1A\u02A5\n\x1A\x03\x1A\x03\x1A" +
-		"\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x05\x1A\u02AD\n\x1A\x03\x1A\x05\x1A\u02B0" +
-		"\n\x1A\x03\x1A\x03\x1A\x05\x1A\u02B4\n\x1A\x03\x1A\x03\x1A\x03\x1A\x03" +
-		"\x1A\x03\x1A\x05\x1A\u02BB\n\x1A\x03\x1A\x05\x1A\u02BE\n\x1A\x03\x1A\x03" +
-		"\x1A\x05\x1A\u02C2\n\x1A\x03\x1B\x03\x1B\x03\x1B\x05\x1B\u02C7\n\x1B\x03" +
-		"\x1B\x03\x1B\x03\x1B\x05\x1B\u02CC\n\x1B\x03\x1C\x03\x1C\x03\x1C\x03\x1D" +
+		"\x03\x1A\x05\x1A\u0286\n\x1A\x03\x1A\x05\x1A\u0289\n\x1A\x03\x1A\x03\x1A" +
+		"\x05\x1A\u028D\n\x1A\x03\x1A\x05\x1A\u0290\n\x1A\x03\x1A\x03\x1A\x03\x1A" +
+		"\x03\x1A\x03\x1A\x05\x1A\u0297\n\x1A\x03\x1A\x05\x1A\u029A\n\x1A\x03\x1A" +
+		"\x03\x1A\x05\x1A\u029E\n\x1A\x03\x1A\x03\x1A\x05\x1A\u02A2\n\x1A\x03\x1A" +
+		"\x05\x1A\u02A5\n\x1A\x03\x1A\x05\x1A\u02A8\n\x1A\x03\x1A\x03\x1A\x03\x1A" +
+		"\x03\x1A\x05\x1A\u02AE\n\x1A\x03\x1A\x05\x1A\u02B1\n\x1A\x03\x1A\x03\x1A" +
+		"\x03\x1A\x03\x1A\x03\x1A\x03\x1A\x05\x1A\u02B9\n\x1A\x03\x1A\x05\x1A\u02BC" +
+		"\n\x1A\x03\x1A\x03\x1A\x05\x1A\u02C0\n\x1A\x03\x1A\x03\x1A\x03\x1A\x03" +
+		"\x1A\x03\x1A\x05\x1A\u02C7\n\x1A\x03\x1A\x05\x1A\u02CA\n\x1A\x03\x1A\x03" +
+		"\x1A\x05\x1A\u02CE\n\x1A\x03\x1B\x03\x1B\x03\x1B\x05\x1B\u02D3\n\x1B\x03" +
+		"\x1B\x03\x1B\x03\x1B\x05\x1B\u02D8\n\x1B\x03\x1C\x03\x1C\x03\x1C\x03\x1D" +
 		"\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D" +
-		"\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x05\x1D\u02E1\n\x1D\x03" +
+		"\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x03\x1D\x05\x1D\u02ED\n\x1D\x03" +
 		"\x1E\x03\x1E\x03\x1E\x03\x1E\x03\x1E\x03\x1E\x03\x1E\x03\x1E\x03\x1E\x03" +
-		"\x1E\x03\x1E\x03\x1E\x05\x1E\u02EF\n\x1E\x03\x1F\x03\x1F\x05\x1F\u02F3" +
-		"\n\x1F\x03\x1F\x05\x1F\u02F6\n\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03" +
-		"\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x05\x1F\u0302\n\x1F\x03\x1F" +
-		"\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x05\x1F\u0309\n\x1F\x03\x1F\x03\x1F\x03" +
+		"\x1E\x03\x1E\x03\x1E\x05\x1E\u02FB\n\x1E\x03\x1F\x03\x1F\x05\x1F\u02FF" +
+		"\n\x1F\x03\x1F\x05\x1F\u0302\n\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03" +
+		"\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x05\x1F\u030E\n\x1F\x03\x1F" +
+		"\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x05\x1F\u0315\n\x1F\x03\x1F\x03\x1F\x03" +
 		"\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03" +
 		"\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03" +
 		"\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03\x1F\x03" +
-		"\x1F\x03\x1F\x03\x1F\x03\x1F\x05\x1F\u032C\n\x1F\x03 \x03 \x05 \u0330" +
-		"\n \x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03" +
-		"!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03" +
-		"!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03" +
-		"!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03!\x03" +
-		"!\x03!\x03!\x03!\x05!\u036D\n!\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03" +
-		"\"\x05\"\u0376\n\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03" +
-		"\"\x07\"\u0381\n\"\f\"\x0E\"\u0384\v\"\x03#\x03#\x03#\x03#\x03#\x03#\x03" +
-		"#\x05#\u038D\n#\x03$\x03$\x03$\x07$\u0392\n$\f$\x0E$\u0395\v$\x03$\x03" +
-		"$\x03$\x03$\x03$\x05$\u039C\n$\x03$\x03$\x07$\u03A0\n$\f$\x0E$\u03A3\v" +
-		"$\x03$\x03$\x05$\u03A7\n$\x03%\x03%\x03%\x07%\u03AC\n%\f%\x0E%\u03AF\v" +
-		"%\x03%\x03%\x03&\x03&\x05&\u03B5\n&\x03&\x05&\u03B8\n&\x03\'\x03\'\x03" +
-		"\'\x03\'\x03\'\x05\'\u03BF\n\'\x03\'\x03\'\x03\'\x03\'\x05\'\u03C5\n\'" +
-		"\x03\'\x07\'\u03C8\n\'\f\'\x0E\'\u03CB\v\'\x03\'\x05\'\u03CE\n\'\x03\'" +
-		"\x03\'\x03\'\x03\'\x03\'\x03\'\x03\'\x03\'\x03\'\x03\'\x03\'\x05\'\u03DB" +
-		"\n\'\x03\'\x03\'\x03\'\x03\'\x05\'\u03E1\n\'\x03\'\x07\'\u03E4\n\'\f\'" +
-		"\x0E\'\u03E7\v\'\x03\'\x05\'\u03EA\n\'\x03\'\x03\'\x03\'\x03\'\x05\'\u03F0" +
-		"\n\'\x03\'\x07\'\u03F3\n\'\f\'\x0E\'\u03F6\v\'\x03\'\x03\'\x05\'\u03FA" +
-		"\n\'\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x05(\u0403\n(\x03)\x03)\x03)\x03" +
-		")\x03)\x05)\u040A\n)\x03)\x07)\u040D\n)\f)\x0E)\u0410\v)\x03)\x05)\u0413" +
-		"\n)\x03)\x03)\x03)\x03)\x05)\u0419\n)\x03)\x07)\u041C\n)\f)\x0E)\u041F" +
-		"\v)\x03)\x03)\x05)\u0423\n)\x03*\x05*\u0426\n*\x03*\x03*\x03*\x05*\u042B" +
-		"\n*\x03*\x03*\x03*\x05*\u0430\n*\x03*\x03*\x03*\x05*\u0435\n*\x03*\x03" +
-		"*\x03*\x05*\u043A\n*\x03*\x03*\x03*\x05*\u043F\n*\x03*\x03*\x03*\x05*" +
-		"\u0444\n*\x03*\x03*\x03*\x05*\u0449\n*\x03*\x03*\x03*\x05*\u044E\n*\x03" +
-		"*\x03*\x05*\u0452\n*\x03+\x03+\x03+\x05+\u0457\n+\x03+\x03+\x03+\x05+" +
-		"\u045C\n+\x03+\x03+\x03+\x03+\x03+\x03+\x03+\x03+\x03+\x05+\u0467\n+\x03" +
-		",\x03,\x03,\x07,\u046C\n,\f,\x0E,\u046F\v,\x03,\x03,\x03,\x03,\x03,\x05" +
-		",\u0476\n,\x03,\x07,\u0479\n,\f,\x0E,\u047C\v,\x03,\x03,\x05,\u0480\n" +
-		",\x03-\x03-\x03-\x03-\x03-\x03-\x03-\x05-\u0489\n-\x03-\x07-\u048C\n-" +
-		"\f-\x0E-\u048F\v-\x03-\x03-\x05-\u0493\n-\x03.\x03.\x03.\x03.\x03.\x03" +
-		".\x03.\x03.\x05.\u049D\n.\x03/\x03/\x03/\x03/\x03/\x03/\x03/\x03/\x03" +
-		"/\x03/\x03/\x03/\x03/\x03/\x05/\u04AD\n/\x030\x030\x030\x070\u04B2\n0" +
-		"\f0\x0E0\u04B5\v0\x030\x030\x030\x030\x030\x050\u04BC\n0\x030\x070\u04BF" +
-		"\n0\f0\x0E0\u04C2\v0\x030\x030\x050\u04C6\n0\x031\x031\x031\x031\x031" +
-		"\x031\x031\x031\x031\x051\u04D1\n1\x031\x071\u04D4\n1\f1\x0E1\u04D7\v" +
-		"1\x031\x031\x051\u04DB\n1\x032\x032\x032\x032\x072\u04E1\n2\f2\x0E2\u04E4" +
-		"\v2\x032\x032\x032\x032\x032\x032\x032\x052\u04ED\n2\x033\x033\x033\x07" +
-		"3\u04F2\n3\f3\x0E3\u04F5\v3\x033\x033\x033\x033\x033\x073\u04FC\n3\f3" +
-		"\x0E3\u04FF\v3\x033\x033\x053\u0503\n3\x034\x034\x034\x074\u0508\n4\f" +
-		"4\x0E4\u050B\v4\x034\x034\x034\x034\x034\x074\u0512\n4\f4\x0E4\u0515\v" +
-		"4\x034\x034\x054\u0519\n4\x035\x035\x035\x035\x035\x035\x035\x035\x03" +
-		"5\x035\x035\x035\x035\x035\x035\x035\x035\x035\x035\x035\x035\x035\x07" +
-		"5\u0531\n5\f5\x0E5\u0534\v5\x035\x035\x055\u0538\n5\x036\x036\x056\u053C" +
-		"\n6\x037\x037\x037\x038\x038\x038\x038\x058\u0545\n8\x038\x058\u0548\n" +
-		"8\x039\x039\x039\x039\x059\u054E\n9\x039\x039\x039\x039\x039\x039\x05" +
-		"9\u0556\n9\x039\x039\x059\u055A\n9\x039\x039\x059\u055E\n9\x039\x039\x05" +
-		"9\u0562\n9\x039\x059\u0565\n9\x039\x039\x039\x059\u056A\n9\x03:\x03:\x03" +
-		":\x03:\x03:\x03:\x03:\x03:\x03:\x03:\x03:\x03:\x03:\x03:\x03:\x07:\u057B" +
-		"\n:\f:\x0E:\u057E\v:\x03:\x03:\x05:\u0582\n:\x03;\x03;\x03;\x05;\u0587" +
-		"\n;\x03<\x03<\x03<\x03<\x05<\u058D\n<\x03<\x03<\x03<\x03<\x03<\x03<\x05" +
-		"<\u0595\n<\x03<\x03<\x03<\x03<\x03<\x03<\x05<\u059D\n<\x03<\x03<\x03<" +
-		"\x03<\x05<\u05A3\n<\x03=\x03=\x03=\x05=\u05A8\n=\x03=\x03=\x03=\x05=\u05AD" +
-		"\n=\x05=\u05AF\n=\x03>\x03>\x03>\x07>\u05B4\n>\f>\x0E>\u05B7\v>\x03>\x03" +
-		">\x03>\x03>\x03>\x07>\u05BE\n>\f>\x0E>\u05C1\v>\x03>\x03>\x05>\u05C5\n" +
-		">\x03?\x03?\x03?\x03?\x03?\x03?\x03?\x07?\u05CE\n?\f?\x0E?\u05D1\v?\x03" +
-		"?\x03?\x05?\u05D5\n?\x03@\x03@\x05@\u05D9\n@\x03@\x05@\u05DC\n@\x03@\x05" +
-		"@\u05DF\n@\x03@\x03@\x03@\x05@\u05E4\n@\x03@\x05@\u05E7\n@\x03@\x03@\x03" +
-		"@\x03@\x03@\x03@\x03@\x03@\x03@\x03@\x03@\x03@\x03@\x03@\x03@\x03@\x03" +
-		"@\x03@\x03@\x03@\x03@\x05@\u05FE\n@\x03@\x05@\u0601\n@\x05@\u0603\n@\x03" +
-		"A\x03A\x03A\x03A\x03A\x03A\x05A\u060B\nA\x03A\x07A\u060E\nA\fA\x0EA\u0611" +
-		"\vA\x03A\x03A\x03A\x03A\x03A\x03A\x05A\u0619\nA\x03A\x03A\x05A\u061D\n" +
-		"A\x03A\x07A\u0620\nA\fA\x0EA\u0623\vA\x03A\x05A\u0626\nA\x03A\x03A\x03" +
-		"A\x03A\x03A\x05A\u062D\nA\x03A\x03A\x05A\u0631\nA\x03A\x03A\x05A\u0635" +
-		"\nA\x03A\x07A\u0638\nA\fA\x0EA\u063B\vA\x03A\x03A\x07A\u063F\nA\fA\x0E" +
-		"A\u0642\vA\x03A\x05A\u0645\nA\x03A\x03A\x03A\x07A\u064A\nA\fA\x0EA\u064D" +
-		"\vA\x03A\x03A\x03A\x03A\x03A\x03A\x07A\u0655\nA\fA\x0EA\u0658\vA\x03A" +
-		"\x03A\x05A\u065C\nA\x03B\x05B\u065F\nB\x03B\x03B\x03C\x03C\x03C\x03C\x03" +
-		"C\x07C\u0668\nC\fC\x0EC\u066B\vC\x03D\x03D\x03D\x03D\x03D\x03D\x03D\x03" +
-		"D\x05D\u0675\nD\x03E\x03E\x03E\x03E\x03E\x03E\x03E\x05E\u067E\nE\x03E" +
-		"\x05E\u0681\nE\x03E\x05E\u0684\nE\x03E\x03E\x03E\x03E\x03E\x03E\x05E\u068C" +
-		"\nE\x03E\x05E\u068F\nE\x03E\x05E\u0692\nE\x03E\x03E\x05E\u0696\nE\x03" +
-		"F\x03F\x03F\x03F\x03F\x03F\x03F\x03F\x03F\x03F\x03F\x03F\x03F\x03F\x03" +
-		"F\x03F\x03F\x03F\x03F\x03F\x05F\u06AC\nF\x05F\u06AE\nF\x03G\x03G\x03G" +
-		"\x03G\x03G\x03G\x03G\x03G\x07G\u06B8\nG\fG\x0EG\u06BB\vG\x03G\x03G\x03" +
-		"G\x03G\x07G\u06C1\nG\fG\x0EG\u06C4\vG\x03G\x03G\x03G\x03G\x03G\x03G\x03" +
-		"G\x03G\x03G\x03G\x03G\x03G\x03G\x07G\u06D3\nG\fG\x0EG\u06D6\vG\x03G\x03" +
-		"G\x03G\x03G\x07G\u06DC\nG\fG\x0EG\u06DF\vG\x03G\x03G\x03G\x03G\x03G\x03" +
-		"G\x03G\x07G\u06E8\nG\fG\x0EG\u06EB\vG\x03G\x03G\x05G\u06EF\nG\x03H\x03" +
-		"H\x03H\x03H\x03H\x07H\u06F6\nH\fH\x0EH\u06F9\vH\x03H\x03H\x05H\u06FD\n" +
-		"H\x03I\x03I\x03I\x03I\x03J\x03J\x03J\x07J\u0706\nJ\fJ\x0EJ\u0709\vJ\x03" +
-		"J\x03J\x03K\x03K\x03K\x05K\u0710\nK\x03K\x03K\x03K\x03K\x05K\u0716\nK" +
-		"\x03K\x03K\x03K\x03K\x03K\x03K\x03K\x03K\x03K\x03K\x05K\u0722\nK\x03K" +
-		"\x05K\u0725\nK\x03K\x03K\x03K\x03K\x03K\x03K\x05K\u072D\nK\x05K\u072F" +
-		"\nK\x03L\x03L\x03L\x03L\x03L\x03L\x03L\x03L\x05L\u0739\nL\x03M\x03M\x03" +
-		"M\x03M\x03N\x03N\x03N\x07N\u0742\nN\fN\x0EN\u0745\vN\x03N\x03N\x03N\x03" +
-		"N\x03N\x03N\x03N\x03N\x03N\x03N\x03N\x05N\u0752\nN\x03N\x03N\x03N\x03" +
-		"N\x03N\x03N\x03N\x03N\x03N\x03N\x03N\x03N\x07N\u0760\nN\fN\x0EN\u0763" +
-		"\vN\x03O\x03O\x03O\x03O\x05O\u0769\nO\x03P\x03P\x03P\x03P\x05P\u076F\n" +
-		"P\x03Q\x03Q\x03Q\x07Q\u0774\nQ\fQ\x0EQ\u0777\vQ\x03Q\x03Q\x03Q\x03Q\x03" +
-		"Q\x03Q\x05Q\u077F\nQ\x03R\x03R\x03R\x03R\x03R\x03R\x03S\x03S\x03T\x03" +
-		"T\x03U\x03U\x03U\x03U\x03U\x03U\x03U\x03U\x03U\x03U\x07U\u0795\nU\fU\x0E" +
-		"U\u0798\vU\x03U\x03U\x03U\x03U\x05U\u079E\nU\x05U\u07A0\nU\x03V\x03V\x03" +
-		"V\x03V\x07V\u07A6\nV\fV\x0EV\u07A9\vV\x03V\x03V\x03V\x03V\x03V\x03V\x03" +
-		"V\x03V\x07V\u07B3\nV\fV\x0EV\u07B6\vV\x03V\x03V\x03V\x03V\x03V\x03V\x03" +
-		"V\x03V\x07V\u07C0\nV\fV\x0EV\u07C3\vV\x03V\x03V\x03V\x03V\x03V\x07V\u07CA" +
-		"\nV\fV\x0EV\u07CD\vV\x03V\x03V\x03V\x03V\x03V\x07V\u07D4\nV\fV\x0EV\u07D7" +
-		"\vV\x03V\x03V\x03V\x03V\x03V\x03V\x03V\x05V\u07E0\nV\x03W\x03W\x03X\x03" +
-		"X\x03X\x03X\x07X\u07E8\nX\fX\x0EX\u07EB\vX\x03X\x03X\x03X\x03X\x05X\u07F1" +
-		"\nX\x03Y\x03Y\x03Y\x03Y\x03Z\x03Z\x03Z\x03Z\x07Z\u07FB\nZ\fZ\x0EZ\u07FE" +
-		"\vZ\x03Z\x03Z\x03Z\x03Z\x05Z\u0804\nZ\x03[\x03[\x03[\x03[\x03[\x03[\x03" +
-		"[\x03[\x03[\x03[\x03[\x05[\u0811\n[\x03\\\x03\\\x03\\\x03\\\x07\\\u0817" +
-		"\n\\\f\\\x0E\\\u081A\v\\\x03\\\x03\\\x03]\x03]\x03]\x03]\x07]\u0822\n" +
-		"]\f]\x0E]\u0825\v]\x03]\x03]\x03^\x03^\x03^\x03^\x07^\u082D\n^\f^\x0E" +
-		"^\u0830\v^\x03^\x03^\x03_\x03_\x03`\x03`\x03`\x03`\x07`\u083A\n`\f`\x0E" +
-		"`\u083D\v`\x03`\x03`\x03`\x03`\x03`\x03`\x03`\x03`\x07`\u0847\n`\f`\x0E" +
-		"`\u084A\v`\x03`\x03`\x03`\x03`\x03`\x03`\x03`\x03`\x03`\x05`\u0855\n`" +
-		"\x03a\x03a\x03b\x03b\x03b\x03b\x07b\u085D\nb\fb\x0Eb\u0860\vb\x03b\x03" +
-		"b\x03b\x03b\x05b\u0866\nb\x03c\x03c\x03c\x03c\x03d\x03d\x03d\x03d\x07" +
-		"d\u0870\nd\fd\x0Ed\u0873\vd\x03d\x03d\x03d\x03d\x05d\u0879\nd\x03e\x03" +
-		"e\x03e\x03e\x03e\x03e\x03e\x05e\u0882\ne\x03f\x03f\x03g\x03g\x03h\x03" +
-		"h\x03h\x03h\x03h\x03h\x03i\x03i\x03i\x03i\x03i\x03j\x03j\x03j\x03j\x03" +
-		"j\x03j\x03j\x03j\x03k\x03k\x03l\x03l\x05l\u089F\nl\x03l\x05l\u08A2\nl" +
-		"\x03m\x03m\x06m\u08A6\nm\rm\x0Em\u08A7\x03m\x03m\x03n\x03n\x03n\x06n\u08AF" +
-		"\nn\rn\x0En\u08B0\x03n\x05n\u08B4\nn\x03n\x03n\x03n\x03n\x03n\x05n\u08BB" +
-		"\nn\x03o\x03o\x03o\x03o\x03o\x05o\u08C2\no\x03p\x03p\x03q\x03q\x03r\x03" +
-		"r\x03s\x03s\x03t\x03t\x03u\x03u\x03v\x03v\x03w\x03w\x03x\x03x\x03y\x03" +
-		"y\x03z\x03z\x03{\x03{\x03{\x03|\x03|\x03}\x03}\x03~\x03~\x03\x7F\x03\x7F" +
-		"\x03\x80\x03\x80\x03\x80\x05\x80\u08E8\n\x80\x03\x80\x03\x80\x03\x81\x03" +
-		"\x81\x03\x82\x03\x82\x03\x82\x05\x82\u08F1\n\x82\x03\x83\x03\x83\x03\x84" +
-		"\x03\x84\x03\x84\x03\x84\x05\x84\u08F9\n\x84\x03\x85\x03\x85\x03\x85\x07" +
-		"\x85\u08FE\n\x85\f\x85\x0E\x85\u0901\v\x85\x03\x86\x03\x86\x03\x86\x05" +
-		"\x86\u0906\n\x86\x03\x86\x03\x86\x03\x86\x05\x86\u090B\n\x86\x03\x87\x03" +
-		"\x87\x03\x88\x03\x88\x05\x88\u0911\n\x88\x03\x88\x03\x88\x05\x88\u0915" +
-		"\n";
+		"\x1F\x03\x1F\x03\x1F\x03\x1F\x05\x1F\u0338\n\x1F\x03 \x03 \x05 \u033C" +
+		"\n \x03!\x03!\x03!\x07!\u0341\n!\f!\x0E!\u0344\v!\x03!\x03!\x03!\x03!" +
+		"\x03!\x05!\u034B\n!\x03!\x03!\x07!\u034F\n!\f!\x0E!\u0352\v!\x03!\x03" +
+		"!\x05!\u0356\n!\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"" +
+		"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03" +
+		"\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03" +
+		"\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03" +
+		"\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03\"\x03" +
+		"\"\x03\"\x03\"\x05\"\u0393\n\"\x03#\x03#\x03#\x03#\x03#\x03#\x03#\x05" +
+		"#\u039C\n#\x03#\x03#\x03#\x03#\x03#\x03#\x03#\x03#\x03#\x07#\u03A7\n#" +
+		"\f#\x0E#\u03AA\v#\x03$\x03$\x03$\x03$\x03$\x03$\x03$\x05$\u03B3\n$\x03" +
+		"%\x03%\x03%\x07%\u03B8\n%\f%\x0E%\u03BB\v%\x03%\x03%\x03&\x03&\x05&\u03C1" +
+		"\n&\x03&\x05&\u03C4\n&\x03\'\x03\'\x03\'\x03\'\x03\'\x05\'\u03CB\n\'\x03" +
+		"\'\x03\'\x03\'\x03\'\x05\'\u03D1\n\'\x03\'\x07\'\u03D4\n\'\f\'\x0E\'\u03D7" +
+		"\v\'\x03\'\x05\'\u03DA\n\'\x03\'\x03\'\x03\'\x03\'\x03\'\x03\'\x03\'\x03" +
+		"\'\x03\'\x03\'\x03\'\x05\'\u03E7\n\'\x03\'\x03\'\x03\'\x03\'\x05\'\u03ED" +
+		"\n\'\x03\'\x07\'\u03F0\n\'\f\'\x0E\'\u03F3\v\'\x03\'\x05\'\u03F6\n\'\x03" +
+		"\'\x03\'\x03\'\x03\'\x05\'\u03FC\n\'\x03\'\x07\'\u03FF\n\'\f\'\x0E\'\u0402" +
+		"\v\'\x03\'\x03\'\x05\'\u0406\n\'\x03(\x03(\x03(\x03(\x03(\x03(\x03(\x05" +
+		"(\u040F\n(\x03)\x03)\x03)\x03)\x03)\x05)\u0416\n)\x03)\x07)\u0419\n)\f" +
+		")\x0E)\u041C\v)\x03)\x05)\u041F\n)\x03)\x03)\x03)\x03)\x05)\u0425\n)\x03" +
+		")\x07)\u0428\n)\f)\x0E)\u042B\v)\x03)\x03)\x05)\u042F\n)\x03*\x05*\u0432" +
+		"\n*\x03*\x03*\x03*\x05*\u0437\n*\x03*\x03*\x03*\x05*\u043C\n*\x03*\x03" +
+		"*\x03*\x05*\u0441\n*\x03*\x03*\x03*\x05*\u0446\n*\x03*\x03*\x03*\x05*" +
+		"\u044B\n*\x03*\x03*\x03*\x05*\u0450\n*\x03*\x03*\x03*\x05*\u0455\n*\x03" +
+		"*\x03*\x03*\x05*\u045A\n*\x03*\x03*\x05*\u045E\n*\x03+\x03+\x03+\x05+" +
+		"\u0463\n+\x03+\x03+\x03+\x05+\u0468\n+\x03+\x03+\x03+\x03+\x03+\x03+\x03" +
+		"+\x03+\x03+\x05+\u0473\n+\x03,\x03,\x03,\x07,\u0478\n,\f,\x0E,\u047B\v" +
+		",\x03,\x03,\x03,\x03,\x03,\x05,\u0482\n,\x03,\x07,\u0485\n,\f,\x0E,\u0488" +
+		"\v,\x03,\x03,\x05,\u048C\n,\x03-\x03-\x03-\x03-\x03-\x03-\x03-\x05-\u0495" +
+		"\n-\x03-\x07-\u0498\n-\f-\x0E-\u049B\v-\x03-\x03-\x05-\u049F\n-\x03.\x03" +
+		".\x03.\x03.\x03.\x03.\x03.\x03.\x05.\u04A9\n.\x03/\x03/\x03/\x03/\x03" +
+		"/\x03/\x03/\x03/\x03/\x03/\x03/\x03/\x03/\x03/\x05/\u04B9\n/\x030\x03" +
+		"0\x030\x070\u04BE\n0\f0\x0E0\u04C1\v0\x030\x030\x030\x030\x030\x050\u04C8" +
+		"\n0\x030\x070\u04CB\n0\f0\x0E0\u04CE\v0\x030\x030\x050\u04D2\n0\x031\x03" +
+		"1\x031\x031\x031\x031\x031\x031\x031\x051\u04DD\n1\x031\x071\u04E0\n1" +
+		"\f1\x0E1\u04E3\v1\x031\x031\x051\u04E7\n1\x032\x032\x032\x032\x072\u04ED" +
+		"\n2\f2\x0E2\u04F0\v2\x032\x032\x032\x032\x032\x032\x032\x052\u04F9\n2" +
+		"\x033\x033\x033\x073\u04FE\n3\f3\x0E3\u0501\v3\x033\x033\x033\x033\x03" +
+		"3\x073\u0508\n3\f3\x0E3\u050B\v3\x033\x033\x053\u050F\n3\x034\x034\x03" +
+		"4\x074\u0514\n4\f4\x0E4\u0517\v4\x034\x034\x034\x034\x034\x074\u051E\n" +
+		"4\f4\x0E4\u0521\v4\x034\x034\x054\u0525\n4\x035\x035\x035\x035\x035\x03" +
+		"5\x035\x035\x035\x035\x035\x035\x035\x035\x035\x035\x035\x035\x035\x03" +
+		"5\x035\x035\x075\u053D\n5\f5\x0E5\u0540\v5\x035\x035\x055\u0544\n5\x03" +
+		"6\x036\x056\u0548\n6\x037\x037\x037\x038\x038\x038\x038\x058\u0551\n8" +
+		"\x038\x058\u0554\n8\x039\x039\x039\x039\x059\u055A\n9\x039\x039\x039\x03" +
+		"9\x039\x039\x059\u0562\n9\x039\x039\x059\u0566\n9\x039\x039\x059\u056A" +
+		"\n9\x039\x039\x059\u056E\n9\x039\x059\u0571\n9\x039\x039\x039\x059\u0576" +
+		"\n9\x03:\x03:\x03:\x03:\x03:\x03:\x03:\x03:\x03:\x03:\x03:\x03:\x03:\x03" +
+		":\x03:\x07:\u0587\n:\f:\x0E:\u058A\v:\x03:\x03:\x05:\u058E\n:\x03;\x03" +
+		";\x03;\x05;\u0593\n;\x03<\x03<\x03<\x03<\x05<\u0599\n<\x03<\x03<\x03<" +
+		"\x03<\x03<\x03<\x05<\u05A1\n<\x03<\x03<\x03<\x03<\x03<\x03<\x05<\u05A9" +
+		"\n<\x03<\x03<\x03<\x03<\x05<\u05AF\n<\x03=\x03=\x03=\x05=\u05B4\n=\x03" +
+		"=\x03=\x03=\x05=\u05B9\n=\x05=\u05BB\n=\x03>\x03>\x03>\x07>\u05C0\n>\f" +
+		">\x0E>\u05C3\v>\x03>\x03>\x03>\x03>\x03>\x07>\u05CA\n>\f>\x0E>\u05CD\v" +
+		">\x03>\x03>\x05>\u05D1\n>\x03?\x03?\x03?\x03?\x03?\x03?\x03?\x07?\u05DA" +
+		"\n?\f?\x0E?\u05DD\v?\x03?\x03?\x05?\u05E1\n?\x03@\x03@\x05@\u05E5\n@\x03" +
+		"@\x05@\u05E8\n@\x03@\x05@\u05EB\n@\x03@\x03@\x03@\x05@\u05F0\n@\x03@\x05" +
+		"@\u05F3\n@\x03@\x03@\x03@\x03@\x03@\x03@\x03@\x03@\x03@\x03@\x03@\x03" +
+		"@\x03@\x03@\x03@\x03@\x03@\x03@\x03@\x03@\x03@\x05@\u060A\n@\x03@\x05" +
+		"@\u060D\n@\x05@\u060F\n@\x03A\x03A\x03A\x03A\x03A\x03A\x05A\u0617\nA\x03" +
+		"A\x07A\u061A\nA\fA\x0EA\u061D\vA\x03A\x03A\x03A\x03A\x03A\x03A\x05A\u0625" +
+		"\nA\x03A\x03A\x05A\u0629\nA\x03A\x07A\u062C\nA\fA\x0EA\u062F\vA\x03A\x05" +
+		"A\u0632\nA\x03A\x03A\x03A\x03A\x03A\x05A\u0639\nA\x03A\x03A\x05A\u063D" +
+		"\nA\x03A\x03A\x05A\u0641\nA\x03A\x07A\u0644\nA\fA\x0EA\u0647\vA\x03A\x03" +
+		"A\x07A\u064B\nA\fA\x0EA\u064E\vA\x03A\x05A\u0651\nA\x03A\x03A\x03A\x07" +
+		"A\u0656\nA\fA\x0EA\u0659\vA\x03A\x03A\x03A\x03A\x03A\x03A\x07A\u0661\n" +
+		"A\fA\x0EA\u0664\vA\x03A\x03A\x05A\u0668\nA\x03B\x05B\u066B\nB\x03B\x03" +
+		"B\x03C\x03C\x03C\x03C\x03C\x07C\u0674\nC\fC\x0EC\u0677\vC\x03D\x03D\x03" +
+		"D\x03D\x03D\x03D\x03D\x03D\x05D\u0681\nD\x03E\x03E\x03E\x03E\x03E\x03" +
+		"E\x03E\x05E\u068A\nE\x03E\x05E\u068D\nE\x03E\x05E\u0690\nE\x03E\x03E\x03" +
+		"E\x03E\x03E\x03E\x05E\u0698\nE\x03E\x05E\u069B\nE\x03E\x05E\u069E\nE\x03" +
+		"E\x03E\x05E\u06A2\nE\x03F\x03F\x03F\x03F\x03F\x03F\x03F\x03F\x03F\x03" +
+		"F\x03F\x03F\x03F\x03F\x03F\x03F\x03F\x03F\x03F\x03F\x05F\u06B8\nF\x05" +
+		"F\u06BA\nF\x03G\x03G\x03G\x03G\x03G\x03G\x03G\x03G\x07G\u06C4\nG\fG\x0E" +
+		"G\u06C7\vG\x03G\x03G\x03G\x03G\x07G\u06CD\nG\fG\x0EG\u06D0\vG\x03G\x03" +
+		"G\x03G\x03G\x03G\x03G\x03G\x03G\x03G\x03G\x03G\x03G\x03G\x07G\u06DF\n" +
+		"G\fG\x0EG\u06E2\vG\x03G\x03G\x03G\x03G\x07G\u06E8\nG\fG\x0EG\u06EB\vG" +
+		"\x03G\x03G\x03G\x03G\x03G\x03G\x03G\x07G\u06F4\nG\fG\x0EG\u06F7\vG\x03" +
+		"G\x03G\x05G\u06FB\nG\x03H\x03H\x03H\x03H\x03H\x07H\u0702\nH\fH\x0EH\u0705" +
+		"\vH\x03H\x03H\x05H\u0709\nH\x03I\x03I\x03I\x03I\x03J\x03J\x03J\x07J\u0712" +
+		"\nJ\fJ\x0EJ\u0715\vJ\x03J\x03J\x03K\x03K\x03K\x05K\u071C\nK\x03K\x03K" +
+		"\x03K\x03K\x05K\u0722\nK\x03K\x03K\x03K\x03K\x03K\x03K\x03K\x03K\x03K" +
+		"\x03K\x05K\u072E\nK\x03K\x05K\u0731\nK\x03K\x03K\x03K\x03K\x03K\x03K\x05" +
+		"K\u0739\nK\x05K\u073B\nK\x03L\x03L\x03L\x03L\x03L\x03L\x03L\x03L\x05L" +
+		"\u0745\nL\x03M\x03M\x03M\x03M\x03N\x03N\x03N\x07N\u074E\nN\fN\x0EN\u0751" +
+		"\vN\x03N\x03N\x03N\x03N\x03N\x03N\x03N\x03N\x03N\x03N\x03N\x05N\u075E" +
+		"\nN\x03N\x03N\x03N\x03N\x03N\x03N\x03N\x03N\x03N\x03N\x03N\x03N\x07N\u076C" +
+		"\nN\fN\x0EN\u076F\vN\x03O\x03O\x03O\x03O\x05O\u0775\nO\x03P\x03P\x03P" +
+		"\x03P\x05P\u077B\nP\x03Q\x03Q\x03Q\x07Q\u0780\nQ\fQ\x0EQ\u0783\vQ\x03" +
+		"Q\x03Q\x03Q\x03Q\x03Q\x03Q\x05Q\u078B\nQ\x03R\x03R\x03R\x03R\x03R\x03" +
+		"R\x03S\x03S\x03T\x03T\x03U\x03U\x03U\x03U\x03U\x03U\x03U\x03U\x03U\x03" +
+		"U\x07U\u07A1\nU\fU\x0EU\u07A4\vU\x03U\x03U\x03U\x03U\x05U\u07AA\nU\x05" +
+		"U\u07AC\nU\x03V\x03V\x03V\x03V\x07V\u07B2\nV\fV\x0EV\u07B5\vV\x03V\x03" +
+		"V\x03V\x03V\x03V\x03V\x03V\x03V\x07V\u07BF\nV\fV\x0EV\u07C2\vV\x03V\x03" +
+		"V\x03V\x03V\x03V\x03V\x03V\x03V\x07V\u07CC\nV\fV\x0EV\u07CF\vV\x03V\x03" +
+		"V\x03V\x03V\x03V\x07V\u07D6\nV\fV\x0EV\u07D9\vV\x03V\x03V\x03V\x03V\x03" +
+		"V\x07V\u07E0\nV\fV\x0EV\u07E3\vV\x03V\x03V\x03V\x03V\x03V\x03V\x03V\x05" +
+		"V\u07EC\nV\x03W\x03W\x03X\x03X\x03X\x03X\x07X\u07F4\nX\fX\x0EX\u07F7\v" +
+		"X\x03X\x03X\x03X\x03X\x05X\u07FD\nX\x03Y\x03Y\x03Y\x03Y\x03Z\x03Z\x03" +
+		"Z\x03Z\x07Z\u0807\nZ\fZ\x0EZ\u080A\vZ\x03Z\x03Z\x03Z\x03Z\x05Z\u0810\n" +
+		"Z\x03[\x03[\x03[\x03[\x03[\x03[\x03[\x03[\x03[\x03[\x03[\x05[\u081D\n" +
+		"[\x03\\\x03\\\x03\\\x03\\\x07\\\u0823\n\\\f\\\x0E\\\u0826\v\\\x03\\\x03" +
+		"\\\x03]\x03]\x03]\x03]\x07]\u082E\n]\f]\x0E]\u0831\v]\x03]\x03]\x03^\x03" +
+		"^\x03^\x03^\x07^\u0839\n^\f^\x0E^\u083C\v^\x03^\x03^\x03_\x03_\x03`\x03" +
+		"`\x03`\x03`\x07`\u0846\n`\f`\x0E`\u0849\v`\x03`\x03`\x03`\x03`\x03`\x03" +
+		"`\x03`\x03`\x07`\u0853\n`\f`\x0E`\u0856\v`\x03`\x03`\x03`\x03`\x03`\x03" +
+		"`\x03`\x03`\x03`\x05`\u0861\n`\x03a\x03a\x03b\x03b\x03b\x03b\x07b\u0869" +
+		"\nb\fb\x0Eb\u086C\vb\x03b\x03b\x03b\x03b\x05b\u0872\nb\x03c\x03c\x03c" +
+		"\x03c\x03d\x03d\x03d\x03d\x07d\u087C\nd\fd\x0Ed\u087F\vd\x03d\x03d\x03" +
+		"d\x03d\x05d\u0885\nd\x03e\x03e\x03e\x03e\x03e\x03e\x03e\x05e\u088E\ne" +
+		"\x03f\x03f\x03g\x03g\x03h\x03h\x03h\x03h\x03h\x03h\x03i\x03i\x03i\x03" +
+		"i\x03i\x03j\x03j\x03j\x03j\x03j\x03j\x03j\x03j\x03k\x03k\x03l\x03l\x05" +
+		"l\u08AB\nl\x03l\x05l\u08AE\nl\x03m\x03m\x06m\u08B2\nm\rm\x0Em\u08B3\x03" +
+		"m\x03m\x03n\x03n\x03n\x06n\u08BB\nn\rn\x0En\u08BC\x03n\x05n\u08C0\nn\x03" +
+		"n\x03n\x03n\x03n\x03n\x05n\u08C7\nn\x03o\x03o\x03o\x03o\x03o\x05o\u08CE" +
+		"\no\x03p\x03p\x03q\x03q\x03r\x03r\x03s\x03s\x03t\x03t\x03u\x03u\x03v\x03" +
+		"v\x03w\x03w\x03x\x03x\x03y\x03y\x03z\x03z\x03{\x03{\x03{\x03|\x03|\x03" +
+		"}\x03}\x03~\x03~\x03\x7F\x03\x7F\x03\x80\x03\x80\x03\x80\x05\x80\u08F4" +
+		"\n\x80\x03\x80\x03\x80\x03\x81\x03\x81\x03\x82\x03\x82\x03\x82\x05\x82" +
+		"\u08FD\n\x82\x03\x83\x03\x83\x03\x84\x03\x84\x03\x84\x03\x84\x05\x84\u0905" +
+		"\n\x84\x03\x85\x03\x85\x03\x85\x07\x85\u090A\n\x85\f\x85\x0E\x85\u090D" +
+		"\v\x85\x03\x86\x03\x86\x03\x86\x05\x86\u0912\n\x86\x03\x86\x03\x86\x03";
 	private static readonly _serializedATNSegment1: string =
-		"\x88\x03\x89\x03\x89\x05\x89\u0919\n\x89\x03\x89\x05\x89\u091C\n\x89\x03" +
-		"\x89\x03\x89\x05\x89\u0920\n\x89\x03\x89\x04\u08A7\u08B0\x02\x04B\x9A" +
-		"\x8A\x02\x02\x04\x02\x06\x02\b\x02\n\x02\f\x02\x0E\x02\x10\x02\x12\x02" +
-		"\x14\x02\x16\x02\x18\x02\x1A\x02\x1C\x02\x1E\x02 \x02\"\x02$\x02&\x02" +
-		"(\x02*\x02,\x02.\x020\x022\x024\x026\x028\x02:\x02<\x02>\x02@\x02B\x02" +
-		"D\x02F\x02H\x02J\x02L\x02N\x02P\x02R\x02T\x02V\x02X\x02Z\x02\\\x02^\x02" +
-		"`\x02b\x02d\x02f\x02h\x02j\x02l\x02n\x02p\x02r\x02t\x02v\x02x\x02z\x02" +
-		"|\x02~\x02\x80\x02\x82\x02\x84\x02\x86\x02\x88\x02\x8A\x02\x8C\x02\x8E" +
-		"\x02\x90\x02\x92\x02\x94\x02\x96\x02\x98\x02\x9A\x02\x9C\x02\x9E\x02\xA0" +
-		"\x02\xA2\x02\xA4\x02\xA6\x02\xA8\x02\xAA\x02\xAC\x02\xAE\x02\xB0\x02\xB2" +
-		"\x02\xB4\x02\xB6\x02\xB8\x02\xBA\x02\xBC\x02\xBE\x02\xC0\x02\xC2\x02\xC4" +
-		"\x02\xC6\x02\xC8\x02\xCA\x02\xCC\x02\xCE\x02\xD0\x02\xD2\x02\xD4\x02\xD6" +
-		"\x02\xD8\x02\xDA\x02\xDC\x02\xDE\x02\xE0\x02\xE2\x02\xE4\x02\xE6\x02\xE8" +
-		"\x02\xEA\x02\xEC\x02\xEE\x02\xF0\x02\xF2\x02\xF4\x02\xF6\x02\xF8\x02\xFA" +
-		"\x02\xFC\x02\xFE\x02\u0100\x02\u0102\x02\u0104\x02\u0106\x02\u0108\x02" +
-		"\u010A\x02\u010C\x02\u010E\x02\u0110\x02\x02\"\x03\x02HI\x03\x02\xAE\xAF" +
-		"\x03\x02]^\x03\x02NO\x03\x02TU\x03\x02VW\x03\x02XY\x03\x02Z[\x03\x02\x19" +
-		"\x1A\x04\x02\x0E\x0E\x1C\x1D\x03\x02\x1E\x1F\x03\x02kl\x05\x02]^uuxx\x03" +
-		"\x02y\x7F\x03\x02\x83\x87\x03\x02\x89\x8B\x04\x02\x13\x13\x90\x90\x03" +
-		"\x02\x95\x96\x04\x02\x14\x14\x91\x91\x05\x02\x0E\x0E\x1E\x1E\"\"\x04\x02" +
-		"\x13\x13pp\x04\x02\x14\x14qq\x03\x02\x8E\x8F\x03\x02\x9D\x9F\x04\x02\x9D" +
-		"\x9E\xA0\xA1\x04\x02[[\x9F\x9F\x03\x02\xA2\xA4\x04\x02==AA\x03\x02>?\x07" +
-		"\x02Hcejm\xA7\xA9\xB0\xB3\xB8\x04\x02CC\xB1\xB1\x03\x02\xB3\xB8\x02\u0A76" +
-		"\x02\u0115\x03\x02\x02\x02\x04\u011A\x03\x02\x02\x02\x06\u011E\x03\x02" +
-		"\x02\x02\b\u0136\x03\x02\x02\x02\n\u0144\x03\x02\x02\x02\f\u0146\x03\x02" +
-		"\x02\x02\x0E\u0148\x03\x02\x02\x02\x10\u0187\x03\x02\x02\x02\x12\u018C" +
-		"\x03\x02\x02\x02\x14\u018E\x03\x02\x02\x02\x16\u01AA\x03\x02\x02\x02\x18" +
-		"\u01AF\x03\x02\x02\x02\x1A\u01B1\x03\x02\x02\x02\x1C\u01C7\x03\x02\x02" +
-		"\x02\x1E\u01E0\x03\x02\x02\x02 \u01E6\x03\x02\x02\x02\"\u01E8\x03\x02" +
-		"\x02\x02$\u01EF\x03\x02\x02\x02&\u01F1\x03\x02\x02\x02(\u01F3\x03\x02" +
-		"\x02\x02*\u0200\x03\x02\x02\x02,\u0226\x03\x02\x02\x02.\u024C\x03\x02" +
-		"\x02\x020\u025E\x03\x02\x02\x022\u02C1\x03\x02\x02\x024\u02CB\x03\x02" +
-		"\x02\x026\u02CD\x03\x02\x02\x028\u02E0\x03\x02\x02\x02:\u02EE\x03\x02" +
-		"\x02\x02<\u032B\x03\x02\x02\x02>\u032F\x03\x02\x02\x02@\u036C\x03\x02" +
-		"\x02\x02B\u0375\x03\x02\x02\x02D\u038C\x03\x02\x02\x02F\u03A6\x03\x02" +
-		"\x02\x02H\u03A8\x03\x02\x02\x02J\u03B7\x03\x02\x02\x02L\u03F9\x03\x02" +
-		"\x02\x02N\u0402\x03\x02\x02\x02P\u0422\x03\x02\x02\x02R\u0451\x03\x02" +
-		"\x02\x02T\u0466\x03\x02\x02\x02V\u047F\x03\x02\x02\x02X\u0492\x03\x02" +
-		"\x02\x02Z\u049C\x03\x02\x02\x02\\\u04AC\x03\x02\x02\x02^\u04C5\x03\x02" +
-		"\x02\x02`\u04DA\x03\x02\x02\x02b\u04EC\x03\x02\x02\x02d\u0502\x03\x02" +
-		"\x02\x02f\u0518\x03\x02\x02\x02h\u0537\x03\x02\x02\x02j\u053B\x03\x02" +
-		"\x02\x02l\u053D\x03\x02\x02\x02n\u0540\x03\x02\x02\x02p\u0569\x03\x02" +
-		"\x02\x02r\u0581\x03\x02\x02\x02t\u0586\x03\x02\x02\x02v\u05A2\x03\x02" +
-		"\x02\x02x\u05AE\x03\x02\x02\x02z\u05C4\x03\x02\x02\x02|\u05D4\x03\x02" +
-		"\x02\x02~\u0602\x03\x02\x02\x02\x80\u065B\x03\x02\x02\x02\x82\u065E\x03" +
-		"\x02\x02\x02\x84\u0662\x03\x02\x02\x02\x86\u0674\x03\x02\x02\x02\x88\u0695" +
-		"\x03\x02\x02\x02\x8A\u06AD\x03\x02\x02\x02\x8C\u06EE\x03\x02\x02\x02\x8E" +
-		"\u06FC\x03\x02\x02\x02\x90\u06FE\x03\x02\x02\x02\x92\u0702\x03\x02\x02" +
-		"\x02\x94\u072E\x03\x02\x02\x02\x96\u0738\x03\x02\x02\x02\x98\u073A\x03" +
-		"\x02\x02\x02\x9A\u0751\x03\x02\x02\x02\x9C\u0764\x03\x02\x02\x02\x9E\u076E" +
-		"\x03\x02\x02\x02\xA0\u077E\x03\x02\x02\x02\xA2\u0780\x03\x02\x02\x02\xA4" +
-		"\u0786\x03\x02\x02\x02\xA6\u0788\x03\x02\x02\x02\xA8\u079F\x03\x02\x02" +
-		"\x02\xAA\u07DF\x03\x02\x02\x02\xAC\u07E1\x03\x02\x02\x02\xAE\u07F0\x03" +
-		"\x02\x02\x02\xB0\u07F2\x03\x02\x02\x02\xB2\u0803\x03\x02\x02\x02\xB4\u0810" +
-		"\x03\x02\x02\x02\xB6\u0812\x03\x02\x02\x02\xB8\u081D\x03\x02\x02\x02\xBA" +
-		"\u0828\x03\x02\x02\x02\xBC\u0833\x03\x02\x02\x02\xBE\u0854\x03\x02\x02" +
-		"\x02\xC0\u0856\x03\x02\x02\x02\xC2\u0865\x03\x02\x02\x02\xC4\u0867\x03" +
-		"\x02\x02\x02\xC6\u0878\x03\x02\x02\x02\xC8\u0881\x03\x02\x02\x02\xCA\u0883" +
-		"\x03\x02\x02\x02\xCC\u0885\x03\x02\x02\x02\xCE\u0887\x03\x02\x02\x02\xD0" +
-		"\u088D\x03\x02\x02\x02\xD2\u0892\x03\x02\x02\x02\xD4\u089A\x03\x02\x02" +
-		"\x02\xD6\u089C\x03\x02\x02\x02\xD8\u08A3\x03\x02\x02\x02\xDA\u08BA\x03" +
-		"\x02\x02\x02\xDC\u08C1\x03\x02\x02\x02\xDE\u08C3\x03\x02\x02\x02\xE0\u08C5" +
-		"\x03\x02\x02\x02\xE2\u08C7\x03\x02\x02\x02\xE4\u08C9\x03\x02\x02\x02\xE6" +
-		"\u08CB\x03\x02\x02\x02\xE8\u08CD\x03\x02\x02\x02\xEA\u08CF\x03\x02\x02" +
-		"\x02\xEC\u08D1\x03\x02\x02\x02\xEE\u08D3\x03\x02\x02\x02\xF0\u08D5\x03" +
-		"\x02\x02\x02\xF2\u08D7\x03\x02\x02\x02\xF4\u08D9\x03\x02\x02\x02\xF6\u08DC" +
-		"\x03\x02\x02\x02\xF8\u08DE\x03\x02\x02\x02\xFA\u08E0\x03\x02\x02\x02\xFC" +
-		"\u08E2\x03\x02\x02\x02\xFE\u08E7\x03\x02\x02\x02\u0100\u08EB\x03\x02\x02" +
-		"\x02\u0102\u08F0\x03\x02\x02\x02\u0104\u08F2\x03\x02\x02\x02\u0106\u08F8" +
-		"\x03\x02\x02\x02\u0108\u08FA\x03\x02\x02\x02\u010A\u0905\x03\x02\x02\x02" +
-		"\u010C\u090C\x03\x02\x02\x02\u010E\u0910\x03\x02\x02\x02\u0110\u0918\x03" +
-		"\x02\x02\x02\u0112\u0114\x05\x04\x03\x02\u0113\u0112\x03\x02\x02\x02\u0114" +
-		"\u0117\x03\x02\x02\x02\u0115\u0113\x03\x02\x02\x02\u0115\u0116\x03\x02" +
-		"\x02\x02\u0116\x03\x03\x02\x02\x02\u0117\u0115\x03\x02\x02\x02\u0118\u011B" +
-		"\x05\x0E\b\x02\u0119\u011B\x05\x12\n\x02\u011A\u0118\x03\x02\x02\x02\u011A" +
-		"\u0119\x03\x02\x02\x02\u011B\x05\x03\x02\x02\x02\u011C\u011F\x05\n\x06" +
-		"\x02\u011D\u011F\x05\b\x05\x02\u011E\u011C\x03\x02\x02\x02\u011E\u011D" +
-		"\x03\x02\x02\x02\u011F\x07\x03\x02\x02\x02\u0120\u0137\x05\x9CO\x02\u0121" +
-		"\u0137\x05\xA2R\x02\u0122\u0137\x05\xA0Q\x02\u0123\u0137\x05$\x13\x02" +
-		"\u0124\u0137\x05&\x14\x02\u0125\u0137\x05,\x17\x02\u0126\u0137\x05<\x1F" +
-		"\x02\u0127\u0137\x05\x98M\x02\u0128\u0137\x05@!\x02\u0129\u0137\x05T+" +
-		"\x02\u012A\u0137\x05\x90I\x02\u012B\u0137\x05F$\x02\u012C\u0137\x05H%" +
-		"\x02\u012D\u0137\x05L\'\x02\u012E\u0137\x05V,\x02\u012F\u0137\x05^0\x02" +
-		"\u0130\u0137\x05f4\x02\u0131\u0137\x05d3\x02\u0132\u0137\x05z>\x02\u0133" +
-		"\u0137\x05\x80A\x02\u0134\u0137\x05\x92J\x02\u0135\u0137\x05\f\x07\x02" +
-		"\u0136\u0120\x03\x02\x02\x02\u0136\u0121\x03\x02\x02\x02\u0136\u0122\x03" +
-		"\x02\x02\x02\u0136\u0123\x03\x02\x02\x02\u0136\u0124\x03\x02\x02\x02\u0136" +
-		"\u0125\x03\x02\x02\x02\u0136\u0126\x03\x02\x02\x02\u0136\u0127\x03\x02" +
-		"\x02\x02\u0136\u0128\x03\x02\x02\x02\u0136\u0129\x03\x02\x02\x02\u0136" +
-		"\u012A\x03\x02\x02\x02\u0136\u012B\x03\x02\x02\x02\u0136\u012C\x03\x02" +
-		"\x02\x02\u0136\u012D\x03\x02\x02\x02\u0136\u012E\x03\x02\x02\x02\u0136" +
-		"\u012F\x03\x02\x02\x02\u0136\u0130\x03\x02\x02\x02\u0136\u0131\x03\x02" +
-		"\x02\x02\u0136\u0132\x03\x02\x02\x02\u0136\u0133\x03\x02\x02\x02\u0136" +
-		"\u0134\x03\x02\x02\x02\u0136\u0135\x03\x02\x02\x02\u0137\t\x03\x02\x02" +
-		"\x02\u0138\u0145\x05\x1A\x0E\x02\u0139\u013A\x07\x03\x02\x02\u013A\u0145" +
-		"\x05\x1A\x0E\x02\u013B\u0145\x05\x1C\x0F\x02\u013C\u0145\x05\x0E\b\x02" +
-		"\u013D\u0145\x05\x96L\x02\u013E\u0140\x05\b\x05\x02\u013F\u0141\x05.\x18" +
-		"\x02\u0140\u013F\x03\x02\x02\x02\u0141\u0142\x03\x02\x02\x02\u0142\u0140" +
-		"\x03\x02\x02\x02\u0142\u0143\x03\x02\x02\x02\u0143\u0145\x03\x02\x02\x02" +
-		"\u0144\u0138\x03\x02\x02\x02\u0144\u0139\x03\x02\x02\x02\u0144\u013B\x03" +
-		"\x02\x02\x02\u0144\u013C\x03\x02\x02\x02\u0144\u013D\x03\x02\x02\x02\u0144" +
-		"\u013E\x03\x02\x02\x02\u0145\v\x03\x02\x02\x02\u0146\u0147\x07E\x02\x02" +
-		"\u0147\r\x03\x02\x02\x02\u0148\u014A\t\x02\x02\x02\u0149\u014B\x05\u0102" +
-		"\x82\x02\u014A\u0149\x03\x02\x02\x02\u014A\u014B\x03\x02\x02\x02\u014B" +
-		"\u0157\x03\x02\x02\x02\u014C\u0153\x07\x04\x02\x02\u014D\u014F\x05\x10" +
-		"\t\x02\u014E\u0150\x07\x05\x02\x02\u014F\u014E\x03\x02\x02\x02\u014F\u0150" +
-		"\x03\x02\x02\x02\u0150\u0152\x03\x02\x02\x02\u0151\u014D\x03\x02\x02\x02" +
-		"\u0152\u0155\x03\x02\x02\x02\u0153\u0151\x03\x02\x02\x02\u0153\u0154\x03" +
-		"\x02\x02\x02\u0154\u0156\x03\x02\x02\x02\u0155\u0153\x03\x02\x02\x02\u0156" +
-		"\u0158\x07\x06\x02\x02\u0157\u014C\x03\x02\x02\x02\u0157\u0158\x03\x02" +
-		"\x02\x02\u0158\u0159\x03\x02\x02\x02\u0159\u015D\x07\x07\x02\x02\u015A" +
-		"\u015C\x05\x12\n\x02\u015B\u015A\x03\x02\x02\x02\u015C\u015F\x03\x02\x02" +
-		"\x02\u015D\u015B\x03\x02\x02\x02\u015D\u015E\x03\x02\x02\x02\u015E\u0160" +
-		"\x03\x02\x02\x02\u015F\u015D\x03\x02\x02\x02\u0160\u0161\x07\b\x02\x02" +
-		"\u0161\x0F\x03\x02\x02\x02\u0162\u0163\x07r\x02\x02\u0163\u0164\x07\t" +
-		"\x02\x02\u0164\u0188\x05\u0102\x82\x02\u0165\u0166\x07b\x02\x02\u0166" +
-		"\u0167\x07\t\x02\x02\u0167\u0188\x05\u0102\x82\x02\u0168\u0169\x07n\x02" +
-		"\x02\u0169\u016A\x07\t\x02\x02\u016A\u0188\x05\u0102\x82\x02\u016B\u016C" +
-		"\x07w\x02\x02\u016C\u016D\x07\t\x02\x02\u016D\u0188\x05\u0102\x82\x02" +
-		"\u016E\u016F\x07\\\x02\x02\u016F\u0170\x07\t\x02\x02\u0170\u0188\x05\u0102" +
-		"\x82\x02\u0171\u0172\x07_\x02\x02\u0172\u0173\x07\t\x02\x02\u0173\u0188" +
-		"\x05\u0102\x82\x02\u0174\u0175\x07a\x02\x02\u0175\u0176\x07\t\x02\x02" +
-		"\u0176\u0188\x05\u0102\x82\x02\u0177\u0178\t\x03\x02\x02\u0178\u0179\x07" +
-		"\t\x02\x02\u0179\u0188\x05\u0102\x82\x02\u017A\u017B\x07\x8E\x02\x02\u017B" +
-		"\u017C\x07\t\x02\x02\u017C\u0188\x05\u0102\x82\x02\u017D\u017E\x07\x8F" +
-		"\x02\x02\u017E\u017F\x07\t\x02\x02\u017F\u0188\x05\u0102\x82\x02\u0180" +
-		"\u0181\x07\xB0\x02\x02\u0181\u0182\x07\t\x02\x02\u0182\u0188\x05\u0102" +
-		"\x82\x02\u0183\u0184\x07t\x02\x02\u0184\u0185\x07\t\x02\x02\u0185\u0188" +
-		"\x05\u0102\x82\x02\u0186\u0188\x07t\x02\x02\u0187\u0162\x03\x02\x02\x02" +
-		"\u0187\u0165\x03\x02\x02\x02\u0187\u0168\x03\x02\x02\x02\u0187\u016B\x03" +
-		"\x02\x02\x02\u0187\u016E\x03\x02\x02\x02\u0187\u0171\x03\x02\x02\x02\u0187" +
-		"\u0174\x03\x02\x02\x02\u0187\u0177\x03\x02\x02\x02\u0187\u017A\x03\x02" +
-		"\x02\x02\u0187\u017D\x03\x02\x02\x02\u0187\u0180\x03\x02\x02\x02\u0187" +
-		"\u0183\x03\x02\x02\x02\u0187\u0186\x03\x02\x02\x02\u0188\x11\x03\x02\x02" +
-		"\x02\u0189\u018D\x05\x14\v\x02\u018A\u018D\x05\x18\r\x02\u018B\u018D\x05" +
-		"\x96L\x02\u018C\u0189\x03\x02\x02\x02\u018C\u018A\x03\x02\x02\x02\u018C" +
-		"\u018B\x03\x02\x02\x02\u018D\x13\x03\x02\x02\x02\u018E\u018F\x07r\x02" +
-		"\x02\u018F\u019B\x05\xFA~\x02\u0190\u0197\x07\x04\x02\x02\u0191\u0193" +
-		"\x05\x16\f\x02\u0192\u0194\x07\x05\x02\x02\u0193\u0192\x03\x02\x02\x02" +
-		"\u0193\u0194\x03\x02\x02\x02\u0194\u0196\x03\x02\x02\x02\u0195\u0191\x03" +
-		"\x02\x02\x02\u0196\u0199\x03\x02\x02\x02\u0197\u0195\x03\x02\x02\x02\u0197" +
-		"\u0198\x03\x02\x02\x02\u0198\u019A\x03\x02\x02\x02\u0199\u0197\x03\x02" +
-		"\x02\x02\u019A\u019C\x07\x06\x02\x02\u019B\u0190\x03\x02\x02\x02\u019B" +
-		"\u019C\x03\x02\x02\x02\u019C\u019D\x03\x02\x02\x02\u019D\u01A1\x07\x07" +
-		"\x02\x02\u019E\u01A0\x05\x18\r\x02\u019F\u019E\x03\x02\x02\x02\u01A0\u01A3" +
-		"\x03\x02\x02\x02\u01A1\u019F\x03\x02\x02\x02\u01A1\u01A2\x03\x02\x02\x02" +
-		"\u01A2\u01A4\x03\x02\x02\x02\u01A3\u01A1\x03\x02\x02\x02\u01A4\u01A5\x07" +
-		"\b\x02\x02\u01A5\x15\x03\x02\x02\x02\u01A6\u01A7\x07\x9F\x02\x02\u01A7" +
-		"\u01A8\x07\t\x02\x02\u01A8\u01AB\x05\xCAf\x02\u01A9\u01AB\x07\xAD\x02" +
-		"\x02\u01AA\u01A6\x03\x02\x02\x02\u01AA\u01A9\x03\x02\x02\x02\u01AB\x17" +
-		"\x03\x02\x02\x02\u01AC\u01B0\x05\x1A\x0E\x02\u01AD\u01B0\x05\x1C\x0F\x02" +
-		"\u01AE\u01B0\x05\x14\v\x02\u01AF\u01AC\x03\x02\x02\x02\u01AF\u01AD\x03" +
-		"\x02\x02\x02\u01AF\u01AE\x03\x02\x02\x02\u01B0\x19\x03\x02\x02\x02\u01B1" +
-		"\u01B2\x07r\x02\x02\u01B2\u01BC\x05\xE0q\x02\u01B3\u01B4\x07s\x02\x02" +
-		"\u01B4\u01B9\x05\xFA~\x02\u01B5\u01B6\x07\x05\x02\x02\u01B6\u01B8\x05" +
-		"\xFA~\x02\u01B7\u01B5\x03\x02\x02\x02\u01B8\u01BB\x03\x02\x02\x02\u01B9" +
-		"\u01B7\x03\x02\x02\x02\u01B9\u01BA\x03\x02\x02\x02\u01BA\u01BD\x03\x02" +
-		"\x02\x02\u01BB\u01B9\x03\x02\x02\x02\u01BC\u01B3\x03\x02\x02\x02\u01BC" +
-		"\u01BD\x03\x02\x02\x02\u01BD\u01BE\x03\x02\x02\x02\u01BE\u01C2\x07\x07" +
-		"\x02\x02\u01BF\u01C1\x05\x06\x04\x02\u01C0\u01BF\x03\x02\x02\x02\u01C1" +
-		"\u01C4\x03\x02\x02\x02\u01C2\u01C0\x03\x02\x02\x02\u01C2\u01C3\x03\x02" +
-		"\x02\x02\u01C3\u01C5\x03\x02\x02\x02\u01C4\u01C2\x03\x02\x02\x02\u01C5" +
-		"\u01C6\x07\b\x02\x02\u01C6\x1B\x03\x02\x02\x02\u01C7\u01C8\x07r\x02\x02" +
-		"\u01C8\u01C9\x05\xE0q\x02\u01C9\u01CA\x07\n\x02\x02\u01CA\u01CF\x05\x1E" +
-		"\x10\x02\u01CB\u01CC\x07\x05\x02\x02\u01CC\u01CE\x05\x1E\x10\x02\u01CD" +
-		"\u01CB\x03\x02\x02\x02\u01CE\u01D1\x03\x02\x02\x02\u01CF\u01CD\x03\x02" +
-		"\x02\x02\u01CF\u01D0\x03\x02\x02\x02\u01D0\u01D2\x03\x02\x02\x02\u01D1" +
-		"\u01CF\x03\x02\x02\x02\u01D2\u01D4\x07\v\x02\x02\u01D3\u01D5\x05\u010A" +
-		"\x86\x02\u01D4\u01D3\x03\x02\x02\x02\u01D4\u01D5\x03\x02\x02\x02\u01D5" +
-		"\u01D6\x03\x02\x02\x02\u01D6\u01DA\x07\x07\x02\x02\u01D7\u01D9\x05 \x11" +
-		"\x02\u01D8\u01D7\x03\x02\x02\x02\u01D9\u01DC\x03\x02\x02\x02\u01DA\u01D8" +
-		"\x03\x02\x02\x02\u01DA\u01DB\x03\x02\x02\x02\u01DB\u01DD\x03\x02\x02\x02" +
-		"\u01DC\u01DA\x03\x02\x02\x02\u01DD\u01DE\x07\b\x02\x02\u01DE\x1D\x03\x02" +
-		"\x02\x02\u01DF\u01E1\x05\u010A\x86\x02\u01E0\u01DF\x03\x02\x02\x02\u01E0" +
-		"\u01E1\x03\x02\x02\x02\u01E1\u01E2\x03\x02\x02\x02\u01E2\u01E3\x05\u0102" +
-		"\x82\x02\u01E3\x1F\x03\x02\x02\x02\u01E4\u01E7\x05\x06\x04\x02\u01E5\u01E7" +
-		"\x05\"\x12\x02\u01E6\u01E4\x03\x02\x02\x02\u01E6\u01E5\x03\x02\x02\x02" +
-		"\u01E7!\x03\x02\x02\x02\u01E8\u01E9\x07\xAA\x02\x02\u01E9\u01EA\x058\x1D" +
-		"\x02\u01EA#\x03\x02\x02\x02\u01EB\u01EC\x07r\x02\x02\u01EC\u01F0\x05\xE0" +
-		"q\x02\u01ED\u01EE\x07r\x02\x02\u01EE\u01F0\x05\xFA~\x02\u01EF\u01EB\x03" +
-		"\x02\x02\x02\u01EF\u01ED\x03\x02\x02\x02\u01F0%\x03\x02\x02\x02\u01F1" +
-		"\u01F2\x05(\x15\x02\u01F2\'\x03\x02\x02\x02\u01F3\u01F4\x07r\x02\x02\u01F4" +
-		"\u01F5\x05\xE0q\x02\u01F5\u01F6\x07\n\x02\x02\u01F6\u01FB\x05*\x16\x02" +
-		"\u01F7\u01F8\x07\x05\x02\x02\u01F8\u01FA\x05*\x16\x02\u01F9\u01F7\x03" +
-		"\x02\x02\x02\u01FA\u01FD\x03\x02\x02\x02\u01FB\u01F9\x03\x02\x02\x02\u01FB" +
-		"\u01FC\x03\x02\x02\x02\u01FC\u01FE\x03\x02\x02\x02\u01FD\u01FB\x03\x02" +
-		"\x02\x02\u01FE\u01FF\x07\v\x02\x02\u01FF)\x03\x02\x02\x02\u0200\u0201" +
-		"\x058\x1D\x02\u0201+\x03\x02\x02\x02\u0202\u0204\x07K\x02\x02\u0203\u0202" +
-		"\x03\x02\x02\x02\u0203\u0204\x03\x02\x02\x02\u0204\u0205\x03\x02\x02\x02" +
-		"\u0205\u0209\x07\x07\x02\x02\u0206\u0208\x052\x1A\x02\u0207\u0206\x03" +
-		"\x02\x02\x02\u0208\u020B\x03\x02\x02\x02\u0209\u0207\x03\x02\x02\x02\u0209" +
-		"\u020A\x03\x02\x02\x02\u020A\u020C\x03\x02\x02\x02\u020B\u0209\x03\x02" +
-		"\x02\x02\u020C\u0210\x07\b\x02\x02\u020D\u020F\x05.\x18\x02\u020E\u020D" +
-		"\x03\x02\x02\x02\u020F\u0212\x03\x02\x02\x02\u0210\u020E\x03\x02\x02\x02" +
-		"\u0210\u0211\x03\x02\x02\x02\u0211\u0215\x03\x02\x02\x02\u0212\u0210\x03" +
-		"\x02\x02\x02\u0213\u0216\x050\x19\x02\u0214\u0216\x05.\x18\x02\u0215\u0213" +
-		"\x03\x02\x02\x02\u0215\u0214\x03\x02\x02\x02\u0216\u021A\x03\x02\x02\x02" +
-		"\u0217\u0219\x05.\x18\x02\u0218\u0217\x03\x02\x02\x02\u0219\u021C\x03" +
-		"\x02\x02\x02\u021A\u0218\x03\x02\x02\x02\u021A\u021B\x03\x02\x02\x02\u021B" +
-		"\u0227\x03\x02\x02\x02\u021C\u021A\x03\x02\x02\x02\u021D\u021E\x07K\x02" +
-		"\x02\u021E\u0220\x07\x07\x02\x02\u021F\u0221\x052\x1A\x02\u0220\u021F" +
-		"\x03\x02\x02\x02\u0221\u0222\x03\x02\x02\x02\u0222\u0220\x03\x02\x02\x02" +
-		"\u0222\u0223\x03\x02\x02\x02\u0223\u0224\x03\x02\x02\x02\u0224\u0225\x07" +
-		"\b\x02\x02\u0225\u0227\x03\x02\x02\x02\u0226\u0203\x03\x02\x02\x02\u0226" +
-		"\u021D\x03\x02\x02\x02\u0227-\x03\x02\x02\x02\u0228\u0229\x07\f\x02\x02" +
-		"\u0229\u024D\x05D#\x02\u022A\u022B\x07\r\x02\x02\u022B\u024D\x05D#\x02" +
-		"\u022C\u022D\x07\f\x02\x02\u022D\u0234\x058\x1D\x02\u022E\u0230\x05\u0100" +
-		"\x81\x02\u022F\u0231\x07\x0E\x02\x02\u0230\u022F\x03\x02\x02\x02\u0230" +
-		"\u0231\x03\x02\x02\x02\u0231\u0232\x03\x02\x02\x02\u0232\u0233\x07C\x02" +
-		"\x02\u0233\u0235\x03\x02\x02\x02\u0234\u022E\x03\x02\x02\x02\u0234\u0235" +
-		"\x03\x02\x02\x02\u0235\u024D\x03\x02\x02\x02\u0236\u0237\x07\r\x02\x02" +
-		"\u0237\u023E\x058\x1D\x02\u0238\u023A\x05\u0100\x81\x02\u0239\u023B\x07" +
-		"\x0E\x02\x02\u023A\u0239\x03\x02\x02\x02\u023A\u023B\x03\x02\x02\x02\u023B" +
-		"\u023C\x03\x02\x02\x02\u023C\u023D\x07C\x02\x02\u023D\u023F\x03\x02\x02" +
-		"\x02\u023E\u0238\x03\x02\x02\x02\u023E\u023F\x03\x02\x02\x02\u023F\u024D" +
-		"\x03\x02\x02\x02\u0240\u0241\x07\f\x02\x02\u0241\u0242\x07w\x02\x02\u0242" +
-		"\u0244\x05\xE4s\x02\u0243\u0245\t\x04\x02\x02\u0244\u0243\x03\x02\x02" +
-		"\x02\u0244\u0245\x03\x02\x02\x02\u0245\u024D\x03\x02\x02\x02\u0246\u0247" +
-		"\x07\r\x02\x02\u0247\u0248\x07w\x02\x02\u0248\u024A\x05\xE4s\x02\u0249" +
-		"\u024B\t\x04\x02\x02\u024A\u0249\x03\x02\x02\x02\u024A\u024B\x03\x02\x02" +
-		"\x02\u024B\u024D\x03\x02\x02\x02\u024C\u0228\x03\x02\x02\x02\u024C\u022A" +
-		"\x03\x02\x02\x02\u024C\u022C\x03\x02\x02\x02\u024C\u0236\x03\x02\x02\x02" +
-		"\u024C\u0240\x03\x02\x02\x02\u024C\u0246\x03\x02\x02\x02\u024D/\x03\x02" +
-		"\x02\x02\u024E\u024F\x07\x03\x02\x02\u024F\u025F\x05\b\x05\x02\u0250\u0251" +
-		"\x07\x03\x02\x02\u0251\u025F\x05\x1A\x0E\x02\u0252\u0254\x07\x03\x02\x02" +
-		"\u0253\u0255\x07r\x02\x02\u0254\u0253\x03\x02\x02\x02\u0254\u0255\x03" +
-		"\x02\x02\x02\u0255\u0256\x03\x02\x02\x02\u0256\u025A\x07\x07\x02\x02\u0257" +
-		"\u0259\x05\x06\x04\x02\u0258\u0257\x03\x02\x02\x02\u0259\u025C\x03\x02" +
-		"\x02\x02\u025A\u0258\x03\x02\x02\x02\u025A\u025B\x03\x02\x02\x02\u025B" +
-		"\u025D\x03\x02\x02\x02\u025C\u025A\x03\x02\x02\x02\u025D\u025F\x07\b\x02" +
-		"\x02\u025E\u024E\x03\x02\x02\x02\u025E\u0250\x03\x02\x02\x02\u025E\u0252" +
-		"\x03\x02\x02\x02\u025F1\x03\x02\x02\x02\u0260\u0261\x07L\x02\x02\u0261" +
-		"\u02C2\x07\xB9\x02\x02\u0262\u0263\x07M\x02\x02\u0263\u02C2\t\x05\x02" +
-		"\x02\u0264\u0265\x07P\x02\x02\u0265\u02C2\x05\xE8u\x02\u0266\u0267\x07" +
-		"Q\x02\x02\u0267\u02C2\x05\xDAn\x02\u0268\u0269\x07R\x02\x02\u0269\u02C2" +
-		"\x05\xDAn\x02\u026A\u026B\x07S\x02\x02\u026B\u02C2\x05\xCEh\x02\u026C" +
-		"\u026D\x07S\x02\x02\u026D\u026E\x05\xDAn\x02\u026E\u026F\t\x05\x02\x02" +
-		"\u026F\u02C2\x03\x02\x02\x02\u0270\u0271\t\x06\x02\x02\u0271\u02C2\x05" +
-		"\xCEh\x02\u0272\u0273\t\x06\x02\x02\u0273\u02C2\x05\xDAn\x02\u0274\u0275" +
-		"\t\x07\x02\x02\u0275\u02C2\x05\xD0i\x02\u0276\u0277\t\x07\x02\x02\u0277" +
-		"\u02C2\x05\xDAn\x02\u0278\u027A\t\b\x02\x02\u0279\u0278\x03\x02\x02\x02" +
-		"\u0279\u027A\x03\x02\x02\x02\u027A\u027C\x03\x02\x02\x02\u027B\u027D\x07" +
-		"_\x02\x02\u027C\u027B\x03\x02\x02\x02\u027C\u027D\x03\x02\x02\x02\u027D" +
-		"\u027E\x03\x02\x02\x02\u027E\u02C2\x05\xDAn\x02\u027F\u0281\t\b\x02\x02" +
-		"\u0280\u027F\x03\x02\x02\x02\u0280\u0281\x03\x02\x02\x02\u0281\u0283\x03" +
-		"\x02\x02\x02\u0282\u0284\x07`\x02\x02\u0283\u0282\x03\x02\x02\x02\u0283" +
-		"\u0284\x03\x02\x02\x02\u0284\u0285\x03\x02\x02\x02\u0285\u0286\x05D#\x02" +
-		"\u0286\u0287\x077\x02\x02\u0287\u0288\x05D#\x02\u0288\u02C2\x03\x02\x02" +
-		"\x02\u0289\u028B\t\b\x02\x02\u028A\u0289\x03\x02\x02\x02\u028A\u028B\x03" +
-		"\x02\x02\x02\u028B\u028D\x03\x02\x02\x02\u028C\u028E\x07`\x02\x02\u028D" +
-		"\u028C\x03\x02\x02\x02\u028D\u028E\x03\x02\x02\x02\u028E\u028F\x03\x02" +
-		"\x02\x02\u028F\u0295\x05D#\x02\u0290\u0292\x07d\x02\x02\u0291\u0290\x03" +
-		"\x02\x02\x02\u0291\u0292\x03\x02\x02\x02\u0292\u0293\x03\x02\x02\x02\u0293" +
-		"\u0296\x054\x1B\x02\u0294\u0296\x056\x1C\x02\u0295\u0291\x03\x02\x02\x02" +
-		"\u0295\u0294\x03\x02\x02\x02\u0296\u02C2\x03\x02\x02\x02\u0297\u0299\t" +
-		"\b\x02\x02\u0298\u0297\x03\x02\x02\x02\u0298\u0299\x03\x02\x02\x02\u0299" +
-		"\u029B\x03\x02\x02\x02\u029A\u029C\x07b\x02\x02\u029B\u029A\x03\x02\x02" +
-		"\x02\u029B\u029C\x03\x02\x02\x02\u029C\u029D\x03\x02\x02\x02\u029D\u029E" +
-		"\x05\xCEh\x02\u029E\u029F\x05\xD6l\x02\u029F\u02C2\x03\x02\x02\x02\u02A0" +
-		"\u02A2\t\b\x02\x02\u02A1\u02A0\x03\x02\x02\x02\u02A1\u02A2\x03\x02\x02" +
-		"\x02\u02A2\u02A4\x03\x02\x02\x02\u02A3\u02A5\x07c\x02\x02\u02A4\u02A3" +
-		"\x03\x02\x02\x02\u02A4\u02A5\x03\x02\x02\x02\u02A5\u02A6\x03\x02\x02\x02" +
-		"\u02A6\u02A7\x05\xCEh\x02\u02A7\u02A8\x05\xCEh\x02\u02A8\u02A9\x05\xCE" +
-		"h\x02\u02A9\u02AA\t\t\x02\x02\u02AA\u02C2\x03\x02\x02\x02\u02AB\u02AD" +
-		"\t\b\x02\x02\u02AC\u02AB\x03\x02\x02\x02\u02AC\u02AD\x03\x02\x02\x02\u02AD" +
-		"\u02AF\x03\x02\x02\x02\u02AE\u02B0\x07m\x02\x02\u02AF\u02AE\x03\x02\x02" +
-		"\x02\u02AF\u02B0\x03\x02\x02\x02\u02B0\u02B1\x03\x02\x02\x02\u02B1\u02C2" +
-		"\x058\x1D\x02\u02B2\u02B4\t\b\x02\x02\u02B3\u02B2\x03\x02\x02\x02\u02B3" +
-		"\u02B4\x03\x02\x02\x02\u02B4\u02B5\x03\x02\x02\x02\u02B5\u02B6\x07\\\x02" +
-		"\x02\u02B6\u02B7\x05\xCEh\x02\u02B7\u02B8\x05\xE6t\x02\u02B8\u02C2\x03" +
-		"\x02\x02\x02\u02B9\u02BB\t\b\x02\x02\u02BA\u02B9\x03\x02\x02\x02\u02BA" +
-		"\u02BB\x03\x02\x02\x02\u02BB\u02BD\x03\x02\x02\x02\u02BC\u02BE\x07a\x02" +
-		"\x02\u02BD\u02BC\x03\x02\x02\x02\u02BD\u02BE\x03\x02\x02\x02\u02BE\u02BF" +
-		"\x03\x02\x02\x02\u02BF\u02C2\x05\xEAv\x02\u02C0\u02C2\x05.\x18\x02\u02C1" +
-		"\u0260\x03\x02\x02\x02\u02C1\u0262\x03\x02\x02\x02\u02C1\u0264\x03\x02" +
-		"\x02\x02\u02C1\u0266\x03\x02\x02\x02\u02C1\u0268\x03\x02\x02\x02\u02C1" +
-		"\u026A\x03\x02\x02\x02\u02C1\u026C\x03\x02\x02\x02\u02C1\u0270\x03\x02" +
-		"\x02\x02\u02C1\u0272\x03\x02\x02\x02\u02C1\u0274\x03\x02\x02\x02\u02C1" +
-		"\u0276\x03\x02\x02\x02\u02C1\u0279\x03\x02\x02\x02\u02C1\u0280\x03\x02" +
-		"\x02\x02\u02C1\u028A\x03\x02\x02\x02\u02C1\u0298\x03\x02\x02\x02\u02C1" +
-		"\u02A1\x03\x02\x02\x02\u02C1\u02AC\x03\x02\x02\x02\u02C1\u02B3\x03\x02" +
-		"\x02\x02\u02C1\u02BA\x03\x02\x02\x02\u02C1\u02C0\x03\x02\x02\x02\u02C2" +
-		"3\x03\x02\x02\x02\u02C3\u02C4\x07C\x02\x02\u02C4\u02C6\x07\x0F\x02\x02" +
-		"\u02C5\u02C7\x07C\x02\x02\u02C6\u02C5\x03\x02\x02\x02\u02C6\u02C7\x03" +
-		"\x02\x02\x02\u02C7\u02CC\x03\x02\x02\x02\u02C8\u02C9\x07\x0F\x02\x02\u02C9" +
-		"\u02CC\x07C\x02\x02\u02CA\u02CC\x07C\x02\x02\u02CB\u02C3\x03\x02\x02\x02" +
-		"\u02CB\u02C8\x03\x02\x02\x02\u02CB\u02CA\x03\x02\x02\x02\u02CC5\x03\x02" +
-		"\x02\x02\u02CD\u02CE\x077\x02\x02\u02CE\u02CF\x07C\x02\x02\u02CF7\x03" +
-		"\x02\x02\x02\u02D0\u02D1\x07J\x02\x02\u02D1\u02D2\x07\x10\x02\x02\u02D2" +
-		"\u02E1\x05\xA8U\x02\u02D3\u02D4\x05\xE2r\x02\u02D4\u02D5\x07\x10\x02\x02" +
-		"\u02D5\u02D6\x05\xA8U\x02\u02D6\u02E1\x03\x02\x02\x02\u02D7\u02E1\x05" +
-		"\u0102\x82\x02\u02D8\u02D9\x05\xDAn\x02\u02D9\u02DA\x07\x10\x02\x02\u02DA" +
-		"\u02DB\x05\xA8U\x02\u02DB\u02E1\x03\x02\x02\x02\u02DC\u02DD\x05\xCEh\x02" +
-		"\u02DD\u02DE\x07\x10\x02\x02\u02DE\u02DF\x05\xA8U\x02\u02DF\u02E1\x03" +
-		"\x02\x02\x02\u02E0\u02D0\x03\x02\x02\x02\u02E0\u02D3\x03\x02\x02\x02\u02E0" +
-		"\u02D7\x03\x02\x02\x02\u02E0\u02D8\x03\x02\x02\x02\u02E0\u02DC\x03\x02" +
-		"\x02\x02\u02E19\x03\x02\x02\x02\u02E2\u02E3\x05\xE2r\x02\u02E3\u02E4\x07" +
-		"\x11\x02\x02\u02E4\u02E5\x05\xA4S\x02\u02E5\u02EF\x03\x02\x02\x02\u02E6" +
-		"\u02E7\x05\xDAn\x02\u02E7\u02E8\x07\x11\x02\x02\u02E8\u02E9\x05\xA4S\x02" +
-		"\u02E9\u02EF\x03\x02\x02\x02\u02EA\u02EB\x05\xCEh\x02\u02EB\u02EC\x07" +
-		"\x11\x02\x02\u02EC\u02ED\x05\xA4S\x02\u02ED\u02EF\x03\x02\x02\x02\u02EE" +
-		"\u02E2\x03\x02\x02\x02\u02EE\u02E6\x03\x02\x02\x02\u02EE\u02EA\x03\x02" +
-		"\x02\x02\u02EF;\x03\x02\x02\x02\u02F0\u02F5\x058\x1D\x02\u02F1\u02F3\x07" +
-		"\x0E\x02\x02\u02F2\u02F1\x03\x02\x02\x02\u02F2\u02F3\x03\x02\x02\x02\u02F3" +
-		"\u02F4\x03\x02\x02\x02\u02F4\u02F6\x07C\x02\x02\u02F5\u02F2\x03\x02\x02" +
-		"\x02\u02F5\u02F6";
+		"\x86\x05\x86\u0917\n\x86\x03\x87\x03\x87\x03\x88\x03\x88\x05\x88\u091D" +
+		"\n\x88\x03\x88\x03\x88\x05\x88\u0921\n\x88\x03\x89\x03\x89\x05\x89\u0925" +
+		"\n\x89\x03\x89\x05\x89\u0928\n\x89\x03\x89\x03\x89\x05\x89\u092C\n\x89" +
+		"\x03\x89\x04\u08B3\u08BC\x02\x04D\x9A\x8A\x02\x02\x04\x02\x06\x02\b\x02" +
+		"\n\x02\f\x02\x0E\x02\x10\x02\x12\x02\x14\x02\x16\x02\x18\x02\x1A\x02\x1C" +
+		"\x02\x1E\x02 \x02\"\x02$\x02&\x02(\x02*\x02,\x02.\x020\x022\x024\x026" +
+		"\x028\x02:\x02<\x02>\x02@\x02B\x02D\x02F\x02H\x02J\x02L\x02N\x02P\x02" +
+		"R\x02T\x02V\x02X\x02Z\x02\\\x02^\x02`\x02b\x02d\x02f\x02h\x02j\x02l\x02" +
+		"n\x02p\x02r\x02t\x02v\x02x\x02z\x02|\x02~\x02\x80\x02\x82\x02\x84\x02" +
+		"\x86\x02\x88\x02\x8A\x02\x8C\x02\x8E\x02\x90\x02\x92\x02\x94\x02\x96\x02" +
+		"\x98\x02\x9A\x02\x9C\x02\x9E\x02\xA0\x02\xA2\x02\xA4\x02\xA6\x02\xA8\x02" +
+		"\xAA\x02\xAC\x02\xAE\x02\xB0\x02\xB2\x02\xB4\x02\xB6\x02\xB8\x02\xBA\x02" +
+		"\xBC\x02\xBE\x02\xC0\x02\xC2\x02\xC4\x02\xC6\x02\xC8\x02\xCA\x02\xCC\x02" +
+		"\xCE\x02\xD0\x02\xD2\x02\xD4\x02\xD6\x02\xD8\x02\xDA\x02\xDC\x02\xDE\x02" +
+		"\xE0\x02\xE2\x02\xE4\x02\xE6\x02\xE8\x02\xEA\x02\xEC\x02\xEE\x02\xF0\x02" +
+		"\xF2\x02\xF4\x02\xF6\x02\xF8\x02\xFA\x02\xFC\x02\xFE\x02\u0100\x02\u0102" +
+		"\x02\u0104\x02\u0106\x02\u0108\x02\u010A\x02\u010C\x02\u010E\x02\u0110" +
+		"\x02\x02\"\x03\x02IJ\x03\x02\xAF\xB0\x03\x02^_\x03\x02OP\x03\x02UV\x03" +
+		"\x02WX\x03\x02YZ\x03\x02[\\\x03\x02\x19\x1A\x04\x02\x0E\x0E\x1C\x1D\x03" +
+		"\x02\x1E\x1F\x03\x02lm\x05\x02^_vvyy\x03\x02z\x80\x03\x02\x84\x88\x03" +
+		"\x02\x8A\x8C\x04\x02\x13\x13\x91\x91\x03\x02\x96\x97\x04\x02\x14\x14\x92" +
+		"\x92\x05\x02\x0E\x0E\x1E\x1E\"\"\x04\x02\x13\x13qq\x04\x02\x14\x14rr\x03" +
+		"\x02\x8F\x90\x03\x02\x9E\xA0\x04\x02\x9E\x9F\xA1\xA2\x04\x02\\\\\xA0\xA0" +
+		"\x03\x02\xA3\xA5\x04\x02==AA\x03\x02>?\x07\x02Idfkn\xA8\xAA\xB1\xB4\xB9" +
+		"\x04\x02CC\xB2\xB2\x03\x02\xB4\xB9\x02\u0A85\x02\u0115\x03\x02\x02\x02" +
+		"\x04\u011A\x03\x02\x02\x02\x06\u011E\x03\x02\x02\x02\b\u0136\x03\x02\x02" +
+		"\x02\n\u0144\x03\x02\x02\x02\f\u0146\x03\x02\x02\x02\x0E\u0148\x03\x02" +
+		"\x02\x02\x10\u0187\x03\x02\x02\x02\x12\u018C\x03\x02\x02\x02\x14\u018E" +
+		"\x03\x02\x02\x02\x16\u01B5\x03\x02\x02\x02\x18\u01BB\x03\x02\x02\x02\x1A" +
+		"\u01BD\x03\x02\x02\x02\x1C\u01D3\x03\x02\x02\x02\x1E\u01EC\x03\x02\x02" +
+		"\x02 \u01F2\x03\x02\x02\x02\"\u01F4\x03\x02\x02\x02$\u01FB\x03\x02\x02" +
+		"\x02&\u01FD\x03\x02\x02\x02(\u01FF\x03\x02\x02\x02*\u020C\x03\x02\x02" +
+		"\x02,\u0232\x03\x02\x02\x02.\u0258\x03\x02\x02\x020\u026A\x03\x02\x02" +
+		"\x022\u02CD\x03\x02\x02\x024\u02D7\x03\x02\x02\x026\u02D9\x03\x02\x02" +
+		"\x028\u02EC\x03\x02\x02\x02:\u02FA\x03\x02\x02\x02<\u0337\x03\x02\x02" +
+		"\x02>\u033B\x03\x02\x02\x02@\u0355\x03\x02\x02\x02B\u0392\x03\x02\x02" +
+		"\x02D\u039B\x03\x02\x02\x02F\u03B2\x03\x02\x02\x02H\u03B4\x03\x02\x02" +
+		"\x02J\u03C3\x03\x02\x02\x02L\u0405\x03\x02\x02\x02N\u040E\x03\x02\x02" +
+		"\x02P\u042E\x03\x02\x02\x02R\u045D\x03\x02\x02\x02T\u0472\x03\x02\x02" +
+		"\x02V\u048B\x03\x02\x02\x02X\u049E\x03\x02\x02\x02Z\u04A8\x03\x02\x02" +
+		"\x02\\\u04B8\x03\x02\x02\x02^\u04D1\x03\x02\x02\x02`\u04E6\x03\x02\x02" +
+		"\x02b\u04F8\x03\x02\x02\x02d\u050E\x03\x02\x02\x02f\u0524\x03\x02\x02" +
+		"\x02h\u0543\x03\x02\x02\x02j\u0547\x03\x02\x02\x02l\u0549\x03\x02\x02" +
+		"\x02n\u054C\x03\x02\x02\x02p\u0575\x03\x02\x02\x02r\u058D\x03\x02\x02" +
+		"\x02t\u0592\x03\x02\x02\x02v\u05AE\x03\x02\x02\x02x\u05BA\x03\x02\x02" +
+		"\x02z\u05D0\x03\x02\x02\x02|\u05E0\x03\x02\x02\x02~\u060E\x03\x02\x02" +
+		"\x02\x80\u0667\x03\x02\x02\x02\x82\u066A\x03\x02\x02\x02\x84\u066E\x03" +
+		"\x02\x02\x02\x86\u0680\x03\x02\x02\x02\x88\u06A1\x03\x02\x02\x02\x8A\u06B9" +
+		"\x03\x02\x02\x02\x8C\u06FA\x03\x02\x02\x02\x8E\u0708\x03\x02\x02\x02\x90" +
+		"\u070A\x03\x02\x02\x02\x92\u070E\x03\x02\x02\x02\x94\u073A\x03\x02\x02" +
+		"\x02\x96\u0744\x03\x02\x02\x02\x98\u0746\x03\x02\x02\x02\x9A\u075D\x03" +
+		"\x02\x02\x02\x9C\u0770\x03\x02\x02\x02\x9E\u077A\x03\x02\x02\x02\xA0\u078A" +
+		"\x03\x02\x02\x02\xA2\u078C\x03\x02\x02\x02\xA4\u0792\x03\x02\x02\x02\xA6" +
+		"\u0794\x03\x02\x02\x02\xA8\u07AB\x03\x02\x02\x02\xAA\u07EB\x03\x02\x02" +
+		"\x02\xAC\u07ED\x03\x02\x02\x02\xAE\u07FC\x03\x02\x02\x02\xB0\u07FE\x03" +
+		"\x02\x02\x02\xB2\u080F\x03\x02\x02\x02\xB4\u081C\x03\x02\x02\x02\xB6\u081E" +
+		"\x03\x02\x02\x02\xB8\u0829\x03\x02\x02\x02\xBA\u0834\x03\x02\x02\x02\xBC" +
+		"\u083F\x03\x02\x02\x02\xBE\u0860\x03\x02\x02\x02\xC0\u0862\x03\x02\x02" +
+		"\x02\xC2\u0871\x03\x02\x02\x02\xC4\u0873\x03\x02\x02\x02\xC6\u0884\x03" +
+		"\x02\x02\x02\xC8\u088D\x03\x02\x02\x02\xCA\u088F\x03\x02\x02\x02\xCC\u0891" +
+		"\x03\x02\x02\x02\xCE\u0893\x03\x02\x02\x02\xD0\u0899\x03\x02\x02\x02\xD2" +
+		"\u089E\x03\x02\x02\x02\xD4\u08A6\x03\x02\x02\x02\xD6\u08A8\x03\x02\x02" +
+		"\x02\xD8\u08AF\x03\x02\x02\x02\xDA\u08C6\x03\x02\x02\x02\xDC\u08CD\x03" +
+		"\x02\x02\x02\xDE\u08CF\x03\x02\x02\x02\xE0\u08D1\x03\x02\x02\x02\xE2\u08D3" +
+		"\x03\x02\x02\x02\xE4\u08D5\x03\x02\x02\x02\xE6\u08D7\x03\x02\x02\x02\xE8" +
+		"\u08D9\x03\x02\x02\x02\xEA\u08DB\x03\x02\x02\x02\xEC\u08DD\x03\x02\x02" +
+		"\x02\xEE\u08DF\x03\x02\x02\x02\xF0\u08E1\x03\x02\x02\x02\xF2\u08E3\x03" +
+		"\x02\x02\x02\xF4\u08E5\x03\x02\x02\x02\xF6\u08E8\x03\x02\x02\x02\xF8\u08EA" +
+		"\x03\x02\x02\x02\xFA\u08EC\x03\x02\x02\x02\xFC\u08EE\x03\x02\x02\x02\xFE" +
+		"\u08F3\x03\x02\x02\x02\u0100\u08F7\x03\x02\x02\x02\u0102\u08FC\x03\x02" +
+		"\x02\x02\u0104\u08FE\x03\x02\x02\x02\u0106\u0904\x03\x02\x02\x02\u0108" +
+		"\u0906\x03\x02\x02\x02\u010A\u0911\x03\x02\x02\x02\u010C\u0918\x03\x02" +
+		"\x02\x02\u010E\u091C\x03\x02\x02\x02\u0110\u0924\x03\x02\x02\x02\u0112" +
+		"\u0114\x05\x04\x03\x02\u0113\u0112\x03\x02\x02\x02\u0114\u0117\x03\x02" +
+		"\x02\x02\u0115\u0113\x03\x02\x02\x02\u0115\u0116\x03\x02\x02\x02\u0116" +
+		"\x03\x03\x02\x02\x02\u0117\u0115\x03\x02\x02\x02\u0118\u011B\x05\x0E\b" +
+		"\x02\u0119\u011B\x05\x12\n\x02\u011A\u0118\x03\x02\x02\x02\u011A\u0119" +
+		"\x03\x02\x02\x02\u011B\x05\x03\x02\x02\x02\u011C\u011F\x05\n\x06\x02\u011D" +
+		"\u011F\x05\b\x05\x02\u011E\u011C\x03\x02\x02\x02\u011E\u011D\x03\x02\x02" +
+		"\x02\u011F\x07\x03\x02\x02\x02\u0120\u0137\x05\x9CO\x02\u0121\u0137\x05" +
+		"\xA2R\x02\u0122\u0137\x05\xA0Q\x02\u0123\u0137\x05$\x13\x02\u0124\u0137" +
+		"\x05&\x14\x02\u0125\u0137\x05,\x17\x02\u0126\u0137\x05<\x1F\x02\u0127" +
+		"\u0137\x05\x98M\x02\u0128\u0137\x05B\"\x02\u0129\u0137\x05T+\x02\u012A" +
+		"\u0137\x05\x90I\x02\u012B\u0137\x05@!\x02\u012C\u0137\x05H%\x02\u012D" +
+		"\u0137\x05L\'\x02\u012E\u0137\x05V,\x02\u012F\u0137\x05^0\x02\u0130\u0137" +
+		"\x05f4\x02\u0131\u0137\x05d3\x02\u0132\u0137\x05z>\x02\u0133\u0137\x05" +
+		"\x80A\x02\u0134\u0137\x05\x92J\x02\u0135\u0137\x05\f\x07\x02\u0136\u0120" +
+		"\x03\x02\x02\x02\u0136\u0121\x03\x02\x02\x02\u0136\u0122\x03\x02\x02\x02" +
+		"\u0136\u0123\x03\x02\x02\x02\u0136\u0124\x03\x02\x02\x02\u0136\u0125\x03" +
+		"\x02\x02\x02\u0136\u0126\x03\x02\x02\x02\u0136\u0127\x03\x02\x02\x02\u0136" +
+		"\u0128\x03\x02\x02\x02\u0136\u0129\x03\x02\x02\x02\u0136\u012A\x03\x02" +
+		"\x02\x02\u0136\u012B\x03\x02\x02\x02\u0136\u012C\x03\x02\x02\x02\u0136" +
+		"\u012D\x03\x02\x02\x02\u0136\u012E\x03\x02\x02\x02\u0136\u012F\x03\x02" +
+		"\x02\x02\u0136\u0130\x03\x02\x02\x02\u0136\u0131\x03\x02\x02\x02\u0136" +
+		"\u0132\x03\x02\x02\x02\u0136\u0133\x03\x02\x02\x02\u0136\u0134\x03\x02" +
+		"\x02\x02\u0136\u0135\x03\x02\x02\x02\u0137\t\x03\x02\x02\x02\u0138\u0145" +
+		"\x05\x1A\x0E\x02\u0139\u013A\x07\x03\x02\x02\u013A\u0145\x05\x1A\x0E\x02" +
+		"\u013B\u0145\x05\x1C\x0F\x02\u013C\u0145\x05\x0E\b\x02\u013D\u0145\x05" +
+		"\x96L\x02\u013E\u0140\x05\b\x05\x02\u013F\u0141\x05.\x18\x02\u0140\u013F" +
+		"\x03\x02\x02\x02\u0141\u0142\x03\x02\x02\x02\u0142\u0140\x03\x02\x02\x02" +
+		"\u0142\u0143\x03\x02\x02\x02\u0143\u0145\x03\x02\x02\x02\u0144\u0138\x03" +
+		"\x02\x02\x02\u0144\u0139\x03\x02\x02\x02\u0144\u013B\x03\x02\x02\x02\u0144" +
+		"\u013C\x03\x02\x02\x02\u0144\u013D\x03\x02\x02\x02\u0144\u013E\x03\x02" +
+		"\x02\x02\u0145\v\x03\x02\x02\x02\u0146\u0147\x07F\x02\x02\u0147\r\x03" +
+		"\x02\x02\x02\u0148\u014A\t\x02\x02\x02\u0149\u014B\x05\u0102\x82\x02\u014A" +
+		"\u0149\x03\x02\x02\x02\u014A\u014B\x03\x02\x02\x02\u014B\u0157\x03\x02" +
+		"\x02\x02\u014C\u0153\x07\x04\x02\x02\u014D\u014F\x05\x10\t\x02\u014E\u0150" +
+		"\x07\x05\x02\x02\u014F\u014E\x03\x02\x02\x02\u014F\u0150\x03\x02\x02\x02" +
+		"\u0150\u0152\x03\x02\x02\x02\u0151\u014D\x03\x02\x02\x02\u0152\u0155\x03" +
+		"\x02\x02\x02\u0153\u0151\x03\x02\x02\x02\u0153\u0154\x03\x02\x02\x02\u0154" +
+		"\u0156\x03\x02\x02\x02\u0155\u0153\x03\x02\x02\x02\u0156\u0158\x07\x06" +
+		"\x02\x02\u0157\u014C\x03\x02\x02\x02\u0157\u0158\x03\x02\x02\x02\u0158" +
+		"\u0159\x03\x02\x02\x02\u0159\u015D\x07\x07\x02\x02\u015A\u015C\x05\x12" +
+		"\n\x02\u015B\u015A\x03\x02\x02\x02\u015C\u015F\x03\x02\x02\x02\u015D\u015B" +
+		"\x03\x02\x02\x02\u015D\u015E\x03\x02\x02\x02\u015E\u0160\x03\x02\x02\x02" +
+		"\u015F\u015D\x03\x02\x02\x02\u0160\u0161\x07\b\x02\x02\u0161\x0F\x03\x02" +
+		"\x02\x02\u0162\u0163\x07s\x02\x02\u0163\u0164\x07\t\x02\x02\u0164\u0188" +
+		"\x05\u0102\x82\x02\u0165\u0166\x07c\x02\x02\u0166\u0167\x07\t\x02\x02" +
+		"\u0167\u0188\x05\u0102\x82\x02\u0168\u0169\x07o\x02\x02\u0169\u016A\x07" +
+		"\t\x02\x02\u016A\u0188\x05\u0102\x82\x02\u016B\u016C\x07x\x02\x02\u016C" +
+		"\u016D\x07\t\x02\x02\u016D\u0188\x05\u0102\x82\x02\u016E\u016F\x07]\x02" +
+		"\x02\u016F\u0170\x07\t\x02\x02\u0170\u0188\x05\u0102\x82\x02\u0171\u0172" +
+		"\x07`\x02\x02\u0172\u0173\x07\t\x02\x02\u0173\u0188\x05\u0102\x82\x02" +
+		"\u0174\u0175\x07b\x02\x02\u0175\u0176\x07\t\x02\x02\u0176\u0188\x05\u0102" +
+		"\x82\x02\u0177\u0178\t\x03\x02\x02\u0178\u0179\x07\t\x02\x02\u0179\u0188" +
+		"\x05\u0102\x82\x02\u017A\u017B\x07\x8F\x02\x02\u017B\u017C\x07\t\x02\x02" +
+		"\u017C\u0188\x05\u0102\x82\x02\u017D\u017E\x07\x90\x02\x02\u017E\u017F" +
+		"\x07\t\x02\x02\u017F\u0188\x05\u0102\x82\x02\u0180\u0181\x07\xB1\x02\x02" +
+		"\u0181\u0182\x07\t\x02\x02\u0182\u0188\x05\u0102\x82\x02\u0183\u0184\x07" +
+		"u\x02\x02\u0184\u0185\x07\t\x02\x02\u0185\u0188\x05\u0102\x82\x02\u0186" +
+		"\u0188\x07u\x02\x02\u0187\u0162\x03\x02\x02\x02\u0187\u0165\x03\x02\x02" +
+		"\x02\u0187\u0168\x03\x02\x02\x02\u0187\u016B\x03\x02\x02\x02\u0187\u016E" +
+		"\x03\x02\x02\x02\u0187\u0171\x03\x02\x02\x02\u0187\u0174\x03\x02\x02\x02" +
+		"\u0187\u0177\x03\x02\x02\x02\u0187\u017A\x03\x02\x02\x02\u0187\u017D\x03" +
+		"\x02\x02\x02\u0187\u0180\x03\x02\x02\x02\u0187\u0183\x03\x02\x02\x02\u0187" +
+		"\u0186\x03\x02\x02\x02\u0188\x11\x03\x02\x02\x02\u0189\u018D\x05\x14\v" +
+		"\x02\u018A\u018D\x05\x18\r\x02\u018B\u018D\x05\x96L\x02\u018C\u0189\x03" +
+		"\x02\x02\x02\u018C\u018A\x03\x02\x02\x02\u018C\u018B\x03\x02\x02\x02\u018D" +
+		"\x13\x03\x02\x02\x02\u018E\u018F\x07s\x02\x02\u018F\u019B\x05\xFA~\x02" +
+		"\u0190\u0197\x07\x04\x02\x02\u0191\u0193\x05\x16\f\x02\u0192\u0194\x07" +
+		"\x05\x02\x02\u0193\u0192\x03\x02\x02\x02\u0193\u0194\x03\x02\x02\x02\u0194" +
+		"\u0196\x03\x02\x02\x02\u0195\u0191\x03\x02\x02\x02\u0196\u0199\x03\x02" +
+		"\x02\x02\u0197\u0195\x03\x02\x02\x02\u0197\u0198\x03\x02\x02\x02\u0198" +
+		"\u019A\x03\x02\x02\x02\u0199\u0197\x03\x02\x02\x02\u019A\u019C\x07\x06" +
+		"\x02\x02\u019B\u0190\x03\x02\x02\x02\u019B\u019C\x03\x02\x02\x02\u019C" +
+		"\u01A6\x03\x02\x02\x02\u019D\u019E\x07t\x02\x02\u019E\u01A3\x05\xFA~\x02" +
+		"\u019F\u01A0\x07\x05\x02\x02\u01A0\u01A2\x05\xFA~\x02\u01A1\u019F\x03" +
+		"\x02\x02\x02\u01A2\u01A5\x03\x02\x02\x02\u01A3\u01A1\x03\x02\x02\x02\u01A3" +
+		"\u01A4\x03\x02\x02\x02\u01A4\u01A7\x03\x02\x02\x02\u01A5\u01A3\x03\x02" +
+		"\x02\x02\u01A6\u019D\x03\x02\x02\x02\u01A6\u01A7\x03\x02\x02\x02\u01A7" +
+		"\u01A8\x03\x02\x02\x02\u01A8\u01AC\x07\x07\x02\x02\u01A9\u01AB\x05\x18" +
+		"\r\x02\u01AA\u01A9\x03\x02\x02\x02\u01AB\u01AE\x03\x02\x02\x02\u01AC\u01AA" +
+		"\x03\x02\x02\x02\u01AC\u01AD\x03\x02\x02\x02\u01AD\u01AF\x03\x02\x02\x02" +
+		"\u01AE\u01AC\x03\x02\x02\x02\u01AF\u01B0\x07\b\x02\x02\u01B0\x15\x03\x02" +
+		"\x02\x02\u01B1\u01B2\x07\xA0\x02\x02\u01B2\u01B3\x07\t\x02\x02\u01B3\u01B6" +
+		"\x05\xCAf\x02\u01B4\u01B6\x07\xAE\x02\x02\u01B5\u01B1\x03\x02\x02\x02" +
+		"\u01B5\u01B4\x03\x02\x02\x02\u01B6\x17\x03\x02\x02\x02\u01B7\u01BC\x05" +
+		"\x1A\x0E\x02\u01B8\u01BC\x05$\x13\x02\u01B9\u01BC\x05\x1C\x0F\x02\u01BA" +
+		"\u01BC\x05\x14\v\x02\u01BB\u01B7\x03\x02\x02\x02\u01BB\u01B8\x03\x02\x02" +
+		"\x02\u01BB\u01B9\x03\x02\x02\x02\u01BB\u01BA\x03\x02\x02\x02\u01BC\x19" +
+		"\x03\x02\x02\x02\u01BD\u01BE\x07s\x02\x02\u01BE\u01C8\x05\xE0q\x02\u01BF" +
+		"\u01C0\x07t\x02\x02\u01C0\u01C5\x05\xFA~\x02\u01C1\u01C2\x07\x05\x02\x02" +
+		"\u01C2\u01C4\x05\xFA~\x02\u01C3\u01C1\x03\x02\x02\x02\u01C4\u01C7\x03" +
+		"\x02\x02\x02\u01C5\u01C3\x03\x02\x02\x02\u01C5\u01C6\x03\x02\x02\x02\u01C6" +
+		"\u01C9\x03\x02\x02\x02\u01C7\u01C5\x03\x02\x02\x02\u01C8\u01BF\x03\x02" +
+		"\x02\x02\u01C8\u01C9\x03\x02\x02\x02\u01C9\u01CA\x03\x02\x02\x02\u01CA" +
+		"\u01CE\x07\x07\x02\x02\u01CB\u01CD\x05\x06\x04\x02\u01CC\u01CB\x03\x02" +
+		"\x02\x02\u01CD\u01D0\x03\x02\x02\x02\u01CE\u01CC\x03\x02\x02\x02\u01CE" +
+		"\u01CF\x03\x02\x02\x02\u01CF\u01D1\x03\x02\x02\x02\u01D0\u01CE\x03\x02" +
+		"\x02\x02\u01D1\u01D2\x07\b\x02\x02\u01D2\x1B\x03\x02\x02\x02\u01D3\u01D4" +
+		"\x07s\x02\x02\u01D4\u01D5\x05\xE0q\x02\u01D5\u01D6\x07\n\x02\x02\u01D6" +
+		"\u01DB\x05\x1E\x10\x02\u01D7\u01D8\x07\x05\x02\x02\u01D8\u01DA\x05\x1E" +
+		"\x10\x02\u01D9\u01D7\x03\x02\x02\x02\u01DA\u01DD\x03\x02\x02\x02\u01DB" +
+		"\u01D9\x03\x02\x02\x02\u01DB\u01DC\x03\x02\x02\x02\u01DC\u01DE\x03\x02" +
+		"\x02\x02\u01DD\u01DB\x03\x02\x02\x02\u01DE\u01E0\x07\v\x02\x02\u01DF\u01E1" +
+		"\x05\u010A\x86\x02\u01E0\u01DF\x03\x02\x02\x02\u01E0\u01E1\x03\x02\x02" +
+		"\x02\u01E1\u01E2\x03\x02\x02\x02\u01E2\u01E6\x07\x07\x02\x02\u01E3\u01E5" +
+		"\x05 \x11\x02\u01E4\u01E3\x03\x02\x02\x02\u01E5\u01E8\x03\x02\x02\x02" +
+		"\u01E6\u01E4\x03\x02\x02\x02\u01E6\u01E7\x03\x02\x02\x02\u01E7\u01E9\x03" +
+		"\x02\x02\x02\u01E8\u01E6\x03\x02\x02\x02\u01E9\u01EA\x07\b\x02\x02\u01EA" +
+		"\x1D\x03\x02\x02\x02\u01EB\u01ED\x05\u010A\x86\x02\u01EC\u01EB\x03\x02" +
+		"\x02\x02\u01EC\u01ED\x03\x02\x02\x02\u01ED\u01EE\x03\x02\x02\x02\u01EE" +
+		"\u01EF\x05\u0102\x82\x02\u01EF\x1F\x03\x02\x02\x02\u01F0\u01F3\x05\x06" +
+		"\x04\x02\u01F1\u01F3\x05\"\x12\x02\u01F2\u01F0\x03\x02\x02\x02\u01F2\u01F1" +
+		"\x03\x02\x02\x02\u01F3!\x03\x02\x02\x02\u01F4\u01F5\x07\xAB\x02\x02\u01F5" +
+		"\u01F6\x058\x1D\x02\u01F6#\x03\x02\x02\x02\u01F7\u01F8\x07s\x02\x02\u01F8" +
+		"\u01FC\x05\xE0q\x02\u01F9\u01FA\x07s\x02\x02\u01FA\u01FC\x05\xFA~\x02" +
+		"\u01FB\u01F7\x03\x02\x02\x02\u01FB\u01F9\x03\x02\x02\x02\u01FC%\x03\x02" +
+		"\x02\x02\u01FD\u01FE\x05(\x15\x02\u01FE\'\x03\x02\x02\x02\u01FF\u0200" +
+		"\x07s\x02\x02\u0200\u0201\x05\xE0q\x02\u0201\u0202\x07\n\x02\x02\u0202" +
+		"\u0207\x05*\x16\x02\u0203\u0204\x07\x05\x02\x02\u0204\u0206\x05*\x16\x02" +
+		"\u0205\u0203\x03\x02\x02\x02\u0206\u0209\x03\x02\x02\x02\u0207\u0205\x03" +
+		"\x02\x02\x02\u0207\u0208\x03\x02\x02\x02\u0208\u020A\x03\x02\x02\x02\u0209" +
+		"\u0207\x03\x02\x02\x02\u020A\u020B\x07\v\x02\x02\u020B)\x03\x02\x02\x02" +
+		"\u020C\u020D\x058\x1D\x02\u020D+\x03\x02\x02\x02\u020E\u0210\x07L\x02" +
+		"\x02\u020F\u020E\x03\x02\x02\x02\u020F\u0210\x03\x02\x02\x02\u0210\u0211" +
+		"\x03\x02\x02\x02\u0211\u0215\x07\x07\x02\x02\u0212\u0214\x052\x1A\x02" +
+		"\u0213\u0212\x03\x02\x02\x02\u0214\u0217\x03\x02\x02\x02\u0215\u0213\x03" +
+		"\x02\x02\x02\u0215\u0216\x03\x02\x02\x02\u0216\u0218\x03\x02\x02\x02\u0217" +
+		"\u0215\x03\x02\x02\x02\u0218\u021C\x07\b\x02\x02\u0219\u021B\x05.\x18" +
+		"\x02\u021A\u0219\x03\x02\x02\x02\u021B\u021E\x03\x02\x02\x02\u021C\u021A" +
+		"\x03\x02\x02\x02\u021C\u021D\x03\x02\x02\x02\u021D\u0221\x03\x02\x02\x02" +
+		"\u021E\u021C\x03\x02\x02\x02\u021F\u0222\x050\x19\x02\u0220\u0222\x05" +
+		".\x18\x02\u0221\u021F\x03\x02\x02\x02\u0221\u0220\x03\x02\x02\x02\u0222" +
+		"\u0226\x03\x02\x02\x02\u0223\u0225\x05.\x18\x02\u0224\u0223\x03\x02\x02" +
+		"\x02\u0225\u0228\x03\x02\x02\x02\u0226\u0224\x03\x02\x02\x02\u0226\u0227" +
+		"\x03\x02\x02\x02\u0227\u0233\x03\x02\x02\x02\u0228\u0226\x03\x02\x02\x02" +
+		"\u0229\u022A\x07L\x02\x02\u022A\u022C\x07\x07\x02\x02\u022B\u022D\x05" +
+		"2\x1A\x02\u022C\u022B\x03\x02\x02\x02\u022D\u022E\x03\x02\x02\x02\u022E" +
+		"\u022C\x03\x02\x02\x02\u022E\u022F\x03\x02\x02\x02\u022F\u0230\x03\x02" +
+		"\x02\x02\u0230\u0231\x07\b\x02\x02\u0231\u0233\x03\x02\x02\x02\u0232\u020F" +
+		"\x03\x02\x02\x02\u0232\u0229\x03\x02\x02\x02\u0233-\x03\x02\x02\x02\u0234" +
+		"\u0235\x07\f\x02\x02\u0235\u0259\x05F$\x02\u0236\u0237\x07\r\x02\x02\u0237" +
+		"\u0259\x05F$\x02\u0238\u0239\x07\f\x02\x02\u0239\u0240\x058\x1D\x02\u023A" +
+		"\u023C\x05\u0100\x81\x02\u023B\u023D\x07\x0E\x02\x02\u023C\u023B\x03\x02" +
+		"\x02\x02\u023C\u023D\x03\x02\x02\x02\u023D\u023E\x03\x02\x02\x02\u023E" +
+		"\u023F\x07C\x02\x02\u023F\u0241\x03\x02\x02\x02\u0240\u023A\x03\x02\x02" +
+		"\x02\u0240\u0241\x03\x02\x02\x02\u0241\u0259\x03\x02\x02\x02\u0242\u0243" +
+		"\x07\r\x02\x02\u0243\u024A\x058\x1D\x02\u0244\u0246\x05\u0100\x81\x02" +
+		"\u0245\u0247\x07\x0E\x02\x02\u0246\u0245\x03\x02\x02\x02\u0246\u0247\x03" +
+		"\x02\x02\x02\u0247\u0248\x03\x02\x02\x02\u0248\u0249\x07C\x02\x02\u0249" +
+		"\u024B\x03\x02\x02\x02\u024A\u0244\x03\x02\x02\x02\u024A\u024B\x03\x02" +
+		"\x02\x02\u024B\u0259\x03\x02\x02\x02\u024C\u024D\x07\f\x02\x02\u024D\u024E" +
+		"\x07x\x02\x02\u024E\u0250\x05\xE4s\x02\u024F\u0251\t\x04\x02\x02\u0250" +
+		"\u024F\x03\x02\x02\x02\u0250\u0251\x03\x02\x02\x02\u0251\u0259\x03\x02" +
+		"\x02\x02\u0252\u0253\x07\r\x02\x02\u0253\u0254\x07x\x02\x02\u0254\u0256" +
+		"\x05\xE4s\x02\u0255\u0257\t\x04\x02\x02\u0256\u0255\x03\x02\x02\x02\u0256" +
+		"\u0257\x03\x02\x02\x02\u0257\u0259\x03\x02\x02\x02\u0258\u0234\x03\x02" +
+		"\x02\x02\u0258\u0236\x03\x02\x02\x02\u0258\u0238\x03\x02\x02\x02\u0258" +
+		"\u0242\x03\x02\x02\x02\u0258\u024C\x03\x02\x02\x02\u0258\u0252\x03\x02" +
+		"\x02\x02\u0259/\x03\x02\x02\x02\u025A\u025B\x07\x03\x02\x02\u025B\u026B" +
+		"\x05\b\x05\x02\u025C\u025D\x07\x03\x02\x02\u025D\u026B\x05\x1A\x0E\x02" +
+		"\u025E\u0260\x07\x03\x02\x02\u025F\u0261\x07s\x02\x02\u0260\u025F\x03" +
+		"\x02\x02\x02\u0260\u0261\x03\x02\x02\x02\u0261\u0262\x03\x02\x02\x02\u0262" +
+		"\u0266\x07\x07\x02\x02\u0263\u0265\x05\x06\x04\x02\u0264\u0263\x03\x02" +
+		"\x02\x02\u0265\u0268\x03\x02\x02\x02\u0266\u0264\x03\x02\x02\x02\u0266" +
+		"\u0267\x03\x02\x02\x02\u0267\u0269\x03\x02\x02\x02\u0268\u0266\x03\x02" +
+		"\x02\x02\u0269\u026B\x07\b\x02\x02\u026A\u025A\x03\x02\x02\x02\u026A\u025C" +
+		"\x03\x02\x02\x02\u026A\u025E\x03\x02\x02\x02\u026B1\x03\x02\x02\x02\u026C" +
+		"\u026D\x07M\x02\x02\u026D\u02CE\x07\xBA\x02\x02\u026E\u026F\x07N\x02\x02" +
+		"\u026F\u02CE\t\x05\x02\x02\u0270\u0271\x07Q\x02\x02\u0271\u02CE\x05\xE8" +
+		"u\x02\u0272\u0273\x07R\x02\x02\u0273\u02CE\x05\xDAn\x02\u0274\u0275\x07" +
+		"S\x02\x02\u0275\u02CE\x05\xDAn\x02\u0276\u0277\x07T\x02\x02\u0277\u02CE" +
+		"\x05\xCEh\x02\u0278\u0279\x07T\x02\x02\u0279\u027A\x05\xDAn\x02\u027A" +
+		"\u027B\t\x05\x02\x02\u027B\u02CE\x03\x02\x02\x02\u027C\u027D\t\x06\x02" +
+		"\x02\u027D\u02CE\x05\xCEh\x02\u027E\u027F\t\x06\x02\x02\u027F\u02CE\x05" +
+		"\xDAn\x02\u0280\u0281\t\x07\x02\x02\u0281\u02CE\x05\xD0i\x02\u0282\u0283" +
+		"\t\x07\x02\x02\u0283\u02CE\x05\xDAn\x02\u0284\u0286\t\b\x02\x02\u0285" +
+		"\u0284\x03\x02\x02\x02\u0285\u0286\x03\x02\x02\x02\u0286\u0288\x03\x02" +
+		"\x02\x02\u0287\u0289\x07`\x02\x02\u0288\u0287\x03\x02\x02\x02\u0288\u0289" +
+		"\x03\x02\x02\x02\u0289\u028A\x03\x02\x02\x02\u028A\u02CE\x05\xDAn\x02" +
+		"\u028B\u028D\t\b\x02\x02\u028C\u028B\x03\x02\x02\x02\u028C\u028D\x03\x02" +
+		"\x02\x02\u028D\u028F\x03\x02\x02\x02\u028E\u0290\x07a\x02\x02\u028F\u028E" +
+		"\x03\x02\x02\x02\u028F\u0290\x03\x02\x02\x02\u0290\u0291\x03\x02\x02\x02" +
+		"\u0291\u0292\x05F$\x02\u0292\u0293\x077\x02\x02\u0293\u0294\x05F$\x02" +
+		"\u0294\u02CE\x03\x02\x02\x02\u0295\u0297\t\b\x02\x02\u0296\u0295\x03\x02" +
+		"\x02\x02\u0296\u0297\x03\x02\x02\x02\u0297\u0299\x03\x02\x02\x02\u0298" +
+		"\u029A\x07a\x02\x02\u0299\u0298\x03\x02\x02\x02\u0299\u029A\x03\x02\x02" +
+		"\x02\u029A\u029B\x03\x02\x02\x02\u029B\u02A1\x05F$\x02\u029C\u029E\x07" +
+		"e\x02\x02\u029D\u029C\x03\x02\x02\x02\u029D\u029E\x03\x02\x02\x02\u029E" +
+		"\u029F\x03\x02\x02\x02\u029F\u02A2\x054\x1B\x02\u02A0\u02A2\x056\x1C\x02" +
+		"\u02A1\u029D\x03\x02\x02\x02\u02A1\u02A0\x03\x02\x02\x02\u02A2\u02CE\x03" +
+		"\x02\x02\x02\u02A3\u02A5\t\b\x02\x02\u02A4\u02A3\x03\x02\x02\x02\u02A4" +
+		"\u02A5\x03\x02\x02\x02\u02A5\u02A7\x03\x02\x02\x02\u02A6\u02A8\x07c\x02" +
+		"\x02\u02A7\u02A6\x03\x02\x02\x02\u02A7\u02A8\x03\x02\x02\x02\u02A8\u02A9" +
+		"\x03\x02\x02\x02\u02A9\u02AA\x05\xCEh\x02\u02AA\u02AB\x05\xD6l\x02\u02AB" +
+		"\u02CE\x03\x02\x02\x02\u02AC\u02AE\t\b\x02\x02\u02AD\u02AC\x03\x02\x02" +
+		"\x02\u02AD\u02AE\x03\x02\x02\x02\u02AE\u02B0\x03\x02\x02\x02\u02AF\u02B1" +
+		"\x07d\x02\x02\u02B0\u02AF\x03\x02\x02\x02\u02B0\u02B1\x03\x02\x02\x02" +
+		"\u02B1\u02B2\x03\x02\x02\x02\u02B2\u02B3\x05\xCEh\x02\u02B3\u02B4\x05" +
+		"\xCEh\x02\u02B4\u02B5\x05\xCEh\x02\u02B5\u02B6\t\t\x02\x02\u02B6\u02CE" +
+		"\x03\x02\x02\x02\u02B7\u02B9\t\b\x02\x02\u02B8\u02B7\x03\x02\x02\x02\u02B8" +
+		"\u02B9\x03\x02\x02\x02\u02B9\u02BB\x03\x02\x02\x02\u02BA\u02BC\x07n\x02" +
+		"\x02\u02BB\u02BA\x03\x02\x02\x02\u02BB\u02BC\x03\x02\x02\x02\u02BC\u02BD" +
+		"\x03\x02\x02\x02\u02BD\u02CE\x058\x1D\x02\u02BE\u02C0\t\b\x02\x02\u02BF" +
+		"\u02BE\x03\x02\x02\x02\u02BF\u02C0\x03\x02\x02\x02\u02C0\u02C1\x03\x02" +
+		"\x02\x02\u02C1\u02C2\x07]\x02\x02\u02C2\u02C3\x05\xCEh\x02\u02C3\u02C4" +
+		"\x05\xE6t\x02\u02C4\u02CE\x03\x02\x02\x02\u02C5\u02C7\t\b\x02\x02\u02C6" +
+		"\u02C5\x03\x02\x02\x02\u02C6\u02C7\x03\x02\x02\x02\u02C7\u02C9\x03\x02" +
+		"\x02\x02\u02C8\u02CA\x07b\x02\x02\u02C9\u02C8\x03\x02\x02\x02\u02C9\u02CA" +
+		"\x03\x02\x02\x02\u02CA\u02CB\x03\x02\x02\x02\u02CB\u02CE\x05\xEAv\x02" +
+		"\u02CC\u02CE\x05.\x18\x02\u02CD\u026C\x03\x02\x02\x02\u02CD\u026E\x03" +
+		"\x02\x02\x02\u02CD\u0270\x03\x02\x02\x02\u02CD\u0272\x03\x02\x02\x02\u02CD" +
+		"\u0274\x03\x02\x02\x02\u02CD\u0276\x03\x02\x02\x02\u02CD\u0278\x03\x02" +
+		"\x02\x02\u02CD\u027C\x03\x02\x02\x02\u02CD\u027E\x03\x02\x02\x02\u02CD" +
+		"\u0280\x03\x02\x02\x02\u02CD\u0282\x03\x02\x02\x02\u02CD\u0285\x03\x02" +
+		"\x02\x02\u02CD\u028C\x03\x02\x02\x02\u02CD\u0296\x03\x02\x02\x02\u02CD" +
+		"\u02A4\x03\x02\x02\x02\u02CD\u02AD\x03\x02\x02\x02\u02CD\u02B8\x03\x02" +
+		"\x02\x02\u02CD\u02BF\x03\x02\x02\x02\u02CD\u02C6\x03\x02\x02\x02\u02CD" +
+		"\u02CC\x03\x02\x02\x02\u02CE3\x03\x02\x02\x02\u02CF\u02D0\x07D\x02\x02" +
+		"\u02D0\u02D2\x07\x0F\x02\x02\u02D1\u02D3\x07D\x02\x02\u02D2\u02D1\x03" +
+		"\x02\x02\x02\u02D2\u02D3\x03\x02\x02\x02\u02D3\u02D8\x03\x02\x02\x02\u02D4" +
+		"\u02D5\x07\x0F\x02\x02\u02D5\u02D8\x07D\x02\x02\u02D6\u02D8\x07D\x02\x02" +
+		"\u02D7\u02CF\x03\x02\x02\x02\u02D7\u02D4\x03\x02\x02\x02\u02D7\u02D6\x03" +
+		"\x02\x02\x02\u02D85\x03\x02\x02\x02\u02D9\u02DA\x077\x02\x02\u02DA\u02DB" +
+		"\x07D\x02\x02\u02DB7\x03\x02\x02\x02\u02DC\u02DD\x07K\x02\x02\u02DD\u02DE" +
+		"\x07\x10\x02\x02\u02DE\u02ED\x05\xA8U\x02\u02DF\u02E0\x05\xE2r\x02\u02E0" +
+		"\u02E1\x07\x10\x02\x02\u02E1\u02E2\x05\xA8U\x02\u02E2\u02ED\x03\x02\x02" +
+		"\x02\u02E3\u02ED\x05\xA8U\x02\u02E4\u02E5\x05\xDAn\x02\u02E5\u02E6\x07" +
+		"\x10\x02\x02\u02E6\u02E7\x05\xA8U\x02\u02E7\u02ED\x03\x02\x02\x02\u02E8" +
+		"\u02E9\x05\xCEh\x02\u02E9\u02EA\x07\x10\x02\x02\u02EA\u02EB\x05\xA8U\x02" +
+		"\u02EB\u02ED\x03\x02\x02\x02\u02EC\u02DC\x03\x02\x02\x02\u02EC\u02DF\x03" +
+		"\x02\x02\x02\u02EC\u02E3\x03\x02\x02\x02\u02EC\u02E4\x03\x02\x02\x02\u02EC" +
+		"\u02E8\x03\x02\x02\x02\u02ED9\x03\x02\x02\x02\u02EE\u02EF\x05\xE2r\x02" +
+		"\u02EF\u02F0\x07\x11\x02\x02\u02F0\u02F1\x05\xA4S\x02\u02F1\u02FB\x03" +
+		"\x02\x02";
 	private static readonly _serializedATNSegment2: string =
-		"\x03\x02\x02\x02\u02F6\u032C\x03\x02\x02\x02\u02F7\u032C\x05:\x1E\x02" +
-		"\u02F8\u02F9\x058\x1D\x02\u02F9\u02FA\x07\x11\x02\x02\u02FA\u02FB\x05" +
-		"\xA4S\x02\u02FB\u032C\x03\x02\x02\x02\u02FC\u02FD\x058\x1D\x02\u02FD\u02FE" +
-		"\x07\x11\x02\x02\u02FE\u02FF\x05> \x02\u02FF\u032C\x03\x02\x02\x02\u0300" +
-		"\u0302\x05\u010A\x86\x02\u0301\u0300\x03\x02\x02\x02\u0301\u0302\x03\x02" +
-		"\x02\x02\u0302\u0303\x03\x02\x02\x02\u0303\u0304\x058\x1D\x02\u0304\u0305" +
-		"\x07\t\x02\x02\u0305\u0306\x05\xA4S\x02\u0306\u032C\x03\x02\x02\x02\u0307" +
-		"\u0309\x05\u010A\x86\x02\u0308\u0307\x03\x02\x02\x02\u0308\u0309\x03\x02" +
-		"\x02\x02\u0309\u030A\x03\x02\x02\x02\u030A\u030B\x058\x1D\x02\u030B\u030C" +
-		"\x07\t\x02\x02\u030C\u030D\x05> \x02\u030D\u032C\x03\x02\x02\x02\u030E" +
-		"\u030F\x058\x1D\x02\u030F\u0310\x07\x0F\x02\x02\u0310\u0311\x05\xA4S\x02" +
-		"\u0311\u032C\x03\x02\x02\x02\u0312\u0313\x058\x1D\x02\u0313\u0314\x07" +
-		"\x0F\x02\x02\u0314\u0315\x05> \x02\u0315\u032C\x03\x02\x02\x02\u0316\u0317" +
-		"\x058\x1D\x02\u0317\u0318\x07\x12\x02\x02\u0318\u0319\x05\xA4S\x02\u0319" +
-		"\u032C\x03\x02\x02\x02\u031A\u031B\x058\x1D\x02\u031B\u031C\x07\x12\x02" +
-		"\x02\u031C\u031D\x05> \x02\u031D\u032C\x03\x02\x02\x02\u031E\u031F\x05" +
-		"8\x1D\x02\u031F\u0320\x07\x0F\x02\x02\u0320\u0321\x07C\x02\x02\u0321\u0322" +
-		"\x05\xA4S\x02\u0322\u032C\x03\x02\x02\x02\u0323\u0324\x058\x1D\x02\u0324" +
-		"\u0325\x07\x0F\x02\x02\u0325\u0326\x07C\x02\x02\u0326\u0327\x05> \x02" +
-		"\u0327\u032C\x03\x02\x02\x02\u0328\u0329\x058\x1D\x02\u0329\u032A\x07" +
-		"q\x02\x02\u032A\u032C\x03\x02\x02\x02\u032B\u02F0\x03\x02\x02\x02\u032B" +
-		"\u02F7\x03\x02\x02\x02\u032B\u02F8\x03\x02\x02\x02\u032B\u02FC\x03\x02" +
-		"\x02\x02\u032B\u0301\x03\x02\x02\x02\u032B\u0308\x03\x02\x02\x02\u032B" +
-		"\u030E\x03\x02\x02\x02\u032B\u0312\x03\x02\x02\x02\u032B\u0316\x03\x02" +
-		"\x02\x02\u032B\u031A\x03\x02\x02\x02\u032B\u031E\x03\x02\x02\x02\u032B" +
-		"\u0323\x03\x02\x02\x02\u032B\u0328\x03\x02\x02\x02\u032C=\x03\x02\x02" +
-		"\x02\u032D\u0330\x058\x1D\x02\u032E\u0330\x05(\x15\x02\u032F\u032D\x03" +
-		"\x02\x02\x02\u032F\u032E\x03\x02\x02\x02\u0330?\x03\x02\x02\x02\u0331" +
-		"\u036D\x05D#\x02\u0332\u0333\x05D#\x02\u0333\u0334\x07\x13\x02\x02\u0334" +
-		"\u0335\x07C\x02\x02\u0335\u036D\x03\x02\x02\x02\u0336\u0337\x05D#\x02" +
-		"\u0337\u0338\x07\x14\x02\x02\u0338\u0339\x07C\x02\x02\u0339\u036D\x03" +
-		"\x02\x02\x02\u033A\u033B\x05D#\x02\u033B\u033C\x07\t\x02\x02\u033C\u033D" +
-		"\x07C\x02\x02\u033D\u036D\x03\x02\x02\x02\u033E\u033F\x05D#\x02\u033F" +
-		"\u0340\x07\x13\x02\x02\u0340\u0341\x05D#\x02\u0341\u036D\x03\x02\x02\x02" +
-		"\u0342\u0343\x05D#\x02\u0343\u0344\x07\x14\x02\x02\u0344\u0345\x05D#\x02" +
-		"\u0345\u036D\x03\x02\x02\x02\u0346\u0347\x05D#\x02\u0347\u0348\x07\x15" +
-		"\x02\x02\u0348\u0349\x05D#\x02\u0349\u036D\x03\x02\x02\x02\u034A\u034B" +
-		"\x05D#\x02\u034B\u034C\x07\x16\x02\x02\u034C\u034D\x05D#\x02\u034D\u036D" +
-		"\x03\x02\x02\x02\u034E\u034F\x05D#\x02\u034F\u0350\x07\x17\x02\x02\u0350" +
-		"\u0351\x05D#\x02\u0351\u036D\x03\x02\x02\x02\u0352\u0353\x05D#\x02\u0353" +
-		"\u0354\x07\x18\x02\x02\u0354\u0355\x05D#\x02\u0355\u036D\x03\x02\x02\x02" +
-		"\u0356\u0357\x05D#\x02\u0357\u0358\x07\x19\x02\x02\u0358\u0359\x05D#\x02" +
-		"\u0359\u036D\x03\x02\x02\x02\u035A\u035B\x05D#\x02\u035B\u035C\x07\x1A" +
-		"\x02\x02\u035C\u035D\x05D#\x02\u035D\u036D\x03\x02\x02\x02\u035E\u035F" +
-		"\x05D#\x02\u035F\u0360\x07\t\x02\x02\u0360\u0361\x05D#\x02\u0361\u036D" +
-		"\x03\x02\x02\x02\u0362\u0363\x05D#\x02\u0363\u0364\x07o\x02\x02\u0364" +
-		"\u036D\x03\x02\x02\x02\u0365\u0366\x05D#\x02\u0366\u0367\x07i\x02\x02" +
-		"\u0367\u036D\x03\x02\x02\x02\u0368\u0369\x05D#\x02\u0369\u036A\x07\x1B" +
-		"\x02\x02\u036A\u036B\x05B\"\x02\u036B\u036D\x03\x02\x02\x02\u036C\u0331" +
-		"\x03\x02\x02\x02\u036C\u0332\x03\x02\x02\x02\u036C\u0336\x03\x02\x02\x02" +
-		"\u036C\u033A\x03\x02\x02\x02\u036C\u033E\x03\x02\x02\x02\u036C\u0342\x03" +
-		"\x02\x02\x02\u036C\u0346\x03\x02\x02\x02\u036C\u034A\x03\x02\x02\x02\u036C" +
-		"\u034E\x03\x02\x02\x02\u036C\u0352\x03\x02\x02\x02\u036C\u0356\x03\x02" +
-		"\x02\x02\u036C\u035A\x03\x02\x02\x02\u036C\u035E\x03\x02\x02\x02\u036C" +
-		"\u0362\x03\x02\x02\x02\u036C\u0365\x03\x02\x02\x02\u036C\u0368\x03\x02" +
-		"\x02\x02\u036DA\x03\x02\x02\x02\u036E\u036F\b\"\x01\x02\u036F\u0376\x07" +
-		"C\x02\x02\u0370\u0376\x05D#\x02\u0371\u0372\x07\n\x02\x02\u0372\u0373" +
-		"\x05B\"\x02\u0373\u0374\x07\v\x02\x02\u0374\u0376\x03\x02\x02\x02\u0375" +
-		"\u036E\x03\x02\x02\x02\u0375\u0370\x03\x02\x02\x02\u0375\u0371\x03\x02" +
-		"\x02\x02\u0376\u0382\x03\x02\x02\x02\u0377\u0378\f\b\x02\x02\u0378\u0379" +
-		"\t\n\x02\x02\u0379\u0381\x05B\"\t\u037A\u037B\f\x07\x02\x02\u037B\u037C" +
-		"\t\v\x02\x02\u037C\u0381\x05B\"\b\u037D\u037E\f\x06\x02\x02\u037E\u037F" +
-		"\t\f\x02\x02\u037F\u0381\x05B\"\x07\u0380\u0377\x03\x02\x02\x02\u0380" +
-		"\u037A\x03\x02\x02\x02\u0380\u037D\x03\x02\x02\x02\u0381\u0384\x03\x02" +
-		"\x02\x02\u0382\u0380\x03\x02\x02\x02\u0382\u0383\x03\x02\x02\x02\u0383" +
-		"C\x03\x02\x02\x02\u0384\u0382\x03\x02\x02\x02\u0385\u0386\x05\u0106\x84" +
-		"\x02\u0386\u0387\x05\xDAn\x02\u0387\u038D\x03\x02\x02\x02\u0388\u0389" +
-		"\x05\xDAn\x02\u0389\u038A\x07 \x02\x02\u038A\u038B\x05\u0106\x84\x02\u038B" +
-		"\u038D\x03\x02\x02\x02\u038C\u0385\x03\x02\x02\x02\u038C\u0388\x03\x02" +
-		"\x02\x02\u038DE\x03\x02\x02\x02\u038E\u038F\x07m\x02\x02\u038F\u0393\x07" +
-		"\x07\x02\x02\u0390\u0392\x05<\x1F\x02\u0391\u0390\x03\x02\x02\x02\u0392" +
-		"\u0395\x03\x02\x02\x02\u0393\u0391\x03\x02\x02\x02\u0393\u0394\x03\x02" +
-		"\x02\x02\u0394\u0396\x03\x02\x02\x02\u0395\u0393\x03\x02\x02\x02\u0396" +
-		"\u03A7\x07\b\x02\x02\u0397\u0398\x07m\x02\x02\u0398\u039B\x05\xE2r\x02" +
-		"\u0399\u039A\x07\x10\x02\x02\u039A\u039C\x05\u0102\x82\x02\u039B\u0399" +
-		"\x03\x02\x02\x02\u039B\u039C\x03\x02\x02\x02\u039C\u039D\x03\x02\x02\x02" +
-		"\u039D\u03A1\x07\x07\x02\x02\u039E\u03A0\x05<\x1F\x02\u039F\u039E\x03" +
-		"\x02\x02\x02\u03A0\u03A3\x03\x02\x02\x02\u03A1\u039F\x03\x02\x02\x02\u03A1" +
-		"\u03A2\x03\x02\x02\x02\u03A2\u03A4\x03\x02\x02\x02\u03A3\u03A1\x03\x02" +
-		"\x02\x02\u03A4\u03A5\x07\b\x02\x02\u03A5\u03A7\x03\x02\x02\x02\u03A6\u038E" +
-		"\x03\x02\x02\x02\u03A6\u0397\x03\x02\x02\x02\u03A7G\x03\x02\x02\x02\u03A8" +
-		"\u03A9\x07e\x02\x02\u03A9\u03AD\x07\x07\x02\x02\u03AA\u03AC\x05J&\x02" +
-		"\u03AB\u03AA\x03\x02\x02\x02\u03AC\u03AF\x03\x02\x02\x02\u03AD\u03AB\x03" +
-		"\x02\x02\x02\u03AD\u03AE\x03\x02\x02\x02\u03AE\u03B0\x03\x02\x02\x02\u03AF" +
-		"\u03AD\x03\x02\x02\x02\u03B0\u03B1\x07\b\x02\x02\u03B1I\x03\x02\x02\x02" +
-		"\u03B2\u03B8\x05@!\x02\u03B3\u03B5\x05\xDAn\x02\u03B4\u03B3\x03\x02\x02" +
-		"\x02\u03B4\u03B5\x03\x02\x02\x02\u03B5\u03B6\x03\x02\x02\x02\u03B6\u03B8" +
-		"\x07j\x02\x02\u03B7\u03B2\x03\x02\x02\x02\u03B7\u03B4\x03\x02\x02\x02" +
-		"\u03B8K\x03\x02\x02\x02\u03B9\u03BE\x07e\x02\x02\u03BA\u03BB\x07\n\x02" +
-		"\x02\u03BB\u03BC\x05\u0104\x83\x02\u03BC\u03BD\x07\v\x02\x02\u03BD\u03BF" +
-		"\x03\x02\x02\x02\u03BE\u03BA\x03\x02\x02\x02\u03BE\u03BF\x03\x02\x02\x02" +
-		"\u03BF\u03C0\x03\x02\x02\x02\u03C0\u03C1\x05\u0102\x82\x02\u03C1\u03CD" +
-		"\x05\xA6T\x02\u03C2\u03C9\x07\x07\x02\x02\u03C3\u03C5\x07!\x02\x02\u03C4" +
-		"\u03C3\x03\x02\x02\x02\u03C4\u03C5\x03\x02\x02\x02\u03C5\u03C6\x03\x02" +
-		"\x02\x02\u03C6\u03C8\x05N(\x02\u03C7\u03C4\x03\x02\x02\x02\u03C8\u03CB" +
-		"\x03\x02\x02\x02\u03C9\u03C7\x03\x02\x02\x02\u03C9\u03CA\x03\x02\x02\x02" +
-		"\u03CA\u03CC\x03\x02\x02\x02\u03CB\u03C9\x03\x02\x02\x02\u03CC\u03CE\x07" +
-		"\b\x02\x02\u03CD\u03C2\x03\x02\x02\x02\u03CD\u03CE\x03\x02\x02\x02\u03CE" +
-		"\u03FA\x03\x02\x02\x02\u03CF\u03D0\x07e\x02\x02\u03D0\u03D1\x07\n\x02" +
-		"\x02\u03D1\u03D2\x05\u0104\x83\x02\u03D2\u03D3\x07\v\x02\x02\u03D3\u03D4" +
-		"\x05\u0102\x82\x02\u03D4\u03FA\x03\x02\x02\x02\u03D5\u03DA\x07e\x02\x02" +
-		"\u03D6\u03D7\x07\n\x02\x02\u03D7\u03D8\x05\u0104\x83\x02\u03D8\u03D9\x07" +
-		"\v\x02\x02\u03D9\u03DB\x03\x02\x02\x02\u03DA\u03D6\x03\x02\x02\x02\u03DA" +
-		"\u03DB\x03\x02\x02\x02\u03DB\u03DC\x03\x02\x02\x02\u03DC\u03DD\x05\u0102" +
-		"\x82\x02\u03DD\u03E9\x07t\x02\x02\u03DE\u03E5\x07\x07\x02\x02\u03DF\u03E1" +
-		"\x07!\x02\x02\u03E0\u03DF\x03\x02\x02\x02\u03E0\u03E1\x03\x02\x02\x02" +
-		"\u03E1\u03E2\x03\x02\x02\x02\u03E2\u03E4\x05N(\x02\u03E3\u03E0\x03\x02" +
-		"\x02\x02\u03E4\u03E7\x03\x02\x02\x02\u03E5\u03E3\x03\x02\x02\x02\u03E5" +
-		"\u03E6\x03\x02\x02\x02\u03E6\u03E8\x03\x02\x02\x02\u03E7\u03E5\x03\x02" +
-		"\x02\x02\u03E8\u03EA\x07\b\x02\x02\u03E9\u03DE\x03\x02\x02\x02\u03E9\u03EA" +
-		"\x03\x02\x02\x02\u03EA\u03FA\x03\x02\x02\x02\u03EB\u03EC\x07e\x02\x02" +
-		"\u03EC\u03ED\x05\u0102\x82\x02\u03ED\u03F4\x07\x07\x02\x02\u03EE\u03F0" +
-		"\x07!\x02\x02\u03EF\u03EE\x03\x02\x02\x02\u03EF\u03F0\x03\x02\x02\x02" +
-		"\u03F0\u03F1\x03\x02\x02\x02\u03F1\u03F3\x05N(\x02\u03F2\u03EF\x03\x02" +
-		"\x02\x02\u03F3\u03F6\x03\x02\x02\x02\u03F4\u03F2\x03\x02\x02\x02\u03F4" +
-		"\u03F5\x03\x02\x02\x02\u03F5\u03F7\x03\x02\x02\x02\u03F6\u03F4\x03\x02" +
-		"\x02\x02\u03F7\u03F8\x07\b\x02\x02\u03F8\u03FA\x03\x02\x02\x02\u03F9\u03B9" +
-		"\x03\x02\x02\x02\u03F9\u03CF\x03\x02\x02\x02\u03F9\u03D5\x03\x02\x02\x02" +
-		"\u03F9\u03EB\x03\x02\x02\x02\u03FAM\x03\x02\x02\x02\u03FB\u0403\x07q\x02" +
-		"\x02\u03FC\u03FD\x07f\x02\x02\u03FD\u0403\x05\xA6T\x02\u03FE\u03FF\x07" +
-		"g\x02\x02\u03FF\u0403\t\r\x02\x02\u0400\u0401\x07h\x02\x02\u0401\u0403" +
-		"\x05\u0102\x82\x02\u0402\u03FB\x03\x02\x02\x02\u0402\u03FC\x03\x02\x02" +
-		"\x02\u0402\u03FE\x03\x02\x02\x02\u0402\u0400\x03\x02\x02\x02\u0403O\x03" +
-		"\x02\x02\x02\u0404\u0405\x07w\x02\x02\u0405\u0406\x05\xE4s\x02\u0406\u0412" +
-		"\x05\xA6T\x02\u0407\u040E\x07\x07\x02\x02\u0408\u040A\x07!\x02\x02\u0409" +
-		"\u0408\x03\x02\x02\x02\u0409\u040A\x03\x02\x02\x02\u040A\u040B\x03\x02" +
-		"\x02\x02\u040B\u040D\x05R*\x02\u040C\u0409\x03\x02\x02\x02\u040D\u0410" +
-		"\x03\x02\x02\x02\u040E\u040C\x03\x02\x02\x02\u040E\u040F\x03\x02\x02\x02" +
-		"\u040F\u0411\x03\x02\x02\x02\u0410\u040E\x03\x02\x02\x02\u0411\u0413\x07" +
-		"\b\x02\x02\u0412\u0407\x03\x02\x02\x02\u0412\u0413\x03\x02\x02\x02\u0413" +
-		"\u0423\x03\x02\x02\x02\u0414\u0415\x07w\x02\x02\u0415\u0416\x05\xE4s\x02" +
-		"\u0416\u041D\x07\x07\x02\x02\u0417\u0419\x07!\x02\x02\u0418\u0417\x03" +
-		"\x02\x02\x02\u0418\u0419\x03\x02\x02\x02\u0419\u041A\x03\x02\x02\x02\u041A" +
-		"\u041C\x05R*\x02\u041B\u0418\x03\x02\x02\x02\u041C\u041F\x03\x02\x02\x02" +
-		"\u041D\u041B\x03\x02\x02\x02\u041D\u041E\x03\x02\x02\x02\u041E\u0420\x03" +
-		"\x02\x02\x02\u041F\u041D\x03\x02\x02\x02\u0420\u0421\x07\b\x02\x02\u0421" +
-		"\u0423\x03\x02\x02\x02\u0422\u0404\x03\x02\x02\x02\u0422\u0414\x03\x02" +
-		"\x02\x02\u0423Q\x03\x02\x02\x02\u0424\u0426\x07\x9A\x02\x02\u0425\u0424" +
-		"\x03\x02\x02\x02\u0425\u0426\x03\x02\x02\x02\u0426\u0427\x03\x02\x02\x02" +
-		"\u0427\u0452\t\x0E\x02\x02\u0428\u0452\x07q\x02\x02\u0429\u042B\x07\x88" +
-		"\x02\x02\u042A\u0429\x03\x02\x02\x02\u042A\u042B\x03\x02\x02\x02\u042B" +
-		"\u042C\x03\x02\x02\x02\u042C\u042D\x07\x80\x02\x02\u042D\u0452\t\x0F\x02" +
-		"\x02\u042E\u0430\x07\x88\x02\x02\u042F\u042E\x03\x02\x02\x02\u042F\u0430" +
-		"\x03\x02\x02\x02\u0430\u0431\x03\x02\x02\x02\u0431\u0432\x07^\x02\x02" +
-		"\u0432\u0452\x07C\x02\x02\u0433\u0435\x07\x88\x02\x02\u0434\u0433\x03" +
-		"\x02\x02\x02\u0434\u0435\x03\x02\x02\x02\u0435\u0436\x03\x02\x02\x02\u0436" +
-		"\u0437\x07\x81\x02\x02\u0437\u0452\x05\xA6T\x02\u0438\u043A\x07\x88\x02" +
-		"\x02\u0439\u0438\x03\x02\x02\x02\u0439\u043A\x03\x02\x02\x02\u043A\u043B" +
-		"\x03\x02\x02\x02\u043B\u043C\x07v\x02\x02\u043C\u0452\x05\xDAn\x02\u043D" +
-		"\u043F\x07\x88\x02\x02\u043E\u043D\x03\x02\x02\x02\u043E\u043F\x03\x02" +
-		"\x02\x02\u043F\u0440\x03\x02\x02\x02\u0440\u0441\x07v\x02\x02\u0441\u0452" +
-		"\x07t\x02\x02\u0442\u0444\x07\x88\x02\x02\u0443\u0442\x03\x02\x02\x02" +
-		"\u0443\u0444\x03\x02\x02\x02\u0444\u0445\x03\x02\x02\x02\u0445\u0446\x07" +
-		"\x82\x02\x02\u0446\u0452\t\x10\x02\x02\u0447\u0449\x07\x88\x02\x02\u0448" +
-		"\u0447\x03\x02\x02\x02\u0448\u0449\x03\x02\x02\x02\u0449\u044A\x03\x02" +
-		"\x02\x02\u044A\u044B\x07]\x02\x02\u044B\u0452\x07C\x02\x02\u044C\u044E" +
-		"\x07\x88\x02\x02\u044D\u044C\x03\x02\x02\x02\u044D\u044E\x03\x02\x02\x02" +
-		"\u044E\u044F\x03\x02\x02\x02\u044F\u0450\x07x\x02\x02\u0450\u0452\x05" +
-		"\xCAf\x02\u0451\u0425\x03\x02\x02\x02\u0451\u0428\x03\x02\x02\x02\u0451" +
-		"\u042A\x03\x02\x02\x02\u0451\u042F\x03\x02\x02\x02\u0451\u0434\x03\x02" +
-		"\x02\x02\u0451\u0439\x03\x02\x02\x02\u0451\u043E\x03\x02\x02\x02\u0451" +
-		"\u0443\x03\x02\x02\x02\u0451\u0448\x03\x02\x02\x02\u0451\u044D\x03\x02" +
-		"\x02\x02\u0452S\x03\x02\x02\x02\u0453\u0454\x07w\x02\x02\u0454\u0456\x05" +
-		"\xE4s\x02\u0455\u0457\t\x0E\x02\x02\u0456\u0455\x03\x02\x02\x02\u0456" +
-		"\u0457\x03\x02\x02\x02\u0457\u0467\x03\x02\x02\x02\u0458\u0459\x07w\x02" +
-		"\x02\u0459\u045B\x05\xE4s\x02\u045A\u045C\x07]\x02\x02\u045B\u045A\x03" +
-		"\x02\x02\x02\u045B\u045C\x03\x02\x02\x02\u045C\u045D\x03\x02\x02\x02\u045D" +
-		"\u045E\x07\t\x02\x02\u045E\u045F\x07C\x02\x02\u045F\u0467\x03\x02\x02" +
-		"\x02\u0460\u0461\x07w\x02\x02\u0461\u0462\x05\xE4s\x02\u0462\u0463\x07" +
-		"^\x02\x02\u0463\u0464\x07\t\x02\x02\u0464\u0465\x07C\x02\x02\u0465\u0467" +
-		"\x03\x02\x02\x02\u0466\u0453\x03\x02\x02\x02\u0466\u0458\x03\x02\x02\x02" +
-		"\u0466\u0460\x03\x02\x02\x02\u0467U\x03\x02\x02\x02\u0468\u0469\x07\x89" +
-		"\x02\x02\u0469\u046D\x07\x07\x02\x02\u046A\u046C\x05X-\x02\u046B\u046A" +
-		"\x03\x02\x02\x02\u046C\u046F\x03\x02\x02\x02\u046D\u046B\x03\x02\x02\x02" +
-		"\u046D\u046E\x03\x02\x02\x02\u046E\u0470\x03\x02\x02\x02\u046F\u046D\x03" +
-		"\x02\x02\x02\u0470\u0480\x07\b\x02\x02\u0471\u0472\x07\x89\x02\x02\u0472" +
-		"\u0473\x05\xDAn\x02\u0473\u047A\x07\x07\x02\x02\u0474\u0476\x07!\x02\x02" +
-		"\u0475\u0474\x03\x02\x02\x02\u0475\u0476\x03\x02\x02\x02\u0476\u0477\x03" +
-		"\x02\x02\x02\u0477\u0479\x05Z.\x02\u0478\u0475\x03\x02\x02\x02\u0479\u047C" +
-		"\x03\x02\x02\x02\u047A\u0478\x03\x02\x02\x02\u047A\u047B\x03\x02\x02\x02" +
-		"\u047B\u047D\x03\x02\x02\x02\u047C\u047A\x03\x02\x02\x02\u047D\u047E\x07" +
-		"\b\x02\x02\u047E\u0480\x03\x02\x02\x02\u047F\u0468\x03\x02\x02\x02\u047F" +
-		"\u0471\x03\x02\x02\x02\u0480W\x03\x02\x02\x02\u0481\u0482\x05\xDAn\x02" +
-		"\u0482\u0483\x07!\x02\x02\u0483\u0484\x05\\/\x02\u0484\u0493\x03\x02\x02" +
-		"\x02\u0485\u0486\x05\xDAn\x02\u0486\u048D\x07\x07\x02\x02\u0487\u0489" +
-		"\x07!\x02\x02\u0488\u0487\x03\x02\x02\x02\u0488\u0489\x03\x02\x02\x02" +
-		"\u0489\u048A\x03\x02\x02\x02\u048A\u048C\x05Z.\x02\u048B\u0488\x03\x02" +
-		"\x02\x02\u048C\u048F\x03\x02\x02\x02\u048D\u048B\x03\x02\x02\x02\u048D" +
-		"\u048E\x03\x02\x02\x02\u048E\u0490\x03\x02\x02\x02\u048F\u048D\x03\x02" +
-		"\x02\x02\u0490\u0491\x07\b\x02\x02\u0491\u0493\x03\x02\x02\x02\u0492\u0481" +
-		"\x03\x02\x02\x02\u0492\u0485\x03\x02\x02\x02\u0493Y\x03\x02\x02\x02\u0494" +
-		"\u0495\t\x11\x02\x02\u0495\u049D\x05\xA6T\x02\u0496\u049D\x07\x91\x02" +
-		"\x02\u0497\u049D\x07o\x02\x02\u0498\u0499\x07\x8C\x02\x02\u0499\u049A" +
-		"\x07C\x02\x02\u049A\u049B\x07C\x02\x02\u049B\u049D\x07C\x02\x02\u049C" +
-		"\u0494\x03\x02\x02\x02\u049C\u0496\x03\x02\x02\x02\u049C\u0497\x03\x02" +
-		"\x02\x02\u049C\u0498\x03\x02\x02\x02\u049D[\x03\x02\x02\x02\u049E\u049F" +
-		"\t\x11\x02\x02\u049F\u04AD\x05\xA6T\x02\u04A0\u04A1\x07\x89\x02\x02\u04A1" +
-		"\u04A2\x07!\x02\x02\u04A2\u04AD\x07\x91\x02\x02\u04A3\u04A4\x07\x89\x02" +
-		"\x02\u04A4\u04A5\x07!\x02\x02\u04A5\u04AD\x07o\x02\x02\u04A6\u04A7\x07" +
-		"\x89\x02\x02\u04A7\u04A8\x07!\x02\x02\u04A8\u04A9\x07\x8C\x02\x02\u04A9" +
-		"\u04AA\x07C\x02\x02\u04AA\u04AB\x07C\x02\x02\u04AB\u04AD\x07C\x02\x02" +
-		"\u04AC\u049E\x03\x02\x02\x02\u04AC\u04A0\x03\x02\x02\x02\u04AC\u04A3\x03" +
-		"\x02\x02\x02\u04AC\u04A6\x03\x02\x02\x02\u04AD]\x03\x02\x02\x02\u04AE" +
-		"\u04AF\x07h\x02\x02\u04AF\u04B3\x07\x07\x02\x02\u04B0\u04B2\x05`1\x02" +
-		"\u04B1\u04B0\x03\x02\x02\x02\u04B2\u04B5\x03\x02\x02\x02\u04B3\u04B1\x03" +
-		"\x02\x02\x02\u04B3\u04B4\x03\x02\x02\x02\u04B4\u04B6\x03\x02\x02\x02\u04B5" +
-		"\u04B3\x03\x02\x02\x02\u04B6\u04C6\x07\b\x02\x02\u04B7\u04B8\x07h\x02" +
-		"\x02\u04B8\u04B9\x05\xDAn\x02\u04B9\u04C0\x07\x07\x02\x02\u04BA\u04BC" +
-		"\x07!\x02\x02\u04BB\u04BA\x03\x02\x02\x02\u04BB\u04BC\x03\x02\x02\x02" +
-		"\u04BC\u04BD\x03\x02\x02\x02\u04BD\u04BF\x05b2\x02\u04BE\u04BB\x03\x02" +
-		"\x02\x02\u04BF\u04C2\x03\x02\x02\x02\u04C0\u04BE\x03\x02\x02\x02\u04C0" +
-		"\u04C1\x03\x02\x02\x02\u04C1\u04C3\x03\x02\x02\x02\u04C2\u04C0\x03\x02" +
-		"\x02\x02\u04C3\u04C4\x07\b\x02\x02\u04C4\u04C6\x03\x02\x02\x02\u04C5\u04AE" +
-		"\x03\x02\x02\x02\u04C5\u04B7\x03\x02\x02\x02\u04C6_\x03\x02\x02\x02\u04C7" +
-		"\u04DB\x05L\'\x02\u04C8\u04DB\x05P)\x02\u04C9\u04CA\x05\xDAn\x02\u04CA" +
-		"\u04CB\x07!\x02\x02\u04CB\u04CC\x05b2\x02\u04CC\u04DB\x03\x02\x02\x02" +
-		"\u04CD\u04CE\x05\xDAn\x02\u04CE\u04D5\x07\x07\x02\x02\u04CF\u04D1\x07" +
-		"!\x02\x02\u04D0\u04CF\x03\x02\x02\x02\u04D0\u04D1\x03\x02\x02\x02\u04D1" +
-		"\u04D2\x03\x02\x02\x02\u04D2\u04D4\x05b2\x02\u04D3\u04D0\x03\x02\x02\x02" +
-		"\u04D4\u04D7\x03\x02\x02\x02\u04D5\u04D3\x03\x02\x02\x02\u04D5\u04D6\x03" +
-		"\x02\x02\x02\u04D6\u04D8\x03\x02\x02\x02\u04D7\u04D5\x03\x02\x02\x02\u04D8" +
-		"\u04D9\x07\b\x02\x02\u04D9\u04DB\x03\x02\x02\x02\u04DA\u04C7\x03\x02\x02" +
-		"\x02\u04DA\u04C8\x03\x02\x02\x02\u04DA\u04C9\x03\x02\x02\x02\u04DA\u04CD" +
-		"\x03\x02\x02\x02\u04DBa\x03\x02\x02\x02\u04DC\u04ED\x05\\/\x02\u04DD\u04DE" +
-		"\x07\x89\x02\x02\u04DE\u04E2\x07\x07\x02\x02\u04DF\u04E1\x05Z.\x02\u04E0" +
-		"\u04DF\x03\x02\x02\x02\u04E1\u04E4\x03\x02\x02\x02\u04E2\u04E0\x03\x02" +
-		"\x02\x02\u04E2\u04E3\x03\x02\x02\x02\u04E3\u04E5\x03\x02\x02\x02\u04E4" +
-		"\u04E2\x03\x02\x02\x02\u04E5\u04ED\x07\b\x02\x02\u04E6\u04E7\x07\x8D\x02" +
-		"\x02\u04E7\u04ED\x05\xA6T\x02\u04E8\u04E9\x07w\x02\x02\u04E9\u04EA\x05" +
-		"\xE4s\x02\u04EA\u04EB\x05\xA6T\x02\u04EB\u04ED\x03\x02\x02\x02\u04EC\u04DC" +
-		"\x03\x02\x02\x02\u04EC\u04DD\x03\x02\x02\x02\u04EC\u04E6\x03\x02\x02\x02" +
-		"\u04EC\u04E8\x03\x02\x02\x02\u04EDc\x03\x02\x02\x02\u04EE\u04EF\x07\x8E" +
-		"\x02\x02\u04EF\u04F3\x07\x07\x02\x02\u04F0\u04F2\x05r:\x02\u04F1\u04F0" +
-		"\x03\x02\x02\x02\u04F2\u04F5\x03\x02\x02\x02\u04F3\u04F1\x03\x02\x02\x02" +
-		"\u04F3\u04F4\x03\x02\x02\x02\u04F4\u04F6\x03\x02\x02\x02\u04F5\u04F3\x03" +
-		"\x02\x02\x02\u04F6\u0503\x07\b\x02\x02\u04F7\u04F8\x07\x8E\x02\x02\u04F8" +
-		"\u04F9\x05\xDAn\x02\u04F9\u04FD\x07\x07\x02\x02\u04FA\u04FC\x05t;\x02" +
-		"\u04FB\u04FA\x03\x02\x02\x02\u04FC\u04FF\x03\x02\x02\x02\u04FD\u04FB\x03" +
-		"\x02\x02\x02\u04FD\u04FE\x03\x02\x02\x02\u04FE\u0500\x03\x02\x02\x02\u04FF" +
-		"\u04FD\x03\x02\x02\x02\u0500\u0501\x07\b\x02\x02\u0501\u0503\x03\x02\x02" +
-		"\x02\u0502\u04EE\x03\x02\x02\x02\u0502\u04F7\x03\x02\x02\x02\u0503e\x03" +
-		"\x02\x02\x02\u0504\u0505\x07\x8F\x02\x02\u0505\u0509\x07\x07\x02\x02\u0506" +
-		"\u0508\x05h5\x02\u0507\u0506\x03\x02\x02\x02\u0508\u050B\x03\x02\x02\x02" +
-		"\u0509\u0507\x03\x02\x02\x02\u0509\u050A\x03\x02\x02\x02\u050A\u050C\x03" +
-		"\x02\x02\x02\u050B\u0509\x03\x02\x02\x02\u050C\u0519\x07\b\x02\x02\u050D" +
-		"\u050E\x07\x8F\x02\x02\u050E\u050F\x05\xDAn\x02\u050F\u0513\x07\x07\x02" +
-		"\x02\u0510\u0512\x05j6\x02\u0511\u0510\x03\x02\x02\x02\u0512\u0515\x03" +
-		"\x02\x02\x02\u0513\u0511\x03\x02\x02\x02\u0513\u0514\x03\x02\x02\x02\u0514" +
-		"\u0516\x03\x02\x02\x02\u0515\u0513\x03\x02\x02\x02\u0516\u0517\x07\b\x02" +
-		"\x02\u0517\u0519\x03\x02\x02\x02\u0518\u0504\x03\x02\x02\x02\u0518\u050D" +
-		"\x03\x02\x02\x02\u0519g\x03\x02\x02\x02\u051A\u051B\x05\xCEh\x02\u051B" +
-		"\u051C\x07\x13\x02\x02\u051C\u051D\x05p9\x02\u051D\u0538\x03\x02\x02\x02" +
-		"\u051E\u051F\x05\xCEh\x02\u051F\u0520\x07\t\x02\x02\u0520\u0521\x05p9" +
-		"\x02\u0521\u0538\x03\x02\x02\x02\u0522\u0523\x05\xCEh\x02\u0523\u0524" +
-		"\x07\x10\x02\x02\u0524\u0525\x05n8\x02\u0525\u0538\x03\x02\x02\x02\u0526" +
-		"\u0527\x05\xDAn\x02\u0527\u0528\x05l7\x02\u0528\u0538\x03\x02\x02\x02" +
-		"\u0529\u052A\x05\xDAn\x02\u052A\u052B\x07\x10\x02\x02\u052B\u052C\x05" +
-		"n8\x02\u052C\u0538\x03\x02\x02\x02\u052D\u052E\x05\xDAn\x02\u052E\u0532" +
-		"\x07\x07\x02\x02\u052F\u0531\x05j6\x02\u0530\u052F\x03\x02\x02\x02\u0531" +
-		"\u0534\x03\x02\x02\x02\u0532\u0530\x03\x02\x02\x02\u0532\u0533\x03\x02" +
-		"\x02\x02\u0533\u0535\x03\x02\x02\x02\u0534\u0532\x03\x02\x02\x02\u0535" +
-		"\u0536\x07\b\x02\x02\u0536\u0538\x03\x02\x02\x02\u0537\u051A\x03\x02\x02" +
-		"\x02\u0537\u051E\x03\x02\x02\x02\u0537\u0522\x03\x02\x02\x02\u0537\u0526" +
-		"\x03\x02\x02\x02\u0537\u0529\x03\x02\x02\x02\u0537\u052D\x03\x02\x02\x02" +
-		"\u0538i\x03\x02\x02\x02\u0539\u053C\x05l7\x02\u053A\u053C\x05n8\x02\u053B" +
-		"\u0539\x03\x02\x02\x02\u053B\u053A\x03\x02\x02\x02\u053Ck\x03\x02\x02" +
-		"\x02\u053D\u053E\t\x12\x02\x02\u053E\u053F\x05p9\x02\u053Fm\x03\x02\x02" +
-		"\x02\u0540\u0541\x05\u010C\x87\x02\u0541\u0542\x07\t\x02\x02\u0542\u0544" +
-		"\x05p9\x02\u0543\u0545\x07\x0E\x02\x02\u0544\u0543\x03\x02\x02\x02\u0544" +
-		"\u0545\x03\x02\x02\x02\u0545\u0547\x03\x02\x02\x02\u0546\u0548\x07C\x02" +
-		"\x02\u0547\u0546\x03\x02\x02\x02\u0547\u0548\x03\x02\x02\x02\u0548o\x03" +
-		"\x02\x02\x02\u0549\u054A\x07\x92\x02\x02\u054A\u054B\x05\xF0y\x02\u054B" +
-		"\u054D\x05\xCEh\x02\u054C\u054E\t\x13\x02\x02\u054D\u054C\x03\x02\x02" +
-		"\x02\u054D\u054E\x03\x02\x02\x02\u054E\u056A\x03\x02\x02\x02\u054F\u0550" +
-		"\x07\x92\x02\x02\u0550\u0551\x05\xF0y\x02\u0551\u0552\x05\xCEh\x02\u0552" +
-		"\u0553\x05\xECw\x02\u0553\u056A\x03\x02\x02\x02\u0554\u0556\x07\x8F\x02" +
-		"\x02\u0555\u0554\x03\x02\x02\x02\u0555\u0556\x03\x02\x02\x02\u0556\u0557" +
-		"\x03\x02\x02\x02\u0557\u056A\x05\xF0y\x02\u0558\u055A\x07\x93\x02\x02" +
-		"\u0559\u0558\x03\x02\x02\x02\u0559\u055A\x03\x02\x02\x02\u055A\u055B\x03" +
-		"\x02\x02\x02\u055B\u056A\x05\xDAn\x02\u055C\u055E\x07\x94\x02\x02\u055D" +
-		"\u055C\x03\x02\x02\x02\u055D\u055E\x03\x02\x02\x02\u055E\u055F\x03\x02" +
-		"\x02\x02\u055F\u0561\x05\xCEh\x02\u0560\u0562\t\x13\x02\x02\u0561\u0560" +
-		"\x03\x02\x02\x02\u0561\u0562\x03\x02\x02\x02\u0562\u056A\x03\x02\x02\x02" +
-		"\u0563\u0565\x07\x94\x02\x02\u0564\u0563\x03\x02\x02\x02\u0564\u0565\x03" +
-		"\x02\x02\x02\u0565\u0566\x03\x02\x02\x02\u0566\u0567\x05\xCEh\x02\u0567" +
-		"\u0568\x05\xECw\x02\u0568\u056A\x03\x02\x02\x02\u0569\u0549\x03\x02\x02" +
-		"\x02\u0569\u054F\x03\x02\x02\x02\u0569\u0555\x03\x02\x02\x02\u0569\u0559" +
-		"\x03\x02\x02\x02\u0569\u055D\x03\x02\x02\x02\u0569\u0564\x03\x02\x02\x02" +
-		"\u056Aq\x03\x02\x02\x02\u056B\u056C\x05\xDAn\x02\u056C\u056D\x05x=\x02" +
-		"\u056D\u0582\x03\x02\x02\x02\u056E\u056F\x05\xDAn\x02\u056F\u0570\x07" +
-		"\x10\x02\x02\u0570\u0571\x05v<\x02\u0571\u0582\x03\x02\x02\x02\u0572\u0573" +
-		"\x05\xCEh\x02\u0573\u0574\x07\x10\x02\x02\u0574\u0575\x05v<\x02\u0575" +
-		"\u0582\x03\x02\x02\x02\u0576\u0582\x05h5\x02\u0577\u0578\x05\xDAn\x02" +
-		"\u0578\u057C\x07\x07\x02\x02\u0579\u057B\x05t;\x02\u057A\u0579\x03\x02" +
-		"\x02\x02\u057B\u057E\x03\x02\x02\x02\u057C\u057A\x03\x02\x02\x02\u057C" +
-		"\u057D\x03\x02\x02\x02\u057D\u057F\x03\x02\x02\x02\u057E\u057C\x03\x02" +
-		"\x02\x02\u057F\u0580\x07\b\x02\x02\u0580\u0582\x03\x02\x02\x02\u0581\u056B" +
-		"\x03\x02\x02\x02\u0581\u056E\x03\x02\x02\x02\u0581\u0572\x03\x02\x02\x02" +
-		"\u0581\u0576\x03\x02\x02\x02\u0581\u0577\x03\x02\x02\x02\u0582s\x03\x02" +
-		"\x02\x02\u0583\u0587\x05x=\x02\u0584\u0587\x05v<\x02\u0585\u0587\x05j" +
-		"6\x02\u0586\u0583\x03\x02\x02\x02\u0586\u0584\x03\x02\x02\x02\u0586\u0585" +
-		"\x03\x02\x02\x02\u0587u\x03\x02\x02\x02\u0588\u0589\x05\u010C\x87\x02" +
-		"\u0589\u058A\x07\t\x02\x02\u058A\u058C\x05\xECw\x02\u058B\u058D\x07C\x02" +
-		"\x02\u058C\u058B\x03\x02\x02\x02\u058C\u058D\x03\x02\x02\x02\u058D\u05A3" +
-		"\x03\x02\x02\x02\u058E\u058F\x05\u010C\x87\x02\u058F\u0590\x07\t\x02\x02" +
-		"\u0590\u0591\x05\xDAn\x02\u0591\u0592\x07\x10\x02\x02\u0592\u0594\x05" +
-		"\u010C\x87\x02\u0593\u0595\x05\xF2z\x02\u0594\u0593\x03\x02\x02\x02\u0594" +
-		"\u0595\x03\x02\x02\x02\u0595\u05A3\x03\x02\x02\x02\u0596\u0597\x05\u010C" +
-		"\x87\x02\u0597\u0598\x07\t\x02\x02\u0598\u0599\x05\xCEh\x02\u0599\u059A" +
-		"\x07\x10\x02\x02\u059A\u059C\x05\u010C\x87\x02\u059B\u059D\x05\xF2z\x02" +
-		"\u059C\u059B\x03\x02\x02\x02\u059C\u059D\x03\x02\x02\x02\u059D\u05A3\x03" +
-		"\x02\x02\x02\u059E\u059F\x05\u010C\x87\x02\u059F\u05A0\x07\x13\x02\x02" +
-		"\u05A0\u05A1\x05\xF2z\x02\u05A1\u05A3\x03\x02";
+		"\x02\u02F2\u02F3\x05\xDAn\x02\u02F3\u02F4\x07\x11\x02\x02\u02F4\u02F5" +
+		"\x05\xA4S\x02\u02F5\u02FB\x03\x02\x02\x02\u02F6\u02F7\x05\xCEh\x02\u02F7" +
+		"\u02F8\x07\x11\x02\x02\u02F8\u02F9\x05\xA4S\x02\u02F9\u02FB\x03\x02\x02" +
+		"\x02\u02FA\u02EE\x03\x02\x02\x02\u02FA\u02F2\x03\x02\x02\x02\u02FA\u02F6" +
+		"\x03\x02\x02\x02\u02FB;\x03\x02\x02\x02\u02FC\u0301\x058\x1D\x02\u02FD" +
+		"\u02FF\x07\x0E\x02\x02\u02FE\u02FD\x03\x02\x02\x02\u02FE\u02FF\x03\x02" +
+		"\x02\x02\u02FF\u0300\x03\x02\x02\x02\u0300\u0302\x07C\x02\x02\u0301\u02FE" +
+		"\x03\x02\x02\x02\u0301\u0302\x03\x02\x02\x02\u0302\u0338\x03\x02\x02\x02" +
+		"\u0303\u0338\x05:\x1E\x02\u0304\u0305\x058\x1D\x02\u0305\u0306\x07\x11" +
+		"\x02\x02\u0306\u0307\x05\xA4S\x02\u0307\u0338\x03\x02\x02\x02\u0308\u0309" +
+		"\x058\x1D\x02\u0309\u030A\x07\x11\x02\x02\u030A\u030B\x05> \x02\u030B" +
+		"\u0338\x03\x02\x02\x02\u030C\u030E\x05\u010A\x86\x02\u030D\u030C\x03\x02" +
+		"\x02\x02\u030D\u030E\x03\x02\x02\x02\u030E\u030F\x03\x02\x02\x02\u030F" +
+		"\u0310\x058\x1D\x02\u0310\u0311\x07\t\x02\x02\u0311\u0312\x05\xA4S\x02" +
+		"\u0312\u0338\x03\x02\x02\x02\u0313\u0315\x05\u010A\x86\x02\u0314\u0313" +
+		"\x03\x02\x02\x02\u0314\u0315\x03\x02\x02\x02\u0315\u0316\x03\x02\x02\x02" +
+		"\u0316\u0317\x058\x1D\x02\u0317\u0318\x07\t\x02\x02\u0318\u0319\x05> " +
+		"\x02\u0319\u0338\x03\x02\x02\x02\u031A\u031B\x058\x1D\x02\u031B\u031C" +
+		"\x07\x0F\x02\x02\u031C\u031D\x05\xA4S\x02\u031D\u0338\x03\x02\x02\x02" +
+		"\u031E\u031F\x058\x1D\x02\u031F\u0320\x07\x0F\x02\x02\u0320\u0321\x05" +
+		"> \x02\u0321\u0338\x03\x02\x02\x02\u0322\u0323\x058\x1D\x02\u0323\u0324" +
+		"\x07\x12\x02\x02\u0324\u0325\x05\xA4S\x02\u0325\u0338\x03\x02\x02\x02" +
+		"\u0326\u0327\x058\x1D\x02\u0327\u0328\x07\x12\x02\x02\u0328\u0329\x05" +
+		"> \x02\u0329\u0338\x03\x02\x02\x02\u032A\u032B\x058\x1D\x02\u032B\u032C" +
+		"\x07\x0F\x02\x02\u032C\u032D\x07D\x02\x02\u032D\u032E\x05\xA4S\x02\u032E" +
+		"\u0338\x03\x02\x02\x02\u032F\u0330\x058\x1D\x02\u0330\u0331\x07\x0F\x02" +
+		"\x02\u0331\u0332\x07D\x02\x02\u0332\u0333\x05> \x02\u0333\u0338\x03\x02" +
+		"\x02\x02\u0334\u0335\x058\x1D\x02\u0335\u0336\x07r\x02\x02\u0336\u0338" +
+		"\x03\x02\x02\x02\u0337\u02FC\x03\x02\x02\x02\u0337\u0303\x03\x02\x02\x02" +
+		"\u0337\u0304\x03\x02\x02\x02\u0337\u0308\x03\x02\x02\x02\u0337\u030D\x03" +
+		"\x02\x02\x02\u0337\u0314\x03\x02\x02\x02\u0337\u031A\x03\x02\x02\x02\u0337" +
+		"\u031E\x03\x02\x02\x02\u0337\u0322\x03\x02\x02\x02\u0337\u0326\x03\x02" +
+		"\x02\x02\u0337\u032A\x03\x02\x02\x02\u0337\u032F\x03\x02\x02\x02\u0337" +
+		"\u0334\x03\x02\x02\x02\u0338=\x03\x02\x02\x02\u0339\u033C\x058\x1D\x02" +
+		"\u033A\u033C\x05(\x15\x02\u033B\u0339\x03\x02\x02\x02\u033B\u033A\x03" +
+		"\x02\x02\x02\u033C?\x03\x02\x02\x02\u033D\u033E\x07n\x02\x02\u033E\u0342" +
+		"\x07\x07\x02\x02\u033F\u0341\x05<\x1F\x02\u0340\u033F\x03\x02\x02\x02" +
+		"\u0341\u0344\x03\x02\x02\x02\u0342\u0340\x03\x02\x02\x02\u0342\u0343\x03" +
+		"\x02\x02\x02\u0343\u0345\x03\x02\x02\x02\u0344\u0342\x03\x02\x02\x02\u0345" +
+		"\u0356\x07\b\x02\x02\u0346\u0347\x07n\x02\x02\u0347\u034A\x05\xE2r\x02" +
+		"\u0348\u0349\x07\x10\x02\x02\u0349\u034B\x05\xA8U\x02\u034A\u0348\x03" +
+		"\x02\x02\x02\u034A\u034B\x03\x02\x02\x02\u034B\u034C\x03\x02\x02\x02\u034C" +
+		"\u0350\x07\x07\x02\x02\u034D\u034F\x05<\x1F\x02\u034E\u034D\x03\x02\x02" +
+		"\x02\u034F\u0352\x03\x02\x02\x02\u0350\u034E\x03\x02\x02\x02\u0350\u0351" +
+		"\x03\x02\x02\x02\u0351\u0353\x03\x02\x02\x02\u0352\u0350\x03\x02\x02\x02" +
+		"\u0353\u0354\x07\b\x02\x02\u0354\u0356\x03\x02\x02\x02\u0355\u033D\x03" +
+		"\x02\x02\x02\u0355\u0346\x03\x02\x02\x02\u0356A\x03\x02\x02\x02\u0357" +
+		"\u0393\x05F$\x02\u0358\u0359\x05F$\x02\u0359\u035A\x07\x13\x02\x02\u035A" +
+		"\u035B\x07D\x02\x02\u035B\u0393\x03\x02\x02\x02\u035C\u035D\x05F$\x02" +
+		"\u035D\u035E\x07\x14\x02\x02\u035E\u035F\x07D\x02\x02\u035F\u0393\x03" +
+		"\x02\x02\x02\u0360\u0361\x05F$\x02\u0361\u0362\x07\t\x02\x02\u0362\u0363" +
+		"\x07D\x02\x02\u0363\u0393\x03\x02\x02\x02\u0364\u0365\x05F$\x02\u0365" +
+		"\u0366\x07\x13\x02\x02\u0366\u0367\x05F$\x02\u0367\u0393\x03\x02\x02\x02" +
+		"\u0368\u0369\x05F$\x02\u0369\u036A\x07\x14\x02\x02\u036A\u036B\x05F$\x02" +
+		"\u036B\u0393\x03\x02\x02\x02\u036C\u036D\x05F$\x02\u036D\u036E\x07\x15" +
+		"\x02\x02\u036E\u036F\x05F$\x02\u036F\u0393\x03\x02\x02\x02\u0370\u0371" +
+		"\x05F$\x02\u0371\u0372\x07\x16\x02\x02\u0372\u0373\x05F$\x02\u0373\u0393" +
+		"\x03\x02\x02\x02\u0374\u0375\x05F$\x02\u0375\u0376\x07\x17\x02\x02\u0376" +
+		"\u0377\x05F$\x02\u0377\u0393\x03\x02\x02\x02\u0378\u0379\x05F$\x02\u0379" +
+		"\u037A\x07\x18\x02\x02\u037A\u037B\x05F$\x02\u037B\u0393\x03\x02\x02\x02" +
+		"\u037C\u037D\x05F$\x02\u037D\u037E\x07\x19\x02\x02\u037E\u037F\x05F$\x02" +
+		"\u037F\u0393\x03\x02\x02\x02\u0380\u0381\x05F$\x02\u0381\u0382\x07\x1A" +
+		"\x02\x02\u0382\u0383\x05F$\x02\u0383\u0393\x03\x02\x02\x02\u0384\u0385" +
+		"\x05F$\x02\u0385\u0386\x07\t\x02\x02\u0386\u0387\x05F$\x02\u0387\u0393" +
+		"\x03\x02\x02\x02\u0388\u0389\x05F$\x02\u0389\u038A\x07p\x02\x02\u038A" +
+		"\u0393\x03\x02\x02\x02\u038B\u038C\x05F$\x02\u038C\u038D\x07j\x02\x02" +
+		"\u038D\u0393\x03\x02\x02\x02\u038E\u038F\x05F$\x02\u038F\u0390\x07\x1B" +
+		"\x02\x02\u0390\u0391\x05D#\x02\u0391\u0393\x03\x02\x02\x02\u0392\u0357" +
+		"\x03\x02\x02\x02\u0392\u0358\x03\x02\x02\x02\u0392\u035C\x03\x02\x02\x02" +
+		"\u0392\u0360\x03\x02\x02\x02\u0392\u0364\x03\x02\x02\x02\u0392\u0368\x03" +
+		"\x02\x02\x02\u0392\u036C\x03\x02\x02\x02\u0392\u0370\x03\x02\x02\x02\u0392" +
+		"\u0374\x03\x02\x02\x02\u0392\u0378\x03\x02\x02\x02\u0392\u037C\x03\x02" +
+		"\x02\x02\u0392\u0380\x03\x02\x02\x02\u0392\u0384\x03\x02\x02\x02\u0392" +
+		"\u0388\x03\x02\x02\x02\u0392\u038B\x03\x02\x02\x02\u0392\u038E\x03\x02" +
+		"\x02\x02\u0393C\x03\x02\x02\x02\u0394\u0395\b#\x01\x02\u0395\u039C\x07" +
+		"D\x02\x02\u0396\u039C\x05F$\x02\u0397\u0398\x07\n\x02\x02\u0398\u0399" +
+		"\x05D#\x02\u0399\u039A\x07\v\x02\x02\u039A\u039C\x03\x02\x02\x02\u039B" +
+		"\u0394\x03\x02\x02\x02\u039B\u0396\x03\x02\x02\x02\u039B\u0397\x03\x02" +
+		"\x02\x02\u039C\u03A8\x03\x02\x02\x02\u039D\u039E\f\b\x02\x02\u039E\u039F" +
+		"\t\n\x02\x02\u039F\u03A7\x05D#\t\u03A0\u03A1\f\x07\x02\x02\u03A1\u03A2" +
+		"\t\v\x02\x02\u03A2\u03A7\x05D#\b\u03A3\u03A4\f\x06\x02\x02\u03A4\u03A5" +
+		"\t\f\x02\x02\u03A5\u03A7\x05D#\x07\u03A6\u039D\x03\x02\x02\x02\u03A6\u03A0" +
+		"\x03\x02\x02\x02\u03A6\u03A3\x03\x02\x02\x02\u03A7\u03AA\x03\x02\x02\x02" +
+		"\u03A8\u03A6\x03\x02\x02\x02\u03A8\u03A9\x03\x02\x02\x02\u03A9E\x03\x02" +
+		"\x02\x02\u03AA\u03A8\x03\x02\x02\x02\u03AB\u03AC\x05\u0106\x84\x02\u03AC" +
+		"\u03AD\x05\xDAn\x02\u03AD\u03B3\x03\x02\x02\x02\u03AE\u03AF\x05\xDAn\x02" +
+		"\u03AF\u03B0\x07 \x02\x02\u03B0\u03B1\x05\u0106\x84\x02\u03B1\u03B3\x03" +
+		"\x02\x02\x02\u03B2\u03AB\x03\x02\x02\x02\u03B2\u03AE\x03\x02\x02\x02\u03B3" +
+		"G\x03\x02\x02\x02\u03B4\u03B5\x07f\x02\x02\u03B5\u03B9\x07\x07\x02\x02" +
+		"\u03B6\u03B8\x05J&\x02\u03B7\u03B6\x03\x02\x02\x02\u03B8\u03BB\x03\x02" +
+		"\x02\x02\u03B9\u03B7\x03\x02\x02\x02\u03B9\u03BA\x03\x02\x02\x02\u03BA" +
+		"\u03BC\x03\x02\x02\x02\u03BB\u03B9\x03\x02\x02\x02\u03BC\u03BD\x07\b\x02" +
+		"\x02\u03BDI\x03\x02\x02\x02\u03BE\u03C4\x05B\"\x02\u03BF\u03C1\x05\xDA" +
+		"n\x02\u03C0\u03BF\x03\x02\x02\x02\u03C0\u03C1\x03\x02\x02\x02\u03C1\u03C2" +
+		"\x03\x02\x02\x02\u03C2\u03C4\x07k\x02\x02\u03C3\u03BE\x03\x02\x02\x02" +
+		"\u03C3\u03C0\x03\x02\x02\x02\u03C4K\x03\x02\x02\x02\u03C5\u03CA\x07f\x02" +
+		"\x02\u03C6\u03C7\x07\n\x02\x02\u03C7\u03C8\x05\u0104\x83\x02\u03C8\u03C9" +
+		"\x07\v\x02\x02\u03C9\u03CB\x03\x02\x02\x02\u03CA\u03C6\x03\x02\x02\x02" +
+		"\u03CA\u03CB\x03\x02\x02\x02\u03CB\u03CC\x03\x02\x02\x02\u03CC\u03CD\x05" +
+		"\u0102\x82\x02\u03CD\u03D9\x05\xA6T\x02\u03CE\u03D5\x07\x07\x02\x02\u03CF" +
+		"\u03D1\x07!\x02\x02\u03D0\u03CF\x03\x02\x02\x02\u03D0\u03D1\x03\x02\x02" +
+		"\x02\u03D1\u03D2\x03\x02\x02\x02\u03D2\u03D4\x05N(\x02\u03D3\u03D0\x03" +
+		"\x02\x02\x02\u03D4\u03D7\x03\x02\x02\x02\u03D5\u03D3\x03\x02\x02\x02\u03D5" +
+		"\u03D6\x03\x02\x02\x02\u03D6\u03D8\x03\x02\x02\x02\u03D7\u03D5\x03\x02" +
+		"\x02\x02\u03D8\u03DA\x07\b\x02\x02\u03D9\u03CE\x03\x02\x02\x02\u03D9\u03DA" +
+		"\x03\x02\x02\x02\u03DA\u0406\x03\x02\x02\x02\u03DB\u03DC\x07f\x02\x02" +
+		"\u03DC\u03DD\x07\n\x02\x02\u03DD\u03DE\x05\u0104\x83\x02\u03DE\u03DF\x07" +
+		"\v\x02\x02\u03DF\u03E0\x05\u0102\x82\x02\u03E0\u0406\x03\x02\x02\x02\u03E1" +
+		"\u03E6\x07f\x02\x02\u03E2\u03E3\x07\n\x02\x02\u03E3\u03E4\x05\u0104\x83" +
+		"\x02\u03E4\u03E5\x07\v\x02\x02\u03E5\u03E7\x03\x02\x02\x02\u03E6\u03E2" +
+		"\x03\x02\x02\x02\u03E6\u03E7\x03\x02\x02\x02\u03E7\u03E8\x03\x02\x02\x02" +
+		"\u03E8\u03E9\x05\u0102\x82\x02\u03E9\u03F5\x07u\x02\x02\u03EA\u03F1\x07" +
+		"\x07\x02\x02\u03EB\u03ED\x07!\x02\x02\u03EC\u03EB\x03\x02\x02\x02\u03EC" +
+		"\u03ED\x03\x02\x02\x02\u03ED\u03EE\x03\x02\x02\x02\u03EE\u03F0\x05N(\x02" +
+		"\u03EF\u03EC\x03\x02\x02\x02\u03F0\u03F3\x03\x02\x02\x02\u03F1\u03EF\x03" +
+		"\x02\x02\x02\u03F1\u03F2\x03\x02\x02\x02\u03F2\u03F4\x03\x02\x02\x02\u03F3" +
+		"\u03F1\x03\x02\x02\x02\u03F4\u03F6\x07\b\x02\x02\u03F5\u03EA\x03\x02\x02" +
+		"\x02\u03F5\u03F6\x03\x02\x02\x02\u03F6\u0406\x03\x02\x02\x02\u03F7\u03F8" +
+		"\x07f\x02\x02\u03F8\u03F9\x05\u0102\x82\x02\u03F9\u0400\x07\x07\x02\x02" +
+		"\u03FA\u03FC\x07!\x02\x02\u03FB\u03FA\x03\x02\x02\x02\u03FB\u03FC\x03" +
+		"\x02\x02\x02\u03FC\u03FD\x03\x02\x02\x02\u03FD\u03FF\x05N(\x02\u03FE\u03FB" +
+		"\x03\x02\x02\x02\u03FF\u0402\x03\x02\x02\x02\u0400\u03FE\x03\x02\x02\x02" +
+		"\u0400\u0401\x03\x02\x02\x02\u0401\u0403\x03\x02\x02\x02\u0402\u0400\x03" +
+		"\x02\x02\x02\u0403\u0404\x07\b\x02\x02\u0404\u0406\x03\x02\x02\x02\u0405" +
+		"\u03C5\x03\x02\x02\x02\u0405\u03DB\x03\x02\x02\x02\u0405\u03E1\x03\x02" +
+		"\x02\x02\u0405\u03F7\x03\x02\x02\x02\u0406M\x03\x02\x02\x02\u0407\u040F" +
+		"\x07r\x02\x02\u0408\u0409\x07g\x02\x02\u0409\u040F\x05\xA6T\x02\u040A" +
+		"\u040B\x07h\x02\x02\u040B\u040F\t\r\x02\x02\u040C\u040D\x07i\x02\x02\u040D" +
+		"\u040F\x05\u0102\x82\x02\u040E\u0407\x03\x02\x02\x02\u040E\u0408\x03\x02" +
+		"\x02\x02\u040E\u040A\x03\x02\x02\x02\u040E\u040C\x03\x02\x02\x02\u040F" +
+		"O\x03\x02\x02\x02\u0410\u0411\x07x\x02\x02\u0411\u0412\x05\xE4s\x02\u0412" +
+		"\u041E\x05\xA6T\x02\u0413\u041A\x07\x07\x02\x02\u0414\u0416\x07!\x02\x02" +
+		"\u0415\u0414\x03\x02\x02\x02\u0415\u0416\x03\x02\x02\x02\u0416\u0417\x03" +
+		"\x02\x02\x02\u0417\u0419\x05R*\x02\u0418\u0415\x03\x02\x02\x02\u0419\u041C" +
+		"\x03\x02\x02\x02\u041A\u0418\x03\x02\x02\x02\u041A\u041B\x03\x02\x02\x02" +
+		"\u041B\u041D\x03\x02\x02\x02\u041C\u041A\x03\x02\x02\x02\u041D\u041F\x07" +
+		"\b\x02\x02\u041E\u0413\x03\x02\x02\x02\u041E\u041F\x03\x02\x02\x02\u041F" +
+		"\u042F\x03\x02\x02\x02\u0420\u0421\x07x\x02\x02\u0421\u0422\x05\xE4s\x02" +
+		"\u0422\u0429\x07\x07\x02\x02\u0423\u0425\x07!\x02\x02\u0424\u0423\x03" +
+		"\x02\x02\x02\u0424\u0425\x03\x02\x02\x02\u0425\u0426\x03\x02\x02\x02\u0426" +
+		"\u0428\x05R*\x02\u0427\u0424\x03\x02\x02\x02\u0428\u042B\x03\x02\x02\x02" +
+		"\u0429\u0427\x03\x02\x02\x02\u0429\u042A\x03\x02\x02\x02\u042A\u042C\x03" +
+		"\x02\x02\x02\u042B\u0429\x03\x02\x02\x02\u042C\u042D\x07\b\x02\x02\u042D" +
+		"\u042F\x03\x02\x02\x02\u042E\u0410\x03\x02\x02\x02\u042E\u0420\x03\x02" +
+		"\x02\x02\u042FQ\x03\x02\x02\x02\u0430\u0432\x07\x9B\x02\x02\u0431\u0430" +
+		"\x03\x02\x02\x02\u0431\u0432\x03\x02\x02\x02\u0432\u0433\x03\x02\x02\x02" +
+		"\u0433\u045E\t\x0E\x02\x02\u0434\u045E\x07r\x02\x02\u0435\u0437\x07\x89" +
+		"\x02\x02\u0436\u0435\x03\x02\x02\x02\u0436\u0437\x03\x02\x02\x02\u0437" +
+		"\u0438\x03\x02\x02\x02\u0438\u0439\x07\x81\x02\x02\u0439\u045E\t\x0F\x02" +
+		"\x02\u043A\u043C\x07\x89\x02\x02\u043B\u043A\x03\x02\x02\x02\u043B\u043C" +
+		"\x03\x02\x02\x02\u043C\u043D\x03\x02\x02\x02\u043D\u043E\x07_\x02\x02" +
+		"\u043E\u045E\x07C\x02\x02\u043F\u0441\x07\x89\x02\x02\u0440\u043F\x03" +
+		"\x02\x02\x02\u0440\u0441\x03\x02\x02\x02\u0441\u0442\x03\x02\x02\x02\u0442" +
+		"\u0443\x07\x82\x02\x02\u0443\u045E\x05\xA6T\x02\u0444\u0446\x07\x89\x02" +
+		"\x02\u0445\u0444\x03\x02\x02\x02\u0445\u0446\x03\x02\x02\x02\u0446\u0447" +
+		"\x03\x02\x02\x02\u0447\u0448\x07w\x02\x02\u0448\u045E\x05\xDAn\x02\u0449" +
+		"\u044B\x07\x89\x02\x02\u044A\u0449\x03\x02\x02\x02\u044A\u044B\x03\x02" +
+		"\x02\x02\u044B\u044C\x03\x02\x02\x02\u044C\u044D\x07w\x02\x02\u044D\u045E" +
+		"\x07u\x02\x02\u044E\u0450\x07\x89\x02\x02\u044F\u044E\x03\x02\x02\x02" +
+		"\u044F\u0450\x03\x02\x02\x02\u0450\u0451\x03\x02\x02\x02\u0451\u0452\x07" +
+		"\x83\x02\x02\u0452\u045E\t\x10\x02\x02\u0453\u0455\x07\x89\x02\x02\u0454" +
+		"\u0453\x03\x02\x02\x02\u0454\u0455\x03\x02\x02\x02\u0455\u0456\x03\x02" +
+		"\x02\x02\u0456\u0457\x07^\x02\x02\u0457\u045E\x07C\x02\x02\u0458\u045A" +
+		"\x07\x89\x02\x02\u0459\u0458\x03\x02\x02\x02\u0459\u045A\x03\x02\x02\x02" +
+		"\u045A\u045B\x03\x02\x02\x02\u045B\u045C\x07y\x02\x02\u045C\u045E\x05" +
+		"\xCAf\x02\u045D\u0431\x03\x02\x02\x02\u045D\u0434\x03\x02\x02\x02\u045D" +
+		"\u0436\x03\x02\x02\x02\u045D\u043B\x03\x02\x02\x02\u045D\u0440\x03\x02" +
+		"\x02\x02\u045D\u0445\x03\x02\x02\x02\u045D\u044A\x03\x02\x02\x02\u045D" +
+		"\u044F\x03\x02\x02\x02\u045D\u0454\x03\x02\x02\x02\u045D\u0459\x03\x02" +
+		"\x02\x02\u045ES\x03\x02\x02\x02\u045F\u0460\x07x\x02\x02\u0460\u0462\x05" +
+		"\xE4s\x02\u0461\u0463\t\x0E\x02\x02\u0462\u0461\x03\x02\x02\x02\u0462" +
+		"\u0463\x03\x02\x02\x02\u0463\u0473\x03\x02\x02\x02\u0464\u0465\x07x\x02" +
+		"\x02\u0465\u0467\x05\xE4s\x02\u0466\u0468\x07^\x02\x02\u0467\u0466\x03" +
+		"\x02\x02\x02\u0467\u0468\x03\x02\x02\x02\u0468\u0469\x03\x02\x02\x02\u0469" +
+		"\u046A\x07\t\x02\x02\u046A\u046B\x07C\x02\x02\u046B\u0473\x03\x02\x02" +
+		"\x02\u046C\u046D\x07x\x02\x02\u046D\u046E\x05\xE4s\x02\u046E\u046F\x07" +
+		"_\x02\x02\u046F\u0470\x07\t\x02\x02\u0470\u0471\x07C\x02\x02\u0471\u0473" +
+		"\x03\x02\x02\x02\u0472\u045F\x03\x02\x02\x02\u0472\u0464\x03\x02\x02\x02" +
+		"\u0472\u046C\x03\x02\x02\x02\u0473U\x03\x02\x02\x02\u0474\u0475\x07\x8A" +
+		"\x02\x02\u0475\u0479\x07\x07\x02\x02\u0476\u0478\x05X-\x02\u0477\u0476" +
+		"\x03\x02\x02\x02\u0478\u047B\x03\x02\x02\x02\u0479\u0477\x03\x02\x02\x02" +
+		"\u0479\u047A\x03\x02\x02\x02\u047A\u047C\x03\x02\x02\x02\u047B\u0479\x03" +
+		"\x02\x02\x02\u047C\u048C\x07\b\x02\x02\u047D\u047E\x07\x8A\x02\x02\u047E" +
+		"\u047F\x05\xDAn\x02\u047F\u0486\x07\x07\x02\x02\u0480\u0482\x07!\x02\x02" +
+		"\u0481\u0480\x03\x02\x02\x02\u0481\u0482\x03\x02\x02\x02\u0482\u0483\x03" +
+		"\x02\x02\x02\u0483\u0485\x05Z.\x02\u0484\u0481\x03\x02\x02\x02\u0485\u0488" +
+		"\x03\x02\x02\x02\u0486\u0484\x03\x02\x02\x02\u0486\u0487\x03\x02\x02\x02" +
+		"\u0487\u0489\x03\x02\x02\x02\u0488\u0486\x03\x02\x02\x02\u0489\u048A\x07" +
+		"\b\x02\x02\u048A\u048C\x03\x02\x02\x02\u048B\u0474\x03\x02\x02\x02\u048B" +
+		"\u047D\x03\x02\x02\x02\u048CW\x03\x02\x02\x02\u048D\u048E\x05\xDAn\x02" +
+		"\u048E\u048F\x07!\x02\x02\u048F\u0490\x05\\/\x02\u0490\u049F\x03\x02\x02" +
+		"\x02\u0491\u0492\x05\xDAn\x02\u0492\u0499\x07\x07\x02\x02\u0493\u0495" +
+		"\x07!\x02\x02\u0494\u0493\x03\x02\x02\x02\u0494\u0495\x03\x02\x02\x02" +
+		"\u0495\u0496\x03\x02\x02\x02\u0496\u0498\x05Z.\x02\u0497\u0494\x03\x02" +
+		"\x02\x02\u0498\u049B\x03\x02\x02\x02\u0499\u0497\x03\x02\x02\x02\u0499" +
+		"\u049A\x03\x02\x02\x02\u049A\u049C\x03\x02\x02\x02\u049B\u0499\x03\x02" +
+		"\x02\x02\u049C\u049D\x07\b\x02\x02\u049D\u049F\x03\x02\x02\x02\u049E\u048D" +
+		"\x03\x02\x02\x02\u049E\u0491\x03\x02\x02\x02\u049FY\x03\x02\x02\x02\u04A0" +
+		"\u04A1\t\x11\x02\x02\u04A1\u04A9\x05\xA6T\x02\u04A2\u04A9\x07\x92\x02" +
+		"\x02\u04A3\u04A9\x07p\x02\x02\u04A4\u04A5\x07\x8D\x02\x02\u04A5\u04A6" +
+		"\x07C\x02\x02\u04A6\u04A7\x07C\x02\x02\u04A7\u04A9\x07C\x02\x02\u04A8" +
+		"\u04A0\x03\x02\x02\x02\u04A8\u04A2\x03\x02\x02\x02\u04A8\u04A3\x03\x02" +
+		"\x02\x02\u04A8\u04A4\x03\x02\x02\x02\u04A9[\x03\x02\x02\x02\u04AA\u04AB" +
+		"\t\x11\x02\x02\u04AB\u04B9\x05\xA6T\x02\u04AC\u04AD\x07\x8A\x02\x02\u04AD" +
+		"\u04AE\x07!\x02\x02\u04AE\u04B9\x07\x92\x02\x02\u04AF\u04B0\x07\x8A\x02" +
+		"\x02\u04B0\u04B1\x07!\x02\x02\u04B1\u04B9\x07p\x02\x02\u04B2\u04B3\x07" +
+		"\x8A\x02\x02\u04B3\u04B4\x07!\x02\x02\u04B4\u04B5\x07\x8D\x02\x02\u04B5" +
+		"\u04B6\x07C\x02\x02\u04B6\u04B7\x07C\x02\x02\u04B7\u04B9\x07C\x02\x02" +
+		"\u04B8\u04AA\x03\x02\x02\x02\u04B8\u04AC\x03\x02\x02\x02\u04B8\u04AF\x03" +
+		"\x02\x02\x02\u04B8\u04B2\x03\x02\x02\x02\u04B9]\x03\x02\x02\x02\u04BA" +
+		"\u04BB\x07i\x02\x02\u04BB\u04BF\x07\x07\x02\x02\u04BC\u04BE\x05`1\x02" +
+		"\u04BD\u04BC\x03\x02\x02\x02\u04BE\u04C1\x03\x02\x02\x02\u04BF\u04BD\x03" +
+		"\x02\x02\x02\u04BF\u04C0\x03\x02\x02\x02\u04C0\u04C2\x03\x02\x02\x02\u04C1" +
+		"\u04BF\x03\x02\x02\x02\u04C2\u04D2\x07\b\x02\x02\u04C3\u04C4\x07i\x02" +
+		"\x02\u04C4\u04C5\x05\xDAn\x02\u04C5\u04CC\x07\x07\x02\x02\u04C6\u04C8" +
+		"\x07!\x02\x02\u04C7\u04C6\x03\x02\x02\x02\u04C7\u04C8\x03\x02\x02\x02" +
+		"\u04C8\u04C9\x03\x02\x02\x02\u04C9\u04CB\x05b2\x02\u04CA\u04C7\x03\x02" +
+		"\x02\x02\u04CB\u04CE\x03\x02\x02\x02\u04CC\u04CA\x03\x02\x02\x02\u04CC" +
+		"\u04CD\x03\x02\x02\x02\u04CD\u04CF\x03\x02\x02\x02\u04CE\u04CC\x03\x02" +
+		"\x02\x02\u04CF\u04D0\x07\b\x02\x02\u04D0\u04D2\x03\x02\x02\x02\u04D1\u04BA" +
+		"\x03\x02\x02\x02\u04D1\u04C3\x03\x02\x02\x02\u04D2_\x03\x02\x02\x02\u04D3" +
+		"\u04E7\x05L\'\x02\u04D4\u04E7\x05P)\x02\u04D5\u04D6\x05\xDAn\x02\u04D6" +
+		"\u04D7\x07!\x02\x02\u04D7\u04D8\x05b2\x02\u04D8\u04E7\x03\x02\x02\x02" +
+		"\u04D9\u04DA\x05\xDAn\x02\u04DA\u04E1\x07\x07\x02\x02\u04DB\u04DD\x07" +
+		"!\x02\x02\u04DC\u04DB\x03\x02\x02\x02\u04DC\u04DD\x03\x02\x02\x02\u04DD" +
+		"\u04DE\x03\x02\x02\x02\u04DE\u04E0\x05b2\x02\u04DF\u04DC\x03\x02\x02\x02" +
+		"\u04E0\u04E3\x03\x02\x02\x02\u04E1\u04DF\x03\x02\x02\x02\u04E1\u04E2\x03" +
+		"\x02\x02\x02\u04E2\u04E4\x03\x02\x02\x02\u04E3\u04E1\x03\x02\x02\x02\u04E4" +
+		"\u04E5\x07\b\x02\x02\u04E5\u04E7\x03\x02\x02\x02\u04E6\u04D3\x03\x02\x02" +
+		"\x02\u04E6\u04D4\x03\x02\x02\x02\u04E6\u04D5\x03\x02\x02\x02\u04E6\u04D9" +
+		"\x03\x02\x02\x02\u04E7a\x03\x02\x02\x02\u04E8\u04F9\x05\\/\x02\u04E9\u04EA" +
+		"\x07\x8A\x02\x02\u04EA\u04EE\x07\x07\x02\x02\u04EB\u04ED\x05Z.\x02\u04EC" +
+		"\u04EB\x03\x02\x02\x02\u04ED\u04F0\x03\x02\x02\x02\u04EE\u04EC\x03\x02" +
+		"\x02\x02\u04EE\u04EF\x03\x02\x02\x02\u04EF\u04F1\x03\x02\x02\x02\u04F0" +
+		"\u04EE\x03\x02\x02\x02\u04F1\u04F9\x07\b\x02\x02\u04F2\u04F3\x07\x8E\x02" +
+		"\x02\u04F3\u04F9\x05\xA6T\x02\u04F4\u04F5\x07x\x02\x02\u04F5\u04F6\x05" +
+		"\xE4s\x02\u04F6\u04F7\x05\xA6T\x02\u04F7\u04F9\x03\x02\x02\x02\u04F8\u04E8" +
+		"\x03\x02\x02\x02\u04F8\u04E9\x03\x02\x02\x02\u04F8\u04F2\x03\x02\x02\x02" +
+		"\u04F8\u04F4\x03\x02\x02\x02\u04F9c\x03\x02\x02\x02\u04FA\u04FB\x07\x8F" +
+		"\x02\x02\u04FB\u04FF\x07\x07\x02\x02\u04FC\u04FE\x05r:\x02\u04FD\u04FC" +
+		"\x03\x02\x02\x02\u04FE\u0501\x03\x02\x02\x02\u04FF\u04FD\x03\x02\x02\x02" +
+		"\u04FF\u0500\x03\x02\x02\x02\u0500\u0502\x03\x02\x02\x02\u0501\u04FF\x03" +
+		"\x02\x02\x02\u0502\u050F\x07\b\x02\x02\u0503\u0504\x07\x8F\x02\x02\u0504" +
+		"\u0505\x05\xDAn\x02\u0505\u0509\x07\x07\x02\x02\u0506\u0508\x05t;\x02" +
+		"\u0507\u0506\x03\x02\x02\x02\u0508\u050B\x03\x02\x02\x02\u0509\u0507\x03" +
+		"\x02\x02\x02\u0509\u050A\x03\x02\x02\x02\u050A\u050C\x03\x02\x02\x02\u050B" +
+		"\u0509\x03\x02\x02\x02\u050C\u050D\x07\b\x02\x02\u050D\u050F\x03\x02\x02" +
+		"\x02\u050E\u04FA\x03\x02\x02\x02\u050E\u0503\x03\x02\x02\x02\u050Fe\x03" +
+		"\x02\x02\x02\u0510\u0511\x07\x90\x02\x02\u0511\u0515\x07\x07\x02\x02\u0512" +
+		"\u0514\x05h5\x02\u0513\u0512\x03\x02\x02\x02\u0514\u0517\x03\x02\x02\x02" +
+		"\u0515\u0513\x03\x02\x02\x02\u0515\u0516\x03\x02\x02\x02\u0516\u0518\x03" +
+		"\x02\x02\x02\u0517\u0515\x03\x02\x02\x02\u0518\u0525\x07\b\x02\x02\u0519" +
+		"\u051A\x07\x90\x02\x02\u051A\u051B\x05\xDAn\x02\u051B\u051F\x07\x07\x02" +
+		"\x02\u051C\u051E\x05j6\x02\u051D\u051C\x03\x02\x02\x02\u051E\u0521\x03" +
+		"\x02\x02\x02\u051F\u051D\x03\x02\x02\x02\u051F\u0520\x03\x02\x02\x02\u0520" +
+		"\u0522\x03\x02\x02\x02\u0521\u051F\x03\x02\x02\x02\u0522\u0523\x07\b\x02" +
+		"\x02\u0523\u0525\x03\x02\x02\x02\u0524\u0510\x03\x02\x02\x02\u0524\u0519" +
+		"\x03\x02\x02\x02\u0525g\x03\x02\x02\x02\u0526\u0527\x05\xCEh\x02\u0527" +
+		"\u0528\x07\x13\x02\x02\u0528\u0529\x05p9\x02\u0529\u0544\x03\x02\x02\x02" +
+		"\u052A\u052B\x05\xCEh\x02\u052B\u052C\x07\t\x02\x02\u052C\u052D\x05p9" +
+		"\x02\u052D\u0544\x03\x02\x02\x02\u052E\u052F\x05\xCEh\x02\u052F\u0530" +
+		"\x07\x10\x02\x02\u0530\u0531\x05n8\x02\u0531\u0544\x03\x02\x02\x02\u0532" +
+		"\u0533\x05\xDAn\x02\u0533\u0534\x05l7\x02\u0534\u0544\x03\x02\x02\x02" +
+		"\u0535\u0536\x05\xDAn\x02\u0536\u0537\x07\x10\x02\x02\u0537\u0538\x05" +
+		"n8\x02\u0538\u0544\x03\x02\x02\x02\u0539\u053A\x05\xDAn\x02\u053A\u053E" +
+		"\x07\x07\x02\x02\u053B\u053D\x05j6\x02\u053C\u053B\x03\x02\x02\x02\u053D" +
+		"\u0540\x03\x02\x02\x02\u053E\u053C\x03\x02\x02\x02\u053E\u053F\x03\x02" +
+		"\x02\x02\u053F\u0541\x03\x02\x02\x02\u0540\u053E\x03\x02\x02\x02\u0541" +
+		"\u0542\x07\b\x02\x02\u0542\u0544\x03\x02\x02\x02\u0543\u0526\x03\x02\x02" +
+		"\x02\u0543\u052A\x03\x02\x02\x02\u0543\u052E\x03\x02\x02\x02\u0543\u0532" +
+		"\x03\x02\x02\x02\u0543\u0535\x03\x02\x02\x02\u0543\u0539\x03\x02\x02\x02" +
+		"\u0544i\x03\x02\x02\x02\u0545\u0548\x05l7\x02\u0546\u0548\x05n8\x02\u0547" +
+		"\u0545\x03\x02\x02\x02\u0547\u0546\x03\x02\x02\x02\u0548k\x03\x02\x02" +
+		"\x02\u0549\u054A\t\x12\x02\x02\u054A\u054B\x05p9\x02\u054Bm\x03\x02\x02" +
+		"\x02\u054C\u054D\x05\u010C\x87\x02\u054D\u054E\x07\t\x02\x02\u054E\u0550" +
+		"\x05p9\x02\u054F\u0551\x07\x0E\x02\x02\u0550\u054F\x03\x02\x02\x02\u0550" +
+		"\u0551\x03\x02\x02\x02\u0551\u0553\x03\x02\x02\x02\u0552\u0554\x07D\x02" +
+		"\x02\u0553\u0552\x03\x02\x02\x02\u0553\u0554\x03\x02\x02\x02\u0554o\x03" +
+		"\x02\x02\x02\u0555\u0556\x07\x93\x02\x02\u0556\u0557\x05\xF0y\x02\u0557" +
+		"\u0559\x05\xCEh\x02\u0558\u055A\t\x13\x02\x02\u0559\u0558\x03\x02\x02" +
+		"\x02\u0559\u055A\x03\x02\x02\x02\u055A\u0576\x03\x02\x02\x02\u055B\u055C" +
+		"\x07\x93\x02\x02\u055C\u055D\x05\xF0y\x02\u055D\u055E\x05\xCEh\x02\u055E" +
+		"\u055F\x05\xECw\x02\u055F\u0576\x03\x02\x02\x02\u0560\u0562\x07\x90\x02" +
+		"\x02\u0561\u0560\x03\x02\x02\x02\u0561\u0562\x03\x02\x02\x02\u0562\u0563" +
+		"\x03\x02\x02\x02\u0563\u0576\x05\xF0y\x02\u0564\u0566\x07\x94\x02\x02" +
+		"\u0565\u0564\x03\x02\x02\x02\u0565\u0566\x03\x02\x02\x02\u0566\u0567\x03" +
+		"\x02\x02\x02\u0567\u0576\x05\xDAn\x02\u0568\u056A\x07\x95\x02\x02\u0569" +
+		"\u0568\x03\x02\x02\x02\u0569\u056A\x03\x02\x02\x02\u056A\u056B\x03\x02" +
+		"\x02\x02\u056B\u056D\x05\xCEh\x02\u056C\u056E\t\x13\x02\x02\u056D\u056C" +
+		"\x03\x02\x02\x02\u056D\u056E\x03\x02\x02\x02\u056E\u0576\x03\x02\x02\x02" +
+		"\u056F\u0571\x07\x95\x02\x02\u0570\u056F\x03\x02\x02\x02\u0570\u0571\x03" +
+		"\x02\x02\x02\u0571\u0572\x03\x02\x02\x02\u0572\u0573\x05\xCEh\x02\u0573" +
+		"\u0574\x05\xECw\x02\u0574\u0576\x03\x02\x02\x02\u0575\u0555\x03\x02\x02" +
+		"\x02\u0575\u055B\x03\x02\x02\x02\u0575\u0561\x03\x02\x02\x02\u0575\u0565" +
+		"\x03\x02\x02\x02\u0575\u0569\x03\x02\x02\x02\u0575\u0570\x03\x02\x02\x02" +
+		"\u0576q\x03\x02\x02\x02\u0577\u0578\x05\xDAn\x02\u0578\u0579\x05x=\x02" +
+		"\u0579\u058E\x03\x02\x02\x02\u057A\u057B\x05\xDAn\x02\u057B\u057C\x07" +
+		"\x10\x02\x02\u057C\u057D\x05v<\x02\u057D\u058E\x03\x02\x02\x02\u057E\u057F" +
+		"\x05\xCEh\x02\u057F\u0580\x07\x10\x02\x02\u0580\u0581\x05v<\x02\u0581" +
+		"\u058E\x03\x02\x02\x02\u0582\u058E\x05h5\x02\u0583\u0584\x05\xDAn\x02" +
+		"\u0584\u0588\x07\x07\x02\x02\u0585\u0587\x05t;\x02\u0586\u0585\x03\x02" +
+		"\x02\x02\u0587\u058A\x03\x02\x02\x02\u0588\u0586\x03\x02\x02\x02\u0588" +
+		"\u0589\x03\x02\x02\x02\u0589\u058B\x03\x02\x02\x02\u058A\u0588\x03\x02" +
+		"\x02\x02\u058B\u058C\x07\b\x02\x02\u058C\u058E\x03\x02\x02\x02\u058D\u0577" +
+		"\x03\x02\x02\x02\u058D\u057A\x03\x02\x02\x02\u058D\u057E\x03\x02\x02\x02" +
+		"\u058D\u0582\x03\x02\x02\x02\u058D\u0583\x03\x02\x02\x02\u058Es\x03\x02" +
+		"\x02\x02\u058F\u0593\x05x=\x02\u0590\u0593\x05v<\x02\u0591\u0593\x05j" +
+		"6\x02\u0592\u058F\x03\x02\x02\x02\u0592\u0590\x03\x02\x02\x02\u0592\u0591" +
+		"\x03\x02\x02\x02\u0593u\x03\x02\x02\x02\u0594\u0595\x05\u010C\x87\x02" +
+		"\u0595\u0596\x07\t\x02\x02\u0596\u0598\x05\xECw\x02\u0597\u0599\x07D\x02" +
+		"\x02\u0598\u0597\x03\x02\x02\x02\u0598\u0599\x03\x02\x02\x02\u0599\u05AF" +
+		"\x03\x02\x02\x02\u059A\u059B\x05\u010C\x87\x02\u059B\u059C\x07\t\x02\x02" +
+		"\u059C";
 	private static readonly _serializedATNSegment3: string =
-		"\x02\x02\u05A2\u0588\x03\x02\x02\x02\u05A2\u058E\x03\x02\x02\x02\u05A2" +
-		"\u0596\x03\x02\x02\x02\u05A2\u059E\x03\x02\x02\x02\u05A3w\x03\x02\x02" +
-		"\x02\u05A4\u05A5\t\x12\x02\x02\u05A5\u05A7\x05\xECw\x02\u05A6\u05A8\x07" +
-		"C\x02\x02\u05A7\u05A6\x03\x02\x02\x02\u05A7\u05A8\x03\x02\x02\x02\u05A8" +
-		"\u05AF\x03\x02\x02\x02\u05A9\u05AA\t\x14\x02\x02\u05AA\u05AC\x05\u010E" +
-		"\x88\x02\u05AB\u05AD\x07C\x02\x02\u05AC\u05AB\x03\x02\x02\x02\u05AC\u05AD" +
-		"\x03\x02\x02\x02\u05AD\u05AF\x03\x02\x02\x02\u05AE\u05A4\x03\x02\x02\x02" +
-		"\u05AE\u05A9\x03\x02\x02\x02\u05AFy\x03\x02\x02\x02\u05B0\u05B1\x07\x9B" +
-		"\x02\x02\u05B1\u05B5\x07\x07\x02\x02\u05B2\u05B4\x05|?\x02\u05B3\u05B2" +
-		"\x03\x02\x02\x02\u05B4\u05B7\x03\x02\x02\x02\u05B5\u05B3\x03\x02\x02\x02" +
-		"\u05B5\u05B6\x03\x02\x02\x02\u05B6\u05B8\x03\x02\x02\x02\u05B7\u05B5\x03" +
-		"\x02\x02\x02\u05B8\u05C5\x07\b\x02\x02\u05B9\u05BA\x07\x9B\x02\x02\u05BA" +
-		"\u05BB\x05\xDAn\x02\u05BB\u05BF\x07\x07\x02\x02\u05BC\u05BE\x05~@\x02" +
-		"\u05BD\u05BC\x03\x02\x02\x02\u05BE\u05C1\x03\x02\x02\x02\u05BF\u05BD\x03" +
-		"\x02\x02\x02\u05BF\u05C0\x03\x02\x02\x02\u05C0\u05C2\x03\x02\x02\x02\u05C1" +
-		"\u05BF\x03\x02\x02\x02\u05C2\u05C3\x07\b\x02\x02\u05C3\u05C5\x03\x02\x02" +
-		"\x02\u05C4\u05B0\x03\x02\x02\x02\u05C4\u05B9\x03\x02\x02\x02\u05C5{\x03" +
-		"\x02\x02\x02\u05C6\u05C7\x05\xDAn\x02\u05C7\u05C8\x07\x10\x02\x02\u05C8" +
-		"\u05C9\x05~@\x02\u05C9\u05D5\x03\x02\x02\x02\u05CA\u05CB\x05\xDAn\x02" +
-		"\u05CB\u05CF\x07\x07\x02\x02\u05CC\u05CE\x05~@\x02\u05CD\u05CC\x03\x02" +
-		"\x02\x02\u05CE\u05D1\x03\x02\x02\x02\u05CF\u05CD\x03\x02\x02\x02\u05CF" +
-		"\u05D0\x03\x02\x02\x02\u05D0\u05D2\x03\x02\x02\x02\u05D1\u05CF\x03\x02" +
-		"\x02\x02\u05D2\u05D3\x07\b\x02\x02\u05D3\u05D5\x03\x02\x02\x02\u05D4\u05C6" +
-		"\x03\x02\x02\x02\u05D4\u05CA\x03\x02\x02\x02\u05D5}\x03\x02\x02\x02\u05D6" +
-		"\u05D8\x05\xFE\x80\x02\u05D7\u05D9\x07Z\x02\x02\u05D8\u05D7\x03\x02\x02" +
-		"\x02\u05D8\u05D9\x03\x02\x02\x02\u05D9\u05DE\x03\x02\x02\x02\u05DA\u05DC" +
-		"\x07\x0E\x02\x02\u05DB\u05DA\x03\x02\x02\x02\u05DB\u05DC\x03\x02\x02\x02" +
-		"\u05DC\u05DD\x03\x02\x02\x02\u05DD\u05DF\x07C\x02\x02\u05DE\u05DB\x03" +
-		"\x02\x02\x02\u05DE\u05DF\x03\x02\x02\x02\u05DF\u0603\x03\x02\x02\x02\u05E0" +
-		"\u05E1\x05\xFE\x80\x02\u05E1\u05E6\x07\x9C\x02\x02\u05E2\u05E4\x07\x0E" +
-		"\x02\x02\u05E3\u05E2\x03\x02\x02\x02\u05E3\u05E4\x03\x02\x02\x02\u05E4" +
-		"\u05E5\x03\x02\x02\x02\u05E5\u05E7\x07C\x02\x02\u05E6\u05E3\x03\x02\x02" +
-		"\x02\u05E6\u05E7\x03\x02\x02\x02\u05E7\u0603\x03\x02\x02\x02\u05E8\u05E9" +
-		"\x05\xFE\x80\x02\u05E9\u05EA\x07\x9C\x02\x02\u05EA\u05EB\x07\t\x02\x02" +
-		"\u05EB\u05EC\x07C\x02\x02\u05EC\u0603\x03\x02\x02\x02\u05ED\u05EE\x05" +
-		"\xFE\x80\x02\u05EE\u05EF\x07\x13\x02\x02\u05EF\u05F0\x07B\x02\x02\u05F0" +
-		"\u05F1\x05\u0102\x82\x02\u05F1\u05F2\x07\n\x02\x02\u05F2\u05F3\t\x15\x02" +
-		"\x02\u05F3\u05F4\x07C\x02\x02\u05F4\u05F5\x07\v\x02\x02\u05F5\u0603\x03" +
-		"\x02\x02\x02\u05F6\u05F7\x05\xFE\x80\x02\u05F7\u05F8\x07\x14\x02\x02\u05F8" +
-		"\u05F9\x07B\x02\x02\u05F9\u0603\x03\x02\x02\x02\u05FA\u05FB\x05\xFE\x80" +
-		"\x02\u05FB\u0600\x07B\x02\x02\u05FC\u05FE\x07\x0E\x02\x02\u05FD\u05FC" +
-		"\x03\x02\x02\x02\u05FD\u05FE\x03\x02\x02\x02\u05FE\u05FF\x03\x02\x02\x02" +
-		"\u05FF\u0601\x07C\x02\x02\u0600\u05FD\x03\x02\x02\x02\u0600\u0601\x03" +
-		"\x02\x02\x02\u0601\u0603\x03\x02\x02\x02\u0602\u05D6\x03\x02\x02\x02\u0602" +
-		"\u05E0\x03\x02\x02\x02\u0602\u05E8\x03\x02\x02\x02\u0602\u05ED\x03\x02" +
-		"\x02\x02\u0602\u05F6\x03\x02\x02\x02\u0602\u05FA\x03\x02\x02\x02\u0603" +
-		"\x7F\x03\x02\x02\x02\u0604\u0605\x07_\x02\x02\u0605\u0606\x07\n\x02\x02" +
-		"\u0606\u0607\x07u\x02\x02\u0607\u0608\x07\v\x02\x02\u0608\u060F\x05\x82" +
-		"B\x02\u0609\u060B\x07\x05\x02\x02\u060A\u0609\x03\x02\x02\x02\u060A\u060B" +
-		"\x03\x02\x02\x02\u060B\u060C\x03\x02\x02\x02\u060C\u060E\x05\x82B\x02" +
-		"\u060D\u060A\x03\x02\x02\x02\u060E\u0611\x03\x02\x02\x02\u060F\u060D\x03" +
-		"\x02\x02\x02\u060F\u0610\x03\x02\x02\x02\u0610\u065C\x03\x02\x02\x02\u0611" +
-		"\u060F\x03\x02\x02\x02\u0612\u0613\x07_\x02\x02\u0613\u0614\x07\n\x02" +
-		"\x02\u0614\u0615\x05\xEEx\x02\u0615\u0616\x07\v\x02\x02\u0616\u0618\x05" +
-		"\xCEh\x02\u0617\u0619\x05\xA4S\x02\u0618\u0617\x03\x02\x02\x02\u0618\u0619" +
-		"\x03\x02\x02\x02\u0619\u0625\x03\x02\x02\x02\u061A\u0621\x07\x07\x02\x02" +
-		"\u061B\u061D\x07!\x02\x02\u061C\u061B\x03\x02\x02\x02\u061C\u061D\x03" +
-		"\x02\x02\x02\u061D\u061E\x03\x02\x02\x02\u061E\u0620\x05\x84C\x02\u061F" +
-		"\u061C\x03\x02\x02\x02\u0620\u0623\x03\x02\x02\x02\u0621\u061F\x03\x02" +
-		"\x02\x02\u0621\u0622\x03\x02\x02\x02\u0622\u0624\x03\x02\x02\x02\u0623" +
-		"\u0621\x03\x02\x02\x02\u0624\u0626\x07\b\x02\x02\u0625\u061A\x03\x02\x02" +
-		"\x02\u0625\u0626\x03\x02\x02\x02\u0626\u065C\x03\x02\x02\x02\u0627\u0628" +
-		"\x07_\x02\x02\u0628\u0629\x07\n\x02\x02\u0629\u062A\x05\xEEx\x02\u062A" +
-		"\u062C\x07\v\x02\x02\u062B\u062D\x05\xCEh\x02\u062C\u062B\x03\x02\x02" +
-		"\x02\u062C\u062D\x03\x02\x02\x02\u062D\u062E\x03\x02\x02\x02\u062E\u0630" +
-		"\x05\u0102\x82\x02\u062F\u0631\x05\xA4S\x02\u0630\u062F\x03\x02\x02\x02" +
-		"\u0630\u0631\x03\x02\x02\x02\u0631\u0632\x03\x02\x02\x02\u0632\u0639\x07" +
-		"\x07\x02\x02\u0633\u0635\x07!\x02\x02\u0634\u0633\x03\x02\x02\x02\u0634" +
-		"\u0635\x03\x02\x02\x02\u0635\u0636\x03\x02\x02\x02\u0636\u0638\x05\x84" +
-		"C\x02\u0637\u0634\x03\x02\x02\x02\u0638\u063B\x03\x02\x02\x02\u0639\u0637" +
-		"\x03\x02\x02\x02\u0639\u063A\x03\x02\x02\x02\u063A\u0640\x03\x02\x02\x02" +
-		"\u063B\u0639\x03\x02\x02\x02\u063C\u063D\x07!\x02\x02\u063D\u063F\x05" +
-		"\x8CG\x02\u063E\u063C\x03\x02\x02\x02\u063F\u0642\x03\x02\x02\x02\u0640" +
-		"\u063E\x03\x02\x02\x02\u0640\u0641\x03\x02\x02\x02\u0641\u0644\x03\x02" +
-		"\x02\x02\u0642\u0640\x03\x02\x02\x02\u0643\u0645\x07\b\x02\x02\u0644\u0643" +
-		"\x03\x02\x02\x02\u0644\u0645\x03\x02\x02\x02\u0645\u065C\x03\x02\x02\x02" +
-		"\u0646\u0647\x07_\x02\x02\u0647\u064B\x07\x07\x02\x02\u0648\u064A\x05" +
-		"\x8EH\x02\u0649\u0648\x03\x02\x02\x02\u064A\u064D\x03\x02\x02\x02\u064B" +
-		"\u0649\x03\x02\x02\x02\u064B\u064C\x03\x02\x02\x02\u064C\u064E\x03\x02" +
-		"\x02\x02\u064D\u064B\x03\x02\x02\x02\u064E\u065C\x07\b\x02\x02\u064F\u0650" +
-		"\x07_\x02\x02\u0650\u0651\x05\xDAn\x02\u0651\u0656\x07\x07\x02\x02\u0652" +
-		"\u0653\x07!\x02\x02\u0653\u0655\x05\x8CG\x02\u0654\u0652\x03\x02\x02\x02" +
-		"\u0655\u0658\x03\x02\x02\x02\u0656\u0654\x03\x02\x02\x02\u0656\u0657\x03" +
-		"\x02\x02\x02\u0657\u0659\x03\x02\x02\x02\u0658\u0656\x03\x02\x02\x02\u0659" +
-		"\u065A\x07\b\x02\x02\u065A\u065C\x03\x02\x02\x02\u065B\u0604\x03\x02\x02" +
-		"\x02\u065B\u0612\x03\x02\x02\x02\u065B\u0627\x03\x02\x02\x02\u065B\u0646" +
-		"\x03\x02\x02\x02\u065B\u064F\x03\x02\x02\x02\u065C\x81\x03\x02\x02\x02" +
-		"\u065D\u065F\x07#\x02\x02\u065E\u065D\x03\x02\x02\x02\u065E\u065F\x03" +
-		"\x02\x02\x02\u065F\u0660\x03\x02\x02\x02\u0660\u0661\x05\u0102\x82\x02" +
-		"\u0661\x83\x03\x02\x02\x02\u0662\u0663\x07\x98\x02\x02\u0663\u0664\x07" +
-		"\t\x02\x02\u0664\u0669\x05\u0102\x82\x02\u0665\u0666\x07\x05\x02\x02\u0666" +
-		"\u0668\x05\u0102\x82\x02\u0667\u0665\x03\x02\x02\x02\u0668\u066B\x03\x02" +
-		"\x02\x02\u0669\u0667\x03\x02\x02\x02\u0669\u066A\x03\x02\x02\x02\u066A" +
-		"\x85\x03\x02\x02\x02\u066B\u0669\x03\x02\x02\x02\u066C\u066D\x07\x98\x02" +
-		"\x02\u066D\u066E\t\x16\x02\x02\u066E\u0675\x05\u0102\x82\x02\u066F\u0670" +
-		"\x07\x98\x02\x02\u0670\u0671\t\x17\x02\x02\u0671\u0675\x05\u0102\x82\x02" +
-		"\u0672\u0673\x07\x98\x02\x02\u0673\u0675\x07j\x02\x02\u0674\u066C\x03" +
-		"\x02\x02\x02\u0674\u066F\x03\x02\x02\x02\u0674\u0672\x03\x02\x02\x02\u0675" +
-		"\x87\x03\x02\x02\x02\u0676\u0677\x07\x97\x02\x02\u0677\u0678\t\x14\x02" +
-		"\x02\u0678\u0696\x05\u0102\x82\x02\u0679\u067A\x07\x97\x02\x02\u067A\u067B" +
-		"\t\x12\x02\x02\u067B\u067D\x05\u0102\x82\x02\u067C\u067E\x07C\x02\x02" +
-		"\u067D\u067C\x03\x02\x02\x02\u067D\u067E\x03\x02\x02\x02\u067E\u0680\x03" +
-		"\x02\x02\x02\u067F\u0681\x07C\x02\x02\u0680\u067F\x03\x02\x02\x02\u0680" +
-		"\u0681\x03\x02\x02\x02\u0681\u0683\x03\x02\x02\x02\u0682\u0684\x05\xCA" +
-		"f\x02\u0683\u0682\x03\x02\x02\x02\u0683\u0684\x03\x02\x02\x02\u0684\u0696" +
-		"\x03\x02\x02\x02\u0685\u0686\x07\x97\x02\x02\u0686\u0687\t\x12\x02\x02" +
-		"\u0687\u068B\x05\u0102\x82\x02\u0688\u0689\x07\n\x02\x02\u0689\u068A\x07" +
-		"C\x02\x02\u068A\u068C\x07\v\x02\x02\u068B\u0688\x03\x02\x02\x02\u068B" +
-		"\u068C\x03\x02\x02\x02\u068C\u068E\x03\x02\x02\x02\u068D\u068F\x07C\x02" +
-		"\x02\u068E\u068D\x03\x02\x02\x02\u068E\u068F\x03\x02\x02\x02\u068F\u0691" +
-		"\x03\x02\x02\x02\u0690\u0692\x05\xCAf\x02\u0691\u0690\x03\x02\x02\x02" +
-		"\u0691\u0692\x03\x02\x02\x02\u0692\u0696\x03\x02\x02\x02\u0693\u0694\x07" +
-		"\x97\x02\x02\u0694\u0696\x07\x91\x02\x02\u0695\u0676\x03\x02\x02\x02\u0695" +
-		"\u0679\x03\x02\x02\x02\u0695\u0685\x03\x02\x02\x02\u0695\u0693\x03\x02" +
-		"\x02\x02\u0696\x89\x03\x02\x02\x02\u0697\u0698\x07\x99\x02\x02\u0698\u06AE" +
-		"\x05\xDAn\x02\u0699\u069A\x07\x99\x02\x02\u069A\u06AE\x05\xCEh\x02\u069B" +
-		"\u069C\x07\x99\x02\x02\u069C\u06AE\x05\xD2j\x02\u069D\u069E\x07\x99\x02" +
-		"\x02\u069E\u069F\x05\xCEh\x02\u069F\u06A0\x05\xD0i\x02\u06A0\u06AE\x03" +
-		"\x02\x02\x02\u06A1\u06A2\x07\x99\x02\x02\u06A2\u06A3\x05\xCEh\x02\u06A3" +
-		"\u06A4\x07S\x02\x02\u06A4\u06A5\x05\xCEh\x02\u06A5\u06AE\x03\x02\x02\x02" +
-		"\u06A6\u06A7\x07\x99\x02\x02\u06A7\u06A8\x05\xCEh\x02\u06A8\u06A9\x07" +
-		"S\x02\x02\u06A9\u06AB\x05\xDAn\x02\u06AA\u06AC\t\x05\x02\x02\u06AB\u06AA" +
-		"\x03\x02\x02\x02\u06AB\u06AC\x03\x02\x02\x02\u06AC\u06AE\x03\x02\x02\x02" +
-		"\u06AD\u0697\x03\x02\x02\x02\u06AD\u0699\x03\x02\x02\x02\u06AD\u069B\x03" +
-		"\x02\x02\x02\u06AD\u069D\x03\x02\x02\x02\u06AD\u06A1\x03\x02\x02\x02\u06AD" +
-		"\u06A6\x03\x02\x02\x02\u06AE\x8B\x03\x02\x02\x02\u06AF\u06EF\x05x=\x02" +
-		"\u06B0\u06EF\x07\x93\x02\x02\u06B1\u06EF\x05\x86D\x02\u06B2\u06EF\x05" +
-		"\x88E\x02\u06B3\u06EF\x05\x8AF\x02\u06B4\u06B5\x07\x89\x02\x02\u06B5\u06B9" +
-		"\x07\x07\x02\x02\u06B6\u06B8\x05Z.\x02\u06B7\u06B6\x03\x02\x02\x02\u06B8" +
-		"\u06BB\x03\x02\x02\x02\u06B9\u06B7\x03\x02\x02\x02\u06B9\u06BA\x03\x02" +
-		"\x02\x02\u06BA\u06BC\x03\x02\x02\x02\u06BB\u06B9\x03\x02\x02\x02\u06BC" +
-		"\u06EF\x07\b\x02\x02\u06BD\u06BE\x07h\x02\x02\u06BE\u06C2\x07\x07\x02" +
-		"\x02\u06BF\u06C1\x05b2\x02\u06C0\u06BF\x03\x02\x02\x02\u06C1\u06C4\x03" +
-		"\x02\x02\x02\u06C2\u06C0\x03\x02\x02\x02\u06C2\u06C3\x03\x02\x02\x02\u06C3" +
-		"\u06C5\x03\x02\x02\x02\u06C4\u06C2\x03\x02\x02\x02\u06C5\u06EF\x07\b\x02" +
-		"\x02\u06C6\u06EF\x05b2\x02\u06C7\u06C8\x07\x8E\x02\x02\u06C8\u06C9\x07" +
-		"\x10\x02\x02\u06C9\u06EF\x05v<\x02\u06CA\u06CB\t\x18\x02\x02\u06CB\u06EF" +
-		"\x05l7\x02\u06CC\u06CD\t\x18\x02\x02\u06CD\u06CE\x07\x10\x02\x02\u06CE" +
-		"\u06EF\x05n8\x02\u06CF\u06D0\x07\x8E\x02\x02\u06D0\u06D4\x07\x07\x02\x02" +
-		"\u06D1\u06D3\x05t;\x02\u06D2\u06D1\x03\x02\x02\x02\u06D3\u06D6\x03\x02" +
-		"\x02\x02\u06D4\u06D2\x03\x02\x02\x02\u06D4\u06D5\x03\x02\x02\x02\u06D5" +
-		"\u06D7\x03\x02\x02\x02\u06D6\u06D4\x03\x02\x02\x02\u06D7\u06EF\x07\b\x02" +
-		"\x02\u06D8\u06D9\x07\x8F\x02\x02\u06D9\u06DD\x07\x07\x02\x02\u06DA\u06DC" +
-		"\x05j6\x02\u06DB\u06DA\x03\x02\x02\x02\u06DC\u06DF\x03\x02\x02\x02\u06DD" +
-		"\u06DB\x03\x02\x02\x02\u06DD\u06DE\x03\x02\x02\x02\u06DE\u06E0\x03\x02" +
-		"\x02\x02\u06DF\u06DD\x03\x02\x02\x02\u06E0\u06EF\x07\b\x02\x02\u06E1\u06E2" +
-		"\x07\x9B\x02\x02\u06E2\u06E3\x07\x10\x02\x02\u06E3\u06EF\x05~@\x02\u06E4" +
-		"\u06E5\x07\x9B\x02\x02\u06E5\u06E9\x07\x07\x02\x02\u06E6\u06E8\x05~@\x02" +
-		"\u06E7\u06E6\x03\x02\x02\x02\u06E8\u06EB\x03\x02\x02\x02\u06E9\u06E7\x03" +
-		"\x02\x02\x02\u06E9\u06EA\x03\x02\x02\x02\u06EA\u06EC\x03\x02\x02\x02\u06EB" +
-		"\u06E9\x03\x02\x02\x02\u06EC\u06EF\x07\b\x02\x02\u06ED\u06EF\x05,\x17" +
-		"\x02\u06EE\u06AF\x03\x02\x02\x02\u06EE\u06B0\x03\x02\x02\x02\u06EE\u06B1" +
-		"\x03\x02\x02\x02\u06EE\u06B2\x03\x02\x02\x02\u06EE\u06B3\x03\x02\x02\x02" +
-		"\u06EE\u06B4\x03\x02\x02\x02\u06EE\u06BD\x03\x02\x02\x02\u06EE\u06C6\x03" +
-		"\x02\x02\x02\u06EE\u06C7\x03\x02\x02\x02\u06EE\u06CA\x03\x02\x02\x02\u06EE" +
-		"\u06CC\x03\x02\x02\x02\u06EE\u06CF\x03\x02\x02\x02\u06EE\u06D8\x03\x02" +
-		"\x02\x02\u06EE\u06E1\x03\x02\x02\x02\u06EE\u06E4\x03\x02\x02\x02\u06EE" +
-		"\u06ED\x03\x02\x02\x02\u06EF\x8D\x03\x02\x02\x02\u06F0\u06FD\x05\x90I" +
-		"\x02\u06F1\u06F2\x05\xDAn\x02\u06F2\u06F7\x07\x07\x02\x02\u06F3\u06F4" +
-		"\x07!\x02\x02\u06F4\u06F6\x05\x8CG\x02\u06F5\u06F3\x03\x02\x02\x02\u06F6" +
-		"\u06F9\x03\x02\x02\x02\u06F7\u06F5\x03\x02\x02\x02\u06F7\u06F8\x03\x02" +
-		"\x02\x02\u06F8\u06FA\x03\x02\x02\x02\u06F9\u06F7\x03\x02\x02\x02\u06FA" +
-		"\u06FB\x07\b\x02\x02\u06FB\u06FD\x03\x02\x02\x02\u06FC\u06F0\x03\x02\x02" +
-		"\x02\u06FC\u06F1\x03\x02\x02\x02\u06FD\x8F\x03\x02\x02\x02\u06FE\u06FF" +
-		"\x05\xDAn\x02\u06FF\u0700\x07!\x02\x02\u0700\u0701\x05\x8CG\x02\u0701" +
-		"\x91\x03\x02\x02\x02\u0702\u0703\x07b\x02\x02\u0703\u0707\x07\x07\x02" +
-		"\x02\u0704\u0706\x05\x94K\x02\u0705\u0704\x03\x02\x02\x02\u0706\u0709" +
-		"\x03\x02\x02\x02\u0707\u0705\x03\x02\x02\x02\u0707\u0708\x03\x02\x02\x02" +
-		"\u0708\u070A\x03\x02\x02\x02\u0709\u0707\x03\x02\x02\x02\u070A\u070B\x07" +
-		"\b\x02\x02\u070B\x93\x03\x02\x02\x02\u070C\u070D\x05\xCEh\x02\u070D\u070F" +
-		"\x05\xD6l\x02\u070E\u0710\t\x19\x02\x02\u070F\u070E\x03\x02\x02\x02\u070F" +
-		"\u0710\x03\x02\x02\x02\u0710\u072F\x03\x02\x02\x02\u0711\u0712\x05\xCE" +
-		"h\x02\u0712\u0713\x05\xCEh\x02\u0713\u0715\x05\xD6l\x02\u0714\u0716\t" +
-		"\x1A\x02\x02\u0715\u0714\x03\x02\x02\x02\u0715\u0716\x03\x02\x02\x02\u0716" +
-		"\u072F\x03\x02\x02\x02\u0717\u0718\x05\xCEh\x02\u0718\u0719\x05\xCEh\x02" +
-		"\u0719\u071A\x05\xD6l\x02\u071A\u071B\x07\x9F\x02\x02\u071B\u071C\x05" +
-		"\u0110\x89\x02\u071C\u072F\x03\x02\x02\x02\u071D\u071E\x05\xCEh\x02\u071E" +
-		"\u071F\x05\xCEh\x02\u071F\u0721\x05\xCEh\x02\u0720\u0722\t\x1B\x02\x02" +
-		"\u0721\u0720\x03\x02\x02\x02\u0721\u0722\x03\x02\x02\x02\u0722\u0724\x03" +
-		"\x02\x02\x02\u0723\u0725\t\x1C\x02\x02\u0724\u0723\x03\x02\x02\x02\u0724" +
-		"\u0725\x03\x02\x02\x02\u0725\u072F\x03\x02\x02\x02\u0726\u0727\x05\xCE" +
-		"h\x02\u0727\u0728\x05\xCEh\x02\u0728\u0729\x05\xCEh\x02\u0729\u072A\x07" +
-		"\xA5\x02\x02\u072A\u072C\x05\u0110\x89\x02\u072B\u072D\t\x1C\x02\x02\u072C" +
-		"\u072B\x03\x02\x02\x02\u072C\u072D\x03\x02\x02\x02\u072D\u072F\x03\x02" +
-		"\x02\x02\u072E\u070C\x03\x02\x02\x02\u072E\u0711\x03\x02\x02\x02\u072E" +
-		"\u0717\x03\x02\x02\x02\u072E\u071D\x03\x02\x02\x02\u072E\u0726\x03\x02" +
-		"\x02\x02\u072F\x95\x03\x02\x02\x02\u0730\u0731\x07\xA6\x02\x02\u0731\u0732" +
-		"\x05\xE2r\x02\u0732\u0733\x05\xA4S\x02\u0733\u0739\x03\x02\x02\x02\u0734" +
-		"\u0735\x07\xA6\x02\x02\u0735\u0736\x058\x1D\x02\u0736\u0737\x05\xA4S\x02" +
-		"\u0737\u0739\x03\x02\x02\x02\u0738\u0730\x03\x02\x02\x02\u0738\u0734\x03" +
-		"\x02\x02\x02\u0739\x97\x03\x02\x02\x02\u073A\u073B\x058\x1D\x02\u073B" +
-		"\u073C\x07\t\x02\x02\u073C\u073D\x05\x9AN\x02\u073D\x99\x03\x02\x02\x02" +
-		"\u073E\u073F\bN\x01\x02\u073F\u0743\x07\x07\x02\x02\u0740\u0742\x052\x1A" +
-		"\x02\u0741\u0740\x03\x02\x02\x02\u0742\u0745\x03\x02\x02\x02\u0743\u0741" +
-		"\x03\x02\x02\x02\u0743\u0744\x03\x02\x02\x02\u0744\u0746\x03\x02\x02\x02" +
-		"\u0745\u0743\x03\x02\x02\x02\u0746\u0752\x07\b\x02\x02\u0747\u0752\x05" +
-		"8\x1D\x02\u0748\u0752\x05(\x15\x02\u0749\u0752\x07>\x02\x02\u074A\u0752" +
-		"\x07?\x02\x02\u074B\u074C\x07$\x02\x02\u074C\u0752\x05\x9AN\b\u074D\u074E" +
-		"\x07\n\x02\x02\u074E\u074F\x05\x9AN\x02\u074F\u0750\x07\v\x02\x02\u0750" +
-		"\u0752\x03\x02\x02\x02\u0751\u073E\x03\x02\x02\x02\u0751\u0747\x03\x02" +
-		"\x02\x02\u0751\u0748\x03\x02\x02\x02\u0751\u0749\x03\x02\x02\x02\u0751" +
-		"\u074A\x03\x02\x02\x02\u0751\u074B\x03\x02\x02\x02\u0751\u074D\x03\x02" +
-		"\x02\x02\u0752\u0761\x03\x02\x02\x02\u0753\u0754\f\x07\x02\x02\u0754\u0755" +
-		"\x07%\x02\x02\u0755\u0760\x05\x9AN\b\u0756\u0757\f\x06\x02\x02\u0757\u0758" +
-		"\x07&\x02\x02\u0758\u0760\x05\x9AN\x07\u0759\u075A\f\x05\x02\x02\u075A" +
-		"\u075B\x07\'\x02\x02\u075B\u0760\x05\x9AN\x06\u075C\u075D\f\x04\x02\x02" +
-		"\u075D\u075E\x07(\x02\x02\u075E\u0760\x05\x9AN\x05\u075F\u0753\x03\x02" +
-		"\x02\x02\u075F\u0756\x03\x02\x02\x02\u075F\u0759\x03\x02\x02\x02\u075F" +
-		"\u075C\x03\x02\x02\x02\u0760\u0763\x03\x02\x02\x02\u0761\u075F\x03\x02" +
-		"\x02\x02\u0761\u0762\x03\x02\x02\x02\u0762\x9B\x03\x02\x02\x02\u0763\u0761" +
-		"\x03\x02\x02\x02\u0764\u0765\x07X\x02\x02\u0765\u0766\x05\x9AN\x02\u0766" +
-		"\u0768\x050\x19\x02\u0767\u0769\x05\x9EP\x02\u0768\u0767\x03\x02\x02\x02" +
-		"\u0768\u0769\x03\x02\x02\x02\u0769\x9D\x03\x02\x02\x02\u076A\u076B\x07" +
-		"\xA8\x02\x02\u076B\u076F\x050\x19\x02\u076C\u076D\x07\xA8\x02\x02\u076D" +
-		"\u076F\x05\x9CO\x02\u076E\u076A\x03\x02\x02\x02\u076E\u076C\x03\x02\x02" +
-		"\x02\u076F\x9F\x03\x02\x02\x02\u0770\u0771\x07\xA7\x02\x02\u0771\u0775" +
-		"\x07\x07\x02\x02\u0772\u0774\x052\x1A\x02\u0773\u0772\x03\x02\x02\x02" +
-		"\u0774\u0777\x03\x02\x02\x02\u0775\u0773\x03\x02\x02\x02\u0775\u0776\x03" +
-		"\x02\x02\x02\u0776\u0778\x03\x02\x02\x02\u0777\u0775\x03\x02\x02\x02\u0778" +
-		"\u0779\x07\b\x02\x02\u0779\u077F\x050\x19\x02\u077A\u077B\x07\xA7\x02" +
-		"\x02\u077B\u077C\x05\x9AN\x02\u077C\u077D\x050\x19\x02\u077D\u077F\x03" +
-		"\x02\x02\x02\u077E\u0770\x03\x02\x02\x02\u077E\u077A\x03\x02\x02\x02\u077F" +
-		"\xA1\x03\x02\x02\x02\u0780\u0781\x07\xA9\x02\x02\u0781\u0782\x07\x07\x02" +
-		"\x02\u0782\u0783\x05<\x1F\x02\u0783\u0784\x07\b\x02\x02\u0784\u0785\x05" +
-		"0\x19\x02\u0785\xA3\x03\x02\x02\x02\u0786\u0787\x05\xAAV\x02\u0787\xA5" +
-		"\x03\x02\x02\x02\u0788\u0789\x05\xBE`\x02\u0789\xA7\x03\x02\x02\x02\u078A" +
-		"\u07A0\x05\u0106\x84\x02\u078B\u07A0\x05\xAEX\x02\u078C\u078D\x05\u0106" +
-		"\x84\x02\u078D\u078E\x05\xAEX\x02\u078E\u07A0\x03\x02\x02\x02\u078F\u0796" +
-		"\x05\u0106\x84\x02\u0790\u0791\x07\x04\x02\x02\u0791\u0792\x07C\x02\x02" +
-		"\u0792\u0795\x07\x06\x02\x02\u0793\u0795\x07)\x02\x02\u0794\u0790\x03" +
-		"\x02\x02\x02\u0794\u0793\x03\x02\x02\x02\u0795\u0798\x03\x02\x02\x02\u0796" +
-		"\u0794\x03\x02\x02\x02\u0796\u0797\x03\x02\x02\x02\u0797\u079D\x03\x02" +
-		"\x02\x02\u0798\u0796\x03\x02\x02\x02\u0799\u079A\x07\x04\x02\x02\u079A" +
-		"\u079B\x05\xAEX\x02\u079B\u079C\x07\x06\x02\x02\u079C\u079E\x03\x02\x02" +
-		"\x02\u079D\u0799\x03\x02\x02\x02\u079D\u079E\x03\x02\x02\x02\u079E\u07A0" +
-		"\x03\x02\x02\x02\u079F\u078A\x03\x02\x02\x02\u079F\u078B\x03\x02\x02\x02" +
-		"\u079F\u078C\x03\x02\x02\x02\u079F\u078F\x03\x02\x02\x02\u07A0\xA9\x03" +
-		"\x02\x02\x02\u07A1\u07A2\x07*\x02\x02\u07A2\u07A7\x05\xB0Y\x02\u07A3\u07A4" +
-		"\x07\x05\x02\x02\u07A4\u07A6\x05\xB0Y\x02\u07A5\u07A3\x03\x02\x02\x02" +
-		"\u07A6\u07A9\x03\x02\x02\x02\u07A7\u07A5\x03\x02\x02\x02\u07A7\u07A8\x03" +
-		"\x02\x02\x02\u07A8\u07AA\x03\x02\x02\x02\u07A9\u07A7\x03\x02\x02\x02\u07AA" +
-		"\u07AB\x07\b\x02\x02\u07AB\u07E0\x03\x02\x02\x02\u07AC\u07AD\x07*\x02" +
-		"\x02\u07AD\u07E0\x07\b\x02\x02\u07AE\u07AF\x07+\x02\x02\u07AF\u07B4\x05" +
-		"\xB4[\x02\u07B0\u07B1\x07\x05\x02\x02\u07B1\u07B3\x05\xB4[\x02\u07B2\u07B0" +
-		"\x03\x02\x02\x02\u07B3\u07B6\x03\x02\x02\x02\u07B4\u07B2\x03\x02\x02\x02" +
-		"\u07B4\u07B5\x03\x02\x02\x02\u07B5\u07B7\x03\x02\x02\x02\u07B6\u07B4\x03" +
-		"\x02\x02\x02\u07B7\u07B8\x07\x06\x02\x02\u07B8\u07E0\x03\x02\x02\x02\u07B9" +
-		"\u07BA\x07+\x02\x02\u07BA\u07E0\x07\x06\x02\x02\u07BB\u07BC\x07,\x02\x02" +
-		"\u07BC\u07C1\x078\x02\x02\u07BD\u07BE\x07\x05\x02\x02\u07BE\u07C0\x07" +
-		"8\x02\x02\u07BF\u07BD\x03\x02\x02\x02\u07C0\u07C3\x03\x02\x02\x02\u07C1" +
-		"\u07BF\x03\x02\x02\x02\u07C1\u07C2\x03\x02\x02\x02\u07C2\u07C4\x03\x02" +
-		"\x02\x02\u07C3\u07C1\x03\x02\x02\x02\u07C4\u07E0\x07\x06\x02\x02\u07C5" +
-		"\u07C6\x07-\x02\x02\u07C6\u07CB\x07C\x02\x02\u07C7\u07C8\x07\x05\x02\x02" +
-		"\u07C8\u07CA\x07C\x02\x02\u07C9\u07C7\x03\x02\x02\x02\u07CA\u07CD\x03" +
-		"\x02\x02\x02\u07CB\u07C9\x03\x02\x02\x02\u07CB\u07CC\x03\x02\x02\x02\u07CC" +
-		"\u07CE\x03\x02\x02\x02\u07CD\u07CB\x03\x02\x02\x02\u07CE\u07E0\x07\x06" +
-		"\x02\x02\u07CF\u07D0\x07.\x02\x02\u07D0\u07D5\x07:\x02\x02\u07D1\u07D2" +
-		"\x07\x05\x02\x02\u07D2\u07D4\x07:\x02\x02\u07D3\u07D1\x03\x02\x02\x02" +
-		"\u07D4\u07D7\x03\x02\x02\x02\u07D5\u07D3\x03\x02\x02\x02\u07D5\u07D6\x03" +
-		"\x02\x02\x02\u07D6\u07D8\x03\x02\x02\x02\u07D7\u07D5\x03\x02\x02\x02\u07D8" +
-		"\u07E0\x07\x06\x02\x02\u07D9\u07E0\x05\xBC_\x02\u07DA\u07E0\x078\x02\x02" +
-		"\u07DB\u07E0\x079\x02\x02\u07DC\u07E0\x07:\x02\x02\u07DD\u07E0\x07;\x02" +
-		"\x02\u07DE\u07E0\x07<\x02\x02\u07DF\u07A1\x03\x02\x02\x02\u07DF\u07AC" +
-		"\x03\x02\x02\x02\u07DF\u07AE\x03\x02\x02\x02\u07DF\u07B9\x03\x02\x02\x02" +
-		"\u07DF\u07BB\x03\x02\x02\x02\u07DF\u07C5\x03\x02\x02\x02\u07DF\u07CF\x03" +
-		"\x02\x02\x02\u07DF\u07D9\x03\x02\x02\x02\u07DF\u07DA\x03\x02\x02\x02\u07DF" +
-		"\u07DB\x03\x02\x02\x02\u07DF\u07DC\x03\x02\x02\x02\u07DF\u07DD\x03\x02" +
-		"\x02\x02\u07DF\u07DE\x03\x02\x02\x02\u07E0\xAB\x03\x02\x02\x02\u07E1\u07E2" +
-		"\x05\xB4[\x02\u07E2\xAD\x03\x02\x02\x02\u07E3\u07E4\x07\x07\x02\x02\u07E4" +
-		"\u07E9\x05\xB0Y\x02\u07E5\u07E6\x07\x05\x02\x02\u07E6\u07E8\x05\xB0Y\x02" +
-		"\u07E7\u07E5\x03\x02\x02\x02\u07E8\u07EB\x03\x02\x02\x02\u07E9\u07E7\x03" +
-		"\x02\x02\x02\u07E9\u07EA\x03\x02\x02\x02\u07EA\u07EC\x03\x02\x02\x02\u07EB" +
-		"\u07E9\x03\x02\x02\x02\u07EC\u07ED\x07\b\x02\x02\u07ED\u07F1\x03\x02\x02" +
-		"\x02\u07EE\u07EF\x07\x07\x02\x02\u07EF\u07F1\x07\b\x02\x02\u07F0\u07E3" +
-		"\x03\x02\x02\x02\u07F0\u07EE\x03\x02\x02\x02\u07F1\xAF\x03\x02\x02\x02" +
-		"\u07F2\u07F3\x05\u0106\x84\x02\u07F3\u07F4\x07 \x02\x02\u07F4\u07F5\x05" +
-		"\xB4[\x02\u07F5\xB1\x03\x02\x02\x02\u07F6\u07F7\x07\x04\x02\x02\u07F7" +
-		"\u07FC\x05\xB4[\x02\u07F8\u07F9\x07\x05\x02\x02\u07F9\u07FB\x05\xB4[\x02" +
-		"\u07FA\u07F8\x03\x02\x02\x02\u07FB\u07FE\x03\x02\x02\x02\u07FC\u07FA\x03" +
-		"\x02\x02\x02\u07FC\u07FD\x03\x02\x02\x02\u07FD\u07FF\x03\x02\x02\x02\u07FE" +
-		"\u07FC\x03\x02\x02\x02\u07FF\u0800\x07\x06\x02\x02\u0800\u0804\x03\x02" +
-		"\x02\x02\u0801\u0802\x07\x04\x02\x02\u0802\u0804\x07\x06\x02\x02\u0803" +
-		"\u07F6\x03\x02\x02\x02\u0803\u0801\x03\x02\x02\x02\u0804\xB3\x03\x02\x02" +
-		"\x02\u0805\u0811\x05\xAEX\x02\u0806\u0811\x05\xB2Z\x02\u0807\u0811\x05" +
-		"\xB6\\\x02\u0808\u0811\x05\xB8]\x02\u0809\u0811\x05\xBA^\x02\u080A\u0811" +
-		"\x05\xBC_\x02\u080B\u0811\x078\x02\x02\u080C\u0811\x079\x02\x02\u080D" +
-		"\u0811\x07:\x02\x02\u080E\u0811\x07;\x02\x02\u080F\u0811\x07<\x02\x02" +
-		"\u0810\u0805\x03\x02\x02\x02\u0810\u0806\x03\x02\x02\x02\u0810\u0807\x03" +
-		"\x02\x02\x02\u0810\u0808\x03\x02\x02\x02\u0810\u0809\x03\x02\x02\x02\u0810" +
-		"\u080A\x03\x02\x02\x02\u0810\u080B\x03\x02\x02\x02\u0810\u080C\x03\x02" +
-		"\x02\x02\u0810\u080D\x03\x02\x02\x02\u0810\u080E\x03\x02\x02\x02\u0810" +
-		"\u080F\x03\x02\x02\x02\u0811\xB5\x03\x02\x02\x02\u0812\u0813\x07/\x02" +
-		"\x02\u0813\u0818\x078\x02\x02\u0814\u0815\x07\x05\x02\x02\u0815\u0817" +
-		"\x078\x02\x02\u0816\u0814\x03\x02\x02\x02\u0817\u081A\x03\x02\x02\x02" +
-		"\u0818\u0816\x03\x02\x02\x02\u0818\u0819\x03\x02\x02\x02\u0819\u081B\x03" +
-		"\x02\x02\x02\u081A\u0818\x03\x02\x02\x02\u081B\u081C\x07\x06\x02\x02\u081C" +
-		"\xB7\x03\x02\x02\x02\u081D\u081E\x070\x02\x02\u081E\u0823\x07C\x02\x02" +
-		"\u081F\u0820\x07\x05\x02\x02\u0820\u0822\x07C\x02\x02\u0821\u081F\x03" +
-		"\x02\x02\x02\u0822\u0825\x03\x02\x02\x02\u0823\u0821\x03\x02\x02\x02\u0823" +
-		"\u0824\x03\x02\x02\x02\u0824\u0826\x03\x02\x02\x02\u0825\u0823\x03\x02" +
-		"\x02\x02\u0826\u0827\x07\x06\x02\x02\u0827\xB9\x03\x02\x02\x02\u0828\u0829" +
-		"\x071\x02\x02\u0829\u082E\x07:\x02\x02\u082A\u082B\x07\x05\x02\x02\u082B" +
-		"\u082D\x07:\x02\x02\u082C\u082A\x03\x02\x02\x02\u082D\u0830\x03\x02\x02" +
-		"\x02\u082E\u082C\x03\x02\x02\x02\u082E\u082F\x03\x02\x02\x02\u082F\u0831" +
-		"\x03\x02\x02\x02\u0830\u082E\x03\x02\x02\x02\u0831\u0832\x07\x06\x02\x02" +
-		"\u0832\xBB\x03\x02\x02\x02\u0833\u0834\t\x1D\x02\x02\u0834\xBD\x03\x02" +
-		"\x02\x02\u0835\u0836\x072\x02\x02\u0836\u083B\x05\xC4c\x02\u0837\u0838" +
-		"\x07\x05\x02\x02\u0838\u083A\x05\xC4c\x02\u0839\u0837\x03\x02\x02\x02" +
-		"\u083A\u083D\x03\x02\x02\x02\u083B\u0839\x03\x02\x02\x02\u083B\u083C\x03" +
-		"\x02\x02\x02\u083C\u083E\x03\x02\x02\x02\u083D\u083B\x03\x02\x02\x02\u083E" +
-		"\u083F\x07\b\x02\x02\u083F\u0855\x03\x02\x02\x02\u0840\u0841\x072\x02" +
-		"\x02\u0841\u0855\x07\b\x02\x02\u0842\u0843\x073\x02\x02\u0843\u0848\x05" +
-		"\xC8e\x02\u0844\u0845\x07\x05\x02\x02\u0845\u0847\x05\xC8e\x02\u0846\u0844" +
-		"\x03\x02\x02\x02\u0847\u084A\x03\x02\x02\x02\u0848\u0846\x03\x02\x02\x02" +
-		"\u0848\u0849\x03\x02\x02\x02\u0849\u084B\x03\x02\x02\x02\u084A\u0848\x03" +
-		"\x02\x02\x02\u084B\u084C\x07\x06\x02\x02\u084C\u0855\x03\x02\x02\x02";
+		"\u059D\x05\xDAn\x02\u059D\u059E\x07\x10\x02\x02\u059E\u05A0\x05\u010C" +
+		"\x87\x02\u059F\u05A1\x05\xF2z\x02\u05A0\u059F\x03\x02\x02\x02\u05A0\u05A1" +
+		"\x03\x02\x02\x02\u05A1\u05AF\x03\x02\x02\x02\u05A2\u05A3\x05\u010C\x87" +
+		"\x02\u05A3\u05A4\x07\t\x02\x02\u05A4\u05A5\x05\xCEh\x02\u05A5\u05A6\x07" +
+		"\x10\x02\x02\u05A6\u05A8\x05\u010C\x87\x02\u05A7\u05A9\x05\xF2z\x02\u05A8" +
+		"\u05A7\x03\x02\x02\x02\u05A8\u05A9\x03\x02\x02\x02\u05A9\u05AF\x03\x02" +
+		"\x02\x02\u05AA\u05AB\x05\u010C\x87\x02\u05AB\u05AC\x07\x13\x02\x02\u05AC" +
+		"\u05AD\x05\xF2z\x02\u05AD\u05AF\x03\x02\x02\x02\u05AE\u0594\x03\x02\x02" +
+		"\x02\u05AE\u059A\x03\x02\x02\x02\u05AE\u05A2\x03\x02\x02\x02\u05AE\u05AA" +
+		"\x03\x02\x02\x02\u05AFw\x03\x02\x02\x02\u05B0\u05B1\t\x12\x02\x02\u05B1" +
+		"\u05B3\x05\xECw\x02\u05B2\u05B4\x07D\x02\x02\u05B3\u05B2\x03\x02\x02\x02" +
+		"\u05B3\u05B4\x03\x02\x02\x02\u05B4\u05BB\x03\x02\x02\x02\u05B5\u05B6\t" +
+		"\x14\x02\x02\u05B6\u05B8\x05\u010E\x88\x02\u05B7\u05B9\x07D\x02\x02\u05B8" +
+		"\u05B7\x03\x02\x02\x02\u05B8\u05B9\x03\x02\x02\x02\u05B9\u05BB\x03\x02" +
+		"\x02\x02\u05BA\u05B0\x03\x02\x02\x02\u05BA\u05B5\x03\x02\x02\x02\u05BB" +
+		"y\x03\x02\x02\x02\u05BC\u05BD\x07\x9C\x02\x02\u05BD\u05C1\x07\x07\x02" +
+		"\x02\u05BE\u05C0\x05|?\x02\u05BF\u05BE\x03\x02\x02\x02\u05C0\u05C3\x03" +
+		"\x02\x02\x02\u05C1\u05BF\x03\x02\x02\x02\u05C1\u05C2\x03\x02\x02\x02\u05C2" +
+		"\u05C4\x03\x02\x02\x02\u05C3\u05C1\x03\x02\x02\x02\u05C4\u05D1\x07\b\x02" +
+		"\x02\u05C5\u05C6\x07\x9C\x02\x02\u05C6\u05C7\x05\xDAn\x02\u05C7\u05CB" +
+		"\x07\x07\x02\x02\u05C8\u05CA\x05~@\x02\u05C9\u05C8\x03\x02\x02\x02\u05CA" +
+		"\u05CD\x03\x02\x02\x02\u05CB\u05C9\x03\x02\x02\x02\u05CB\u05CC\x03\x02" +
+		"\x02\x02\u05CC\u05CE\x03\x02\x02\x02\u05CD\u05CB\x03\x02\x02\x02\u05CE" +
+		"\u05CF\x07\b\x02\x02\u05CF\u05D1\x03\x02\x02\x02\u05D0\u05BC\x03\x02\x02" +
+		"\x02\u05D0\u05C5\x03\x02\x02\x02\u05D1{\x03\x02\x02\x02\u05D2\u05D3\x05" +
+		"\xDAn\x02\u05D3\u05D4\x07\x10\x02\x02\u05D4\u05D5\x05~@\x02\u05D5\u05E1" +
+		"\x03\x02\x02\x02\u05D6\u05D7\x05\xDAn\x02\u05D7\u05DB\x07\x07\x02\x02" +
+		"\u05D8\u05DA\x05~@\x02\u05D9\u05D8\x03\x02\x02\x02\u05DA\u05DD\x03\x02" +
+		"\x02\x02\u05DB\u05D9\x03\x02\x02\x02\u05DB\u05DC\x03\x02\x02\x02\u05DC" +
+		"\u05DE\x03\x02\x02\x02\u05DD\u05DB\x03\x02\x02\x02\u05DE\u05DF\x07\b\x02" +
+		"\x02\u05DF\u05E1\x03\x02\x02\x02\u05E0\u05D2\x03\x02\x02\x02\u05E0\u05D6" +
+		"\x03\x02\x02\x02\u05E1}\x03\x02\x02\x02\u05E2\u05E4\x05\xFE\x80\x02\u05E3" +
+		"\u05E5\x07[\x02\x02\u05E4\u05E3\x03\x02\x02\x02\u05E4\u05E5\x03\x02\x02" +
+		"\x02\u05E5\u05EA\x03\x02\x02\x02\u05E6\u05E8\x07\x0E\x02\x02\u05E7\u05E6" +
+		"\x03\x02\x02\x02\u05E7\u05E8\x03\x02\x02\x02\u05E8\u05E9\x03\x02\x02\x02" +
+		"\u05E9\u05EB\x07C\x02\x02\u05EA\u05E7\x03\x02\x02\x02\u05EA\u05EB\x03" +
+		"\x02\x02\x02\u05EB\u060F\x03\x02\x02\x02\u05EC\u05ED\x05\xFE\x80\x02\u05ED" +
+		"\u05F2\x07\x9D\x02\x02\u05EE\u05F0\x07\x0E\x02\x02\u05EF\u05EE\x03\x02" +
+		"\x02\x02\u05EF\u05F0\x03\x02\x02\x02\u05F0\u05F1\x03\x02\x02\x02\u05F1" +
+		"\u05F3\x07C\x02\x02\u05F2\u05EF\x03\x02\x02\x02\u05F2\u05F3\x03\x02\x02" +
+		"\x02\u05F3\u060F\x03\x02\x02\x02\u05F4\u05F5\x05\xFE\x80\x02\u05F5\u05F6" +
+		"\x07\x9D\x02\x02\u05F6\u05F7\x07\t\x02\x02\u05F7\u05F8\x07C\x02\x02\u05F8" +
+		"\u060F\x03\x02\x02\x02\u05F9\u05FA\x05\xFE\x80\x02\u05FA\u05FB\x07\x13" +
+		"\x02\x02\u05FB\u05FC\x07B\x02\x02\u05FC\u05FD\x05\u0102\x82\x02\u05FD" +
+		"\u05FE\x07\n\x02\x02\u05FE\u05FF\t\x15\x02\x02\u05FF\u0600\x07C\x02\x02" +
+		"\u0600\u0601\x07\v\x02\x02\u0601\u060F\x03\x02\x02\x02\u0602\u0603\x05" +
+		"\xFE\x80\x02\u0603\u0604\x07\x14\x02\x02\u0604\u0605\x07B\x02\x02\u0605" +
+		"\u060F\x03\x02\x02\x02\u0606\u0607\x05\xFE\x80\x02\u0607\u060C\x07B\x02" +
+		"\x02\u0608\u060A\x07\x0E\x02\x02\u0609\u0608\x03\x02\x02\x02\u0609\u060A" +
+		"\x03\x02\x02\x02\u060A\u060B\x03\x02\x02\x02\u060B\u060D\x07C\x02\x02" +
+		"\u060C\u0609\x03\x02\x02\x02\u060C\u060D\x03\x02\x02\x02\u060D\u060F\x03" +
+		"\x02\x02\x02\u060E\u05E2\x03\x02\x02\x02\u060E\u05EC\x03\x02\x02\x02\u060E" +
+		"\u05F4\x03\x02\x02\x02\u060E\u05F9\x03\x02\x02\x02\u060E\u0602\x03\x02" +
+		"\x02\x02\u060E\u0606\x03\x02\x02\x02\u060F\x7F\x03\x02\x02\x02\u0610\u0611" +
+		"\x07`\x02\x02\u0611\u0612\x07\n\x02\x02\u0612\u0613\x07v\x02\x02\u0613" +
+		"\u0614\x07\v\x02\x02\u0614\u061B\x05\x82B\x02\u0615\u0617\x07\x05\x02" +
+		"\x02\u0616\u0615\x03\x02\x02\x02\u0616\u0617\x03\x02\x02\x02\u0617\u0618" +
+		"\x03\x02\x02\x02\u0618\u061A\x05\x82B\x02\u0619\u0616\x03\x02\x02\x02" +
+		"\u061A\u061D\x03\x02\x02\x02\u061B\u0619\x03\x02\x02\x02\u061B\u061C\x03" +
+		"\x02\x02\x02\u061C\u0668\x03\x02\x02\x02\u061D\u061B\x03\x02\x02\x02\u061E" +
+		"\u061F\x07`\x02\x02\u061F\u0620\x07\n\x02\x02\u0620\u0621\x05\xEEx\x02" +
+		"\u0621\u0622\x07\v\x02\x02\u0622\u0624\x05\xCEh\x02\u0623\u0625\x05\xA4" +
+		"S\x02\u0624\u0623\x03\x02\x02\x02\u0624\u0625\x03\x02\x02\x02\u0625\u0631" +
+		"\x03\x02\x02\x02\u0626\u062D\x07\x07\x02\x02\u0627\u0629\x07!\x02\x02" +
+		"\u0628\u0627\x03\x02\x02\x02\u0628\u0629\x03\x02\x02\x02\u0629\u062A\x03" +
+		"\x02\x02\x02\u062A\u062C\x05\x84C\x02\u062B\u0628\x03\x02\x02\x02\u062C" +
+		"\u062F\x03\x02\x02\x02\u062D\u062B\x03\x02\x02\x02\u062D\u062E\x03\x02" +
+		"\x02\x02\u062E\u0630\x03\x02\x02\x02\u062F\u062D\x03\x02\x02\x02\u0630" +
+		"\u0632\x07\b\x02\x02\u0631\u0626\x03\x02\x02\x02\u0631\u0632\x03\x02\x02" +
+		"\x02\u0632\u0668\x03\x02\x02\x02\u0633\u0634\x07`\x02\x02\u0634\u0635" +
+		"\x07\n\x02\x02\u0635\u0636\x05\xEEx\x02\u0636\u0638\x07\v\x02\x02\u0637" +
+		"\u0639\x05\xCEh\x02\u0638\u0637\x03\x02\x02\x02\u0638\u0639\x03\x02\x02" +
+		"\x02\u0639\u063A\x03\x02\x02\x02\u063A\u063C\x05\u0102\x82\x02\u063B\u063D" +
+		"\x05\xA4S\x02\u063C\u063B\x03\x02\x02\x02\u063C\u063D\x03\x02\x02\x02" +
+		"\u063D\u063E\x03\x02\x02\x02\u063E\u0645\x07\x07\x02\x02\u063F\u0641\x07" +
+		"!\x02\x02\u0640\u063F\x03\x02\x02\x02\u0640\u0641\x03\x02\x02\x02\u0641" +
+		"\u0642\x03\x02\x02\x02\u0642\u0644\x05\x84C\x02\u0643\u0640\x03\x02\x02" +
+		"\x02\u0644\u0647\x03\x02\x02\x02\u0645\u0643\x03\x02\x02\x02\u0645\u0646" +
+		"\x03\x02\x02\x02\u0646\u064C\x03\x02\x02\x02\u0647\u0645\x03\x02\x02\x02" +
+		"\u0648\u0649\x07!\x02\x02\u0649\u064B\x05\x8CG\x02\u064A\u0648\x03\x02" +
+		"\x02\x02\u064B\u064E\x03\x02\x02\x02\u064C\u064A\x03\x02\x02\x02\u064C" +
+		"\u064D\x03\x02\x02\x02\u064D\u0650\x03\x02\x02\x02\u064E\u064C\x03\x02" +
+		"\x02\x02\u064F\u0651\x07\b\x02\x02\u0650\u064F\x03\x02\x02\x02\u0650\u0651" +
+		"\x03\x02\x02\x02\u0651\u0668\x03\x02\x02\x02\u0652\u0653\x07`\x02\x02" +
+		"\u0653\u0657\x07\x07\x02\x02\u0654\u0656\x05\x8EH\x02\u0655\u0654\x03" +
+		"\x02\x02\x02\u0656\u0659\x03\x02\x02\x02\u0657\u0655\x03\x02\x02\x02\u0657" +
+		"\u0658\x03\x02\x02\x02\u0658\u065A\x03\x02\x02\x02\u0659\u0657\x03\x02" +
+		"\x02\x02\u065A\u0668\x07\b\x02\x02\u065B\u065C\x07`\x02\x02\u065C\u065D" +
+		"\x05\xDAn\x02\u065D\u0662\x07\x07\x02\x02\u065E\u065F\x07!\x02\x02\u065F" +
+		"\u0661\x05\x8CG\x02\u0660\u065E\x03\x02\x02\x02\u0661\u0664\x03\x02\x02" +
+		"\x02\u0662\u0660\x03\x02\x02\x02\u0662\u0663\x03\x02\x02\x02\u0663\u0665" +
+		"\x03\x02\x02\x02\u0664\u0662\x03\x02\x02\x02\u0665\u0666\x07\b\x02\x02" +
+		"\u0666\u0668\x03\x02\x02\x02\u0667\u0610\x03\x02\x02\x02\u0667\u061E\x03" +
+		"\x02\x02\x02\u0667\u0633\x03\x02\x02\x02\u0667\u0652\x03\x02\x02\x02\u0667" +
+		"\u065B\x03\x02\x02\x02\u0668\x81\x03\x02\x02\x02\u0669\u066B\x07#\x02" +
+		"\x02\u066A\u0669\x03\x02\x02\x02\u066A\u066B\x03\x02\x02\x02\u066B\u066C" +
+		"\x03\x02\x02\x02\u066C\u066D\x05\u0102\x82\x02\u066D\x83\x03\x02\x02\x02" +
+		"\u066E\u066F\x07\x99\x02\x02\u066F\u0670\x07\t\x02\x02\u0670\u0675\x05" +
+		"\u0102\x82\x02\u0671\u0672\x07\x05\x02\x02\u0672\u0674\x05\u0102\x82\x02" +
+		"\u0673\u0671\x03\x02\x02\x02\u0674\u0677\x03\x02\x02\x02\u0675\u0673\x03" +
+		"\x02\x02\x02\u0675\u0676\x03\x02\x02\x02\u0676\x85\x03\x02\x02\x02\u0677" +
+		"\u0675\x03\x02\x02\x02\u0678\u0679\x07\x99\x02\x02\u0679\u067A\t\x16\x02" +
+		"\x02\u067A\u0681\x05\u0102\x82\x02\u067B\u067C\x07\x99\x02\x02\u067C\u067D" +
+		"\t\x17\x02\x02\u067D\u0681\x05\u0102\x82\x02\u067E\u067F\x07\x99\x02\x02" +
+		"\u067F\u0681\x07k\x02\x02\u0680\u0678\x03\x02\x02\x02\u0680\u067B\x03" +
+		"\x02\x02\x02\u0680\u067E\x03\x02\x02\x02\u0681\x87\x03\x02\x02\x02\u0682" +
+		"\u0683\x07\x98\x02\x02\u0683\u0684\t\x14\x02\x02\u0684\u06A2\x05\u0102" +
+		"\x82\x02\u0685\u0686\x07\x98\x02\x02\u0686\u0687\t\x12\x02\x02\u0687\u0689" +
+		"\x05\u0102\x82\x02\u0688\u068A\x07C\x02\x02\u0689\u0688\x03\x02\x02\x02" +
+		"\u0689\u068A\x03\x02\x02\x02\u068A\u068C\x03\x02\x02\x02\u068B\u068D\x07" +
+		"C\x02\x02\u068C\u068B\x03\x02\x02\x02\u068C\u068D\x03\x02\x02\x02\u068D" +
+		"\u068F\x03\x02\x02\x02\u068E\u0690\x05\xCAf\x02\u068F\u068E\x03\x02\x02" +
+		"\x02\u068F\u0690\x03\x02\x02\x02\u0690\u06A2\x03\x02\x02\x02\u0691\u0692" +
+		"\x07\x98\x02\x02\u0692\u0693\t\x12\x02\x02\u0693\u0697\x05\u0102\x82\x02" +
+		"\u0694\u0695\x07\n\x02\x02\u0695\u0696\x07C\x02\x02\u0696\u0698\x07\v" +
+		"\x02\x02\u0697\u0694\x03\x02\x02\x02\u0697\u0698\x03\x02\x02\x02\u0698" +
+		"\u069A\x03\x02\x02\x02\u0699\u069B\x07C\x02\x02\u069A\u0699\x03\x02\x02" +
+		"\x02\u069A\u069B\x03\x02\x02\x02\u069B\u069D\x03\x02\x02\x02\u069C\u069E" +
+		"\x05\xCAf\x02\u069D\u069C\x03\x02\x02\x02\u069D\u069E\x03\x02\x02\x02" +
+		"\u069E\u06A2\x03\x02\x02\x02\u069F\u06A0\x07\x98\x02\x02\u06A0\u06A2\x07" +
+		"\x92\x02\x02\u06A1\u0682\x03\x02\x02\x02\u06A1\u0685\x03\x02\x02\x02\u06A1" +
+		"\u0691\x03\x02\x02\x02\u06A1\u069F\x03\x02\x02\x02\u06A2\x89\x03\x02\x02" +
+		"\x02\u06A3\u06A4\x07\x9A\x02\x02\u06A4\u06BA\x05\xDAn\x02\u06A5\u06A6" +
+		"\x07\x9A\x02\x02\u06A6\u06BA\x05\xCEh\x02\u06A7\u06A8\x07\x9A\x02\x02" +
+		"\u06A8\u06BA\x05\xD2j\x02\u06A9\u06AA\x07\x9A\x02\x02\u06AA\u06AB\x05" +
+		"\xCEh\x02\u06AB\u06AC\x05\xD0i\x02\u06AC\u06BA\x03\x02\x02\x02\u06AD\u06AE" +
+		"\x07\x9A\x02\x02\u06AE\u06AF\x05\xCEh\x02\u06AF\u06B0\x07T\x02\x02\u06B0" +
+		"\u06B1\x05\xCEh\x02\u06B1\u06BA\x03\x02\x02\x02\u06B2\u06B3\x07\x9A\x02" +
+		"\x02\u06B3\u06B4\x05\xCEh\x02\u06B4\u06B5\x07T\x02\x02\u06B5\u06B7\x05" +
+		"\xDAn\x02\u06B6\u06B8\t\x05\x02\x02\u06B7\u06B6\x03\x02\x02\x02\u06B7" +
+		"\u06B8\x03\x02\x02\x02\u06B8\u06BA\x03\x02\x02\x02\u06B9\u06A3\x03\x02" +
+		"\x02\x02\u06B9\u06A5\x03\x02\x02\x02\u06B9\u06A7\x03\x02\x02\x02\u06B9" +
+		"\u06A9\x03\x02\x02\x02\u06B9\u06AD\x03\x02\x02\x02\u06B9\u06B2\x03\x02" +
+		"\x02\x02\u06BA\x8B\x03\x02\x02\x02\u06BB\u06FB\x05x=\x02\u06BC\u06FB\x07" +
+		"\x94\x02\x02\u06BD\u06FB\x05\x86D\x02\u06BE\u06FB\x05\x88E\x02\u06BF\u06FB" +
+		"\x05\x8AF\x02\u06C0\u06C1\x07\x8A\x02\x02\u06C1\u06C5\x07\x07\x02\x02" +
+		"\u06C2\u06C4\x05Z.\x02\u06C3\u06C2\x03\x02\x02\x02\u06C4\u06C7\x03\x02" +
+		"\x02\x02\u06C5\u06C3\x03\x02\x02\x02\u06C5\u06C6\x03\x02\x02\x02\u06C6" +
+		"\u06C8\x03\x02\x02\x02\u06C7\u06C5\x03\x02\x02\x02\u06C8\u06FB\x07\b\x02" +
+		"\x02\u06C9\u06CA\x07i\x02\x02\u06CA\u06CE\x07\x07\x02\x02\u06CB\u06CD" +
+		"\x05b2\x02\u06CC\u06CB\x03\x02\x02\x02\u06CD\u06D0\x03\x02\x02\x02\u06CE" +
+		"\u06CC\x03\x02\x02\x02\u06CE\u06CF\x03\x02\x02\x02\u06CF\u06D1\x03\x02" +
+		"\x02\x02\u06D0\u06CE\x03\x02\x02\x02\u06D1\u06FB\x07\b\x02\x02\u06D2\u06FB" +
+		"\x05b2\x02\u06D3\u06D4\x07\x8F\x02\x02\u06D4\u06D5\x07\x10\x02\x02\u06D5" +
+		"\u06FB\x05v<\x02\u06D6\u06D7\t\x18\x02\x02\u06D7\u06FB\x05l7\x02\u06D8" +
+		"\u06D9\t\x18\x02\x02\u06D9\u06DA\x07\x10\x02\x02\u06DA\u06FB\x05n8\x02" +
+		"\u06DB\u06DC\x07\x8F\x02\x02\u06DC\u06E0\x07\x07\x02\x02\u06DD\u06DF\x05" +
+		"t;\x02\u06DE\u06DD\x03\x02\x02\x02\u06DF\u06E2\x03\x02\x02\x02\u06E0\u06DE" +
+		"\x03\x02\x02\x02\u06E0\u06E1\x03\x02\x02\x02\u06E1\u06E3\x03\x02\x02\x02" +
+		"\u06E2\u06E0\x03\x02\x02\x02\u06E3\u06FB\x07\b\x02\x02\u06E4\u06E5\x07" +
+		"\x90\x02\x02\u06E5\u06E9\x07\x07\x02\x02\u06E6\u06E8\x05j6\x02\u06E7\u06E6" +
+		"\x03\x02\x02\x02\u06E8\u06EB\x03\x02\x02\x02\u06E9\u06E7\x03\x02\x02\x02" +
+		"\u06E9\u06EA\x03\x02\x02\x02\u06EA\u06EC\x03\x02\x02\x02\u06EB\u06E9\x03" +
+		"\x02\x02\x02\u06EC\u06FB\x07\b\x02\x02\u06ED\u06EE\x07\x9C\x02\x02\u06EE" +
+		"\u06EF\x07\x10\x02\x02\u06EF\u06FB\x05~@\x02\u06F0\u06F1\x07\x9C\x02\x02" +
+		"\u06F1\u06F5\x07\x07\x02\x02\u06F2\u06F4\x05~@\x02\u06F3\u06F2\x03\x02" +
+		"\x02\x02\u06F4\u06F7\x03\x02\x02\x02\u06F5\u06F3\x03\x02\x02\x02\u06F5" +
+		"\u06F6\x03\x02\x02\x02\u06F6\u06F8\x03\x02\x02\x02\u06F7\u06F5\x03\x02" +
+		"\x02\x02\u06F8\u06FB\x07\b\x02\x02\u06F9\u06FB\x05,\x17\x02\u06FA\u06BB" +
+		"\x03\x02\x02\x02\u06FA\u06BC\x03\x02\x02\x02\u06FA\u06BD\x03\x02\x02\x02" +
+		"\u06FA\u06BE\x03\x02\x02\x02\u06FA\u06BF\x03\x02\x02\x02\u06FA\u06C0\x03" +
+		"\x02\x02\x02\u06FA\u06C9\x03\x02\x02\x02\u06FA\u06D2\x03\x02\x02\x02\u06FA" +
+		"\u06D3\x03\x02\x02\x02\u06FA\u06D6\x03\x02\x02\x02\u06FA\u06D8\x03\x02" +
+		"\x02\x02\u06FA\u06DB\x03\x02\x02\x02\u06FA\u06E4\x03\x02\x02\x02\u06FA" +
+		"\u06ED\x03\x02\x02\x02\u06FA\u06F0\x03\x02\x02\x02\u06FA\u06F9\x03\x02" +
+		"\x02\x02\u06FB\x8D\x03\x02\x02\x02\u06FC\u0709\x05\x90I\x02\u06FD\u06FE" +
+		"\x05\xDAn\x02\u06FE\u0703\x07\x07\x02\x02\u06FF\u0700\x07!\x02\x02\u0700" +
+		"\u0702\x05\x8CG\x02\u0701\u06FF\x03\x02\x02\x02\u0702\u0705\x03\x02\x02" +
+		"\x02\u0703\u0701\x03\x02\x02\x02\u0703\u0704\x03\x02\x02\x02\u0704\u0706" +
+		"\x03\x02\x02\x02\u0705\u0703\x03\x02\x02\x02\u0706\u0707\x07\b\x02\x02" +
+		"\u0707\u0709\x03\x02\x02\x02\u0708\u06FC\x03\x02\x02\x02\u0708\u06FD\x03" +
+		"\x02\x02\x02\u0709\x8F\x03\x02\x02\x02\u070A\u070B\x05\xDAn\x02\u070B" +
+		"\u070C\x07!\x02\x02\u070C\u070D\x05\x8CG\x02\u070D\x91\x03\x02\x02\x02" +
+		"\u070E\u070F\x07c\x02\x02\u070F\u0713\x07\x07\x02\x02\u0710\u0712\x05" +
+		"\x94K\x02\u0711\u0710\x03\x02\x02\x02\u0712\u0715\x03\x02\x02\x02\u0713" +
+		"\u0711\x03\x02\x02\x02\u0713\u0714\x03\x02\x02\x02\u0714\u0716\x03\x02" +
+		"\x02\x02\u0715\u0713\x03\x02\x02\x02\u0716\u0717\x07\b\x02\x02\u0717\x93" +
+		"\x03\x02\x02\x02\u0718\u0719\x05\xCEh\x02\u0719\u071B\x05\xD6l\x02\u071A" +
+		"\u071C\t\x19\x02\x02\u071B\u071A\x03\x02\x02\x02\u071B\u071C\x03\x02\x02" +
+		"\x02\u071C\u073B\x03\x02\x02\x02\u071D\u071E\x05\xCEh\x02\u071E\u071F" +
+		"\x05\xCEh\x02\u071F\u0721\x05\xD6l\x02\u0720\u0722\t\x1A\x02\x02\u0721" +
+		"\u0720\x03\x02\x02\x02\u0721\u0722\x03\x02\x02\x02\u0722\u073B\x03\x02" +
+		"\x02\x02\u0723\u0724\x05\xCEh\x02\u0724\u0725\x05\xCEh\x02\u0725\u0726" +
+		"\x05\xD6l\x02\u0726\u0727\x07\xA0\x02\x02\u0727\u0728\x05\u0110\x89\x02" +
+		"\u0728\u073B\x03\x02\x02\x02\u0729\u072A\x05\xCEh\x02\u072A\u072B\x05" +
+		"\xCEh\x02\u072B\u072D\x05\xCEh\x02\u072C\u072E\t\x1B\x02\x02\u072D\u072C" +
+		"\x03\x02\x02\x02\u072D\u072E\x03\x02\x02\x02\u072E\u0730\x03\x02\x02\x02" +
+		"\u072F\u0731\t\x1C\x02\x02\u0730\u072F\x03\x02\x02\x02\u0730\u0731\x03" +
+		"\x02\x02\x02\u0731\u073B\x03\x02\x02\x02\u0732\u0733\x05\xCEh\x02\u0733" +
+		"\u0734\x05\xCEh\x02\u0734\u0735\x05\xCEh\x02\u0735\u0736\x07\xA6\x02\x02" +
+		"\u0736\u0738\x05\u0110\x89\x02\u0737\u0739\t\x1C\x02\x02\u0738\u0737\x03" +
+		"\x02\x02\x02\u0738\u0739\x03\x02\x02\x02\u0739\u073B\x03\x02\x02\x02\u073A" +
+		"\u0718\x03\x02\x02\x02\u073A\u071D\x03\x02\x02\x02\u073A\u0723\x03\x02" +
+		"\x02\x02\u073A\u0729\x03\x02\x02\x02\u073A\u0732\x03\x02\x02\x02\u073B" +
+		"\x95\x03\x02\x02\x02\u073C\u073D\x07\xA7\x02\x02\u073D\u073E\x05\xE2r" +
+		"\x02\u073E\u073F\x05\xA4S\x02\u073F\u0745\x03\x02\x02\x02\u0740\u0741" +
+		"\x07\xA7\x02\x02\u0741\u0742\x058\x1D\x02\u0742\u0743\x05\xA4S\x02\u0743" +
+		"\u0745\x03\x02\x02\x02\u0744\u073C\x03\x02\x02\x02\u0744\u0740\x03\x02" +
+		"\x02\x02\u0745\x97\x03\x02\x02\x02\u0746\u0747\x058\x1D\x02\u0747\u0748" +
+		"\x07\t\x02\x02\u0748\u0749\x05\x9AN\x02\u0749\x99\x03\x02\x02\x02\u074A" +
+		"\u074B\bN\x01\x02\u074B\u074F\x07\x07\x02\x02\u074C\u074E\x052\x1A\x02" +
+		"\u074D\u074C\x03\x02\x02\x02\u074E\u0751\x03\x02\x02\x02\u074F\u074D\x03" +
+		"\x02\x02\x02\u074F\u0750\x03\x02\x02\x02\u0750\u0752\x03\x02\x02\x02\u0751" +
+		"\u074F\x03\x02\x02\x02\u0752\u075E\x07\b\x02\x02\u0753\u075E\x058\x1D" +
+		"\x02\u0754\u075E\x05(\x15\x02\u0755\u075E\x07>\x02\x02\u0756\u075E\x07" +
+		"?\x02\x02\u0757\u0758\x07$\x02\x02\u0758\u075E\x05\x9AN\b\u0759\u075A" +
+		"\x07\n\x02\x02\u075A\u075B\x05\x9AN\x02\u075B\u075C\x07\v\x02\x02\u075C" +
+		"\u075E\x03\x02\x02\x02\u075D\u074A\x03\x02\x02\x02\u075D\u0753\x03\x02" +
+		"\x02\x02\u075D\u0754\x03\x02\x02\x02\u075D\u0755\x03\x02\x02\x02\u075D" +
+		"\u0756\x03\x02\x02\x02\u075D\u0757\x03\x02\x02\x02\u075D\u0759\x03\x02" +
+		"\x02\x02\u075E\u076D\x03\x02\x02\x02\u075F\u0760\f\x07\x02\x02\u0760\u0761" +
+		"\x07%\x02\x02\u0761\u076C\x05\x9AN\b\u0762\u0763\f\x06\x02\x02\u0763\u0764" +
+		"\x07&\x02\x02\u0764\u076C\x05\x9AN\x07\u0765\u0766\f\x05\x02\x02\u0766" +
+		"\u0767\x07\'\x02\x02\u0767\u076C\x05\x9AN\x06\u0768\u0769\f\x04\x02\x02" +
+		"\u0769\u076A\x07(\x02\x02\u076A\u076C\x05\x9AN\x05\u076B\u075F\x03\x02" +
+		"\x02\x02\u076B\u0762\x03\x02\x02\x02\u076B\u0765\x03\x02\x02\x02\u076B" +
+		"\u0768\x03\x02\x02\x02\u076C\u076F\x03\x02\x02\x02\u076D\u076B\x03\x02" +
+		"\x02\x02\u076D\u076E\x03\x02\x02\x02\u076E\x9B\x03\x02\x02\x02\u076F\u076D" +
+		"\x03\x02\x02\x02\u0770\u0771\x07Y\x02\x02\u0771\u0772\x05\x9AN\x02\u0772" +
+		"\u0774\x050\x19\x02\u0773\u0775\x05\x9EP\x02\u0774\u0773\x03\x02\x02\x02" +
+		"\u0774\u0775\x03\x02\x02\x02\u0775\x9D\x03\x02\x02\x02\u0776\u0777\x07" +
+		"\xA9\x02\x02\u0777\u077B\x050\x19\x02\u0778\u0779\x07\xA9\x02\x02\u0779" +
+		"\u077B\x05\x9CO\x02\u077A\u0776\x03\x02\x02\x02\u077A\u0778\x03\x02\x02" +
+		"\x02\u077B\x9F\x03\x02\x02\x02\u077C\u077D\x07\xA8\x02\x02\u077D\u0781" +
+		"\x07\x07\x02\x02\u077E\u0780\x052\x1A\x02\u077F\u077E\x03\x02\x02\x02" +
+		"\u0780\u0783\x03\x02\x02\x02\u0781\u077F\x03\x02\x02\x02\u0781\u0782\x03" +
+		"\x02\x02\x02\u0782\u0784\x03\x02\x02\x02\u0783\u0781\x03\x02\x02\x02\u0784" +
+		"\u0785\x07\b\x02\x02\u0785\u078B\x050\x19\x02\u0786\u0787\x07\xA8\x02" +
+		"\x02\u0787\u0788\x05\x9AN\x02\u0788\u0789\x050\x19\x02\u0789\u078B\x03" +
+		"\x02\x02\x02\u078A\u077C\x03\x02\x02\x02\u078A\u0786\x03\x02\x02\x02\u078B" +
+		"\xA1\x03\x02\x02\x02\u078C\u078D\x07\xAA\x02\x02\u078D\u078E\x07\x07\x02" +
+		"\x02\u078E\u078F\x05<\x1F\x02\u078F\u0790\x07\b\x02\x02\u0790\u0791\x05" +
+		"0\x19\x02\u0791\xA3\x03\x02\x02\x02\u0792\u0793\x05\xAAV\x02\u0793\xA5" +
+		"\x03\x02\x02\x02\u0794\u0795\x05\xBE`\x02\u0795\xA7\x03\x02\x02\x02\u0796" +
+		"\u07AC\x05\u0106\x84\x02\u0797\u07AC\x05\xAEX\x02\u0798\u0799\x05\u0106" +
+		"\x84\x02\u0799\u079A\x05\xAEX\x02\u079A\u07AC\x03\x02\x02\x02\u079B\u07A2" +
+		"\x05\u0106\x84\x02\u079C\u079D\x07\x04\x02\x02\u079D\u079E\x07D\x02\x02" +
+		"\u079E\u07A1\x07\x06\x02\x02\u079F\u07A1\x07)\x02\x02\u07A0\u079C\x03" +
+		"\x02\x02\x02\u07A0\u079F\x03\x02\x02\x02\u07A1\u07A4\x03\x02\x02\x02\u07A2" +
+		"\u07A0\x03\x02\x02\x02\u07A2\u07A3\x03\x02\x02\x02\u07A3\u07A9\x03\x02" +
+		"\x02\x02\u07A4\u07A2\x03\x02\x02\x02\u07A5\u07A6\x07\x04\x02\x02\u07A6" +
+		"\u07A7\x05\xAEX\x02\u07A7\u07A8\x07\x06\x02\x02\u07A8\u07AA\x03\x02\x02" +
+		"\x02\u07A9\u07A5\x03\x02\x02\x02\u07A9\u07AA\x03\x02\x02\x02\u07AA\u07AC" +
+		"\x03\x02\x02\x02\u07AB\u0796\x03\x02\x02\x02\u07AB\u0797\x03\x02\x02\x02" +
+		"\u07AB\u0798\x03\x02\x02\x02\u07AB\u079B\x03\x02\x02\x02\u07AC\xA9\x03" +
+		"\x02\x02\x02\u07AD\u07AE\x07*\x02\x02\u07AE\u07B3\x05\xB0Y\x02\u07AF\u07B0" +
+		"\x07\x05\x02\x02\u07B0\u07B2\x05\xB0Y\x02\u07B1\u07AF\x03\x02\x02\x02" +
+		"\u07B2\u07B5\x03\x02\x02\x02\u07B3\u07B1\x03\x02\x02\x02\u07B3\u07B4\x03" +
+		"\x02\x02\x02\u07B4\u07B6\x03\x02\x02\x02\u07B5\u07B3\x03\x02\x02\x02\u07B6" +
+		"\u07B7\x07\b\x02\x02\u07B7\u07EC\x03\x02\x02\x02\u07B8\u07B9\x07*\x02" +
+		"\x02\u07B9\u07EC\x07\b\x02\x02\u07BA\u07BB\x07+\x02\x02\u07BB\u07C0\x05" +
+		"\xB4[\x02\u07BC\u07BD\x07\x05\x02\x02\u07BD\u07BF\x05\xB4[\x02\u07BE\u07BC" +
+		"\x03\x02\x02\x02\u07BF\u07C2\x03\x02\x02\x02\u07C0\u07BE\x03\x02\x02\x02" +
+		"\u07C0\u07C1\x03\x02\x02\x02\u07C1\u07C3\x03\x02\x02\x02\u07C2\u07C0\x03" +
+		"\x02\x02\x02\u07C3\u07C4\x07\x06\x02\x02\u07C4\u07EC\x03\x02\x02\x02\u07C5" +
+		"\u07C6\x07+\x02\x02\u07C6\u07EC\x07\x06\x02\x02\u07C7\u07C8\x07,\x02\x02" +
+		"\u07C8\u07CD\x078\x02\x02\u07C9\u07CA\x07\x05\x02\x02\u07CA\u07CC\x07" +
+		"8\x02\x02\u07CB\u07C9\x03\x02\x02\x02\u07CC\u07CF\x03\x02\x02\x02\u07CD" +
+		"\u07CB\x03\x02\x02\x02\u07CD\u07CE\x03\x02\x02\x02\u07CE\u07D0\x03\x02" +
+		"\x02\x02\u07CF\u07CD\x03\x02\x02\x02\u07D0\u07EC\x07\x06\x02\x02\u07D1" +
+		"\u07D2\x07-\x02\x02\u07D2\u07D7\x07D\x02\x02\u07D3\u07D4\x07\x05\x02\x02" +
+		"\u07D4\u07D6\x07D\x02\x02\u07D5\u07D3\x03\x02\x02\x02\u07D6\u07D9\x03" +
+		"\x02\x02\x02\u07D7\u07D5\x03\x02\x02\x02\u07D7\u07D8\x03\x02\x02\x02\u07D8" +
+		"\u07DA\x03\x02\x02\x02\u07D9\u07D7\x03\x02\x02\x02\u07DA\u07EC\x07\x06" +
+		"\x02\x02\u07DB\u07DC\x07.\x02\x02\u07DC\u07E1\x07:\x02\x02\u07DD\u07DE" +
+		"\x07\x05\x02\x02\u07DE\u07E0\x07:\x02\x02\u07DF\u07DD\x03\x02\x02\x02" +
+		"\u07E0\u07E3\x03\x02\x02\x02\u07E1\u07DF\x03\x02\x02\x02\u07E1\u07E2\x03" +
+		"\x02\x02\x02\u07E2\u07E4\x03\x02\x02\x02\u07E3\u07E1\x03\x02\x02\x02\u07E4" +
+		"\u07EC\x07\x06\x02\x02\u07E5\u07EC\x05\xBC_\x02\u07E6\u07EC\x078\x02\x02" +
+		"\u07E7\u07EC\x079\x02\x02\u07E8\u07EC\x07:\x02\x02\u07E9\u07EC\x07;\x02" +
+		"\x02\u07EA\u07EC\x07<\x02\x02\u07EB\u07AD\x03\x02\x02\x02\u07EB\u07B8" +
+		"\x03\x02\x02\x02\u07EB\u07BA\x03\x02\x02\x02\u07EB\u07C5\x03\x02\x02\x02" +
+		"\u07EB\u07C7\x03\x02\x02\x02\u07EB\u07D1\x03\x02\x02\x02\u07EB\u07DB\x03" +
+		"\x02\x02\x02\u07EB\u07E5\x03\x02\x02\x02\u07EB\u07E6\x03\x02\x02\x02\u07EB" +
+		"\u07E7\x03\x02\x02\x02\u07EB\u07E8\x03\x02\x02\x02\u07EB\u07E9\x03\x02" +
+		"\x02\x02\u07EB\u07EA\x03\x02\x02\x02\u07EC\xAB\x03\x02\x02\x02\u07ED\u07EE" +
+		"\x05\xB4[\x02\u07EE\xAD\x03\x02\x02\x02\u07EF\u07F0\x07\x07\x02\x02\u07F0" +
+		"\u07F5\x05\xB0Y\x02\u07F1\u07F2\x07\x05\x02\x02\u07F2\u07F4\x05\xB0Y\x02" +
+		"\u07F3\u07F1\x03\x02\x02\x02\u07F4\u07F7\x03\x02\x02\x02\u07F5\u07F3\x03" +
+		"\x02\x02\x02\u07F5\u07F6\x03\x02\x02\x02\u07F6\u07F8\x03\x02\x02\x02\u07F7" +
+		"\u07F5\x03\x02\x02\x02\u07F8\u07F9\x07\b\x02\x02\u07F9\u07FD\x03\x02\x02" +
+		"\x02\u07FA\u07FB\x07\x07\x02\x02\u07FB\u07FD\x07\b\x02\x02\u07FC\u07EF" +
+		"\x03\x02\x02\x02\u07FC\u07FA\x03\x02\x02\x02\u07FD\xAF\x03\x02\x02\x02" +
+		"\u07FE\u07FF\x05\u0106\x84\x02\u07FF\u0800\x07 \x02\x02\u0800\u0801\x05" +
+		"\xB4[\x02\u0801\xB1\x03\x02\x02\x02\u0802\u0803\x07\x04\x02\x02\u0803" +
+		"\u0808\x05\xB4[\x02\u0804\u0805\x07\x05\x02\x02\u0805\u0807\x05\xB4[\x02" +
+		"\u0806\u0804\x03\x02\x02\x02\u0807\u080A\x03\x02\x02\x02\u0808\u0806\x03" +
+		"\x02\x02\x02\u0808\u0809\x03\x02\x02\x02\u0809\u080B\x03\x02\x02\x02\u080A" +
+		"\u0808\x03\x02\x02\x02\u080B\u080C\x07\x06\x02\x02\u080C\u0810\x03\x02" +
+		"\x02\x02\u080D\u080E\x07\x04\x02\x02\u080E\u0810\x07\x06\x02\x02\u080F" +
+		"\u0802\x03\x02\x02\x02\u080F\u080D\x03\x02\x02\x02\u0810\xB3\x03\x02\x02" +
+		"\x02\u0811\u081D\x05\xAEX\x02\u0812\u081D\x05\xB2Z\x02\u0813\u081D\x05" +
+		"\xB6\\\x02\u0814\u081D\x05\xB8]\x02\u0815\u081D\x05\xBA^\x02\u0816\u081D" +
+		"\x05\xBC_\x02\u0817\u081D\x078\x02\x02\u0818\u081D\x079\x02\x02\u0819" +
+		"\u081D\x07:\x02\x02\u081A\u081D\x07;\x02\x02\u081B\u081D\x07<\x02\x02" +
+		"\u081C\u0811\x03\x02\x02\x02\u081C\u0812\x03\x02\x02\x02\u081C\u0813\x03" +
+		"\x02\x02\x02\u081C\u0814\x03\x02\x02\x02\u081C\u0815\x03\x02\x02\x02\u081C" +
+		"\u0816\x03\x02\x02\x02\u081C\u0817\x03\x02\x02\x02\u081C\u0818\x03\x02" +
+		"\x02\x02\u081C\u0819\x03\x02\x02\x02\u081C\u081A\x03\x02\x02\x02\u081C" +
+		"\u081B\x03\x02\x02\x02\u081D\xB5\x03\x02\x02\x02\u081E\u081F\x07/\x02" +
+		"\x02\u081F\u0824\x078\x02\x02\u0820\u0821\x07\x05\x02\x02\u0821\u0823" +
+		"\x078\x02\x02\u0822\u0820\x03\x02\x02\x02\u0823\u0826\x03\x02\x02\x02" +
+		"\u0824\u0822\x03\x02\x02\x02\u0824\u0825\x03\x02\x02\x02\u0825\u0827\x03" +
+		"\x02\x02\x02\u0826\u0824\x03\x02\x02\x02\u0827\u0828\x07\x06\x02\x02\u0828" +
+		"\xB7\x03\x02\x02\x02\u0829\u082A\x070\x02\x02\u082A\u082F\x07D\x02\x02" +
+		"\u082B\u082C\x07\x05\x02\x02\u082C\u082E\x07D\x02\x02\u082D\u082B\x03" +
+		"\x02\x02\x02\u082E\u0831\x03\x02\x02\x02\u082F\u082D\x03\x02\x02\x02\u082F" +
+		"\u0830\x03\x02\x02\x02\u0830\u0832\x03\x02\x02\x02\u0831\u082F\x03\x02" +
+		"\x02\x02\u0832\u0833\x07\x06\x02\x02\u0833\xB9\x03\x02\x02\x02\u0834\u0835" +
+		"\x071\x02\x02\u0835\u083A\x07:\x02\x02\u0836\u0837\x07\x05\x02\x02\u0837" +
+		"\u0839\x07:\x02\x02\u0838\u0836\x03\x02\x02\x02\u0839\u083C\x03\x02\x02" +
+		"\x02\u083A\u0838\x03\x02\x02\x02\u083A\u083B\x03\x02\x02\x02\u083B\u083D" +
+		"\x03\x02\x02\x02\u083C\u083A\x03\x02\x02\x02\u083D\u083E\x07\x06\x02\x02" +
+		"\u083E\xBB\x03\x02\x02\x02\u083F\u0840\t\x1D\x02\x02\u0840\xBD\x03\x02" +
+		"\x02\x02\u0841\u0842\x072\x02\x02\u0842\u0847\x05\xC4c\x02\u0843\u0844" +
+		"\x07\x05\x02\x02\u0844\u0846\x05\xC4c\x02\u0845\u0843\x03\x02\x02\x02" +
+		"\u0846\u0849\x03\x02\x02\x02\u0847\u0845\x03";
 	private static readonly _serializedATNSegment4: string =
-		"\u084D\u084E\x07\x04\x02\x02\u084E\u0855\x07\x06\x02\x02\u084F\u0855\x07" +
-		"A\x02\x02\u0850\u0855\x07C\x02\x02\u0851\u0855\x07>\x02\x02\u0852\u0855" +
-		"\x07?\x02\x02\u0853\u0855\x07@\x02\x02\u0854\u0835\x03\x02\x02\x02\u0854" +
-		"\u0840\x03\x02\x02\x02\u0854\u0842\x03\x02\x02\x02\u0854\u084D\x03\x02" +
-		"\x02\x02\u0854\u084F\x03\x02\x02\x02\u0854\u0850\x03\x02\x02\x02\u0854" +
-		"\u0851\x03\x02\x02\x02\u0854\u0852\x03\x02\x02\x02\u0854\u0853\x03\x02" +
-		"\x02\x02\u0855\xBF\x03\x02\x02\x02\u0856\u0857\x05\xC8e\x02\u0857\xC1" +
-		"\x03\x02\x02\x02\u0858\u0859\x07\x07\x02\x02\u0859\u085E\x05\xC4c\x02" +
-		"\u085A\u085B\x07\x05\x02\x02\u085B\u085D\x05\xC4c\x02\u085C\u085A\x03" +
-		"\x02\x02\x02\u085D\u0860\x03\x02\x02\x02\u085E\u085C\x03\x02\x02\x02\u085E" +
-		"\u085F\x03\x02\x02\x02\u085F\u0861\x03\x02\x02\x02\u0860\u085E\x03\x02" +
-		"\x02\x02\u0861\u0862\x07\b\x02\x02\u0862\u0866\x03\x02\x02\x02\u0863\u0864" +
-		"\x07\x07\x02\x02\u0864\u0866\x07\b\x02\x02\u0865\u0858\x03\x02\x02\x02" +
-		"\u0865\u0863\x03\x02\x02\x02\u0866\xC3\x03\x02\x02\x02\u0867\u0868\x07" +
-		"A\x02\x02\u0868\u0869\x07 \x02\x02\u0869\u086A\x05\xC8e\x02\u086A\xC5" +
-		"\x03\x02\x02\x02\u086B\u086C\x07\x04\x02\x02\u086C\u0871\x05\xC8e\x02" +
-		"\u086D\u086E\x07\x05\x02\x02\u086E\u0870\x05\xC8e\x02\u086F\u086D\x03" +
-		"\x02\x02\x02\u0870\u0873\x03\x02\x02\x02\u0871\u086F\x03\x02\x02\x02\u0871" +
-		"\u0872\x03\x02\x02\x02\u0872\u0874\x03\x02\x02\x02\u0873\u0871\x03\x02" +
-		"\x02\x02\u0874\u0875\x07\x06\x02\x02\u0875\u0879\x03\x02\x02\x02\u0876" +
-		"\u0877\x07\x04\x02\x02\u0877\u0879\x07\x06\x02\x02\u0878\u086B\x03\x02" +
-		"\x02\x02\u0878\u0876\x03\x02\x02\x02\u0879\xC7\x03\x02\x02\x02\u087A\u0882" +
-		"\x07A\x02\x02\u087B\u0882\x07C\x02\x02\u087C\u0882\x05\xC2b\x02\u087D" +
-		"\u0882\x05\xC6d\x02\u087E\u0882\x07>\x02\x02\u087F\u0882\x07?\x02\x02" +
-		"\u0880\u0882\x07@\x02\x02\u0881\u087A\x03\x02\x02\x02\u0881\u087B\x03" +
-		"\x02\x02\x02\u0881\u087C\x03\x02\x02\x02\u0881\u087D\x03\x02\x02\x02\u0881" +
-		"\u087E\x03\x02\x02\x02\u0881\u087F\x03\x02\x02\x02\u0881\u0880\x03\x02" +
-		"\x02\x02\u0882\xC9\x03\x02\x02\x02\u0883\u0884\t\x1E\x02\x02\u0884\xCB" +
-		"\x03\x02\x02\x02\u0885\u0886\t\x1F\x02\x02\u0886\xCD\x03\x02\x02\x02\u0887" +
-		"\u0888\x074\x02\x02\u0888\u0889\x05\xD4k\x02\u0889\u088A\x05\xD4k\x02" +
-		"\u088A\u088B\x05\xD4k\x02\u088B\u088C\x075\x02\x02\u088C\xCF\x03\x02\x02" +
-		"\x02\u088D\u088E\x074\x02\x02\u088E\u088F\x05\xD4k\x02\u088F\u0890\x05" +
-		"\xD4k\x02\u0890\u0891\x075\x02\x02\u0891\xD1\x03\x02\x02\x02\u0892\u0893" +
-		"\x074\x02\x02\u0893\u0894\x05\xD4k\x02\u0894\u0895\x05\xD4k\x02\u0895" +
-		"\u0896\x05\xD4k\x02\u0896\u0897\x05\xD4k\x02\u0897\u0898\x05\xD4k\x02" +
-		"\u0898\u0899\x075\x02\x02\u0899\xD3\x03\x02\x02\x02\u089A\u089B\t \x02" +
-		"\x02\u089B\xD5\x03\x02\x02\x02\u089C\u089E\x05\xDEp\x02\u089D\u089F\x05" +
-		"\xD8m\x02\u089E\u089D\x03\x02\x02\x02\u089E\u089F\x03\x02\x02\x02\u089F" +
-		"\u08A1\x03\x02\x02\x02\u08A0\u08A2\x05\xA4S\x02\u08A1\u08A0\x03\x02\x02" +
-		"\x02\u08A1\u08A2\x03\x02\x02\x02\u08A2\xD7\x03\x02\x02\x02\u08A3\u08A5" +
-		"\x07\x04\x02\x02\u08A4\u08A6\v\x02\x02\x02\u08A5\u08A4\x03\x02\x02\x02" +
-		"\u08A6\u08A7\x03\x02\x02\x02\u08A7\u08A8\x03\x02\x02\x02\u08A7\u08A5\x03" +
-		"\x02\x02\x02\u08A8\u08A9\x03\x02\x02\x02\u08A9\u08AA\x07\x06\x02\x02\u08AA" +
-		"\xD9\x03\x02\x02\x02\u08AB\u08B3\x07\xB2\x02\x02\u08AC\u08AE\x07\x04\x02" +
-		"\x02\u08AD\u08AF\v\x02\x02\x02\u08AE\u08AD\x03\x02\x02\x02\u08AF\u08B0" +
-		"\x03\x02\x02\x02\u08B0\u08B1\x03\x02\x02\x02\u08B0\u08AE\x03\x02\x02\x02" +
-		"\u08B1\u08B2\x03\x02\x02\x02\u08B2\u08B4\x07\x06\x02\x02\u08B3\u08AC\x03" +
-		"\x02\x02\x02\u08B3\u08B4\x03\x02\x02\x02\u08B4\u08BB\x03\x02\x02\x02\u08B5" +
-		"\u08B6\x076\x02\x02\u08B6\u08BB\x05\u0106\x84\x02\u08B7\u08B8\x07#\x02" +
-		"\x02\u08B8\u08BB\x05\u0106\x84\x02\u08B9\u08BB\x07#\x02\x02\u08BA\u08AB" +
-		"\x03\x02\x02\x02\u08BA\u08B5\x03\x02\x02\x02\u08BA\u08B7\x03\x02\x02\x02" +
-		"\u08BA\u08B9\x03\x02\x02\x02\u08BB\xDB\x03\x02\x02\x02\u08BC\u08BD\x05" +
-		"\u0102\x82\x02\u08BD\u08BE\x07 \x02\x02\u08BE\u08BF\x05\u0108\x85\x02" +
-		"\u08BF\u08C2\x03\x02\x02\x02\u08C0\u08C2\x05\u0108\x85\x02\u08C1\u08BC" +
-		"\x03\x02\x02\x02\u08C1\u08C0\x03\x02\x02\x02\u08C2\xDD\x03\x02\x02\x02" +
-		"\u08C3\u08C4\x05\xDCo\x02\u08C4\xDF\x03\x02\x02\x02\u08C5\u08C6\x05\xDC" +
-		"o\x02\u08C6\xE1\x03\x02\x02\x02\u08C7\u08C8\x05\xDCo\x02\u08C8\xE3\x03" +
-		"\x02\x02\x02\u08C9\u08CA\x05\xDCo\x02\u08CA\xE5\x03\x02\x02\x02\u08CB" +
-		"\u08CC\x05\xDCo\x02\u08CC\xE7\x03\x02\x02\x02\u08CD\u08CE\x05\xDCo\x02" +
-		"\u08CE\xE9\x03\x02\x02\x02\u08CF\u08D0\x05\xDCo\x02\u08D0\xEB\x03\x02" +
-		"\x02\x02\u08D1\u08D2\x05\xDCo\x02\u08D2\xED\x03\x02\x02\x02\u08D3\u08D4" +
-		"\x05\xDCo\x02\u08D4\xEF\x03\x02\x02\x02\u08D5\u08D6\x05\xDCo\x02\u08D6" +
-		"\xF1\x03\x02\x02\x02\u08D7\u08D8\x05\xDCo\x02\u08D8\xF3\x03\x02\x02\x02" +
-		"\u08D9\u08DA\x07#\x02\x02\u08DA\u08DB\x05\xDCo\x02\u08DB\xF5\x03\x02\x02" +
-		"\x02\u08DC\u08DD\x05\xF4{\x02\u08DD\xF7\x03\x02\x02\x02\u08DE\u08DF\x05" +
-		"\xF4{\x02\u08DF\xF9\x03\x02\x02\x02\u08E0\u08E1\x05\xF4{\x02\u08E1\xFB" +
-		"\x03\x02\x02\x02\u08E2\u08E3\x05\xF4{\x02\u08E3\xFD\x03\x02\x02\x02\u08E4" +
-		"\u08E5\x05\u0102\x82\x02\u08E5\u08E6\x07 \x02\x02\u08E6\u08E8\x03\x02" +
-		"\x02\x02\u08E7\u08E4\x03\x02\x02\x02\u08E7\u08E8\x03\x02\x02\x02\u08E8" +
-		"\u08E9\x03\x02\x02\x02\u08E9\u08EA\x05\u0102\x82\x02\u08EA\xFF\x03\x02" +
-		"\x02\x02\u08EB\u08EC\t!\x02\x02\u08EC\u0101\x03\x02\x02\x02\u08ED\u08F1" +
-		"\x07\xB9\x02\x02\u08EE\u08F1\x05\xCCg\x02\u08EF\u08F1\x05\u0100\x81\x02" +
-		"\u08F0\u08ED\x03\x02\x02\x02\u08F0\u08EE\x03\x02\x02\x02\u08F0\u08EF\x03" +
-		"\x02\x02\x02\u08F1\u0103\x03\x02\x02\x02\u08F2\u08F3\x05\xDCo\x02\u08F3" +
-		"\u0105\x03\x02\x02\x02\u08F4\u08F9\x07\xB9\x02\x02\u08F5\u08F9\x07\xBA" +
-		"\x02\x02\u08F6\u08F9\x05\xCCg\x02\u08F7\u08F9\x05\u0100\x81\x02\u08F8" +
-		"\u08F4\x03\x02\x02\x02\u08F8\u08F5\x03\x02\x02\x02\u08F8\u08F6\x03\x02" +
-		"\x02\x02\u08F8\u08F7\x03\x02\x02\x02\u08F9\u0107\x03\x02\x02\x02\u08FA" +
-		"\u08FF\x05\u0102\x82\x02\u08FB\u08FC\x07\x1C\x02\x02\u08FC\u08FE\x05\u0102" +
-		"\x82\x02\u08FD\u08FB\x03\x02\x02\x02\u08FE\u0901\x03\x02\x02\x02\u08FF" +
-		"\u08FD\x03\x02\x02\x02\u08FF\u0900\x03\x02\x02\x02\u0900\u0109\x03\x02" +
-		"\x02\x02\u0901\u08FF\x03\x02\x02\x02\u0902\u0903\x05\u0102\x82\x02\u0903" +
-		"\u0904\x07 \x02\x02\u0904\u0906\x03\x02\x02\x02\u0905\u0902\x03\x02\x02" +
-		"\x02\u0905\u0906\x03\x02\x02\x02\u0906\u0907\x03\x02\x02\x02\u0907\u090A" +
-		"\x05\u0102\x82\x02\u0908\u0909\x07\x04\x02\x02\u0909\u090B\x07\x06\x02" +
-		"\x02\u090A\u0908\x03\x02\x02\x02\u090A\u090B\x03\x02\x02\x02\u090B\u010B" +
-		"\x03\x02\x02\x02\u090C\u090D\x05\u0102\x82\x02\u090D\u010D\x03\x02\x02" +
-		"\x02\u090E\u0911\x05\xECw\x02\u090F\u0911\x05\xF6|\x02\u0910\u090E\x03" +
-		"\x02\x02\x02\u0910\u090F\x03\x02\x02\x02\u0911\u0914\x03\x02\x02\x02\u0912" +
-		"\u0915\x05\xACW\x02\u0913\u0915\x05\xA4S\x02\u0914\u0912\x03\x02\x02\x02" +
-		"\u0914\u0913\x03\x02\x02\x02\u0914\u0915\x03\x02\x02\x02\u0915\u010F\x03" +
-		"\x02\x02\x02\u0916\u0919\x05\xDEp\x02\u0917\u0919\x05\xF8}\x02\u0918\u0916" +
-		"\x03\x02\x02\x02\u0918\u0917\x03\x02\x02\x02\u0919\u091B\x03\x02\x02\x02" +
-		"\u091A\u091C\x05\xD8m\x02\u091B\u091A\x03\x02\x02\x02\u091B\u091C\x03" +
-		"\x02\x02\x02\u091C\u091F\x03\x02\x02\x02\u091D\u0920\x05\xACW\x02\u091E" +
-		"\u0920\x05\xA4S\x02\u091F\u091D\x03\x02\x02\x02\u091F\u091E\x03\x02\x02" +
-		"\x02\u091F\u0920\x03\x02\x02\x02\u0920\u0111\x03\x02\x02\x02\u0111\u0115" +
-		"\u011A\u011E\u0136\u0142\u0144\u014A\u014F\u0153\u0157\u015D\u0187\u018C" +
-		"\u0193\u0197\u019B\u01A1\u01AA\u01AF\u01B9\u01BC\u01C2\u01CF\u01D4\u01DA" +
-		"\u01E0\u01E6\u01EF\u01FB\u0203\u0209\u0210\u0215\u021A\u0222\u0226\u0230" +
-		"\u0234\u023A\u023E\u0244\u024A\u024C\u0254\u025A\u025E\u0279\u027C\u0280" +
-		"\u0283\u028A\u028D\u0291\u0295\u0298\u029B\u02A1\u02A4\u02AC\u02AF\u02B3" +
-		"\u02BA\u02BD\u02C1\u02C6\u02CB\u02E0\u02EE\u02F2\u02F5\u0301\u0308\u032B" +
-		"\u032F\u036C\u0375\u0380\u0382\u038C\u0393\u039B\u03A1\u03A6\u03AD\u03B4" +
-		"\u03B7\u03BE\u03C4\u03C9\u03CD\u03DA\u03E0\u03E5\u03E9\u03EF\u03F4\u03F9" +
-		"\u0402\u0409\u040E\u0412\u0418\u041D\u0422\u0425\u042A\u042F\u0434\u0439" +
-		"\u043E\u0443\u0448\u044D\u0451\u0456\u045B\u0466\u046D\u0475\u047A\u047F" +
-		"\u0488\u048D\u0492\u049C\u04AC\u04B3\u04BB\u04C0\u04C5\u04D0\u04D5\u04DA" +
-		"\u04E2\u04EC\u04F3\u04FD\u0502\u0509\u0513\u0518\u0532\u0537\u053B\u0544" +
-		"\u0547\u054D\u0555\u0559\u055D\u0561\u0564\u0569\u057C\u0581\u0586\u058C" +
-		"\u0594\u059C\u05A2\u05A7\u05AC\u05AE\u05B5\u05BF\u05C4\u05CF\u05D4\u05D8" +
-		"\u05DB\u05DE\u05E3\u05E6\u05FD\u0600\u0602\u060A\u060F\u0618\u061C\u0621" +
-		"\u0625\u062C\u0630\u0634\u0639\u0640\u0644\u064B\u0656\u065B\u065E\u0669" +
-		"\u0674\u067D\u0680\u0683\u068B\u068E\u0691\u0695\u06AB\u06AD\u06B9\u06C2" +
-		"\u06D4\u06DD\u06E9\u06EE\u06F7\u06FC\u0707\u070F\u0715\u0721\u0724\u072C" +
-		"\u072E\u0738\u0743\u0751\u075F\u0761\u0768\u076E\u0775\u077E\u0794\u0796" +
-		"\u079D\u079F\u07A7\u07B4\u07C1\u07CB\u07D5\u07DF\u07E9\u07F0\u07FC\u0803" +
-		"\u0810\u0818\u0823\u082E\u083B\u0848\u0854\u085E\u0865\u0871\u0878\u0881" +
-		"\u089E\u08A1\u08A7\u08B0\u08B3\u08BA\u08C1\u08E7\u08F0\u08F8\u08FF\u0905" +
-		"\u090A\u0910\u0914\u0918\u091B\u091F";
+		"\x02\x02\x02\u0847\u0848\x03\x02\x02\x02\u0848\u084A\x03\x02\x02\x02\u0849" +
+		"\u0847\x03\x02\x02\x02\u084A\u084B\x07\b\x02\x02\u084B\u0861\x03\x02\x02" +
+		"\x02\u084C\u084D\x072\x02\x02\u084D\u0861\x07\b\x02\x02\u084E\u084F\x07" +
+		"3\x02\x02\u084F\u0854\x05\xC8e\x02\u0850\u0851\x07\x05\x02\x02\u0851\u0853" +
+		"\x05\xC8e\x02\u0852\u0850\x03\x02\x02\x02\u0853\u0856\x03\x02\x02\x02" +
+		"\u0854\u0852\x03\x02\x02\x02\u0854\u0855\x03\x02\x02\x02\u0855\u0857\x03" +
+		"\x02\x02\x02\u0856\u0854\x03\x02\x02\x02\u0857\u0858\x07\x06\x02\x02\u0858" +
+		"\u0861\x03\x02\x02\x02\u0859\u085A\x07\x04\x02\x02\u085A\u0861\x07\x06" +
+		"\x02\x02\u085B\u0861\x07A\x02\x02\u085C\u0861\x07C\x02\x02\u085D\u0861" +
+		"\x07>\x02\x02\u085E\u0861\x07?\x02\x02\u085F\u0861\x07@\x02\x02\u0860" +
+		"\u0841\x03\x02\x02\x02\u0860\u084C\x03\x02\x02\x02\u0860\u084E\x03\x02" +
+		"\x02\x02\u0860\u0859\x03\x02\x02\x02\u0860\u085B\x03\x02\x02\x02\u0860" +
+		"\u085C\x03\x02\x02\x02\u0860\u085D\x03\x02\x02\x02\u0860\u085E\x03\x02" +
+		"\x02\x02\u0860\u085F\x03\x02\x02\x02\u0861\xBF\x03\x02\x02\x02\u0862\u0863" +
+		"\x05\xC8e\x02\u0863\xC1\x03\x02\x02\x02\u0864\u0865\x07\x07\x02\x02\u0865" +
+		"\u086A\x05\xC4c\x02\u0866\u0867\x07\x05\x02\x02\u0867\u0869\x05\xC4c\x02" +
+		"\u0868\u0866\x03\x02\x02\x02\u0869\u086C\x03\x02\x02\x02\u086A\u0868\x03" +
+		"\x02\x02\x02\u086A\u086B\x03\x02\x02\x02\u086B\u086D\x03\x02\x02\x02\u086C" +
+		"\u086A\x03\x02\x02\x02\u086D\u086E\x07\b\x02\x02\u086E\u0872\x03\x02\x02" +
+		"\x02\u086F\u0870\x07\x07\x02\x02\u0870\u0872\x07\b\x02\x02\u0871\u0864" +
+		"\x03\x02\x02\x02\u0871\u086F\x03\x02\x02\x02\u0872\xC3\x03\x02\x02\x02" +
+		"\u0873\u0874\x07A\x02\x02\u0874\u0875\x07 \x02\x02\u0875\u0876\x05\xC8" +
+		"e\x02\u0876\xC5\x03\x02\x02\x02\u0877\u0878\x07\x04\x02\x02\u0878\u087D" +
+		"\x05\xC8e\x02\u0879\u087A\x07\x05\x02\x02\u087A\u087C\x05\xC8e\x02\u087B" +
+		"\u0879\x03\x02\x02\x02\u087C\u087F\x03\x02\x02\x02\u087D\u087B\x03\x02" +
+		"\x02\x02\u087D\u087E\x03\x02\x02\x02\u087E\u0880\x03\x02\x02\x02\u087F" +
+		"\u087D\x03\x02\x02\x02\u0880\u0881\x07\x06\x02\x02\u0881\u0885\x03\x02" +
+		"\x02\x02\u0882\u0883\x07\x04\x02\x02\u0883\u0885\x07\x06\x02\x02\u0884" +
+		"\u0877\x03\x02\x02\x02\u0884\u0882\x03\x02\x02\x02\u0885\xC7\x03\x02\x02" +
+		"\x02\u0886\u088E\x07A\x02\x02\u0887\u088E\x07C\x02\x02\u0888\u088E\x05" +
+		"\xC2b\x02\u0889\u088E\x05\xC6d\x02\u088A\u088E\x07>\x02\x02\u088B\u088E" +
+		"\x07?\x02\x02\u088C\u088E\x07@\x02\x02\u088D\u0886\x03\x02\x02\x02\u088D" +
+		"\u0887\x03\x02\x02\x02\u088D\u0888\x03\x02\x02\x02\u088D\u0889\x03\x02" +
+		"\x02\x02\u088D\u088A\x03\x02\x02\x02\u088D\u088B\x03\x02\x02\x02\u088D" +
+		"\u088C\x03\x02\x02\x02\u088E\xC9\x03\x02\x02\x02\u088F\u0890\t\x1E\x02" +
+		"\x02\u0890\xCB\x03\x02\x02\x02\u0891\u0892\t\x1F\x02\x02\u0892\xCD\x03" +
+		"\x02\x02\x02\u0893\u0894\x074\x02\x02\u0894\u0895\x05\xD4k\x02\u0895\u0896" +
+		"\x05\xD4k\x02\u0896\u0897\x05\xD4k\x02\u0897\u0898\x075\x02\x02\u0898" +
+		"\xCF\x03\x02\x02\x02\u0899\u089A\x074\x02\x02\u089A\u089B\x05\xD4k\x02" +
+		"\u089B\u089C\x05\xD4k\x02\u089C\u089D\x075\x02\x02\u089D\xD1\x03\x02\x02" +
+		"\x02\u089E\u089F\x074\x02\x02\u089F\u08A0\x05\xD4k\x02\u08A0\u08A1\x05" +
+		"\xD4k\x02\u08A1\u08A2\x05\xD4k\x02\u08A2\u08A3\x05\xD4k\x02\u08A3\u08A4" +
+		"\x05\xD4k\x02\u08A4\u08A5\x075\x02\x02\u08A5\xD3\x03\x02\x02\x02\u08A6" +
+		"\u08A7\t \x02\x02\u08A7\xD5\x03\x02\x02\x02\u08A8\u08AA\x05\xDEp\x02\u08A9" +
+		"\u08AB\x05\xD8m\x02\u08AA\u08A9\x03\x02\x02\x02\u08AA\u08AB\x03\x02\x02" +
+		"\x02\u08AB\u08AD\x03\x02\x02\x02\u08AC\u08AE\x05\xA4S\x02\u08AD\u08AC" +
+		"\x03\x02\x02\x02\u08AD\u08AE\x03\x02\x02\x02\u08AE\xD7\x03\x02\x02\x02" +
+		"\u08AF\u08B1\x07\x04\x02\x02\u08B0\u08B2\v\x02\x02\x02\u08B1\u08B0\x03" +
+		"\x02\x02\x02\u08B2\u08B3\x03\x02\x02\x02\u08B3\u08B4\x03\x02\x02\x02\u08B3" +
+		"\u08B1\x03\x02\x02\x02\u08B4\u08B5\x03\x02\x02\x02\u08B5\u08B6\x07\x06" +
+		"\x02\x02\u08B6\xD9\x03\x02\x02\x02\u08B7\u08BF\x07\xB3\x02\x02\u08B8\u08BA" +
+		"\x07\x04\x02\x02\u08B9\u08BB\v\x02\x02\x02\u08BA\u08B9\x03\x02\x02\x02" +
+		"\u08BB\u08BC\x03\x02\x02\x02\u08BC\u08BD\x03\x02\x02\x02\u08BC\u08BA\x03" +
+		"\x02\x02\x02\u08BD\u08BE\x03\x02\x02\x02\u08BE\u08C0\x07\x06\x02\x02\u08BF" +
+		"\u08B8\x03\x02\x02\x02\u08BF\u08C0\x03\x02\x02\x02\u08C0\u08C7\x03\x02" +
+		"\x02\x02\u08C1\u08C2\x076\x02\x02\u08C2\u08C7\x05\u0106\x84\x02\u08C3" +
+		"\u08C4\x07#\x02\x02\u08C4\u08C7\x05\u0106\x84\x02\u08C5\u08C7\x07#\x02" +
+		"\x02\u08C6\u08B7\x03\x02\x02\x02\u08C6\u08C1\x03\x02\x02\x02\u08C6\u08C3" +
+		"\x03\x02\x02\x02\u08C6\u08C5\x03\x02\x02\x02\u08C7\xDB\x03\x02\x02\x02" +
+		"\u08C8\u08C9\x05\u0102\x82\x02\u08C9\u08CA\x07 \x02\x02\u08CA\u08CB\x05" +
+		"\u0108\x85\x02\u08CB\u08CE\x03\x02\x02\x02\u08CC\u08CE\x05\u0108\x85\x02" +
+		"\u08CD\u08C8\x03\x02\x02\x02\u08CD\u08CC\x03\x02\x02\x02\u08CE\xDD\x03" +
+		"\x02\x02\x02\u08CF\u08D0\x05\xDCo\x02\u08D0\xDF\x03\x02\x02\x02\u08D1" +
+		"\u08D2\x05\xDCo\x02\u08D2\xE1\x03\x02\x02\x02\u08D3\u08D4\x05\xDCo\x02" +
+		"\u08D4\xE3\x03\x02\x02\x02\u08D5\u08D6\x05\xDCo\x02\u08D6\xE5\x03\x02" +
+		"\x02\x02\u08D7\u08D8\x05\xDCo\x02\u08D8\xE7\x03\x02\x02\x02\u08D9\u08DA" +
+		"\x05\xDCo\x02\u08DA\xE9\x03\x02\x02\x02\u08DB\u08DC\x05\xDCo\x02\u08DC" +
+		"\xEB\x03\x02\x02\x02\u08DD\u08DE\x05\xDCo\x02\u08DE\xED\x03\x02\x02\x02" +
+		"\u08DF\u08E0\x05\xDCo\x02\u08E0\xEF\x03\x02\x02\x02\u08E1\u08E2\x05\xDC" +
+		"o\x02\u08E2\xF1\x03\x02\x02\x02\u08E3\u08E4\x05\xDCo\x02\u08E4\xF3\x03" +
+		"\x02\x02\x02\u08E5\u08E6\x07#\x02\x02\u08E6\u08E7\x05\xDCo\x02\u08E7\xF5" +
+		"\x03\x02\x02\x02\u08E8\u08E9\x05\xF4{\x02\u08E9\xF7\x03\x02\x02\x02\u08EA" +
+		"\u08EB\x05\xF4{\x02\u08EB\xF9\x03\x02\x02\x02\u08EC\u08ED\x05\xF4{\x02" +
+		"\u08ED\xFB\x03\x02\x02\x02\u08EE\u08EF\x05\xF4{\x02\u08EF\xFD\x03\x02" +
+		"\x02\x02\u08F0\u08F1\x05\u0102\x82\x02\u08F1\u08F2\x07 \x02\x02\u08F2" +
+		"\u08F4\x03\x02\x02\x02\u08F3\u08F0\x03\x02\x02\x02\u08F3\u08F4\x03\x02" +
+		"\x02\x02\u08F4\u08F5\x03\x02\x02\x02\u08F5\u08F6\x05\u0102\x82\x02\u08F6" +
+		"\xFF\x03\x02\x02\x02\u08F7\u08F8\t!\x02\x02\u08F8\u0101\x03\x02\x02\x02" +
+		"\u08F9\u08FD\x07\xBA\x02\x02\u08FA\u08FD\x05\xCCg\x02\u08FB\u08FD\x05" +
+		"\u0100\x81\x02\u08FC\u08F9\x03\x02\x02\x02\u08FC\u08FA\x03\x02\x02\x02" +
+		"\u08FC\u08FB\x03\x02\x02\x02\u08FD\u0103\x03\x02\x02\x02\u08FE\u08FF\x05" +
+		"\xDCo\x02\u08FF\u0105\x03\x02\x02\x02\u0900\u0905\x07\xBA\x02\x02\u0901" +
+		"\u0905\x07\xBB\x02\x02\u0902\u0905\x05\xCCg\x02\u0903\u0905\x05\u0100" +
+		"\x81\x02\u0904\u0900\x03\x02\x02\x02\u0904\u0901\x03\x02\x02\x02\u0904" +
+		"\u0902\x03\x02\x02\x02\u0904\u0903\x03\x02\x02\x02\u0905\u0107\x03\x02" +
+		"\x02\x02\u0906\u090B\x05\u0102\x82\x02\u0907\u0908\x07\x1C\x02\x02\u0908" +
+		"\u090A\x05\u0102\x82\x02\u0909\u0907\x03\x02\x02\x02\u090A\u090D\x03\x02" +
+		"\x02\x02\u090B\u0909\x03\x02\x02\x02\u090B\u090C\x03\x02\x02\x02\u090C" +
+		"\u0109\x03\x02\x02\x02\u090D\u090B\x03\x02\x02\x02\u090E\u090F\x05\u0102" +
+		"\x82\x02\u090F\u0910\x07 \x02\x02\u0910\u0912\x03\x02\x02\x02\u0911\u090E" +
+		"\x03\x02\x02\x02\u0911\u0912\x03\x02\x02\x02\u0912\u0913\x03\x02\x02\x02" +
+		"\u0913\u0916\x05\u0102\x82\x02\u0914\u0915\x07\x04\x02\x02\u0915\u0917" +
+		"\x07\x06\x02\x02\u0916\u0914\x03\x02\x02\x02\u0916\u0917\x03\x02\x02\x02" +
+		"\u0917\u010B\x03\x02\x02\x02\u0918\u0919\x05\u0102\x82\x02\u0919\u010D" +
+		"\x03\x02\x02\x02\u091A\u091D\x05\xECw\x02\u091B\u091D\x05\xF6|\x02\u091C" +
+		"\u091A\x03\x02\x02\x02\u091C\u091B\x03\x02\x02\x02\u091D\u0920\x03\x02" +
+		"\x02\x02\u091E\u0921\x05\xACW\x02\u091F\u0921\x05\xA4S\x02\u0920\u091E" +
+		"\x03\x02\x02\x02\u0920\u091F\x03\x02\x02\x02\u0920\u0921\x03\x02\x02\x02" +
+		"\u0921\u010F\x03\x02\x02\x02\u0922\u0925\x05\xDEp\x02\u0923\u0925\x05" +
+		"\xF8}\x02\u0924\u0922\x03\x02\x02\x02\u0924\u0923\x03\x02\x02\x02\u0925" +
+		"\u0927\x03\x02\x02\x02\u0926\u0928\x05\xD8m\x02\u0927\u0926\x03\x02\x02" +
+		"\x02\u0927\u0928\x03\x02\x02\x02\u0928\u092B\x03\x02\x02\x02\u0929\u092C" +
+		"\x05\xACW\x02\u092A\u092C\x05\xA4S\x02\u092B\u0929\x03\x02\x02\x02\u092B" +
+		"\u092A\x03\x02\x02\x02\u092B\u092C\x03\x02\x02\x02\u092C\u0111\x03\x02" +
+		"\x02\x02\u0113\u0115\u011A\u011E\u0136\u0142\u0144\u014A\u014F\u0153\u0157" +
+		"\u015D\u0187\u018C\u0193\u0197\u019B\u01A3\u01A6\u01AC\u01B5\u01BB\u01C5" +
+		"\u01C8\u01CE\u01DB\u01E0\u01E6\u01EC\u01F2\u01FB\u0207\u020F\u0215\u021C" +
+		"\u0221\u0226\u022E\u0232\u023C\u0240\u0246\u024A\u0250\u0256\u0258\u0260" +
+		"\u0266\u026A\u0285\u0288\u028C\u028F\u0296\u0299\u029D\u02A1\u02A4\u02A7" +
+		"\u02AD\u02B0\u02B8\u02BB\u02BF\u02C6\u02C9\u02CD\u02D2\u02D7\u02EC\u02FA" +
+		"\u02FE\u0301\u030D\u0314\u0337\u033B\u0342\u034A\u0350\u0355\u0392\u039B" +
+		"\u03A6\u03A8\u03B2\u03B9\u03C0\u03C3\u03CA\u03D0\u03D5\u03D9\u03E6\u03EC" +
+		"\u03F1\u03F5\u03FB\u0400\u0405\u040E\u0415\u041A\u041E\u0424\u0429\u042E" +
+		"\u0431\u0436\u043B\u0440\u0445\u044A\u044F\u0454\u0459\u045D\u0462\u0467" +
+		"\u0472\u0479\u0481\u0486\u048B\u0494\u0499\u049E\u04A8\u04B8\u04BF\u04C7" +
+		"\u04CC\u04D1\u04DC\u04E1\u04E6\u04EE\u04F8\u04FF\u0509\u050E\u0515\u051F" +
+		"\u0524\u053E\u0543\u0547\u0550\u0553\u0559\u0561\u0565\u0569\u056D\u0570" +
+		"\u0575\u0588\u058D\u0592\u0598\u05A0\u05A8\u05AE\u05B3\u05B8\u05BA\u05C1" +
+		"\u05CB\u05D0\u05DB\u05E0\u05E4\u05E7\u05EA\u05EF\u05F2\u0609\u060C\u060E" +
+		"\u0616\u061B\u0624\u0628\u062D\u0631\u0638\u063C\u0640\u0645\u064C\u0650" +
+		"\u0657\u0662\u0667\u066A\u0675\u0680\u0689\u068C\u068F\u0697\u069A\u069D" +
+		"\u06A1\u06B7\u06B9\u06C5\u06CE\u06E0\u06E9\u06F5\u06FA\u0703\u0708\u0713" +
+		"\u071B\u0721\u072D\u0730\u0738\u073A\u0744\u074F\u075D\u076B\u076D\u0774" +
+		"\u077A\u0781\u078A\u07A0\u07A2\u07A9\u07AB\u07B3\u07C0\u07CD\u07D7\u07E1" +
+		"\u07EB\u07F5\u07FC\u0808\u080F\u081C\u0824\u082F\u083A\u0847\u0854\u0860" +
+		"\u086A\u0871\u087D\u0884\u088D\u08AA\u08AD\u08B3\u08BC\u08BF\u08C6\u08CD" +
+		"\u08F3\u08FC\u0904\u090B\u0911\u0916\u091C\u0920\u0924\u0927\u092B";
 	public static readonly _serializedATN: string = Utils.join(
 		[
 			JustMCFParser._serializedATNSegment0,
@@ -13705,9 +13751,16 @@ export class NameSpaceStatementInnerContext extends ParserRuleContext {
 
 export class FuncTagStatementContext extends ParserRuleContext {
 	public FUNC(): TerminalNode { return this.getToken(JustMCFParser.FUNC, 0); }
-	public tagNameSpaceFunc(): TagNameSpaceFuncContext {
-		return this.getRuleContext(0, TagNameSpaceFuncContext);
+	public tagNameSpaceFunc(): TagNameSpaceFuncContext[];
+	public tagNameSpaceFunc(i: number): TagNameSpaceFuncContext;
+	public tagNameSpaceFunc(i?: number): TagNameSpaceFuncContext | TagNameSpaceFuncContext[] {
+		if (i === undefined) {
+			return this.getRuleContexts(TagNameSpaceFuncContext);
+		} else {
+			return this.getRuleContext(i, TagNameSpaceFuncContext);
+		}
 	}
+	public TAGGED(): TerminalNode | undefined { return this.tryGetToken(JustMCFParser.TAGGED, 0); }
 	public funcTagStatementInner(): FuncTagStatementInnerContext[];
 	public funcTagStatementInner(i: number): FuncTagStatementInnerContext;
 	public funcTagStatementInner(i?: number): FuncTagStatementInnerContext | FuncTagStatementInnerContext[] {
@@ -13857,6 +13910,35 @@ export class FuncTagSIFuncSContext extends FuncTagStatementInnerContext {
 	public accept<Result>(visitor: JustMCFVisitor<Result>): Result {
 		if (visitor.visitFuncTagSIFuncS) {
 			return visitor.visitFuncTagSIFuncS(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
+}
+export class FuncTagSIFuncRunSContext extends FuncTagStatementInnerContext {
+	public funcRunStatement(): FuncRunStatementContext {
+		return this.getRuleContext(0, FuncRunStatementContext);
+	}
+	constructor(ctx: FuncTagStatementInnerContext) {
+		super(ctx.parent, ctx.invokingState);
+		this.copyFrom(ctx);
+	}
+	// @Override
+	public enterRule(listener: JustMCFListener): void {
+		if (listener.enterFuncTagSIFuncRunS) {
+			listener.enterFuncTagSIFuncRunS(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: JustMCFListener): void {
+		if (listener.exitFuncTagSIFuncRunS) {
+			listener.exitFuncTagSIFuncRunS(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: JustMCFVisitor<Result>): Result {
+		if (visitor.visitFuncTagSIFuncRunS) {
+			return visitor.visitFuncTagSIFuncRunS(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -15347,13 +15429,13 @@ export class ExecStoreContext extends ExecChildContext {
 
 
 export class MatchPartContext extends ParserRuleContext {
-	public NUMBER(): TerminalNode[];
-	public NUMBER(i: number): TerminalNode;
-	public NUMBER(i?: number): TerminalNode | TerminalNode[] {
+	public NUMBER_INT(): TerminalNode[];
+	public NUMBER_INT(i: number): TerminalNode;
+	public NUMBER_INT(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(JustMCFParser.NUMBER);
+			return this.getTokens(JustMCFParser.NUMBER_INT);
 		} else {
-			return this.getToken(JustMCFParser.NUMBER, i);
+			return this.getToken(JustMCFParser.NUMBER_INT, i);
 		}
 	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
@@ -15386,7 +15468,7 @@ export class MatchPartContext extends ParserRuleContext {
 
 export class ScbCompareNumberContext extends ParserRuleContext {
 	public CompareOperation(): TerminalNode { return this.getToken(JustMCFParser.CompareOperation, 0); }
-	public NUMBER(): TerminalNode { return this.getToken(JustMCFParser.NUMBER, 0); }
+	public NUMBER_INT(): TerminalNode { return this.getToken(JustMCFParser.NUMBER_INT, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
@@ -15488,8 +15570,8 @@ export class DataStorageContext extends DataIdentifierContext {
 	}
 }
 export class DataStorageWithEnvContext extends DataIdentifierContext {
-	public acceptableName(): AcceptableNameContext {
-		return this.getRuleContext(0, AcceptableNameContext);
+	public nbtPath(): NbtPathContext {
+		return this.getRuleContext(0, NbtPathContext);
 	}
 	constructor(ctx: DataIdentifierContext) {
 		super(ctx.parent, ctx.invokingState);
@@ -16025,7 +16107,7 @@ export class DataModifyInsertValueContext extends DataOperationExpressionContext
 	public dataIdentifier(): DataIdentifierContext {
 		return this.getRuleContext(0, DataIdentifierContext);
 	}
-	public NUMBER(): TerminalNode { return this.getToken(JustMCFParser.NUMBER, 0); }
+	public NUMBER_INT(): TerminalNode { return this.getToken(JustMCFParser.NUMBER_INT, 0); }
 	public nbt(): NbtContext {
 		return this.getRuleContext(0, NbtContext);
 	}
@@ -16058,7 +16140,7 @@ export class DataModifyInsertFromContext extends DataOperationExpressionContext 
 	public dataIdentifier(): DataIdentifierContext {
 		return this.getRuleContext(0, DataIdentifierContext);
 	}
-	public NUMBER(): TerminalNode { return this.getToken(JustMCFParser.NUMBER, 0); }
+	public NUMBER_INT(): TerminalNode { return this.getToken(JustMCFParser.NUMBER_INT, 0); }
 	public dataRightValue(): DataRightValueContext {
 		return this.getRuleContext(0, DataRightValueContext);
 	}
@@ -16154,6 +16236,96 @@ export class DataRightValueContext extends ParserRuleContext {
 }
 
 
+export class DataStatementContext extends ParserRuleContext {
+	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
+		super(parent, invokingState);
+	}
+	// @Override
+	public get ruleIndex(): number { return JustMCFParser.RULE_dataStatement; }
+	public copyFrom(ctx: DataStatementContext): void {
+		super.copyFrom(ctx);
+	}
+}
+export class DataSCompoundContext extends DataStatementContext {
+	public DATA(): TerminalNode { return this.getToken(JustMCFParser.DATA, 0); }
+	public dataOperationExpression(): DataOperationExpressionContext[];
+	public dataOperationExpression(i: number): DataOperationExpressionContext;
+	public dataOperationExpression(i?: number): DataOperationExpressionContext | DataOperationExpressionContext[] {
+		if (i === undefined) {
+			return this.getRuleContexts(DataOperationExpressionContext);
+		} else {
+			return this.getRuleContext(i, DataOperationExpressionContext);
+		}
+	}
+	constructor(ctx: DataStatementContext) {
+		super(ctx.parent, ctx.invokingState);
+		this.copyFrom(ctx);
+	}
+	// @Override
+	public enterRule(listener: JustMCFListener): void {
+		if (listener.enterDataSCompound) {
+			listener.enterDataSCompound(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: JustMCFListener): void {
+		if (listener.exitDataSCompound) {
+			listener.exitDataSCompound(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: JustMCFVisitor<Result>): Result {
+		if (visitor.visitDataSCompound) {
+			return visitor.visitDataSCompound(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
+}
+export class DataSIdentifierCompoundContext extends DataStatementContext {
+	public DATA(): TerminalNode { return this.getToken(JustMCFParser.DATA, 0); }
+	public nameSpaceStorage(): NameSpaceStorageContext {
+		return this.getRuleContext(0, NameSpaceStorageContext);
+	}
+	public nbtPath(): NbtPathContext | undefined {
+		return this.tryGetRuleContext(0, NbtPathContext);
+	}
+	public dataOperationExpression(): DataOperationExpressionContext[];
+	public dataOperationExpression(i: number): DataOperationExpressionContext;
+	public dataOperationExpression(i?: number): DataOperationExpressionContext | DataOperationExpressionContext[] {
+		if (i === undefined) {
+			return this.getRuleContexts(DataOperationExpressionContext);
+		} else {
+			return this.getRuleContext(i, DataOperationExpressionContext);
+		}
+	}
+	constructor(ctx: DataStatementContext) {
+		super(ctx.parent, ctx.invokingState);
+		this.copyFrom(ctx);
+	}
+	// @Override
+	public enterRule(listener: JustMCFListener): void {
+		if (listener.enterDataSIdentifierCompound) {
+			listener.enterDataSIdentifierCompound(this);
+		}
+	}
+	// @Override
+	public exitRule(listener: JustMCFListener): void {
+		if (listener.exitDataSIdentifierCompound) {
+			listener.exitDataSIdentifierCompound(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: JustMCFVisitor<Result>): Result {
+		if (visitor.visitDataSIdentifierCompound) {
+			return visitor.visitDataSIdentifierCompound(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
+}
+
+
 export class ScbOperationExpressionContext extends ParserRuleContext {
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
@@ -16197,7 +16369,7 @@ export class ScbAddContext extends ScbOperationExpressionContext {
 	public scbIdentifier(): ScbIdentifierContext {
 		return this.getRuleContext(0, ScbIdentifierContext);
 	}
-	public NUMBER(): TerminalNode { return this.getToken(JustMCFParser.NUMBER, 0); }
+	public NUMBER_INT(): TerminalNode { return this.getToken(JustMCFParser.NUMBER_INT, 0); }
 	constructor(ctx: ScbOperationExpressionContext) {
 		super(ctx.parent, ctx.invokingState);
 		this.copyFrom(ctx);
@@ -16227,7 +16399,7 @@ export class ScbRemoveContext extends ScbOperationExpressionContext {
 	public scbIdentifier(): ScbIdentifierContext {
 		return this.getRuleContext(0, ScbIdentifierContext);
 	}
-	public NUMBER(): TerminalNode { return this.getToken(JustMCFParser.NUMBER, 0); }
+	public NUMBER_INT(): TerminalNode { return this.getToken(JustMCFParser.NUMBER_INT, 0); }
 	constructor(ctx: ScbOperationExpressionContext) {
 		super(ctx.parent, ctx.invokingState);
 		this.copyFrom(ctx);
@@ -16257,7 +16429,7 @@ export class ScbSetContext extends ScbOperationExpressionContext {
 	public scbIdentifier(): ScbIdentifierContext {
 		return this.getRuleContext(0, ScbIdentifierContext);
 	}
-	public NUMBER(): TerminalNode { return this.getToken(JustMCFParser.NUMBER, 0); }
+	public NUMBER_INT(): TerminalNode { return this.getToken(JustMCFParser.NUMBER_INT, 0); }
 	constructor(ctx: ScbOperationExpressionContext) {
 		super(ctx.parent, ctx.invokingState);
 		this.copyFrom(ctx);
@@ -16811,7 +16983,7 @@ export class ScbOptAddSubExpressionContext extends ScbSingleOperationExpressionC
 	}
 }
 export class ScbTempNumberExpressionContext extends ScbSingleOperationExpressionContext {
-	public NUMBER(): TerminalNode { return this.getToken(JustMCFParser.NUMBER, 0); }
+	public NUMBER_INT(): TerminalNode { return this.getToken(JustMCFParser.NUMBER_INT, 0); }
 	constructor(ctx: ScbSingleOperationExpressionContext) {
 		super(ctx.parent, ctx.invokingState);
 		this.copyFrom(ctx);
@@ -16925,96 +17097,6 @@ export class ScbIdentifierContext extends ParserRuleContext {
 	public accept<Result>(visitor: JustMCFVisitor<Result>): Result {
 		if (visitor.visitScbIdentifier) {
 			return visitor.visitScbIdentifier(this);
-		} else {
-			return visitor.visitChildren(this);
-		}
-	}
-}
-
-
-export class DataStatementContext extends ParserRuleContext {
-	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
-		super(parent, invokingState);
-	}
-	// @Override
-	public get ruleIndex(): number { return JustMCFParser.RULE_dataStatement; }
-	public copyFrom(ctx: DataStatementContext): void {
-		super.copyFrom(ctx);
-	}
-}
-export class DataSCompoundContext extends DataStatementContext {
-	public DATA(): TerminalNode { return this.getToken(JustMCFParser.DATA, 0); }
-	public dataOperationExpression(): DataOperationExpressionContext[];
-	public dataOperationExpression(i: number): DataOperationExpressionContext;
-	public dataOperationExpression(i?: number): DataOperationExpressionContext | DataOperationExpressionContext[] {
-		if (i === undefined) {
-			return this.getRuleContexts(DataOperationExpressionContext);
-		} else {
-			return this.getRuleContext(i, DataOperationExpressionContext);
-		}
-	}
-	constructor(ctx: DataStatementContext) {
-		super(ctx.parent, ctx.invokingState);
-		this.copyFrom(ctx);
-	}
-	// @Override
-	public enterRule(listener: JustMCFListener): void {
-		if (listener.enterDataSCompound) {
-			listener.enterDataSCompound(this);
-		}
-	}
-	// @Override
-	public exitRule(listener: JustMCFListener): void {
-		if (listener.exitDataSCompound) {
-			listener.exitDataSCompound(this);
-		}
-	}
-	// @Override
-	public accept<Result>(visitor: JustMCFVisitor<Result>): Result {
-		if (visitor.visitDataSCompound) {
-			return visitor.visitDataSCompound(this);
-		} else {
-			return visitor.visitChildren(this);
-		}
-	}
-}
-export class DataSIdentifierCompoundContext extends DataStatementContext {
-	public DATA(): TerminalNode { return this.getToken(JustMCFParser.DATA, 0); }
-	public nameSpaceStorage(): NameSpaceStorageContext {
-		return this.getRuleContext(0, NameSpaceStorageContext);
-	}
-	public acceptableName(): AcceptableNameContext | undefined {
-		return this.tryGetRuleContext(0, AcceptableNameContext);
-	}
-	public dataOperationExpression(): DataOperationExpressionContext[];
-	public dataOperationExpression(i: number): DataOperationExpressionContext;
-	public dataOperationExpression(i?: number): DataOperationExpressionContext | DataOperationExpressionContext[] {
-		if (i === undefined) {
-			return this.getRuleContexts(DataOperationExpressionContext);
-		} else {
-			return this.getRuleContext(i, DataOperationExpressionContext);
-		}
-	}
-	constructor(ctx: DataStatementContext) {
-		super(ctx.parent, ctx.invokingState);
-		this.copyFrom(ctx);
-	}
-	// @Override
-	public enterRule(listener: JustMCFListener): void {
-		if (listener.enterDataSIdentifierCompound) {
-			listener.enterDataSIdentifierCompound(this);
-		}
-	}
-	// @Override
-	public exitRule(listener: JustMCFListener): void {
-		if (listener.exitDataSIdentifierCompound) {
-			listener.exitDataSIdentifierCompound(this);
-		}
-	}
-	// @Override
-	public accept<Result>(visitor: JustMCFVisitor<Result>): Result {
-		if (visitor.visitDataSIdentifierCompound) {
-			return visitor.visitDataSIdentifierCompound(this);
 		} else {
 			return visitor.visitChildren(this);
 		}
@@ -19227,7 +19309,7 @@ export class LootIndependentStatementInnerReplaceEntityContext extends ParserRul
 	public lootSource(): LootSourceContext {
 		return this.getRuleContext(0, LootSourceContext);
 	}
-	public NUMBER(): TerminalNode | undefined { return this.tryGetToken(JustMCFParser.NUMBER, 0); }
+	public NUMBER_INT(): TerminalNode | undefined { return this.tryGetToken(JustMCFParser.NUMBER_INT, 0); }
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
 		super(parent, invokingState);
 	}
@@ -19757,7 +19839,7 @@ export class ItemISIReplaceWithContext extends ItemIndependentStatementInnerCont
 	public nameSpaceItem(): NameSpaceItemContext {
 		return this.getRuleContext(0, NameSpaceItemContext);
 	}
-	public NUMBER(): TerminalNode | undefined { return this.tryGetToken(JustMCFParser.NUMBER, 0); }
+	public NUMBER_INT(): TerminalNode | undefined { return this.tryGetToken(JustMCFParser.NUMBER_INT, 0); }
 	constructor(ctx: ItemIndependentStatementInnerContext) {
 		super(ctx.parent, ctx.invokingState);
 		this.copyFrom(ctx);
@@ -19914,7 +19996,7 @@ export class GiveISIContext extends GiveAndClearIndependentStatementInnerContext
 		return this.getRuleContext(0, NameSpaceItemContext);
 	}
 	public GIVE(): TerminalNode { return this.getToken(JustMCFParser.GIVE, 0); }
-	public NUMBER(): TerminalNode | undefined { return this.tryGetToken(JustMCFParser.NUMBER, 0); }
+	public NUMBER_INT(): TerminalNode | undefined { return this.tryGetToken(JustMCFParser.NUMBER_INT, 0); }
 	constructor(ctx: GiveAndClearIndependentStatementInnerContext) {
 		super(ctx.parent, ctx.invokingState);
 		this.copyFrom(ctx);
@@ -19945,7 +20027,7 @@ export class ClearISIContext extends GiveAndClearIndependentStatementInnerContex
 		return this.getRuleContext(0, Item_predicateContext);
 	}
 	public CLEAR(): TerminalNode { return this.getToken(JustMCFParser.CLEAR, 0); }
-	public NUMBER(): TerminalNode | undefined { return this.tryGetToken(JustMCFParser.NUMBER, 0); }
+	public NUMBER_INT(): TerminalNode | undefined { return this.tryGetToken(JustMCFParser.NUMBER_INT, 0); }
 	constructor(ctx: GiveAndClearIndependentStatementInnerContext) {
 		super(ctx.parent, ctx.invokingState);
 		this.copyFrom(ctx);
@@ -22786,13 +22868,13 @@ export class NbtPathContext extends ParserRuleContext {
 	public nbtCompound(): NbtCompoundContext | undefined {
 		return this.tryGetRuleContext(0, NbtCompoundContext);
 	}
-	public NUMBER(): TerminalNode[];
-	public NUMBER(i: number): TerminalNode;
-	public NUMBER(i?: number): TerminalNode | TerminalNode[] {
+	public NUMBER_INT(): TerminalNode[];
+	public NUMBER_INT(i: number): TerminalNode;
+	public NUMBER_INT(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(JustMCFParser.NUMBER);
+			return this.getTokens(JustMCFParser.NUMBER_INT);
 		} else {
-			return this.getToken(JustMCFParser.NUMBER, i);
+			return this.getToken(JustMCFParser.NUMBER_INT, i);
 		}
 	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {
@@ -22851,13 +22933,13 @@ export class SnbtValueContext extends ParserRuleContext {
 			return this.getToken(JustMCFParser.ByteNumber, i);
 		}
 	}
-	public NUMBER(): TerminalNode[];
-	public NUMBER(i: number): TerminalNode;
-	public NUMBER(i?: number): TerminalNode | TerminalNode[] {
+	public NUMBER_INT(): TerminalNode[];
+	public NUMBER_INT(i: number): TerminalNode;
+	public NUMBER_INT(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(JustMCFParser.NUMBER);
+			return this.getTokens(JustMCFParser.NUMBER_INT);
 		} else {
-			return this.getToken(JustMCFParser.NUMBER, i);
+			return this.getToken(JustMCFParser.NUMBER_INT, i);
 		}
 	}
 	public LongNumber(): TerminalNode[];
@@ -23137,13 +23219,13 @@ export class NbtByteArrContext extends ParserRuleContext {
 
 
 export class NbtIntArrContext extends ParserRuleContext {
-	public NUMBER(): TerminalNode[];
-	public NUMBER(i: number): TerminalNode;
-	public NUMBER(i?: number): TerminalNode | TerminalNode[] {
+	public NUMBER_INT(): TerminalNode[];
+	public NUMBER_INT(i: number): TerminalNode;
+	public NUMBER_INT(i?: number): TerminalNode | TerminalNode[] {
 		if (i === undefined) {
-			return this.getTokens(JustMCFParser.NUMBER);
+			return this.getTokens(JustMCFParser.NUMBER_INT);
 		} else {
-			return this.getToken(JustMCFParser.NUMBER, i);
+			return this.getToken(JustMCFParser.NUMBER_INT, i);
 		}
 	}
 	constructor(parent: ParserRuleContext | undefined, invokingState: number) {

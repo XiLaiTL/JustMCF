@@ -3,6 +3,7 @@ import { registerOnArray } from "../src/lib/ArrayHelper";
 import { execute } from '../src/ManageSimplify';
 
 registerOnArray()
+
 test('JavaScript Script', () => {
     execute(`
 

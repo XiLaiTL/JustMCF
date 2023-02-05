@@ -54,7 +54,7 @@
 
 <!-- /TOC -->
 
-JustMCF是一个简化mcfunction工程的项目。使用JustMCF，可以使你的命令更加简洁高效。
+JustMCF是一个简化mcfunction工程的项目。使用JustMCF，你不但可以使用**原版的命令**，还可以使用项目设计的**简化命令**，可以使你的命令更加简洁高效。
 
 以下几个方面是JustMCF进行简化的部分
 
@@ -85,7 +85,7 @@ folder_name
   
 ```
 
-## 数据运算简化
+## 标识符
 
 在mcfunction中，可以大致归类为几种数据，而最为关键的两类数据就是scoreboard分数以及NBT。
 
@@ -96,18 +96,28 @@ folder_name
 
 在JustMCF中，用以下标识符来表示几类数据
 
+- 命名空间ID：`namespace:id`，可以在指定命名空间的情况下简写为`id`。这些量在JustMCF中遇到驼峰命名法（就是说含有大写字母，如`NameSpace:ID`）将会自动转为蛇形（小写加下划线，如`name_space:id`），因此命名时可以采用驼峰（但是还是不建议这么做）。
+
 - 实体：在wiki上，可以用以下形式来代表实体：玩家名称 或 UUID 或 目标选择器变量。在JustMCF中，对应形式为：
-  - 玩家名称：`@playername` 需要在名称前加 `@`
+
+  - 玩家名称：`@playername` 需要在名称前加 `@`。
+
   - 假名：`#name` 不需要在名称前加 `@`，直接用原来的
+
   - UUID: `@entityname` 其中，可以指定 `entityname`对应的UUID，或让JustMCF自动生成UUID。
+
   - 目标选择器变量：`@e[type=xxxx]`和原来不变。
 
-- 坐标：共有三类坐标，在JustMCF中，需要左右添加尖括号
+    除了目标选择器变量外，其他项需都要使用语句设置，见entity命令聚合一章。
+
+- 坐标：共有三类坐标，在JustMCF中，需要左右添加尖括号（TODO：当测试结果为解析无问题时将会移除尖括号）
+
   - 2个值表示朝向坐标或者xz坐标 `< ~ ~ >`
-  - 3个值表示位置坐标 `< ~ ~ ~ >` （这个可以简化为 `<~>`）
+  - 3个值表示位置坐标 `< ~ ~ ~ >` （TODO：这个可以简化为 `<~>`）
   - 5个值表示方位坐标 `< ~ ~ ~ ~ ~ >`
 
 - 记分板：来源只有实体，在JustMCF中，表示为
+
   - 方案一：`scoreboardname@entityname` 其中，`@entityname`代表实体
 
   - 方案二：`@entityname:scoreboardname`
@@ -122,19 +132,27 @@ folder_name
 
 在JustMCF中，用以下字面量表示不同的数据类型：
 
-- 原始JSON文本：`j`后面跟原始JSON文本，如 `j{"text":"test"}`
-- NBT值：`n`后面跟NBT值，如 `n{Tag1:"no"}`
+- 原始JSON文本：`j`后面跟原始JSON文本，如 `j{"text":"test"}`，单纯的数值和字符串不需要添加`j`
+- NBT值：`n`后面跟NBT值，如 `n{Tag1:"no"}`，单纯的数值和字符串不需要添加`n`
+
+## 数据操作简化
 
 ### scoreboard数据运算
 
 整合scoreboard的所有命令操作
 
-初始化记分板
+#### 记分板的声明和设置
+
+声明记分板，未声明记分板准则类型的，将默认准则为dummy。
+
+记分项显示名称是原始JSON文本，记得在使用带大括号和中括号的语句时改为`j{}`和`j[]`。
 
 ```mcf
 scb test "displayname" 
          ##scoreboard objective add test dummy "displayname"
 ```
+
+如果未声明显示名称，使用默认的记分项名称时，需要补上default。可以在声明语句后面加上设置语句。设置语句见下方。
 
 ```mcf
 
@@ -148,10 +166,12 @@ scb(deathCount) test default {
 
 设置记分板属性
 
+语法和声明语句类似，不同的是没有准则类型和显示名称。
+
 ```mcf
 scb test {
     displayname "分数"
-    rendertype hearts|integer
+    rendertype hearts
     display sidebar
     remove
 }
@@ -162,43 +182,127 @@ scb test {
 ##scoreboard objective remove <记分板ID>
 ```
 
-记分板运算
+设置的子语句可以加`.`，即如：
+
+```
+scb test {
+	.displayname "分数"
+	.rendertype hearts
+}
+```
+
+#### 记分板运算
+
+记分板可以独立作为表达式，每条表达式将会被解析为一条命令。
 
 ```mcf
 test@s +=1                            ##add
 test@s -=1                            ##remove
 test@s =1                             ##set
 test@s reset                          ##reset
+test@s enable					    ##enable
 test@s                                ##get
 test1@s += test2@s                    ##operation
 test1@s -= test2@s
+test1@s *= test2@s
+test1@s /= test2@s
+test1@s %= test2@s
+test1@s << test2@s                    ##取较小值
+test1@s >> test2@s                    ##取较大值
+test1@s >< test2@s                    ##交换
 ```
 
-完整表达式运算
+支持完整表达式运算！按优先级顺序支持`()` `<< >>` `*/%` `+-`并且支持数字
+
+将表达式结果传给`:=`左边的记分板。如下表达式将被解析为以下命令。
 
 ```mcf
-ans@s := test2@s + test3@s / test4@s
+ans@s := test2@s + test3@s / test4@s - 5 % test5@s
+```
+
+关于记分板的逻辑简化操作将会再后面的execute简化部分提到。
+
+这些运算也可以写进语句中，使用`scb{}`将表达式括起来就行了。
+
+（这里注意，凡是使用到的假名，都需要用entity声明语句预先设置，见entity命令聚合一章）
+
+```mcf
+scb {
+	num@temp1 = 1
+	num@temp2 := num@temp1 + num@temp3
+}
+```
+
+对于scoreboard list命令则必须写成语句
+
+```mcf
+scb { list }    	##scoreboard objectives list
+scb { @s list}  	##scoreboard players list @s
 ```
 
 ### NBT数据运算
 
-稍有不同的是data merge的表现形式
+将data命令转为符号运算。这里只提供三种符号。
+
+- `|=`表示“并等于”，即merge；
+- `=`表示赋值，即set；
+- `..`表示追加，其中`..0`表示追加到0这个位置，即prepend，而`..1`就是追加到1这个位置，即insert 1。
+
+运算的对象可以是nbt或者另一个data标识符（即value和from）
 
 ```mcf
 < ~ ~ ~ > ::Base *3                              ##get block
 @e[]::Item                                       ##get 
-@e[].data |= n{}                                 ##merge
+@e[] |= n{}                                      ##merge
 @e[]::Item |= @s::Item                           ##modify merge from
 @e[]::Item |= n{}                                ##modify merge value 
 @e[]::Item = n{}                                 ##modify set value
 @s::ArmorItems ..0 n{id:'iron_boots', Count:1b}  ##prepend
 @s::ArmorItems .. n{id:'iron_boots', Count:1b}   ##append
-@s::ArmorItems ..1 n{id:'iron_boots', Count:1b}  ##insert 1    foo:storage::Data remove
+@s::ArmorItems ..1 n{id:'iron_boots', Count:1b}  ##insert 1    
+foo:storage::Data remove
 ```
+
+同样的，data操作也可以用语句`data{}`包裹
+
+```mcf
+data{
+	@e[]::Item
+	foo:storage::Data remove
+}
+```
+
+对于使用同一个storage命名空间的data操作，还可以提前使用namespace语句声明运算使用的命名空间。见命名空间语句一节。
+
+```mcf
+namsp [storage=test]{
+	func test:data{
+		id1::Data = id2::Data
+		id1::Data .. id1::Data[0]
+	}
+}
+```
+
+对于一个NBT节点下的data操作，可以使用`data namespace:id::data{}`语句省略掉父节点的部分。
+
+```mcf
+data foo:test::bar{ ##在foo:test bar节点上操作
+	num1 = 1b
+	num2 = 2b
+}
+data foo:test{  ##在foo:test根节点上操作
+	bar.num1 = 1b
+	bar.num2 = 2b
+}
+```
+
+除此之外，进阶函数的调用可以作为右值（即等号左边的值）参与运算；exist表达式可以作为赋值的来源，（也就是等号左边的值）。
 
 ### NBT与记分板数据转换存储
 
-转换存储的书写方式是execute语句的store子语句的格式，见后一部分
+转换存储的书写方式是execute语句的store子语句的格式，即`=>`符号，请见execute语句部分。
+
+NBT转为记分板
 
 ```mcf
 @s::ArmorItems[] => armor@s
@@ -206,11 +310,38 @@ ans@s := test2@s + test3@s / test4@s
 ##execute store result score @s armor run data get entity @s ArmorItems[]
 ```
 
+记分板转为NBT（如果类型和倍率没有填写的话，默认int 1）
+
 ```mcf
+armor@s => foo:bar::Armor.Length
 armor@s => foo:bar::Armor.Length int*1
 
 ##execute store result storage foo:bar Armor.Length int 1 run scoreboard players get @s armor
 ```
+
+## 命名空间省略设置
+
+对于一些命令需要用到命名空间的地方，通常以`namespace:id`的形式出现，在省略命名空间的情况下，游戏其默认为minecraft命名空间。在JustMCF中，有机会调整使用的默认的命名空间，以省略每次书写命名空间的不必要的麻烦。
+
+关键字为`namespace`，也可以简写为`namsp`。
+
+```
+namespace test{ ##将会把行内
+
+}
+```
+
+## 注释增强
+
+在原先的命令书写中，无法使用行注释和块注释，只能使用占用一行的`#`注释。
+
+在JustMCF项目中，可以使用以下类型的注释
+
+- 行注释：采用`##`开始行内注释，和大多数语言中的`//`注释一致。
+- 块注释：采用`#=`为开头，`=#`为结尾，开始块注释，和大多数语言中的`/*` `*/`块注释一致。这两种注释在构建成mcfunction文件的过程中将不会保留。
+- 占行注释：与原先的mcfuntion的注释一致。采用`# `开始一行的注释。这行注释将会在构建时加入mcfunction文件中，并保留在对应位置。
+
+如果你想要让数据包在构建后保留注释，请使用原版的注释。
 
 ## 逻辑控制流简化
 
@@ -228,19 +359,31 @@ func foo:utils/test{                            ##自动创建一个mcf
 
 func开头带有大括号的语句是定义语句而非执行语句，不带有大括号的将会被执行。
 
-如果需要立即执行则需要在前面加 `->`，如
+如果需要立即执行则需要在前面加 `->`，如:
 
-`->func foo:utils/test{  }`
+```
+->func foo:utils/test{ 
+
+}
+```
 
 #### 函数声明并注册到标签中
 
+使用`tagged`可以将本函数注册到后面提供的函数标签中。
+
 ```mcf
-func foo:utils/test tagged foo:utils{
+func foo:utils/test tagged #foo:utils{
+
+}
+
+func foo:utils/test tagged #foo:utils, #foo:test{
 
 }
 ```
 
 #### 完整定义函数标签
+
+声明函数标签的形式和声明函数雷同。
 
 ```mcf
 func #foo:utils/all{ ##自动创建一个function tag
@@ -250,7 +393,8 @@ func #foo:utils/all{ ##自动创建一个function tag
     func foo:utils/b{
 
     }
-    func foo:utils/c
+    func foo:utils/c 
+    	##foo:utils/c不在此处定义，也可以这样被添加到本函数标签中。
 }
 ```
 
@@ -727,7 +871,7 @@ block{
 
 ## 命令对象化
 
-相当于是entity命令聚合去掉框
+entity命令聚合内的命令可以单独存在并进行使用，就如同对entity对象进行操作一样方便。
 
 ```mcf
 @s.kill 
@@ -740,26 +884,36 @@ block{
 
 ## 支持脚本
 
-宏语言：js沙箱 eval
+使用 `{{   }}`标定，内部是javascript脚本内容。
 
-使用 `{{   }}`标定内部是javascript脚本内容
+在脚本内容中使用`#{ }#`，将框起来的文本信息输出到外界。（原理为：自动替换为unfold()）
 
-`#{ }#`输出到外界，自动替换为unfold()
+注：这是用到了javascript脚本中的模版字符串，可以很方便地向脚本内进行插值。
 
 ```mcf
 {{
     const list = [1,2,3,4,5]
-    for(let i of list){#{
+    for(const i of list){#{
         setblock ~ ~${i} ~ stone
     }#}
 }}
+```
+
+如此，将会把以下命令插入文件的对应位置中
+
+```mcfunction
+setblock ~ ~1 ~ stone
+setblock ~ ~2 ~ stone
+setblock ~ ~3 ~ stone
+setblock ~ ~4 ~ stone
+setblock ~ ~5 ~ stone
 ```
 
 ## 进阶函数设计
 
 ### 数据类型
 
-#### 基本数据类型
+#### 基本数据类型（TODO）
 
 nbt:可以省略，默认是nbt的类型
 
@@ -787,21 +941,33 @@ nbt:可以省略，默认是nbt的类型
 
 类型信息是可以自己设计或者来自原版（例如生物），每一次modify from，其实就是把对应的类型信息转移到自己身上来。
 
-```mcf
-interface test:foo n{
-  Name:"",
-  Age:17,
-  Information:{}
-}
-```
-
-提前设计的类型信息，可以用于自动补全、判断nbt类型等等。
-
-这个类型应该是鸭子的。
+提前设计的类型信息，可以用于自动补全、判断nbt类型等等。这个类型应该是鸭子的。
 
 NBT类型信息加上只对本类型操作的func，就相当于class了。
 
-#### 带类型标记的赋值语法
+JustMCF提供如下语法：
+
+```mcf
+interface test:foo n{
+    Name:"",
+    Age:17,
+    Information:{}
+}
+
+##data merge storage test:foo {Name:"",Age:17,Information:{}}
+
+interface test:foo::Choose n{
+	Name:"",
+	Age:17,
+	Information:{}
+}
+
+##data modify storage test:foo Choose set value {Name:"",Age:17,Information:{}}
+```
+
+TODO: 这样的内容将会提供一个类型，在构建mcfunction过程中，将会判断例如函数的类型的兼容性；或者在未来的语法补全中，提供补全内容。
+
+#### 带类型标记的赋值语法（TODO）
 
 前置的方式进行类型的标记
 
@@ -811,15 +977,29 @@ nbt:float foo:test::value = 32f
 
 ### 进阶函数
 
+JustMCF提供了带有参数的函数语法。这样的函数将会附带生成输入输出storage声明，在运行过程中，会使用到storage进行堆栈。由于Minecraft中的数据的modify是存值，因此堆栈会有性能损耗。请谨慎使用进阶函数进行递归操作。
+
 不带类型标记的函数
 
 ```mcf
 func test:fun1(a,b){
-	yeild c
+	yield c
 }
 ```
 
-带类型标记的函数
+`yield`后面跟data标识符，将会返回函数中需要返回的值，将这个值复制到输出storage中。
+
+`return`（TODO）
+
+函数执行
+
+```mcf
+foo:test::value = func test:func1(a,b)
+```
+
+函数的执行语句可以作为NBT操作的右值参与运算。
+
+带类型标记的函数（TODO）
 
 ```mcf
 func test:func1(int a,int b) int {
@@ -827,8 +1007,48 @@ func test:func1(int a,int b) int {
 }
 ```
 
-函数执行
+
+
+## .mcf文件的开始
+
+每一个.mcf文件可以拥有如下内容：命名空间语句、interface语句、函数语句、进阶函数语句、函数标签语句、脚本内容。
+
+通常来说，拥有同一个逻辑模块的函数应该首先放置在同一个函数文件夹中，对于JustMCF项目来说，也就是放置在同一个.mcf文件中。
+
+对于没有抽象设计需求的作者来说，可以在mcf.mcmeta文件中设置默认命名空间，每一个.mcf文件以函数语句、函数标签语句为经纬进行组织。如下所示：
 
 ```mcf
-foo:test::value = func test:func1(a,b)
+func getPlayerData{
+	
+}
+func setPlayerData{
+
+}
+func getPigData{
+
+}
+func #getData{
+	func getPlayerData
+	func getPigData
+	func getZombieData{
+	
+	}
+}
 ```
+
+对于拥有抽象设计需求的作者来说，可以把每一个.mcf文件作为一个类文件进行组织。这个类的数据部分和操作部分分离。数据部分使用interface语句，操作部分使用函数语句或者进阶函数语句。如下所示：
+
+```mcf
+interface Player n{
+    Name:"fool",
+    Age: 18,
+    Sex: "female"
+}
+func getPlayerName(player){
+
+}
+func setPlayerAge(player,age){
+
+}
+```
+

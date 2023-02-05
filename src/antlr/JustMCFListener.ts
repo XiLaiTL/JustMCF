@@ -227,6 +227,7 @@ import { ScbResetContext } from "./JustMCFParser";
 import { ScbEnableContext } from "./JustMCFParser";
 import { ScbOptExpressionContext } from "./JustMCFParser";
 import { FuncTagSIFuncSContext } from "./JustMCFParser";
+import { FuncTagSIFuncRunSContext } from "./JustMCFParser";
 import { FuncTagSIFuncImproveSContext } from "./JustMCFParser";
 import { FuncTagSIFuncTagSContext } from "./JustMCFParser";
 import { DisplaySIScbContext } from "./JustMCFParser";
@@ -280,10 +281,10 @@ import { DataIdentifierContext } from "./JustMCFParser";
 import { DataMergeExpressionContext } from "./JustMCFParser";
 import { DataOperationExpressionContext } from "./JustMCFParser";
 import { DataRightValueContext } from "./JustMCFParser";
+import { DataStatementContext } from "./JustMCFParser";
 import { ScbOperationExpressionContext } from "./JustMCFParser";
 import { ScbSingleOperationExpressionContext } from "./JustMCFParser";
 import { ScbIdentifierContext } from "./JustMCFParser";
-import { DataStatementContext } from "./JustMCFParser";
 import { ScbPlayerStatementContext } from "./JustMCFParser";
 import { ScbPlayerStatementInnerContext } from "./JustMCFParser";
 import { ScbObjectiveStatementContext } from "./JustMCFParser";
@@ -3305,6 +3306,19 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitFuncTagSIFuncS?: (ctx: FuncTagSIFuncSContext) => void;
 
 	/**
+	 * Enter a parse tree produced by the `funcTagSIFuncRunS`
+	 * labeled alternative in `JustMCFParser.funcTagStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	enterFuncTagSIFuncRunS?: (ctx: FuncTagSIFuncRunSContext) => void;
+	/**
+	 * Exit a parse tree produced by the `funcTagSIFuncRunS`
+	 * labeled alternative in `JustMCFParser.funcTagStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	exitFuncTagSIFuncRunS?: (ctx: FuncTagSIFuncRunSContext) => void;
+
+	/**
 	 * Enter a parse tree produced by the `funcTagSIFuncImproveS`
 	 * labeled alternative in `JustMCFParser.funcTagStatementInner`.
 	 * @param ctx the parse tree
@@ -3932,6 +3946,17 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitDataRightValue?: (ctx: DataRightValueContext) => void;
 
 	/**
+	 * Enter a parse tree produced by `JustMCFParser.dataStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterDataStatement?: (ctx: DataStatementContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.dataStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitDataStatement?: (ctx: DataStatementContext) => void;
+
+	/**
 	 * Enter a parse tree produced by `JustMCFParser.scbOperationExpression`.
 	 * @param ctx the parse tree
 	 */
@@ -3963,17 +3988,6 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitScbIdentifier?: (ctx: ScbIdentifierContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.dataStatement`.
-	 * @param ctx the parse tree
-	 */
-	enterDataStatement?: (ctx: DataStatementContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.dataStatement`.
-	 * @param ctx the parse tree
-	 */
-	exitDataStatement?: (ctx: DataStatementContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `JustMCFParser.scbPlayerStatement`.

@@ -22,7 +22,7 @@
   "init.function_statement": "Function Statement | Modify the function statement settings",
   "init.function_statement.flat_when_one_command": "If there were just one command in the generated mcfunction file, do you want to flat it to the execute command run part?",
   "init.function_statement.stack_namespace_id": "Set the storage stack namespace id the function used in remember information. Type like this: namespace:id",
-  "init.function_statement.common_i_o": "Do you want all the function statement to use the same input and output storage area?",
+  "init.function_statement.common_io": "Do you want all the function statement to use the same input and output storage area?",
   "init.exist_expression": "Exist Expression | Modify the exist expression settings",
   "init.exist_expression.stack_namespace_id": "Set the storage stack namespace id the exist expression used in remember information. Type like this: namespace:id",
   "init.exist_expression.every_condition_new_function_file": "When compiling the exist expresion, do you want to use new function files, or just use execute if data",

@@ -227,6 +227,7 @@ import { ScbResetContext } from "./JustMCFParser";
 import { ScbEnableContext } from "./JustMCFParser";
 import { ScbOptExpressionContext } from "./JustMCFParser";
 import { FuncTagSIFuncSContext } from "./JustMCFParser";
+import { FuncTagSIFuncRunSContext } from "./JustMCFParser";
 import { FuncTagSIFuncImproveSContext } from "./JustMCFParser";
 import { FuncTagSIFuncTagSContext } from "./JustMCFParser";
 import { DisplaySIScbContext } from "./JustMCFParser";
@@ -280,10 +281,10 @@ import { DataIdentifierContext } from "./JustMCFParser";
 import { DataMergeExpressionContext } from "./JustMCFParser";
 import { DataOperationExpressionContext } from "./JustMCFParser";
 import { DataRightValueContext } from "./JustMCFParser";
+import { DataStatementContext } from "./JustMCFParser";
 import { ScbOperationExpressionContext } from "./JustMCFParser";
 import { ScbSingleOperationExpressionContext } from "./JustMCFParser";
 import { ScbIdentifierContext } from "./JustMCFParser";
-import { DataStatementContext } from "./JustMCFParser";
 import { ScbPlayerStatementContext } from "./JustMCFParser";
 import { ScbPlayerStatementInnerContext } from "./JustMCFParser";
 import { ScbObjectiveStatementContext } from "./JustMCFParser";
@@ -2188,6 +2189,14 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitFuncTagSIFuncS?: (ctx: FuncTagSIFuncSContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by the `funcTagSIFuncRunS`
+	 * labeled alternative in `JustMCFParser.funcTagStatementInner`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitFuncTagSIFuncRunS?: (ctx: FuncTagSIFuncRunSContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by the `funcTagSIFuncImproveS`
 	 * labeled alternative in `JustMCFParser.funcTagStatementInner`.
 	 * @param ctx the parse tree
@@ -2581,6 +2590,13 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitDataRightValue?: (ctx: DataRightValueContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by `JustMCFParser.dataStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataStatement?: (ctx: DataStatementContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by `JustMCFParser.scbOperationExpression`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -2600,13 +2616,6 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitScbIdentifier?: (ctx: ScbIdentifierContext) => Result;
-
-	/**
-	 * Visit a parse tree produced by `JustMCFParser.dataStatement`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitDataStatement?: (ctx: DataStatementContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.scbPlayerStatement`.
