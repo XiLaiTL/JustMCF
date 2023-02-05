@@ -31,5 +31,12 @@
   "init.file.mode_skip": "跳过",
   "init.file.mode_append": "追加到原文件末尾",
   "init.file.mode_prepend": "添加到原文件头部",
-  "init.description": "初始化JustMCF的项目设置"
+  "init.description": "初始化JustMCF的项目设置",
+  "build.source_path.as_source_path": "未提供源地址，是否以执行目录为源地址？",
+  "build.source_path.new_source_path": "请键入源路径",
+  "build.target_path.new_source_path": "请键入输出地址",
+  "build.target_path.as_target_path": "未提供输出地址，是否将执行目录作为目标地址？（不建议这么做）",
+  "build.pack_mcmeta": "源地址不是一个有效的Minecraft数据包",
+  "init.finish": "初始化完成！祝您拥有良好体验！",
+  "build.mcf_mcmeta": "源地址不是一个有效的JustMCF项目，是否执行初始化程序？"
 }

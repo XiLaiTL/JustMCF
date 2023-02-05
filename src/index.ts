@@ -99,40 +99,70 @@ const InitAction = async () => {
     res.option = option
     const file = new FileUtils(res)
     await file.createMcfMcmeta()
+    console.log(i18n.t('init.finish'))
 }
 
 const BuildActionWhenNoSourcePath = async () => {
     let source_path = process.cwd()
-    await inquirer.prompt([{
-
-    }]).then(({ }) => {
-        
-    })
+    const { asSourcePath } = await inquirer.prompt([{
+        name: "asSourcePath",
+        type: "confirm",
+        default: true,
+        message:i18n.t('build.source_path.as_source_path')
+    }])
+    if (!asSourcePath) {
+        await inquirer.prompt([{
+            name: "newSourcePath",
+            type: "input",
+            default: source_path,
+            message:i18n.t('build.source_path.new_source_path')
+            
+        }]).then(({ newSourcePath }) => {
+            source_path = newSourcePath
+        }) 
+    }
     return source_path
 }
 
 const BuildActionWhenNoTargetPath = async () => {
     let target_path = process.cwd()
-    await inquirer.prompt([{
-
-    }]).then(({ }) => {
-        
-    })
+    const {asTargetPath} = await inquirer.prompt([{
+        name: "asTargetPath",
+        type: "confirm",
+        default: false,
+        message:i18n.t('build.target_path.as_target_path')
+    }])
+    if (!asTargetPath) {
+        await inquirer.prompt([{
+            name: "newTargetPath",
+            type: "input",
+            default: target_path,
+            message:i18n.t('build.target_path.new_source_path')
+            
+        }]).then(({ newTargetPath }) => {
+            target_path = newTargetPath
+        }) 
+    }
     return target_path
 }
 
 const BuildActionWhenNoPackMcmeta = async () => {
-    
+    console.log(i18n.t('build.pack_mcmeta'))
 }
 
 const BuildActionWhenNoMcfMcmeta = async () => {
     
-    await inquirer.prompt([{
-
-    }]).then(({ }) => {
-        
-    })
-    
+    const { needInit } = await inquirer.prompt([{
+        name: "needInit",
+        type: "confirm",
+        default: true,
+        message: i18n.t('build.mcf_mcmeta')
+    }])
+    if (needInit) {
+        await InitAction()
+        return true
+    }
+    return false
 }
 const BuildAction = async (source_path:string,target_path:string) => {
     if (source_path === undefined) {
@@ -146,10 +176,12 @@ const BuildAction = async (source_path:string,target_path:string) => {
     const [hasPackMcmeta, _] = await fileUtils.checkPackMcmeta()
     if (!hasPackMcmeta) {
         await BuildActionWhenNoPackMcmeta()
+        return
     }
     const hasMcfMcmeta = await fileUtils.checkMcfMcmeta()
     if (!hasMcfMcmeta) {
-        await BuildActionWhenNoMcfMcmeta()
+        const next = await BuildActionWhenNoMcfMcmeta()
+        if(!next) return
     }
     const codesObj = await fileUtils.readAllMcf()
     build(codesObj.map(obj=>obj.code),result)

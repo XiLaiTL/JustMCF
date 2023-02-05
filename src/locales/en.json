@@ -31,5 +31,12 @@
   "init.file.mode_skip": "Skip",
   "init.file.mode_append": "Append to the end",
   "init.file.mode_prepend": "Prepend to the beginning",
-  "init.description": "Initialize the JustMCF project"
+  "init.description": "Initialize the JustMCF project",
+  "build.source_path.as_source_path": "Building need source path. Do you want to let the execute path as the source path? ",
+  "build.source_path.new_source_path": "Please input the source path",
+  "build.target_path.new_source_path": "Please input the output target path",
+  "build.target_path.as_target_path": "Building need output target path. Do you want to let the execute path as the target path? (not commended) ",
+  "build.pack_mcmeta": "There was not a minecraft data pack in the source path!",
+  "init.finish": "Init Finished! Have a good time!",
+  "build.mcf_mcmeta": "There was not a JustMCF project in the source path. Do you want to init it?"
 }
