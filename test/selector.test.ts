@@ -1,6 +1,6 @@
 import { test } from 'vitest'
 import { registerOnArray } from "../src/lib/ArrayHelper";
-import { execute } from '../src/Simplify';
+import { execute } from '../src/ManageSimplify';
 
 registerOnArray()
 

@@ -70,7 +70,8 @@ const _defaultOption:option = {
     existExpression: {
         stackNamespaceId:"justmcf:program",
         everyConditionNewFunctionFile:true
-    }
+    },
+    entityNameMap:{}
 }
 export function defaultOption() {
     const option:option = {
@@ -78,7 +79,8 @@ export function defaultOption() {
         namespace: { ..._defaultOption.namespace },
         scbExpression: { ..._defaultOption.scbExpression },
         functionStatement:{..._defaultOption.functionStatement},
-        existExpression:{..._defaultOption.existExpression}
+        existExpression: { ..._defaultOption.existExpression },
+        entityNameMap:{..._defaultOption.entityNameMap}
     }
     return option
 }
@@ -92,7 +94,8 @@ export class JustMCFResult {
             namespace: { ...this._option.namespace ,...val.namespace},
             scbExpression: { ...this._option.scbExpression,...val.scbExpression },
             functionStatement:{...this._option.functionStatement,...val.functionStatement},
-            existExpression:{...this._option.existExpression,...val.existExpression}
+            existExpression: { ...this._option.existExpression, ...val.existExpression },
+            entityNameMap:{...this._option.entityNameMap,...val.entityNameMap}
         }
     }
     mcfunctions: { [mcfunctionFileName: string]: string[] } = {}

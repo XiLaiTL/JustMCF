@@ -2,13 +2,13 @@
 import { registerOnArray } from './lib/ArrayHelper';
 import { Command } from 'commander'
 import { readPackageJSON } from 'pkg-types'
-import i18n, { init } from 'i18next';
+import i18n from 'i18next';
 import FsBackend, { FsBackendOptions } from 'i18next-fs-backend'
 import inquirer from 'inquirer'
 import { toAbsolutionPath, FileUtils } from './FileUtils';
 import { option, defaultOption, JustMCFResult } from './JustMCFResult';
 import { toSnakeCase } from './lib/StringUtils';
-import { build } from 'Simplify';
+import { build, execute } from './ManageSimplify';
 
 registerOnArray()
 

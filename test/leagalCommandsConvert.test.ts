@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import { convertBackLeagalCommands, convertLeagalCommands } from '../src/LeagalCommand'
+import { convertBackLeagalCommands, convertLeagalCommands } from '../src/ManageLeagalCommand'
 
 test('Leagal Commands Convert', () => {
     const str = convertLeagalCommands(`

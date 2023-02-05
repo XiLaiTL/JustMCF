@@ -1,5 +1,5 @@
 import { test } from "vitest";
-import { execute } from '../src/Simplify';
+import { execute } from '../src/ManageSimplify';
 import { registerOnArray } from '../src/lib/ArrayHelper';
 
 registerOnArray()
@@ -8,6 +8,7 @@ test('Scb Expression', () => {
     execute(`
     
 func test:scb_expression{
+    entity(player) temp,temp1,temp2
     {if @s }->{
         say yes2
         {if @s }->{

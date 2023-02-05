@@ -1,9 +1,9 @@
 import { CharStreams, CommonTokenStream } from 'antlr4ts'; 
-import { evalAndReplace } from './EvalScript';
+import { evalAndReplace } from './ManageEvalScript';
 import { JustMCFLexer } from './antlr/JustMCFLexer';
 import { JustMCFParser } from './antlr/JustMCFParser';
 import { JustMCFSimplifyVisitor } from './JustMCFSimplifyVisitor';
-import { convertBackLeagalCommands, convertLeagalCommands } from './LeagalCommand';
+import { convertBackLeagalCommands, convertLeagalCommands } from './ManageLeagalCommand';
 import { JustMCFResult } from './JustMCFResult';
 
 

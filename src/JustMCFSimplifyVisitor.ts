@@ -1,5 +1,5 @@
 import { ParseTree } from 'antlr4ts/tree/ParseTree';
-import { FuncTagSettingsReplaceContext, FuncTagSettingsReplacedContext, FuncTagSIFuncImproveSContext, FuncTagSIFuncSContext, FuncTagSIFuncTagSContext, NameSpaceBiomeContext, NameSpaceBlockContext, NameSpaceBossbarContext, NameSpaceDimContext, NameSpaceFuncContext, NameSpaceItemContext, NameSpaceItemModifierContext, NameSpaceLootContext, NameSpacePredicateContext, NameSpaceSettingsBiomeContext, NameSpaceSettingsBossbarContext, NameSpaceSettingsDefaultContext, NameSpaceSettingsDimContext, NameSpaceSettingsItemContext, NameSpaceSettingsItemModifierContext, NameSpaceSettingsJustDefaultContext, NameSpaceSettingsLootContext, NameSpaceSettingsPredicateContext, NameSpaceSettingsStorageContext, NameSpaceStorageContext, TagNameSpaceBlockContext, TagNameSpaceContext, TagNameSpaceEntityContext, TagNameSpaceFuncContext, TagNameSpaceItemContext, ScbPlayerSIScbListContext, ScbObjSDeclareSingleContext, CriterionContext, BossbarSDeclareContext, BossbarSOperationContext, BossbarSIGetContext, BossbarSISetColorContext, BossbarSISetMaxContext, BossbarSISetNameContext, BossbarSISetPlayerContext, BossbarSISetPlayerNullContext, BossbarSISetStyleContext, BossbarSISetValueContext, BossbarSISetVisibleContext, BossbarOpExprGetContext, BossbarOpExprAssignValueContext, BossbarOpExprAssignMaxContext, TitleSCompoundContext, BossbarSIRemoveContext, BossbarStatementInnerContext, TitleSSelectorCompoundContext, TitleSISelectorSingleContext, TitleSISelectorCompoundContext, TitleSSIJsonContext, TitleSSIClearContext, TitleSSIResetContext, TitleSSITimesContext, TitleISIJsonContext, TitleISIClearContext, TitleISIResetContext, TitleISITimesContext, TitleSelectorStatementInnerContext, DisplaySCompoundContext, AttrISIGetBaseContext, AttrISIGetContext, AttrISIModifierAddContext, AttrISIModifierGetContext, AttrISIModifierRemoveContext, AttrISISetBaseContext, AttrSCompoundContext, AttrSISelectorCompoundContext, AttrSISingleContext, AttrSSelectorCompoundContext, BlockSICloneContext, BlockSICloneFilteredContext, BlockSIFillContext, BlockSIFillReplaceContext, BlockSISetblockContext, ClearISIContext, DisplayISIBossbarContext, DisplayISITextContext, DisplayISITitleCompoundContext, DisplayISITitleSingleContext, DisplaySIBossbarContext, DisplaySIScbContext, DisplaySISelectorCompoundContext, DisplaySISelectorSingleContext, DisplaySSelectorCompoundContext, EffectISIClearAllContext, EffectISIClearContext, EffectISIGiveSpContext, EffectISIGiveContext, EntityISIAttrCompoundContext, EntityISIAttrSingleContext, EntityISIDisplayCompoundContext, EntityISIDisplaySingleContext, EntityISIEffectContext, EntityISIExecContext, EntityISIGiveAndClearContext, EntityISIItemCompoundContext, EntityISIItemSingleContext, EntityISIKillContext, EntityISILootCompoundContext, EntityISILootGiveSingleContext, EntityISILootSingleContext, EntityISITagContext, EntityISITitleCompoundContext, EntityISITpContext, EntitySCompoundContext, EntitySDeclareContext, EntitySDeclarePlayerContext, EntitySIEntityExpressionContext, EntitySISelectorCompoundContext, EntitySSelectorCompoundContext, GiveISIContext, ItemISIModifyContext, ItemISIReplaceFromBlockContext, ItemISIReplaceFromEntityContext, ItemISIReplaceWithContext, ItemSCompoundContext, ItemSIBlockContext, ItemSIEntityContext, ItemSIGiveAndClearContext, ItemSILootInnerContext, ItemSISelectorNestContext, ItemSSelectorCompoundContext, ItemSSIGiveAndClearContext, ItemSSIItemContext, ItemSSILootInnerContext, LootSCompoundContext, LootSIGiveContext, LootSIInsertContext, LootSIReplaceBlockContext, LootSIReplaceEntityContext, LootSISelectorNestContext, LootSISpawnContext, LootSourceFishHandContext, LootSourceFishToolContext, LootSourceKillContext, LootSourceLootContext, LootSourceMineHandContext, LootSourceMineToolContext, LootSSelectorCompoundContext, TagISIAddContext, TagISIListContext, TagISIRemoveContext, TpISIDestinationContext, TpISIFacingContext, TpISIFacingEntityContext, TpISIPosContext, TpISIRotatedContext, TpISIRotatedDivContext, LootIndependentStatementInnerGiveContext, LootIndependentStatementInnerReplaceEntityContext, Item_slotContext, Item_predicateContext, SnbtContext, Block_predicateContext, BlockStatementContext, NameSpaceEntityContext, NameSpaceSettingsEntityContext, EntitySDeclareWithNameContext, EntityDeclareSITagContext, ExistExpressionExecContext, AcceptableNameContext, BlockIdentifierContext, BlockstateContext, DataBlockContext, DataEntityContext, DataGetContext, DataMergeBlockContext, DataMergeEntityContext, DataMergeStorageContext, DataModifyAppendFromContext, DataModifyAppendValueContext, DataModifyInsertFromContext, DataModifyInsertValueContext, DataModifyMergeFromContext, DataModifyMergeValueContext, DataModifyPrependFromContext, DataModifyPrependValueContext, DataModifySetFromContext, DataModifySetValueContext, DataRemoveContext, DataStatementContext, DataStorageContext, ExecAlignContext, ExecAnchoredContext, ExecAnonymousRunContext, ExecAsContext, ExecAtContext, ExecDirectRunContext, ExecFacingEntityContext, ExecFacingPosContext, ExecIfBiomeContext, ExecIfBlockContext, ExecIfBlocksContext, ExecIfDataContext, ExecIfEntityContext, ExecIfScoreContext, ExecIfScoreMatchesContext, ExecInContext, ExecNamedRunContext, ExecPositionedPosContext, ExecPostionedAsContext, ExecPredicateContext, ExecRotatedAsContext, ExecRotatedPosContext, ExecStoreContext, ExecStoreResultBossbarContext, ExecStoreResultDataContext, ExecStoreResultScoreContext, ExecStoreSuccessBossbarContext, ExecStoreSuccessDataContext, ExecStoreSuccessScoreContext, ExecWithoutRunOrChildContext, ExecWithRunOrChildContext, ExistExpressionAndContext, ExistExpressionBitAndContext, ExistExpressionBitOrContext, ExistExpressionFalseContext, ExistExpressionIdContext, ExistExpressionNotContext, ExistExpressionOrContext, ExistExpressionTrueContext, FuncRunStatementContext, FuncStatementContext, FuncTagStatementContext, JsonContext, LeagalCommandContext, MatchPartContext, McfFileContext, NameSpaceContext, NameSpaceSettingsBlockContext, NameSpaceSettingsFuncContext, NameSpaceStatementContext, NbtContext, NbtNameContext, NbtPathContext, NoInExecStatementRunFuncContext, NoInExecStatementStoreContext, Pos1Context, Pos2IdentifierContext, Pos3IdentifierContext, Pos5IdentifierContext, RegisterNameContext, ResourceLocationContext, ScbAddContext, ScbFuncExpressionContext, ScbGetContext, ScbIdentifierContext, ScbIdExpressionContext, ScbObjSDeclareDefaultContext, ScbObjSDeclareWithNameContext, ScbObjSOperationContext, ScbOptAddAssignContext, ScbOptAddSubExpressionContext, ScbOptAssignContext, ScbOptDivAssignContext, ScbOptExcFuncContext, ScbOptExpressionContext, ScbOptMaxFuncContext, ScbOptMinFuncContext, ScbOptModAssignContext, ScbOptMulAssignContext, ScbOptMulDivModExpressionContext, ScbOptSubAssignContext, ScbParenExpressionContext, ScbPlayerStatementContext, ScbRemoveContext, ScbResetContext, ScbSetContext, ScbSIDisplayContext, ScbSIDisplaynameContext, ScbSingleOperationExpressionContext, ScbSIRemoveContext, ScbSIRendertypeContext, ScbTempNumberExpressionContext, SelectorContext, WhileStatementExecContext, WhileStatementExistContext, IfStatementContext, ForStatementContext, DataSCompoundContext, DataSIdentifierCompoundContext, DataStorageWithEnvContext, DataStorageLocalContext, FuncImproveStatementContext, FuncImproveParamContext, YeildStatementContext, FuncImproveRunExpressionContext, ExisitExpressionFuncRunContext, FuncImproveRunStatementContext, DataAssignExistExpressionContext, ExistExpressionParenContext, InterfaceStatementContext, InterfaceSIdentifierContext, InterfaceSNamespaceContext, ExistExpressionContext, IfElseSIfSContext, DataMergeContext, DataOperationExpressionContext, DataIdentifierContext } from './antlr/JustMCFParser';
+import { FuncTagSettingsReplaceContext, FuncTagSettingsReplacedContext, FuncTagSIFuncImproveSContext, FuncTagSIFuncSContext, FuncTagSIFuncTagSContext, NameSpaceBiomeContext, NameSpaceBlockContext, NameSpaceBossbarContext, NameSpaceDimContext, NameSpaceFuncContext, NameSpaceItemContext, NameSpaceItemModifierContext, NameSpaceLootContext, NameSpacePredicateContext, NameSpaceSettingsBiomeContext, NameSpaceSettingsBossbarContext, NameSpaceSettingsDefaultContext, NameSpaceSettingsDimContext, NameSpaceSettingsItemContext, NameSpaceSettingsItemModifierContext, NameSpaceSettingsJustDefaultContext, NameSpaceSettingsLootContext, NameSpaceSettingsPredicateContext, NameSpaceSettingsStorageContext, NameSpaceStorageContext, TagNameSpaceBlockContext, TagNameSpaceContext, TagNameSpaceEntityContext, TagNameSpaceFuncContext, TagNameSpaceItemContext, ScbPlayerSIScbListContext, ScbObjSDeclareSingleContext, CriterionContext, BossbarSDeclareContext, BossbarSOperationContext, BossbarSIGetContext, BossbarSISetColorContext, BossbarSISetMaxContext, BossbarSISetNameContext, BossbarSISetPlayerContext, BossbarSISetPlayerNullContext, BossbarSISetStyleContext, BossbarSISetValueContext, BossbarSISetVisibleContext, BossbarOpExprGetContext, BossbarOpExprAssignValueContext, BossbarOpExprAssignMaxContext, TitleSCompoundContext, BossbarSIRemoveContext, BossbarStatementInnerContext, TitleSSelectorCompoundContext, TitleSISelectorSingleContext, TitleSISelectorCompoundContext, TitleSSIJsonContext, TitleSSIClearContext, TitleSSIResetContext, TitleSSITimesContext, TitleISIJsonContext, TitleISIClearContext, TitleISIResetContext, TitleISITimesContext, TitleSelectorStatementInnerContext, DisplaySCompoundContext, AttrISIGetBaseContext, AttrISIGetContext, AttrISIModifierAddContext, AttrISIModifierGetContext, AttrISIModifierRemoveContext, AttrISISetBaseContext, AttrSCompoundContext, AttrSISelectorCompoundContext, AttrSISingleContext, AttrSSelectorCompoundContext, BlockSICloneContext, BlockSICloneFilteredContext, BlockSIFillContext, BlockSIFillReplaceContext, BlockSISetblockContext, ClearISIContext, DisplayISIBossbarContext, DisplayISITextContext, DisplayISITitleCompoundContext, DisplayISITitleSingleContext, DisplaySIBossbarContext, DisplaySIScbContext, DisplaySISelectorCompoundContext, DisplaySISelectorSingleContext, DisplaySSelectorCompoundContext, EffectISIClearAllContext, EffectISIClearContext, EffectISIGiveSpContext, EffectISIGiveContext, EntityISIAttrCompoundContext, EntityISIAttrSingleContext, EntityISIDisplayCompoundContext, EntityISIDisplaySingleContext, EntityISIEffectContext, EntityISIExecContext, EntityISIGiveAndClearContext, EntityISIItemCompoundContext, EntityISIItemSingleContext, EntityISIKillContext, EntityISILootCompoundContext, EntityISILootGiveSingleContext, EntityISILootSingleContext, EntityISITagContext, EntityISITitleCompoundContext, EntityISITpContext, EntitySCompoundContext, EntitySDeclareContext, EntitySDeclarePlayerContext, EntitySIEntityExpressionContext, EntitySISelectorCompoundContext, EntitySSelectorCompoundContext, GiveISIContext, ItemISIModifyContext, ItemISIReplaceFromBlockContext, ItemISIReplaceFromEntityContext, ItemISIReplaceWithContext, ItemSCompoundContext, ItemSIBlockContext, ItemSIEntityContext, ItemSIGiveAndClearContext, ItemSILootInnerContext, ItemSISelectorNestContext, ItemSSelectorCompoundContext, ItemSSIGiveAndClearContext, ItemSSIItemContext, ItemSSILootInnerContext, LootSCompoundContext, LootSIGiveContext, LootSIInsertContext, LootSIReplaceBlockContext, LootSIReplaceEntityContext, LootSISelectorNestContext, LootSISpawnContext, LootSourceFishHandContext, LootSourceFishToolContext, LootSourceKillContext, LootSourceLootContext, LootSourceMineHandContext, LootSourceMineToolContext, LootSSelectorCompoundContext, TagISIAddContext, TagISIListContext, TagISIRemoveContext, TpISIDestinationContext, TpISIFacingContext, TpISIFacingEntityContext, TpISIPosContext, TpISIRotatedContext, TpISIRotatedDivContext, LootIndependentStatementInnerGiveContext, LootIndependentStatementInnerReplaceEntityContext, Item_slotContext, Item_predicateContext, SnbtContext, Block_predicateContext, BlockStatementContext, NameSpaceEntityContext, NameSpaceSettingsEntityContext, EntitySDeclareWithNameContext, EntityDeclareSITagContext, ExistExpressionExecContext, AcceptableNameContext, BlockIdentifierContext, BlockstateContext, DataBlockContext, DataEntityContext, DataGetContext, DataMergeBlockContext, DataMergeEntityContext, DataMergeStorageContext, DataModifyAppendFromContext, DataModifyAppendValueContext, DataModifyInsertFromContext, DataModifyInsertValueContext, DataModifyMergeFromContext, DataModifyMergeValueContext, DataModifyPrependFromContext, DataModifyPrependValueContext, DataModifySetFromContext, DataModifySetValueContext, DataRemoveContext, DataStatementContext, DataStorageContext, ExecAlignContext, ExecAnchoredContext, ExecAnonymousRunContext, ExecAsContext, ExecAtContext, ExecDirectRunContext, ExecFacingEntityContext, ExecFacingPosContext, ExecIfBiomeContext, ExecIfBlockContext, ExecIfBlocksContext, ExecIfDataContext, ExecIfEntityContext, ExecIfScoreContext, ExecIfScoreMatchesContext, ExecInContext, ExecNamedRunContext, ExecPositionedPosContext, ExecPostionedAsContext, ExecPredicateContext, ExecRotatedAsContext, ExecRotatedPosContext, ExecStoreContext, ExecStoreResultBossbarContext, ExecStoreResultDataContext, ExecStoreResultScoreContext, ExecStoreSuccessBossbarContext, ExecStoreSuccessDataContext, ExecStoreSuccessScoreContext, ExecWithoutRunOrChildContext, ExecWithRunOrChildContext, ExistExpressionAndContext, ExistExpressionBitAndContext, ExistExpressionBitOrContext, ExistExpressionFalseContext, ExistExpressionIdContext, ExistExpressionNotContext, ExistExpressionOrContext, ExistExpressionTrueContext, FuncRunStatementContext, FuncStatementContext, FuncTagStatementContext, JsonContext, LeagalCommandContext, MatchPartContext, McfFileContext, NameSpaceContext, NameSpaceSettingsBlockContext, NameSpaceSettingsFuncContext, NameSpaceStatementContext, NbtContext, NbtNameContext, NbtPathContext, NoInExecStatementRunFuncContext, NoInExecStatementStoreContext, Pos1Context, Pos2IdentifierContext, Pos3IdentifierContext, Pos5IdentifierContext, RegisterNameContext, ResourceLocationContext, ScbAddContext, ScbFuncExpressionContext, ScbGetContext, ScbIdentifierContext, ScbIdExpressionContext, ScbObjSDeclareDefaultContext, ScbObjSDeclareWithNameContext, ScbObjSOperationContext, ScbOptAddAssignContext, ScbOptAddSubExpressionContext, ScbOptAssignContext, ScbOptDivAssignContext, ScbOptExcFuncContext, ScbOptExpressionContext, ScbOptMaxFuncContext, ScbOptMinFuncContext, ScbOptModAssignContext, ScbOptMulAssignContext, ScbOptMulDivModExpressionContext, ScbOptSubAssignContext, ScbParenExpressionContext, ScbPlayerStatementContext, ScbRemoveContext, ScbResetContext, ScbSetContext, ScbSIDisplayContext, ScbSIDisplaynameContext, ScbSingleOperationExpressionContext, ScbSIRemoveContext, ScbSIRendertypeContext, ScbTempNumberExpressionContext, SelectorContext, WhileStatementExecContext, WhileStatementExistContext, IfStatementContext, ForStatementContext, DataSCompoundContext, DataSIdentifierCompoundContext, DataStorageWithEnvContext, DataStorageLocalContext, FuncImproveStatementContext, FuncImproveParamContext, YeildStatementContext, FuncImproveRunExpressionContext, ExisitExpressionFuncRunContext, FuncImproveRunStatementContext, DataAssignExistExpressionContext, ExistExpressionParenContext, InterfaceStatementContext, InterfaceSIdentifierContext, InterfaceSNamespaceContext, ExistExpressionContext, IfElseSIfSContext, DataMergeContext, DataOperationExpressionContext, DataIdentifierContext, BoolValueContext, NumberTypeContext, ScbCompareNumberContext, PlayerNameContext } from './antlr/JustMCFParser';
 import { JustMCFVisitor } from "./antlr/JustMCFVisitor";
 import { AbstractParseTreeVisitor } from "antlr4ts/tree/AbstractParseTreeVisitor";
 import { UUID } from './lib/UUIDUtils';
@@ -204,6 +204,8 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitRegisterName(ctx: RegisterNameContext) { return [ctx.text] }
     visitNbtName(ctx: NbtNameContext) { return [ctx.text] }
     visitResourceLocation(ctx: ResourceLocationContext) { return [ctx.text] }
+    visitBoolValue(ctx: BoolValueContext) { return [ctx.text] }
+    visitNumberType(ctx: NumberTypeContext){return [ctx.text]}
     
 /* Begin  */
     visitMcfFile(ctx: McfFileContext) {
@@ -270,7 +272,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     }
     visitFuncTagSettingsReplace(ctx: FuncTagSettingsReplaceContext) {
         //return [key,value]
-        return ["replace",ctx.BOOL().text]
+        return ["replace",this.v(ctx.boolValue())]
     }
     visitFuncTagSettingsReplaced(ctx: FuncTagSettingsReplacedContext) {
         return ["replace","true"]
@@ -444,21 +446,21 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitExecStoreResultScore(ctx: ExecStoreResultScoreContext) { return [`store result score ${this.v(ctx.scbIdentifier())}`] }
     visitExecStoreSuccessScore(ctx: ExecStoreSuccessScoreContext) { return [`store success score ${this.v(ctx.scbIdentifier())}`] }
     visitExecStoreResultData(ctx: ExecStoreResultDataContext) {
-        const storeTypeContext = ctx.NumberType()
+        const storeTypeContext = ctx.numberType()
         const storeScaleContext = ctx.NUMBER()
-        const storeType = storeTypeContext === undefined ? "int" :storeTypeContext.text
+        const storeType = storeTypeContext === undefined ? "int" :this.v(storeTypeContext)
         const storeScale = storeScaleContext === undefined ? "1" : storeScaleContext.text
         return [`store result ${this.v(ctx.dataIdentifier())} ${storeType} ${storeScale}`]
     }
     visitExecStoreSuccessData(ctx: ExecStoreSuccessDataContext) {
-        const storeTypeContext = ctx.NumberType()
+        const storeTypeContext = ctx.numberType()
         const storeScaleContext = ctx.NUMBER()
-        const storeType = storeTypeContext === undefined ? "int": storeTypeContext.text
+        const storeType = storeTypeContext === undefined ? "int": this.v(storeTypeContext)
         const storeScale = storeScaleContext === undefined ? "1" : storeScaleContext.text
         return [`store success ${this.v(ctx.dataIdentifier())} ${storeType} ${storeScale}`]
     }
-    visitExecStoreResultBossbar(ctx: ExecStoreResultBossbarContext) {return [`store result ${this.v(ctx.nameSpaceBossbar())} ${(ctx._value.text!="max")? "value":"max"}`]}
-    visitExecStoreSuccessBossbar(ctx: ExecStoreSuccessBossbarContext) {return [`store success ${this.v(ctx.nameSpaceBossbar())} ${(ctx._value.text!="max")? "value":"max"}`]}
+    visitExecStoreResultBossbar(ctx: ExecStoreResultBossbarContext) {return [`store result ${this.v(ctx.nameSpaceBossbar())} ${(ctx._value!==undefined)? ctx._value.text:"value"}`]}
+    visitExecStoreSuccessBossbar(ctx: ExecStoreSuccessBossbarContext) {return [`store success ${this.v(ctx.nameSpaceBossbar())} ${(ctx._value!==undefined)? ctx._value.text:"value"}`]}
     visitExecAlign(ctx: ExecAlignContext) {
         const axesDefault = ctx.AcceptableName().text
         const axes = `${/x/.test(axesDefault) ? "x" : ""}${/y/.test(axesDefault) ? "y" : ""}${/z/.test(axesDefault) ? "z" : ""}`
@@ -480,14 +482,25 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         const operation = ctx.CompareOperation().text === "==" ? "=" : ctx.CompareOperation().text
         return [`${(ctx._cond.text!="unless")?"if":"unless"} score ${this.v(ctx.scbIdentifier(0))} ${operation} ${this.v(ctx.scbIdentifier(1))}`]
     }
-    visitExecIfScoreMatches(ctx: ExecIfScoreMatchesContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} score ${this.v(ctx.scbIdentifier())} matches ${this.v(ctx.matchPart())}`] }
-    visitExecPredicate(ctx: ExecPredicateContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} predicate ${this.v(ctx.nameSpacePredicate())}`] }
-    visitExecIfBlock(ctx: ExecIfBlockContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} block ${this.v(ctx.pos3Identifier())} ${this.v(ctx.blockIdentifier())}`] }
-    visitExecIfBlocks(ctx: ExecIfBlocksContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} blocks ${this.v(ctx.pos3Identifier(0))} ${this.v(ctx.pos3Identifier(1))} ${this.v(ctx.pos3Identifier(2))}`] }
-    visitExecIfData(ctx: ExecIfDataContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} ${this.v(ctx.dataIdentifier())}`] }
-    visitExecIfBiome(ctx: ExecIfBiomeContext) { return [`${(ctx._cond.text!="unless")?"if":"unless"} biome ${this.v(ctx.pos3Identifier())} ${this.v(ctx.nameSpaceBiome())}`] }
+    visitExecIfScoreMatches(ctx: ExecIfScoreMatchesContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} score ${this.v(ctx.scbIdentifier())} matches ${ctx.matchPart()!==undefined? this.v(ctx.matchPart()!!):this.v(ctx.scbCompareNumber()!!)}`] }
+    visitExecPredicate(ctx: ExecPredicateContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} predicate ${this.v(ctx.nameSpacePredicate())}`] }
+    visitExecIfBlock(ctx: ExecIfBlockContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} block ${this.v(ctx.pos3Identifier())} ${this.v(ctx.blockIdentifier())}`] }
+    visitExecIfBlocks(ctx: ExecIfBlocksContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} blocks ${this.v(ctx.pos3Identifier(0))} ${this.v(ctx.pos3Identifier(1))} ${this.v(ctx.pos3Identifier(2))}`] }
+    visitExecIfData(ctx: ExecIfDataContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} ${this.v(ctx.dataIdentifier())}`] }
+    visitExecIfBiome(ctx: ExecIfBiomeContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} biome ${this.v(ctx.pos3Identifier())} ${this.v(ctx.nameSpaceBiome())}`] }
     visitExecStore(ctx: ExecStoreContext) { return this.visit(ctx.execStoreChild()) }
     visitMatchPart(ctx: MatchPartContext) { return [ctx.text] }
+    visitScbCompareNumber(ctx: ScbCompareNumberContext) {
+        const num = Number.parseInt(ctx.NUMBER().text)
+        switch (ctx.CompareOperation().text) {
+            case '<': return [`..${num - 1}`]
+            case '<=': return [`..${num}`]
+            case '==': return [`${num}`]
+            case '>=': return [`${num}..`]
+            case '>': return [`${num + 1}..`]
+        }
+        return []
+    }
 
 /* Data Statement */
     // visitDataOperationExpression?: ((ctx: DataOperationExpressionContext) => string[]) | undefined;
@@ -670,8 +683,8 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitBossbarSISetPlayerNull(ctx: BossbarSISetPlayerNullContext) { return [`bossbar set $$ players`] }
     visitBossbarSISetStyle(ctx: BossbarSISetStyleContext) { return [`bossbar set $$ style ${ctx._style}`] }
     visitBossbarSISetValue(ctx: BossbarSISetValueContext) { return [`bossbar set $$ value ${ctx.NUMBER().text}`] }
-    visitBossbarSISetVisible(ctx: BossbarSISetVisibleContext) { return [`bossbar set $$ visible ${ctx._bool.text}`] }
-    visitBossbarOpExprGet(ctx: BossbarOpExprGetContext) { return [`bossbar get ${this.v(ctx.nameSpaceBossbar())} ${ctx._type.text===undefined?"value":ctx._type.text}`] }
+    visitBossbarSISetVisible(ctx: BossbarSISetVisibleContext) { return [`bossbar set $$ visible ${this.v(ctx.boolValue())}`] }
+    visitBossbarOpExprGet(ctx: BossbarOpExprGetContext) { return [`bossbar get ${this.v(ctx.nameSpaceBossbar())} ${ctx._type===undefined?"value":ctx._type.text}`] }
     visitBossbarOpExprAssignValue(ctx: BossbarOpExprAssignValueContext) { return [`bossbar set ${this.v(ctx.nameSpaceBossbar())} value ${ctx.NUMBER().text}`] }
     visitBossbarOpExprAssignMax(ctx: BossbarOpExprAssignMaxContext) { return [`bossbar set ${this.v(ctx.nameSpaceBossbar())} max ${ctx.NUMBER().text}`] }
 
@@ -745,13 +758,13 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         return [`loot replace entity $$ ${this.v(ctx.item_slot())} ${this.v(ctx.lootSource())}`+ctx.NUMBER()!==undefined?` ${ctx.NUMBER()?.text}`:""]
     }
     visitLootSourceFishHand(ctx: LootSourceFishHandContext) {
-        return [`fish ${this.v(ctx.nameSpaceLoot())} ${this.v(ctx.pos3Identifier())}`+ctx._hand.text!==undefined?` ${ctx._hand.text}`:""]
+        return [`fish ${this.v(ctx.nameSpaceLoot())} ${this.v(ctx.pos3Identifier())}`+ctx._hand!==undefined?` ${ctx._hand.text}`:""]
     }
     visitLootSourceFishTool(ctx: LootSourceFishToolContext) {return [`fish ${this.v(ctx.nameSpaceLoot())} ${this.v(ctx.pos3Identifier())} ${this.v(ctx.nameSpaceItem())}` ]}
     visitLootSourceLoot(ctx: LootSourceLootContext) {return [`loot ${this.v(ctx.nameSpaceLoot())}`]}
     visitLootSourceKill(ctx: LootSourceKillContext) {return [`kill ${this.v(ctx.selector())}`]}
     visitLootSourceMineHand(ctx: LootSourceMineHandContext) {
-        return [`mine ${this.v(ctx.pos3Identifier())}`+ctx._hand.text!==undefined?` ${ctx._hand.text}`:""]
+        return [`mine ${this.v(ctx.pos3Identifier())}`+ctx._hand!==undefined?` ${ctx._hand.text}`:""]
     }
     visitLootSourceMineTool(ctx: LootSourceMineToolContext) {return [`mine ${this.v(ctx.pos3Identifier())} ${this.v(ctx.nameSpaceItem())}`]}
     visitItemSIGiveAndClear(ctx: ItemSIGiveAndClearContext) {return [this.v(ctx.giveAndClearIndependentStatementInner()).replace("$$",this.v(ctx.selector()))]}
@@ -809,10 +822,13 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     
     
     visitEntitySDeclarePlayer(ctx: EntitySDeclarePlayerContext) {
-        const name = ctx._fake.text!==undefined?"#":""+this.v(ctx.acceptableName())
-        this.entityNameMap[name]="player"
+        for (const playerNameContext of ctx.playerName()) {
+            const name = this.v(playerNameContext)
+            this.entityNameMap[name]="player"
+        }
         return []
     }
+    visitPlayerName(ctx: PlayerNameContext){return [ctx.text]}
     visitEntitySDeclare(ctx: EntitySDeclareContext) {
         let nbt = ctx.nbt() !== undefined ? this.v(ctx.nbt()!!) : ""
         for (const context of ctx.entityDeclareStatementInner()) {
@@ -848,18 +864,18 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitTagISIList(ctx: TagISIListContext) {return [`tag $$ list`]}
     
     visitEffectISIGive(ctx: EffectISIGiveContext) {
-        const left = ctx._second.text === undefined ? "" :
-            ctx._amplifier.text === undefined ? ` ${ctx._second.text}` :
-                ctx.BOOL() === undefined ? ` ${ctx._second.text} ${ctx._amplifier.text}` :
-                    ` ${ctx._second.text} ${ctx._amplifier.text} ${ctx.BOOL()?.text}`;
+        const left = ctx._second === undefined ? "" :
+            ctx._amplifier === undefined ? ` ${ctx._second.text}` :
+            ctx.boolValue() === undefined ? ` ${ctx._second.text} ${ctx._amplifier.text}` :
+                    ` ${ctx._second.text} ${ctx._amplifier.text} ${this.v(ctx.boolValue()!!)}`;
         return [`effect give $$ ${this.v(ctx.acceptableName())}`+ left]
     }
     visitEffectISIClear(ctx: EffectISIClearContext) {return [`effect clear $$ ${this.v(ctx.acceptableName())}`]}
     visitEffectISIGiveSp(ctx: EffectISIGiveSpContext) {
-        const left = ctx._second.text === undefined ? "" :
-            ctx._amplifier.text === undefined ? ` ${ctx._second.text}` :
-                ctx.BOOL() === undefined ? ` ${ctx._second.text} ${ctx._amplifier.text}` :
-                    ` ${ctx._second.text} ${ctx._amplifier.text} ${ctx.BOOL()?.text}`;
+        const left = ctx._second === undefined ? "" :
+            ctx._amplifier === undefined ? ` ${ctx._second.text}` :
+            ctx.boolValue() === undefined ? ` ${ctx._second.text} ${ctx._amplifier.text}` :
+                    ` ${ctx._second.text} ${ctx._amplifier.text} ${this.v(ctx.boolValue()!!)}`;
                 
         return [`effect give $$ ${this.v(ctx.acceptableName())}`+ left]
     }
@@ -870,7 +886,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitTpISIRotated(ctx: TpISIRotatedContext) {return [`tp $$ ${this.v(ctx.pos5Identifier())}`]}
     visitTpISIRotatedDiv(ctx: TpISIRotatedDivContext) {return [`tp $$ ${this.v(ctx.pos3Identifier())} ${this.v(ctx.pos2Identifier())}`]}
     visitTpISIFacing(ctx: TpISIFacingContext) {return [`tp $$ ${this.v(ctx.pos3Identifier(0))} facing ${this.v(ctx.pos3Identifier(1))}`]}
-    visitTpISIFacingEntity(ctx: TpISIFacingEntityContext) {return [`tp $$ ${this.v(ctx.pos3Identifier())} facing entity ${this.v(ctx.selector())}`+ctx._anchor.text!==undefined?` ${ctx._anchor.text}`:""]}
+    visitTpISIFacingEntity(ctx: TpISIFacingEntityContext) {return [`tp $$ ${this.v(ctx.pos3Identifier())} facing entity ${this.v(ctx.selector())}`+ctx._anchor!==undefined?` ${ctx._anchor.text}`:""]}
     
 //    visitEntityISIGiveAndClear(ctx: EntityISIGiveAndClearContext) { return [] }
     visitEntityISIKill(ctx: EntityISIKillContext) {return [`kill $$`]}
@@ -910,19 +926,19 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         return ctx.blockStatementInner().flatMap(context=>this.visit(context))
     }
     visitBlockSISetblock(ctx: BlockSISetblockContext) {
-        return [`setblock ${this.v(ctx.pos3Identifier())} ${this.v(ctx.blockIdentifier())}`+ctx._mod.text!==undefined?` ${ctx._mod.text}`:""]
+        return [`setblock ${this.v(ctx.pos3Identifier())} ${this.v(ctx.blockIdentifier())}`+ctx._mod!==undefined?` ${ctx._mod.text}`:""]
     }
     visitBlockSIFill(ctx: BlockSIFillContext) {
-        return [`fill ${this.v(ctx.pos3Identifier(0))} ${this.v(ctx.pos3Identifier(1))} ${this.v(ctx.blockIdentifier())}`+ctx._mod.text!==undefined?` ${ctx._mod.text}`:""]
+        return [`fill ${this.v(ctx.pos3Identifier(0))} ${this.v(ctx.pos3Identifier(1))} ${this.v(ctx.blockIdentifier())}`+ctx._mod!==undefined?` ${ctx._mod.text}`:""]
     }
     visitBlockSIFillReplace(ctx: BlockSIFillReplaceContext) {
         return [`fill ${this.v(ctx.pos3Identifier(0))} ${this.v(ctx.pos3Identifier(1))} ${this.v(ctx.blockIdentifier())} replace ${this.v(ctx.block_predicate())}`]
     }
     visitBlockSIClone(ctx: BlockSICloneContext) {
-        return [`clone ${this.v(ctx.pos3Identifier(0))} ${this.v(ctx.pos3Identifier(1))} ${this.v(ctx.pos3Identifier(2))}`+ctx._masked_mod.text===undefined?"":ctx._mod===undefined?` ${ctx._masked_mod.text}`:` ${ctx._masked_mod.text} ${ctx._mod.text}`]
+        return [`clone ${this.v(ctx.pos3Identifier(0))} ${this.v(ctx.pos3Identifier(1))} ${this.v(ctx.pos3Identifier(2))}`+ctx._masked_mod===undefined?"":ctx._mod===undefined?` ${ctx._masked_mod.text}`:` ${ctx._masked_mod.text} ${ctx._mod.text}`]
     }
     visitBlockSICloneFiltered(ctx: BlockSICloneFilteredContext) {
-        return [`clone ${this.v(ctx.pos3Identifier(0))} ${this.v(ctx.pos3Identifier(1))} ${this.v(ctx.pos3Identifier(2))} filtered ${this.v(ctx.block_predicate())}`+ctx._mod.text!==undefined?` ${ctx._mod.text}`:""]
+        return [`clone ${this.v(ctx.pos3Identifier(0))} ${this.v(ctx.pos3Identifier(1))} ${this.v(ctx.pos3Identifier(2))} filtered ${this.v(ctx.block_predicate())}`+ctx._mod!==undefined?` ${ctx._mod.text}`:""]
     }
 
     visitDataAssignExistExpression(ctx: DataAssignExistExpressionContext) {

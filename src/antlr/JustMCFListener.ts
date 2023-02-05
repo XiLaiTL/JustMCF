@@ -47,11 +47,11 @@ import { ExecRotatedAsContext } from "./JustMCFParser";
 import { ExecIfEntityContext } from "./JustMCFParser";
 import { ExecIfScoreContext } from "./JustMCFParser";
 import { ExecIfScoreMatchesContext } from "./JustMCFParser";
-import { ExecPredicateContext } from "./JustMCFParser";
 import { ExecIfBlockContext } from "./JustMCFParser";
 import { ExecIfBlocksContext } from "./JustMCFParser";
 import { ExecIfDataContext } from "./JustMCFParser";
 import { ExecIfBiomeContext } from "./JustMCFParser";
+import { ExecPredicateContext } from "./JustMCFParser";
 import { ExecStoreContext } from "./JustMCFParser";
 import { DataStorageLocalContext } from "./JustMCFParser";
 import { DataStorageContext } from "./JustMCFParser";
@@ -275,6 +275,7 @@ import { ExecStoreChildContext } from "./JustMCFParser";
 import { ExecRunChildContext } from "./JustMCFParser";
 import { ExecChildContext } from "./JustMCFParser";
 import { MatchPartContext } from "./JustMCFParser";
+import { ScbCompareNumberContext } from "./JustMCFParser";
 import { DataIdentifierContext } from "./JustMCFParser";
 import { DataMergeExpressionContext } from "./JustMCFParser";
 import { DataOperationExpressionContext } from "./JustMCFParser";
@@ -282,39 +283,6 @@ import { DataRightValueContext } from "./JustMCFParser";
 import { ScbOperationExpressionContext } from "./JustMCFParser";
 import { ScbSingleOperationExpressionContext } from "./JustMCFParser";
 import { ScbIdentifierContext } from "./JustMCFParser";
-import { Pos3IdentifierContext } from "./JustMCFParser";
-import { Pos2IdentifierContext } from "./JustMCFParser";
-import { Pos5IdentifierContext } from "./JustMCFParser";
-import { Pos1Context } from "./JustMCFParser";
-import { BlockIdentifierContext } from "./JustMCFParser";
-import { BlockstateContext } from "./JustMCFParser";
-import { SelectorContext } from "./JustMCFParser";
-import { NameSpaceContext } from "./JustMCFParser";
-import { NameSpaceBlockContext } from "./JustMCFParser";
-import { NameSpaceFuncContext } from "./JustMCFParser";
-import { NameSpaceStorageContext } from "./JustMCFParser";
-import { NameSpaceBossbarContext } from "./JustMCFParser";
-import { NameSpaceBiomeContext } from "./JustMCFParser";
-import { NameSpaceDimContext } from "./JustMCFParser";
-import { NameSpacePredicateContext } from "./JustMCFParser";
-import { NameSpaceItemContext } from "./JustMCFParser";
-import { NameSpaceEntityContext } from "./JustMCFParser";
-import { NameSpaceLootContext } from "./JustMCFParser";
-import { NameSpaceItemModifierContext } from "./JustMCFParser";
-import { TagNameSpaceContext } from "./JustMCFParser";
-import { TagNameSpaceItemContext } from "./JustMCFParser";
-import { TagNameSpaceBlockContext } from "./JustMCFParser";
-import { TagNameSpaceFuncContext } from "./JustMCFParser";
-import { TagNameSpaceEntityContext } from "./JustMCFParser";
-import { RegisterNameContext } from "./JustMCFParser";
-import { AcceptableNameContext } from "./JustMCFParser";
-import { CriterionContext } from "./JustMCFParser";
-import { NbtNameContext } from "./JustMCFParser";
-import { ResourceLocationContext } from "./JustMCFParser";
-import { TypeNameContext } from "./JustMCFParser";
-import { Item_slotContext } from "./JustMCFParser";
-import { Item_predicateContext } from "./JustMCFParser";
-import { Block_predicateContext } from "./JustMCFParser";
 import { DataStatementContext } from "./JustMCFParser";
 import { ScbPlayerStatementContext } from "./JustMCFParser";
 import { ScbPlayerStatementInnerContext } from "./JustMCFParser";
@@ -345,6 +313,7 @@ import { AttrStatementContext } from "./JustMCFParser";
 import { AttrStatementInnerContext } from "./JustMCFParser";
 import { AttrIndependentStatementInnerContext } from "./JustMCFParser";
 import { EntityStatementContext } from "./JustMCFParser";
+import { PlayerNameContext } from "./JustMCFParser";
 import { EntityDeclareStatementInnerContext } from "./JustMCFParser";
 import { TagIndependentStatementInnerContext } from "./JustMCFParser";
 import { EffectIndependentStatementInnerContext } from "./JustMCFParser";
@@ -380,6 +349,42 @@ import { JsonObjContext } from "./JustMCFParser";
 import { JsonPairContext } from "./JustMCFParser";
 import { JsonArrContext } from "./JustMCFParser";
 import { JsonValueContext } from "./JustMCFParser";
+import { BoolValueContext } from "./JustMCFParser";
+import { KeyContext } from "./JustMCFParser";
+import { Pos3IdentifierContext } from "./JustMCFParser";
+import { Pos2IdentifierContext } from "./JustMCFParser";
+import { Pos5IdentifierContext } from "./JustMCFParser";
+import { Pos1Context } from "./JustMCFParser";
+import { BlockIdentifierContext } from "./JustMCFParser";
+import { BlockstateContext } from "./JustMCFParser";
+import { SelectorContext } from "./JustMCFParser";
+import { NameSpaceContext } from "./JustMCFParser";
+import { NameSpaceBlockContext } from "./JustMCFParser";
+import { NameSpaceFuncContext } from "./JustMCFParser";
+import { NameSpaceStorageContext } from "./JustMCFParser";
+import { NameSpaceBossbarContext } from "./JustMCFParser";
+import { NameSpaceBiomeContext } from "./JustMCFParser";
+import { NameSpaceDimContext } from "./JustMCFParser";
+import { NameSpacePredicateContext } from "./JustMCFParser";
+import { NameSpaceItemContext } from "./JustMCFParser";
+import { NameSpaceEntityContext } from "./JustMCFParser";
+import { NameSpaceLootContext } from "./JustMCFParser";
+import { NameSpaceItemModifierContext } from "./JustMCFParser";
+import { TagNameSpaceContext } from "./JustMCFParser";
+import { TagNameSpaceItemContext } from "./JustMCFParser";
+import { TagNameSpaceBlockContext } from "./JustMCFParser";
+import { TagNameSpaceFuncContext } from "./JustMCFParser";
+import { TagNameSpaceEntityContext } from "./JustMCFParser";
+import { RegisterNameContext } from "./JustMCFParser";
+import { NumberTypeContext } from "./JustMCFParser";
+import { AcceptableNameContext } from "./JustMCFParser";
+import { CriterionContext } from "./JustMCFParser";
+import { NbtNameContext } from "./JustMCFParser";
+import { ResourceLocationContext } from "./JustMCFParser";
+import { TypeNameContext } from "./JustMCFParser";
+import { Item_slotContext } from "./JustMCFParser";
+import { Item_predicateContext } from "./JustMCFParser";
+import { Block_predicateContext } from "./JustMCFParser";
 
 
 /**
@@ -960,19 +965,6 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitExecIfScoreMatches?: (ctx: ExecIfScoreMatchesContext) => void;
 
 	/**
-	 * Enter a parse tree produced by the `execPredicate`
-	 * labeled alternative in `JustMCFParser.execChild`.
-	 * @param ctx the parse tree
-	 */
-	enterExecPredicate?: (ctx: ExecPredicateContext) => void;
-	/**
-	 * Exit a parse tree produced by the `execPredicate`
-	 * labeled alternative in `JustMCFParser.execChild`.
-	 * @param ctx the parse tree
-	 */
-	exitExecPredicate?: (ctx: ExecPredicateContext) => void;
-
-	/**
 	 * Enter a parse tree produced by the `execIfBlock`
 	 * labeled alternative in `JustMCFParser.execChild`.
 	 * @param ctx the parse tree
@@ -1023,6 +1015,19 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitExecIfBiome?: (ctx: ExecIfBiomeContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execPredicate`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecPredicate?: (ctx: ExecPredicateContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execPredicate`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecPredicate?: (ctx: ExecPredicateContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `execStore`
@@ -3872,6 +3877,17 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitMatchPart?: (ctx: MatchPartContext) => void;
 
 	/**
+	 * Enter a parse tree produced by `JustMCFParser.scbCompareNumber`.
+	 * @param ctx the parse tree
+	 */
+	enterScbCompareNumber?: (ctx: ScbCompareNumberContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.scbCompareNumber`.
+	 * @param ctx the parse tree
+	 */
+	exitScbCompareNumber?: (ctx: ScbCompareNumberContext) => void;
+
+	/**
 	 * Enter a parse tree produced by `JustMCFParser.dataIdentifier`.
 	 * @param ctx the parse tree
 	 */
@@ -3947,369 +3963,6 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitScbIdentifier?: (ctx: ScbIdentifierContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.pos3Identifier`.
-	 * @param ctx the parse tree
-	 */
-	enterPos3Identifier?: (ctx: Pos3IdentifierContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.pos3Identifier`.
-	 * @param ctx the parse tree
-	 */
-	exitPos3Identifier?: (ctx: Pos3IdentifierContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.pos2Identifier`.
-	 * @param ctx the parse tree
-	 */
-	enterPos2Identifier?: (ctx: Pos2IdentifierContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.pos2Identifier`.
-	 * @param ctx the parse tree
-	 */
-	exitPos2Identifier?: (ctx: Pos2IdentifierContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.pos5Identifier`.
-	 * @param ctx the parse tree
-	 */
-	enterPos5Identifier?: (ctx: Pos5IdentifierContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.pos5Identifier`.
-	 * @param ctx the parse tree
-	 */
-	exitPos5Identifier?: (ctx: Pos5IdentifierContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.pos1`.
-	 * @param ctx the parse tree
-	 */
-	enterPos1?: (ctx: Pos1Context) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.pos1`.
-	 * @param ctx the parse tree
-	 */
-	exitPos1?: (ctx: Pos1Context) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.blockIdentifier`.
-	 * @param ctx the parse tree
-	 */
-	enterBlockIdentifier?: (ctx: BlockIdentifierContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.blockIdentifier`.
-	 * @param ctx the parse tree
-	 */
-	exitBlockIdentifier?: (ctx: BlockIdentifierContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.blockstate`.
-	 * @param ctx the parse tree
-	 */
-	enterBlockstate?: (ctx: BlockstateContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.blockstate`.
-	 * @param ctx the parse tree
-	 */
-	exitBlockstate?: (ctx: BlockstateContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.selector`.
-	 * @param ctx the parse tree
-	 */
-	enterSelector?: (ctx: SelectorContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.selector`.
-	 * @param ctx the parse tree
-	 */
-	exitSelector?: (ctx: SelectorContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.nameSpace`.
-	 * @param ctx the parse tree
-	 */
-	enterNameSpace?: (ctx: NameSpaceContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.nameSpace`.
-	 * @param ctx the parse tree
-	 */
-	exitNameSpace?: (ctx: NameSpaceContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.nameSpaceBlock`.
-	 * @param ctx the parse tree
-	 */
-	enterNameSpaceBlock?: (ctx: NameSpaceBlockContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.nameSpaceBlock`.
-	 * @param ctx the parse tree
-	 */
-	exitNameSpaceBlock?: (ctx: NameSpaceBlockContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.nameSpaceFunc`.
-	 * @param ctx the parse tree
-	 */
-	enterNameSpaceFunc?: (ctx: NameSpaceFuncContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.nameSpaceFunc`.
-	 * @param ctx the parse tree
-	 */
-	exitNameSpaceFunc?: (ctx: NameSpaceFuncContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.nameSpaceStorage`.
-	 * @param ctx the parse tree
-	 */
-	enterNameSpaceStorage?: (ctx: NameSpaceStorageContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.nameSpaceStorage`.
-	 * @param ctx the parse tree
-	 */
-	exitNameSpaceStorage?: (ctx: NameSpaceStorageContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.nameSpaceBossbar`.
-	 * @param ctx the parse tree
-	 */
-	enterNameSpaceBossbar?: (ctx: NameSpaceBossbarContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.nameSpaceBossbar`.
-	 * @param ctx the parse tree
-	 */
-	exitNameSpaceBossbar?: (ctx: NameSpaceBossbarContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.nameSpaceBiome`.
-	 * @param ctx the parse tree
-	 */
-	enterNameSpaceBiome?: (ctx: NameSpaceBiomeContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.nameSpaceBiome`.
-	 * @param ctx the parse tree
-	 */
-	exitNameSpaceBiome?: (ctx: NameSpaceBiomeContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.nameSpaceDim`.
-	 * @param ctx the parse tree
-	 */
-	enterNameSpaceDim?: (ctx: NameSpaceDimContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.nameSpaceDim`.
-	 * @param ctx the parse tree
-	 */
-	exitNameSpaceDim?: (ctx: NameSpaceDimContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.nameSpacePredicate`.
-	 * @param ctx the parse tree
-	 */
-	enterNameSpacePredicate?: (ctx: NameSpacePredicateContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.nameSpacePredicate`.
-	 * @param ctx the parse tree
-	 */
-	exitNameSpacePredicate?: (ctx: NameSpacePredicateContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.nameSpaceItem`.
-	 * @param ctx the parse tree
-	 */
-	enterNameSpaceItem?: (ctx: NameSpaceItemContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.nameSpaceItem`.
-	 * @param ctx the parse tree
-	 */
-	exitNameSpaceItem?: (ctx: NameSpaceItemContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.nameSpaceEntity`.
-	 * @param ctx the parse tree
-	 */
-	enterNameSpaceEntity?: (ctx: NameSpaceEntityContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.nameSpaceEntity`.
-	 * @param ctx the parse tree
-	 */
-	exitNameSpaceEntity?: (ctx: NameSpaceEntityContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.nameSpaceLoot`.
-	 * @param ctx the parse tree
-	 */
-	enterNameSpaceLoot?: (ctx: NameSpaceLootContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.nameSpaceLoot`.
-	 * @param ctx the parse tree
-	 */
-	exitNameSpaceLoot?: (ctx: NameSpaceLootContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.nameSpaceItemModifier`.
-	 * @param ctx the parse tree
-	 */
-	enterNameSpaceItemModifier?: (ctx: NameSpaceItemModifierContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.nameSpaceItemModifier`.
-	 * @param ctx the parse tree
-	 */
-	exitNameSpaceItemModifier?: (ctx: NameSpaceItemModifierContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.tagNameSpace`.
-	 * @param ctx the parse tree
-	 */
-	enterTagNameSpace?: (ctx: TagNameSpaceContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.tagNameSpace`.
-	 * @param ctx the parse tree
-	 */
-	exitTagNameSpace?: (ctx: TagNameSpaceContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.tagNameSpaceItem`.
-	 * @param ctx the parse tree
-	 */
-	enterTagNameSpaceItem?: (ctx: TagNameSpaceItemContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.tagNameSpaceItem`.
-	 * @param ctx the parse tree
-	 */
-	exitTagNameSpaceItem?: (ctx: TagNameSpaceItemContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.tagNameSpaceBlock`.
-	 * @param ctx the parse tree
-	 */
-	enterTagNameSpaceBlock?: (ctx: TagNameSpaceBlockContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.tagNameSpaceBlock`.
-	 * @param ctx the parse tree
-	 */
-	exitTagNameSpaceBlock?: (ctx: TagNameSpaceBlockContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.tagNameSpaceFunc`.
-	 * @param ctx the parse tree
-	 */
-	enterTagNameSpaceFunc?: (ctx: TagNameSpaceFuncContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.tagNameSpaceFunc`.
-	 * @param ctx the parse tree
-	 */
-	exitTagNameSpaceFunc?: (ctx: TagNameSpaceFuncContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.tagNameSpaceEntity`.
-	 * @param ctx the parse tree
-	 */
-	enterTagNameSpaceEntity?: (ctx: TagNameSpaceEntityContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.tagNameSpaceEntity`.
-	 * @param ctx the parse tree
-	 */
-	exitTagNameSpaceEntity?: (ctx: TagNameSpaceEntityContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.registerName`.
-	 * @param ctx the parse tree
-	 */
-	enterRegisterName?: (ctx: RegisterNameContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.registerName`.
-	 * @param ctx the parse tree
-	 */
-	exitRegisterName?: (ctx: RegisterNameContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.acceptableName`.
-	 * @param ctx the parse tree
-	 */
-	enterAcceptableName?: (ctx: AcceptableNameContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.acceptableName`.
-	 * @param ctx the parse tree
-	 */
-	exitAcceptableName?: (ctx: AcceptableNameContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.criterion`.
-	 * @param ctx the parse tree
-	 */
-	enterCriterion?: (ctx: CriterionContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.criterion`.
-	 * @param ctx the parse tree
-	 */
-	exitCriterion?: (ctx: CriterionContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.nbtName`.
-	 * @param ctx the parse tree
-	 */
-	enterNbtName?: (ctx: NbtNameContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.nbtName`.
-	 * @param ctx the parse tree
-	 */
-	exitNbtName?: (ctx: NbtNameContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.resourceLocation`.
-	 * @param ctx the parse tree
-	 */
-	enterResourceLocation?: (ctx: ResourceLocationContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.resourceLocation`.
-	 * @param ctx the parse tree
-	 */
-	exitResourceLocation?: (ctx: ResourceLocationContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.typeName`.
-	 * @param ctx the parse tree
-	 */
-	enterTypeName?: (ctx: TypeNameContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.typeName`.
-	 * @param ctx the parse tree
-	 */
-	exitTypeName?: (ctx: TypeNameContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.item_slot`.
-	 * @param ctx the parse tree
-	 */
-	enterItem_slot?: (ctx: Item_slotContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.item_slot`.
-	 * @param ctx the parse tree
-	 */
-	exitItem_slot?: (ctx: Item_slotContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.item_predicate`.
-	 * @param ctx the parse tree
-	 */
-	enterItem_predicate?: (ctx: Item_predicateContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.item_predicate`.
-	 * @param ctx the parse tree
-	 */
-	exitItem_predicate?: (ctx: Item_predicateContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.block_predicate`.
-	 * @param ctx the parse tree
-	 */
-	enterBlock_predicate?: (ctx: Block_predicateContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.block_predicate`.
-	 * @param ctx the parse tree
-	 */
-	exitBlock_predicate?: (ctx: Block_predicateContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `JustMCFParser.dataStatement`.
@@ -4640,6 +4293,17 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitEntityStatement?: (ctx: EntityStatementContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.playerName`.
+	 * @param ctx the parse tree
+	 */
+	enterPlayerName?: (ctx: PlayerNameContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.playerName`.
+	 * @param ctx the parse tree
+	 */
+	exitPlayerName?: (ctx: PlayerNameContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `JustMCFParser.entityDeclareStatementInner`.
@@ -5025,5 +4689,401 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitJsonValue?: (ctx: JsonValueContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.boolValue`.
+	 * @param ctx the parse tree
+	 */
+	enterBoolValue?: (ctx: BoolValueContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.boolValue`.
+	 * @param ctx the parse tree
+	 */
+	exitBoolValue?: (ctx: BoolValueContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.key`.
+	 * @param ctx the parse tree
+	 */
+	enterKey?: (ctx: KeyContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.key`.
+	 * @param ctx the parse tree
+	 */
+	exitKey?: (ctx: KeyContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.pos3Identifier`.
+	 * @param ctx the parse tree
+	 */
+	enterPos3Identifier?: (ctx: Pos3IdentifierContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.pos3Identifier`.
+	 * @param ctx the parse tree
+	 */
+	exitPos3Identifier?: (ctx: Pos3IdentifierContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.pos2Identifier`.
+	 * @param ctx the parse tree
+	 */
+	enterPos2Identifier?: (ctx: Pos2IdentifierContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.pos2Identifier`.
+	 * @param ctx the parse tree
+	 */
+	exitPos2Identifier?: (ctx: Pos2IdentifierContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.pos5Identifier`.
+	 * @param ctx the parse tree
+	 */
+	enterPos5Identifier?: (ctx: Pos5IdentifierContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.pos5Identifier`.
+	 * @param ctx the parse tree
+	 */
+	exitPos5Identifier?: (ctx: Pos5IdentifierContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.pos1`.
+	 * @param ctx the parse tree
+	 */
+	enterPos1?: (ctx: Pos1Context) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.pos1`.
+	 * @param ctx the parse tree
+	 */
+	exitPos1?: (ctx: Pos1Context) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.blockIdentifier`.
+	 * @param ctx the parse tree
+	 */
+	enterBlockIdentifier?: (ctx: BlockIdentifierContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.blockIdentifier`.
+	 * @param ctx the parse tree
+	 */
+	exitBlockIdentifier?: (ctx: BlockIdentifierContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.blockstate`.
+	 * @param ctx the parse tree
+	 */
+	enterBlockstate?: (ctx: BlockstateContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.blockstate`.
+	 * @param ctx the parse tree
+	 */
+	exitBlockstate?: (ctx: BlockstateContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.selector`.
+	 * @param ctx the parse tree
+	 */
+	enterSelector?: (ctx: SelectorContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.selector`.
+	 * @param ctx the parse tree
+	 */
+	exitSelector?: (ctx: SelectorContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.nameSpace`.
+	 * @param ctx the parse tree
+	 */
+	enterNameSpace?: (ctx: NameSpaceContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.nameSpace`.
+	 * @param ctx the parse tree
+	 */
+	exitNameSpace?: (ctx: NameSpaceContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.nameSpaceBlock`.
+	 * @param ctx the parse tree
+	 */
+	enterNameSpaceBlock?: (ctx: NameSpaceBlockContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.nameSpaceBlock`.
+	 * @param ctx the parse tree
+	 */
+	exitNameSpaceBlock?: (ctx: NameSpaceBlockContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.nameSpaceFunc`.
+	 * @param ctx the parse tree
+	 */
+	enterNameSpaceFunc?: (ctx: NameSpaceFuncContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.nameSpaceFunc`.
+	 * @param ctx the parse tree
+	 */
+	exitNameSpaceFunc?: (ctx: NameSpaceFuncContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.nameSpaceStorage`.
+	 * @param ctx the parse tree
+	 */
+	enterNameSpaceStorage?: (ctx: NameSpaceStorageContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.nameSpaceStorage`.
+	 * @param ctx the parse tree
+	 */
+	exitNameSpaceStorage?: (ctx: NameSpaceStorageContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.nameSpaceBossbar`.
+	 * @param ctx the parse tree
+	 */
+	enterNameSpaceBossbar?: (ctx: NameSpaceBossbarContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.nameSpaceBossbar`.
+	 * @param ctx the parse tree
+	 */
+	exitNameSpaceBossbar?: (ctx: NameSpaceBossbarContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.nameSpaceBiome`.
+	 * @param ctx the parse tree
+	 */
+	enterNameSpaceBiome?: (ctx: NameSpaceBiomeContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.nameSpaceBiome`.
+	 * @param ctx the parse tree
+	 */
+	exitNameSpaceBiome?: (ctx: NameSpaceBiomeContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.nameSpaceDim`.
+	 * @param ctx the parse tree
+	 */
+	enterNameSpaceDim?: (ctx: NameSpaceDimContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.nameSpaceDim`.
+	 * @param ctx the parse tree
+	 */
+	exitNameSpaceDim?: (ctx: NameSpaceDimContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.nameSpacePredicate`.
+	 * @param ctx the parse tree
+	 */
+	enterNameSpacePredicate?: (ctx: NameSpacePredicateContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.nameSpacePredicate`.
+	 * @param ctx the parse tree
+	 */
+	exitNameSpacePredicate?: (ctx: NameSpacePredicateContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.nameSpaceItem`.
+	 * @param ctx the parse tree
+	 */
+	enterNameSpaceItem?: (ctx: NameSpaceItemContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.nameSpaceItem`.
+	 * @param ctx the parse tree
+	 */
+	exitNameSpaceItem?: (ctx: NameSpaceItemContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.nameSpaceEntity`.
+	 * @param ctx the parse tree
+	 */
+	enterNameSpaceEntity?: (ctx: NameSpaceEntityContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.nameSpaceEntity`.
+	 * @param ctx the parse tree
+	 */
+	exitNameSpaceEntity?: (ctx: NameSpaceEntityContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.nameSpaceLoot`.
+	 * @param ctx the parse tree
+	 */
+	enterNameSpaceLoot?: (ctx: NameSpaceLootContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.nameSpaceLoot`.
+	 * @param ctx the parse tree
+	 */
+	exitNameSpaceLoot?: (ctx: NameSpaceLootContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.nameSpaceItemModifier`.
+	 * @param ctx the parse tree
+	 */
+	enterNameSpaceItemModifier?: (ctx: NameSpaceItemModifierContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.nameSpaceItemModifier`.
+	 * @param ctx the parse tree
+	 */
+	exitNameSpaceItemModifier?: (ctx: NameSpaceItemModifierContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.tagNameSpace`.
+	 * @param ctx the parse tree
+	 */
+	enterTagNameSpace?: (ctx: TagNameSpaceContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.tagNameSpace`.
+	 * @param ctx the parse tree
+	 */
+	exitTagNameSpace?: (ctx: TagNameSpaceContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.tagNameSpaceItem`.
+	 * @param ctx the parse tree
+	 */
+	enterTagNameSpaceItem?: (ctx: TagNameSpaceItemContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.tagNameSpaceItem`.
+	 * @param ctx the parse tree
+	 */
+	exitTagNameSpaceItem?: (ctx: TagNameSpaceItemContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.tagNameSpaceBlock`.
+	 * @param ctx the parse tree
+	 */
+	enterTagNameSpaceBlock?: (ctx: TagNameSpaceBlockContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.tagNameSpaceBlock`.
+	 * @param ctx the parse tree
+	 */
+	exitTagNameSpaceBlock?: (ctx: TagNameSpaceBlockContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.tagNameSpaceFunc`.
+	 * @param ctx the parse tree
+	 */
+	enterTagNameSpaceFunc?: (ctx: TagNameSpaceFuncContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.tagNameSpaceFunc`.
+	 * @param ctx the parse tree
+	 */
+	exitTagNameSpaceFunc?: (ctx: TagNameSpaceFuncContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.tagNameSpaceEntity`.
+	 * @param ctx the parse tree
+	 */
+	enterTagNameSpaceEntity?: (ctx: TagNameSpaceEntityContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.tagNameSpaceEntity`.
+	 * @param ctx the parse tree
+	 */
+	exitTagNameSpaceEntity?: (ctx: TagNameSpaceEntityContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.registerName`.
+	 * @param ctx the parse tree
+	 */
+	enterRegisterName?: (ctx: RegisterNameContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.registerName`.
+	 * @param ctx the parse tree
+	 */
+	exitRegisterName?: (ctx: RegisterNameContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.numberType`.
+	 * @param ctx the parse tree
+	 */
+	enterNumberType?: (ctx: NumberTypeContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.numberType`.
+	 * @param ctx the parse tree
+	 */
+	exitNumberType?: (ctx: NumberTypeContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.acceptableName`.
+	 * @param ctx the parse tree
+	 */
+	enterAcceptableName?: (ctx: AcceptableNameContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.acceptableName`.
+	 * @param ctx the parse tree
+	 */
+	exitAcceptableName?: (ctx: AcceptableNameContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.criterion`.
+	 * @param ctx the parse tree
+	 */
+	enterCriterion?: (ctx: CriterionContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.criterion`.
+	 * @param ctx the parse tree
+	 */
+	exitCriterion?: (ctx: CriterionContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.nbtName`.
+	 * @param ctx the parse tree
+	 */
+	enterNbtName?: (ctx: NbtNameContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.nbtName`.
+	 * @param ctx the parse tree
+	 */
+	exitNbtName?: (ctx: NbtNameContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.resourceLocation`.
+	 * @param ctx the parse tree
+	 */
+	enterResourceLocation?: (ctx: ResourceLocationContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.resourceLocation`.
+	 * @param ctx the parse tree
+	 */
+	exitResourceLocation?: (ctx: ResourceLocationContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.typeName`.
+	 * @param ctx the parse tree
+	 */
+	enterTypeName?: (ctx: TypeNameContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.typeName`.
+	 * @param ctx the parse tree
+	 */
+	exitTypeName?: (ctx: TypeNameContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.item_slot`.
+	 * @param ctx the parse tree
+	 */
+	enterItem_slot?: (ctx: Item_slotContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.item_slot`.
+	 * @param ctx the parse tree
+	 */
+	exitItem_slot?: (ctx: Item_slotContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.item_predicate`.
+	 * @param ctx the parse tree
+	 */
+	enterItem_predicate?: (ctx: Item_predicateContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.item_predicate`.
+	 * @param ctx the parse tree
+	 */
+	exitItem_predicate?: (ctx: Item_predicateContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.block_predicate`.
+	 * @param ctx the parse tree
+	 */
+	enterBlock_predicate?: (ctx: Block_predicateContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.block_predicate`.
+	 * @param ctx the parse tree
+	 */
+	exitBlock_predicate?: (ctx: Block_predicateContext) => void;
 }
 
