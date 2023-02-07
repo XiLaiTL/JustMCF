@@ -26,6 +26,7 @@ export function execute(code: TemplateStringsArray | string) {
 //    console.log(mcfFile.toStringTree())
 
     visitor.visit(mcfFile);
+    visitor.createInitFunc();
     backConvert(result)
     print(result)
 }
@@ -42,13 +43,19 @@ export function build(codes: string[],result:JustMCFResult) {
     const mcfFile = parser.mcfFile()
 
     visitor.visit(mcfFile);
+    visitor.createInitFunc();
     backConvert(result)
 }
 
 
 function backConvert(result: JustMCFResult) {
     for (const mcfunctionFileName in result.mcfunctions) {
-        result.mcfunctions[mcfunctionFileName] = result.mcfunctions[mcfunctionFileName].map(command=>convertBackLeagalCommands(command))
+        let resCommand = convertBackLeagalCommands(result.mcfunctions[mcfunctionFileName])
+        for (const entityName in result.option.entityNameMap) {
+            if(result.option.entityNameMap[entityName]!="player")
+            resCommand = resCommand.replace(new RegExp(String.raw`@${entityName}`,'g'),result.option.entityNameMap[entityName])
+        }
+        result.mcfunctions[mcfunctionFileName] = resCommand
     }
 }
 
@@ -58,5 +65,9 @@ function print(result:JustMCFResult) {
         for (const command of result.mcfunctions[mcfunctionFileName]) {
             console.log(`   ${command}`)
         }
+    }
+    for (const functionTagName in result.functionTags) {
+        console.log(functionTagName)
+        console.log(JSON.stringify(result.functionTags[functionTagName],null,"  "))
     }
 }

@@ -103,9 +103,9 @@ import { ExistExpressionBitOrContext } from "./JustMCFParser";
 import { ExistExpressionAndContext } from "./JustMCFParser";
 import { ExistExpressionOrContext } from "./JustMCFParser";
 import { ExistExpressionParenContext } from "./JustMCFParser";
+import { LootSourceLootContext } from "./JustMCFParser";
 import { LootSourceFishHandContext } from "./JustMCFParser";
 import { LootSourceFishToolContext } from "./JustMCFParser";
-import { LootSourceLootContext } from "./JustMCFParser";
 import { LootSourceKillContext } from "./JustMCFParser";
 import { LootSourceMineHandContext } from "./JustMCFParser";
 import { LootSourceMineToolContext } from "./JustMCFParser";
@@ -162,7 +162,6 @@ import { NameSpaceSettingsJustDefaultContext } from "./JustMCFParser";
 import { NoInExecStatementFuncContext } from "./JustMCFParser";
 import { NoInExecStatementRunFuncContext } from "./JustMCFParser";
 import { NoInExecStatementFuncImproveContext } from "./JustMCFParser";
-import { NoInExecStatementNameSpaceContext } from "./JustMCFParser";
 import { NoInExecStatementInterfaceContext } from "./JustMCFParser";
 import { NoInExecStatementStoreContext } from "./JustMCFParser";
 import { EntityISIGiveAndClearContext } from "./JustMCFParser";
@@ -259,6 +258,7 @@ import { LeagalCommandContext } from "./JustMCFParser";
 import { NameSpaceStatementContext } from "./JustMCFParser";
 import { NameSpaceSettingsContext } from "./JustMCFParser";
 import { NameSpaceStatementInnerContext } from "./JustMCFParser";
+import { NamespaceSetStatementContext } from "./JustMCFParser";
 import { FuncTagStatementContext } from "./JustMCFParser";
 import { FuncTagSettingsContext } from "./JustMCFParser";
 import { FuncTagStatementInnerContext } from "./JustMCFParser";
@@ -278,12 +278,16 @@ import { ExecChildContext } from "./JustMCFParser";
 import { MatchPartContext } from "./JustMCFParser";
 import { ScbCompareNumberContext } from "./JustMCFParser";
 import { DataIdentifierContext } from "./JustMCFParser";
+import { DataStorageIdentifierContext } from "./JustMCFParser";
+import { DataEntityIdentifierContext } from "./JustMCFParser";
+import { DataBlockIdentifierContext } from "./JustMCFParser";
 import { DataMergeExpressionContext } from "./JustMCFParser";
 import { DataOperationExpressionContext } from "./JustMCFParser";
 import { DataRightValueContext } from "./JustMCFParser";
 import { DataStatementContext } from "./JustMCFParser";
 import { ScbOperationExpressionContext } from "./JustMCFParser";
 import { ScbSingleOperationExpressionContext } from "./JustMCFParser";
+import { ScbCoreIdentifierContext } from "./JustMCFParser";
 import { ScbIdentifierContext } from "./JustMCFParser";
 import { ScbPlayerStatementContext } from "./JustMCFParser";
 import { ScbPlayerStatementInnerContext } from "./JustMCFParser";
@@ -292,6 +296,7 @@ import { ScbStatementInnerContext } from "./JustMCFParser";
 import { BossbarStatementContext } from "./JustMCFParser";
 import { BossbarStatementInnerContext } from "./JustMCFParser";
 import { BossbarOperationExpressionContext } from "./JustMCFParser";
+import { BossbarIdentifierContext } from "./JustMCFParser";
 import { TitleStatementContext } from "./JustMCFParser";
 import { TitleStatementInnerContext } from "./JustMCFParser";
 import { TitleSelectorStatementInnerContext } from "./JustMCFParser";
@@ -333,6 +338,7 @@ import { WhileStatementContext } from "./JustMCFParser";
 import { ForStatementContext } from "./JustMCFParser";
 import { NbtContext } from "./JustMCFParser";
 import { JsonContext } from "./JustMCFParser";
+import { NbtPathWithoutCompoundContext } from "./JustMCFParser";
 import { NbtPathContext } from "./JustMCFParser";
 import { SnbtValueContext } from "./JustMCFParser";
 import { SnbtContext } from "./JustMCFParser";
@@ -351,6 +357,7 @@ import { JsonPairContext } from "./JustMCFParser";
 import { JsonArrContext } from "./JustMCFParser";
 import { JsonValueContext } from "./JustMCFParser";
 import { BoolValueContext } from "./JustMCFParser";
+import { NumberContext } from "./JustMCFParser";
 import { KeyContext } from "./JustMCFParser";
 import { Pos3IdentifierContext } from "./JustMCFParser";
 import { Pos2IdentifierContext } from "./JustMCFParser";
@@ -384,6 +391,7 @@ import { NbtNameContext } from "./JustMCFParser";
 import { ResourceLocationContext } from "./JustMCFParser";
 import { TypeNameContext } from "./JustMCFParser";
 import { Item_slotContext } from "./JustMCFParser";
+import { StringContext } from "./JustMCFParser";
 import { Item_predicateContext } from "./JustMCFParser";
 import { Block_predicateContext } from "./JustMCFParser";
 
@@ -1197,6 +1205,14 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitExistExpressionParen?: (ctx: ExistExpressionParenContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by the `lootSourceLoot`
+	 * labeled alternative in `JustMCFParser.lootSource`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitLootSourceLoot?: (ctx: LootSourceLootContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by the `lootSourceFishHand`
 	 * labeled alternative in `JustMCFParser.lootSource`.
 	 * @param ctx the parse tree
@@ -1211,14 +1227,6 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitLootSourceFishTool?: (ctx: LootSourceFishToolContext) => Result;
-
-	/**
-	 * Visit a parse tree produced by the `lootSourceLoot`
-	 * labeled alternative in `JustMCFParser.lootSource`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitLootSourceLoot?: (ctx: LootSourceLootContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `lootSourceKill`
@@ -1667,14 +1675,6 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitNoInExecStatementFuncImprove?: (ctx: NoInExecStatementFuncImproveContext) => Result;
-
-	/**
-	 * Visit a parse tree produced by the `noInExecStatementNameSpace`
-	 * labeled alternative in `JustMCFParser.noInExecStatement`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitNoInExecStatementNameSpace?: (ctx: NoInExecStatementNameSpaceContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `noInExecStatementInterface`
@@ -2436,6 +2436,13 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitNameSpaceStatementInner?: (ctx: NameSpaceStatementInnerContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by `JustMCFParser.namespaceSetStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNamespaceSetStatement?: (ctx: NamespaceSetStatementContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by `JustMCFParser.funcTagStatement`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -2569,6 +2576,27 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitDataIdentifier?: (ctx: DataIdentifierContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by `JustMCFParser.dataStorageIdentifier`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataStorageIdentifier?: (ctx: DataStorageIdentifierContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.dataEntityIdentifier`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataEntityIdentifier?: (ctx: DataEntityIdentifierContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.dataBlockIdentifier`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitDataBlockIdentifier?: (ctx: DataBlockIdentifierContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by `JustMCFParser.dataMergeExpression`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -2609,6 +2637,13 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitScbSingleOperationExpression?: (ctx: ScbSingleOperationExpressionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.scbCoreIdentifier`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbCoreIdentifier?: (ctx: ScbCoreIdentifierContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.scbIdentifier`.
@@ -2665,6 +2700,13 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitBossbarOperationExpression?: (ctx: BossbarOperationExpressionContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.bossbarIdentifier`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBossbarIdentifier?: (ctx: BossbarIdentifierContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.titleStatement`.
@@ -2954,6 +2996,13 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitJson?: (ctx: JsonContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by `JustMCFParser.nbtPathWithoutCompound`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNbtPathWithoutCompound?: (ctx: NbtPathWithoutCompoundContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by `JustMCFParser.nbtPath`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -3078,6 +3127,13 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitBoolValue?: (ctx: BoolValueContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.number`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNumber?: (ctx: NumberContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.key`.
@@ -3309,6 +3365,13 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitItem_slot?: (ctx: Item_slotContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.string`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitString?: (ctx: StringContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.item_predicate`.

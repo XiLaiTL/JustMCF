@@ -98,7 +98,7 @@ export class JustMCFResult {
             entityNameMap:{...this._option.entityNameMap,...val.entityNameMap}
         }
     }
-    mcfunctions: { [mcfunctionFileName: string]: string[] } = {}
+    mcfunctions: { [mcfunctionFileName: string]: string } = {}
     functionTags: { [functionTagFileName: string]: { replace: boolean, values: string[] } } = {}
     
 }

@@ -114,7 +114,7 @@ export class FileUtils {
         await writeDir(this.targetPath)
         for (const mcfunctionFileName in this.resultObj.mcfunctions) {
             const path = join(this.targetPath, convertNamespaceIdToPath(mcfunctionFileName, "function"))
-            const data = this.resultObj.mcfunctions[mcfunctionFileName].join('\n')
+            const data = this.resultObj.mcfunctions[mcfunctionFileName]
             await writeDir(path)
             switch (this.resultObj.option.file?.functionTagGenerateMode) {
                 case "cover": {await writeFile(path,data,'utf-8').catch(err => { throw err })} break;

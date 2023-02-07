@@ -64,3 +64,44 @@ func test:as {
     
     `)
 })
+
+test('Func Direct Run', () => {
+    execute`
+func foo:utils/test{    
+    ->func foo:utils/test/first{ 
+
+    }
+}
+    `
+})
+
+test('Func Tags', () => {
+    execute`
+func foo:test1 tagged #foo:test{
+
+}
+
+func #foo:test{
+    func foo:test2{
+
+    }
+    func foo:test3{
+
+    }
+    func foo:test4
+    func #foo:test1{
+
+    }
+    func #foo:test2
+    func #foo:test3 tagged #foo:test2{
+
+    }
+    func #foo:utils/all/1[replace = true]{
+
+    }
+    func #foo:utils/all2[replaced]{
+    
+    }
+}
+    `
+})

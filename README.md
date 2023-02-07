@@ -64,6 +64,18 @@ JustMCF是一个简化mcfunction工程的项目。使用JustMCF，你不但可�
 - 命令对象化
 - 支持脚本
 
+
+
+这个项目未完成的功能：
+
+- [ ] 提供vscode language server用于自动补全和语法高亮
+- [ ] 类型检查（类型设置、modify set from、函数类型、for循环类型）
+- [ ] 循环的break语句、函数的return语句
+- [ ] 多minecraft版本的支持
+- [ ] 整理各个命令的标识符
+- [ ] 选择器的解析
+- [ ] 全部命令的解析支持
+
 ## 项目文件结构
 
 JustMCF项目文件以.mcf为后缀，一个.mcf文件可以生成多个.mcfunction文件。
@@ -96,9 +108,9 @@ folder_name
 
 在JustMCF中，用以下标识符来表示几类数据
 
-- 命名空间ID：`namespace:id`，可以在指定命名空间的情况下简写为`id`。这些量在JustMCF中遇到驼峰命名法（就是说含有大写字母，如`NameSpace:ID`）将会自动转为蛇形（小写加下划线，如`name_space:id`），因此命名时可以采用驼峰（但是还是不建议这么做）。
+- *命名空间ID*：`namespace:id`，可以在指定命名空间的情况下简写为`id`。这些量在JustMCF中遇到驼峰命名法（就是说含有大写字母，如`NameSpace:ID`）将会自动转为蛇形（小写加下划线，如`name_space:id`），因此命名时可以采用驼峰（但是还是不建议这么做）。
 
-- 实体：在wiki上，可以用以下形式来代表实体：玩家名称 或 UUID 或 目标选择器变量。在JustMCF中，对应形式为：
+- *实体*：在wiki上，可以用以下形式来代表实体：玩家名称 或 UUID 或 目标选择器变量。在JustMCF中，对应形式为：
 
   - 玩家名称：`@playername` 需要在名称前加 `@`。
 
@@ -110,19 +122,19 @@ folder_name
 
     除了目标选择器变量外，其他项需都要使用语句设置，见entity命令聚合一章。
 
-- 坐标：共有三类坐标，在JustMCF中，需要左右添加尖括号（TODO：当测试结果为解析无问题时将会移除尖括号）
+- *坐标*：共有三类坐标，在JustMCF中，需要左右添加尖括号（TODO：当测试结果为解析无问题时将会移除尖括号）
 
   - 2个值表示朝向坐标或者xz坐标 `< ~ ~ >`
   - 3个值表示位置坐标 `< ~ ~ ~ >` （TODO：这个可以简化为 `<~>`）
   - 5个值表示方位坐标 `< ~ ~ ~ ~ ~ >`
 
-- 记分板：来源只有实体，在JustMCF中，表示为
+- *记分板*：来源只有实体，在JustMCF中，表示为
 
   - 方案一：`scoreboardname@entityname` 其中，`@entityname`代表实体
 
   - 方案二：`@entityname:scoreboardname`
 
-- NBT：来源为实体、方块实体、storage，在JustMCF中，表示为：
+- *NBT*：来源为实体、方块实体、storage，在JustMCF中，表示为：
 
   - 实体NBT：`@s::Tag1`
 
@@ -143,16 +155,16 @@ folder_name
 
 #### 记分板的声明和设置
 
-声明记分板，未声明记分板准则类型的，将默认准则为dummy。
-
-记分项显示名称是原始JSON文本，记得在使用带大括号和中括号的语句时改为`j{}`和`j[]`。
+*声明记分板*，未声明记分板准则类型的，将默认准则为dummy。记分项显示名称是原始JSON文本，记得在使用带大括号和中括号的语句时改为`j{}`和`j[]`。
 
 ```mcf
 scb test "displayname" 
          ##scoreboard objective add test dummy "displayname"
 ```
 
-如果未声明显示名称，使用默认的记分项名称时，需要补上default。可以在声明语句后面加上设置语句。设置语句见下方。
+如果未声明显示名称，使用默认的记分项名称时，需要补上default。可以在声明语句后面加上设置语句。
+
+*设置语句*。
 
 ```mcf
 
@@ -164,9 +176,7 @@ scb(deathCount) test default {
         ##scoreboard objective setdisplay <槽位> <记分板ID>
 ```
 
-设置记分板属性
-
-语法和声明语句类似，不同的是没有准则类型和显示名称。
+*设置记分板属性*。语法和声明语句类似，不同的是没有准则类型和显示名称。
 
 ```mcf
 scb test {
@@ -212,9 +222,9 @@ test1@s >> test2@s                    ##取较大值
 test1@s >< test2@s                    ##交换
 ```
 
-支持完整表达式运算！按优先级顺序支持`()` `<< >>` `*/%` `+-`并且支持数字
+支持*完整表达式运算*！按优先级顺序支持`()` `<< >>` `*/%` `+-`并且支持数字
 
-将表达式结果传给`:=`左边的记分板。如下表达式将被解析为以下命令。
+完整表达式必须在`:=`右侧，表达式计算结果将会传给`:=`左边的记分板。如下表达式将被解析为以下命令。
 
 ```mcf
 ans@s := test2@s + test3@s / test4@s - 5 % test5@s
@@ -224,16 +234,17 @@ ans@s := test2@s + test3@s / test4@s - 5 % test5@s
 
 这些运算也可以写进语句中，使用`scb{}`将表达式括起来就行了。
 
-（这里注意，凡是使用到的假名，都需要用entity声明语句预先设置，见entity命令聚合一章）
+这里注意，为了保证包间的兼容性，凡是使用到的假名（无论带不带'#'），都需要用entity声明语句预先设置，详细见entity命令聚合一章。
 
 ```mcf
+entity(player) temp1,temp2,temp3
 scb {
 	num@temp1 = 1
 	num@temp2 := num@temp1 + num@temp3
 }
 ```
 
-对于scoreboard list命令则必须写成语句
+对于*scoreboard list命令*则必须写成语句
 
 ```mcf
 scb { list }    	##scoreboard objectives list
@@ -276,10 +287,8 @@ data{
 
 ```mcf
 namsp [storage=test]{
-	func test:data{
-		id1::Data = id2::Data
-		id1::Data .. id1::Data[0]
-	}
+    id1::Data = id2::Data
+    id1::Data .. id1::Data[0]
 }
 ```
 
@@ -302,7 +311,7 @@ data foo:test{  ##在foo:test根节点上操作
 
 转换存储的书写方式是execute语句的store子语句的格式，即`=>`符号，请见execute语句部分。
 
-NBT转为记分板
+*NBT转为记分板*。
 
 ```mcf
 @s::ArmorItems[] => armor@s
@@ -310,7 +319,7 @@ NBT转为记分板
 ##execute store result score @s armor run data get entity @s ArmorItems[]
 ```
 
-记分板转为NBT（如果类型和倍率没有填写的话，默认int 1）
+*记分板转为NBT*（如果类型和倍率没有填写的话，默认int 1）。
 
 ```mcf
 armor@s => foo:bar::Armor.Length
@@ -319,17 +328,63 @@ armor@s => foo:bar::Armor.Length int*1
 ##execute store result storage foo:bar Armor.Length int 1 run scoreboard players get @s armor
 ```
 
+### bossbar数据运算
+
+bossbar表达式，让操作像NBT操作那样方便
+
+```mcf
+bossbar test:foo           ##bossbar get test:foo value
+bossbar test:foo max       ##bossbar get test:foo max|players|value|visible
+bossbar test:foo = 10      ##bossbar set test:foo value 10
+bossbar test:foo max = 10  ##bossbar set test:foo max 10
+
+scb@s => bossbar test:foo  ##execute store bossbar test:foo value run scoreboard players get
+```
+
+其余见命令聚合bossbar部分
+
+### attribute数据运算（TODO）
+
 ## 命名空间省略设置
 
-对于一些命令需要用到命名空间的地方，通常以`namespace:id`的形式出现，在省略命名空间的情况下，游戏其默认为minecraft命名空间。在JustMCF中，有机会调整使用的默认的命名空间，以省略每次书写命名空间的不必要的麻烦。
+对于一些命令需要用到命名空间的地方，通常以`namespace:id`的形式出现，在省略命名空间的情况下，游戏其默认为minecraft命名空间。在JustMCF中，有机会调整使用的默认的命名空间，以省略每次书写命名空间的不必要的麻烦。TODO：现在只支持JustMCF的简化命令采用这个设置，而对于出现的原版命令无效。
 
 关键字为`namespace`，也可以简写为`namsp`。
 
-```
-namespace test{ ##将会把行内
+可以使用中括号为单独项目设置单独的命名空间，目前支持设置的有：func、block、storage、biome、bossbar、predicate、item、loot、item_modifier、dim或者dimension、entity。
+
+另外，中括号内允许填`default = xxxx`，这表示除了func和storage外所有命名空间设置为xxxx。如果填`default`，则表示除了func和storage外所有命名空间设置为minecraft。（不推荐这样做， 而是采用在mcf.mcmeta设置的方式进行更改，这样可以设置默认值。）
+
+可选只填写中括号，则其他值来源于设置或者默认。
+
+```mcf
+namespace test{ ##将会把大括号块内所有的默认命名空间设置为test
+
+}
+
+namespace test[
+	func = test1
+	block = minecraft
+	storage = minecraft
+]{ ##除了括号设置的外，其他默认命名空间为test
+
+}
+
+namsp test[default = yuushya]{ ##除了func和storage设置为test外，其他设置为yuushya
+
+}
+
+
+namsp test[default]{ ##除了func和storage设置为test外，其他设置为minecraft
+
+}
+
+namsp [func = test]{ ##只有func设置为test
 
 }
 ```
+
+命名空间具有继承关系，嵌套命名空间可以对上一级命名空间进行修改。
 
 ## 注释增强
 
@@ -347,11 +402,18 @@ namespace test{ ##将会把行内
 
 ### 函数
 
+JustMCF提供了带有参数的函数（见进阶函数一部分）与不带参数的普通函数。
+
+JustMCF的普通函数与原版单个函数文件无异，但是提供了嵌套定义函数、单个文件定义多个函数的能力。
+
+值得一提的是，函数不再依赖于复杂的文件夹路径，而是依赖于定义的名称，因此可以解放架构，自由设置工程项目的文件夹了。
+
 #### 函数声明
 
 ```mcf
 func foo:utils/test{                            ##自动创建一个mcf
-    func foo:utils/test                         ##递归调用自己
+
+    
 }
 ```
 
@@ -359,11 +421,20 @@ func foo:utils/test{                            ##自动创建一个mcf
 
 func开头带有大括号的语句是定义语句而非执行语句，不带有大括号的将会被执行。
 
-如果需要立即执行则需要在前面加 `->`，如:
-
+```mcf
+func foo:utils/test{                            ##自动创建一个mcf
+	func foo:utils/test                         ##递归调用自己
+    
+}
 ```
-->func foo:utils/test{ 
 
+如果需要立即执行则需要在前面加 `->`（这其实是execute的run符号，请见后面），如:
+
+```mcf
+func foo:utils/test{    
+    ->func foo:utils/test/first{ 
+
+    }
 }
 ```
 
@@ -383,7 +454,9 @@ func foo:utils/test tagged #foo:utils, #foo:test{
 
 #### 完整定义函数标签
 
-声明函数标签的形式和声明函数雷同。
+声明函数标签的形式和声明函数类似。
+
+对于函数标签来说，可以使用方括号设置属性，`[replaced = true]`与`[replaced]`功能一致。
 
 ```mcf
 func #foo:utils/all{ ##自动创建一个function tag
@@ -395,24 +468,67 @@ func #foo:utils/all{ ##自动创建一个function tag
     }
     func foo:utils/c 
     	##foo:utils/c不在此处定义，也可以这样被添加到本函数标签中。
+    func #foo:utils/all/d{
+    
+    }
+    func #foo:utils/all/e
+    	##也可以在函数标签中嵌套定义函数标签和添加函数标签。
 }
+
+func #foo:utils/all/1 [replace = true]{
+
+}
+func #foo:utils/all2 [replaced]{
+
+}
+
 ```
 
 ### execute控制流
 
+JustMCF对于execute做了大幅度简化，并提供了强大的函数分片功能。
+
+原先需要拆分不同函数，并将函数名塞入execute run子命令的末尾的做法常常因为分文件而导致逻辑混乱，JustMCF直接支持在execute命令末尾完整地书写命令。
+
 #### 概览
 
-原先命令 `execute as @p store result score @s scb run function foo:test1`
+原先命令 
 
-简化为 `{as @p}=> scb@s ->func foo:test1{}`
+```mcfunction
+execute as @p store result score @s scb run function foo:test1
 
-也可以为 `{as @p => scb@s}->func foo:test1{}`
+# foo:test1
+say 1
+say 1
+```
 
-总体来看，简化命令的结构为
+简化为 ：
 
-`{}->{}`
+```mcf
+{as @p}=> scb@s ->func foo:test1{
+	say 1
+	say2
+}
 
-前一个花括号是执行的各种条件，后者是执行的函数，花括号内是函数里面的命令。
+## 或者如下：区别在于store的位置
+{as @p => scb@s}->func foo:test1{}
+```
+
+总体来看，简化命令引入了两种符号：
+
+- 使用 `->`符号代替 `run`单词，用于连接执行的各种条件和应该执行的命令
+
+- 使用 `=>`符号代替 `store result`单词
+
+  使用 `?=>`符号代替 `store success`单词
+
+而引入了两个大括号`{}->{}`
+
+前一个大括号是执行的各种条件。（这些条件也会被作为）
+
+后一个大括号是执行的函数，花括号内是函数里面的命令。
+
+如果不习惯简化命令的符号，请看本节的最后一小节。
 
 #### 执行者与执行方位设置
 
@@ -420,30 +536,78 @@ func #foo:utils/all{ ##自动创建一个function tag
 {
     as @e[]
     at @e[]
+    align xyz
+    anchored eyes
     pos < ~ ~ ~ >
     pos @e[]                           ##position as
     rot < ~ ~ >
     rot @e[]                            ##rotated as
+    facing < ~ ~ ~ >				  
+    facing @e[] eyes                    ##facing entity
 }->func foo:test
 ```
 
 #### 执行条件(if/unless 子语句)
 
-对于if子语句来说，例如`if entity @e`可以省略if或者entity或者两者都省略只写`@e`。当然推荐使用省略entity的形式。这样对于unless子语句来说是统一的。
+JustMCF对if/unless子语句做了极大的简化。
+
+对于if子语句来说，例如`if entity @e`可以省略if，或者省略entity，或者两者都省略只写`@e`。推荐使用省略entity的形式，这样对于unless子语句来说是统一的。
+
+`unless` 语句不支持省略unless，只能省略entity。具体见下表：(注意biome不可舍去)
+
+<details><summary>简化命令表格</summary>
+
+| 原子命令                        | 舍去标量部分（推荐）               | 舍去if                             | 都舍去                          |
+| ------------------------------- | ---------------------------------- | ---------------------------------- | ------------------------------- |
+| if entity @s                    | if @s                              | entity @s                          | @s                              |
+| if block ~ ~ ~ stone{}          | if < ~ ~ ~ > stone{}               | block < ~ ~ ~ > stone{}            | < ~ ~ ~ > stone{}               |
+| if blocks ~ ~ ~ ~ ~ ~ ~ ~ ~ all | if <~ ~ ~> <~ ~ ~> <~ ~ ~> all     | blocks <~ ~ ~> <~ ~ ~> <~ ~ ~> all | <~ ~ ~> <~ ~ ~> <~ ~ ~> all     |
+| if biome ~ ~ ~ minecraft:beach  | if biome < ~ ~ ~ > minecraft:beach | biome < ~ ~ ~ > minecraft:beach    | biome < ~ ~ ~ > minecraft:beach |
+| if data entity @s Pos           | if @s::Pos                         | data @s::Pos                       | @s::Pos                         |
+| if data storage foo:str Number  | if foo:str::Number                 | data foo:str::Number               | foo:str::Number                 |
+| if data block ~ ~ ~ Text1       | if < ~ ~ ~ >::Text1                | data < ~ ~ ~ >::Text1              | < ~ ~ ~ >::Text1                |
+| if predicate test:is_use_hand   | if test:is_use_hand                | predicate test:is_use_hand         | test:is_use_hand                |
+| score见下方                     |                                    |                                    |                                 |
+
+</details>
+
+   
+
+简化后，可以很整齐地书写if子命令
 
 ```mcf
 {
     if @e[]                                      ##if entity
-    if sb1@e[] >= sb2@s                          ##if score
-    if sb1@e[] 2..5                              ##if score xxx matches
     if < ~ ~ ~ > stone{}                         ##if block
-    if < ~ ~ ~ > < ~ ~ ~ > < ~ ~ ~ > all|masked  ##if blocks
+    if < ~ ~ ~ > < ~ ~ ~ > < ~ ~ ~ > all         ##if blocks
     if biome < ~ ~ ~ > namespace                 ##if biome
+    if test:is_use_hand						   ##if predicate
     if @e[]::{}                                  ##if data entity
     if < ~ ~ ~ > ::{}                            ##if data block
     if foo:str::{}                               ##if data storage
+    if sb1@e[] >= sb2@s                          ##if score
+    if sb1@e[] 2..5                              ##if score xxx matches
+    if sb1#temp < 2                              ##if score xxx matches
 }->func foo:test
 ```
+
+##### if score语句
+
+JustMCF将if score语句改进得更像是比较运算符的形式，原先的`=`改为了程序运算中的`==`，。见下表：
+
+| 原子命令                    | 舍去标量部分（推荐） | 舍去if                  | 都舍去            |
+| --------------------------- | -------------------- | ----------------------- | ----------------- |
+| if score @s temp < @s temp2 | if temp@s < temp2@s  | score temp@s < temp2@s  | temp@s < temp2@s  |
+| if score @s temp = @s temp2 | if temp@s == temp2@s | score temp@s == temp2@s | temp@s == temp2@s |
+
+对于matches命令则可以省略`matches`（其他省略形式同上，不再赘述），并且拥有其他直接使用比较运算符的表示形式
+
+| matches命令           | 省略matches    | 比较运算符形式 |                |
+| --------------------- | -------------- | -------------- | -------------- |
+| if score @s temp 1    | if temp@s 1    | if temp@s == 1 |                |
+| if score @s temp ..1  | if temp@s ..1  | if temp@s <= 1 | if temp@s < 2  |
+| if score @s temp 0..1 | if temp@s 0..1 |                |                |
+| if score @s temp 0..  | if temp@s 0..  | if temp@s >=0  | if temp@s > -1 |
 
 #### 存储语句(store 子语句)
 
@@ -466,13 +630,17 @@ func #foo:utils/all{ ##自动创建一个function tag
 ?=> sb3@s                                    ##store success score
 => sb3@e[]                                   ##store result score
 => < ~ ~ ~ > ::Base int*3                    ##store result block
-=> foo:bar value|max                         ##store result bossbar
+=> bossbar foo:bar value                     ##store result bossbar
 => @e[]::XXXX int*3                          ##store result entity
 => foo:storage::XXX int*3                    ##store result storage
--> func foo:test
+-> func foo:test                             ##run function foo:test
 ```
 
-在任意命令后边也可以跟上存储子命令
+转储到NBT时，可以省略类型和倍率，则默认为`int 1`。
+
+注意，bossbar关键字不可省略，而如果省略`value`或者`max`，则默认为`value`。
+
+*在任意命令后边也可以跟上存储子命令*
 
 ```mcf
 tellraw @s {"text":"hello"} ?=> sb1@s
@@ -501,6 +669,8 @@ tellraw @s {"text":"hello"} ?=> sb1@s
 
 ##### 匿名函数
 
+如果run部分没有指定函数名称，则支持自动生成名称。因此你可以这样写：
+
 ```mcf
 {as @p}->{
     tellraw @s {"text":"hello"}
@@ -517,35 +687,48 @@ tellraw @s {"text":"hello"} ?=> sb1@s
 
 会自动生成mcfunction文件，名称不需要指定，会自动指定为所在文件、嵌套层数与匿名函数的编号的组合。
 
+#### 简化幅度较小的支持
+
+JustMCF为不希望采用大幅度简化命令的用户提供了较为简化的支持，相比于上述简化，按照以下原则书写则是小幅度简化的样式：
+
+- 可以在第一个大括号前写`exec`。
+- 可以使用`run`，而不是`->`。
+- 可以使用`store` `?store`，或者干脆使用原版，而不是`=>`、`?=>`。
+- 使用省略最少的语法。
+- 标识符使用原版命令
+
+```mcf
+exec{ if entity @s as @s store result data entity @s CustomName int 1 } run func test:foo
+
+##所以为什么不接受以下语法呢：
+{if @s as @s}=>@s::CustomName->func test:foo
+```
+
 ### 条件语句
 
 #### exist表达式
 
 在JustMCF中，用`{xxx:1b}`和`null`两种值来模拟bool表达式，为了和nbt的bool变量类型区分，我们称之为exist表达式。exist表达式用if语句中。
 
-也就是exec大括号部分作为exist表达式，将会在局部作用域生成exist变量
-
-对于nbt来说，可以直接写在外面
+更直接地说，exec前一个大括号部分就是exist表达式。对于nbt来说，可以直接写在大括号外面。
 
 ```mcf
 {if @e} && {if < ~ ~ ~ > stone} && foo:stor::bool
 ```
 
-对于execute中使用的if来说（unless则不行），上述语句可以写成
+由于存在不同形式的简化语法，实际上，上述语句可以写成
 
 ```mcf
 {entity @e} && {block < ~ ~ ~ > stone} && foo:stor::bool
-
-{@e} && { < ~ ~ ~ > stone} && foo:stor::bool
 ```
 
-可以将exist值赋值给nbt
+可以将exist表达式赋值给nbt
 
 ```mcf
 foo:stor::bool_1 = {if @e} && {if < ~ ~ ~ > stone} 
 ```
 
-exist值可以为`true`、`false`
+exist表达式值可以为`true`、`false`
 
 ```mcf
 foo:stor::bool_1 = true
@@ -556,32 +739,46 @@ foo:stor::bool_1 = false
 
 #### 逻辑运算符
 
-优先级和表格顺序一致
+优先级和表格顺序一致。
+
+注意：exist表达式在进行熔断时，可以选择产生新的函数，或者直接在表达式下方所有命令加上execute if，这项设置在mcf.mcmeta中。
 
 | 符号 | 描述           | 实现                                                         |
 | ---- | -------------- | ------------------------------------------------------------ |
-| !    |                |                                                              |
+| !    | 非             |                                                              |
 | &    | 不可以熔断的且 | bool a=false;<br />getcond1;<br />getcond2;<br />if cond1 if cond2 -> a=true;<br /> |
 | \|   | 不可以熔断的或 | bool a=false;<br />getcond1;<br />getcond2;<br />if cond1 -> a=true;<br />if cond2 -> a=true;<br /> |
 | &&   | 可以熔断的且   | bool a=false;<br/>getcond1;<br />if cond1 -> a=true;<br/>if a -> getcond2;<br />if a unless cond2 -> a=false;<br/> |
 | \|\| | 可以熔断的或   | bool a=false;<br />getcond1;<br/>if cond1 -> a=true;<br/>unless a -> getcond2;<br/>unless a if cond2 -> a=true;<br/> |
-
+| (  ) | 括号           |                                                              |
 
 #### if语句
 
+if语句由以下部分组成：
+
+- `if eixst表达式 exec执行部分`
+- `else if eixst表达式 exec执行部分 `
+- `else execRun部分`
+
+(注意关键字之间的空格)
+
+由于execute简化提供了省略if的简化语法，因此在if语句中，可以直接省略exist表达式中的if，如下：
+
 ```mcf
-if( {if @e} && {if scb@s ..1 } && foo:stor::bool_1 )->{
+if {entity @e} && {scb@s <=1 } && foo:stor::bool_1 ->{
 
 }
-else if()->{ ##匿名函数
+else if {entity @s}->{ ##匿名函数
 
 }
-else->func foo:test{ ##具名函数
+else ->func foo:test{ ##具名函数
 
 }
 ```
 
 ### 循环语句
+
+TODO: break
 
 #### while语句
 
@@ -594,31 +791,32 @@ while{ if @e }->func loopname{
 
 ##自动生成
 ##execute if @e  run function loopname
-####loopname
+####loopname.mcfunction
 ##execute if @e  run function loopname
 ```
 
-也可以使用bool表达式的形式
+也可以使用exist表达式的形式
 
 ```mcf
-while()->func loopname{
+while {entity @e} && {scb@s <=1 } ->func loopname{
 
 }
 ```
 
 #### for语句
 
-用于遍历列表，这里的大括号相当于data的大括号
+用于遍历列表，这里的大括号相当于data的大括号，但是只支持含有data标识符的一个NBT操作表达式。
+
+在大括号中，支持使用`标识符[0]`的形式取出每次遍历的列表值。
 
 ```mcf
 for{ foo:flower::list }->func loopname{
     foo:flower::list[0] = {}
 }
 ##自动生成
-##这里的loop int要跟循环深度去变，防止嵌套循环时出错
 ##execute store result score loop int run data get storage foo:flower list 
 ##execute if score loop int matches 1.. run function loopname
-####loopname
+####loopname.mcfunction
 ##data modify storage foo:flower list[0] set value {}
 ##data modify storage foo:flower list append from storage foo:flower list[0]
 ##data remove storage foo:flower list[0]
@@ -638,13 +836,12 @@ for{foo:flower::temp |= ["abcd","efgh","ojbk"] }->func loopname{
 
 ## 命令聚合
 
-如果觉得前三种过于大幅度简化命令，那么你应该不会拒绝第三种简化。
+命令聚合是将一系列相关的命令聚合到一起的设计，通常归并同性质的操作，将操作转为表达式。
 
 命令聚合有2种格式。
 
-1.`name { operations }` 的格式，通常是没有同一个对象的各种操作。
-
-2.`name object{ operations }`的格式，通常是有关object的各种操作。
+- `name { operations }` 的格式，通常是没有同一个对象的各种操作。
+- `name object{ operations }`的格式，通常是有关object的各种操作。
 
 ### execute命令聚合
 
@@ -652,14 +849,12 @@ for{foo:flower::temp |= ["abcd","efgh","ojbk"] }->func loopname{
 
 ### data命令聚合
 
-上述提到的NBT数据运算内容全部写在 `data{}`大括号里。merge语句可以不用带`.data`
-
-例如：
+上述提到的NBT数据运算内容全部写在 `data{}`大括号里。
 
 ```mcf
 data{
     @e[] |= n{}                                    ##merge
-    @e[]::Item |= @s::Item                        ##modify merge from
+    @e[]::Item |= @s::Item                         ##modify merge from
     @e[]::Item |= n{}                              ##modify merge value 
     @s::ArmorItems .. n{id:'iron_boots', Count:1b} ##append
 }
@@ -673,44 +868,80 @@ data{
 
 将 `tellraw` `title` `scoreboard` `bossbar`等具有显示作用的命令聚合在一起
 
+TODO: json文本组件增强`j{obj@s}`等价于`{"score":{"name":"@s","objective":"obj"}` 
+
 ```mcf
 display{
-    @s.text j{obj@s} 
-                 ## tellraw @s {"score":{"name":"@s","objective":"obj"}
-    @s.title j{} 
-                 ## title @s title {}
+    @s.text j{}             ## tellraw @s {}
+    @s.title j{}            ## title @s title {}
+    @s.title.times 10 70 20
+    @s.title.clear
     @s.title {
         actionbar j{}
         times 10 70 20
     }
-    @s.actionbar j{} 
-                 ## title @s actionbar {}
-    @s.subtitle j{} 
-                 ## title @s subtitle {}
+    @s.actionbar j{}        ## title @s actionbar {}
+    @s.subtitle j{}         ## title @s subtitle {}
+    
+    @s.bossbar foo:newboss  ##bossbar set players
+    bossbar foo:newboss j{""}
+    bossbar foo:newboss {
+
+    }
     scb test "分数"
     scb test {
         displayname "分数" 
         rendertype hearts
         display sidebar
     }
-    
-    @s.bossbar foo:newboss 
-                 ##bossbar set players
-    bossbar foo:newboss j{""}
-    bossbar foo:newboss {
-
-    }
   
 }
 ```
 
+支持把选择器提出到前面的做法，子内容可以带`.`，也可以不带。
+
 ```mcf
 display @s{
+    text j{}             ## tellraw @s {}
+    title j{}            ## title @s title {}
+    title.times 10 70 20
+    title.clear
+}
 
+display @s{
+    .text j{}             ## tellraw @s {}
+    .title j{}            ## title @s title {}
+    .title.times 10 70 20
+    .title.clear
+}
+```
+
+在`display{}`中也可以选择器提前。
+
+```
+display {
+	@s.text j{}
+	@s {
+		.title j{}
+	}
 }
 ```
 
 #### title命令聚合
+
+title命令也有不带选择器和带选择器形式的聚合，子内容可以带`.`，也可以不带。与display不同的是，`clear` `times`子命令不用加`.title`。
+
+```mcf
+title {
+    @s.title j{}
+    @s.subtitle j{}
+    @s.clear
+    @s.times 10 70 20
+    @s {
+    	.title j{}
+    }
+}
+```
 
 ```mcf
 title @s{
@@ -721,57 +952,89 @@ title @s{
     reset
     times 10 70 20
 }
-```
 
-```mcf
-title {
-    @s.title j{}
-    @s.subtitle j{}
-    @s.title.clear
-    @s.title.times 10 70 20
+title @s{
+	.title j{}
+	.subtitle j{}
 }
 ```
 
 #### bossbar命令聚合
 
-初始化
+*初始化*
 
 ```mcf
 bossbar foo:newboss "New Boss"  ##bossbar add
 
+bossbar foo:newboss "New Boss" {
+	color blue
+	max 10
+}
 ```
 
-设置属性
+*设置属性*
 
 ```mcf
 bossbar foo:newboss {
-    get max|players|value|visible ##bossbar get
+    get max     ##bossbar get max|players|value|visible
     remove 
-    color  ##bossbar set
-    max
-    name
-    players
-    style
-    visible
+    color blue       ##bossbar set
+    max 10
+    name j{""}
+    players @s       ##bossbar set players @s
+    players default  ##bossbar set players
+    style notched_6
+    visible true
 }
+```
+
+*bossbar表达式*
+
+让bossbar像NBT操作那样方便
+
+```mcf
+bossbar test:foo           ##bossbar get test:foo value
+bossbar test:foo max       ##bossbar get test:foo max|players|value|visible
+bossbar test:foo = 10      ##bossbar set test:foo value 10
+bossbar test:foo max = 10  ##bossbar set test:foo max 10
 ```
 
 ### item命令聚合
 
-将有关物品的操作聚合在一起 `item` `give` `clear` `loot`
+将有关物品的操作聚合在一起 `item` `give` `clear` `loot`。对于`give`和`clear`来说如果不希望使用`+=`和`-=`可以选择直接使用单词。
 
 ```mcf
 item{
-    @e[]::armor.chest = xxx 4                        ##replace with
-    @e[]::armor.chest = @s::armor.chest foo:modifier ##replace from
-    @e[]::armor.chest += foo:modifier                 ##modify
-    @e[] += xxx 4                                    ##give
-    @e[] -= xxx 4                                    ##clear
+    @e[]::armor.chest = stone *4                         ##replace with
+    @e[]::armor.chest = @s::armor.chest foo:modifier     ##replace from
+    @e[]::armor.chest += foo:modifier                    ##modify
+    @e[] += stone *4                                     ##give
+    @e[] -= stone *4                                     ##clear
     < ~ ~ ~ > =                                   ##loot spawn
     < ~ ~ ~ > +=                                  ##loot insert
     < ~ ~ ~ >::container.5 =                      ##loot replace block
     @s +=                                         ##loot give
     @s::container.5 =                             ##loot replace entity
+    
+}
+```
+
+对于命令中支持选择器的部分，item支持选择器提前的做法
+
+```mcf
+item @s{
+	armor.chest = stone *4
+	armor.chest = @s::armor.chest foo:modifier
+	give stone *4
+	clear stone *4
+}
+
+item{
+	@s {
+		armor.chest = stone *4
+		armor.chest = @s::armor.chest foo:modifier
+		give stone *4
+	}
 }
 ```
 
@@ -779,53 +1042,126 @@ item{
 
 ```mcf
 loot{
-    < ~ ~ ~ > = ##spawn
-    < ~ ~ ~ > += ##insert
-    < ~ ~ ~ >::container.5 = ##replace block
-    @s += ##give
-    @s::container.5 = ##replace entity
+    < ~ ~ ~ > =                                   ##spawn
+    < ~ ~ ~ > +=                                  ##insert
+    < ~ ~ ~ >::container.5 =                      ##replace block
+    @s +=                                         ##give
+    @s::container.5 =                             ##replace entity
+}
+```
+
+对于loot的来源来说，按照原来的方式书写
+
+```mcf
+loot{
+	@s += loot test:loot_1                            #mine
+	@s += fish test:loot_1 < ~ ~ ~ > mainhand         #fish
+	@s += kill @e[]                                   #kill
+	@s += mine < ~ ~ ~ > mainhand                     #mine
+}
+```
+
+对于命令中支持选择器的部分， loot支持选择器提前的做法
+
+```mcf
+loot @s{
+	give test:loot_1
+	container.5 = test:loot_1
+}
+
+loot{
+	@s {
+		give test:loot_1
+		container.5 = test:loot_1
+	}
 }
 ```
 
 ### entity命令聚合
 
-将有关实体的操作 `summon` `kill` `tag` `effect` `attribute` `tp` 聚合到一起
+将有关实体的操作 `summon` `kill` `tag` `effect` `attribute` `tp` 以及之前提到的`item` `display`聚合到一起
+
+#### 声明玩家假名
+
+对于JustMCF项目来说，凡是使用到的玩家假名，都需要提前声明。在使用时如果是**不**带'#'，则需要变为带'@'。例如：
+
+```mcf
+##声明
+entity(player) xxxx1          ## 设置mcf项目中会使用到的玩家假名，可以使用@xxxx1来选中玩家
+entity(player) #test1, xxxx2
+
+##使用
+scb{
+    scb#test1 = 1
+    scb@xxxx1 = 2
+}
+```
 
 #### 初始化实体
 
-生成实体
+*生成实体*
 
 ```mcf
-entity(pig) < ~ ~ ~ > n{} 
-          ##summon pig ~ ~ ~ {}
+entity(pig) < ~ ~ ~ > n{CustomName:"pig1"}               ##summon pig ~ ~ ~ {}
 ```
 
-设置mcf项目中会使用到的玩家假名，可以使用@xxxx来选中玩家
+*初始化使用假名*。解析生成.mcfunction后，实际上指定了uuid，uuid可以在项目文件中配置/自动生成，可以使用@xxxx来选中该实体。
 
 ```mcf
-entity(player) xxxx
-```
-
-初始化使用假名，而实际上指定了uuid，uuid可以在项目文件中配置/自动生成，可以使用@xxxx来选中该实体
-
-```mcf
-entity(pig) < ~ ~ ~ > xxxx n{} 
+entity(pig) < ~ ~ ~ > xxxx n{CustomName:"pig1"} 
 entity @xxxx{   
     .tp < ~ ~ ~ >
 }
 ```
 
+*初始化指定tag*。解析生成.mcfunction后，实际上在NBT中加入了Tags:["tag1","tag2"]
+
+tag前面可以加`.`，但是后续对实体执行操作的语句是必须加`.`
+
+```
+entity(pig) < ~ ~ ~ > xxxx n{CustomName:"pig1"} { tag = tag1,tag2 }
+```
+
+*初始化后直接进行操作*。可以进行操作的内容见下
+
+```mcf
+entity(pig) < ~ ~ ~ > xxxx n{CustomName:"pig1"} {
+	.tag = tag1,tag2 ##将会解析进初始化语句的nbt中
+	.tag+= temp      ##将会解析为tag add
+}
+```
+
 #### 对实体执行操作
+
+对于display、item、loot、attr、title等命令聚合来说，在entity大括号内可以执行类似的语句，这里不再复制粘贴。
+
+`entity{}`还可以直接不写，把内部的内容直接写在外面，这是entity表达式的写法。
 
 ```mcf
 entity{
     @s.tp < ~ ~ ~ >                                    ##tp
     @s.tag+= temp                                      ##tag
     @s.tag-= temp                                      ##tag
-    @s.effect+=                                        ##effect give
-    @s.effect-=                                        ##effect clear
+    @s.effect+= speed(3) 20 true                       ##effect give @s speed 20 3 true
+    @s.effect+= speed 20 3 true
+    @s.effect-= speed                                  ##effect clear @s speed
+    @s.effect clear
     @s.kill
-    @s.attr::generic.attack_damage +=
+    @s.item::container.5 =                             ##item 
+    @s.loot::container.5 =                             ##loot 也可以写成item
+    item {
+    	< ~ ~ ~ > = loot test:loot_1
+    	< ~ ~ ~ > += loot test:loot_1 
+    }
+    @s.item {
+    	give loot test:loot_1
+    	give fish test:loot_1 < ~ ~ ~ > mainhand
+    }
+    @s.loot {
+    	give loot test:loot_1
+    	give fish test:loot_1 < ~ ~ ~ > mainhand         
+    }
+    @s.attr::generic.attack_damage +=                  ##attr 
 }
 ```
 
@@ -836,23 +1172,46 @@ entity @xxxx{
     .tp < ~ ~ ~ >
     .tag+= temp
 }
+
+entity {
+	@s {
+		.tag+= temp
+	}
+}
 ```
 
 #### attribute命令聚合
 
-TODO:取代UUID，这里直接用name进行运算
+attr聚合主要关注点还是在于更改了modifier运算的符号，如下示例：
+
+TODO:取代UUID，直接用name进行运算
 
 ```mcf
 attr{
-    @s::generic.attack_damage all             ##get
-    @s::generic.attack_damage base *4         ##base get
-    @s::generic.attack_damage base =          ##set
+    @s::generic.attack_damage all                     ##get
+    @s::generic.attack_damage base *4                 ##base get
+    @s::generic.attack_damage base =                  ##set
     @s::generic.attack_damage += 0-0-0-0-0 test(+3)   ##modifier add uuid name value add
     @s::generic.attack_damage += 0-0-0-0-0 test(*+3)  ##modifier add uuid name value multiply_base
     @s::generic.attack_damage += 0-0-0-0-0 test(*3)   ##modifier add uuid name value multiply
-    @s::generic.attack_damage -=              ##modifier remove
-    @s::generic.attack_damage 0-0-0-0-0 *4      ##modifier get
+    @s::generic.attack_damage -=                      ##modifier remove
+    @s::generic.attack_damage 0-0-0-0-0 *4            ##modifier value get
 } 
+```
+
+attr也同时支持提出实体选择器
+
+```mcf
+attr @s{
+	generic.attack_damage all
+	generic.attack_damage += 0-0-0-0-0 test(+3)
+}
+attr{
+	@s {
+		generic.attack_damage all
+		generic.attack_damage += 0-0-0-0-0 test(+3)
+	}
+}
 ```
 
 ### block命令聚合
@@ -867,19 +1226,30 @@ block{
 }
 ```
 
-### world命令聚合
+### world命令聚合（TODO）
 
 ## 命令对象化
 
 entity命令聚合内的命令可以单独存在并进行使用，就如同对entity对象进行操作一样方便。
 
+TODO: 把所有有关选择器的命令都作为实体的方法
+
 ```mcf
 @s.kill 
 @s.tag +=
 @s.tp @r
-@s.item += minecraft:stone                      ##give
-@s.item::armor.chest = xxx 4			       ##item
-@s.exec{}->{}							     ##execute as
+@s.item += minecraft:stone                       ##give
+@s.item::armor.chest = xxx 4			        ##item
+@s.exec{}->{}                                    ##execute as
+```
+
+## 选择器增强（TODO）
+
+默认设置下，强制每个选择器`limit=1`，除非使用`limit=..`解除限制。
+
+```mcf
+@e(item)[pos= , dpos= , rot= ]
+@e(pig)[n{Motion:[]},{scb1=1..0,scb2 < 0 }]
 ```
 
 ## 支持脚本
@@ -979,10 +1349,13 @@ nbt:float foo:test::value = 32f
 
 JustMCF提供了带有参数的函数语法。这样的函数将会附带生成输入输出storage声明，在运行过程中，会使用到storage进行堆栈。由于Minecraft中的数据的modify是存值，因此堆栈会有性能损耗。请谨慎使用进阶函数进行递归操作。
 
-不带类型标记的函数
+在函数中，不带命名空间ID的storage操作都被默认为在当前函数栈操作；也可以将`local::`加到它的前缀上。对于栈的根标签的访问，可以用`local::{}`的方式进行，以防止使用`{}`形成的歧义。
+
+*不带类型标记的函数*
 
 ```mcf
 func test:fun1(a,b){
+	c = local::a         ##c没有命名空间id，a带着前置local::
 	yield c
 }
 ```
@@ -991,7 +1364,7 @@ func test:fun1(a,b){
 
 `return`（TODO）
 
-函数执行
+*函数执行*
 
 ```mcf
 foo:test::value = func test:func1(a,b)
@@ -999,7 +1372,7 @@ foo:test::value = func test:func1(a,b)
 
 函数的执行语句可以作为NBT操作的右值参与运算。
 
-带类型标记的函数（TODO）
+*带类型标记的函数（TODO）*
 
 ```mcf
 func test:func1(int a,int b) int {
@@ -1018,21 +1391,23 @@ func test:func1(int a,int b) int {
 对于没有抽象设计需求的作者来说，可以在mcf.mcmeta文件中设置默认命名空间，每一个.mcf文件以函数语句、函数标签语句为经纬进行组织。如下所示：
 
 ```mcf
-func getPlayerData{
-	
-}
-func setPlayerData{
+namsp [func = data_resolve]{
+    func getPlayerData{
 
-}
-func getPigData{
+    }
+    func setPlayerData{
 
-}
-func #getData{
-	func getPlayerData
-	func getPigData
-	func getZombieData{
-	
-	}
+    }
+    func getPigData{
+
+    }
+    func #getData{
+        func getPlayerData
+        func getPigData
+        func getZombieData{
+
+        }
+    }
 }
 ```
 
