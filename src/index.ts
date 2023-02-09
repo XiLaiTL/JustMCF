@@ -1,4 +1,4 @@
-#!/usr/bin/env node --loader=@u6x/jsext --experimental-specifier-resolution=node
+#!/usr/bin/env node
 import { Command } from 'commander'
 import { readPackageJSON } from 'pkg-types'
 import i18n from 'i18next';
@@ -191,10 +191,10 @@ const BuildAction = async (source_path: string, target_path: string) => {
     }
     const codesObj = await fileUtils.readAllMcf()
     build(codesObj.map(obj => obj.code), result)
-    if(!source_path.includes(target_path)) fileUtils.copyAllDataPack()
-    fileUtils.createFunctionTag()
-    fileUtils.createMcfunction()
-    fileUtils.createMcfMcmeta()
+    if(!source_path.includes(target_path)) await fileUtils.copyAllDataPack()
+    await fileUtils.createFunctionTag()
+    await fileUtils.createMcfunction()
+    await fileUtils.createMcfMcmeta()
 }
 
 const pkg = await readPackageJSON(toAbsolutionPath('../package.json'))

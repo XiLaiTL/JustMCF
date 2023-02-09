@@ -2,7 +2,7 @@ import { JustMCFResult, } from './JustMCFResult';
 import { fileURLToPath } from 'node:url'
 import { join, dirname, extname, basename } from 'node:path'
 import { tmpdir } from 'node:os';
-import {open, readFile, cp, writeFile, access, mkdir, appendFile, readdir, lstat, } from 'node:fs/promises'
+import {open, readFile, cp, writeFile, access, mkdir, appendFile, readdir, lstat, rm, } from 'node:fs/promises'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 export function toAbsolutionPath(path: string) {
@@ -52,6 +52,7 @@ export class FileUtils {
     }
 
     async copyAllDataPack() {
+        await rm(this.targetPath,{force:true,recursive:true})
         await cp(this.sourcePath, this.targetPath, { recursive: true }).catch(err => { throw err })
     }
 

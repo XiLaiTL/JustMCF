@@ -29,15 +29,14 @@
     "build": "tsc",
     "typecheck": "tsc --noEmit",
     "watch": "tsc --watch",
-    "start": "node --loader=@u6x/jsext --experimental-specifier-resolution=node ./build/index.js init",
-    "quick-start": "ts-node-esm --experimental-specifier-resolution=node ./src/index.ts init",
+    "start": "node ./build/index.js init",
+    "quick-start": "ts-node-esm ./src/index.ts init",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run"
   },
   "dependencies": {
     "@types/inquirer": "^9.0.3",
-    "@u6x/jsext": "^0.0.27",
     "antlr4ts": "0.5.0-alpha.4",
     "commander": "^10.0.0",
     "i18next": "^22.4.9",

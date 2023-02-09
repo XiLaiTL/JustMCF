@@ -103,6 +103,10 @@ export function convertLeagalCommands(code: string):string {
 
 export function convertBackLeagalCommands(code: string): string { 
     let resCode = code
+    for (const [commandToken,params] of improvedCommand) {
+        const regex = new RegExp(String.raw`(?<![A-Z0-9a-z\-_+.])/${commandToken}\s`, 'g') 
+        resCode = resCode.replace(regex,`${commandToken} `)
+    }
     for (const commandToken of leagalCommands) {
         const regex = new RegExp(String.raw`(?<![A-Z0-9a-z\-_+.])/${commandToken}\s`, 'g') //TODO: 因为现在用的是后处理所以有一点简化
         resCode = resCode.replace(regex,`${commandToken} `)
