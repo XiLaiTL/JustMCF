@@ -1,8 +1,5 @@
 import { test } from "vitest";
-import { registerOnArray } from "../src/lib/ArrayHelper";
 import { execute } from '../src/ManageSimplify';
-
-registerOnArray()
 
 test('Function Divide', () => {
     execute(`

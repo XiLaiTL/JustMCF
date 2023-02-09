@@ -213,6 +213,9 @@ import { ScbGetContext } from "./JustMCFParser";
 import { ScbAddContext } from "./JustMCFParser";
 import { ScbRemoveContext } from "./JustMCFParser";
 import { ScbSetContext } from "./JustMCFParser";
+import { ScbOptMulAssignNumberContext } from "./JustMCFParser";
+import { ScbOptDivAssignNumberContext } from "./JustMCFParser";
+import { ScbOptModAssignNumberContext } from "./JustMCFParser";
 import { ScbOptAddAssignContext } from "./JustMCFParser";
 import { ScbOptSubAssignContext } from "./JustMCFParser";
 import { ScbOptMulAssignContext } from "./JustMCFParser";
@@ -358,6 +361,11 @@ import { JsonArrContext } from "./JustMCFParser";
 import { JsonValueContext } from "./JustMCFParser";
 import { BoolValueContext } from "./JustMCFParser";
 import { NumberContext } from "./JustMCFParser";
+import { EndContext } from "./JustMCFParser";
+import { EndsContext } from "./JustMCFParser";
+import { P_Context } from "./JustMCFParser";
+import { Pn_Context } from "./JustMCFParser";
+import { S_Context } from "./JustMCFParser";
 import { KeyContext } from "./JustMCFParser";
 import { Pos3IdentifierContext } from "./JustMCFParser";
 import { Pos2IdentifierContext } from "./JustMCFParser";
@@ -365,7 +373,6 @@ import { Pos5IdentifierContext } from "./JustMCFParser";
 import { Pos1Context } from "./JustMCFParser";
 import { BlockIdentifierContext } from "./JustMCFParser";
 import { BlockstateContext } from "./JustMCFParser";
-import { SelectorContext } from "./JustMCFParser";
 import { NameSpaceContext } from "./JustMCFParser";
 import { NameSpaceBlockContext } from "./JustMCFParser";
 import { NameSpaceFuncContext } from "./JustMCFParser";
@@ -385,15 +392,18 @@ import { TagNameSpaceFuncContext } from "./JustMCFParser";
 import { TagNameSpaceEntityContext } from "./JustMCFParser";
 import { RegisterNameContext } from "./JustMCFParser";
 import { NumberTypeContext } from "./JustMCFParser";
-import { AcceptableNameContext } from "./JustMCFParser";
+import { AcceptableNameWithoutPointWithKeyContext } from "./JustMCFParser";
 import { CriterionContext } from "./JustMCFParser";
 import { NbtNameContext } from "./JustMCFParser";
+import { AcceptableNameContext } from "./JustMCFParser";
+import { AcceptableNameWithNumberContext } from "./JustMCFParser";
 import { ResourceLocationContext } from "./JustMCFParser";
 import { TypeNameContext } from "./JustMCFParser";
 import { Item_slotContext } from "./JustMCFParser";
 import { StringContext } from "./JustMCFParser";
 import { Item_predicateContext } from "./JustMCFParser";
 import { Block_predicateContext } from "./JustMCFParser";
+import { SelectorContext } from "./JustMCFParser";
 
 
 /**
@@ -2085,6 +2095,30 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitScbSet?: (ctx: ScbSetContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by the `scbOptMulAssignNumber`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbOptMulAssignNumber?: (ctx: ScbOptMulAssignNumberContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbOptDivAssignNumber`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbOptDivAssignNumber?: (ctx: ScbOptDivAssignNumberContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `scbOptModAssignNumber`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbOptModAssignNumber?: (ctx: ScbOptModAssignNumberContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by the `scbOptAddAssign`
 	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
 	 * @param ctx the parse tree
@@ -3136,6 +3170,41 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitNumber?: (ctx: NumberContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by `JustMCFParser.end`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEnd?: (ctx: EndContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.ends`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitEnds?: (ctx: EndsContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.p_`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitP_?: (ctx: P_Context) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.pn_`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitPn_?: (ctx: Pn_Context) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.s_`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitS_?: (ctx: S_Context) => Result;
+
+	/**
 	 * Visit a parse tree produced by `JustMCFParser.key`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -3183,13 +3252,6 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitBlockstate?: (ctx: BlockstateContext) => Result;
-
-	/**
-	 * Visit a parse tree produced by `JustMCFParser.selector`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitSelector?: (ctx: SelectorContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.nameSpace`.
@@ -3325,11 +3387,11 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitNumberType?: (ctx: NumberTypeContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `JustMCFParser.acceptableName`.
+	 * Visit a parse tree produced by `JustMCFParser.acceptableNameWithoutPointWithKey`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitAcceptableName?: (ctx: AcceptableNameContext) => Result;
+	visitAcceptableNameWithoutPointWithKey?: (ctx: AcceptableNameWithoutPointWithKeyContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.criterion`.
@@ -3344,6 +3406,20 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitNbtName?: (ctx: NbtNameContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.acceptableName`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAcceptableName?: (ctx: AcceptableNameContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.acceptableNameWithNumber`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitAcceptableNameWithNumber?: (ctx: AcceptableNameWithNumberContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.resourceLocation`.
@@ -3386,5 +3462,12 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitBlock_predicate?: (ctx: Block_predicateContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.selector`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelector?: (ctx: SelectorContext) => Result;
 }
 

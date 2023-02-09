@@ -213,6 +213,9 @@ import { ScbGetContext } from "./JustMCFParser";
 import { ScbAddContext } from "./JustMCFParser";
 import { ScbRemoveContext } from "./JustMCFParser";
 import { ScbSetContext } from "./JustMCFParser";
+import { ScbOptMulAssignNumberContext } from "./JustMCFParser";
+import { ScbOptDivAssignNumberContext } from "./JustMCFParser";
+import { ScbOptModAssignNumberContext } from "./JustMCFParser";
 import { ScbOptAddAssignContext } from "./JustMCFParser";
 import { ScbOptSubAssignContext } from "./JustMCFParser";
 import { ScbOptMulAssignContext } from "./JustMCFParser";
@@ -358,6 +361,11 @@ import { JsonArrContext } from "./JustMCFParser";
 import { JsonValueContext } from "./JustMCFParser";
 import { BoolValueContext } from "./JustMCFParser";
 import { NumberContext } from "./JustMCFParser";
+import { EndContext } from "./JustMCFParser";
+import { EndsContext } from "./JustMCFParser";
+import { P_Context } from "./JustMCFParser";
+import { Pn_Context } from "./JustMCFParser";
+import { S_Context } from "./JustMCFParser";
 import { KeyContext } from "./JustMCFParser";
 import { Pos3IdentifierContext } from "./JustMCFParser";
 import { Pos2IdentifierContext } from "./JustMCFParser";
@@ -365,7 +373,6 @@ import { Pos5IdentifierContext } from "./JustMCFParser";
 import { Pos1Context } from "./JustMCFParser";
 import { BlockIdentifierContext } from "./JustMCFParser";
 import { BlockstateContext } from "./JustMCFParser";
-import { SelectorContext } from "./JustMCFParser";
 import { NameSpaceContext } from "./JustMCFParser";
 import { NameSpaceBlockContext } from "./JustMCFParser";
 import { NameSpaceFuncContext } from "./JustMCFParser";
@@ -385,15 +392,18 @@ import { TagNameSpaceFuncContext } from "./JustMCFParser";
 import { TagNameSpaceEntityContext } from "./JustMCFParser";
 import { RegisterNameContext } from "./JustMCFParser";
 import { NumberTypeContext } from "./JustMCFParser";
-import { AcceptableNameContext } from "./JustMCFParser";
+import { AcceptableNameWithoutPointWithKeyContext } from "./JustMCFParser";
 import { CriterionContext } from "./JustMCFParser";
 import { NbtNameContext } from "./JustMCFParser";
+import { AcceptableNameContext } from "./JustMCFParser";
+import { AcceptableNameWithNumberContext } from "./JustMCFParser";
 import { ResourceLocationContext } from "./JustMCFParser";
 import { TypeNameContext } from "./JustMCFParser";
 import { Item_slotContext } from "./JustMCFParser";
 import { StringContext } from "./JustMCFParser";
 import { Item_predicateContext } from "./JustMCFParser";
 import { Block_predicateContext } from "./JustMCFParser";
+import { SelectorContext } from "./JustMCFParser";
 
 
 /**
@@ -3132,6 +3142,45 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitScbSet?: (ctx: ScbSetContext) => void;
 
 	/**
+	 * Enter a parse tree produced by the `scbOptMulAssignNumber`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 */
+	enterScbOptMulAssignNumber?: (ctx: ScbOptMulAssignNumberContext) => void;
+	/**
+	 * Exit a parse tree produced by the `scbOptMulAssignNumber`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 */
+	exitScbOptMulAssignNumber?: (ctx: ScbOptMulAssignNumberContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `scbOptDivAssignNumber`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 */
+	enterScbOptDivAssignNumber?: (ctx: ScbOptDivAssignNumberContext) => void;
+	/**
+	 * Exit a parse tree produced by the `scbOptDivAssignNumber`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 */
+	exitScbOptDivAssignNumber?: (ctx: ScbOptDivAssignNumberContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `scbOptModAssignNumber`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 */
+	enterScbOptModAssignNumber?: (ctx: ScbOptModAssignNumberContext) => void;
+	/**
+	 * Exit a parse tree produced by the `scbOptModAssignNumber`
+	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
+	 * @param ctx the parse tree
+	 */
+	exitScbOptModAssignNumber?: (ctx: ScbOptModAssignNumberContext) => void;
+
+	/**
 	 * Enter a parse tree produced by the `scbOptAddAssign`
 	 * labeled alternative in `JustMCFParser.scbOperationExpression`.
 	 * @param ctx the parse tree
@@ -4799,6 +4848,61 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitNumber?: (ctx: NumberContext) => void;
 
 	/**
+	 * Enter a parse tree produced by `JustMCFParser.end`.
+	 * @param ctx the parse tree
+	 */
+	enterEnd?: (ctx: EndContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.end`.
+	 * @param ctx the parse tree
+	 */
+	exitEnd?: (ctx: EndContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.ends`.
+	 * @param ctx the parse tree
+	 */
+	enterEnds?: (ctx: EndsContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.ends`.
+	 * @param ctx the parse tree
+	 */
+	exitEnds?: (ctx: EndsContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.p_`.
+	 * @param ctx the parse tree
+	 */
+	enterP_?: (ctx: P_Context) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.p_`.
+	 * @param ctx the parse tree
+	 */
+	exitP_?: (ctx: P_Context) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.pn_`.
+	 * @param ctx the parse tree
+	 */
+	enterPn_?: (ctx: Pn_Context) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.pn_`.
+	 * @param ctx the parse tree
+	 */
+	exitPn_?: (ctx: Pn_Context) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.s_`.
+	 * @param ctx the parse tree
+	 */
+	enterS_?: (ctx: S_Context) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.s_`.
+	 * @param ctx the parse tree
+	 */
+	exitS_?: (ctx: S_Context) => void;
+
+	/**
 	 * Enter a parse tree produced by `JustMCFParser.key`.
 	 * @param ctx the parse tree
 	 */
@@ -4874,17 +4978,6 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitBlockstate?: (ctx: BlockstateContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.selector`.
-	 * @param ctx the parse tree
-	 */
-	enterSelector?: (ctx: SelectorContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.selector`.
-	 * @param ctx the parse tree
-	 */
-	exitSelector?: (ctx: SelectorContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `JustMCFParser.nameSpace`.
@@ -5096,15 +5189,15 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitNumberType?: (ctx: NumberTypeContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `JustMCFParser.acceptableName`.
+	 * Enter a parse tree produced by `JustMCFParser.acceptableNameWithoutPointWithKey`.
 	 * @param ctx the parse tree
 	 */
-	enterAcceptableName?: (ctx: AcceptableNameContext) => void;
+	enterAcceptableNameWithoutPointWithKey?: (ctx: AcceptableNameWithoutPointWithKeyContext) => void;
 	/**
-	 * Exit a parse tree produced by `JustMCFParser.acceptableName`.
+	 * Exit a parse tree produced by `JustMCFParser.acceptableNameWithoutPointWithKey`.
 	 * @param ctx the parse tree
 	 */
-	exitAcceptableName?: (ctx: AcceptableNameContext) => void;
+	exitAcceptableNameWithoutPointWithKey?: (ctx: AcceptableNameWithoutPointWithKeyContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `JustMCFParser.criterion`.
@@ -5127,6 +5220,28 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitNbtName?: (ctx: NbtNameContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.acceptableName`.
+	 * @param ctx the parse tree
+	 */
+	enterAcceptableName?: (ctx: AcceptableNameContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.acceptableName`.
+	 * @param ctx the parse tree
+	 */
+	exitAcceptableName?: (ctx: AcceptableNameContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.acceptableNameWithNumber`.
+	 * @param ctx the parse tree
+	 */
+	enterAcceptableNameWithNumber?: (ctx: AcceptableNameWithNumberContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.acceptableNameWithNumber`.
+	 * @param ctx the parse tree
+	 */
+	exitAcceptableNameWithNumber?: (ctx: AcceptableNameWithNumberContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `JustMCFParser.resourceLocation`.
@@ -5193,5 +5308,16 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitBlock_predicate?: (ctx: Block_predicateContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.selector`.
+	 * @param ctx the parse tree
+	 */
+	enterSelector?: (ctx: SelectorContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.selector`.
+	 * @param ctx the parse tree
+	 */
+	exitSelector?: (ctx: SelectorContext) => void;
 }
 

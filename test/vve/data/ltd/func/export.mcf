@@ -1,29 +1,32 @@
-# input 
-# output
-# 初始化ltd
+## input 
+## output
+## 初始化ltd
 func ltd:_init{
-    scb int
-    scb ltd_id
-    int@10 = 10
+
+    entity(player) ltd_timer,#id,input,result,num10,num1,index_list_length,stemp
+    entity(player) loop, need_cor, _need_cor
+
+    scb int default
+    scb ltd_id default
     ltd_id#id = 0
 
     forceload add -1 -1 1 1
     @e[tag=data_marker].kill
 
-    math:io::ltd_addr = []
+    math:io::ltd_addr = n[]
 }
 
-# input 
-# output = int@result
-# 申请新的内存空间，返回内存地址到result
+## input 
+## output = int@result
+## 申请新的内存空间，返回内存地址到result
 func ltd:_new{
-    @e[tag=data_marker,tag=free,limit=1].tag+= temp_new
+    @e[tag=data_marker,tag=free,limit=1].tag += temp_new
     {unless @e[tag=temp_new,limit=1] }->func ltd:data_marker{
         entity(marker) 0 11 0 n{
             Tags:["temp_new","data_marker","free"],
             data:{index_list:[0,1,2,3,4,5,6,7,8,9],
             data_list:[{},{},{},{},{},{},{},{},{},{}]}
-            }
+            } 
         {@e[tag=temp_new,limit=1]}->func ltd:set{
             {unless math:io::ltd_addr[0]}->
                 ltd_id#id += 1 => ltd_id@s
@@ -34,32 +37,32 @@ func ltd:_new{
         }
     }
     {as @e[tag=temp_new,limit=1]}->func ltd:rtn_addr{
-        int@result = ltd_id@s
-        int@result *= int@10
+        int@result := ltd_id@s * 10
         @s::data.index_list[0] => int@stemp
         @s::data.index_list[0] remove
         int@result += int@stemp
-        @s.tag-= temp_new
+        @s.tag -= temp_new
         {unless @s::data.index_list[0]}->@s.tag -= free
     }
 }
 
-# input = int@input
-# output
-# 将内存地址input所在内存空间释放
+## input = int@input
+## output
+## 将内存地址input所在内存空间释放
 func ltd:_del{
-    int@num10 = int@input =>int@num1
-    int@num10 /= int@10
+    int@num10 := int@input / 10
+    int@num1 = int@input
+ 
     {   as @e[tag=data_marker] 
-        if ltd_id@s = int@num10
+        if ltd_id@s == int@num10
     }->func ltd:delete{
-        @s.tag+= free
+        @s.tag += free
 
         @s::data.index_list ..0 0
-        int@num1 %= int@10 => @s::data.index_list[0]
+        int@num1 %= 10 => @s::data.index_list[0]
 
-        {if @s::data.index_list[]} => int@stemp
-        {if int@stemp = int@10}->func ltd:die{
+        @s::data.index_list[] => int@index_list_length
+        {if int@index_list_length == 10}->func ltd:die{
             math:io::ltd_addr ..0 0
             int@num10 => math:io::ltd_addr[0] int*1
             @s.kill
@@ -67,40 +70,39 @@ func ltd:_del{
     }
 }
 
-# input = int@input
-# output = math:io::ltd
-# 获取内存地址input所在内存空间数据到ltd
+## input = int@input
+## output = math:io::ltd
+## 获取内存地址input所在内存空间数据到ltd
 func ltd:_get{
-    int@num10 = int@input => int@num1
-    int@num10 /= int@10
-    int@num1 %= int@10
+    int@num10 := int@input / 10
+    int@num1 := int@input % 10
 
     {   as @e[tag=data_marker] 
-        if ltd_id@s = int@num10
+        if ltd_id@s == int@num10
     }-> func ltd:get_data{
          @s::data.data_list[]._need_cor_ remove
          {{
-            for(const i in [0,1,2,3,4,5,6,7,8,9]){##
-                {if int@num1 $i}->math:io::ltd = @s::data.data_list[$i]
-            ##}
+            for(const i in [0,1,2,3,4,5,6,7,8,9]){#{
+                {if int@num1 == ${i} }->math:io::ltd = @s::data.data_list[${i}]
+            }#}
          }}
     }
 }
 
-# input = int@input math:io::ltd
-# output
-# 将ltd数据储存到内存地址input所在内存空间
+## input = int@input math:io::ltd
+## output
+## 将ltd数据储存到内存地址input所在内存空间
 func ltd:_store{
-    int@num10 = int@input => int@num1
-    int@num10 /= int@10
-    int@num1 %= int@10
+    int@num10 := int@input /10
+    int@num1 := int@input % 10
+
     {   as @e[tag=data_marker] 
-        if ltd_id@s = int@num10
+        if ltd_id@s == int@num10
     }->func ltd:store_data{
         {{
-             for(const i in [0,1,2,3,4,5,6,7,8,9]){##
-                {if int@num1 $i}->@s::data.data_list[$i] = math:io::ltd 
-            ##}
+             for(const i in [0,1,2,3,4,5,6,7,8,9]){#{
+                {if int@num1 == ${i} }->@s::data.data_list[${i}] = math:io::ltd 
+            }#}
         }}
     }
 }

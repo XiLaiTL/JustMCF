@@ -1,8 +1,8 @@
-func ltd:tick{
+func ltd:tick tagged #minecraft:tick {
     int@ltd_timer += 1
-    {if int@ltd_timer 20.. }->func ltd:lowtick
+    {if int@ltd_timer >= 20 }->func ltd:lowtick
 }
-###{
+#=
 垃圾回收机制：
 	每间隔20gt随机访问连续的10块内存，对于每块内存：
 		如果它带有"需要响应"标签，释放这块内存(数据依然保留，但可能被其它应用挤占)
@@ -22,4 +22,4 @@ func ltd:tick{
 			function ltd:_get
 			data modify storage math:io ltd.referrer_uuid set from entity @s UUID
 			function ltd:_store
-###}
+=#

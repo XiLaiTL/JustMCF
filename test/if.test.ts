@@ -1,19 +1,16 @@
 import { test } from "vitest";
 import { execute } from '../src/ManageSimplify';
-import { registerOnArray } from '../src/lib/ArrayHelper';
-
-registerOnArray()
 
 test('Exist Expression', () => {
     execute`
 func test:exist{
-    foo:stor::bool_1 = {if @e} | {if < ~ ~ ~ > stone} & {if @s}
-    foo:stor::bool_1 = ({if @e} | {if < ~ ~ ~ > stone}) & {if @s}
-    foo:stor::bool_1 = {if @e} & {if < ~ ~ ~ > stone} | {if @s}
-    foo:stor::bool_1 = ! {if @e} || {if < ~ ~ ~ > stone} || {if @s}
-    foo:stor::bool_1 = {if @e} && {if < ~ ~ ~ > stone} || {if @s}
-    foo:stor::bool_1 = {if @e} && {if < ~ ~ ~ > stone} || {if @s} | true
-    foo:stor::bool_1 = {if @e} && {if < ~ ~ ~ > stone} || {if @s} & false
+    foo:stor::bool_1 = {if @e} | {if ~ ~ ~ stone} & {if @s}
+    foo:stor::bool_1 = ({if @e} | {if ~ ~ ~ stone}) & {if @s}
+    foo:stor::bool_1 = {if @e} & {if ~ ~ ~ stone} | {if @s}
+    foo:stor::bool_1 = ! {if @e} || {if ~ ~ ~ stone} || {if @s}
+    foo:stor::bool_1 = {if @e} && {if ~ ~ ~ stone} || {if @s}
+    foo:stor::bool_1 = {if @e} && {if ~ ~ ~ stone} || {if @s} | true
+    foo:stor::bool_1 = {if @e} && {if ~ ~ ~ stone} || {if @s} & false
     foo:stor::bool_1 = true
     foo:stor::bool_1 = false
 }

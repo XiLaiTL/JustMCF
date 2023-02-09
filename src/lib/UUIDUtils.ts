@@ -78,7 +78,7 @@ export class UUID{
     }
     toArray() {
         const array: string[] = [];
-        for (let i = 0; i < array.length; i++) {
+        for (let i = 0; i < 4; i++) {
             array[i] = this.uuid.getInt32(i * 4, false).toString();
         }
         return `[I;${array.map(e => e.trim()).join(',')}]`

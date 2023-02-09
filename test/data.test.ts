@@ -1,13 +1,10 @@
 import { test } from "vitest";
 import { execute } from '../src/ManageSimplify';
-import { registerOnArray } from '../src/lib/ArrayHelper';
-
-registerOnArray()
 
 test('Data Expression', () => {
     execute`
 func test:data{
-    < ~ ~ ~ > ::Base *3                              ##get block
+    ~ ~ ~ ::Base *3                              ##get block
     @e[limit=1]::Item                                       ##get 
     foo:storage::Data
     @e[limit=1] |= n{}                                      ##merge

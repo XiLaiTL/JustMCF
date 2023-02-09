@@ -1,6 +1,7 @@
 import { JustMCFResult, } from './JustMCFResult';
 import { fileURLToPath } from 'node:url'
-import { join, dirname, extname } from 'node:path'
+import { join, dirname, extname, basename } from 'node:path'
+import { tmpdir } from 'node:os';
 import {open, readFile, cp, writeFile, access, mkdir, appendFile, readdir, lstat, } from 'node:fs/promises'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
@@ -8,19 +9,23 @@ export function toAbsolutionPath(path: string) {
     return join(__dirname, path)
 }
 
+export function getTargetPathDifferent() {
+    return join(process.cwd(),`../${basename(process.cwd())}_output`) 
+}
+
 export class FileUtils {
     private sourcePath: string = ""
     private targetPath: string = ""
     private resultObj: JustMCFResult;
     constructor(result: JustMCFResult, _sourcePath: string = process.cwd(), _targePath: string = process.cwd()) {
-        this.sourcePath = dirname(_sourcePath)
-        this.targetPath = dirname(_targePath)
+        this.sourcePath =  (extname(_sourcePath)=="") ?_sourcePath: dirname(_sourcePath)
+        this.targetPath = (extname(_targePath)=="") ?_targePath: dirname(_targePath)
         this.resultObj = result
     }
     async checkPackMcmeta(): Promise<[boolean, string]> {
         let success = false;
         let fileString = "";
-        readFile(join(this.sourcePath, './pack.mcmeta'), 'utf8')
+        await readFile(join(this.sourcePath, './pack.mcmeta'), 'utf8')
             .then(data => {
                 success = true
                 fileString = data
@@ -57,14 +62,13 @@ export class FileUtils {
     async createFunctionTag() {
         await writeDir(this.targetPath)
         for (const functionTagName in this.resultObj.functionTags) {
-            const path = join(this.targetPath, convertNamespaceIdToPath(functionTagName, "tag/function"))
+            const path = join(this.targetPath, convertNamespaceIdToPath(functionTagName.replace('#',""), "tag/function"))
             const data = JSON.stringify(this.resultObj.functionTags[functionTagName],null,"  ")
             await writeDir(path)
             switch (this.resultObj.option.file?.mcfunctionGenerateMode) {
                 case "cover": { await writeFile(path, data, 'utf-8').catch(err => { throw err }) } break;
                 case "skip": {
-                    const fd = await open(path, 'wx')
-                    await writeFile(fd, data, 'utf-8').catch(err => { throw err })
+                    await writeFile(path, data, {encoding:'utf-8',flag:'wx'}).catch(err => { })
                 } break;
                 case "append": {
                     await readFile(path, 'utf-8').then(async dataOrigin => {
@@ -119,8 +123,7 @@ export class FileUtils {
             switch (this.resultObj.option.file?.functionTagGenerateMode) {
                 case "cover": {await writeFile(path,data,'utf-8').catch(err => { throw err })} break;
                 case "skip": {
-                    const fd = await open(path, 'wx')
-                    await writeFile(fd, data, 'utf-8').catch(err => { throw err })
+                    await writeFile(path, data, {encoding:'utf-8',flag:'wx'}).catch(err => { })
                 } break;
                 case "append": { await appendFile(path, data, 'utf-8').catch(err => { throw err }) } break;
                 case "prepend": {
@@ -137,8 +140,8 @@ export class FileUtils {
 
 async function writeDir(filePath:string) {
     const dir = dirname(filePath);
-    await access(dir).catch(err => {
-        mkdir(dir, { recursive: true });
+    await access(dir).catch(async err => {
+        await mkdir(dir, { recursive: true });
     })
 }
 

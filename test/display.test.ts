@@ -1,8 +1,5 @@
 import { test } from "vitest";
 import { execute } from '../src/ManageSimplify';
-import { registerOnArray } from '../src/lib/ArrayHelper';
-
-registerOnArray()
 
 test('Title', () => {
     execute`
@@ -14,27 +11,19 @@ func test:title1{
         @s.times 10 70 20
         @s {
             .title j{}
-            .clear j{}
-        }
-        @s {
-            title j{}
+            .clear
         }
     }
 }
 
 func test:title2{
     title @s{
-        title j{}
-        subtitle j{}
-        actionbar j{}
-        clear
-        reset
-        times 10 70 20
-    }
-    
-    title @s{
         .title j{}
         .subtitle j{}
+        .actionbar j{}
+        .clear
+        .reset
+        .times 10 70 20
     }
 }
     `
@@ -57,7 +46,7 @@ func test:bossbar2{
         remove 
         color blue       ##bossbar set
         max 10
-        name j{""}
+        name j{}
         players @s       ##bossbar set players @s
         players default  ##bossbar set players
         style notched_6
@@ -80,11 +69,11 @@ func test:display1{
     display{
         @s.text j{}             ## tellraw @s {}
         @s.title j{}            ## title @s title {}
-        @s.title.times 10 70 20
-        @s.title.clear
+        @s.title times 10 70 20
+        @s.title clear
         @s.title {
-            actionbar j{}
-            times 10 70 20
+            .actionbar j{}
+            .times 10 70 20
         }
         @s.actionbar j{}        ## title @s actionbar {}
         @s.subtitle j{}         ## title @s subtitle {}
@@ -92,7 +81,7 @@ func test:display1{
         @s.bossbar foo:newboss  ##bossbar set players
         bossbar foo:newboss j{""}
         bossbar foo:newboss {
-    
+            style notched_6
         }
         scb test "分数"
         scb test {
@@ -105,17 +94,10 @@ func test:display1{
 
 func test:display2{
     display @s{
-        text j{}             ## tellraw @s {}
-        title j{}            ## title @s title {}
-        title.times 10 70 20
-        title.clear
-    }
-    
-    display @s{
         .text j{}             ## tellraw @s {}
         .title j{}            ## title @s title {}
-        .title.times 10 70 20
-        .title.clear
+        .title times 10 70 20
+        .title clear
     }
 }
 

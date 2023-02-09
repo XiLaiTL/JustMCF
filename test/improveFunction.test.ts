@@ -1,8 +1,5 @@
 import { test } from "vitest";
 import { execute } from '../src/ManageSimplify';
-import { registerOnArray } from '../src/lib/ArrayHelper';
-
-registerOnArray()
 
 test('Interface', () => {
     execute`
@@ -31,7 +28,7 @@ test('ImproveFunction', () => {
         yield c
     }
     func test:fun2{
-        io::test = func fun1(io::a,io::b)
+        io::test = func test:fun1(io::a,io::b)
     }
     `
 })

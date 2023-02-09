@@ -1,8 +1,5 @@
 import { test } from "vitest";
 import { execute } from '../src/ManageSimplify';
-import { registerOnArray } from '../src/lib/ArrayHelper';
-
-registerOnArray()
 
 test('Execute Pos And Rot', () => {
     execute`
@@ -19,11 +16,11 @@ func test:execute{
         align z
         anchored eyes
         anchored feet
-        pos < ~ ~ ~ >
+        pos ~ ~ ~
         pos @e[limit=1]                           ##position as
-        rot < ~ ~ >
+        rot ~ ~
         rot @e[limit=1]                            ##rotated as
-        facing < ~ ~ ~ >				  
+        facing ~ ~ ~				  
         facing @e[limit=1] eyes                    ##facing entity
     }->func foo:test
 }
@@ -36,12 +33,12 @@ func test:execute{
     entity(player) #temp
     {
         if @e[limit=1]                               ##if entity
-        if < ~ ~ ~ > stone                           ##if block
-        if < ~ ~ ~ > < ~ ~ ~ > < ~ ~ ~ > all         ##if blocks
-        if biome < ~ ~ ~ > namespace                 ##if biome
+        if ~ ~ ~ stone                           ##if block
+        if ~ ~ ~ ~ ~ ~ ~ ~ ~ all         ##if blocks
+        if biome ~ ~ ~ namespace                 ##if biome
         if test:is_use_hand						     ##if predicate
         if @e[limit=1]::{}                           ##if data entity
-        if < ~ ~ ~ > ::{}                            ##if data block
+        if ~ ~ ~ ::{}                            ##if data block
         if foo:str::{}                               ##if data storage
         if sb1@e[limit=1] > sb2@s                    ##if score
         if sb1@e[limit=1] >= sb2@s                   ##if score
@@ -61,12 +58,12 @@ func test:execute{
     
     {
         entity @e[limit=1]                             ##if entity
-        block < ~ ~ ~ > stone                          ##if block
-        blocks < ~ ~ ~ > < ~ ~ ~ > < ~ ~ ~ > all       ##if blocks
-        biome < ~ ~ ~ > namespace                      ##if biome
+        block ~ ~ ~ stone                          ##if block
+        blocks ~ ~ ~ ~ ~ ~ ~ ~ ~ all       ##if blocks
+        biome ~ ~ ~ namespace                      ##if biome
         predicate test:is_use_hand					   ##if predicate
         data @e[limit=1]::{}                           ##if data entity
-        data < ~ ~ ~ > ::{}                            ##if data block
+        data ~ ~ ~ ::{}                            ##if data block
         data foo:str::{}                               ##if data storage
         score sb1@e[limit=1] > sb2@s                    ##if score
         score sb1@e[limit=1] >= sb2@s                   ##if score
@@ -86,12 +83,12 @@ func test:execute{
 
     {
         @e[limit=1]                              ##if entity
-        < ~ ~ ~ > stone                          ##if block
-        < ~ ~ ~ > < ~ ~ ~ > < ~ ~ ~ > all        ##if blocks
-        biome < ~ ~ ~ > namespace                ##if biome
+        ~ ~ ~ stone                          ##if block
+        ~ ~ ~ ~ ~ ~ ~ ~ ~ all        ##if blocks
+        biome ~ ~ ~ namespace                ##if biome
         test:is_use_hand					     ##if predicate
         @e[limit=1]::{}                          ##if data entity
-        < ~ ~ ~ > ::{}                           ##if data block
+        ~ ~ ~ ::{}                           ##if data block
         foo:str::{}                              ##if data storage
         sb1@e[limit=1] > sb2@s                    ##if score
         sb1@e[limit=1] >= sb2@s                   ##if score
@@ -123,12 +120,12 @@ func test:execute{
 
     {as @p}
     ?=> sb3@s                                     ##store success score
-    ?=> < ~ ~ ~ > ::Base int*3                    ##store success block
+    ?=> ~ ~ ~ ::Base int*3                    ##store success block
     ?=> bossbar foo:bar value                     ##store success bossbar
     ?=> @e[limit=1]::XXXX int*3                   ##store success entity
     ?=> foo:storage::XXX                          ##store success storage
     => sb3@s                                     ##store result score
-    => < ~ ~ ~ > ::Base int*3                    ##store result block
+    => ~ ~ ~ ::Base int*3                    ##store result block
     => bossbar foo:bar value                     ##store result bossbar
     => @e[limit=1]::XXXX int*3                   ##store result entity
     => foo:storage::XXX                          ##store result storage

@@ -6,17 +6,17 @@
 exec{ 
     as @e[]
     at @e[]
-    position < ~ ~ ~ >
+    position ~ ~ ~
     position @e[] ##position as
     rotated @e[] ##rotated as
-    rotated < ~ ~ >
+    rotated ~ ~
     if @e[] ##if entity
     if sb1@e[] >= sb2@s ##if score
     if sb1@e[] 2..5 ##if score xxx matches
-    if < ~ ~ ~ > stone{} ##if block
-    if < ~ ~ ~ > < ~ ~ ~ > < ~ ~ ~ > all|masked ##if blocks
+    if ~ ~ ~ stone{} ##if block
+    if ~ ~ ~ ~ ~ ~ ~ ~ ~ all|masked ##if blocks
     if @e[]::{} ##if data entity
-    if < ~ ~ ~ > ::{}  ##if data block
+    if ~ ~ ~ ::{}  ##if data block
     if foo:str::{} ##if data storage
 }
 ->func{ ##生成匿名函数##比如本文件是utils/test，则生成utils/test/21.mcf
@@ -26,7 +26,7 @@ exec{
 
 exec{}
 =>sb3@e[] ##store result score
-=> < ~ ~ ~ > ::Base int*3##store result block
+=> ~ ~ ~ ::Base int*3##store result block
 =>foo:bar value|max  ##store result bossbar
 => @e[]::XXXX int*3 ##store result entity
 => foo:storage::XXX int*3##store result storage
@@ -83,7 +83,7 @@ scb{
 scb{ test1@s += test2@s } =>test3@s ##execute store result
 
 data{
-    < ~ ~ ~ > ::Base *3 ##get block
+    ~ ~ ~ ::Base *3 ##get block
     @e[]::Item ##get 
     @e[] |= {} ##merge
     @e[]::Item |= @s::Item ##modify merge from
@@ -97,7 +97,7 @@ data{
 
 ##所有出现的玩家名都得用define替换 ，见后面，还有一种方案
 define(player) `xxx
-define `pos < ~ ~ ~ >
+define `pos ~ ~ ~
 define(selector) `temp @e[]
 define(snbt) `nbt1 n{
     id:'iron_boots', 
@@ -122,9 +122,9 @@ item{
 ##loot先就算了
 ##loot可以合并到item里去
 loot{
-    < ~ ~ ~ > = ##spawn
-    < ~ ~ ~ > += ##insert
-    < ~ ~ ~ >::container.5 = ##replace block
+    ~ ~ ~ = ##spawn
+    ~ ~ ~ += ##insert
+    ~ ~ ~::container.5 = ##replace block
     @s += ##give
     @s::container.5 = ##replace entity
 }
@@ -204,9 +204,9 @@ display @s {
 
 
 block{
-    < ~ ~ ~ > minecraft:stone[] keep ##setblock
-    < ~ ~ ~ > < ~ ~ ~ > minecraft:stone[] keep
-    < ~ ~ ~ > < ~ ~ ~ > < ~ ~ ~ > filtered oak_planks
+    ~ ~ ~ minecraft:stone[] keep ##setblock
+    ~ ~ ~ ~ ~ ~ minecraft:stone[] keep
+    ~ ~ ~ ~ ~ ~ ~ ~ ~ filtered oak_planks
 }
 
 attr{
@@ -221,7 +221,7 @@ attr{
 
 
 entity{
-    @s < ~ ~ ~ > ##tp
+    @s ~ ~ ~ ##tp
     @s tag+= temp ##tag
     @s tag-= temp ##tag
     @s effect+= ##effect give
@@ -230,12 +230,12 @@ entity{
     @s attr::generic.attack_damage +=
 }
 entity @s {
-    < ~ ~ ~ >
+    ~ ~ ~
     tag+= temp
 }
 
 entity(pig) xxxx n{} { ##初始化，指定了uuid，uuid可以在项目文件中配置/自动生成，可以使用@xxxx来选中该实体
-    tp < ~ ~ ~ >
+    tp ~ ~ ~
 
 
 }

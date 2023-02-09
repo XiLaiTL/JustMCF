@@ -1,16 +1,13 @@
 #!/usr/bin/env node --experimental-specifier-resolution=node
-import { registerOnArray } from './lib/ArrayHelper';
 import { Command } from 'commander'
 import { readPackageJSON } from 'pkg-types'
 import i18n from 'i18next';
 import FsBackend, { FsBackendOptions } from 'i18next-fs-backend'
 import inquirer from 'inquirer'
-import { toAbsolutionPath, FileUtils } from './FileUtils';
+import { toAbsolutionPath, FileUtils,  getTargetPathDifferent } from './FileUtils';
 import { option, defaultOption, JustMCFResult } from './JustMCFResult';
 import { toSnakeCase } from './lib/StringUtils';
 import { build, execute } from './ManageSimplify';
-
-registerOnArray()
 
 await i18n
     .use(FsBackend)
@@ -24,7 +21,7 @@ await i18n
         supportedLngs: ['en', 'zh-CN']
     });
 
-const InitAction = async () => {
+const ChooseLanguageAction = async () => {
     await inquirer.prompt([
         {
             name: "lang",
@@ -36,6 +33,10 @@ const InitAction = async () => {
     ]).then(async ({ lang }) => {
         await i18n.changeLanguage(lang)
     })
+}
+
+const InitAction = async () => {
+    await ChooseLanguageAction()
     
     const option: option = defaultOption()
     
@@ -125,7 +126,7 @@ const BuildActionWhenNoSourcePath = async () => {
 }
 
 const BuildActionWhenNoTargetPath = async () => {
-    let target_path = process.cwd()
+    let target_path = getTargetPathDifferent() 
     const {asTargetPath} = await inquirer.prompt([{
         name: "asTargetPath",
         type: "confirm",
@@ -164,29 +165,36 @@ const BuildActionWhenNoMcfMcmeta = async () => {
     }
     return false
 }
-const BuildAction = async (source_path:string,target_path:string) => {
+const BuildAction = async (source_path: string, target_path: string) => {
+    let chooseLanguageFlag =false
     if (source_path === undefined) {
+        if (chooseLanguageFlag == false) { await ChooseLanguageAction(); chooseLanguageFlag = true }
         source_path = await BuildActionWhenNoSourcePath()
     }
     if (target_path === undefined) {
+        if (chooseLanguageFlag == false) { await ChooseLanguageAction(); chooseLanguageFlag = true }
         target_path = await BuildActionWhenNoTargetPath()
     }
     const result = new JustMCFResult()
     const fileUtils = new FileUtils(result, source_path, target_path)
     const [hasPackMcmeta, _] = await fileUtils.checkPackMcmeta()
     if (!hasPackMcmeta) {
+        if (chooseLanguageFlag == false) { await ChooseLanguageAction(); chooseLanguageFlag = true }
         await BuildActionWhenNoPackMcmeta()
         return
     }
     const hasMcfMcmeta = await fileUtils.checkMcfMcmeta()
     if (!hasMcfMcmeta) {
+        if (chooseLanguageFlag == false) { await ChooseLanguageAction(); chooseLanguageFlag = true }
         const next = await BuildActionWhenNoMcfMcmeta()
         if(!next) return
     }
     const codesObj = await fileUtils.readAllMcf()
-    build(codesObj.map(obj=>obj.code),result)
+    build(codesObj.map(obj => obj.code), result)
+    fileUtils.copyAllDataPack()
     fileUtils.createFunctionTag()
     fileUtils.createMcfunction()
+    fileUtils.createMcfMcmeta()
 }
 
 const pkg = await readPackageJSON(toAbsolutionPath('../package.json'))

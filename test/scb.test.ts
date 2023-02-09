@@ -1,8 +1,5 @@
 import { test } from 'vitest'
 import { execute } from '../src/ManageSimplify';
-import { registerOnArray } from '../src/lib/ArrayHelper';
-
-registerOnArray()
 
 test('Scb Declare', () => {
     execute`
@@ -25,7 +22,7 @@ test('Scb Player Statement', () => {
     execute`
 func test:scb{
 
-    entity(player) temp,temp1,temp2
+    entity(player) temp1,temp2,temp3
 
     scb {
         num@temp1 = 1

@@ -2,11 +2,19 @@
 <!-- TOC -->
 
 - [JustMCF](#justmcf)
+  - [谁适合使用本项目？](#%E8%B0%81%E9%80%82%E5%90%88%E4%BD%BF%E7%94%A8%E6%9C%AC%E9%A1%B9%E7%9B%AE)
   - [项目文件结构](#%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84)
-  - [数据运算简化](#%E6%95%B0%E6%8D%AE%E8%BF%90%E7%AE%97%E7%AE%80%E5%8C%96)
+  - [标识符](#%E6%A0%87%E8%AF%86%E7%AC%A6)
+  - [数据操作简化](#%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C%E7%AE%80%E5%8C%96)
     - [scoreboard数据运算](#scoreboard%E6%95%B0%E6%8D%AE%E8%BF%90%E7%AE%97)
+      - [记分板的声明和设置](#%E8%AE%B0%E5%88%86%E6%9D%BF%E7%9A%84%E5%A3%B0%E6%98%8E%E5%92%8C%E8%AE%BE%E7%BD%AE)
+      - [记分板运算](#%E8%AE%B0%E5%88%86%E6%9D%BF%E8%BF%90%E7%AE%97)
     - [NBT数据运算](#nbt%E6%95%B0%E6%8D%AE%E8%BF%90%E7%AE%97)
     - [NBT与记分板数据转换存储](#nbt%E4%B8%8E%E8%AE%B0%E5%88%86%E6%9D%BF%E6%95%B0%E6%8D%AE%E8%BD%AC%E6%8D%A2%E5%AD%98%E5%82%A8)
+    - [bossbar数据运算](#bossbar%E6%95%B0%E6%8D%AE%E8%BF%90%E7%AE%97)
+    - [attribute数据运算（TODO）](#attribute%E6%95%B0%E6%8D%AE%E8%BF%90%E7%AE%97todo)
+  - [命名空间省略设置](#%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E7%9C%81%E7%95%A5%E8%AE%BE%E7%BD%AE)
+  - [注释增强](#%E6%B3%A8%E9%87%8A%E5%A2%9E%E5%BC%BA)
   - [逻辑控制流简化](#%E9%80%BB%E8%BE%91%E6%8E%A7%E5%88%B6%E6%B5%81%E7%AE%80%E5%8C%96)
     - [函数](#%E5%87%BD%E6%95%B0)
       - [函数声明](#%E5%87%BD%E6%95%B0%E5%A3%B0%E6%98%8E)
@@ -16,11 +24,13 @@
       - [概览](#%E6%A6%82%E8%A7%88)
       - [执行者与执行方位设置](#%E6%89%A7%E8%A1%8C%E8%80%85%E4%B8%8E%E6%89%A7%E8%A1%8C%E6%96%B9%E4%BD%8D%E8%AE%BE%E7%BD%AE)
       - [执行条件if/unless 子语句](#%E6%89%A7%E8%A1%8C%E6%9D%A1%E4%BB%B6ifunless-%E5%AD%90%E8%AF%AD%E5%8F%A5)
+        - [if score语句](#if-score%E8%AF%AD%E5%8F%A5)
       - [存储语句store 子语句](#%E5%AD%98%E5%82%A8%E8%AF%AD%E5%8F%A5store-%E5%AD%90%E8%AF%AD%E5%8F%A5)
       - [执行语句run 子语句](#%E6%89%A7%E8%A1%8C%E8%AF%AD%E5%8F%A5run-%E5%AD%90%E8%AF%AD%E5%8F%A5)
         - [直接执行命令](#%E7%9B%B4%E6%8E%A5%E6%89%A7%E8%A1%8C%E5%91%BD%E4%BB%A4)
         - [具名函数](#%E5%85%B7%E5%90%8D%E5%87%BD%E6%95%B0)
         - [匿名函数](#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0)
+      - [简化幅度较小的支持](#%E7%AE%80%E5%8C%96%E5%B9%85%E5%BA%A6%E8%BE%83%E5%B0%8F%E7%9A%84%E6%94%AF%E6%8C%81)
     - [条件语句](#%E6%9D%A1%E4%BB%B6%E8%AF%AD%E5%8F%A5)
       - [exist表达式](#exist%E8%A1%A8%E8%BE%BE%E5%BC%8F)
       - [逻辑运算符](#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6)
@@ -38,33 +48,37 @@
     - [item命令聚合](#item%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
       - [loot命令聚合](#loot%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
     - [entity命令聚合](#entity%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
+      - [声明玩家假名](#%E5%A3%B0%E6%98%8E%E7%8E%A9%E5%AE%B6%E5%81%87%E5%90%8D)
       - [初始化实体](#%E5%88%9D%E5%A7%8B%E5%8C%96%E5%AE%9E%E4%BD%93)
       - [对实体执行操作](#%E5%AF%B9%E5%AE%9E%E4%BD%93%E6%89%A7%E8%A1%8C%E6%93%8D%E4%BD%9C)
       - [attribute命令聚合](#attribute%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
     - [block命令聚合](#block%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
-    - [world命令聚合](#world%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88)
+    - [world命令聚合（TODO）](#world%E5%91%BD%E4%BB%A4%E8%81%9A%E5%90%88todo)
   - [命令对象化](#%E5%91%BD%E4%BB%A4%E5%AF%B9%E8%B1%A1%E5%8C%96)
+  - [选择器增强（TODO）](#%E9%80%89%E6%8B%A9%E5%99%A8%E5%A2%9E%E5%BC%BAtodo)
   - [支持脚本](#%E6%94%AF%E6%8C%81%E8%84%9A%E6%9C%AC)
   - [进阶函数设计](#%E8%BF%9B%E9%98%B6%E5%87%BD%E6%95%B0%E8%AE%BE%E8%AE%A1)
     - [数据类型](#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
-      - [基本数据类型](#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
+      - [基本数据类型（TODO）](#%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8Btodo)
       - [NBT类型信息](#nbt%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF)
-      - [带类型标记的赋值语法](#%E5%B8%A6%E7%B1%BB%E5%9E%8B%E6%A0%87%E8%AE%B0%E7%9A%84%E8%B5%8B%E5%80%BC%E8%AF%AD%E6%B3%95)
+      - [带类型标记的赋值语法（TODO）](#%E5%B8%A6%E7%B1%BB%E5%9E%8B%E6%A0%87%E8%AE%B0%E7%9A%84%E8%B5%8B%E5%80%BC%E8%AF%AD%E6%B3%95todo)
     - [进阶函数](#%E8%BF%9B%E9%98%B6%E5%87%BD%E6%95%B0)
+  - [mcf文件的开始](#mcf%E6%96%87%E4%BB%B6%E7%9A%84%E5%BC%80%E5%A7%8B)
 
 <!-- /TOC -->
 
 JustMCF是一个简化mcfunction工程的项目。使用JustMCF，你不但可以使用**原版的命令**，还可以使用项目设计的**简化命令**，可以使你的命令更加简洁高效。
 
-以下几个方面是JustMCF进行简化的部分
+以下几个方面是JustMCF进行简化或者增强的部分
 
-- 数据运算简化
-- 逻辑控制流简化
-- 命令聚合
-- 命令对象化
-- 支持脚本
-
-
+- 数据操作简化——对记分板运算、NBT操作进行大幅度简化，并支持表达式形式运算记分板！
+- 命名空间省略——修改默认省略情况下的命名空间。（原来默认只能是Minecraft）
+- 注释增强——支持行内注释、块注释！（TODO：根据注释信息生成函数帮助信息）
+- 逻辑控制流简化——对execute进行大幅度简化！单文件定义多个、嵌套定义函数！支持逻辑表达式、条件语句、循环语句、列表遍历语句！
+- 命令聚合——将如scoreboard操作、bossbar操作这类的系列命令聚合到一个块里。
+- 命令对象化——像调用对象的方法那样调用命令，打开书写命令的新思路！
+- 支持脚本——直接在文件内定义JavaScript脚本，支持脚本生成命令！
+- 进阶函数——提供带有参数的函数封装。（TODO：引入支持库函数如random等）
 
 这个项目未完成的功能：
 
@@ -76,9 +90,28 @@ JustMCF是一个简化mcfunction工程的项目。使用JustMCF，你不但可�
 - [ ] 选择器的解析
 - [ ] 全部命令的解析支持
 
+## 谁适合使用本项目？
+
+如果是命令老手——
+
+- 苦于**命令与NBT过于冗长、无法换行**的创作者——JustMCF大幅度简化了execute、data、scoreboard这三个最常用的命令，并提供NBT换行的支持（TODO：项目完成全部命令的解析支持后，将支持所有命令中涉及到的NBT的换行，目前仅局限于已简化的命令的换行）。
+- 苦于**需要外部程序文件进行命令穷举**、导致逻辑思路分开的创作者——JustMCF直接提供文件内脚本支持，让思路不会断片。
+- 苦于每次都要新开函数文件，**多个函数文件的分隔**导致思维混乱的创作者——JustMCF直接提供单文件定义多个函数的支持，并支持嵌套定义函数。
+- 苦于Minecraft**命令书写无法形成逻辑链**的创作者——JustMCF提供了条件、循环语句、进阶函数封装等特性，让逻辑更加清晰。
+- 希望尝试新的抽象思路，新的逻辑组织方式的创作者——JustMCF希望提供interface+func进行命令组织的方式，进一步进行思路的抽象。
+
+如果是习惯了原版命令的创作者——
+
+- JustMCF直接**支持使用原版命令**，无缝衔接使用JustMCF的单文件多函数、进阶函数封装、条件、循环语句等特性！
+- JustMCF**支持中性简化**，如果认为过渡简化导致不习惯，请看execute的案例：[简化幅度较小的支持](#%E7%AE%80%E5%8C%96%E5%B9%85%E5%BA%A6%E8%BE%83%E5%B0%8F%E7%9A%84%E6%94%AF%E6%8C%81)
+
+如果是命令新手——
+
+- 还是先不要用JustMCF，因为一旦使用了JustMCF，你就会陷入JustMCF带来的魔力之中，**直接脱离原版命令苦海**。
+
 ## 项目文件结构
 
-JustMCF项目文件以.mcf为后缀，一个.mcf文件可以生成多个.mcfunction文件。
+JustMCF项目文件以.mcf为后缀，*一个*.mcf文件可以生成*多个*.mcfunction文件。
 
 JustMCF项目支持一个mcf.mcmeta文件，用于存放有关数据包兼容性的信息以及JustMCF的设置、自动生成的uuid列表等等。
 
@@ -92,10 +125,13 @@ folder_name
     |-namespace
         |-functions
         |-tags
-        |-func        ->.mcf文件存放的地方
-|-mcf.mcmeta          ->存放项目冲突信息的地方（使用的假名、uuid、记分板名）
+        |-func                  ->.mcf文件存放的地方
+            |-export.mcf        ->例如这样一个mcf文件
+|-mcf.mcmeta                    ->存放项目冲突信息的地方（使用的假名、uuid、记分板名）
   
 ```
+
+单个mcf文件的书写请看：[mcf文件的开始](#mcf%E6%96%87%E4%BB%B6%E7%9A%84%E5%BC%80%E5%A7%8B)
 
 ## 标识符
 
@@ -124,9 +160,9 @@ folder_name
 
 - *坐标*：共有三类坐标，在JustMCF中，需要左右添加尖括号（TODO：当测试结果为解析无问题时将会移除尖括号）
 
-  - 2个值表示朝向坐标或者xz坐标 `< ~ ~ >`
-  - 3个值表示位置坐标 `< ~ ~ ~ >` （TODO：这个可以简化为 `<~>`）
-  - 5个值表示方位坐标 `< ~ ~ ~ ~ ~ >`
+  - 2个值表示朝向坐标或者xz坐标 `~ ~`
+  - 3个值表示位置坐标 `~ ~ ~`
+  - 5个值表示方位坐标 `~ ~ ~ ~ ~`
 
 - *记分板*：来源只有实体，在JustMCF中，表示为
 
@@ -138,7 +174,7 @@ folder_name
 
   - 实体NBT：`@s::Tag1`
 
-  - 方块实体NBT：`<~ ~ ~>::Tag1`
+  - 方块实体NBT：`~ ~ ~::Tag1`
 
   - storageNBT： `foo:bar::Tag1`
 
@@ -167,7 +203,7 @@ scb test "displayname"
 *设置语句*。
 
 ```mcf
-
+scb test default
 scb(deathCount) test default {
     display sidebar
 }
@@ -194,7 +230,7 @@ scb test {
 
 设置的子语句可以加`.`，即如：
 
-```
+```mcf
 scb test {
 	.displayname "分数"
 	.rendertype hearts
@@ -224,10 +260,19 @@ test1@s >< test2@s                    ##交换
 
 支持*完整表达式运算*！按优先级顺序支持`()` `<< >>` `*/%` `+-`并且支持数字
 
-完整表达式必须在`:=`右侧，表达式计算结果将会传给`:=`左边的记分板。如下表达式将被解析为以下命令。
+完整表达式必须在`:=`右侧，表达式计算结果将会传给`:=`左边的记分板。如下表达式将被解析为单条的计算命令（临时计算的记分板名称可以自定义，当遇见常数时还可以设置在常数专用记分板中）。
 
 ```mcf
 ans@s := test2@s + test3@s / test4@s - 5 % test5@s
+
+##以上会被解析成以下：
+scoreboard players operation temp0 justmcf-temp-scoreboard = @s test3
+scoreboard players operation temp0 justmcf-temp-scoreboard /= @s test4
+scoreboard players operation temp0 justmcf-temp-scoreboard += @s test2
+scoreboard players set temp1 justmcf-temp-scoreboard 5
+scoreboard players operation temp1 justmcf-temp-scoreboard %= @s test5
+scoreboard players operation temp0 justmcf-temp-scoreboard -= temp1 justmcf-temp-scoreboard
+scoreboard players operation @s ans = temp0 justmcf-temp-scoreboard
 ```
 
 关于记分板的逻辑简化操作将会再后面的execute简化部分提到。
@@ -262,7 +307,7 @@ scb { @s list}  	##scoreboard players list @s
 运算的对象可以是nbt或者另一个data标识符（即value和from）
 
 ```mcf
-< ~ ~ ~ > ::Base *3                              ##get block
+~ ~ ~ ::Base *3                                  ##get block
 @e[]::Item                                       ##get 
 @e[] |= n{}                                      ##merge
 @e[]::Item |= @s::Item                           ##modify merge from
@@ -492,7 +537,7 @@ JustMCF对于execute做了大幅度简化，并提供了强大的函数分片功
 
 #### 概览
 
-原先命令 
+原先命令
 
 ```mcfunction
 execute as @p store result score @s scb run function foo:test1
@@ -538,11 +583,11 @@ say 1
     at @e[]
     align xyz
     anchored eyes
-    pos < ~ ~ ~ >
+    pos ~ ~ ~
     pos @e[]                           ##position as
-    rot < ~ ~ >
+    rot ~ ~
     rot @e[]                            ##rotated as
-    facing < ~ ~ ~ >				  
+    facing ~ ~ ~				  
     facing @e[] eyes                    ##facing entity
 }->func foo:test
 ```
@@ -560,30 +605,28 @@ JustMCF对if/unless子语句做了极大的简化。
 | 原子命令                        | 舍去标量部分（推荐）               | 舍去if                             | 都舍去                          |
 | ------------------------------- | ---------------------------------- | ---------------------------------- | ------------------------------- |
 | if entity @s                    | if @s                              | entity @s                          | @s                              |
-| if block ~ ~ ~ stone{}          | if < ~ ~ ~ > stone{}               | block < ~ ~ ~ > stone{}            | < ~ ~ ~ > stone{}               |
-| if blocks ~ ~ ~ ~ ~ ~ ~ ~ ~ all | if <~ ~ ~> <~ ~ ~> <~ ~ ~> all     | blocks <~ ~ ~> <~ ~ ~> <~ ~ ~> all | <~ ~ ~> <~ ~ ~> <~ ~ ~> all     |
-| if biome ~ ~ ~ minecraft:beach  | if biome < ~ ~ ~ > minecraft:beach | biome < ~ ~ ~ > minecraft:beach    | biome < ~ ~ ~ > minecraft:beach |
+| if block ~ ~ ~ stone{}          | if ~ ~ ~ stone{}               | block ~ ~ ~ stone{}            | ~ ~ ~ stone{}               |
+| if blocks ~ ~ ~ ~ ~ ~ ~ ~ ~ all | if ~ ~ ~ ~ ~ ~ ~ ~ ~ all     | blocks ~ ~ ~ ~ ~ ~ ~ ~ ~ all | ~ ~ ~ ~ ~ ~ ~ ~ ~ all     |
+| if biome ~ ~ ~ minecraft:beach  | if biome ~ ~ ~ minecraft:beach | biome ~ ~ ~ minecraft:beach    | biome ~ ~ ~ minecraft:beach |
 | if data entity @s Pos           | if @s::Pos                         | data @s::Pos                       | @s::Pos                         |
 | if data storage foo:str Number  | if foo:str::Number                 | data foo:str::Number               | foo:str::Number                 |
-| if data block ~ ~ ~ Text1       | if < ~ ~ ~ >::Text1                | data < ~ ~ ~ >::Text1              | < ~ ~ ~ >::Text1                |
+| if data block ~ ~ ~ Text1       | if ~ ~ ~::Text1                | data ~ ~ ~::Text1              | ~ ~ ~::Text1                |
 | if predicate test:is_use_hand   | if test:is_use_hand                | predicate test:is_use_hand         | test:is_use_hand                |
 | score见下方                     |                                    |                                    |                                 |
 
 </details>
-
-   
 
 简化后，可以很整齐地书写if子命令
 
 ```mcf
 {
     if @e[]                                      ##if entity
-    if < ~ ~ ~ > stone{}                         ##if block
-    if < ~ ~ ~ > < ~ ~ ~ > < ~ ~ ~ > all         ##if blocks
-    if biome < ~ ~ ~ > namespace                 ##if biome
+    if ~ ~ ~ stone{}                             ##if block
+    if ~ ~ ~ ~ ~ ~ ~ ~ ~ all                     ##if blocks
+    if biome ~ ~ ~ namespace                     ##if biome
     if test:is_use_hand						   ##if predicate
     if @e[]::{}                                  ##if data entity
-    if < ~ ~ ~ > ::{}                            ##if data block
+    if ~ ~ ~ ::{}                                ##if data block
     if foo:str::{}                               ##if data storage
     if sb1@e[] >= sb2@s                          ##if score
     if sb1@e[] 2..5                              ##if score xxx matches
@@ -602,12 +645,12 @@ JustMCF将if score语句改进得更像是比较运算符的形式，原先的`=
 
 对于matches命令则可以省略`matches`（其他省略形式同上，不再赘述），并且拥有其他直接使用比较运算符的表示形式
 
-| matches命令           | 省略matches    | 比较运算符形式 |                |
-| --------------------- | -------------- | -------------- | -------------- |
-| if score @s temp 1    | if temp@s 1    | if temp@s == 1 |                |
-| if score @s temp ..1  | if temp@s ..1  | if temp@s <= 1 | if temp@s < 2  |
-| if score @s temp 0..1 | if temp@s 0..1 |                |                |
-| if score @s temp 0..  | if temp@s 0..  | if temp@s >=0  | if temp@s > -1 |
+| 原if score matches命令 | 省略matches    | 比较运算符形式 |                |
+| ---------------------- | -------------- | -------------- | -------------- |
+| if score @s temp 1     | if temp@s 1    | if temp@s == 1 |                |
+| if score @s temp ..1   | if temp@s ..1  | if temp@s <= 1 | if temp@s < 2  |
+| if score @s temp 0..1  | if temp@s 0..1 |                |                |
+| if score @s temp 0..   | if temp@s 0..  | if temp@s >=0  | if temp@s > -1 |
 
 #### 存储语句(store 子语句)
 
@@ -629,7 +672,7 @@ JustMCF将if score语句改进得更像是比较运算符的形式，原先的`=
 {as @p}
 ?=> sb3@s                                    ##store success score
 => sb3@e[]                                   ##store result score
-=> < ~ ~ ~ > ::Base int*3                    ##store result block
+=> ~ ~ ~ ::Base int*3                    ##store result block
 => bossbar foo:bar value                     ##store result bossbar
 => @e[]::XXXX int*3                          ##store result entity
 => foo:storage::XXX int*3                    ##store result storage
@@ -640,7 +683,7 @@ JustMCF将if score语句改进得更像是比较运算符的形式，原先的`=
 
 注意，bossbar关键字不可省略，而如果省略`value`或者`max`，则默认为`value`。
 
-*在任意命令后边也可以跟上存储子命令*
+*在任意命令后边也可以跟上存储子命令*。
 
 ```mcf
 tellraw @s {"text":"hello"} ?=> sb1@s
@@ -713,19 +756,19 @@ exec{ if entity @s as @s store result data entity @s CustomName int 1 } run func
 更直接地说，exec前一个大括号部分就是exist表达式。对于nbt来说，可以直接写在大括号外面。
 
 ```mcf
-{if @e} && {if < ~ ~ ~ > stone} && foo:stor::bool
+{if @e} && {if ~ ~ ~ stone} && foo:stor::bool
 ```
 
 由于存在不同形式的简化语法，实际上，上述语句可以写成
 
 ```mcf
-{entity @e} && {block < ~ ~ ~ > stone} && foo:stor::bool
+{entity @e} && {block ~ ~ ~ stone} && foo:stor::bool
 ```
 
 可以将exist表达式赋值给nbt
 
 ```mcf
-foo:stor::bool_1 = {if @e} && {if < ~ ~ ~ > stone} 
+foo:stor::bool_1 = {if @e} && {if ~ ~ ~ stone} 
 ```
 
 exist表达式值可以为`true`、`false`
@@ -757,7 +800,7 @@ foo:stor::bool_1 = false
 if语句由以下部分组成：
 
 - `if eixst表达式 exec执行部分`
-- `else if eixst表达式 exec执行部分 `
+- `else if eixst表达式 exec执行部分`
 - `else execRun部分`
 
 (注意关键字之间的空格)
@@ -868,17 +911,17 @@ data{
 
 将 `tellraw` `title` `scoreboard` `bossbar`等具有显示作用的命令聚合在一起
 
-TODO: json文本组件增强`j{obj@s}`等价于`{"score":{"name":"@s","objective":"obj"}` 
+TODO: json文本组件增强`j{obj@s}`等价于`{"score":{"name":"@s","objective":"obj"}`
 
 ```mcf
 display{
     @s.text j{}             ## tellraw @s {}
     @s.title j{}            ## title @s title {}
-    @s.title.times 10 70 20
-    @s.title.clear
+    @s.title times 10 70 20 ## title @s times
+    @s.title clear
     @s.title {
-        actionbar j{}
-        times 10 70 20
+        .actionbar j{}
+        .times 10 70 20
     }
     @s.actionbar j{}        ## title @s actionbar {}
     @s.subtitle j{}         ## title @s subtitle {}
@@ -898,27 +941,20 @@ display{
 }
 ```
 
-支持把选择器提出到前面的做法，子内容可以带`.`，也可以不带。
+支持把选择器提出到前面的做法，子内容必须带`.`。
 
 ```mcf
 display @s{
-    text j{}             ## tellraw @s {}
-    title j{}            ## title @s title {}
-    title.times 10 70 20
-    title.clear
-}
-
-display @s{
     .text j{}             ## tellraw @s {}
     .title j{}            ## title @s title {}
-    .title.times 10 70 20
-    .title.clear
+    .title times 10 70 20
+    .title clear
 }
 ```
 
 在`display{}`中也可以选择器提前。
 
-```
+```mcf
 display {
 	@s.text j{}
 	@s {
@@ -929,7 +965,7 @@ display {
 
 #### title命令聚合
 
-title命令也有不带选择器和带选择器形式的聚合，子内容可以带`.`，也可以不带。与display不同的是，`clear` `times`子命令不用加`.title`。
+title命令也有不带选择器和带选择器形式的聚合，子内容必须带`.`。与display不同的是，`clear` `times`子命令不用加`.title`。
 
 ```mcf
 title {
@@ -945,23 +981,18 @@ title {
 
 ```mcf
 title @s{
-    title j{}
-    subtitle j{}
-    actionbar j{}
-    clear
-    reset
-    times 10 70 20
-}
-
-title @s{
-	.title j{}
-	.subtitle j{}
+    .title j{}
+    .subtitle j{}
+    .actionbar j{}
+    .clear
+    .reset
+    .times 10 70 20
 }
 ```
 
 #### bossbar命令聚合
 
-*初始化*
+*初始化*。
 
 ```mcf
 bossbar foo:newboss "New Boss"  ##bossbar add
@@ -972,7 +1003,7 @@ bossbar foo:newboss "New Boss" {
 }
 ```
 
-*设置属性*
+*设置属性*。
 
 ```mcf
 bossbar foo:newboss {
@@ -988,7 +1019,9 @@ bossbar foo:newboss {
 }
 ```
 
-*bossbar表达式*
+设置属性也可以为每一项加`.`。
+
+*bossbar表达式*。
 
 让bossbar像NBT操作那样方便
 
@@ -1010,9 +1043,9 @@ item{
     @e[]::armor.chest += foo:modifier                    ##modify
     @e[] += stone *4                                     ##give
     @e[] -= stone *4                                     ##clear
-    < ~ ~ ~ > =                                   ##loot spawn
-    < ~ ~ ~ > +=                                  ##loot insert
-    < ~ ~ ~ >::container.5 =                      ##loot replace block
+    ~ ~ ~ =                                   ##loot spawn
+    ~ ~ ~ +=                                  ##loot insert
+    ~ ~ ~::container.5 =                      ##loot replace block
     @s +=                                         ##loot give
     @s::container.5 =                             ##loot replace entity
     
@@ -1025,15 +1058,15 @@ item{
 item @s{
 	armor.chest = stone *4
 	armor.chest = @s::armor.chest foo:modifier
-	give stone *4
-	clear stone *4
+	.give stone *4
+	.clear stone *4
 }
 
 item{
 	@s {
 		armor.chest = stone *4
 		armor.chest = @s::armor.chest foo:modifier
-		give stone *4
+		.give stone *4
 	}
 }
 ```
@@ -1042,10 +1075,11 @@ item{
 
 ```mcf
 loot{
-    < ~ ~ ~ > =                                   ##spawn
-    < ~ ~ ~ > +=                                  ##insert
-    < ~ ~ ~ >::container.5 =                      ##replace block
+    ~ ~ ~ =                                   ##spawn
+    ~ ~ ~ +=                                  ##insert
+    ~ ~ ~::container.5 =                      ##replace block
     @s +=                                         ##give
+    @s give									   ##give
     @s::container.5 =                             ##replace entity
 }
 ```
@@ -1054,10 +1088,10 @@ loot{
 
 ```mcf
 loot{
-	@s += loot test:loot_1                            #mine
-	@s += fish test:loot_1 < ~ ~ ~ > mainhand         #fish
-	@s += kill @e[]                                   #kill
-	@s += mine < ~ ~ ~ > mainhand                     #mine
+	@s += loot test:loot_1                            ##mine
+	@s += fish test:loot_1 ~ ~ ~ mainhand             ##fish
+	@s += kill @e[]                                   ##kill
+	@s += mine ~ ~ ~ mainhand                         ##mine
 }
 ```
 
@@ -1065,14 +1099,14 @@ loot{
 
 ```mcf
 loot @s{
-	give test:loot_1
-	container.5 = test:loot_1
+	.give loot test:loot_1                      ##或者直接用+=
+	container.5 = loot test:loot_1
 }
 
 loot{
 	@s {
-		give test:loot_1
-		container.5 = test:loot_1
+		.give loot test:loot_1
+		container.5 = loot test:loot_1
 	}
 }
 ```
@@ -1099,18 +1133,18 @@ scb{
 
 #### 初始化实体
 
-*生成实体*
+*生成实体*。
 
 ```mcf
-entity(pig) < ~ ~ ~ > n{CustomName:"pig1"}               ##summon pig ~ ~ ~ {}
+entity(pig) ~ ~ ~ n{CustomName:"pig1"}               ##summon pig ~ ~ ~ {}
 ```
 
 *初始化使用假名*。解析生成.mcfunction后，实际上指定了uuid，uuid可以在项目文件中配置/自动生成，可以使用@xxxx来选中该实体。
 
 ```mcf
-entity(pig) < ~ ~ ~ > xxxx n{CustomName:"pig1"} 
+entity(pig) ~ ~ ~ xxxx n{CustomName:"pig1"} 
 entity @xxxx{   
-    .tp < ~ ~ ~ >
+    .tp ~ ~ ~
 }
 ```
 
@@ -1118,16 +1152,16 @@ entity @xxxx{
 
 tag前面可以加`.`，但是后续对实体执行操作的语句是必须加`.`
 
-```
-entity(pig) < ~ ~ ~ > xxxx n{CustomName:"pig1"} { tag = tag1,tag2 }
+```mcf
+entity(pig) ~ ~ ~ xxxx n{CustomName:"pig1"} { .tag = tag1,tag2 }
 ```
 
 *初始化后直接进行操作*。可以进行操作的内容见下
 
 ```mcf
-entity(pig) < ~ ~ ~ > xxxx n{CustomName:"pig1"} {
+entity(pig) ~ ~ ~ xxxx n{CustomName:"pig1"} {
 	.tag = tag1,tag2 ##将会解析进初始化语句的nbt中
-	.tag+= temp      ##将会解析为tag add
+	.tag += temp      ##将会解析为tag add
 }
 ```
 
@@ -1139,27 +1173,23 @@ entity(pig) < ~ ~ ~ > xxxx n{CustomName:"pig1"} {
 
 ```mcf
 entity{
-    @s.tp < ~ ~ ~ >                                    ##tp
-    @s.tag+= temp                                      ##tag
-    @s.tag-= temp                                      ##tag
-    @s.effect+= speed(3) 20 true                       ##effect give @s speed 20 3 true
-    @s.effect+= speed 20 3 true
-    @s.effect-= speed                                  ##effect clear @s speed
+    @s.tp ~ ~ ~                                    ##tp
+    @s.tag += temp                                      ##tag
+    @s.tag -= temp                                      ##tag
+    @s.effect += speed(3) 20 true                       ##effect give @s speed 20 3 true
+    @s.effect += speed 20 3 true
+    @s.effect -= speed                                  ##effect clear @s speed
     @s.effect clear
     @s.kill
     @s.item::container.5 =                             ##item 
     @s.loot::container.5 =                             ##loot 也可以写成item
-    item {
-    	< ~ ~ ~ > = loot test:loot_1
-    	< ~ ~ ~ > += loot test:loot_1 
-    }
     @s.item {
     	give loot test:loot_1
-    	give fish test:loot_1 < ~ ~ ~ > mainhand
+    	give fish test:loot_1 ~ ~ ~ mainhand
     }
     @s.loot {
     	give loot test:loot_1
-    	give fish test:loot_1 < ~ ~ ~ > mainhand         
+    	give fish test:loot_1 ~ ~ ~ mainhand         
     }
     @s.attr::generic.attack_damage +=                  ##attr 
 }
@@ -1169,13 +1199,13 @@ entity{
 
 ```mcf
 entity @xxxx{
-    .tp < ~ ~ ~ >
-    .tag+= temp
+    .tp ~ ~ ~
+    .tag += temp
 }
 
 entity {
 	@s {
-		.tag+= temp
+		.tag += temp
 	}
 }
 ```
@@ -1220,9 +1250,9 @@ attr{
 
 ```mcf
 block{
-    < ~ ~ ~ > minecraft:stone[] keep                    ##setblock
-    < ~ ~ ~ > < ~ ~ ~ > minecraft:stone[] keep          ##fill
-    < ~ ~ ~ > < ~ ~ ~ > < ~ ~ ~ > filtered oak_planks   ##clone
+    ~ ~ ~ minecraft:stone[] keep                    ##setblock
+    ~ ~ ~ ~ ~ ~ minecraft:stone[] keep          ##fill
+    ~ ~ ~ ~ ~ ~ ~ ~ ~ filtered oak_planks   ##clone
 }
 ```
 
@@ -1351,7 +1381,7 @@ JustMCF提供了带有参数的函数语法。这样的函数将会附带生成�
 
 在函数中，不带命名空间ID的storage操作都被默认为在当前函数栈操作；也可以将`local::`加到它的前缀上。对于栈的根标签的访问，可以用`local::{}`的方式进行，以防止使用`{}`形成的歧义。
 
-*不带类型标记的函数*
+*不带类型标记的函数*。
 
 ```mcf
 func test:fun1(a,b){
@@ -1364,7 +1394,7 @@ func test:fun1(a,b){
 
 `return`（TODO）
 
-*函数执行*
+*函数执行*。
 
 ```mcf
 foo:test::value = func test:func1(a,b)
@@ -1372,15 +1402,13 @@ foo:test::value = func test:func1(a,b)
 
 函数的执行语句可以作为NBT操作的右值参与运算。
 
-*带类型标记的函数（TODO）*
+*带类型标记的函数（TODO）*。
 
 ```mcf
 func test:func1(int a,int b) int {
 	
 }
 ```
-
-
 
 ## .mcf文件的开始
 
@@ -1426,4 +1454,3 @@ func setPlayerAge(player,age){
 
 }
 ```
-

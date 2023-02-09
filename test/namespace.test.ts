@@ -1,8 +1,5 @@
 import { test } from "vitest";
 import { execute } from '../src/ManageSimplify';
-import { registerOnArray } from '../src/lib/ArrayHelper';
-
-registerOnArray()
 
 test('Namespace', () => {
     execute`
@@ -26,24 +23,24 @@ test('Namespace', () => {
         entity = test_entity
     ]{ ##除了括号设置的外，其他默认命名空间为test
         func foo2{
-            {if < ~ ~ ~ > stone if pre if biome bio in dimm }-> 
+            {if ~ ~ ~ stone if pre if biome bio in dimm }-> 
                 io::input = 1b => bossbar test 
             @s.give diamond *1
-            @s.loot += testloot1
+            @s.loot += loot testloot1
             @s.item::armor.legs += testitemmodifier1
-            entity(pig) < ~ ~ ~ >
+            entity(pig) ~ ~ ~
             
         }
     }
     
     namsp test[default = yuushya]{ ##除了func和storage设置为test外，其他设置为yuushya
         func foo3{
-            {if < ~ ~ ~ > stone if pre if biome bio in dimm }-> 
+            {if ~ ~ ~ stone if pre if biome bio in dimm }-> 
                 io::input = 1b => bossbar test 
             @s.give diamond *1
-            @s.loot += testloot1
+            @s.loot += loot testloot1
             @s.item::armor.legs += testitemmodifier1
-            entity(pig) < ~ ~ ~ >
+            entity(pig) ~ ~ ~
             
         }
     }
@@ -51,24 +48,24 @@ test('Namespace', () => {
     
     namsp test[default]{ ##除了func和storage设置为test外，其他设置为minecraft
         func foo4{
-            {if < ~ ~ ~ > stone if pre if biome bio in dimm }-> 
+            {if ~ ~ ~ stone if pre if biome bio in dimm }-> 
                 io::input = 1b => bossbar test 
             @s.give diamond *1
-            @s.loot += testloot1
+            @s.loot += loot testloot1
             @s.item::armor.legs += testitemmodifier1
-            entity(pig) < ~ ~ ~ >
+            entity(pig) ~ ~ ~
             
         }
     }
     
     namsp [func = test]{ ##只有func设置为test
         func foo5{
-            {if < ~ ~ ~ > stone if pre if biome bio in dimm }-> 
+            {if ~ ~ ~ stone if pre if biome bio in dimm }-> 
                 io::input = 1b => bossbar test 
             @s.give diamond *1
-            @s.loot += testloot1
+            @s.loot += loot testloot1
             @s.item::armor.legs += testitemmodifier1
-            entity(pig) < ~ ~ ~ >
+            entity(pig) ~ ~ ~
             
         }
     }    
