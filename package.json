@@ -1,6 +1,6 @@
 {
   "name": "just-mcf",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A language framework on Minecraft Java Edition datapack mcfunction improvement",
   "keywords": [
     "cli",
@@ -26,11 +26,11 @@
   ],
   "scripts": {
     "antlr": "antlr4ts -o ./src/antlr -visitor ./antlr/JustMCF.g4",
-    "build": "tsc",
+    "build": "tsc && ts-node-esm ./src/lib/JSExtUtils.ts ./build",
     "typecheck": "tsc --noEmit",
     "watch": "tsc --watch",
     "start": "node ./build/index.js init",
-    "quick-start": "ts-node-esm ./src/index.ts init",
+    "quick-start": "ts-node-esm --experimental-specifier-resolution=node ./src/index.ts init",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run"
