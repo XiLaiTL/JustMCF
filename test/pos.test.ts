@@ -1,5 +1,5 @@
 import { test } from "vitest";
-import { execute } from '../src/ManageSimplify';
+import { execute } from '../src/ManageSimplify.js';
 
 test('All Pos', () => {
     execute`

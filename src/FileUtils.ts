@@ -1,4 +1,4 @@
-import { JustMCFResult, } from './JustMCFResult';
+import { JustMCFResult, } from './JustMCFResult.js';
 import { fileURLToPath } from 'node:url'
 import { join, dirname, extname, basename } from 'node:path'
 import { readFile, cp, writeFile, access, mkdir, appendFile, readdir, lstat, rm } from 'node:fs/promises'

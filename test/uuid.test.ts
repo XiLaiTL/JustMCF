@@ -1,4 +1,4 @@
-import { UUID } from '../src/lib/UUIDUtils';
+import { UUID } from '../src/lib/UUIDUtils.js';
 import { test, expect } from 'vitest';
 
 test('random UUID Hex', () => {

@@ -11,7 +11,7 @@ export default defineConfig({
         },
         rollupOptions: {
             output: {
-                banner: "#!/usr/bin/env node --experimental-specifier-resolution=node",
+                banner: "#!/usr/bin/env node",
             }
         }
     }

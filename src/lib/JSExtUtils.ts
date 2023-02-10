@@ -12,7 +12,7 @@ async function addJsExt(path: string) {
         if (stat.isDirectory()) {
             await addJsExt(pathNew)
         }
-        else if (stat.isFile() && extname(fileName) == ".js") {
+        else if (stat.isFile() && extname(fileName) == ".ts") {
             const codes = await readFile(pathNew, { encoding: 'utf-8' }).catch(err=>{throw err})
             await writeFile(pathNew, codes.replace(regexpNames,"$1$2$3.js$6"), {encoding: "utf8"}).catch(err=>{throw err})
         }

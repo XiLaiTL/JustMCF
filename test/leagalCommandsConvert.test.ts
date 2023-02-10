@@ -1,6 +1,6 @@
 import { expect, test } from 'vitest'
-import { convertBackLeagalCommands, convertLeagalCommands } from '../src/ManageLeagalCommand'
-import { execute } from '../src/ManageSimplify';
+import { convertBackLeagalCommands, convertLeagalCommands } from '../src/ManageLeagalCommand.js'
+import { execute } from '../src/ManageSimplify.js';
 
 test('Leagal Commands Convert', () => {
     const str = convertLeagalCommands(`

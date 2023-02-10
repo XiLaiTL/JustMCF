@@ -1,7 +1,7 @@
 import { test } from "vitest";
-//import { } from "../src/@types/ArrayTypes";
-import { registerOnArray } from "../src/lib/ArrayHelper";
-import { toSnakeCase } from '../src/lib/StringUtils';
+//import { } from "../src/@types/ArrayTypes.js";
+import { registerOnArray } from "../src/lib/ArrayHelper.js";
+import { toSnakeCase } from '../src/lib/StringUtils.js';
 
 registerOnArray()
 

@@ -1,13 +1,13 @@
 #!/usr/bin/env node
 import { Command } from 'commander'
-import { readPackageJSON } from 'pkg-types'
+import { readPackage } from 'read-pkg';
 import i18n from 'i18next';
 import FsBackend, { FsBackendOptions } from 'i18next-fs-backend'
 import inquirer from 'inquirer'
-import { toAbsolutionPath, FileUtils,  getTargetPathDifferent } from './FileUtils';
-import { option, defaultOption, JustMCFResult } from './JustMCFResult';
-import { toSnakeCase } from './lib/StringUtils';
-import { build, execute } from './ManageSimplify';
+import { toAbsolutionPath, FileUtils,  getTargetPathDifferent } from './FileUtils.js';
+import { option, defaultOption, JustMCFResult } from './JustMCFResult.js';
+import { toSnakeCase } from './lib/StringUtils.js';
+import { build, execute } from './ManageSimplify.js';
 
 await i18n
     .use(FsBackend)
@@ -197,7 +197,7 @@ const BuildAction = async (source_path: string, target_path: string) => {
     await fileUtils.createMcfMcmeta()
 }
 
-const pkg = await readPackageJSON(toAbsolutionPath('../package.json'))
+const pkg = await readPackage()
 const program = new Command("mcf").description(pkg.description!!).version(pkg.version!!)
 const pathNow = process.cwd()
 program.command("init")

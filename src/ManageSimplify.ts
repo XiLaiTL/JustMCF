@@ -1,10 +1,10 @@
 import { CharStreams, CommonTokenStream } from 'antlr4ts'; 
-import { evalAndReplace } from './ManageEvalScript';
-import { JustMCFLexer } from './antlr/JustMCFLexer';
-import { JustMCFParser } from './antlr/JustMCFParser';
-import { JustMCFSimplifyVisitor } from './JustMCFSimplifyVisitor';
-import { convertBackLeagalCommands, convertLeagalCommands } from './ManageLeagalCommand';
-import { JustMCFResult } from './JustMCFResult';
+import { evalAndReplace } from './ManageEvalScript.js';
+import { JustMCFLexer } from './antlr/JustMCFLexer.js';
+import { JustMCFParser } from './antlr/JustMCFParser.js';
+import { JustMCFSimplifyVisitor } from './JustMCFSimplifyVisitor.js';
+import { convertBackLeagalCommands, convertLeagalCommands } from './ManageLeagalCommand.js';
+import { JustMCFResult } from './JustMCFResult.js';
 
 
 export function execute(code: TemplateStringsArray | string) {

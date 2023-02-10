@@ -1,6 +1,6 @@
 {
   "name": "just-mcf",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A language framework on Minecraft Java Edition datapack mcfunction improvement",
   "keywords": [
     "cli",
@@ -26,7 +26,8 @@
   ],
   "scripts": {
     "antlr": "antlr4ts -o ./src/antlr -visitor ./antlr/JustMCF.g4",
-    "build": "tsc && ts-node-esm ./src/lib/JSExtUtils.ts ./build",
+    "convert-to-esm": " ts-node-esm ./src/lib/JSExtUtils.ts ./src/antlr",
+    "build": "tsc",
     "typecheck": "tsc --noEmit",
     "watch": "tsc --watch",
     "start": "node ./build/index.js init",
@@ -42,7 +43,7 @@
     "i18next": "^22.4.9",
     "i18next-fs-backend": "^2.1.1",
     "inquirer": "^9.1.4",
-    "pkg-types": "^1.0.1",
+    "read-pkg": "^7.1.0",
     "typescript": "^4.9.4"
   },
   "devDependencies": {
