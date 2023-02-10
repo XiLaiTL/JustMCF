@@ -174,7 +174,7 @@ null
 'while'
 'else'
 'for'
-'yeild'
+'yield'
 'break'
 'return'
 'replaced'
@@ -368,7 +368,7 @@ INTERFACE
 WHILE
 ELSE
 FOR
-YEILD
+YIELD
 BREAK
 RETURN
 REPLACED
@@ -404,7 +404,7 @@ funcStatement
 funcImproveStatement
 funcImproveParam
 funcImproveStatementInner
-yeildStatement
+yieldStatement
 funcRunStatement
 funcImproveRunStatement
 funcImproveRunExpression

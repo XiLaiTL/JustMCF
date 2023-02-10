@@ -269,7 +269,7 @@ import { FuncStatementContext } from "./JustMCFParser.js";
 import { FuncImproveStatementContext } from "./JustMCFParser.js";
 import { FuncImproveParamContext } from "./JustMCFParser.js";
 import { FuncImproveStatementInnerContext } from "./JustMCFParser.js";
-import { YeildStatementContext } from "./JustMCFParser.js";
+import { YieldStatementContext } from "./JustMCFParser.js";
 import { FuncRunStatementContext } from "./JustMCFParser.js";
 import { FuncImproveRunStatementContext } from "./JustMCFParser.js";
 import { FuncImproveRunExpressionContext } from "./JustMCFParser.js";
@@ -2526,11 +2526,11 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitFuncImproveStatementInner?: (ctx: FuncImproveStatementInnerContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `JustMCFParser.yeildStatement`.
+	 * Visit a parse tree produced by `JustMCFParser.yieldStatement`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	visitYeildStatement?: (ctx: YeildStatementContext) => Result;
+	visitYieldStatement?: (ctx: YieldStatementContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.funcRunStatement`.

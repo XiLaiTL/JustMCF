@@ -190,7 +190,7 @@ export class JustMCFLexer extends Lexer {
 	public static readonly WHILE = 172;
 	public static readonly ELSE = 173;
 	public static readonly FOR = 174;
-	public static readonly YEILD = 175;
+	public static readonly YIELD = 175;
 	public static readonly BREAK = 176;
 	public static readonly RETURN = 177;
 	public static readonly REPLACED = 178;
@@ -243,7 +243,7 @@ export class JustMCFLexer extends Lexer {
 		"GIVE", "CLEAR", "FISH", "KILL", "MINE", "MAINHAND", "OFFHAND", "EFFECT", 
 		"TAG", "TP", "GET", "ATTR", "BASE", "DESTROY", "KEEP", "REPLACE", "HOLLOW", 
 		"OUTLINE", "FORCE", "MOVE", "NORMAL", "FILTERED", "INTERFACE", "WHILE", 
-		"ELSE", "FOR", "YEILD", "BREAK", "RETURN", "REPLACED", "DIM", "DIMENSION", 
+		"ELSE", "FOR", "YIELD", "BREAK", "RETURN", "REPLACED", "DIM", "DIMENSION", 
 		"ITEM_MODIFIER", "Pos1", "BYTE", "SHORT", "INT_", "LONG", "FLOAT", "DOUBLE", 
 		"AcceptableName", "NBTName", "SelectorWithParams",
 	];
@@ -273,7 +273,7 @@ export class JustMCFLexer extends Lexer {
 		"'mine'", "'mainhand'", "'offhand'", "'effect'", "'tag'", "'tp'", "'get'", 
 		"'attr'", "'base'", "'destroy'", "'keep'", "'replace'", "'hollow'", "'outline'", 
 		"'force'", "'move'", "'normal'", "'filtered'", "'interface'", "'while'", 
-		"'else'", "'for'", "'yeild'", "'break'", "'return'", "'replaced'", "'dim'", 
+		"'else'", "'for'", "'yield'", "'break'", "'return'", "'replaced'", "'dim'", 
 		"'dimension'", "'item_modifier'", undefined, "'byte'", "'short'", "'int'", 
 		"'long'", "'float'", "'double'",
 	];
@@ -302,7 +302,7 @@ export class JustMCFLexer extends Lexer {
 		"CLEAR", "FISH", "KILL", "MINE", "MAINHAND", "OFFHAND", "EFFECT", "TAG", 
 		"TP", "GET", "ATTR", "BASE", "DESTROY", "KEEP", "REPLACE", "HOLLOW", "OUTLINE", 
 		"FORCE", "MOVE", "NORMAL", "FILTERED", "INTERFACE", "WHILE", "ELSE", "FOR", 
-		"YEILD", "BREAK", "RETURN", "REPLACED", "DIM", "DIMENSION", "ITEM_MODIFIER", 
+		"YIELD", "BREAK", "RETURN", "REPLACED", "DIM", "DIMENSION", "ITEM_MODIFIER", 
 		"Pos1", "BYTE", "SHORT", "INT_", "LONG", "FLOAT", "DOUBLE", "AcceptableName", 
 		"NBTName", "SelectorWithParams",
 	];
@@ -1639,7 +1639,7 @@ export class JustMCFLexer extends Lexer {
 		"\u0A49\u0A4A\x07n\x02\x02\u0A4A\u0A4B\x07u\x02\x02\u0A4B\u0A4C\x07g\x02" +
 		"\x02\u0A4C\u016E\x03\x02\x02\x02\u0A4D\u0A4E\x07h\x02\x02\u0A4E\u0A4F" +
 		"\x07q\x02\x02\u0A4F\u0A50\x07t\x02\x02\u0A50\u0170\x03\x02\x02\x02\u0A51" +
-		"\u0A52\x07{\x02\x02\u0A52\u0A53\x07g\x02\x02\u0A53\u0A54\x07k\x02\x02" +
+		"\u0A52\x07{\x02\x02\u0A52\u0A53\x07k\x02\x02\u0A53\u0A54\x07g\x02\x02" +
 		"\u0A54\u0A55\x07n\x02\x02\u0A55\u0A56\x07f\x02\x02\u0A56\u0172\x03\x02" +
 		"\x02\x02\u0A57\u0A58\x07d\x02\x02\u0A58\u0A59\x07t\x02\x02\u0A59\u0A5A" +
 		"\x07g\x02\x02\u0A5A\u0A5B\x07c\x02\x02\u0A5B\u0A5C\x07m\x02\x02\u0A5C" +

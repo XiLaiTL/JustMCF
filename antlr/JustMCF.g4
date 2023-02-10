@@ -103,10 +103,10 @@ funcImproveParam
     ;
 funcImproveStatementInner
     : statementInner
-    | yeildStatement
+    | yieldStatement
     ;
-yeildStatement
-    : YEILD dataIdentifier
+yieldStatement
+    : YIELD dataIdentifier
     ;
 funcRunStatement
     : FUNC nameSpaceFunc
@@ -767,7 +767,7 @@ key:  NAMSP|NAMESPACE|LOCAL
     | EFFECT | TAG |TP
     | ATTR|BASE|DESTROY|KEEP|REPLACE|HOLLOW|OUTLINE|FORCE|MOVE|NORMAL |GET
     | INTERFACE
-    | WHILE|FOR|YEILD|BREAK|RETURN
+    | WHILE|FOR|YIELD|BREAK|RETURN
     | FILTERED
     | REPLACED
     | DIM|DIMENSION|ITEM_MODIFIER
@@ -889,7 +889,7 @@ INTERFACE:'interface';
 WHILE:'while';
 ELSE: 'else';
 FOR:'for';
-YEILD:'yeild';
+YIELD:'yield';
 BREAK:'break';
 RETURN:'return';
     
