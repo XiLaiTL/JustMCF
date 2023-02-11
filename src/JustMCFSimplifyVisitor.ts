@@ -101,6 +101,10 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     createInitFunc() {
         const initNamespaceId = `${this.option.namespace?.func}:init`
         if (this.mcfunctionLines[initNamespaceId] === undefined) this.mcfunctionLines[initNamespaceId] = []
+        if (this.constScbInitFunc.length > 0) 
+            this.mcfunctionLines[initNamespaceId].push(`scoreboard objectives add ${this.option.scbExpression?.constNumberScbObjectiveName} dummy "const nummber scoreboard"`)
+        if (this.tempScbTargetName.length > 0) 
+            this.mcfunctionLines[initNamespaceId].push(`scoreboard objectives add ${this.option.scbExpression?.tempScbObjectiveName} dummy "temp scoreboard" `)
         for (const num of this.constScbInitFunc) {
             this.mcfunctionLines[initNamespaceId].push(`scoreboard players set ${num} ${this.option.scbExpression?.constNumberScbObjectiveName} ${num}`)
         }
@@ -153,7 +157,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     
     visitSelector(ctx: SelectorContext) {
         if (/^@s$/.test(ctx.text)) { return [ctx.text, "final"] }
-        else if (/@[parse]/.test(ctx.text)) {
+        else if (/@[parse](?=(\[|$))/.test(ctx.text)) {
             return [ctx.text,"nest"]
         }
         else {
@@ -529,7 +533,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitExecPredicate(ctx: ExecPredicateContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} predicate ${this.v(ctx.nameSpacePredicate())}`] }
     visitExecIfBlock(ctx: ExecIfBlockContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} block ${this.v(ctx.pos3Identifier())} ${this.v(ctx.blockIdentifier())}`] }
     visitExecIfBlocks(ctx: ExecIfBlocksContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} blocks ${this.v(ctx.pos3Identifier(0))} ${this.v(ctx.pos3Identifier(1))} ${this.v(ctx.pos3Identifier(2))}`] }
-    visitExecIfData(ctx: ExecIfDataContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} ${this.v(ctx.dataIdentifier())}`] }
+    visitExecIfData(ctx: ExecIfDataContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} data ${this.v(ctx.dataIdentifier())}`] }
     visitExecIfBiome(ctx: ExecIfBiomeContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} biome ${this.v(ctx.pos3Identifier())} ${this.v(ctx.nameSpaceBiome())}`] }
     visitExecStore(ctx: ExecStoreContext) { return this.visit(ctx.execStoreChild()) }
     visitMatchPart(ctx: MatchPartContext) { return [ctx.text] }
@@ -1271,7 +1275,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
 
     visitSelectorCompound(ctx:SelectorCompoundContext,nodes: ParseTree[]) {
         const [selector, mode] = this.visit(ctx.selector())
-        if (mode == "final") {
+        if (mode == "final"||nodes.length==1) {
             return nodes.flatMap(context =>
                 this.visit(context).map(command => command.replace("$$", selector)))
         }

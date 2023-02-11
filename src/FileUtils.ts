@@ -1,11 +1,15 @@
 import { JustMCFResult, } from './JustMCFResult.js';
 import { fileURLToPath } from 'node:url'
-import { join, dirname, extname, basename } from 'node:path'
+import { join, dirname, extname, basename, isAbsolute } from 'node:path'
 import { readFile, cp, writeFile, access, mkdir, appendFile, readdir, lstat, rm } from 'node:fs/promises'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
-export function toAbsolutionPath(path: string) {
+export function toSrcAbsolutionPath(path: string) {
     return join(__dirname, path)
+}
+export function toCwdAbsolutionPath(path: string) {
+    if (isAbsolute(path)) return path;
+    else return join(process.cwd(),path)
 }
 
 export function getTargetPathDifferent() {

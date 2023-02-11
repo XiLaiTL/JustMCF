@@ -32,12 +32,15 @@
   "init.file.mode_append": "追加到原文件末尾",
   "init.file.mode_prepend": "添加到原文件头部",
   "init.description": "初始化JustMCF的项目设置",
-  "init.entity_name_map":"JustMCF提供了实体名称和uuid的映射表，在解析为mcfunction过程中会自动生成映射表，也可以手动编辑，本次初始化略过。",
+  "init.entity_name_map": "JustMCF提供了实体名称和uuid的映射表，在解析为mcfunction过程中会自动生成映射表，也可以手动编辑，本次初始化略过。",
   "build.source_path.as_source_path": "未提供源地址，是否以执行目录为源地址？",
   "build.source_path.new_source_path": "请键入源路径",
   "build.target_path.new_source_path": "请键入输出地址",
   "build.target_path.as_target_path": "未提供输出地址，是否将执行目录作为目标地址？（不建议这么做）",
   "build.pack_mcmeta": "源地址不是一个有效的Minecraft数据包",
   "init.finish": "初始化完成！祝您拥有良好体验！",
-  "build.mcf_mcmeta": "源地址不是一个有效的JustMCF项目，是否执行初始化程序？"
+  "build.mcf_mcmeta": "源地址不是一个有效的JustMCF项目，是否执行初始化程序？",
+  "init.inquirer_again": "是否在build命令没有填写源地址或者目的地址时发起询问？选否将在这种情况下采用默认地址。",
+  "init.choose.simple": "是否使用默认参数进行项目初始化？",
+  "conf.lang": "设置命令行的提示语言，以及是否再次询问"
 }

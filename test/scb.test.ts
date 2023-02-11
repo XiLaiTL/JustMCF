@@ -45,8 +45,10 @@ func test:scb_expression{
     test@s -=1                            ##remove
     test@s =1                             ##set
     test@s reset                          ##reset
-    test@s enable					    ##enable
+    test@s enable					      ##enable
     test@s                                ##get
+    test@s *= 10                          ##operation 并使用了临时记分板或者常量记分板
+    test@s /= 10   
     test1@s += test2@s                    ##operation
     test1@s -= test2@s
     test1@s *= test2@s

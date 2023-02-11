@@ -1,7 +1,12 @@
 # JustMCF
+
+<details><summary>目录</summary>
 <!-- TOC -->
 
 - [JustMCF](#justmcf)
+  - [JustMCF Cli 命令行工具](#justmcf-cli-%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%B7%A5%E5%85%B7)
+    - [Install 安装](#install-%E5%AE%89%E8%A3%85)
+    - [Usage 使用](#usage-%E4%BD%BF%E7%94%A8)
   - [谁适合使用本项目？](#%E8%B0%81%E9%80%82%E5%90%88%E4%BD%BF%E7%94%A8%E6%9C%AC%E9%A1%B9%E7%9B%AE)
   - [项目文件结构](#%E9%A1%B9%E7%9B%AE%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84)
   - [标识符](#%E6%A0%87%E8%AF%86%E7%AC%A6)
@@ -66,6 +71,7 @@
   - [mcf文件的开始](#mcf%E6%96%87%E4%BB%B6%E7%9A%84%E5%BC%80%E5%A7%8B)
 
 <!-- /TOC -->
+</details>
 
 JustMCF是一个简化mcfunction工程的项目。使用JustMCF，你不但可以使用**原版的命令**，还可以使用项目设计的**简化命令**，可以使你的命令更加简洁高效。
 
@@ -89,6 +95,72 @@ JustMCF是一个简化mcfunction工程的项目。使用JustMCF，你不但可�
 - [ ] 整理各个命令的标识符
 - [ ] 选择器的解析
 - [ ] 全部命令的解析支持
+
+## JustMCF Cli 命令行工具
+
+### Install 安装
+
+本项目需要首先安装[Node.js](https://nodejs.org/en/)。
+
+如果已经安装完成，请打开命令行（在Windows下可以是命令提示符cmd、powershell；在Linux下可以是shell、zsh；在macOS下可以是终端Terminal）输入`node -v`，验证是否已经配置好Path变量，如果显示安装的Node.js版本号，则证明安装完成。请继续在命令行中输入：
+
+```bash
+npm install -g just-mcf
+```
+
+如果您已经安装，需要更新版本，则请输入：
+
+```bash
+npm update -g just-mcf
+```
+
+### Usage 使用
+
+在您的工作文件夹中打开命令行窗口（或者打开命令行窗口cd到工作文件夹中）。
+
+#### *初始化项目*。设置JustMCF项目的一些编译选项
+
+```bash
+npx mcf init
+```
+
+初始化完成后，将在工作文件夹中创建`mcf.mcmeta`文件，这里包含JustMCF项目的各种设置。具体配置项请见附录。
+
+#### *编译项目*。将JustMCF项目输出为Minecraft JE 数据包
+
+```bash
+npx mcf build [<source_path>] [-o <target_path>]
+
+//或者：
+
+npx mcf build [<source_path>] [--output <target_path>]
+
+```
+
+其中`[]`标记的部分是可选的。
+
+`<source_path>` 编译的源地址，不填写则为当前命令行执行目录。
+
+`<target_path>` 编译的目的地址，不填写则为执行目录的兄弟output文件夹。例如执行目录为`/foo/test`,则目的地址为`/foo/test_output`。
+
+路径都可以添加相对地址，用`./`索引到执行目录的子文件或文件夹，用`../`索引到执行目录的同级文件夹，例如`npx mcf build -o .`即输出到执行目录，当然这是不推荐的；`npx mcf build -o ../output`即输出到执行目录的兄弟文件夹output中。
+
+一般来说，源地址填写工作路径，目的地址填写`.minecraft/saves/datapacks/`下的文件夹，这样子输出后可以直接reload查看运行情况以方便调试。
+
+可以编写一个bat文件放在工作文件夹下，内容就填写：
+
+```bat
+npx mcf build -o xxxx/.minecraft/saves/datapacks/test
+pause
+```
+
+#### *调整全局设置*。设置命令行的全局参数
+
+```bash
+npx mcf conf
+```
+
+目前可以设置命令行的语言和编译缺少参数时是否进行询问。
 
 ## 谁适合使用本项目？
 
@@ -248,6 +320,8 @@ test@s =1                             ##set
 test@s reset                          ##reset
 test@s enable					    ##enable
 test@s                                ##get
+test@s *= 10                          ##operation 并使用了临时记分板或者常量记分板
+test@s /= 10                          
 test1@s += test2@s                    ##operation
 test1@s -= test2@s
 test1@s *= test2@s
@@ -1454,3 +1528,5 @@ func setPlayerAge(player,age){
 
 }
 ```
+
+## 附录：mcf.mcmeta配置项说明

@@ -32,12 +32,15 @@
   "init.file.mode_append": "Append to the end",
   "init.file.mode_prepend": "Prepend to the beginning",
   "init.description": "Initialize the JustMCF project",
-  "init.entity_name_map":"JustMCF supports the map from entity name to uuid, which would be generated automatically or edited in the mcf.mcmeta file manually. The setting was skip.",
+  "init.entity_name_map": "JustMCF supports the map from entity name to uuid, which would be generated automatically or edited in the mcf.mcmeta file manually. The setting was skip.",
   "build.source_path.as_source_path": "Building need source path. Do you want to let the execute path as the source path? ",
   "build.source_path.new_source_path": "Please input the source path",
   "build.target_path.new_source_path": "Please input the output target path",
   "build.target_path.as_target_path": "Building need output target path. Do you want to let the execute path as the target path? (not commended) ",
   "build.pack_mcmeta": "There was not a minecraft data pack in the source path!",
   "init.finish": "Init Finished! Have a good time!",
-  "build.mcf_mcmeta": "There was not a JustMCF project in the source path. Do you want to init it?"
+  "build.mcf_mcmeta": "There was not a JustMCF project in the source path. Do you want to init it?",
+  "init.inquirer_again": "If you do not put in the source path or target path, should ask you again? If not, it will use default path. ",
+  "init.choose.simple": "Do you want to initialize the project with template?",
+  "conf.lang": "choose your language and set whether it inquirer again"
 }

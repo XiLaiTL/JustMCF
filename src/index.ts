@@ -2,37 +2,48 @@
 import { Command } from 'commander'
 import { readPackage } from 'read-pkg';
 import i18n from 'i18next';
+import Conf from 'conf';
 import FsBackend, { FsBackendOptions } from 'i18next-fs-backend'
 import inquirer from 'inquirer'
-import { toAbsolutionPath, FileUtils,  getTargetPathDifferent } from './FileUtils.js';
+import { toSrcAbsolutionPath, FileUtils,  getTargetPathDifferent,toCwdAbsolutionPath } from './FileUtils.js';
 import { option, defaultOption, JustMCFResult } from './JustMCFResult.js';
 import { toSnakeCase } from './lib/StringUtils.js';
 import { build, execute } from './ManageSimplify.js';
+
+const pkg = await readPackage({cwd:toSrcAbsolutionPath("../")})
+const schema = {
+    lang: { enum: ["zh-CN", "en","none"], default:"none" },
+    inquirerAgain:{ type:"boolean",default:true }
+}
+const config = new Conf({projectName:pkg.name,schema})
 
 await i18n
     .use(FsBackend)
     //.use(resourcesToBackend((language:string,namespace:string)=>import(`./locales/${language}.json`,{ assert: { type: 'json' } })))
     .init<FsBackendOptions>({
         backend: {
-            loadPath:toAbsolutionPath('./locales/{{lng}}.json'),
+            loadPath:toSrcAbsolutionPath('./locales/{{lng}}.json'),
         },
         lng: 'en',
         fallbackLng: 'en',
         supportedLngs: ['en', 'zh-CN']
     });
 
-const ChooseLanguageAction = async () => {
-    await inquirer.prompt([
-        {
-            name: "lang",
-            type: "list",
-            choices: ["en", "zh-CN"],
-            default: "en",
-            message:i18n.t("init.choose.lang")
-        }
-    ]).then(async ({ lang }) => {
-        await i18n.changeLanguage(lang)
-    })
+const ChooseLanguageAction = async ( again = false) => {
+    if (config.get("lang") == "none" || again) {
+        await inquirer.prompt([
+            {
+                name: "lang",
+                type: "list",
+                choices: ["en", "zh-CN"],
+                default: "en",
+                message:i18n.t("init.choose.lang")
+            }
+        ]).then(async ({ lang }) => {
+            config.set("lang",lang)
+        })
+    }
+    await i18n.changeLanguage(config.get("lang") as string)
 }
 
 const InitAction = async () => {
@@ -40,62 +51,74 @@ const InitAction = async () => {
     
     const option: option = defaultOption()
     
-    let sectionName: keyof option
-    const allList: any[][] = []
-    const sectionNameList: string[] = []; let sec = 0;
-    for (sectionName in option) {
-        if(sectionName == "file") continue
-        const sectionInformationName =`init.${toSnakeCase(sectionName)}`
-        //console.log(sectionInformationName)
-        sectionNameList.push(i18n.t(sectionInformationName))
+    const { simpleMode} = await inquirer.prompt([{
+        name: "simpleMode",
+        type: "confirm",
+        default: false,
+        message:i18n.t('init.choose.simple')
+    }])
+
+    if (simpleMode) {
         
-        const promptList: any = []
-        const sectionObj = option[sectionName]
-        for (const keyName in sectionObj) {
-            const value = sectionObj[keyName as keyof typeof sectionObj]
-            const valueType = typeof value
-            const messageName = `${sectionInformationName}.${toSnakeCase(keyName)}`
-            //console.log(messageName)
-            promptList.push(
-                {
-                    name: keyName,
-                    type: valueType == "boolean" ? "confirm" : "input",
-                    default: value,
-                    message: i18n.t(messageName) 
-                })
+    }
+    else {
+        let sectionName: keyof option
+        const allList: any[][] = []
+        const sectionNameList: string[] = []; let sec = 0;
+        for (sectionName in option) {
+            if(sectionName == "file") continue
+            const sectionInformationName =`init.${toSnakeCase(sectionName)}`
+            //console.log(sectionInformationName)
+            sectionNameList.push(i18n.t(sectionInformationName))
+            
+            const promptList: any = []
+            const sectionObj = option[sectionName]
+            for (const keyName in sectionObj) {
+                const value = sectionObj[keyName as keyof typeof sectionObj]
+                const valueType = typeof value
+                const messageName = `${sectionInformationName}.${toSnakeCase(keyName)}`
+                //console.log(messageName)
+                promptList.push(
+                    {
+                        name: keyName,
+                        type: valueType == "boolean" ? "confirm" : "input",
+                        default: value,
+                        message: i18n.t(messageName) 
+                    })
+            }
+            allList.push(promptList)
         }
-        allList.push(promptList)
-    }
-    
-    for (const promptList of allList) {
-        console.log(sectionNameList[sec++])
-        await inquirer.prompt(promptList).then(ans => { option[sectionName] = ans })
-    }
-    console.log(i18n.t('init.file'))
-    const modeChoices = [
-        { name: i18n.t('init.file.mode_cover'), value: "cover" },
-        { name: i18n.t('init.file.mode_skip'), value: "skip" },
-        { name: i18n.t('init.file.mode_append'), value: "append" },
-        { name: i18n.t('init.file.mode_prepend'), value: "prepend" },
-    ]
-    await inquirer.prompt([
-        {
-            name: "mcfunctionGenerateMode",
-            type: "list",
-            choices: modeChoices,
-            default: "cover",
-            message:i18n.t("init.file.mcfunction_generate_mode")
-        },
-        {
-            name: "functionTagGenerateMode",
-            type: "list",
-            choices: modeChoices,
-            default: "cover",
-            message:i18n.t("init.file.function_tag_generate_mode")
-        },
         
-    ]).then(ans => { option["file"] = ans })
-    
+        for (const promptList of allList) {
+            console.log(sectionNameList[sec++])
+            await inquirer.prompt(promptList).then(ans => { option[sectionName] = ans })
+        }
+        console.log(i18n.t('init.file'))
+        const modeChoices = [
+            { name: i18n.t('init.file.mode_cover'), value: "cover" },
+            { name: i18n.t('init.file.mode_skip'), value: "skip" },
+            { name: i18n.t('init.file.mode_append'), value: "append" },
+            { name: i18n.t('init.file.mode_prepend'), value: "prepend" },
+        ]
+        await inquirer.prompt([
+            {
+                name: "mcfunctionGenerateMode",
+                type: "list",
+                choices: modeChoices,
+                default: "cover",
+                message:i18n.t("init.file.mcfunction_generate_mode")
+            },
+            {
+                name: "functionTagGenerateMode",
+                type: "list",
+                choices: modeChoices,
+                default: "cover",
+                message:i18n.t("init.file.function_tag_generate_mode")
+            },
+            
+        ]).then(ans => { option["file"] = ans })
+    }
+
     const res = new JustMCFResult() 
     res.option = option
     const file = new FileUtils(res)
@@ -165,41 +188,61 @@ const BuildActionWhenNoMcfMcmeta = async () => {
     }
     return false
 }
+
+const InquirerAgainAction = async () => {
+    await inquirer.prompt([{
+        name: "inquirerAgain",
+        type: "confirm",
+        default: true,
+        message:i18n.t('init.inquirer_again')
+    }]).then(({ inquirerAgain }) => {
+        config.set('inquirerAgain',inquirerAgain)
+    })
+}
+
 const BuildAction = async (source_path: string, target_path: string) => {
-    let chooseLanguageFlag =false
+    await ChooseLanguageAction()
+    const inquireAgain = config.get('inquirerAgain')
     if (source_path === undefined) {
-        if (chooseLanguageFlag == false) { await ChooseLanguageAction(); chooseLanguageFlag = true }
-        source_path = await BuildActionWhenNoSourcePath()
+        if(inquireAgain) source_path = await BuildActionWhenNoSourcePath()
+        else source_path = process.cwd()
     }
     if (target_path === undefined) {
-        if (chooseLanguageFlag == false) { await ChooseLanguageAction(); chooseLanguageFlag = true }
-        target_path = await BuildActionWhenNoTargetPath()
+        if(inquireAgain) target_path = await BuildActionWhenNoTargetPath()
+        else target_path = getTargetPathDifferent()
     }
     const result = new JustMCFResult()
     const fileUtils = new FileUtils(result, source_path, target_path)
     const [hasPackMcmeta, _] = await fileUtils.checkPackMcmeta()
     if (!hasPackMcmeta) {
-        if (chooseLanguageFlag == false) { await ChooseLanguageAction(); chooseLanguageFlag = true }
         await BuildActionWhenNoPackMcmeta()
         return
     }
     const hasMcfMcmeta = await fileUtils.checkMcfMcmeta()
     if (!hasMcfMcmeta) {
-        if (chooseLanguageFlag == false) { await ChooseLanguageAction(); chooseLanguageFlag = true }
         const next = await BuildActionWhenNoMcfMcmeta()
         if(!next) return
     }
+    if(inquireAgain) await InquirerAgainAction()
     const codesObj = await fileUtils.readAllMcf()
     build(codesObj.map(obj => obj.code), result)
+    source_path = toCwdAbsolutionPath(source_path)
+    target_path = toCwdAbsolutionPath(target_path)
     if(!source_path.includes(target_path)) await fileUtils.copyAllDataPack()
     await fileUtils.createFunctionTag()
     await fileUtils.createMcfunction()
     await fileUtils.createMcfMcmeta()
 }
 
-const pkg = await readPackage()
 const program = new Command("mcf").description(pkg.description!!).version(pkg.version!!)
-const pathNow = process.cwd()
+
+program.command("conf")
+    .description(i18n.t('conf.lang'))
+    .action(async () => {
+        await ChooseLanguageAction(true)
+        await InquirerAgainAction()
+    })
+
 program.command("init")
     .description(i18n.t('init.description'))
     .action(async () => {
