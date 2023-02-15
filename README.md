@@ -92,13 +92,30 @@ JustMCF是一个简化mcfunction工程的项目。使用JustMCF，你不但可�
 - [ ] 类型检查（类型设置、modify set from、函数类型、for循环类型）
 - [ ] 循环的break语句、函数的return语句
 - [ ] 多minecraft版本的支持
-- [ ] 整理各个命令的标识符
 - [ ] 选择器的解析
-- [ ] 全部命令的解析支持
 
-## JustMCF Cli 命令行工具
+## 谁适合使用本项目？
 
-### Install 安装
+如果是命令老手——
+
+- 苦于**命令与NBT过于冗长、无法换行**的创作者——JustMCF大幅度简化了execute、data、scoreboard这三个最常用的命令，并提供NBT换行的支持（TODO：项目完成全部命令的解析支持后，将支持所有命令中涉及到的NBT的换行，目前仅局限于已简化的命令的换行）。
+- 苦于**需要外部程序文件进行命令穷举**、导致逻辑思路分开的创作者——JustMCF直接提供文件内脚本支持，让思路不会断片。
+- 苦于每次都要新开函数文件，**多个函数文件的分隔**导致思维混乱的创作者——JustMCF直接提供单文件定义多个函数的支持，并支持嵌套定义函数。
+- 苦于Minecraft**命令书写无法形成逻辑链**的创作者——JustMCF提供了条件、循环语句、进阶函数封装等特性，让逻辑更加清晰。
+- 希望尝试新的抽象思路，新的逻辑组织方式的创作者——JustMCF希望提供interface+func进行命令组织的方式，进一步进行思路的抽象。
+
+如果是习惯了原版命令的创作者——
+
+- JustMCF直接**支持使用原版命令**，无缝衔接使用JustMCF的单文件多函数、进阶函数封装、条件、循环语句等特性！
+- JustMCF**支持中性简化**，如果认为过渡简化导致不习惯，请看execute的案例：[简化幅度较小的支持](#%E7%AE%80%E5%8C%96%E5%B9%85%E5%BA%A6%E8%BE%83%E5%B0%8F%E7%9A%84%E6%94%AF%E6%8C%81)
+
+如果是命令新手——
+
+- 还是先不要用JustMCF，因为一旦使用了JustMCF，你就会陷入JustMCF带来的魔力之中，**直接脱离原版命令苦海**。
+
+## 快速开始
+
+### 安装
 
 本项目需要首先安装[Node.js](https://nodejs.org/en/)。
 
@@ -114,19 +131,47 @@ npm install -g just-mcf
 npm update -g just-mcf
 ```
 
-### Usage 使用
+
 
 在您的工作文件夹中打开命令行窗口（或者打开命令行窗口cd到工作文件夹中）。
 
-#### *初始化项目*。设置JustMCF项目的一些编译选项
+### *初始化项目*
+
+设置JustMCF项目的一些编译选项。
 
 ```bash
 npx mcf init
 ```
 
-初始化完成后，将在工作文件夹中创建`mcf.mcmeta`文件，这里包含JustMCF项目的各种设置。具体配置项请见附录。
+初始化完成后，将在工作文件夹中创建`mcf.mcmeta`文件，这里包含JustMCF项目的各种设置。具体配置项请见后。
 
-#### *编译项目*。将JustMCF项目输出为Minecraft JE 数据包
+### *项目文件结构*
+
+JustMCF项目文件以.mcf为后缀，*一个*.mcf文件可以生成*多个*.mcfunction文件。
+
+JustMCF项目支持一个mcf.mcmeta文件，用于存放有关数据包兼容性的信息以及JustMCF的设置、自动生成的uuid列表等等。
+
+通常一个数据包的文件结构为：
+
+```text
+folder_name
+|-pack.mcmeta
+|-pack.png
+|-data
+    |-namespace
+        |-functions
+        |-tags
+        |-func                  ->.mcf文件存放的地方
+            |-export.mcf        ->例如这样一个mcf文件
+|-mcf.mcmeta                    ->存放项目冲突信息的地方（使用的假名、uuid、记分板名）
+  
+```
+
+
+
+### *编译项目*
+
+将JustMCF项目输出为Minecraft JE 数据包。
 
 ```bash
 npx mcf build [<source_path>] [-o <target_path>]
@@ -154,7 +199,9 @@ npx mcf build -o xxxx/.minecraft/saves/datapacks/test
 pause
 ```
 
-#### *调整全局设置*。设置命令行的全局参数
+### *调整全局设置*
+
+设置命令行的全局参数。
 
 ```bash
 npx mcf conf
@@ -162,48 +209,58 @@ npx mcf conf
 
 目前可以设置命令行的语言和编译缺少参数时是否进行询问。
 
-## 谁适合使用本项目？
+### 最佳实践
 
-如果是命令老手——
+#### 仅仅增强原版命令
 
-- 苦于**命令与NBT过于冗长、无法换行**的创作者——JustMCF大幅度简化了execute、data、scoreboard这三个最常用的命令，并提供NBT换行的支持（TODO：项目完成全部命令的解析支持后，将支持所有命令中涉及到的NBT的换行，目前仅局限于已简化的命令的换行）。
-- 苦于**需要外部程序文件进行命令穷举**、导致逻辑思路分开的创作者——JustMCF直接提供文件内脚本支持，让思路不会断片。
-- 苦于每次都要新开函数文件，**多个函数文件的分隔**导致思维混乱的创作者——JustMCF直接提供单文件定义多个函数的支持，并支持嵌套定义函数。
-- 苦于Minecraft**命令书写无法形成逻辑链**的创作者——JustMCF提供了条件、循环语句、进阶函数封装等特性，让逻辑更加清晰。
-- 希望尝试新的抽象思路，新的逻辑组织方式的创作者——JustMCF希望提供interface+func进行命令组织的方式，进一步进行思路的抽象。
+在这里
 
-如果是习惯了原版命令的创作者——
+#### .mcf文件的开始
 
-- JustMCF直接**支持使用原版命令**，无缝衔接使用JustMCF的单文件多函数、进阶函数封装、条件、循环语句等特性！
-- JustMCF**支持中性简化**，如果认为过渡简化导致不习惯，请看execute的案例：[简化幅度较小的支持](#%E7%AE%80%E5%8C%96%E5%B9%85%E5%BA%A6%E8%BE%83%E5%B0%8F%E7%9A%84%E6%94%AF%E6%8C%81)
+每一个.mcf文件可以拥有如下内容：命名空间语句、interface语句、函数语句、进阶函数语句、函数标签语句、脚本内容。
 
-如果是命令新手——
+通常来说，拥有同一个逻辑模块的函数应该首先放置在同一个函数文件夹中，对于JustMCF项目来说，也就是放置在同一个.mcf文件中。
 
-- 还是先不要用JustMCF，因为一旦使用了JustMCF，你就会陷入JustMCF带来的魔力之中，**直接脱离原版命令苦海**。
+对于没有抽象设计需求的作者来说，可以在mcf.mcmeta文件中设置默认命名空间，每一个.mcf文件以函数语句、函数标签语句为经纬进行组织。如下所示：
 
-## 项目文件结构
+```mcf
+namsp [func = data_resolve]{
+    func getPlayerData{
 
-JustMCF项目文件以.mcf为后缀，*一个*.mcf文件可以生成*多个*.mcfunction文件。
+    }
+    func setPlayerData{
 
-JustMCF项目支持一个mcf.mcmeta文件，用于存放有关数据包兼容性的信息以及JustMCF的设置、自动生成的uuid列表等等。
+    }
+    func getPigData{
 
-通常一个数据包的文件结构为：
+    }
+    func #getData{
+        func getPlayerData
+        func getPigData
+        func getZombieData{
 
-```text
-folder_name
-|-pack.mcmeta
-|-pack.png
-|-data
-    |-namespace
-        |-functions
-        |-tags
-        |-func                  ->.mcf文件存放的地方
-            |-export.mcf        ->例如这样一个mcf文件
-|-mcf.mcmeta                    ->存放项目冲突信息的地方（使用的假名、uuid、记分板名）
-  
+        }
+    }
+}
 ```
 
-单个mcf文件的书写请看：[mcf文件的开始](#mcf%E6%96%87%E4%BB%B6%E7%9A%84%E5%BC%80%E5%A7%8B)
+对于拥有抽象设计需求的作者来说，可以把每一个.mcf文件作为一个类文件进行组织。这个类的数据部分和操作部分分离。数据部分使用interface语句，操作部分使用函数语句或者进阶函数语句。如下所示：
+
+```mcf
+interface Player n{
+    Name:"fool",
+    Age: 18,
+    Sex: "female"
+}
+func getPlayerName(player){
+
+}
+func setPlayerAge(player,age){
+
+}
+```
+
+
 
 ## 标识符
 
@@ -1484,49 +1541,3 @@ func test:func1(int a,int b) int {
 }
 ```
 
-## .mcf文件的开始
-
-每一个.mcf文件可以拥有如下内容：命名空间语句、interface语句、函数语句、进阶函数语句、函数标签语句、脚本内容。
-
-通常来说，拥有同一个逻辑模块的函数应该首先放置在同一个函数文件夹中，对于JustMCF项目来说，也就是放置在同一个.mcf文件中。
-
-对于没有抽象设计需求的作者来说，可以在mcf.mcmeta文件中设置默认命名空间，每一个.mcf文件以函数语句、函数标签语句为经纬进行组织。如下所示：
-
-```mcf
-namsp [func = data_resolve]{
-    func getPlayerData{
-
-    }
-    func setPlayerData{
-
-    }
-    func getPigData{
-
-    }
-    func #getData{
-        func getPlayerData
-        func getPigData
-        func getZombieData{
-
-        }
-    }
-}
-```
-
-对于拥有抽象设计需求的作者来说，可以把每一个.mcf文件作为一个类文件进行组织。这个类的数据部分和操作部分分离。数据部分使用interface语句，操作部分使用函数语句或者进阶函数语句。如下所示：
-
-```mcf
-interface Player n{
-    Name:"fool",
-    Age: 18,
-    Sex: "female"
-}
-func getPlayerName(player){
-
-}
-func setPlayerAge(player,age){
-
-}
-```
-
-## 附录：mcf.mcmeta配置项说明

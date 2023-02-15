@@ -14,6 +14,8 @@ import { TagISIRemoveContext } from "./JustMCFParser.js";
 import { TagISIListContext } from "./JustMCFParser.js";
 import { EntitySIEntityExpressionContext } from "./JustMCFParser.js";
 import { EntitySISelectorCompoundContext } from "./JustMCFParser.js";
+import { SelectorScoresPartCompareContext } from "./JustMCFParser.js";
+import { SelectorScoresPartRangeContext } from "./JustMCFParser.js";
 import { ItemSIGiveAndClearContext } from "./JustMCFParser.js";
 import { ItemSIEntityContext } from "./JustMCFParser.js";
 import { ItemSIBlockContext } from "./JustMCFParser.js";
@@ -53,6 +55,29 @@ import { ExecIfDataContext } from "./JustMCFParser.js";
 import { ExecIfBiomeContext } from "./JustMCFParser.js";
 import { ExecPredicateContext } from "./JustMCFParser.js";
 import { ExecStoreContext } from "./JustMCFParser.js";
+import { SelectorParamPosContext } from "./JustMCFParser.js";
+import { SelectorParamDPosContext } from "./JustMCFParser.js";
+import { SelectorParamRotContext } from "./JustMCFParser.js";
+import { SelectorParamXYZContext } from "./JustMCFParser.js";
+import { SelectorParamDXYZContext } from "./JustMCFParser.js";
+import { SelectorParamRotationContext } from "./JustMCFParser.js";
+import { SelectorParamDistanceContext } from "./JustMCFParser.js";
+import { SelectorParamNbtContext } from "./JustMCFParser.js";
+import { SelectorParamScoresContext } from "./JustMCFParser.js";
+import { SelectorParamTagContext } from "./JustMCFParser.js";
+import { SelectorParamTeamContext } from "./JustMCFParser.js";
+import { SelectorParamNameContext } from "./JustMCFParser.js";
+import { SelectorParamTypeContext } from "./JustMCFParser.js";
+import { SelectorParamLevelContext } from "./JustMCFParser.js";
+import { SelectorParamPredicateContext } from "./JustMCFParser.js";
+import { SelectorParamGamemodeContext } from "./JustMCFParser.js";
+import { SelectorParamAdvmContext } from "./JustMCFParser.js";
+import { SelectorParamLimitContext } from "./JustMCFParser.js";
+import { SelectorParamLimitInfContext } from "./JustMCFParser.js";
+import { SelectorParamSortContext } from "./JustMCFParser.js";
+import { SelectorParamLimitNumberContext } from "./JustMCFParser.js";
+import { SelectorParamNbtCompoundContext } from "./JustMCFParser.js";
+import { SelectorParamScoreCompoundContext } from "./JustMCFParser.js";
 import { DataStorageLocalContext } from "./JustMCFParser.js";
 import { DataStorageContext } from "./JustMCFParser.js";
 import { DataStorageWithEnvContext } from "./JustMCFParser.js";
@@ -69,6 +94,8 @@ import { LootSSelectorCompoundContext } from "./JustMCFParser.js";
 import { ItemSSIGiveAndClearContext } from "./JustMCFParser.js";
 import { ItemSSIItemContext } from "./JustMCFParser.js";
 import { ItemSSILootInnerContext } from "./JustMCFParser.js";
+import { SelectorAdvmPartDirectContext } from "./JustMCFParser.js";
+import { SelectorAdvmPartCriteriaContext } from "./JustMCFParser.js";
 import { EntitySDeclarePlayerContext } from "./JustMCFParser.js";
 import { EntitySDeclareContext } from "./JustMCFParser.js";
 import { EntitySDeclareWithNameContext } from "./JustMCFParser.js";
@@ -158,7 +185,10 @@ import { NameSpaceSettingsItemContext } from "./JustMCFParser.js";
 import { NameSpaceSettingsLootContext } from "./JustMCFParser.js";
 import { NameSpaceSettingsItemModifierContext } from "./JustMCFParser.js";
 import { NameSpaceSettingsDefaultContext } from "./JustMCFParser.js";
+import { NameSpaceSettingsAdvmContext } from "./JustMCFParser.js";
 import { NameSpaceSettingsJustDefaultContext } from "./JustMCFParser.js";
+import { SelectorTypeSingleContext } from "./JustMCFParser.js";
+import { SelectorTypeNotContext } from "./JustMCFParser.js";
 import { NoInExecStatementFuncContext } from "./JustMCFParser.js";
 import { NoInExecStatementRunFuncContext } from "./JustMCFParser.js";
 import { NoInExecStatementFuncImproveContext } from "./JustMCFParser.js";
@@ -207,6 +237,9 @@ import { BlockSIFillContext } from "./JustMCFParser.js";
 import { BlockSIFillReplaceContext } from "./JustMCFParser.js";
 import { BlockSICloneContext } from "./JustMCFParser.js";
 import { BlockSICloneFilteredContext } from "./JustMCFParser.js";
+import { SelectorParamsContext } from "./JustMCFParser.js";
+import { SelectorNameContext } from "./JustMCFParser.js";
+import { SelectorFakeNameContext } from "./JustMCFParser.js";
 import { AttrSCompoundContext } from "./JustMCFParser.js";
 import { AttrSSelectorCompoundContext } from "./JustMCFParser.js";
 import { ScbGetContext } from "./JustMCFParser.js";
@@ -268,8 +301,10 @@ import { FuncTagStatementInnerContext } from "./JustMCFParser.js";
 import { FuncStatementContext } from "./JustMCFParser.js";
 import { FuncImproveStatementContext } from "./JustMCFParser.js";
 import { FuncImproveParamContext } from "./JustMCFParser.js";
-import { FuncImproveStatementInnerContext } from "./JustMCFParser.js";
 import { YieldStatementContext } from "./JustMCFParser.js";
+import { ReturnStatementContext } from "./JustMCFParser.js";
+import { BreakStatementContext } from "./JustMCFParser.js";
+import { ContinueStatementContext } from "./JustMCFParser.js";
 import { FuncRunStatementContext } from "./JustMCFParser.js";
 import { FuncImproveRunStatementContext } from "./JustMCFParser.js";
 import { FuncImproveRunExpressionContext } from "./JustMCFParser.js";
@@ -278,7 +313,6 @@ import { ExecStatementContext } from "./JustMCFParser.js";
 import { ExecStoreChildContext } from "./JustMCFParser.js";
 import { ExecRunChildContext } from "./JustMCFParser.js";
 import { ExecChildContext } from "./JustMCFParser.js";
-import { MatchPartContext } from "./JustMCFParser.js";
 import { ScbCompareNumberContext } from "./JustMCFParser.js";
 import { DataIdentifierContext } from "./JustMCFParser.js";
 import { DataStorageIdentifierContext } from "./JustMCFParser.js";
@@ -373,6 +407,8 @@ import { Pos5IdentifierContext } from "./JustMCFParser.js";
 import { Pos1Context } from "./JustMCFParser.js";
 import { BlockIdentifierContext } from "./JustMCFParser.js";
 import { BlockstateContext } from "./JustMCFParser.js";
+import { BlockstateValueContext } from "./JustMCFParser.js";
+import { BlockstateParamContext } from "./JustMCFParser.js";
 import { NameSpaceContext } from "./JustMCFParser.js";
 import { NameSpaceBlockContext } from "./JustMCFParser.js";
 import { NameSpaceFuncContext } from "./JustMCFParser.js";
@@ -385,6 +421,7 @@ import { NameSpaceItemContext } from "./JustMCFParser.js";
 import { NameSpaceEntityContext } from "./JustMCFParser.js";
 import { NameSpaceLootContext } from "./JustMCFParser.js";
 import { NameSpaceItemModifierContext } from "./JustMCFParser.js";
+import { NameSpaceAdvancementContext } from "./JustMCFParser.js";
 import { TagNameSpaceContext } from "./JustMCFParser.js";
 import { TagNameSpaceItemContext } from "./JustMCFParser.js";
 import { TagNameSpaceBlockContext } from "./JustMCFParser.js";
@@ -403,7 +440,19 @@ import { Item_slotContext } from "./JustMCFParser.js";
 import { StringContext } from "./JustMCFParser.js";
 import { Item_predicateContext } from "./JustMCFParser.js";
 import { Block_predicateContext } from "./JustMCFParser.js";
+import { IntRangeContext } from "./JustMCFParser.js";
+import { PositiveNumberRangeContext } from "./JustMCFParser.js";
+import { NumberRangeContext } from "./JustMCFParser.js";
 import { SelectorContext } from "./JustMCFParser.js";
+import { SelectorWithParamsContext } from "./JustMCFParser.js";
+import { SelectorParamContext } from "./JustMCFParser.js";
+import { SelectorTypeContext } from "./JustMCFParser.js";
+import { SelectorTypesContext } from "./JustMCFParser.js";
+import { SelectorNbtCompoundContext } from "./JustMCFParser.js";
+import { SelectorScoresPartContext } from "./JustMCFParser.js";
+import { SelectorScoresPartImproveContext } from "./JustMCFParser.js";
+import { SelectorAdvancementsPartContext } from "./JustMCFParser.js";
+import { SelectorAdvancementsCriteriaContext } from "./JustMCFParser.js";
 
 
 /**
@@ -501,6 +550,22 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitEntitySISelectorCompound?: (ctx: EntitySISelectorCompoundContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorScoresPartCompare`
+	 * labeled alternative in `JustMCFParser.selectorScoresPartImprove`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorScoresPartCompare?: (ctx: SelectorScoresPartCompareContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorScoresPartRange`
+	 * labeled alternative in `JustMCFParser.selectorScoresPartImprove`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorScoresPartRange?: (ctx: SelectorScoresPartRangeContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `itemSIGiveAndClear`
@@ -815,6 +880,190 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitExecStore?: (ctx: ExecStoreContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by the `selectorParamPos`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamPos?: (ctx: SelectorParamPosContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamDPos`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamDPos?: (ctx: SelectorParamDPosContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamRot`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamRot?: (ctx: SelectorParamRotContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamXYZ`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamXYZ?: (ctx: SelectorParamXYZContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamDXYZ`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamDXYZ?: (ctx: SelectorParamDXYZContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamRotation`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamRotation?: (ctx: SelectorParamRotationContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamDistance`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamDistance?: (ctx: SelectorParamDistanceContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamNbt`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamNbt?: (ctx: SelectorParamNbtContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamScores`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamScores?: (ctx: SelectorParamScoresContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamTag`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamTag?: (ctx: SelectorParamTagContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamTeam`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamTeam?: (ctx: SelectorParamTeamContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamName`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamName?: (ctx: SelectorParamNameContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamType`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamType?: (ctx: SelectorParamTypeContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamLevel`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamLevel?: (ctx: SelectorParamLevelContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamPredicate`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamPredicate?: (ctx: SelectorParamPredicateContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamGamemode`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamGamemode?: (ctx: SelectorParamGamemodeContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamAdvm`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamAdvm?: (ctx: SelectorParamAdvmContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamLimit`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamLimit?: (ctx: SelectorParamLimitContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamLimitInf`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamLimitInf?: (ctx: SelectorParamLimitInfContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamSort`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamSort?: (ctx: SelectorParamSortContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamLimitNumber`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamLimitNumber?: (ctx: SelectorParamLimitNumberContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamNbtCompound`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamNbtCompound?: (ctx: SelectorParamNbtCompoundContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParamScoreCompound`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParamScoreCompound?: (ctx: SelectorParamScoreCompoundContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by the `dataStorageLocal`
 	 * labeled alternative in `JustMCFParser.dataIdentifier`.
 	 * @param ctx the parse tree
@@ -941,6 +1190,22 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitItemSSILootInner?: (ctx: ItemSSILootInnerContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorAdvmPartDirect`
+	 * labeled alternative in `JustMCFParser.selectorAdvancementsPart`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorAdvmPartDirect?: (ctx: SelectorAdvmPartDirectContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorAdvmPartCriteria`
+	 * labeled alternative in `JustMCFParser.selectorAdvancementsPart`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorAdvmPartCriteria?: (ctx: SelectorAdvmPartCriteriaContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `entitySDeclarePlayer`
@@ -1655,12 +1920,36 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitNameSpaceSettingsDefault?: (ctx: NameSpaceSettingsDefaultContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by the `nameSpaceSettingsAdvm`
+	 * labeled alternative in `JustMCFParser.nameSpaceSettings`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNameSpaceSettingsAdvm?: (ctx: NameSpaceSettingsAdvmContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by the `nameSpaceSettingsJustDefault`
 	 * labeled alternative in `JustMCFParser.nameSpaceSettings`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	visitNameSpaceSettingsJustDefault?: (ctx: NameSpaceSettingsJustDefaultContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorTypeSingle`
+	 * labeled alternative in `JustMCFParser.selectorTypes`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorTypeSingle?: (ctx: SelectorTypeSingleContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorTypeNot`
+	 * labeled alternative in `JustMCFParser.selectorTypes`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorTypeNot?: (ctx: SelectorTypeNotContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `noInExecStatementFunc`
@@ -2045,6 +2334,30 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitBlockSICloneFiltered?: (ctx: BlockSICloneFilteredContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorParams`
+	 * labeled alternative in `JustMCFParser.selector`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParams?: (ctx: SelectorParamsContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorName`
+	 * labeled alternative in `JustMCFParser.selector`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorName?: (ctx: SelectorNameContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `selectorFakeName`
+	 * labeled alternative in `JustMCFParser.selector`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorFakeName?: (ctx: SelectorFakeNameContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `attrSCompound`
@@ -2519,18 +2832,32 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitFuncImproveParam?: (ctx: FuncImproveParamContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by `JustMCFParser.funcImproveStatementInner`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitFuncImproveStatementInner?: (ctx: FuncImproveStatementInnerContext) => Result;
-
-	/**
 	 * Visit a parse tree produced by `JustMCFParser.yieldStatement`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	visitYieldStatement?: (ctx: YieldStatementContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.returnStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitReturnStatement?: (ctx: ReturnStatementContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.breakStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBreakStatement?: (ctx: BreakStatementContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.continueStatement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitContinueStatement?: (ctx: ContinueStatementContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.funcRunStatement`.
@@ -2587,13 +2914,6 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitExecChild?: (ctx: ExecChildContext) => Result;
-
-	/**
-	 * Visit a parse tree produced by `JustMCFParser.matchPart`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitMatchPart?: (ctx: MatchPartContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.scbCompareNumber`.
@@ -3254,6 +3574,20 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitBlockstate?: (ctx: BlockstateContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by `JustMCFParser.blockstateValue`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBlockstateValue?: (ctx: BlockstateValueContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.blockstateParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitBlockstateParam?: (ctx: BlockstateParamContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by `JustMCFParser.nameSpace`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -3336,6 +3670,13 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitNameSpaceItemModifier?: (ctx: NameSpaceItemModifierContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.nameSpaceAdvancement`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNameSpaceAdvancement?: (ctx: NameSpaceAdvancementContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by `JustMCFParser.tagNameSpace`.
@@ -3464,10 +3805,94 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitBlock_predicate?: (ctx: Block_predicateContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by `JustMCFParser.intRange`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitIntRange?: (ctx: IntRangeContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.positiveNumberRange`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitPositiveNumberRange?: (ctx: PositiveNumberRangeContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.numberRange`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitNumberRange?: (ctx: NumberRangeContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by `JustMCFParser.selector`.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
 	visitSelector?: (ctx: SelectorContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.selectorWithParams`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorWithParams?: (ctx: SelectorWithParamsContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorParam?: (ctx: SelectorParamContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.selectorType`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorType?: (ctx: SelectorTypeContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.selectorTypes`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorTypes?: (ctx: SelectorTypesContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.selectorNbtCompound`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorNbtCompound?: (ctx: SelectorNbtCompoundContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.selectorScoresPart`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorScoresPart?: (ctx: SelectorScoresPartContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.selectorScoresPartImprove`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorScoresPartImprove?: (ctx: SelectorScoresPartImproveContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.selectorAdvancementsPart`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorAdvancementsPart?: (ctx: SelectorAdvancementsPartContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by `JustMCFParser.selectorAdvancementsCriteria`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitSelectorAdvancementsCriteria?: (ctx: SelectorAdvancementsCriteriaContext) => Result;
 }
 

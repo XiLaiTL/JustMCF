@@ -14,6 +14,8 @@ import { TagISIRemoveContext } from "./JustMCFParser.js";
 import { TagISIListContext } from "./JustMCFParser.js";
 import { EntitySIEntityExpressionContext } from "./JustMCFParser.js";
 import { EntitySISelectorCompoundContext } from "./JustMCFParser.js";
+import { SelectorScoresPartCompareContext } from "./JustMCFParser.js";
+import { SelectorScoresPartRangeContext } from "./JustMCFParser.js";
 import { ItemSIGiveAndClearContext } from "./JustMCFParser.js";
 import { ItemSIEntityContext } from "./JustMCFParser.js";
 import { ItemSIBlockContext } from "./JustMCFParser.js";
@@ -53,6 +55,29 @@ import { ExecIfDataContext } from "./JustMCFParser.js";
 import { ExecIfBiomeContext } from "./JustMCFParser.js";
 import { ExecPredicateContext } from "./JustMCFParser.js";
 import { ExecStoreContext } from "./JustMCFParser.js";
+import { SelectorParamPosContext } from "./JustMCFParser.js";
+import { SelectorParamDPosContext } from "./JustMCFParser.js";
+import { SelectorParamRotContext } from "./JustMCFParser.js";
+import { SelectorParamXYZContext } from "./JustMCFParser.js";
+import { SelectorParamDXYZContext } from "./JustMCFParser.js";
+import { SelectorParamRotationContext } from "./JustMCFParser.js";
+import { SelectorParamDistanceContext } from "./JustMCFParser.js";
+import { SelectorParamNbtContext } from "./JustMCFParser.js";
+import { SelectorParamScoresContext } from "./JustMCFParser.js";
+import { SelectorParamTagContext } from "./JustMCFParser.js";
+import { SelectorParamTeamContext } from "./JustMCFParser.js";
+import { SelectorParamNameContext } from "./JustMCFParser.js";
+import { SelectorParamTypeContext } from "./JustMCFParser.js";
+import { SelectorParamLevelContext } from "./JustMCFParser.js";
+import { SelectorParamPredicateContext } from "./JustMCFParser.js";
+import { SelectorParamGamemodeContext } from "./JustMCFParser.js";
+import { SelectorParamAdvmContext } from "./JustMCFParser.js";
+import { SelectorParamLimitContext } from "./JustMCFParser.js";
+import { SelectorParamLimitInfContext } from "./JustMCFParser.js";
+import { SelectorParamSortContext } from "./JustMCFParser.js";
+import { SelectorParamLimitNumberContext } from "./JustMCFParser.js";
+import { SelectorParamNbtCompoundContext } from "./JustMCFParser.js";
+import { SelectorParamScoreCompoundContext } from "./JustMCFParser.js";
 import { DataStorageLocalContext } from "./JustMCFParser.js";
 import { DataStorageContext } from "./JustMCFParser.js";
 import { DataStorageWithEnvContext } from "./JustMCFParser.js";
@@ -69,6 +94,8 @@ import { LootSSelectorCompoundContext } from "./JustMCFParser.js";
 import { ItemSSIGiveAndClearContext } from "./JustMCFParser.js";
 import { ItemSSIItemContext } from "./JustMCFParser.js";
 import { ItemSSILootInnerContext } from "./JustMCFParser.js";
+import { SelectorAdvmPartDirectContext } from "./JustMCFParser.js";
+import { SelectorAdvmPartCriteriaContext } from "./JustMCFParser.js";
 import { EntitySDeclarePlayerContext } from "./JustMCFParser.js";
 import { EntitySDeclareContext } from "./JustMCFParser.js";
 import { EntitySDeclareWithNameContext } from "./JustMCFParser.js";
@@ -158,7 +185,10 @@ import { NameSpaceSettingsItemContext } from "./JustMCFParser.js";
 import { NameSpaceSettingsLootContext } from "./JustMCFParser.js";
 import { NameSpaceSettingsItemModifierContext } from "./JustMCFParser.js";
 import { NameSpaceSettingsDefaultContext } from "./JustMCFParser.js";
+import { NameSpaceSettingsAdvmContext } from "./JustMCFParser.js";
 import { NameSpaceSettingsJustDefaultContext } from "./JustMCFParser.js";
+import { SelectorTypeSingleContext } from "./JustMCFParser.js";
+import { SelectorTypeNotContext } from "./JustMCFParser.js";
 import { NoInExecStatementFuncContext } from "./JustMCFParser.js";
 import { NoInExecStatementRunFuncContext } from "./JustMCFParser.js";
 import { NoInExecStatementFuncImproveContext } from "./JustMCFParser.js";
@@ -207,6 +237,9 @@ import { BlockSIFillContext } from "./JustMCFParser.js";
 import { BlockSIFillReplaceContext } from "./JustMCFParser.js";
 import { BlockSICloneContext } from "./JustMCFParser.js";
 import { BlockSICloneFilteredContext } from "./JustMCFParser.js";
+import { SelectorParamsContext } from "./JustMCFParser.js";
+import { SelectorNameContext } from "./JustMCFParser.js";
+import { SelectorFakeNameContext } from "./JustMCFParser.js";
 import { AttrSCompoundContext } from "./JustMCFParser.js";
 import { AttrSSelectorCompoundContext } from "./JustMCFParser.js";
 import { ScbGetContext } from "./JustMCFParser.js";
@@ -268,8 +301,10 @@ import { FuncTagStatementInnerContext } from "./JustMCFParser.js";
 import { FuncStatementContext } from "./JustMCFParser.js";
 import { FuncImproveStatementContext } from "./JustMCFParser.js";
 import { FuncImproveParamContext } from "./JustMCFParser.js";
-import { FuncImproveStatementInnerContext } from "./JustMCFParser.js";
 import { YieldStatementContext } from "./JustMCFParser.js";
+import { ReturnStatementContext } from "./JustMCFParser.js";
+import { BreakStatementContext } from "./JustMCFParser.js";
+import { ContinueStatementContext } from "./JustMCFParser.js";
 import { FuncRunStatementContext } from "./JustMCFParser.js";
 import { FuncImproveRunStatementContext } from "./JustMCFParser.js";
 import { FuncImproveRunExpressionContext } from "./JustMCFParser.js";
@@ -278,7 +313,6 @@ import { ExecStatementContext } from "./JustMCFParser.js";
 import { ExecStoreChildContext } from "./JustMCFParser.js";
 import { ExecRunChildContext } from "./JustMCFParser.js";
 import { ExecChildContext } from "./JustMCFParser.js";
-import { MatchPartContext } from "./JustMCFParser.js";
 import { ScbCompareNumberContext } from "./JustMCFParser.js";
 import { DataIdentifierContext } from "./JustMCFParser.js";
 import { DataStorageIdentifierContext } from "./JustMCFParser.js";
@@ -373,6 +407,8 @@ import { Pos5IdentifierContext } from "./JustMCFParser.js";
 import { Pos1Context } from "./JustMCFParser.js";
 import { BlockIdentifierContext } from "./JustMCFParser.js";
 import { BlockstateContext } from "./JustMCFParser.js";
+import { BlockstateValueContext } from "./JustMCFParser.js";
+import { BlockstateParamContext } from "./JustMCFParser.js";
 import { NameSpaceContext } from "./JustMCFParser.js";
 import { NameSpaceBlockContext } from "./JustMCFParser.js";
 import { NameSpaceFuncContext } from "./JustMCFParser.js";
@@ -385,6 +421,7 @@ import { NameSpaceItemContext } from "./JustMCFParser.js";
 import { NameSpaceEntityContext } from "./JustMCFParser.js";
 import { NameSpaceLootContext } from "./JustMCFParser.js";
 import { NameSpaceItemModifierContext } from "./JustMCFParser.js";
+import { NameSpaceAdvancementContext } from "./JustMCFParser.js";
 import { TagNameSpaceContext } from "./JustMCFParser.js";
 import { TagNameSpaceItemContext } from "./JustMCFParser.js";
 import { TagNameSpaceBlockContext } from "./JustMCFParser.js";
@@ -403,7 +440,19 @@ import { Item_slotContext } from "./JustMCFParser.js";
 import { StringContext } from "./JustMCFParser.js";
 import { Item_predicateContext } from "./JustMCFParser.js";
 import { Block_predicateContext } from "./JustMCFParser.js";
+import { IntRangeContext } from "./JustMCFParser.js";
+import { PositiveNumberRangeContext } from "./JustMCFParser.js";
+import { NumberRangeContext } from "./JustMCFParser.js";
 import { SelectorContext } from "./JustMCFParser.js";
+import { SelectorWithParamsContext } from "./JustMCFParser.js";
+import { SelectorParamContext } from "./JustMCFParser.js";
+import { SelectorTypeContext } from "./JustMCFParser.js";
+import { SelectorTypesContext } from "./JustMCFParser.js";
+import { SelectorNbtCompoundContext } from "./JustMCFParser.js";
+import { SelectorScoresPartContext } from "./JustMCFParser.js";
+import { SelectorScoresPartImproveContext } from "./JustMCFParser.js";
+import { SelectorAdvancementsPartContext } from "./JustMCFParser.js";
+import { SelectorAdvancementsCriteriaContext } from "./JustMCFParser.js";
 
 
 /**
@@ -553,6 +602,32 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitEntitySISelectorCompound?: (ctx: EntitySISelectorCompoundContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorScoresPartCompare`
+	 * labeled alternative in `JustMCFParser.selectorScoresPartImprove`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorScoresPartCompare?: (ctx: SelectorScoresPartCompareContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorScoresPartCompare`
+	 * labeled alternative in `JustMCFParser.selectorScoresPartImprove`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorScoresPartCompare?: (ctx: SelectorScoresPartCompareContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorScoresPartRange`
+	 * labeled alternative in `JustMCFParser.selectorScoresPartImprove`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorScoresPartRange?: (ctx: SelectorScoresPartRangeContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorScoresPartRange`
+	 * labeled alternative in `JustMCFParser.selectorScoresPartImprove`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorScoresPartRange?: (ctx: SelectorScoresPartRangeContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `itemSIGiveAndClear`
@@ -1062,6 +1137,305 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitExecStore?: (ctx: ExecStoreContext) => void;
 
 	/**
+	 * Enter a parse tree produced by the `selectorParamPos`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamPos?: (ctx: SelectorParamPosContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamPos`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamPos?: (ctx: SelectorParamPosContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamDPos`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamDPos?: (ctx: SelectorParamDPosContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamDPos`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamDPos?: (ctx: SelectorParamDPosContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamRot`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamRot?: (ctx: SelectorParamRotContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamRot`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamRot?: (ctx: SelectorParamRotContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamXYZ`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamXYZ?: (ctx: SelectorParamXYZContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamXYZ`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamXYZ?: (ctx: SelectorParamXYZContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamDXYZ`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamDXYZ?: (ctx: SelectorParamDXYZContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamDXYZ`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamDXYZ?: (ctx: SelectorParamDXYZContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamRotation`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamRotation?: (ctx: SelectorParamRotationContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamRotation`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamRotation?: (ctx: SelectorParamRotationContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamDistance`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamDistance?: (ctx: SelectorParamDistanceContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamDistance`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamDistance?: (ctx: SelectorParamDistanceContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamNbt`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamNbt?: (ctx: SelectorParamNbtContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamNbt`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamNbt?: (ctx: SelectorParamNbtContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamScores`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamScores?: (ctx: SelectorParamScoresContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamScores`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamScores?: (ctx: SelectorParamScoresContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamTag`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamTag?: (ctx: SelectorParamTagContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamTag`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamTag?: (ctx: SelectorParamTagContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamTeam`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamTeam?: (ctx: SelectorParamTeamContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamTeam`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamTeam?: (ctx: SelectorParamTeamContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamName`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamName?: (ctx: SelectorParamNameContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamName`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamName?: (ctx: SelectorParamNameContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamType`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamType?: (ctx: SelectorParamTypeContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamType`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamType?: (ctx: SelectorParamTypeContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamLevel`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamLevel?: (ctx: SelectorParamLevelContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamLevel`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamLevel?: (ctx: SelectorParamLevelContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamPredicate`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamPredicate?: (ctx: SelectorParamPredicateContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamPredicate`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamPredicate?: (ctx: SelectorParamPredicateContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamGamemode`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamGamemode?: (ctx: SelectorParamGamemodeContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamGamemode`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamGamemode?: (ctx: SelectorParamGamemodeContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamAdvm`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamAdvm?: (ctx: SelectorParamAdvmContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamAdvm`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamAdvm?: (ctx: SelectorParamAdvmContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamLimit`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamLimit?: (ctx: SelectorParamLimitContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamLimit`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamLimit?: (ctx: SelectorParamLimitContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamLimitInf`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamLimitInf?: (ctx: SelectorParamLimitInfContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamLimitInf`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamLimitInf?: (ctx: SelectorParamLimitInfContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamSort`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamSort?: (ctx: SelectorParamSortContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamSort`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamSort?: (ctx: SelectorParamSortContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamLimitNumber`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamLimitNumber?: (ctx: SelectorParamLimitNumberContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamLimitNumber`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamLimitNumber?: (ctx: SelectorParamLimitNumberContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamNbtCompound`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamNbtCompound?: (ctx: SelectorParamNbtCompoundContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamNbtCompound`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamNbtCompound?: (ctx: SelectorParamNbtCompoundContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParamScoreCompound`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParamScoreCompound?: (ctx: SelectorParamScoreCompoundContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParamScoreCompound`
+	 * labeled alternative in `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParamScoreCompound?: (ctx: SelectorParamScoreCompoundContext) => void;
+
+	/**
 	 * Enter a parse tree produced by the `dataStorageLocal`
 	 * labeled alternative in `JustMCFParser.dataIdentifier`.
 	 * @param ctx the parse tree
@@ -1268,6 +1642,32 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitItemSSILootInner?: (ctx: ItemSSILootInnerContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorAdvmPartDirect`
+	 * labeled alternative in `JustMCFParser.selectorAdvancementsPart`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorAdvmPartDirect?: (ctx: SelectorAdvmPartDirectContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorAdvmPartDirect`
+	 * labeled alternative in `JustMCFParser.selectorAdvancementsPart`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorAdvmPartDirect?: (ctx: SelectorAdvmPartDirectContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorAdvmPartCriteria`
+	 * labeled alternative in `JustMCFParser.selectorAdvancementsPart`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorAdvmPartCriteria?: (ctx: SelectorAdvmPartCriteriaContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorAdvmPartCriteria`
+	 * labeled alternative in `JustMCFParser.selectorAdvancementsPart`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorAdvmPartCriteria?: (ctx: SelectorAdvmPartCriteriaContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `entitySDeclarePlayer`
@@ -2427,6 +2827,19 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitNameSpaceSettingsDefault?: (ctx: NameSpaceSettingsDefaultContext) => void;
 
 	/**
+	 * Enter a parse tree produced by the `nameSpaceSettingsAdvm`
+	 * labeled alternative in `JustMCFParser.nameSpaceSettings`.
+	 * @param ctx the parse tree
+	 */
+	enterNameSpaceSettingsAdvm?: (ctx: NameSpaceSettingsAdvmContext) => void;
+	/**
+	 * Exit a parse tree produced by the `nameSpaceSettingsAdvm`
+	 * labeled alternative in `JustMCFParser.nameSpaceSettings`.
+	 * @param ctx the parse tree
+	 */
+	exitNameSpaceSettingsAdvm?: (ctx: NameSpaceSettingsAdvmContext) => void;
+
+	/**
 	 * Enter a parse tree produced by the `nameSpaceSettingsJustDefault`
 	 * labeled alternative in `JustMCFParser.nameSpaceSettings`.
 	 * @param ctx the parse tree
@@ -2438,6 +2851,32 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitNameSpaceSettingsJustDefault?: (ctx: NameSpaceSettingsJustDefaultContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorTypeSingle`
+	 * labeled alternative in `JustMCFParser.selectorTypes`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorTypeSingle?: (ctx: SelectorTypeSingleContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorTypeSingle`
+	 * labeled alternative in `JustMCFParser.selectorTypes`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorTypeSingle?: (ctx: SelectorTypeSingleContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorTypeNot`
+	 * labeled alternative in `JustMCFParser.selectorTypes`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorTypeNot?: (ctx: SelectorTypeNotContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorTypeNot`
+	 * labeled alternative in `JustMCFParser.selectorTypes`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorTypeNot?: (ctx: SelectorTypeNotContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `noInExecStatementFunc`
@@ -3062,6 +3501,45 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitBlockSICloneFiltered?: (ctx: BlockSICloneFilteredContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorParams`
+	 * labeled alternative in `JustMCFParser.selector`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParams?: (ctx: SelectorParamsContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorParams`
+	 * labeled alternative in `JustMCFParser.selector`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParams?: (ctx: SelectorParamsContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorName`
+	 * labeled alternative in `JustMCFParser.selector`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorName?: (ctx: SelectorNameContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorName`
+	 * labeled alternative in `JustMCFParser.selector`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorName?: (ctx: SelectorNameContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `selectorFakeName`
+	 * labeled alternative in `JustMCFParser.selector`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorFakeName?: (ctx: SelectorFakeNameContext) => void;
+	/**
+	 * Exit a parse tree produced by the `selectorFakeName`
+	 * labeled alternative in `JustMCFParser.selector`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorFakeName?: (ctx: SelectorFakeNameContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `attrSCompound`
@@ -3825,17 +4303,6 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitFuncImproveParam?: (ctx: FuncImproveParamContext) => void;
 
 	/**
-	 * Enter a parse tree produced by `JustMCFParser.funcImproveStatementInner`.
-	 * @param ctx the parse tree
-	 */
-	enterFuncImproveStatementInner?: (ctx: FuncImproveStatementInnerContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.funcImproveStatementInner`.
-	 * @param ctx the parse tree
-	 */
-	exitFuncImproveStatementInner?: (ctx: FuncImproveStatementInnerContext) => void;
-
-	/**
 	 * Enter a parse tree produced by `JustMCFParser.yieldStatement`.
 	 * @param ctx the parse tree
 	 */
@@ -3845,6 +4312,39 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitYieldStatement?: (ctx: YieldStatementContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.returnStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterReturnStatement?: (ctx: ReturnStatementContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.returnStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitReturnStatement?: (ctx: ReturnStatementContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.breakStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterBreakStatement?: (ctx: BreakStatementContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.breakStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitBreakStatement?: (ctx: BreakStatementContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.continueStatement`.
+	 * @param ctx the parse tree
+	 */
+	enterContinueStatement?: (ctx: ContinueStatementContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.continueStatement`.
+	 * @param ctx the parse tree
+	 */
+	exitContinueStatement?: (ctx: ContinueStatementContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `JustMCFParser.funcRunStatement`.
@@ -3933,17 +4433,6 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitExecChild?: (ctx: ExecChildContext) => void;
-
-	/**
-	 * Enter a parse tree produced by `JustMCFParser.matchPart`.
-	 * @param ctx the parse tree
-	 */
-	enterMatchPart?: (ctx: MatchPartContext) => void;
-	/**
-	 * Exit a parse tree produced by `JustMCFParser.matchPart`.
-	 * @param ctx the parse tree
-	 */
-	exitMatchPart?: (ctx: MatchPartContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `JustMCFParser.scbCompareNumber`.
@@ -4980,6 +5469,28 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitBlockstate?: (ctx: BlockstateContext) => void;
 
 	/**
+	 * Enter a parse tree produced by `JustMCFParser.blockstateValue`.
+	 * @param ctx the parse tree
+	 */
+	enterBlockstateValue?: (ctx: BlockstateValueContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.blockstateValue`.
+	 * @param ctx the parse tree
+	 */
+	exitBlockstateValue?: (ctx: BlockstateValueContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.blockstateParam`.
+	 * @param ctx the parse tree
+	 */
+	enterBlockstateParam?: (ctx: BlockstateParamContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.blockstateParam`.
+	 * @param ctx the parse tree
+	 */
+	exitBlockstateParam?: (ctx: BlockstateParamContext) => void;
+
+	/**
 	 * Enter a parse tree produced by `JustMCFParser.nameSpace`.
 	 * @param ctx the parse tree
 	 */
@@ -5110,6 +5621,17 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitNameSpaceItemModifier?: (ctx: NameSpaceItemModifierContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.nameSpaceAdvancement`.
+	 * @param ctx the parse tree
+	 */
+	enterNameSpaceAdvancement?: (ctx: NameSpaceAdvancementContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.nameSpaceAdvancement`.
+	 * @param ctx the parse tree
+	 */
+	exitNameSpaceAdvancement?: (ctx: NameSpaceAdvancementContext) => void;
 
 	/**
 	 * Enter a parse tree produced by `JustMCFParser.tagNameSpace`.
@@ -5310,6 +5832,39 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitBlock_predicate?: (ctx: Block_predicateContext) => void;
 
 	/**
+	 * Enter a parse tree produced by `JustMCFParser.intRange`.
+	 * @param ctx the parse tree
+	 */
+	enterIntRange?: (ctx: IntRangeContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.intRange`.
+	 * @param ctx the parse tree
+	 */
+	exitIntRange?: (ctx: IntRangeContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.positiveNumberRange`.
+	 * @param ctx the parse tree
+	 */
+	enterPositiveNumberRange?: (ctx: PositiveNumberRangeContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.positiveNumberRange`.
+	 * @param ctx the parse tree
+	 */
+	exitPositiveNumberRange?: (ctx: PositiveNumberRangeContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.numberRange`.
+	 * @param ctx the parse tree
+	 */
+	enterNumberRange?: (ctx: NumberRangeContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.numberRange`.
+	 * @param ctx the parse tree
+	 */
+	exitNumberRange?: (ctx: NumberRangeContext) => void;
+
+	/**
 	 * Enter a parse tree produced by `JustMCFParser.selector`.
 	 * @param ctx the parse tree
 	 */
@@ -5319,5 +5874,104 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitSelector?: (ctx: SelectorContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.selectorWithParams`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorWithParams?: (ctx: SelectorWithParamsContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.selectorWithParams`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorWithParams?: (ctx: SelectorWithParamsContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorParam?: (ctx: SelectorParamContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.selectorParam`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorParam?: (ctx: SelectorParamContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.selectorType`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorType?: (ctx: SelectorTypeContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.selectorType`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorType?: (ctx: SelectorTypeContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.selectorTypes`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorTypes?: (ctx: SelectorTypesContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.selectorTypes`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorTypes?: (ctx: SelectorTypesContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.selectorNbtCompound`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorNbtCompound?: (ctx: SelectorNbtCompoundContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.selectorNbtCompound`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorNbtCompound?: (ctx: SelectorNbtCompoundContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.selectorScoresPart`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorScoresPart?: (ctx: SelectorScoresPartContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.selectorScoresPart`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorScoresPart?: (ctx: SelectorScoresPartContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.selectorScoresPartImprove`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorScoresPartImprove?: (ctx: SelectorScoresPartImproveContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.selectorScoresPartImprove`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorScoresPartImprove?: (ctx: SelectorScoresPartImproveContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.selectorAdvancementsPart`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorAdvancementsPart?: (ctx: SelectorAdvancementsPartContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.selectorAdvancementsPart`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorAdvancementsPart?: (ctx: SelectorAdvancementsPartContext) => void;
+
+	/**
+	 * Enter a parse tree produced by `JustMCFParser.selectorAdvancementsCriteria`.
+	 * @param ctx the parse tree
+	 */
+	enterSelectorAdvancementsCriteria?: (ctx: SelectorAdvancementsCriteriaContext) => void;
+	/**
+	 * Exit a parse tree produced by `JustMCFParser.selectorAdvancementsCriteria`.
+	 * @param ctx the parse tree
+	 */
+	exitSelectorAdvancementsCriteria?: (ctx: SelectorAdvancementsCriteriaContext) => void;
 }
 

@@ -9,17 +9,18 @@ export interface namespaceInfo{
     item?: string,
     loot?: string,
     item_modifier?: string,
-    entity?:string,
+    entity?: string,
+    advancement?:string,
 }
 export interface option {
     file?: {
         mcfunctionGenerateMode?: ("cover" | "skip" | "append"| "prepend"),
         functionTagGenerateMode?: ("cover" | "skip" | "append"| "prepend")
     },
+    namespace?: namespaceInfo,
     selector?: {
-        limitMode?: string,
+        limitDefaultOne?: boolean,
     },
-    namespace?:namespaceInfo,
     scbExpression?: {
         tempScbObjectiveName?: string,
         useConstNumberScbObjective?: boolean,
@@ -29,6 +30,9 @@ export interface option {
         flatWhenOneCommand?: boolean,
         stackNamespaceId?: string,
         commonIO?: boolean,
+    },
+    forStatement?: {
+        recursionPartNewFunctionFile?:boolean
     },
     existExpression?: {
         stackNamespaceId?: string,
@@ -55,7 +59,11 @@ const _defaultOption:option = {
         item_modifier: "minecraft",
         loot: "minecraft",
         bossbar: "minecraft",
-        entity: "minecraft"
+        entity: "minecraft",
+        advancement:"minecraft",
+    },
+    selector: {
+        limitDefaultOne:false
     },
     scbExpression: {
         tempScbObjectiveName: "justmcf-temp-scoreboard",
@@ -67,6 +75,9 @@ const _defaultOption:option = {
         stackNamespaceId:"justmcf:program",
         commonIO:false
     },
+    forStatement: {
+        recursionPartNewFunctionFile:true
+    },
     existExpression: {
         stackNamespaceId:"justmcf:program",
         everyConditionNewFunctionFile:true
@@ -75,10 +86,12 @@ const _defaultOption:option = {
 }
 export function defaultOption() {
     const option:option = {
-        file:{..._defaultOption.file},
+        file: { ..._defaultOption.file },
         namespace: { ..._defaultOption.namespace },
+        selector:{..._defaultOption.selector},
         scbExpression: { ..._defaultOption.scbExpression },
-        functionStatement:{..._defaultOption.functionStatement},
+        functionStatement: { ..._defaultOption.functionStatement },
+        forStatement:{..._defaultOption.forStatement },
         existExpression: { ..._defaultOption.existExpression },
         entityNameMap:{..._defaultOption.entityNameMap}
     }
@@ -91,9 +104,11 @@ export class JustMCFResult {
     set option(val:option) {
         this._option = {
             file:{...this._option.file,...val.file},
-            namespace: { ...this._option.namespace ,...val.namespace},
+            namespace: { ...this._option.namespace, ...val.namespace },
+            selector:{...this._option.selector, ...val.selector },
             scbExpression: { ...this._option.scbExpression,...val.scbExpression },
-            functionStatement:{...this._option.functionStatement,...val.functionStatement},
+            functionStatement: { ...this._option.functionStatement, ...val.functionStatement },
+            forStatement: { ...this._option.forStatement, ...val.forStatement },
             existExpression: { ...this._option.existExpression, ...val.existExpression },
             entityNameMap:{...this._option.entityNameMap,...val.entityNameMap}
         }

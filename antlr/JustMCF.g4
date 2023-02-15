@@ -13,6 +13,10 @@ statement
     | namespaceSetStatement
     | funcRunStatement
     | funcImproveRunStatement
+    | yieldStatement
+    | returnStatement
+    | breakStatement
+    | continueStatement
     | execStatement
     | dataStatement
     | scbPlayerStatement
@@ -59,6 +63,7 @@ nameSpaceSettings
     | type=LOOT            '=' acceptableName                                                                                                                    #nameSpaceSettingsLoot
     | type=ITEM_MODIFIER   '=' acceptableName                                                                                                                    #nameSpaceSettingsItemModifier
     | type=DEFAULT         '=' acceptableName                                                                                                                    #nameSpaceSettingsDefault
+    | type=(ADVANCEMENT|ADVM)     '=' acceptableName                                                                                                             #nameSpaceSettingsAdvm
     | type=DEFAULT                                                                                                                                               #nameSpaceSettingsJustDefault
     ;
 nameSpaceStatementInner
@@ -96,17 +101,25 @@ funcStatement:
 funcImproveStatement: 
     FUNC nameSpaceFunc s_
     '(' s_ funcImproveParam (p_ funcImproveParam)* s_ ')' (s_ typeName)? s_ 
-    '{' s_ (funcImproveStatementInner (ends funcImproveStatementInner)* ends?)?  '}'
+    '{' s_ (statementInner (ends statementInner)* ends?)?  '}'
     ;
 funcImproveParam
     : typeName? acceptableName
     ;
-funcImproveStatementInner
-    : statementInner
-    | yieldStatement
-    ;
 yieldStatement
     : YIELD dataIdentifier
+    ;
+returnStatement
+    : RETURN ('(' nameSpaceFunc ')')? dataIdentifier?
+    ;
+breakStatement
+    : BREAK
+    | RETURN '[' (WHILE|FOR) ']'
+    ;
+continueStatement
+    : CONTINUE
+    | RETURN '[' (WHILE|FOR) ']' '+1'
+    | RETURN '(' nameSpaceFunc ')' '+1'
     ;
 funcRunStatement
     : FUNC nameSpaceFunc
@@ -153,7 +166,7 @@ execChild
     | (ROTATED|ROT) AS? selector                                                                                                                                     #execRotatedAs
     | cond=(IF|UNLESS)? ENTITY? selector                                                                                                                         #execIfEntity
     | cond=(IF|UNLESS)? SCORE? scbCoreIdentifier CompareOperation scbCoreIdentifier                                                                                      #execIfScore
-    | cond=(IF|UNLESS)? SCORE? scbCoreIdentifier ((MATCHES? matchPart)|scbCompareNumber)                                                                             #execIfScoreMatches
+    | cond=(IF|UNLESS)? SCORE? scbCoreIdentifier ((MATCHES? intRange)|scbCompareNumber)                                                                             #execIfScoreMatches
     | cond=(IF|UNLESS)? BLOCK? pos3Identifier blockIdentifier                                                                                                    #execIfBlock
     | cond=(IF|UNLESS)? BLOCKS? pos3Identifier pos3Identifier pos3Identifier scan_mode=(ALL|MASKED)                                                              #execIfBlocks
     | cond=(IF|UNLESS)? DATA? dataIdentifier                                                                                                                     #execIfData
@@ -162,14 +175,6 @@ execChild
     | execStoreChild                                                                                                                                             #execStore
     ;
 
-CompareOperation
-    : '<'|'<='| '=='|'>='|'>'
-    ;
-matchPart
-    : NUMBER_INT '..' NUMBER_INT?
-    | '..' NUMBER_INT
-    | NUMBER_INT
-    ;
 scbCompareNumber
     : CompareOperation NUMBER_INT
     ;
@@ -268,12 +273,12 @@ scbPlayerStatementInner
     | selector? LIST                                                                                                                                             #scbPlayerSIScbList
     ;
 scbObjectiveStatement
-    : SCB( '(' criterion ')')? acceptableName s_ display=json s_
+    : SCB( '(' criterion ')')? nbtName s_ display=json s_
     ('{' s_ ('.'? scbStatementInner (ends '.'? scbStatementInner)* ends?)? '}')?                                                                  #scbObjSDeclareWithName
-    | SCB '(' criterion ')' acceptableName                                                                                                                       #scbObjSDeclareSingle
-    | SCB( '(' criterion ')')? acceptableName DEFAULT s_
+    | SCB '(' criterion ')' nbtName                                                                                                                       #scbObjSDeclareSingle
+    | SCB( '(' criterion ')')? nbtName DEFAULT s_
     ('{' s_ ('.'? scbStatementInner (ends '.'? scbStatementInner)* ends?)? '}')?                                                                        #scbObjSDeclareDefault
-    | SCB acceptableName s_ '{' s_ ('.'? scbStatementInner (ends '.'? scbStatementInner)* ends?)? '}'                                                                                                       #scbObjSOperation
+    | SCB nbtName s_ '{' s_ ('.'? scbStatementInner (ends '.'? scbStatementInner)* ends?)? '}'                                                                                                       #scbObjSOperation
     ;
 scbStatementInner
     : REMOVE                                                                                                                                                     #scbSIRemove
@@ -428,14 +433,14 @@ entityStatement
     | ENTITY selector s_ '{' s_ ('.' entityIndependentStatementInner (ends '.' entityIndependentStatementInner)* ends?)? '}'                                                                                             #entitySSelectorCompound
     ;
 playerName
-    : fake='#'? acceptableName
+    : fake='#'? nbtName
     ;
 entityDeclareStatementInner
-    : TAG '=' acceptableName (p_ acceptableName)*                                                                                                               #entityDeclareSITag
+    : TAG '=' nbtName (p_ nbtName)*                                                                                                               #entityDeclareSITag
     ;
 tagIndependentStatementInner
-    : TAG ('+='|ADD) acceptableName                                                                                                                              #tagISIAdd
-    | TAG ('-='|REMOVE) acceptableName                                                                                                                           #tagISIRemove
+    : TAG ('+='|ADD) nbtName                                                                                                                              #tagISIAdd
+    | TAG ('-='|REMOVE) nbtName                                                                                                                           #tagISIRemove
     | TAG LIST                                                                                                                                                   #tagISIList
     ;
 effectIndependentStatementInner
@@ -767,11 +772,14 @@ key:  NAMSP|NAMESPACE|LOCAL
     | EFFECT | TAG |TP
     | ATTR|BASE|DESTROY|KEEP|REPLACE|HOLLOW|OUTLINE|FORCE|MOVE|NORMAL |GET
     | INTERFACE
-    | WHILE|FOR|YIELD|BREAK|RETURN
+    | WHILE|FOR|YIELD|BREAK|RETURN | CONTINUE
     | FILTERED
     | REPLACED
     | DIM|DIMENSION|ITEM_MODIFIER
     | BYTE|SHORT|INT_|LONG|FLOAT|DOUBLE
+    | DPOS | X | Y | Z | DX | DY | DZ | X_ROTATION | Y_ROTATION | DISTANCE | NBT | SCORES | TEAM | TYPE | LEVEL | GAMEMODE | SPECTATOR | SURVIVAL | CREATIVE | ADVENTURE | ADVANCEMENTS | LIMIT | SORT | NEAREST | FURTHEST | RANDOM | ARBITRARY
+    | ADVANCEMENT | ADVM
+    | SelectorKey
     ;
 
 
@@ -891,6 +899,7 @@ ELSE: 'else';
 FOR:'for';
 YIELD:'yield';
 BREAK:'break';
+CONTINUE:'continue';
 RETURN:'return';
     
 REPLACED:'replaced';
@@ -899,6 +908,39 @@ DIM:'dim';
 DIMENSION:'dimension';
 ITEM_MODIFIER:'item_modifier';
 
+DPOS:'dpos';
+X:'x';
+Y:'y';
+Z:'z';
+DX:'dx';
+DY:'dy';
+DZ:'dz';
+X_ROTATION:'x_rotation';
+Y_ROTATION:'y_rotation';
+DISTANCE:'distance';
+NBT:'nbt';
+SCORES:'scores';
+TEAM:'team';
+TYPE:'type';
+LEVEL:'level';
+GAMEMODE:'gamemode';
+SPECTATOR:'spectator';
+SURVIVAL:'survival';
+CREATIVE:'creative';
+ADVENTURE:'adventure';
+ADVANCEMENTS:'advancements';
+ADVANCEMENT:'advancement';
+ADVM:'advm';
+LIMIT:'limit';
+SORT:'sort';
+NEAREST:'nearest';
+FURTHEST:'furthest';
+RANDOM:'random';
+ARBITRARY:'arbitrary';
+
+SelectorKey : 's' | 'r' | 'a' | 'e' | 'p';
+
+
 pos3Identifier:  pos1 pos1 pos1;
 pos2Identifier:  pos1 pos1 ;
 pos5Identifier:  pos1 pos1 pos1 pos1 pos1 ;
@@ -906,8 +948,9 @@ pos1: Pos1 | number;
 Pos1: (('~'|'^') (NUMBER|NUMBER_INT))| ('~'|'^') ; //没写小数
 
 blockIdentifier:nameSpaceBlock blockstate? nbt? ;
-blockstate: '[' (.)+? ']';
-
+blockstate: '[' s_ blockstateParam (p_ blockstateParam)? s_ ']';
+blockstateValue: boolValue | NUMBER_INT | acceptableName;
+blockstateParam: acceptableName '=' blockstateValue;
 
 
 //script: '{{' (.)+? '}}';
@@ -927,6 +970,7 @@ nameSpaceItem:nameSpace;
 nameSpaceEntity:nameSpace;
 nameSpaceLoot:nameSpace;
 nameSpaceItemModifier:nameSpace;
+nameSpaceAdvancement:nameSpace;
 tagNameSpace
     : '#' nameSpace
     ;
@@ -958,19 +1002,79 @@ nbtName
 acceptableName: nbtName;
 acceptableNameWithNumber : acceptableName |number;
 resourceLocation: acceptableName ('/' acceptableNameWithNumber)*;
-typeName: (acceptableName ':')? acceptableName ('['']')?;
+typeName: (nbtName ':')? nbtName ('['']')?;
 item_slot: acceptableName;
-string: acceptableName|STRING;
+string: nbtName|STRING;
 item_predicate
     : (nameSpaceItem| tagNameSpaceItem) (snbt|nbt)?
     ;
 block_predicate
     : (nameSpaceBlock| tagNameSpaceBlock) blockstate? (snbt|nbt)?
     ;
-selector
-    : SelectorWithParams
-    | '@' acceptableNameWithoutPointWithKey
-    | '#' acceptableNameWithoutPointWithKey
+CompareOperation
+    : '<'|'<='| '=='|'>='|'>'
     ;
-SelectorWithParams: '@' ('s' | 'r' | 'a' | 'e' | 'p') ('[' (.)+? ']');
+intRange
+    : NUMBER_INT '..' NUMBER_INT?
+    | '..' NUMBER_INT
+    | NUMBER_INT
+    ;
+positiveNumberRange
+    : number '..' number?
+    | '..' number
+    | number
+    ;
+numberRange
+    : number '..' number?
+    | '..' number
+    | number
+    ;
+selector
+    : selectorWithParams #selectorParams
+    | '@' acceptableNameWithoutPointWithKey #selectorName
+    | '#' acceptableNameWithoutPointWithKey #selectorFakeName
+    ;
 
+selectorWithParams: '@' SelectorKey ( '(' s_ selectorTypes s_ ')' )? ('[' s_ selectorParam (p_ selectorParam)* s_ ']')?;
+
+selectorParam
+    : POS '=' pos3Identifier #selectorParamPos
+    | DPOS '=' pos3Identifier #selectorParamDPos
+    | ROT '=' pos2Identifier  #selectorParamRot
+    | (X|Y|Z) '=' number  #selectorParamXYZ
+    | (DX|DY|DZ) '=' number #selectorParamDXYZ
+    | (X_ROTATION|Y_ROTATION) '=' numberRange #selectorParamRotation
+    | DISTANCE '=' positiveNumberRange #selectorParamDistance
+    | NBT '=' (nbtCompound|selectorNbtCompound )#selectorParamNbt
+    | SCORES '=' '{' s_ selectorScoresPart ( p_ selectorScoresPart)* s_ '}' #selectorParamScores
+    | TAG '=' not='!'? nbtName #selectorParamTag
+    | TEAM '=' not='!'? nbtName #selectorParamTeam
+    | NAME '=' not='!'? nbtName #selectorParamName
+    | TYPE '=' not='!'? selectorType #selectorParamType
+    | LEVEL '=' intRange #selectorParamLevel
+    | PREDICATE '=' not='!'? nameSpacePredicate #selectorParamPredicate
+    | GAMEMODE '=' not='!'? (SPECTATOR|SURVIVAL|CREATIVE|ADVENTURE) #selectorParamGamemode
+    | (ADVANCEMENTS|ADVM) '=' '{' s_ selectorAdvancementsPart (p_ selectorAdvancementsPart)* s_ '}' #selectorParamAdvm
+    | LIMIT '=' '+'? NUMBER_INT #selectorParamLimit
+    | LIMIT '=' '..' #selectorParamLimitInf
+    | SORT '=' (NEAREST|FURTHEST|RANDOM|ARBITRARY) #selectorParamSort
+    | '+'?NUMBER_INT #selectorParamLimitNumber
+    | selectorNbtCompound #selectorParamNbtCompound
+    | '{' s_ selectorScoresPartImprove (p_ selectorScoresPartImprove)* s_ '}' #selectorParamScoreCompound
+    ;
+selectorType:nameSpaceEntity|tagNameSpaceEntity;
+selectorTypes
+    : selectorType #selectorTypeSingle
+    | '!'selectorType (p_ '!'selectorType)*  #selectorTypeNot
+    ;
+selectorNbtCompound : 'n{' s_ nbtPair (',' s_ nbtPair)*  s_'}' | 'n{' '}';
+selectorScoresPart: nbtName '=' intRange ;
+selectorScoresPartImprove
+    : nbtName scbCompareNumber  #selectorScoresPartCompare
+    | nbtName intRange #selectorScoresPartRange
+    ;
+selectorAdvancementsPart
+    : nameSpaceAdvancement '=' boolValue #selectorAdvmPartDirect
+    | nameSpaceAdvancement '=' '{' s_ selectorAdvancementsCriteria (p_ selectorAdvancementsCriteria)* s_ '}' #selectorAdvmPartCriteria
+    ;
+selectorAdvancementsCriteria: acceptableName '=' boolValue;

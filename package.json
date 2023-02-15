@@ -27,6 +27,7 @@
   "scripts": {
     "antlr": "antlr4ts -o ./src/antlr -visitor ./antlr/JustMCF.g4",
     "convert-to-esm": " ts-node-esm ./src/lib/JSExtUtils.ts ./src/antlr",
+    "generator-antlr":"antlr4ts -o ./src/antlr -visitor ./antlr/JustMCF.g4 && ts-node-esm ./src/lib/JSExtUtils.ts ./src/antlr",
     "build": "tsc",
     "typecheck": "tsc --noEmit",
     "watch": "tsc --watch",
