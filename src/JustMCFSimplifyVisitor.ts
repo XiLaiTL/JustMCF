@@ -39,7 +39,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     initNewFunction(namespaceId:string,_using=true) {
         if (this.functions[namespaceId] === undefined) this.functions[namespaceId] = {
             using: _using,
-            lines: [],anonymousChildFunctionTimes:0,isUsedExistExpression:false, type:"normal", has:{ break:true,continue:true,return:true}
+            lines: [],anonymousChildFunctionTimes:0,isUsedExistExpression:false, type:"normal", has:{ break:false,continue:false,return:false}
         }
     }
     addNewFunction(functionNamespaceId: string, getCommands: () => string[], option: { flat: boolean, improveFunction?: boolean } = { flat: true }) {
@@ -1292,14 +1292,14 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         for (const context of ctx.execChild()) {
             command = `${command} ${this.v(context)}`
         }
-        return [`temp${++this.tempExistName}`,`${command} run data data modify ${this.option.existExpression?.stackNamespaceId} exist_stack_frame[0].temp${this.tempExistName} set value 1b`]
+        return [`temp${++this.tempExistName}`,`${command} run data modify storage ${this.option.existExpression?.stackNamespaceId} exist_stack_frame[0].temp${this.tempExistName} set value 1b`]
     }
     visitExisitExpressionFuncRun(ctx: ExisitExpressionFuncRunContext) {
         const res = this.visit(ctx)
-        return [`temp${++this.tempExistName}`,...res.slice(1),`execute if data ${res[0]} run data modify ${this.option.existExpression?.stackNamespaceId} exist_stack_frame[0].temp${this.tempExistName} set value 1b`]
+        return [`temp${++this.tempExistName}`,...res.slice(1),`execute if data ${res[0]} run data modify storage ${this.option.existExpression?.stackNamespaceId} exist_stack_frame[0].temp${this.tempExistName} set value 1b`]
     }
     visitExistExpressionId(ctx: ExistExpressionIdContext) {
-        return [`temp${++this.tempExistName}`,`execute if data ${this.v(ctx.dataIdentifier())} run data modify ${this.option.existExpression?.stackNamespaceId} exist_stack_frame[0].temp${this.tempExistName} set value 1b`]
+        return [`temp${++this.tempExistName}`,`execute if data ${this.v(ctx.dataIdentifier())} run data modify storage ${this.option.existExpression?.stackNamespaceId} exist_stack_frame[0].temp${this.tempExistName} set value 1b`]
     }
     visitExistExpressionTrue(ctx: ExistExpressionTrueContext){return ["true"]}
     visitExistExpressionFalse(ctx: ExistExpressionFalseContext){return ["false"]}

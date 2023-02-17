@@ -879,7 +879,7 @@ JustMCF为不希望采用大幅度简化命令的用户提供了较为简化的�
 - 标识符使用原版命令
 
 ```mcf
-exec{ if entity @s as @s store result data entity @s CustomName int 1 } run func test:foo
+exec{ if entity @s as @s store result storage entity @s CustomName int 1 } run func test:foo
 
 ##所以为什么不接受以下语法呢：
 {if @s as @s}=>@s::CustomName->func test:foo
