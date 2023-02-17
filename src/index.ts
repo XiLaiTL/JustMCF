@@ -59,7 +59,23 @@ const InitAction = async () => {
     }])
 
     if (simpleMode) {
-        
+        console.log(i18n.t('init.namespace'))
+        await inquirer.prompt([
+            {
+                name: "func",
+                type: "input",
+                default: option.namespace?.func,
+                message:i18n.t('init.namespace.func')
+            },
+            {
+                name: "storage",
+                type: "input",
+                default: option.namespace?.func,
+                message:i18n.t('init.namespace.storage')
+            },
+        ]).then(({ func, storage }) => {
+            option.namespace = {...option.namespace,func,storage}
+        })
     }
     else {
         let sectionName: keyof option

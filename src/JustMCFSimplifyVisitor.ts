@@ -20,7 +20,9 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     }
 
     //all mcfunction files
-    private functions: { [mcfunctionFileName: string]: {
+    private functions: {
+        [mcfunctionFileName: string]: {
+        using:boolean,
         lines: string[],
         //function namespace id `namespace:resource_loaction`  + number
         anonymousChildFunctionTimes: number, 
@@ -34,19 +36,32 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     } = {};
     private functionTypeStack: string[] = [];
     private mcfunctions: { [mcfunctionFileName: string]: string } = {};
-    initNewFunction(namespaceId:string) {
+    initNewFunction(namespaceId:string,_using=true) {
         if (this.functions[namespaceId] === undefined) this.functions[namespaceId] = {
+            using: _using,
             lines: [],anonymousChildFunctionTimes:0,isUsedExistExpression:false, type:"normal", has:{ break:true,continue:true,return:true}
         }
     }
     addNewFunction(functionNamespaceId: string, getCommands: () => string[], option: { flat: boolean, improveFunction?: boolean } = { flat: true }) {
 
         this.initNewFunction(functionNamespaceId)
-        this.functions[functionNamespaceId].type = this.functionTypeStack[this.functionTypeStack.length - 1]
+
         if (option?.improveFunction == true) this.tempFunctionNamespaceIdStack.push(functionNamespaceId.replace("/start",""))
         else this.tempFunctionNamespaceIdStack.push(functionNamespaceId)
         
-        this.functions[functionNamespaceId].lines = getCommands()
+        const commands = getCommands()
+        if (option.flat && this.option.functionStatement?.flatWhenOneCommand && commands.length == 1) {
+            if (!commands[0].includes("execute")) {
+                this.functions[functionNamespaceId].using = false;
+                this.tempFunctionNamespaceIdStack.pop()
+                return commands[0]
+            }
+        }
+
+        
+        this.functions[functionNamespaceId].type = this.functionTypeStack[this.functionTypeStack.length - 1]
+        this.functions[functionNamespaceId].lines = commands
+
         const hasFunction = /(^function$)|(run function)/g
         const has: {[tag:string]:RegExp} = {
             break: /^# break$/g,
@@ -60,22 +75,26 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
             if (hasFunction.test(command)) {
                 const runFuncNamespace = command.replace(/.*(run)?\s?function\s/, "")
                 let execute_command = "execute"
-                for (const tag of ["break", "continue", "return"]) {
-                    if (this.functions[runFuncNamespace].has[tag]) {
-                        execute_command = `${execute_command} unless data storage ${this.option.existExpression?.stackNamespaceId} exist_stack_frame[0].${tag}`
-                        //传染性，从最里层往外传染。判断当前函数的类型，终止对应的传染
-                        switch (this.functions[functionNamespaceId].type) {
-                            case "for":
-                            case "while": {
-                                if (tag == "continue") this.functions[functionNamespaceId].has[tag] = true
-                            } break;
-                            case "improve": {
-                                if (tag != "continue") this.functions[functionNamespaceId].has[tag] = true
-                            } break;
-                            default: this.functions[functionNamespaceId].has[tag] = true
+                if (this.functions[runFuncNamespace] !== undefined) {
+                    //如果是可以操作的function
+                    for (const tag of ["break", "continue", "return"]) {
+                        if (this.functions[runFuncNamespace].has[tag]) {
+                            execute_command = `${execute_command} unless data storage ${this.option.existExpression?.stackNamespaceId} exist_stack_frame[0].${tag}`
+                            //传染性，从最里层往外传染。判断当前函数的类型，终止对应的传染
+                            switch (this.functions[functionNamespaceId].type) {
+                                case "for":
+                                case "while": {
+                                    if (tag == "continue") this.functions[functionNamespaceId].has[tag] = true
+                                } break;
+                                case "improve": {
+                                    if (tag != "continue") this.functions[functionNamespaceId].has[tag] = true
+                                } break;
+                                default: this.functions[functionNamespaceId].has[tag] = true
+                            }
                         }
                     }
                 }
+
                 if (listLength - 1 > i && execute_command != "execute" ) {
                     const newNamespace = this.getNewTempFunctionNamespaceId(`after`)
                     const leftCommands = this.functions[functionNamespaceId].lines.splice(i + 1, listLength - i)
@@ -102,7 +121,6 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
                 }
             }
         }
-        this.tempFunctionNamespaceIdStack.pop()
         if (this.getIsUsedExistExpressionNow()) {
             this.functions[functionNamespaceId].lines = [
                 `data modify storage ${this.option.existExpression?.stackNamespaceId} exist_stack_frame prepend value {}`, // 为子函数创建变量内存空间
@@ -110,13 +128,8 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
                 `data remove storage ${this.option.existExpression?.stackNamespaceId} exist_stack_frame[0]`, // 销毁子函数的变量内存空间
             ]
         }
-        if (option.flat && this.option.functionStatement?.flatWhenOneCommand && this.functions[functionNamespaceId].lines.length == 1) {
-            const oneCommand = this.functions[functionNamespaceId].lines[0]
-            if (!oneCommand.includes("execute")) {
-                delete this.functions[functionNamespaceId]
-                return oneCommand
-            }
-        }
+        this.tempFunctionNamespaceIdStack.pop()
+
         return `function ${functionNamespaceId}`
     }
     //function namespace stack, to remember the namespace to be used in anonymous function
@@ -126,8 +139,12 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         this.functions[namespace].anonymousChildFunctionTimes += 1
         return `${namespace}/${usage}${this.functions[namespace].anonymousChildFunctionTimes}`
     }
-    getIsUsedExistExpressionNow() { return this.functions[this.tempFunctionNamespaceIdStack[this.tempFunctionNamespaceIdStack.length - 1]].isUsedExistExpression }
-    setUsedExistExpressionNow(){  this.functions[this.tempFunctionNamespaceIdStack[this.tempFunctionNamespaceIdStack.length - 1]].isUsedExistExpression = true }
+    getIsUsedExistExpressionNow() {
+        return this.functions[this.tempFunctionNamespaceIdStack[this.tempFunctionNamespaceIdStack.length - 1]].isUsedExistExpression
+    }
+    setUsedExistExpressionNow() {
+        this.functions[this.tempFunctionNamespaceIdStack[this.tempFunctionNamespaceIdStack.length - 1]].isUsedExistExpression = true
+    }
 
     //all function tags
     private functionTags: { [functionTagFileName: string]: { replace: boolean, values: string[] } } = {};
@@ -180,7 +197,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         if (this.functionTags["#minecraft:init"] === undefined) this.functionTags["#minecraft:init"] = { replace: false, values: [] }
         this.functionTags["#minecraft:init"].values.push(initNamespaceId)
         for (const name in this.functions) {
-            this.mcfunctions[name] = this.functions[name].lines.join('\n')
+            if(this.functions[name].using) this.mcfunctions[name] = this.functions[name].lines.join('\n')
         }
     }
     constructor(result: JustMCFResult) {
@@ -1426,7 +1443,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitInterfaceSNamespace(ctx: InterfaceSNamespaceContext) {return [`data merge storage ${this.v(ctx.nameSpaceStorage())} ${this.v(ctx.nbt())}`]}
 
 //#region Selector
-    visitSelector(ctx: SelectorContext) {return []}
+    //visitSelector(ctx: SelectorContext) {return []}
     //visitSelectorParams(ctx: SelectorParamsContext){ return []}
     visitSelectorName(ctx: SelectorNameContext) {
         const name = this.v(ctx.acceptableNameWithoutPointWithKey())
@@ -1443,23 +1460,29 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     
     visitSelectorWithParams(ctx: SelectorWithParamsContext) {
         if (/^@s$/.test(ctx.text)) { return [ctx.text, "final"] }
+        const selectorKey = ctx.SelectorKey().text
         const hasLimit = {
-            limit: this.option.selector?.limitDefaultOne
+            limit: this.option.selector?.limitDefaultOne&&selectorKey!="a" //排除掉@a[]默认limit=1的情况，@a不能默认是1
                 ? 1 : 0,
+            defaultLimit:this.option.selector?.limitDefaultOne,
             nolimit: false
         }
         const res = ctx.selectorParam().reduce((arr:string[], context) => {
             const param = this.visit(context)
             if (param[0] == "nolimit") { hasLimit.nolimit = true }
-            else if (param[0].includes("limit=")) { hasLimit.limit = Number.parseInt(param[0].replace("limit=", "")) }
+            else if (param[0].includes("limit=")) {
+                hasLimit.limit = Number.parseInt(param[0].replace("limit=", ""))
+                hasLimit.defaultLimit = false
+            }
             else { arr.push(...param) }
             return arr
-        },[])
+        }, [])
+        
         if (!hasLimit.nolimit&&hasLimit.limit!=0)
             res.push(`limit=${hasLimit.limit}`)
         if(ctx.selectorTypes()!==undefined)
             res.push(...this.visit(ctx.selectorTypes()!!))
-        return [`@${ctx.SelectorKey().text}[${res.join(",")}]`,(hasLimit.limit == 1)?"final":"nest"]
+        return [`@${selectorKey}[${res.join(",")}]`,(hasLimit.limit == 1)?"final":"nest"]
     }
     visitSelectorParamPos(ctx: SelectorParamPosContext) {
         const regex = /~|^/g

@@ -112,13 +112,9 @@ yieldStatement
 returnStatement
     : RETURN ('(' nameSpaceFunc ')')? dataIdentifier?
     ;
-breakStatement
-    : BREAK
-    | RETURN '[' (WHILE|FOR) ']'
-    ;
+breakStatement: BREAK;
 continueStatement
     : CONTINUE
-    | RETURN '[' (WHILE|FOR) ']' '+1'
     | RETURN '(' nameSpaceFunc ')' '+1'
     ;
 funcRunStatement

@@ -16183,7 +16183,6 @@ export class JustMCFParser extends Parser {
 				this.match(JustMCFParser.LIMIT);
 				this.state = 3437;
 				this.match(JustMCFParser.T__5);
-				{
 				this.state = 3439;
 				this._errHandler.sync(this);
 				_la = this._input.LA(1);
@@ -16196,7 +16195,6 @@ export class JustMCFParser extends Parser {
 
 				this.state = 3441;
 				this.match(JustMCFParser.NUMBER_INT);
-				}
 				}
 				break;
 
@@ -33947,7 +33945,7 @@ export class SelectorParamAdvmContext extends SelectorParamContext {
 }
 export class SelectorParamLimitContext extends SelectorParamContext {
 	public LIMIT(): TerminalNode { return this.getToken(JustMCFParser.LIMIT, 0); }
-	public NUMBER_INT(): TerminalNode | undefined { return this.tryGetToken(JustMCFParser.NUMBER_INT, 0); }
+	public NUMBER_INT(): TerminalNode { return this.getToken(JustMCFParser.NUMBER_INT, 0); }
 	constructor(ctx: SelectorParamContext) {
 		super(ctx.parent, ctx.invokingState);
 		this.copyFrom(ctx);
