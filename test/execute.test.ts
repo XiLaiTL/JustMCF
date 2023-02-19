@@ -86,7 +86,7 @@ func test:execute{
         ~ ~ ~ stone                          ##if block
         ~ ~ ~ ~ ~ ~ ~ ~ ~ all        ##if blocks
         biome ~ ~ ~ namespace                ##if biome
-        test:is_use_hand					     ##if predicate
+        predicate test:is_use_hand					     ##if predicate
         @e[limit=1]::{}                          ##if data entity
         ~ ~ ~ ::{}                           ##if data block
         foo:str::{}                              ##if data storage
@@ -114,7 +114,7 @@ test('Execute Store', () => {
 func test:execute{
     {
         as @p => scb@s
-        as @s[limit=1] =>scb@s
+        as @s =>scb@s
         as @e[limit=1] =>scb@s
     }-> say 1
 

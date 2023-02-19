@@ -31,7 +31,7 @@ func test:scb{
 
     scb { list }    	##scoreboard objectives list
     scb { @s list}  	##scoreboard players list @s
-
+    scb { @s reset}     ##scoreboard players reset @s
 }
     `
 })

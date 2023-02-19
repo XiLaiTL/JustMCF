@@ -77,6 +77,7 @@
       - [NBT类型信息](#nbt%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF)
       - [带类型标记的赋值语法（TODO）](#%E5%B8%A6%E7%B1%BB%E5%9E%8B%E6%A0%87%E8%AE%B0%E7%9A%84%E8%B5%8B%E5%80%BC%E8%AF%AD%E6%B3%95todo)
     - [进阶函数](#%E8%BF%9B%E9%98%B6%E5%87%BD%E6%95%B0)
+  - [附录：配置项介绍](#%E9%99%84%E5%BD%95%E9%85%8D%E7%BD%AE%E9%A1%B9%E4%BB%8B%E7%BB%8D)
 
 <!-- /TOC -->
 </details>
@@ -99,6 +100,7 @@ JustMCF是一个简化mcfunction工程的项目。使用JustMCF，你不但可�
 
 - [ ] 提供vscode language server用于自动补全和语法高亮
 - [ ] 类型检查（类型设置、modify set from、函数类型、for循环类型）
+- [ ] 支持JSON文本组件简化
 - [ ] 多minecraft版本的支持
 
 ## 谁适合使用本项目？
@@ -138,8 +140,6 @@ npm install -g just-mcf
 npm update -g just-mcf
 ```
 
-
-
 在您的工作文件夹中打开命令行窗口（或者打开命令行窗口cd到工作文件夹中）。
 
 ### *初始化项目*
@@ -150,7 +150,7 @@ npm update -g just-mcf
 npx mcf init
 ```
 
-初始化完成后，将在工作文件夹中创建`mcf.mcmeta`文件，这里包含JustMCF项目的各种设置。具体配置项请见附录。
+初始化完成后，将在工作文件夹中创建`mcf.mcmeta`文件，这里包含JustMCF项目的各种设置。具体配置项请见[附录：配置项介绍](#%E9%99%84%E5%BD%95%E9%85%8D%E7%BD%AE%E9%A1%B9%E4%BB%8B%E7%BB%8D)。
 
 ### *项目文件结构*
 
@@ -173,8 +173,6 @@ folder_name
 |-mcf.mcmeta                    ->存放项目冲突信息的地方（使用的假名、uuid、记分板名）
   
 ```
-
-
 
 ### *编译项目*
 
@@ -218,11 +216,113 @@ npx mcf conf
 
 ### 最佳实践
 
+这里以一段视线追踪代码为例：
+
 #### 仅仅增强原版命令
 
-在这里
+选择仅仅使用JustMCF增强的以下功能：单文件多function、可以换行的execute、选择器、nbt、json文本。
 
-#### .mcf文件的开始
+在传统风格1中，仅仅使用了单文件多function的特性，把同一个逻辑单元的function写到一起来。这个单.mcf文件最终会被解析成4个.mcfunction文件
+
+<details><summary> 传统风格1 </summary>
+
+```mcf
+
+func teen:begin{
+  execute as @a at @s anchored eyes positioned ^ ^ ^ run function teen:before
+}
+
+func teen:before{
+  function teen:ray
+  tag @s ret
+}
+
+func teen:ray{
+  scoreboard players set #find_entity bool 0
+  execute as @e[dx=0,dy=0,dz=0] positioned ~-1 ~-1 ~-1 if entity @s[dx=0,dy=0,dz=0] run scoreboard players set #find_entity bool 1
+  execute if block ~ ~ ~ #through if score #find_entity bool matches 0 positioned ^ ^ ^0.1 run function teen:ray
+  execute unless entity @s[tag=find] run function teen:find
+}
+
+func teen:find{
+  tag @s add find
+  tellraw @s "Find it!"
+}
+```
+
+</details>
+
+在传统风格2中，使用了exec的换行支持与回调式书写函数的特性，把同一个逻辑单元的function整合到一起。
+
+<details><summary> 传统风格2 </summary>
+
+```mcf
+
+func teen:ray{
+  scoreboard players set #find_entity bool 0
+  exec{ as @e[dx=0,dy=0,dz=0] positioned ~-1 ~-1 ~-1 if entity @s[dx=0,dy=0,dz=0]} run
+    scoreboard players set #find_entity bool 1
+  exec{ 
+    if block ~ ~ ~ #through 
+    if score #find_entity bool matches 0 
+    positioned ^ ^ ^0.1
+  } run func teen:ray
+  exec{ unless entity @s[tag=find] } run func teen:find{
+    tag @s add find
+    tellraw @s "Find it!"
+  }
+
+}
+func teen:begin{
+  exec{ as @a at @s anchored eyes positioned ^ ^ ^} run func teen:before{
+    func teen:ray
+    tag @s ret
+  }
+}
+
+```
+
+</details>
+
+#### 简洁风格一瞥
+
+乍看一眼什么都看不懂，再慢慢看发现语法挺简单的:)。
+
+<details><summary> 简洁风格 </summary>
+
+```mcf
+
+namsp [func = teen]{
+  func begin{
+    { as @s at @s anchored eyes pos ^ ^ ^}->{
+      ->func ray{
+        bool#find_entity = 0 
+
+        { as @e[dpos=0 0 0] 
+          pos ~-1 ~-1 ~-1 
+          if @s[dpos=0 0 0]
+        }-> bool#find_entity = 1
+
+        { if ~ ~ ~ #through 
+          if bool#find_entity == 0 
+          pos ^ ^ ^0.01
+        }-> func ray; 
+        
+        { unless @s[tag=find]}->{
+          @s.tag += find
+          @s.text "Find it!"
+        }
+      }
+      @s.tag -= find
+    }
+  }
+}
+
+```
+
+</details>
+
+#### mcf文件的开始
 
 每一个.mcf文件可以拥有如下内容：命名空间语句、interface语句、函数语句、进阶函数语句、函数标签语句、脚本内容。
 
@@ -432,6 +532,7 @@ scb {
 ```mcf
 scb { list }    	##scoreboard objectives list
 scb { @s list}  	##scoreboard players list @s
+scb { @s reset}     ##scoreboard players reset @s
 ```
 
 ### NBT数据运算
@@ -749,7 +850,7 @@ JustMCF对if/unless子语句做了极大的简化。
 | if data entity @s Pos           | if @s::Pos                         | data @s::Pos                       | @s::Pos                         |
 | if data storage foo:str Number  | if foo:str::Number                 | data foo:str::Number               | foo:str::Number                 |
 | if data block ~ ~ ~ Text1       | if ~ ~ ~::Text1                | data ~ ~ ~::Text1              | ~ ~ ~::Text1                |
-| if predicate test:is_use_hand   | if test:is_use_hand                | predicate test:is_use_hand         | test:is_use_hand                |
+| if predicate test:is_use_hand   | if test:is_use_hand                | predicate test:is_use_hand         |                 |
 | score见下方                     |                                    |                                    |                                 |
 
 </details>
@@ -1008,11 +1109,11 @@ for{ foo:flower::list }->func loopname{
 ```
 
 ```mcf
-for{foo:flower::temp |= ["abcd","efgh","ojbk"] }->func loopname{
+for{foo:flower::temp = ["abcd","efgh","ojbk"] }->func loopname{
 
 }
 ##自动生成
-##data merge storage foo:flower temp value ["abcd","efgh","ojbk"]
+##data modify storage foo:flower temp set value ["abcd","efgh","ojbk"]
 ##....
 
 ```
@@ -1067,7 +1168,7 @@ display{
     @s.subtitle j{}         ## title @s subtitle {}
     
     @s.bossbar foo:newboss  ##bossbar set players
-    bossbar foo:newboss j{""}
+    bossbar foo:newboss j{"text":"New Boss"}
     bossbar foo:newboss {
 
     }
@@ -1181,8 +1282,8 @@ item{
     @e[]::armor.chest = stone *4                         ##replace with
     @e[]::armor.chest = @s::armor.chest foo:modifier     ##replace from
     @e[]::armor.chest += foo:modifier                    ##modify
-    @e[] += stone *4                                     ##give
-    @e[] -= stone *4                                     ##clear
+    @s += stone *4                                     ##give
+    @s -= stone *4                                     ##clear
     ~ ~ ~ =                                   ##loot spawn
     ~ ~ ~ +=                                  ##loot insert
     ~ ~ ~::container.5 =                      ##loot replace block
@@ -1228,7 +1329,7 @@ loot{
 
 ```mcf
 loot{
-	@s += loot test:loot_1                            ##mine
+	@s += loot test:loot_1                            ##loot
 	@s += fish test:loot_1 ~ ~ ~ mainhand             ##fish
 	@s += kill @e[]                                   ##kill
 	@s += mine ~ ~ ~ mainhand                         ##mine
@@ -1276,13 +1377,13 @@ scb{
 *生成实体*。
 
 ```mcf
-entity(pig) ~ ~ ~ n{CustomName:"pig1"}               ##summon pig ~ ~ ~ {}
+entity(pig) ~ ~ ~ n{CustomName:'{"text": "pig1"}'}               ##summon pig ~ ~ ~ {}
 ```
 
 *初始化使用假名*。解析生成.mcfunction后，实际上指定了uuid，uuid可以在项目文件中配置/自动生成，可以使用@xxxx来选中该实体。
 
 ```mcf
-entity(pig) ~ ~ ~ xxxx n{CustomName:"pig1"} 
+entity(pig) ~ ~ ~ xxxx n{CustomName:'{"text": "pig1"}'}
 entity @xxxx{   
     .tp ~ ~ ~
 }
@@ -1293,13 +1394,13 @@ entity @xxxx{
 tag前面可以加`.`，但是后续对实体执行操作的语句是必须加`.`
 
 ```mcf
-entity(pig) ~ ~ ~ xxxx n{CustomName:"pig1"} { .tag = tag1,tag2 }
+entity(pig) ~ ~ ~ xxxx n{CustomName:'{"text": "pig1"}'} { .tag = tag1,tag2 }
 ```
 
 *初始化后直接进行操作*。可以进行操作的内容见下
 
 ```mcf
-entity(pig) ~ ~ ~ xxxx n{CustomName:"pig1"} {
+entity(pig) ~ ~ ~ xxxx n{CustomName:'{"text": "pig1"}'} {
 	.tag = tag1,tag2 ##将会解析进初始化语句的nbt中
 	.tag += temp      ##将会解析为tag add
 }
@@ -1585,5 +1686,98 @@ func test:func1(int a,int b) int {
 }
 ```
 
+## 附录：贡献者
+
+
+
 ## 附录：配置项介绍
+
+项目的*mcf.mcmeta*文件：（注释在行的下方）
+
+```json
+{
+    "file": {
+        "mcfunctionGenerateMode": "cover",
+//设置函数标签生成的模式
+        "functionTagGenerateMode":"cover"
+//设置函数生成的模式
+    //"cover" 覆盖原有,
+    //"skip" 跳过,
+    //"append" 追加到原文件末尾,
+    //"prepend" 添加到原文件头部,
+        
+    },
+    "namespace": {
+//设置以下选项的命名空间，这些将会替代原先你在命令中空出来的默认值（minecraft）
+    //也就是说，原本需要命名空间的例如：func test:foo在设置"func":"test"为后，可以写成func foo 
+    //目前，只能
+        "block": "minecraft",
+        "storage": "minecraft",
+        "func": "minecraft",
+        "biome": "minecraft",
+        "predicate": "minecraft",
+        "dimension": "minecraft",
+        "item": "minecraft",
+        "item_modifier": "minecraft",
+        "loot": "minecraft",
+        "bossbar": "minecraft",
+        "entity": "minecraft",
+        "advancement":"minecraft"
+    },
+    "selector": {
+        "limitDefaultOne":false
+//是否让除@a外的选择器默认limit=1？（使用'limit=..'来解除默认'limit=1'）
+    //详见选择器增强一节
+    },
+    "scbExpression": {
+        "tempScbObjectiveName": "justmcf-temp-scoreboard",
+//设置连续运算时的临时记分板的名称
+    //连续运算时涉及到的运算优先顺序，会用临时记分板记录临时计算值
+        "useConstNumberScbObjective": false,
+//是否使用常量记分板？
+    //如果在连续运算中使用了常数，它将会记录并且编译时在init.mcfunction生成初始化命令
+        "constNumberScbObjectiveName": "justmcf-const-scoreboard"
+//如果你选择使用常量记分板，设置名称
+    
+    },
+    "functionStatement": {
+        "flatWhenOneCommand": true,
+//如果将要生成的函数文件只有一条命令，是否将它扁平化到execute命令的run后面？
+    //例如execute run function test:foo，在test:foo函数中只有say 1
+    //则会被扁平化为execute run say 1
+    //请注意：如果只有一条exec命令，则扁平化结果和原先的效果不等价，因此不会进行扁平化
+        "stackNamespaceId":"justmcf:program",
+//设置函数使用storage栈的的命名空间ID，格式为namespace:id
+    //对于进阶函数来说，每次调用函数都会开一个用于存储局部变量的storage，
+    //这个storage会存储在一个全局的列表中，这个列表称为“栈”。
+    //在调用子函数时，这个列表会加入子函数的局部变量storage，在出子函数时，会删除这个storage
+        "commonIO":false
+//所有函数共用输入输出的storage吗？选否将为各个函数使用不同的空间
+    //例如，func test:foo将会用storage test:foo input作为输入空间，test:foo output作为输出空间
+    },
+    "loopStatement": {
+        "recursionPartNewFunctionFile":true,
+//for语句的递归调用部分是否放进一个新的函数中？
+    //递归调用部分还是指，for循环中列表转动、判断是否继续循环的那个部分。
+        "stackNamespaceId":"justmcf:program",
+//设置循环语句使用storage栈的的命名空间ID，格式为namespace:id
+    //对于循环语句来说，使用到break、continue时，将会生成一个{break(continue):1b}存在storage中。
+    //栈的解释参见"functionStatement"部分。
+    },
+    "existExpression": {
+        "stackNamespaceId":"justmcf:program",
+//设置“存在表达式”使用storage栈的的命名空间ID，格式为namespace:id
+    //对于存在表达式来说，使用到存在表达式时因为计算顺序需要存储临时值，这个临时值存在storage中。
+    //栈的解释参见"functionStatement"部分。
+        "everyConditionNewFunctionFile":true
+//编译“存在表达式”时，遇到熔断机制时是否创建新的函数文件？选否将使用execute if data覆盖分支
+    //熔断机制是指，a&&b当a为false不会执行b，a||b当a为true时不会执行b。
+    },
+    "entityNameMap": {
+//JustMCF提供了实体名称和uuid的映射表，在解析为mcfunction过程中会自动生成映射表，也可以手动编辑
+    //"name1":"player",这样可以用@name1来作为玩家名
+    //"name2":"0-0-0-0-0",这样可以用@name2来代替uuid
+    }
+}
+```
 

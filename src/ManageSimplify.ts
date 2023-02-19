@@ -61,11 +61,11 @@ function backConvert(result: JustMCFResult) {
 
 function print(result:JustMCFResult) {
     for (const mcfunctionFileName in result.mcfunctions) {
-        console.log(mcfunctionFileName)
+        console.log("# "+mcfunctionFileName)
         console.log("    "+result.mcfunctions[mcfunctionFileName].replace(/\n/g,'\n    '))
     }
     for (const functionTagName in result.functionTags) {
-        console.log(functionTagName)
+        console.log("# "+functionTagName)
         console.log(JSON.stringify(result.functionTags[functionTagName],null,"  "))
     }
 }

@@ -1,5 +1,5 @@
 import { ParseTree } from 'antlr4ts/tree/ParseTree.js';
-import { FuncTagSettingsReplaceContext, FuncTagSettingsReplacedContext, FuncTagSIFuncImproveSContext, FuncTagSIFuncSContext, FuncTagSIFuncTagSContext, NameSpaceBiomeContext, NameSpaceBlockContext, NameSpaceBossbarContext, NameSpaceDimContext, NameSpaceFuncContext, NameSpaceItemContext, NameSpaceItemModifierContext, NameSpaceLootContext, NameSpacePredicateContext, NameSpaceSettingsBiomeContext, NameSpaceSettingsBossbarContext, NameSpaceSettingsDefaultContext, NameSpaceSettingsDimContext, NameSpaceSettingsItemContext, NameSpaceSettingsItemModifierContext, NameSpaceSettingsJustDefaultContext, NameSpaceSettingsLootContext, NameSpaceSettingsPredicateContext, NameSpaceSettingsStorageContext, NameSpaceStorageContext, TagNameSpaceBlockContext, TagNameSpaceContext, TagNameSpaceEntityContext, TagNameSpaceFuncContext, TagNameSpaceItemContext, ScbPlayerSIScbListContext, ScbObjSDeclareSingleContext, CriterionContext, BossbarSDeclareContext, BossbarSOperationContext, BossbarSIGetContext, BossbarSISetColorContext, BossbarSISetMaxContext, BossbarSISetNameContext, BossbarSISetPlayerContext, BossbarSISetPlayerNullContext, BossbarSISetStyleContext, BossbarSISetValueContext, BossbarSISetVisibleContext, BossbarOpExprGetContext, BossbarOpExprAssignValueContext, BossbarOpExprAssignMaxContext, TitleSCompoundContext, BossbarSIRemoveContext, TitleSSelectorCompoundContext, TitleSISelectorSingleContext, TitleSISelectorCompoundContext, TitleSSIJsonContext, TitleSSIClearContext, TitleSSIResetContext, TitleSSITimesContext, TitleISIJsonContext, TitleISIClearContext, TitleISIResetContext, TitleISITimesContext, DisplaySCompoundContext, AttrISIGetBaseContext, AttrISIGetContext, AttrISIModifierAddContext, AttrISIModifierGetContext, AttrISIModifierRemoveContext, AttrISISetBaseContext, AttrSCompoundContext, AttrSISelectorCompoundContext, AttrSISingleContext, AttrSSelectorCompoundContext, BlockSICloneContext, BlockSICloneFilteredContext, BlockSIFillContext, BlockSIFillReplaceContext, BlockSISetblockContext, ClearISIContext, DisplayISIBossbarContext, DisplayISITextContext, DisplayISITitleCompoundContext, DisplaySISelectorCompoundContext, DisplaySISelectorSingleContext, DisplaySSelectorCompoundContext, EffectISIClearAllContext, EffectISIClearContext, EffectISIGiveSpContext, EffectISIGiveContext, EntityISIAttrCompoundContext, EntityISIDisplayCompoundContext, EntityISIExecContext, EntityISIItemCompoundContext, EntityISIKillContext, EntityISILootCompoundContext, EntityISITitleCompoundContext, EntitySCompoundContext, EntitySDeclareContext, EntitySDeclarePlayerContext, EntitySISelectorCompoundContext, EntitySSelectorCompoundContext, GiveISIContext, ItemISIModifyContext, ItemISIReplaceFromBlockContext, ItemISIReplaceFromEntityContext, ItemISIReplaceWithContext, ItemSCompoundContext, ItemSIBlockContext, ItemSIEntityContext, ItemSIGiveAndClearContext, ItemSISelectorNestContext, ItemSSelectorCompoundContext, LootSCompoundContext, LootSIGiveContext, LootSIInsertContext, LootSIReplaceBlockContext, LootSIReplaceEntityContext, LootSISelectorNestContext, LootSISpawnContext, LootSourceFishHandContext, LootSourceFishToolContext, LootSourceKillContext, LootSourceLootContext, LootSourceMineHandContext, LootSourceMineToolContext, LootSSelectorCompoundContext, TagISIAddContext, TagISIListContext, TagISIRemoveContext, TpISIDestinationContext, TpISIFacingContext, TpISIFacingEntityContext, TpISIPosContext, TpISIRotatedContext, TpISIRotatedDivContext, LootIndependentStatementInnerGiveContext, LootIndependentStatementInnerReplaceEntityContext, Item_slotContext, Item_predicateContext, SnbtContext, Block_predicateContext, BlockStatementContext, NameSpaceEntityContext, NameSpaceSettingsEntityContext, EntitySDeclareWithNameContext, EntityDeclareSITagContext, ExistExpressionExecContext, AcceptableNameContext, BlockIdentifierContext, BlockstateContext, DataBlockContext, DataEntityContext, DataGetContext, DataMergeBlockContext, DataMergeEntityContext, DataMergeStorageContext, DataModifyAppendFromContext, DataModifyAppendValueContext, DataModifyInsertFromContext, DataModifyInsertValueContext, DataModifyMergeFromContext, DataModifyMergeValueContext, DataModifyPrependFromContext, DataModifyPrependValueContext, DataModifySetFromContext, DataModifySetValueContext, DataRemoveContext, DataStorageContext, ExecAlignContext, ExecAnchoredContext, ExecAnonymousRunContext, ExecAsContext, ExecAtContext, ExecDirectRunContext, ExecFacingEntityContext, ExecFacingPosContext, ExecIfBiomeContext, ExecIfBlockContext, ExecIfBlocksContext, ExecIfDataContext, ExecIfEntityContext, ExecIfScoreContext, ExecIfScoreMatchesContext, ExecInContext, ExecNamedRunContext, ExecPositionedPosContext, ExecPostionedAsContext, ExecPredicateContext, ExecRotatedAsContext, ExecRotatedPosContext, ExecStoreContext, ExecStoreResultBossbarContext, ExecStoreResultDataContext, ExecStoreResultScoreContext, ExecStoreSuccessBossbarContext, ExecStoreSuccessDataContext, ExecStoreSuccessScoreContext, ExecWithoutRunOrChildContext, ExecWithRunOrChildContext, ExistExpressionAndContext, ExistExpressionBitAndContext, ExistExpressionBitOrContext, ExistExpressionFalseContext, ExistExpressionIdContext, ExistExpressionNotContext, ExistExpressionOrContext, ExistExpressionTrueContext, FuncRunStatementContext, FuncStatementContext, FuncTagStatementContext, JsonContext, LeagalCommandContext, McfFileContext, NameSpaceContext, NameSpaceSettingsBlockContext, NameSpaceSettingsFuncContext, NameSpaceStatementContext, NbtContext, NbtNameContext, NbtPathContext, NoInExecStatementRunFuncContext, NoInExecStatementStoreContext, Pos1Context, Pos2IdentifierContext, Pos3IdentifierContext, Pos5IdentifierContext, RegisterNameContext, ResourceLocationContext, ScbAddContext, ScbFuncExpressionContext, ScbGetContext, ScbCoreIdentifierContext, ScbIdExpressionContext, ScbObjSDeclareDefaultContext, ScbObjSDeclareWithNameContext, ScbObjSOperationContext, ScbOptAddAssignContext, ScbOptAddSubExpressionContext, ScbOptAssignContext, ScbOptDivAssignContext, ScbOptExcFuncContext, ScbOptExpressionContext, ScbOptMaxFuncContext, ScbOptMinFuncContext, ScbOptModAssignContext, ScbOptMulAssignContext, ScbOptMulDivModExpressionContext, ScbOptSubAssignContext, ScbParenExpressionContext, ScbPlayerStatementContext, ScbRemoveContext, ScbResetContext, ScbSetContext, ScbSIDisplayContext, ScbSIDisplaynameContext, ScbSingleOperationExpressionContext, ScbSIRemoveContext, ScbSIRendertypeContext, ScbTempNumberExpressionContext, SelectorContext, WhileStatementExecContext, WhileStatementExistContext, IfStatementContext, ForStatementContext, DataSCompoundContext, DataSIdentifierCompoundContext, DataStorageWithEnvContext, DataStorageLocalContext, FuncImproveStatementContext, YieldStatementContext, FuncImproveRunExpressionContext, ExisitExpressionFuncRunContext, FuncImproveRunStatementContext, DataAssignExistExpressionContext, ExistExpressionParenContext, InterfaceSIdentifierContext, InterfaceSNamespaceContext, ExistExpressionContext, IfElseSIfSContext, DataMergeContext, DataOperationExpressionContext, DataIdentifierContext, BoolValueContext, NumberTypeContext, ScbCompareNumberContext, PlayerNameContext, FuncTagSIFuncRunSContext, NamespaceSetStatementContext, NumberContext, DataStorageIdentifierContext, DataEntityIdentifierContext, DataBlockIdentifierContext, StringContext, ScbIdentifierContext, NbtPathWithoutCompoundContext, EntityExpressionContext, ScbOptDivAssignNumberContext, ScbOptModAssignNumberContext, ScbOptMulAssignNumberContext, ReturnStatementContext, BreakStatementContext, ContinueStatementContext, SelectorParamPredicateContext, SelectorAdvmPartCriteriaContext, SelectorAdvmPartDirectContext, SelectorFakeNameContext, SelectorNameContext, SelectorParamAdvmContext, SelectorParamDPosContext, SelectorParamDXYZContext, SelectorParamDistanceContext, SelectorParamGamemodeContext, SelectorParamLevelContext, SelectorParamLimitContext, SelectorParamLimitInfContext, SelectorParamLimitNumberContext, SelectorParamNameContext, SelectorParamNbtCompoundContext, SelectorParamNbtContext, SelectorParamPosContext, SelectorParamRotContext, SelectorParamRotationContext, SelectorParamScoreCompoundContext, SelectorParamScoresContext, SelectorParamSortContext, SelectorParamTagContext, SelectorParamTeamContext, SelectorParamTypeContext, SelectorParamXYZContext, SelectorParamsContext, SelectorScoresPartCompareContext, SelectorScoresPartRangeContext, SelectorTypeNotContext, SelectorTypeSingleContext, SelectorWithParamsContext, SelectorTypeContext, SelectorNbtCompoundContext, SelectorScoresPartContext, SelectorAdvancementsCriteriaContext, NameSpaceAdvancementContext, NameSpaceSettingsAdvmContext, IntRangeContext, PositiveNumberRangeContext, NumberRangeContext, AcceptableNameWithNumberContext, AcceptableNameWithoutPointWithKeyContext } from './antlr/JustMCFParser.js';
+import { FuncTagSettingsReplaceContext, FuncTagSettingsReplacedContext, FuncTagSIFuncImproveSContext, FuncTagSIFuncSContext, FuncTagSIFuncTagSContext, NameSpaceBiomeContext, NameSpaceBlockContext, NameSpaceBossbarContext, NameSpaceDimContext, NameSpaceFuncContext, NameSpaceItemContext, NameSpaceItemModifierContext, NameSpaceLootContext, NameSpacePredicateContext, NameSpaceSettingsBiomeContext, NameSpaceSettingsBossbarContext, NameSpaceSettingsDefaultContext, NameSpaceSettingsDimContext, NameSpaceSettingsItemContext, NameSpaceSettingsItemModifierContext, NameSpaceSettingsJustDefaultContext, NameSpaceSettingsLootContext, NameSpaceSettingsPredicateContext, NameSpaceSettingsStorageContext, NameSpaceStorageContext, TagNameSpaceBlockContext, TagNameSpaceContext, TagNameSpaceEntityContext, TagNameSpaceFuncContext, TagNameSpaceItemContext, ScbPlayerSIScbListContext, ScbObjSDeclareSingleContext, CriterionContext, BossbarSDeclareContext, BossbarSOperationContext, BossbarSIGetContext, BossbarSISetColorContext, BossbarSISetMaxContext, BossbarSISetNameContext, BossbarSISetPlayerContext, BossbarSISetPlayerNullContext, BossbarSISetStyleContext, BossbarSISetValueContext, BossbarSISetVisibleContext, BossbarOpExprGetContext, BossbarOpExprAssignValueContext, BossbarOpExprAssignMaxContext, TitleSCompoundContext, BossbarSIRemoveContext, TitleSSelectorCompoundContext, TitleSISelectorSingleContext, TitleSISelectorCompoundContext, TitleSSIJsonContext, TitleSSIClearContext, TitleSSIResetContext, TitleSSITimesContext, TitleISIJsonContext, TitleISIClearContext, TitleISIResetContext, TitleISITimesContext, DisplaySCompoundContext, AttrISIGetBaseContext, AttrISIGetContext, AttrISIModifierAddContext, AttrISIModifierGetContext, AttrISIModifierRemoveContext, AttrISISetBaseContext, AttrSCompoundContext, AttrSISelectorCompoundContext, AttrSISingleContext, AttrSSelectorCompoundContext, BlockSICloneContext, BlockSICloneFilteredContext, BlockSIFillContext, BlockSIFillReplaceContext, BlockSISetblockContext, ClearISIContext, DisplayISIBossbarContext, DisplayISITextContext, DisplayISITitleCompoundContext, DisplaySISelectorCompoundContext, DisplaySISelectorSingleContext, DisplaySSelectorCompoundContext, EffectISIClearAllContext, EffectISIClearContext, EffectISIGiveSpContext, EffectISIGiveContext, EntityISIAttrCompoundContext, EntityISIDisplayCompoundContext, EntityISIExecContext, EntityISIItemCompoundContext, EntityISIKillContext, EntityISILootCompoundContext, EntityISITitleCompoundContext, EntitySCompoundContext, EntitySDeclareContext, EntitySDeclarePlayerContext, EntitySISelectorCompoundContext, EntitySSelectorCompoundContext, GiveISIContext, ItemISIModifyContext, ItemISIReplaceFromBlockContext, ItemISIReplaceFromEntityContext, ItemISIReplaceWithContext, ItemSCompoundContext, ItemSIBlockContext, ItemSIEntityContext, ItemSIGiveAndClearContext, ItemSISelectorNestContext, ItemSSelectorCompoundContext, LootSCompoundContext, LootSIGiveContext, LootSIInsertContext, LootSIReplaceBlockContext, LootSIReplaceEntityContext, LootSISelectorNestContext, LootSISpawnContext, LootSourceFishHandContext, LootSourceFishToolContext, LootSourceKillContext, LootSourceLootContext, LootSourceMineHandContext, LootSourceMineToolContext, LootSSelectorCompoundContext, TagISIAddContext, TagISIListContext, TagISIRemoveContext, TpISIDestinationContext, TpISIFacingContext, TpISIFacingEntityContext, TpISIPosContext, TpISIRotatedContext, TpISIRotatedDivContext, LootIndependentStatementInnerGiveContext, LootIndependentStatementInnerReplaceEntityContext, Item_slotContext, Item_predicateContext, SnbtContext, Block_predicateContext, BlockStatementContext, NameSpaceEntityContext, NameSpaceSettingsEntityContext, EntitySDeclareWithNameContext, EntityDeclareSITagContext, ExistExpressionExecContext, AcceptableNameContext, BlockIdentifierContext, BlockstateContext, DataBlockContext, DataEntityContext, DataGetContext, DataMergeBlockContext, DataMergeEntityContext, DataMergeStorageContext, DataModifyAppendFromContext, DataModifyAppendValueContext, DataModifyInsertFromContext, DataModifyInsertValueContext, DataModifyMergeFromContext, DataModifyMergeValueContext, DataModifySetFromContext, DataModifySetValueContext, DataRemoveContext, DataStorageContext, ExecAlignContext, ExecAnchoredContext, ExecAnonymousRunContext, ExecAsContext, ExecAtContext, ExecDirectRunContext, ExecFacingEntityContext, ExecFacingPosContext, ExecIfBiomeContext, ExecIfBlockContext, ExecIfBlocksContext, ExecIfDataContext, ExecIfEntityContext, ExecIfScoreContext, ExecIfScoreMatchesContext, ExecInContext, ExecNamedRunContext, ExecPositionedPosContext, ExecPostionedAsContext, ExecPredicateContext, ExecRotatedAsContext, ExecRotatedPosContext, ExecStoreContext, ExecStoreResultBossbarContext, ExecStoreResultDataContext, ExecStoreResultScoreContext, ExecStoreSuccessBossbarContext, ExecStoreSuccessDataContext, ExecStoreSuccessScoreContext, ExecWithoutRunOrChildContext, ExecWithRunOrChildContext, ExistExpressionAndContext, ExistExpressionBitAndContext, ExistExpressionBitOrContext, ExistExpressionFalseContext, ExistExpressionIdContext, ExistExpressionNotContext, ExistExpressionOrContext, ExistExpressionTrueContext, FuncRunStatementContext, FuncStatementContext, FuncTagStatementContext, JsonContext, LeagalCommandContext, McfFileContext, NameSpaceContext, NameSpaceSettingsBlockContext, NameSpaceSettingsFuncContext, NameSpaceStatementContext, NbtContext, NbtNameContext, NbtPathContext, NoInExecStatementRunFuncContext, NoInExecStatementStoreContext, Pos1Context, Pos2IdentifierContext, Pos3IdentifierContext, Pos5IdentifierContext, RegisterNameContext, ResourceLocationContext, ScbAddContext, ScbFuncExpressionContext, ScbGetContext, ScbCoreIdentifierContext, ScbIdExpressionContext, ScbObjSDeclareDefaultContext, ScbObjSDeclareWithNameContext, ScbObjSOperationContext, ScbOptAddAssignContext, ScbOptAddSubExpressionContext, ScbOptAssignContext, ScbOptDivAssignContext, ScbOptExcFuncContext, ScbOptExpressionContext, ScbOptMaxFuncContext, ScbOptMinFuncContext, ScbOptModAssignContext, ScbOptMulAssignContext, ScbOptMulDivModExpressionContext, ScbOptSubAssignContext, ScbParenExpressionContext, ScbPlayerStatementContext, ScbRemoveContext, ScbResetContext, ScbSetContext, ScbSIDisplayContext, ScbSIDisplaynameContext, ScbSingleOperationExpressionContext, ScbSIRemoveContext, ScbSIRendertypeContext, ScbTempNumberExpressionContext, SelectorContext, WhileStatementExecContext, WhileStatementExistContext, IfStatementContext, ForStatementContext, DataSCompoundContext, DataSIdentifierCompoundContext, DataStorageWithEnvContext, DataStorageLocalContext, FuncImproveStatementContext, YieldStatementContext, FuncImproveRunExpressionContext, ExisitExpressionFuncRunContext, FuncImproveRunStatementContext, DataAssignExistExpressionContext, ExistExpressionParenContext, InterfaceSIdentifierContext, InterfaceSNamespaceContext, ExistExpressionContext, IfElseSIfSContext, DataMergeContext, DataOperationExpressionContext, DataIdentifierContext, BoolValueContext, NumberTypeContext, ScbCompareNumberContext, PlayerNameContext, FuncTagSIFuncRunSContext, NamespaceSetStatementContext, NumberContext, DataStorageIdentifierContext, DataEntityIdentifierContext, DataBlockIdentifierContext, StringContext, ScbIdentifierContext, NbtPathWithoutCompoundContext, EntityExpressionContext, ScbOptDivAssignNumberContext, ScbOptModAssignNumberContext, ScbOptMulAssignNumberContext, ReturnStatementContext, BreakStatementContext, ContinueStatementContext, SelectorParamPredicateContext, SelectorAdvmPartCriteriaContext, SelectorAdvmPartDirectContext, SelectorFakeNameContext, SelectorNameContext, SelectorParamAdvmContext, SelectorParamDPosContext, SelectorParamDXYZContext, SelectorParamDistanceContext, SelectorParamGamemodeContext, SelectorParamLevelContext, SelectorParamLimitContext, SelectorParamLimitInfContext, SelectorParamLimitNumberContext, SelectorParamNameContext, SelectorParamNbtCompoundContext, SelectorParamNbtContext, SelectorParamPosContext, SelectorParamRotContext, SelectorParamRotationContext, SelectorParamScoreCompoundContext, SelectorParamScoresContext, SelectorParamSortContext, SelectorParamTagContext, SelectorParamTeamContext, SelectorParamTypeContext, SelectorParamXYZContext, SelectorParamsContext, SelectorScoresPartCompareContext, SelectorScoresPartRangeContext, SelectorTypeNotContext, SelectorTypeSingleContext, SelectorWithParamsContext, SelectorTypeContext, SelectorNbtCompoundContext, SelectorScoresPartContext, SelectorAdvancementsCriteriaContext, NameSpaceAdvancementContext, NameSpaceSettingsAdvmContext, IntRangeContext, PositiveNumberRangeContext, NumberRangeContext, AcceptableNameWithNumberContext, AcceptableNameWithoutPointWithKeyContext, BossbarIdentifierContext, ScbEnableContext, ScbPlayerSIScbResetContext } from './antlr/JustMCFParser.js';
 import { JustMCFVisitor } from "./antlr/JustMCFVisitor.js";
 import { AbstractParseTreeVisitor } from "antlr4ts/tree/AbstractParseTreeVisitor.js";
 import { UUID } from './lib/UUIDUtils.js';
@@ -79,18 +79,11 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
                     //如果是可以操作的function
                     for (const tag of ["break", "continue", "return"]) {
                         if (this.functions[runFuncNamespace].has[tag]) {
-                            execute_command = `${execute_command} unless data storage ${this.option.existExpression?.stackNamespaceId} exist_stack_frame[0].${tag}`
-                            //传染性，从最里层往外传染。判断当前函数的类型，终止对应的传染
-                            switch (this.functions[functionNamespaceId].type) {
-                                case "for":
-                                case "while": {
-                                    if (tag == "continue") this.functions[functionNamespaceId].has[tag] = true
-                                } break;
-                                case "improve": {
-                                    if (tag != "continue") this.functions[functionNamespaceId].has[tag] = true
-                                } break;
-                                default: this.functions[functionNamespaceId].has[tag] = true
-                            }
+                            if (tag == "return") execute_command = `${execute_command} unless data storage ${this.option.existExpression?.stackNamespaceId} stack_frame[0].${tag}`
+                            else execute_command = `${execute_command} unless data storage ${this.option.existExpression?.stackNamespaceId} loop_stack_frame[0].${tag}`
+                            //传染性，从最里层往外传染。终止传染在对应位置做。
+                            this.functions[functionNamespaceId].has[tag] = true
+                            
                         }
                     }
                 }
@@ -110,7 +103,8 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
                         ||(tag == "return" && this.functionTypeStack.includes("improve") )
                     if (shouldDeal) {
                         this.functions[functionNamespaceId].has[tag] = true
-                        this.functions[functionNamespaceId].lines[i] = `data modify storage ${this.option.existExpression?.stackNamespaceId} exist_stack_frame[0].${tag} set value 1b`
+                        if (tag == "return") this.functions[functionNamespaceId].lines[i] = `data modify storage ${this.option.functionStatement?.stackNamespaceId} stack_frame[0].${tag} set value 1b`
+                        else this.functions[functionNamespaceId].lines[i] = `data modify storage ${this.option.existExpression?.stackNamespaceId} loop_stack_frame[0].${tag} set value 1b`
                         if (listLength - 1 > i) {
                             console.warn(`function ${functionNamespaceId} has unreachable command afer ${tag}`)
                             this.functions[functionNamespaceId].lines.splice(i, listLength - i)
@@ -174,10 +168,11 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         ArrayHelper.remove(this.tempScbTargetName,rightTempNumber)
         this.tempScbTargetNameUsed.push(rightTempNumber)
     }
-    getVaildTempScbTargetName(targetName: string ='temp'): [number, string] {
+    getVaildTempScbTargetName(targetName: string ='#temp'): [number, string] {
         let tempNumber = this.tempScbTargetName.length
         if (this.tempScbTargetNameUsed.length > 0) { tempNumber = this.tempScbTargetNameUsed.pop()!! }
         this.tempScbTargetName.push(tempNumber)
+        this.entityNameMap[`${targetName + tempNumber}`]="player"
         return [tempNumber, `${targetName + tempNumber} ${this.option.scbExpression?.tempScbObjectiveName}`]
     }
     private tempExistName: number = 0;
@@ -186,7 +181,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
 
     createInitFunc() {
         const initNamespaceId = `${this.option.namespace?.func}:init`
-        this.initNewFunction(initNamespaceId)
+        if(this.functions[initNamespaceId]===undefined) this.initNewFunction(initNamespaceId)
         if (this.constScbInitFunc.length > 0) 
             this.functions[initNamespaceId].lines.push(`scoreboard objectives add ${this.option.scbExpression?.constNumberScbObjectiveName} dummy "const nummber scoreboard"`)
         if (this.tempScbTargetName.length > 0) 
@@ -469,7 +464,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         //TODO: default params and params template
         const namespace = this.v(ctx.nameSpaceFunc())
         const preCommands: string[] = [];
-        let ifCommand = ""
+        let ifCommand = "execute"
         const inputSourceNamespace = this.option.functionStatement?.commonIO
             ? this.option.functionStatement.stackNamespaceId
             : namespace;
@@ -479,7 +474,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
             ctx.funcImproveParam().map(context => {
                 const name = this.v(context.acceptableName())
                 const type = context.typeName() !== undefined ? this.v(context.typeName()!!) : "nbt";
-                preCommands.push(`data motify storage ${this.option.functionStatement?.stackNamespaceId} stack_frame[0].${name} set from storage ${inputSourceNamespace} input.${name}`)
+                preCommands.push(`data modify storage ${this.option.functionStatement?.stackNamespaceId} stack_frame[0].${name} set from storage ${inputSourceNamespace} input.${name}`)
                 ifCommand = `${ifCommand} if data storage ${inputSourceNamespace} input.${name}`
                 return { name: name, type: type }
             });
@@ -489,7 +484,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
             inputType: params,
             outputType:resType
         }
-        const startCommand = (ifCommand!=""?`execute ${ifCommand} run `:"")+ `function ${namespace}/start`
+        const startCommand = (ifCommand!="execute"?`${ifCommand} run `:"")+ `function ${namespace}/start`
 
         this.initNewFunction(namespace)
         this.functions[namespace].lines = [
@@ -503,7 +498,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         ]
 
 
-        this.dataStorageIdentifierStack.push([namespace,"stack_frame[0]"])
+        this.dataStorageIdentifierStack.push([`${this.option.functionStatement?.stackNamespaceId!!}`,"stack_frame[0]"])
         this.improveFunctionNamespaceIdStack.push(namespace)
         this.functionTypeStack.push("improve")
         this.addNewFunction(`${namespace}/start`,()=>ctx.statementInner().flatMap(context=>this.visit(context)),{flat:false,improveFunction:true})
@@ -517,6 +512,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         if (!this.functionTypeStack.includes("while") && !this.functionTypeStack.includes("for")) { return ["# assume " + ctx.text] }
         if (ctx.nameSpaceFunc() !== undefined) {
             const namespace = this.v(ctx.nameSpaceFunc()!!)
+            if(ctx.NUMBER_INT()!==undefined) if(ctx.NUMBER_INT()?.text!="1") throw new JustMCFSimplifyError("error continue number. only support 1")
             if (this.tempFunctionNamespaceIdStack.includes(namespace) && (this.functions[namespace].type == "while" || this.functions[namespace].type == "for")) {return ["# continue"] }
             return ["# assume"+ctx.text]
         }
@@ -572,13 +568,13 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
             : namespace;
         const resStorageNamespace = inputSourceNamespace
         const clearInputCommand = `data remove storage ${inputSourceNamespace} input`
-        let ifCommand = ""
+        let ifCommand = "execute"
         const setParamsCommands = ctx.funcImproveRunParam().map((context, i) => {
             const sourceIdentifier = this.v(context.dataIdentifier())
-            ifCommand = ifCommand = `${ifCommand} if data storage ${sourceIdentifier}`
-            return `data modify storage ${inputSourceNamespace} input.${this.improveFunctionTypes[namespace].inputType[i].name} set from ${sourceIdentifier}` 
+            ifCommand = `${ifCommand} if data ${sourceIdentifier}`
+            return `data modify ${inputSourceNamespace} input.${this.improveFunctionTypes[namespace].inputType[i].name} set from ${sourceIdentifier}` 
         })
-        const startCommand = (ifCommand!=""?`execute ${ifCommand} run `:"")+`function ${namespace}`
+        const startCommand = (ifCommand!="execute"?`${ifCommand} run `:"")+`function ${namespace}`
         return [`storage ${resStorageNamespace} output`,clearInputCommand,...setParamsCommands,startCommand]
     }
 //#endregion
@@ -640,10 +636,10 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         const storeScale = storeScaleContext === undefined ? "1" : this.v(storeScaleContext)
         return [`store success ${this.v(ctx.dataIdentifier())} ${storeType} ${storeScale}`]
     }
-    visitExecStoreResultBossbar(ctx: ExecStoreResultBossbarContext) {return [`store result ${this.v(ctx.bossbarIdentifier())} ${(ctx._value!==undefined)? ctx._value.text:"value"}`]}
-    visitExecStoreSuccessBossbar(ctx: ExecStoreSuccessBossbarContext) {return [`store success ${this.v(ctx.bossbarIdentifier())} ${(ctx._value!==undefined)? ctx._value.text:"value"}`]}
+    visitExecStoreResultBossbar(ctx: ExecStoreResultBossbarContext) {return [`store result bossbar ${this.v(ctx.bossbarIdentifier())} ${(ctx._value!==undefined)? ctx._value.text:"value"}`]}
+    visitExecStoreSuccessBossbar(ctx: ExecStoreSuccessBossbarContext) {return [`store success bossbar ${this.v(ctx.bossbarIdentifier())} ${(ctx._value!==undefined)? ctx._value.text:"value"}`]}
     visitExecAlign(ctx: ExecAlignContext) {
-        const axesDefault = ctx.AcceptableName().text
+        const axesDefault = this.v(ctx.acceptableNameWithoutPointWithKey())
         const axes = `${/x/.test(axesDefault) ? "x" : ""}${/y/.test(axesDefault) ? "y" : ""}${/z/.test(axesDefault) ? "z" : ""}`
         if (axes === "") throw new JustMCFSimplifyError("Error on execute align axes token")
         return [`align ${axes}`]
@@ -653,7 +649,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitExecAs(ctx: ExecAsContext) { return [`as ${this.v(ctx.selector())}`] }
     visitExecAt(ctx: ExecAtContext) { return [`at ${this.v(ctx.selector())}`] }
     visitExecFacingPos(ctx: ExecFacingPosContext) { return [`facing ${this.v(ctx.pos3Identifier())}`] }
-    visitExecFacingEntity(ctx: ExecFacingEntityContext) { return [`facing entity ${this.v(ctx.selector())}`] }
+    visitExecFacingEntity(ctx: ExecFacingEntityContext) { return [`facing entity ${this.v(ctx.selector())} ${ctx._anchor.text}`] }
     visitExecPositionedPos(ctx: ExecPositionedPosContext) { return [`positioned ${this.v(ctx.pos3Identifier())}`] }
     visitExecPostionedAs(ctx: ExecPostionedAsContext) { return [`positioned as ${this.v(ctx.selector())}`] }
     visitExecRotatedPos(ctx: ExecRotatedPosContext) { return [`rotated ${this.v(ctx.pos2Identifier())}`] }
@@ -665,8 +661,8 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     }
     visitExecIfScoreMatches(ctx: ExecIfScoreMatchesContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} score ${this.v(ctx.scbCoreIdentifier())} matches ${ctx.intRange()!==undefined? this.v(ctx.intRange()!!):this.v(ctx.scbCompareNumber()!!)}`] }
     visitExecPredicate(ctx: ExecPredicateContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} predicate ${this.v(ctx.nameSpacePredicate())}`] }
-    visitExecIfBlock(ctx: ExecIfBlockContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} block ${this.v(ctx.pos3Identifier())} ${this.v(ctx.blockIdentifier())}`] }
-    visitExecIfBlocks(ctx: ExecIfBlocksContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} blocks ${this.v(ctx.pos3Identifier(0))} ${this.v(ctx.pos3Identifier(1))} ${this.v(ctx.pos3Identifier(2))}`] }
+    visitExecIfBlock(ctx: ExecIfBlockContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} block ${this.v(ctx.pos3Identifier())} ${this.v(ctx.block_predicate())}`] }
+    visitExecIfBlocks(ctx: ExecIfBlocksContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} blocks ${this.v(ctx.pos3Identifier(0))} ${this.v(ctx.pos3Identifier(1))} ${this.v(ctx.pos3Identifier(2))} ${ctx._scan_mode.text}`] }
     visitExecIfData(ctx: ExecIfDataContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} data ${this.v(ctx.dataIdentifier())}`] }
     visitExecIfBiome(ctx: ExecIfBiomeContext) { return [`${(ctx._cond!==undefined)?ctx._cond.text:"if"} biome ${this.v(ctx.pos3Identifier())} ${this.v(ctx.nameSpaceBiome())}`] }
     visitExecStore(ctx: ExecStoreContext) { return this.visit(ctx.execStoreChild()) }
@@ -705,15 +701,16 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         const commands = this.visit(ctx.dataRightValue())
         return [...commands.slice(1),`data modify ${this.v(ctx.dataIdentifier())} append from ${commands[0]}`]
     }
-    visitDataModifyPrependValue(ctx: DataModifyPrependValueContext) { return [`data modify ${this.v(ctx.dataIdentifier())} prepend value ${this.v(ctx.nbt())}`] }
-    visitDataModifyPrependFrom(ctx: DataModifyPrependFromContext) {
-        const commands = this.visit(ctx.dataRightValue())
-        return [...commands.slice(1),`data modify ${this.v(ctx.dataIdentifier())} prepend from ${commands[0]}`]
+    visitDataModifyInsertValue(ctx: DataModifyInsertValueContext) {
+        const number = ctx.NUMBER_INT().text
+        const insertText = number=="0"?"prepend":`insert ${number}`
+        return [`data modify ${this.v(ctx.dataIdentifier())} ${insertText} value ${this.v(ctx.nbt())}`]
     }
-    visitDataModifyInsertValue(ctx: DataModifyInsertValueContext) { return [`data modify ${this.v(ctx.dataIdentifier())} insert value ${this.v(ctx.nbt())}`] }
     visitDataModifyInsertFrom(ctx: DataModifyInsertFromContext) {
         const commands = this.visit(ctx.dataRightValue())
-        return [...commands.slice(1),`data modify ${this.v(ctx.dataIdentifier())} insert from ${commands[0]}`]
+        const number = ctx.NUMBER_INT().text
+        const insertText = number=="0"?"prepend":`insert ${number}`
+        return [...commands.slice(1),`data modify ${this.v(ctx.dataIdentifier())} ${insertText} from ${commands[0]}`]
     }
     visitDataRemove(ctx: DataRemoveContext) { return [`data remove ${this.v(ctx.dataIdentifier())}`] }
 
@@ -742,13 +739,18 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitScbOptDivAssign(ctx: ScbOptDivAssignContext) { return [`scoreboard players operation ${this.v(ctx.scbCoreIdentifier(0))} /= ${this.v(ctx.scbCoreIdentifier(1))}`] }
     visitScbOptModAssign(ctx: ScbOptModAssignContext) { return [`scoreboard players operation ${this.v(ctx.scbCoreIdentifier(0))} %= ${this.v(ctx.scbCoreIdentifier(1))}`] }
     visitScbOptExcFunc(ctx: ScbOptExcFuncContext) { return [`scoreboard players operation ${this.v(ctx.scbCoreIdentifier(0))} >< ${this.v(ctx.scbCoreIdentifier(1))}`] }
-    visitScbOptMinFunc(ctx: ScbOptMinFuncContext) { return [`scoreboard players operation ${this.v(ctx.scbCoreIdentifier(0))} << ${this.v(ctx.scbCoreIdentifier(1))}`] }
-    visitScbOptMaxFunc(ctx: ScbOptMaxFuncContext) { return [`scoreboard players operation ${this.v(ctx.scbCoreIdentifier(0))} >> ${this.v(ctx.scbCoreIdentifier(1))}`] }
+    visitScbOptMinFunc(ctx: ScbOptMinFuncContext) { return [`scoreboard players operation ${this.v(ctx.scbCoreIdentifier(0))} < ${this.v(ctx.scbCoreIdentifier(1))}`] }
+    visitScbOptMaxFunc(ctx: ScbOptMaxFuncContext) { return [`scoreboard players operation ${this.v(ctx.scbCoreIdentifier(0))} > ${this.v(ctx.scbCoreIdentifier(1))}`] }
     visitScbOptAssign(ctx: ScbOptAssignContext) { return [`scoreboard players operation ${this.v(ctx.scbCoreIdentifier(0))} = ${this.v(ctx.scbCoreIdentifier(1))}`] }
-    visitScbReset(ctx: ScbResetContext) { return [`scoreboard players reset ${this.v(ctx.scbCoreIdentifier())}`] } //TODO: the objective is not required
+    visitScbReset(ctx: ScbResetContext) { return [`scoreboard players reset ${this.v(ctx.scbCoreIdentifier())}`] } 
+    visitScbEnable(ctx: ScbEnableContext) { return [`scoreboard players enable ${this.v(ctx.scbCoreIdentifier())}`] }
+
     visitScbOptExpression(ctx: ScbOptExpressionContext) {
         this.tempScbTargetName = []
         const res = this.visit(ctx.scbSingleOperationExpression())
+        //结束表达式后，把用到的temp name都全部装入used中
+        for (const i of this.tempScbTargetName) {
+            this.tempScbTargetNameUsed.push(i)}
         this.tempScbTargetName = []
         return res.slice(2).concat([`scoreboard players operation ${this.v(ctx.scbCoreIdentifier())} = ${res[1]}`])
     }
@@ -834,6 +836,9 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
             return [`scoreboard players list ${this.v(ctx.selector()!!)}`]
         else return [`scoreboard objectives list`]
     }
+    visitScbPlayerSIScbReset(ctx: ScbPlayerSIScbResetContext){
+        return [`scoreboard players reset ${this.v(ctx.selector())}`]
+    }
 
 /* Scb Objectives Statement */
     visitScbObjSDeclareWithName(ctx: ScbObjSDeclareWithNameContext) {
@@ -884,7 +889,8 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitBossbarOpExprGet(ctx: BossbarOpExprGetContext) { return [`bossbar get ${this.v(ctx.bossbarIdentifier())} ${ctx._type===undefined?"value":ctx._type.text}`] }
     visitBossbarOpExprAssignValue(ctx: BossbarOpExprAssignValueContext) { return [`bossbar set ${this.v(ctx.bossbarIdentifier())} value ${ctx.NUMBER_INT().text}`] }
     visitBossbarOpExprAssignMax(ctx: BossbarOpExprAssignMaxContext) { return [`bossbar set ${this.v(ctx.bossbarIdentifier())} max ${ctx.NUMBER_INT().text}`] }
-//#endregion
+    visitBossbarIdentifier(ctx: BossbarIdentifierContext) { return this.visit(ctx.nameSpaceBossbar())}
+    //#endregion
 //#region Title Statement
     
     visitTitleSCompound(ctx: TitleSCompoundContext) {
@@ -1333,10 +1339,10 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
             this.functionTypeStack.push("else")
             const elseCommand = this.v(ctx.ifElseStatement()!!)
             this.functionTypeStack.pop()
-            elseStatement = [`execute unless data storage ${this.option.existExpression?.stackNamespaceId} exist_stack_frame.${existCommands[0]} run ${elseCommand}`]
+            elseStatement = [`execute unless data storage ${this.option.existExpression?.stackNamespaceId} exist_stack_frame[0].${existCommands[0]} run ${elseCommand}`]
         }
         return [...existCommands.slice(1),
-            `execute if data storage ${this.option.existExpression?.stackNamespaceId} exist_stack_frame.${existCommands[0]} run ${runCommand}`,
+            `execute if data storage ${this.option.existExpression?.stackNamespaceId} exist_stack_frame[0].${existCommands[0]} run ${runCommand}`,
             ...elseStatement
         ]        
     }
@@ -1349,11 +1355,12 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitWhileStatementExist(ctx: WhileStatementExistContext) {
         this.setUsedExistExpressionNow()
         const commands = this.visit(ctx.existExpression())
+        const needCommands= commands.slice(1)
         this.functionTypeStack.push("while")
         const resList = [
-            ...commands.slice(1),
+            ...needCommands,
             this.visitLoopUtils("while",`execute if data storage ${this.option.existExpression?.stackNamespaceId} exist_stack_frame[0].${commands[0]}`,
-                this.v(ctx.execRunChild()))
+                this.v(ctx.execRunChild()),...needCommands)
         ]
         this.functionTypeStack.pop()
         return resList
@@ -1383,12 +1390,16 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
             this.addNewFunction(namespace, () => [runCommand], { flat: false })
             this.functionTypeStack.pop()
         }
+        let hasTag = false
         let execute_command = "execute"
-        for (const tag of ["break","return"]){
+        for (const tag of ["break","return","continue"]){
             if (this.functions[namespace].has[tag]) {
-                execute_command = `${execute_command} unless data storage ${this.option.existExpression?.stackNamespaceId} exist_stack_frame[0].${tag}`
+                hasTag = true
+                if(tag == "return") execute_command = `${execute_command} unless data storage ${this.option.existExpression?.stackNamespaceId} stack_frame[0].${tag}`
+                else if(tag == "break") execute_command = `${execute_command} unless data storage ${this.option.existExpression?.stackNamespaceId} loop_stack_frame[0].${tag}`
             }
         }
+
         if (execute_command != "execute") {
             const lastCommand = this.functions[namespace].lines[this.functions[namespace].lines.length - 1]
             const executePartNew =`${execute_command} run function `
@@ -1396,7 +1407,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
                 //可以把递归部分塞进上一次分块的函数里
                 namespace = lastCommand.replace(executePartNew, "")
             }
-            else if (left.length > 0 && this.option.forStatement?.recursionPartNewFunctionFile) { 
+            else if (left.length > 0 && this.option.loopStatement?.recursionPartNewFunctionFile) { 
                 //开个新函数塞递归部分
                 this.functionTypeStack.push("normal")
                 const newNamespace = this.getNewTempFunctionNamespaceId("recursion")
@@ -1405,14 +1416,27 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
                 left = []
             }
             else {
-                left = left?.map(com=>`${execute_command} run ${com}`)
-                command = command.replace("execute",execute_command)
+                left = left?.map(com => `${execute_command} run ${com}`)
+                command = command.replace("execute", execute_command)
             }
         }
-    
-        this.functions[namespace].lines.push(...left)
-        this.functions[namespace].lines.push(command)
+        if (hasTag) {
+            this.functions[namespace].lines = [
+                `data modify storage ${this.option.existExpression?.stackNamespaceId} loop_stack_frame prepend value {}`, // 为子函数创建变量内存空间
+                ...this.functions[namespace].lines,
+                ...left,
+                command,
+                `data remove storage ${this.option.existExpression?.stackNamespaceId} loop_stack_frame[0]`, // 销毁子函数的变量内存空间
+            ]
+        }
+        else {
+            this.functions[namespace].lines.push(...left)
+            this.functions[namespace].lines.push(command)
+        }
         
+        //解除传染
+        this.functions[namespace].has["break"] = false;
+        this.functions[namespace].has["continue"] = false;
         return command
     }
     visitForStatement(ctx: ForStatementContext) {
@@ -1423,9 +1447,10 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
         const identifierContext = ctx.dataOperationExpression() as DataOperationIdentifierContext
         const dataIdentifier = this.visit(identifierContext.dataIdentifier())
         const dataCommands = this.visit(ctx.dataOperationExpression())
-        const [scbNumber, scbName] = this.getVaildTempScbTargetName("loop")
+        const [scbNumber, scbName] = this.getVaildTempScbTargetName("#loop")
         this.functionTypeStack.push("for")
         const res = [
+            ...dataCommands,
             `execute store result score ${scbName} run data get ${dataIdentifier}`,
             this.visitLoopUtils("for",`execute if score ${scbName} matches 1..`, this.v(ctx.execRunChild()),
                 `data modify ${dataIdentifier} append from ${dataIdentifier}[0]`,
@@ -1439,8 +1464,24 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     }
 //#endregion
     //TODO: type check
-    visitInterfaceSIdentifier(ctx: InterfaceSIdentifierContext) {return[`data modify ${this.v(ctx.dataIdentifier())} set value ${this.v(ctx.nbt())}`] }
-    visitInterfaceSNamespace(ctx: InterfaceSNamespaceContext) {return [`data merge storage ${this.v(ctx.nameSpaceStorage())} ${this.v(ctx.nbt())}`]}
+    visitInterfaceSIdentifier(ctx: InterfaceSIdentifierContext) {
+        const command = `data modify ${this.v(ctx.dataIdentifier())} set value ${this.v(ctx.nbt())}`
+        
+        const initNamespaceId = `${this.option.namespace?.func}:init`
+        if (this.functions[initNamespaceId] === undefined) this.initNewFunction(initNamespaceId)
+        
+        this.functions[initNamespaceId].lines.push(command)
+        return [command]
+    }
+    visitInterfaceSNamespace(ctx: InterfaceSNamespaceContext) {
+        const command = `data merge storage ${this.v(ctx.nameSpaceStorage())} ${this.v(ctx.nbt())}`
+        
+        const initNamespaceId = `${this.option.namespace?.func}:init`
+        if(this.functions[initNamespaceId] === undefined) this.initNewFunction(initNamespaceId)
+        
+        this.functions[initNamespaceId].lines.push(command)
+        return [command]
+    }
 
 //#region Selector
     //visitSelector(ctx: SelectorContext) {return []}
@@ -1451,11 +1492,19 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
             if (this.entityNameMap[name] == "player") return [name,"final"]
             else return [this.entityNameMap[name],"final"]
         }
-        else throw new JustMCFSimplifyError("uuid-name should be init")
+        else {
+            console.warn("could not find corresponding uuid of the name, it was considered as player name")
+            this.entityNameMap[name] = "player" 
+            return [name,"final"]
+        }
     }
     visitSelectorFakeName(ctx: SelectorFakeNameContext) {
+        const name = "#" + this.v(ctx.acceptableNameWithoutPointWithKey())
+        if (this.entityNameMap[name] === undefined) { 
+            this.entityNameMap[name]="player"
+        }
         //不用检查FakeName
-        return ["#" + this.v(ctx.acceptableNameWithoutPointWithKey()),"final"]
+        return [name,"final"]
     }
     
     visitSelectorWithParams(ctx: SelectorWithParamsContext) {
@@ -1473,6 +1522,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
             else if (param[0].includes("limit=")) {
                 hasLimit.limit = Number.parseInt(param[0].replace("limit=", ""))
                 hasLimit.defaultLimit = false
+                arr.push(...param.slice(1))
             }
             else { arr.push(...param) }
             return arr
@@ -1482,6 +1532,7 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
             res.push(`limit=${hasLimit.limit}`)
         if(ctx.selectorTypes()!==undefined)
             res.push(...this.visit(ctx.selectorTypes()!!))
+        if(res.length==0) return[`@${selectorKey}`]
         return [`@${selectorKey}[${res.join(",")}]`,(hasLimit.limit == 1)?"final":"nest"]
     }
     visitSelectorParamPos(ctx: SelectorParamPosContext) {
@@ -1531,14 +1582,14 @@ export class JustMCFSimplifyVisitor extends AbstractParseTreeVisitor<string[]>
     visitSelectorParamLimit(ctx: SelectorParamLimitContext) {
         if (ctx.text.includes("+")) return [`limit=${ ctx.NUMBER_INT().text.replace("-","") }`,"sort=nearest", ]
         else if(ctx.text.includes("-")) return [`limit=${ ctx.NUMBER_INT().text.replace("-","") }`,"sort=furthest"]
-        return [ctx.text]
+        return [`limit=${ ctx.NUMBER_INT().text }`]
     }
     visitSelectorParamLimitInf(ctx: SelectorParamLimitInfContext){ return ["nolimit"]}
     visitSelectorParamSort(ctx: SelectorParamSortContext){ return [ctx.text]}
     visitSelectorParamLimitNumber(ctx: SelectorParamLimitNumberContext) {
         if (ctx.text.includes("+")) return [`limit=${ ctx.NUMBER_INT().text.replace("-","") }`,"sort=nearest", ]
         else if(ctx.text.includes("-")) return [`limit=${ ctx.NUMBER_INT().text.replace("-","") }`,"sort=furthest",]
-        return [ctx.text]
+        return [`limit=${ ctx.NUMBER_INT().text }`]
     }
     visitSelectorParamNbtCompound(ctx: SelectorParamNbtCompoundContext){return [`nbt=${this.v(ctx.selectorNbtCompound()!!)}`]}
     visitSelectorParamScoreCompound(ctx: SelectorParamScoreCompoundContext) { return [`scores={${ctx.selectorScoresPartImprove().flatMap(context=>this.visit(context)).join(",")}}`] }

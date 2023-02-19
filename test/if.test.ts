@@ -3,15 +3,31 @@ import { execute } from '../src/ManageSimplify.js';
 
 test('Exist Expression', () => {
     execute`
-func test:exist{
+func test:exist1{
     foo:stor::bool_1 = {if @e} | {if ~ ~ ~ stone} & {if @s}
+}
+func test:exist2{
     foo:stor::bool_1 = ({if @e} | {if ~ ~ ~ stone}) & {if @s}
+}
+func test:exist3{
     foo:stor::bool_1 = {if @e} & {if ~ ~ ~ stone} | {if @s}
+}
+func test:exist4{
     foo:stor::bool_1 = ! {if @e} || {if ~ ~ ~ stone} || {if @s}
+}
+func test:exist5{
     foo:stor::bool_1 = {if @e} && {if ~ ~ ~ stone} || {if @s}
+}
+func test:exist6{
     foo:stor::bool_1 = {if @e} && {if ~ ~ ~ stone} || {if @s} | true
+}
+func test:exist7{
     foo:stor::bool_1 = {if @e} && {if ~ ~ ~ stone} || {if @s} & false
+}
+func test:exist8{
     foo:stor::bool_1 = true
+}
+func test:exist9{
     foo:stor::bool_1 = false
 }
     `

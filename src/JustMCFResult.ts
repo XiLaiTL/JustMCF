@@ -31,8 +31,9 @@ export interface option {
         stackNamespaceId?: string,
         commonIO?: boolean,
     },
-    forStatement?: {
-        recursionPartNewFunctionFile?:boolean
+    loopStatement?: {
+        recursionPartNewFunctionFile?: boolean
+        stackNamespaceId?: string,
     },
     existExpression?: {
         stackNamespaceId?: string,
@@ -75,8 +76,9 @@ const _defaultOption:option = {
         stackNamespaceId:"justmcf:program",
         commonIO:false
     },
-    forStatement: {
-        recursionPartNewFunctionFile:true
+    loopStatement: {
+        recursionPartNewFunctionFile: true,
+        stackNamespaceId:"justmcf:program",
     },
     existExpression: {
         stackNamespaceId:"justmcf:program",
@@ -91,7 +93,7 @@ export function defaultOption() {
         selector:{..._defaultOption.selector},
         scbExpression: { ..._defaultOption.scbExpression },
         functionStatement: { ..._defaultOption.functionStatement },
-        forStatement:{..._defaultOption.forStatement },
+        loopStatement:{..._defaultOption.loopStatement },
         existExpression: { ..._defaultOption.existExpression },
         entityNameMap:{..._defaultOption.entityNameMap}
     }
@@ -108,7 +110,7 @@ export class JustMCFResult {
             selector:{...this._option.selector, ...val.selector },
             scbExpression: { ...this._option.scbExpression,...val.scbExpression },
             functionStatement: { ...this._option.functionStatement, ...val.functionStatement },
-            forStatement: { ...this._option.forStatement, ...val.forStatement },
+            loopStatement: { ...this._option.loopStatement, ...val.loopStatement },
             existExpression: { ...this._option.existExpression, ...val.existExpression },
             entityNameMap:{...this._option.entityNameMap,...val.entityNameMap}
         }

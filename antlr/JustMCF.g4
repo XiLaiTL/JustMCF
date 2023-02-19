@@ -5,7 +5,7 @@ fileStatementInner
     : nameSpaceStatement
     | nameSpaceStatementInner
     ;
-statementInner: noInExecStatement|statement;
+statementInner: statement|noInExecStatement;
 statement
     : ifStatement
     | forStatement
@@ -115,7 +115,7 @@ returnStatement
 breakStatement: BREAK;
 continueStatement
     : CONTINUE
-    | RETURN '(' nameSpaceFunc ')' '+1'
+    | RETURN '(' nameSpaceFunc ')' '+' NUMBER_INT
     ;
 funcRunStatement
     : FUNC nameSpaceFunc
@@ -149,7 +149,7 @@ execRunChild
     | ('->'|RUN) s_ FUNC? s_ '{' s_ (statementInner (ends statementInner)* ends?)? '}'                                                                                                                         #execAnonymousRun
     ;
 execChild
-    : ALIGN AcceptableName                                                                                                                                       #execAlign
+    : ALIGN acceptableNameWithoutPointWithKey                                                                                                                                       #execAlign
     | ANCHORED anchor=(EYES|FEET)                                                                                                                                #execAnchored
     | IN nameSpaceDim                                                                                                                                            #execIn
     | AS selector                                                                                                                                                #execAs
@@ -163,11 +163,11 @@ execChild
     | cond=(IF|UNLESS)? ENTITY? selector                                                                                                                         #execIfEntity
     | cond=(IF|UNLESS)? SCORE? scbCoreIdentifier CompareOperation scbCoreIdentifier                                                                                      #execIfScore
     | cond=(IF|UNLESS)? SCORE? scbCoreIdentifier ((MATCHES? intRange)|scbCompareNumber)                                                                             #execIfScoreMatches
-    | cond=(IF|UNLESS)? BLOCK? pos3Identifier blockIdentifier                                                                                                    #execIfBlock
+    | cond=(IF|UNLESS)? BLOCK? pos3Identifier block_predicate                                                                                                    #execIfBlock
     | cond=(IF|UNLESS)? BLOCKS? pos3Identifier pos3Identifier pos3Identifier scan_mode=(ALL|MASKED)                                                              #execIfBlocks
-    | cond=(IF|UNLESS)? DATA? dataIdentifier                                                                                                                     #execIfData
     | cond=(IF|UNLESS)? BIOME pos3Identifier nameSpaceBiome                                                                                                      #execIfBiome
-    | cond=(IF|UNLESS)? PREDICATE? nameSpacePredicate                                                                                                            #execPredicate
+    | ((cond=(IF|UNLESS))| PREDICATE|(cond=(IF|UNLESS) PREDICATE)) nameSpacePredicate                                                                                                            #execPredicate
+    | cond=(IF|UNLESS)? DATA? dataIdentifier                                                                                                                     #execIfData
     | execStoreChild                                                                                                                                             #execStore
     ;
 
@@ -209,8 +209,6 @@ dataOperationExpression
     | typeName? dataIdentifier '=' dataRightValue                                                                                                                #dataModifySetFrom
     | dataIdentifier '..' nbt                                                                                                                                    #dataModifyAppendValue
     | dataIdentifier '..' dataRightValue                                                                                                                         #dataModifyAppendFrom
-    | dataIdentifier '..0' nbt                                                                                                                                   #dataModifyPrependValue
-    | dataIdentifier '..0' dataRightValue                                                                                                                        #dataModifyPrependFrom
     | dataIdentifier '..' NUMBER_INT nbt                                                                                                                         #dataModifyInsertValue
     | dataIdentifier '..' NUMBER_INT dataRightValue                                                                                                              #dataModifyInsertFrom
     | dataIdentifier REMOVE                                                                                                                                      #dataRemove
@@ -222,7 +220,7 @@ dataRightValue
 
 dataStatement
     : DATA s_ '{' s_ (dataOperationExpression (ends dataOperationExpression)* ends?)? '}'                                                                                                                      #dataSCompound
-    | DATA nameSpaceStorage('::'nbtPath)? s_ '{' s_ dataOperationExpression* '}'                                                                                       #dataSIdentifierCompound
+    | DATA nameSpaceStorage('::'nbtPath)? s_ '{' s_ (dataOperationExpression (ends dataOperationExpression)* ends?)? '}'                                                                                       #dataSIdentifierCompound
     ;
 
 scbOperationExpression
@@ -267,6 +265,7 @@ scbPlayerStatement: SCB s_ '{' s_ (scbPlayerStatementInner (ends scbPlayerStatem
 scbPlayerStatementInner
     : scbOperationExpression                                                                                                                                     #scbPlayerSIScbOperationExpression
     | selector? LIST                                                                                                                                             #scbPlayerSIScbList
+    | selector RESET #scbPlayerSIScbReset
     ;
 scbObjectiveStatement
     : SCB( '(' criterion ')')? nbtName s_ display=json s_
@@ -1054,7 +1053,7 @@ selectorParam
     | LIMIT '=' '+'? NUMBER_INT #selectorParamLimit
     | LIMIT '=' '..' #selectorParamLimitInf
     | SORT '=' (NEAREST|FURTHEST|RANDOM|ARBITRARY) #selectorParamSort
-    | '+'?NUMBER_INT #selectorParamLimitNumber
+    | '+'? NUMBER_INT #selectorParamLimitNumber
     | selectorNbtCompound #selectorParamNbtCompound
     | '{' s_ selectorScoresPartImprove (p_ selectorScoresPartImprove)* s_ '}' #selectorParamScoreCompound
     ;
@@ -1067,7 +1066,7 @@ selectorNbtCompound : 'n{' s_ nbtPair (',' s_ nbtPair)*  s_'}' | 'n{' '}';
 selectorScoresPart: nbtName '=' intRange ;
 selectorScoresPartImprove
     : nbtName scbCompareNumber  #selectorScoresPartCompare
-    | nbtName intRange #selectorScoresPartRange
+    | nbtName '='? intRange #selectorScoresPartRange
     ;
 selectorAdvancementsPart
     : nameSpaceAdvancement '=' boolValue #selectorAdvmPartDirect

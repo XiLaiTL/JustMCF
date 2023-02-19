@@ -1,0 +1,72 @@
+## 传统写法1
+func teen:begin{
+  execute as @a at @s anchored eyes positioned ^ ^ ^ run function teen:before
+}
+
+func teen:before{
+  function teen:ray
+  tag @s ret
+}
+
+func teen:ray{
+  scoreboard players set #find_entity bool 0
+  execute as @e[dx=0,dy=0,dz=0] positioned ~-1 ~-1 ~-1 if entity @s[dx=0,dy=0,dz=0] run scoreboard players set #find_entity bool 1
+  execute if block ~ ~ ~ #through if score #find_entity bool matches 0 positioned ^ ^ ^0.1 run function teen:ray
+  execute unless entity @s[tag=find] run function teen:find
+}
+
+func teen:find{
+  tag @s add find
+  tellraw @s "Find it!"
+}
+
+## 传统风格2
+
+func teen:ray{
+  scoreboard players set #find_entity bool 0
+  exec{ as @e[dx=0,dy=0,dz=0] positioned ~-1 ~-1 ~-1 if entity @s[dx=0,dy=0,dz=0]} run
+    scoreboard players set #find_entity bool 1
+  exec{ 
+    if block ~ ~ ~ #through 
+    if score #find_entity bool matches 0 
+    positioned ^ ^ ^0.1
+  } run func teen:ray
+  exec{ unless entity @s[tag=find] } run func teen:find{
+    tag @s add find
+    tellraw @s "Find it!"
+  }
+
+}
+func teen:begin{
+  exec{ as @a at @s anchored eyes positioned ^ ^ ^} run func teen:before{
+    func teen:ray
+    tag @s ret
+  }
+}
+
+## 简洁风格
+namsp [func=teen]{
+  func begin{
+    { as @s at @s anchored eyes pos ^ ^ ^}->{
+      ->func ray{
+        bool#find_entity = 0 
+
+        { as @e[dpos=0 0 0] 
+          pos ~-1 ~-1 ~-1 
+          if @s[dpos=0 0 0]
+        }-> bool#find_entity = 1
+
+        { if ~ ~ ~ #through 
+          if bool#find_entity == 0 
+          pos ^ ^ ^0.01
+        }-> func ray; 
+        
+        { unless @s[tag=find]}->{
+          @s.tag += find
+          @s.text "Find it!"
+        }
+      }
+      @s.tag -= find
+    }
+  }
+}

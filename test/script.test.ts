@@ -6,6 +6,7 @@ test('JavaScript Script', () => {
 
 func test:foo {
     {{
+        a=1
         const list = [1,2,3,4,5]
         for(let i of list){#{
             setblock ~ ~$\{i} ~ stone

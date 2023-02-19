@@ -49,22 +49,22 @@ func test:entity{
 test('Entity Declare', () => {
     execute`
 func test:entity{
-    entity(pig) ~ ~ ~ n{CustomName:"pig1"}
+    entity(pig) ~ ~ ~ n{CustomName:'{"text": "pig1"}'}
 }
 
 func test:entity2{
-    entity(pig) ~ ~ ~ xxxx n{CustomName:"pig1"} 
+    entity(pig) ~ ~ ~ xxxx n{CustomName:'{"text": "pig1"}'}
     entity @xxxx{   
         .tp ~ ~ ~
     }
 }
 
 func test:entity3{
-    entity(pig) ~ ~ ~ xxxx n{CustomName:"pig1"} { tag = tag1,tag2 }
+    entity(pig) ~ ~ ~ xxxx n{CustomName:'{"text": "pig1"}'} { tag = tag1,tag2 }
 }
 
 func test:entity4{
-    entity(pig) ~ ~ ~ xxxx n{CustomName:"pig1"} {
+    entity(pig) ~ ~ ~ xxxx n{CustomName:'{"text": "pig1"}'} {
         .tag = tag1,tag2 ##将会解析进初始化语句的nbt中
         .tag+= temp      ##将会解析为tag add
     }

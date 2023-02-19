@@ -79,7 +79,7 @@ func test:display1{
         @s.subtitle j{}         ## title @s subtitle {}
         
         @s.bossbar foo:newboss  ##bossbar set players
-        bossbar foo:newboss j{""}
+        bossbar foo:newboss j{"text":"hello"}
         bossbar foo:newboss {
             style notched_6
         }

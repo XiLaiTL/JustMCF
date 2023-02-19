@@ -32,3 +32,17 @@ test('ImproveFunction', () => {
     }
     `
 })
+
+test('ImproveFunction Return', () => {
+    execute`
+    func test:fun1(a,b){
+        c = local::a         ##c没有命名空间id，a带着前置local::
+        if{ @s }->{
+            say 1
+            return b
+        }
+        say 2
+        return c
+    }
+    `
+})

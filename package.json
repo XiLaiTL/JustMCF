@@ -1,6 +1,6 @@
 {
   "name": "just-mcf",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A language framework on Minecraft Java Edition datapack mcfunction improvement",
   "keywords": [
     "cli",

@@ -13,7 +13,7 @@ func test:loot1{
     }
 
     loot{
-        @s += loot test:loot_1                            ##mine
+        @s += loot test:loot_1                            ##loot
         @s += fish test:loot_1 ~ ~ ~ mainhand             ##fish
         @s += kill @e[limit=1]                            ##kill
         @s += mine ~ ~ ~ mainhand                         ##mine
@@ -44,8 +44,8 @@ func test:item1{
         @e[limit=1]::armor.chest = stone *4                         ##replace with
         @e[limit=1]::armor.chest = @s::armor.chest foo:modifier     ##replace from
         @e[limit=1]::armor.chest += foo:modifier                    ##modify
-        @e[limit=1] += stone *4                                     ##give
-        @e[limit=1] -= stone *4                                     ##clear
+        @s += stone *4                                     ##give
+        @s -= stone *4                                     ##clear
         ~ ~ ~ = loot test:loot_1                                  ##loot spawn
         ~ ~ ~ += loot test:loot_1                                 ##loot insert
         ~ ~ ~::container.5 = loot test:loot_1                     ##loot replace block

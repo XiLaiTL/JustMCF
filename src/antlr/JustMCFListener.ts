@@ -51,9 +51,9 @@ import { ExecIfScoreContext } from "./JustMCFParser.js";
 import { ExecIfScoreMatchesContext } from "./JustMCFParser.js";
 import { ExecIfBlockContext } from "./JustMCFParser.js";
 import { ExecIfBlocksContext } from "./JustMCFParser.js";
-import { ExecIfDataContext } from "./JustMCFParser.js";
 import { ExecIfBiomeContext } from "./JustMCFParser.js";
 import { ExecPredicateContext } from "./JustMCFParser.js";
+import { ExecIfDataContext } from "./JustMCFParser.js";
 import { ExecStoreContext } from "./JustMCFParser.js";
 import { SelectorParamPosContext } from "./JustMCFParser.js";
 import { SelectorParamDPosContext } from "./JustMCFParser.js";
@@ -155,6 +155,7 @@ import { DataMergeEntityContext } from "./JustMCFParser.js";
 import { DataMergeBlockContext } from "./JustMCFParser.js";
 import { ScbPlayerSIScbOperationExpressionContext } from "./JustMCFParser.js";
 import { ScbPlayerSIScbListContext } from "./JustMCFParser.js";
+import { ScbPlayerSIScbResetContext } from "./JustMCFParser.js";
 import { TitleSSIJsonContext } from "./JustMCFParser.js";
 import { TitleSSIClearContext } from "./JustMCFParser.js";
 import { TitleSSIResetContext } from "./JustMCFParser.js";
@@ -224,8 +225,6 @@ import { DataModifySetValueContext } from "./JustMCFParser.js";
 import { DataModifySetFromContext } from "./JustMCFParser.js";
 import { DataModifyAppendValueContext } from "./JustMCFParser.js";
 import { DataModifyAppendFromContext } from "./JustMCFParser.js";
-import { DataModifyPrependValueContext } from "./JustMCFParser.js";
-import { DataModifyPrependFromContext } from "./JustMCFParser.js";
 import { DataModifyInsertValueContext } from "./JustMCFParser.js";
 import { DataModifyInsertFromContext } from "./JustMCFParser.js";
 import { DataRemoveContext } from "./JustMCFParser.js";
@@ -1085,19 +1084,6 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitExecIfBlocks?: (ctx: ExecIfBlocksContext) => void;
 
 	/**
-	 * Enter a parse tree produced by the `execIfData`
-	 * labeled alternative in `JustMCFParser.execChild`.
-	 * @param ctx the parse tree
-	 */
-	enterExecIfData?: (ctx: ExecIfDataContext) => void;
-	/**
-	 * Exit a parse tree produced by the `execIfData`
-	 * labeled alternative in `JustMCFParser.execChild`.
-	 * @param ctx the parse tree
-	 */
-	exitExecIfData?: (ctx: ExecIfDataContext) => void;
-
-	/**
 	 * Enter a parse tree produced by the `execIfBiome`
 	 * labeled alternative in `JustMCFParser.execChild`.
 	 * @param ctx the parse tree
@@ -1122,6 +1108,19 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitExecPredicate?: (ctx: ExecPredicateContext) => void;
+
+	/**
+	 * Enter a parse tree produced by the `execIfData`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	enterExecIfData?: (ctx: ExecIfDataContext) => void;
+	/**
+	 * Exit a parse tree produced by the `execIfData`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 */
+	exitExecIfData?: (ctx: ExecIfDataContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `execStore`
@@ -2437,6 +2436,19 @@ export interface JustMCFListener extends ParseTreeListener {
 	exitScbPlayerSIScbList?: (ctx: ScbPlayerSIScbListContext) => void;
 
 	/**
+	 * Enter a parse tree produced by the `scbPlayerSIScbReset`
+	 * labeled alternative in `JustMCFParser.scbPlayerStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	enterScbPlayerSIScbReset?: (ctx: ScbPlayerSIScbResetContext) => void;
+	/**
+	 * Exit a parse tree produced by the `scbPlayerSIScbReset`
+	 * labeled alternative in `JustMCFParser.scbPlayerStatementInner`.
+	 * @param ctx the parse tree
+	 */
+	exitScbPlayerSIScbReset?: (ctx: ScbPlayerSIScbResetContext) => void;
+
+	/**
 	 * Enter a parse tree produced by the `titleSSIJson`
 	 * labeled alternative in `JustMCFParser.titleSelectorStatementInner`.
 	 * @param ctx the parse tree
@@ -3332,32 +3344,6 @@ export interface JustMCFListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	exitDataModifyAppendFrom?: (ctx: DataModifyAppendFromContext) => void;
-
-	/**
-	 * Enter a parse tree produced by the `dataModifyPrependValue`
-	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
-	 * @param ctx the parse tree
-	 */
-	enterDataModifyPrependValue?: (ctx: DataModifyPrependValueContext) => void;
-	/**
-	 * Exit a parse tree produced by the `dataModifyPrependValue`
-	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
-	 * @param ctx the parse tree
-	 */
-	exitDataModifyPrependValue?: (ctx: DataModifyPrependValueContext) => void;
-
-	/**
-	 * Enter a parse tree produced by the `dataModifyPrependFrom`
-	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
-	 * @param ctx the parse tree
-	 */
-	enterDataModifyPrependFrom?: (ctx: DataModifyPrependFromContext) => void;
-	/**
-	 * Exit a parse tree produced by the `dataModifyPrependFrom`
-	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
-	 * @param ctx the parse tree
-	 */
-	exitDataModifyPrependFrom?: (ctx: DataModifyPrependFromContext) => void;
 
 	/**
 	 * Enter a parse tree produced by the `dataModifyInsertValue`

@@ -23,7 +23,7 @@ test('Namespace', () => {
         entity = test_entity
     ]{ ##除了括号设置的外，其他默认命名空间为test
         func foo2{
-            {if ~ ~ ~ stone if pre if biome bio in dimm }-> 
+            {if ~ ~ ~ stone if pre if biome ~ ~ ~ bio in dimm }-> 
                 io::input = 1b => bossbar test 
             @s.give diamond *1
             @s.loot += loot testloot1
@@ -35,7 +35,7 @@ test('Namespace', () => {
     
     namsp test[default = yuushya]{ ##除了func和storage设置为test外，其他设置为yuushya
         func foo3{
-            {if ~ ~ ~ stone if pre if biome bio in dimm }-> 
+            {if ~ ~ ~ stone if pre if biome ~ ~ ~ bio in dimm }-> 
                 io::input = 1b => bossbar test 
             @s.give diamond *1
             @s.loot += loot testloot1

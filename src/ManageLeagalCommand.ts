@@ -91,11 +91,11 @@ export function convertLeagalCommands(code: string):string {
     let resCode = code
     resCode = code.replace(/(=>|\?=>)/g,"\n$1")
     for (const [commandToken,params] of improvedCommand) {
-        const regex = new RegExp(String.raw`(?<=(\r|\n|'->')\s*)(?<![A-Z0-9a-z\-_+.])${commandToken}(?=\s${params}(\s|\n))`, 'g')
+        const regex = new RegExp(String.raw`(?<=(\r|\n|->)\s*)(?<![A-Z0-9a-z\-_+.])${commandToken}(?=\s${params}(\s|\n))`, 'g')
         resCode = resCode.replace(regex,`/${commandToken}`)
     }
     for (const commandToken of leagalCommands) {
-        const regex = new RegExp(String.raw`(?<=(\r|\n|'->')\s*)(?<![A-Z0-9a-z\-_+.])${commandToken}\s`, 'g')
+        const regex = new RegExp(String.raw`(?<=(\r|\n|->)\s*)(?<![A-Z0-9a-z\-_+.])${commandToken}\s`, 'g')
         resCode = resCode.replace(regex, `/${commandToken} `)
     }
     return resCode

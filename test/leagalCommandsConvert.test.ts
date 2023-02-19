@@ -58,6 +58,13 @@ test('Convert back Leagal Commands', () => {
 })
 
 
+test('Convert Direct Run', () => {
+    const str = convertLeagalCommands(`
+    {as @p}-> say 1
+        `)
+    console.log(str)
+})
+
 test('Leagal Commands', () => {
     const code=`
     func testjf:_init{

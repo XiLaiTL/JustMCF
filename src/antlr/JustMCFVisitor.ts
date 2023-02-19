@@ -51,9 +51,9 @@ import { ExecIfScoreContext } from "./JustMCFParser.js";
 import { ExecIfScoreMatchesContext } from "./JustMCFParser.js";
 import { ExecIfBlockContext } from "./JustMCFParser.js";
 import { ExecIfBlocksContext } from "./JustMCFParser.js";
-import { ExecIfDataContext } from "./JustMCFParser.js";
 import { ExecIfBiomeContext } from "./JustMCFParser.js";
 import { ExecPredicateContext } from "./JustMCFParser.js";
+import { ExecIfDataContext } from "./JustMCFParser.js";
 import { ExecStoreContext } from "./JustMCFParser.js";
 import { SelectorParamPosContext } from "./JustMCFParser.js";
 import { SelectorParamDPosContext } from "./JustMCFParser.js";
@@ -155,6 +155,7 @@ import { DataMergeEntityContext } from "./JustMCFParser.js";
 import { DataMergeBlockContext } from "./JustMCFParser.js";
 import { ScbPlayerSIScbOperationExpressionContext } from "./JustMCFParser.js";
 import { ScbPlayerSIScbListContext } from "./JustMCFParser.js";
+import { ScbPlayerSIScbResetContext } from "./JustMCFParser.js";
 import { TitleSSIJsonContext } from "./JustMCFParser.js";
 import { TitleSSIClearContext } from "./JustMCFParser.js";
 import { TitleSSIResetContext } from "./JustMCFParser.js";
@@ -224,8 +225,6 @@ import { DataModifySetValueContext } from "./JustMCFParser.js";
 import { DataModifySetFromContext } from "./JustMCFParser.js";
 import { DataModifyAppendValueContext } from "./JustMCFParser.js";
 import { DataModifyAppendFromContext } from "./JustMCFParser.js";
-import { DataModifyPrependValueContext } from "./JustMCFParser.js";
-import { DataModifyPrependFromContext } from "./JustMCFParser.js";
 import { DataModifyInsertValueContext } from "./JustMCFParser.js";
 import { DataModifyInsertFromContext } from "./JustMCFParser.js";
 import { DataRemoveContext } from "./JustMCFParser.js";
@@ -848,14 +847,6 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitExecIfBlocks?: (ctx: ExecIfBlocksContext) => Result;
 
 	/**
-	 * Visit a parse tree produced by the `execIfData`
-	 * labeled alternative in `JustMCFParser.execChild`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitExecIfData?: (ctx: ExecIfDataContext) => Result;
-
-	/**
 	 * Visit a parse tree produced by the `execIfBiome`
 	 * labeled alternative in `JustMCFParser.execChild`.
 	 * @param ctx the parse tree
@@ -870,6 +861,14 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitExecPredicate?: (ctx: ExecPredicateContext) => Result;
+
+	/**
+	 * Visit a parse tree produced by the `execIfData`
+	 * labeled alternative in `JustMCFParser.execChild`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitExecIfData?: (ctx: ExecIfDataContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `execStore`
@@ -1680,6 +1679,14 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	visitScbPlayerSIScbList?: (ctx: ScbPlayerSIScbListContext) => Result;
 
 	/**
+	 * Visit a parse tree produced by the `scbPlayerSIScbReset`
+	 * labeled alternative in `JustMCFParser.scbPlayerStatementInner`.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	visitScbPlayerSIScbReset?: (ctx: ScbPlayerSIScbResetContext) => Result;
+
+	/**
 	 * Visit a parse tree produced by the `titleSSIJson`
 	 * labeled alternative in `JustMCFParser.titleSelectorStatementInner`.
 	 * @param ctx the parse tree
@@ -2230,22 +2237,6 @@ export interface JustMCFVisitor<Result> extends ParseTreeVisitor<Result> {
 	 * @return the visitor result
 	 */
 	visitDataModifyAppendFrom?: (ctx: DataModifyAppendFromContext) => Result;
-
-	/**
-	 * Visit a parse tree produced by the `dataModifyPrependValue`
-	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitDataModifyPrependValue?: (ctx: DataModifyPrependValueContext) => Result;
-
-	/**
-	 * Visit a parse tree produced by the `dataModifyPrependFrom`
-	 * labeled alternative in `JustMCFParser.dataOperationExpression`.
-	 * @param ctx the parse tree
-	 * @return the visitor result
-	 */
-	visitDataModifyPrependFrom?: (ctx: DataModifyPrependFromContext) => Result;
 
 	/**
 	 * Visit a parse tree produced by the `dataModifyInsertValue`
