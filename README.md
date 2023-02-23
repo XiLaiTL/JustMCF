@@ -13,6 +13,7 @@
     - [*调整全局设置*](#%E8%B0%83%E6%95%B4%E5%85%A8%E5%B1%80%E8%AE%BE%E7%BD%AE)
     - [最佳实践](#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5)
       - [仅仅增强原版命令](#%E4%BB%85%E4%BB%85%E5%A2%9E%E5%BC%BA%E5%8E%9F%E7%89%88%E5%91%BD%E4%BB%A4)
+      - [简洁风格一瞥](#%E7%AE%80%E6%B4%81%E9%A3%8E%E6%A0%BC%E4%B8%80%E7%9E%A5)
       - [mcf文件的开始](#mcf%E6%96%87%E4%BB%B6%E7%9A%84%E5%BC%80%E5%A7%8B)
   - [标识符](#%E6%A0%87%E8%AF%86%E7%AC%A6)
   - [数据操作简化](#%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C%E7%AE%80%E5%8C%96)
@@ -77,6 +78,7 @@
       - [NBT类型信息](#nbt%E7%B1%BB%E5%9E%8B%E4%BF%A1%E6%81%AF)
       - [带类型标记的赋值语法（TODO）](#%E5%B8%A6%E7%B1%BB%E5%9E%8B%E6%A0%87%E8%AE%B0%E7%9A%84%E8%B5%8B%E5%80%BC%E8%AF%AD%E6%B3%95todo)
     - [进阶函数](#%E8%BF%9B%E9%98%B6%E5%87%BD%E6%95%B0)
+  - [附录：贡献者](#%E9%99%84%E5%BD%95%E8%B4%A1%E7%8C%AE%E8%80%85)
   - [附录：配置项介绍](#%E9%99%84%E5%BD%95%E9%85%8D%E7%BD%AE%E9%A1%B9%E4%BB%8B%E7%BB%8D)
 
 <!-- /TOC -->
@@ -147,7 +149,7 @@ npm update -g just-mcf
 设置JustMCF项目的一些编译选项。
 
 ```bash
-npx mcf init
+mcf init
 ```
 
 初始化完成后，将在工作文件夹中创建`mcf.mcmeta`文件，这里包含JustMCF项目的各种设置。具体配置项请见[附录：配置项介绍](#%E9%99%84%E5%BD%95%E9%85%8D%E7%BD%AE%E9%A1%B9%E4%BB%8B%E7%BB%8D)。
@@ -179,12 +181,9 @@ folder_name
 将JustMCF项目输出为Minecraft JE 数据包。
 
 ```bash
-npx mcf build [<source_path>] [-o <target_path>]
-
-//或者：
-
-npx mcf build [<source_path>] [--output <target_path>]
-
+mcf build [<source_path>] [-o <target_path>]
+# 或
+mcf build [<source_path>] [--output <target_path>]
 ```
 
 其中`[]`标记的部分是可选的。
@@ -193,14 +192,14 @@ npx mcf build [<source_path>] [--output <target_path>]
 
 `<target_path>` 编译的目的地址，不填写则为执行目录的兄弟output文件夹。例如执行目录为`/foo/test`,则目的地址为`/foo/test_output`。
 
-路径都可以添加相对地址，用`./`索引到执行目录的子文件或文件夹，用`../`索引到执行目录的同级文件夹，例如`npx mcf build -o .`即输出到执行目录，当然这是不推荐的；`npx mcf build -o ../output`即输出到执行目录的兄弟文件夹output中。
+路径都可以添加相对地址，用`./`索引到执行目录的子文件或文件夹，用`../`索引到执行目录的同级文件夹，例如`mcf build -o .`即输出到执行目录，当然这是不推荐的；`mcf build -o ../output`即输出到执行目录的兄弟文件夹output中。
 
 一般来说，源地址填写工作路径，目的地址填写`.minecraft/saves/datapacks/`下的文件夹，这样子输出后可以直接reload查看运行情况以方便调试。
 
 可以编写一个bat文件放在工作文件夹下，内容就填写：
 
 ```bat
-npx mcf build -o xxxx/.minecraft/saves/datapacks/test
+mcf build -o xxxx/.minecraft/saves/datapacks/test
 pause
 ```
 
@@ -209,7 +208,7 @@ pause
 设置命令行的全局参数。
 
 ```bash
-npx mcf conf
+mcf conf
 ```
 
 目前可以设置命令行的语言和编译缺少参数时是否进行询问。
@@ -504,13 +503,13 @@ test1@s >< test2@s                    ##交换
 ans@s := test2@s + test3@s / test4@s - 5 % test5@s
 
 ##以上会被解析成以下：
-scoreboard players operation temp0 justmcf-temp-scoreboard = @s test3
-scoreboard players operation temp0 justmcf-temp-scoreboard /= @s test4
-scoreboard players operation temp0 justmcf-temp-scoreboard += @s test2
-scoreboard players set temp1 justmcf-temp-scoreboard 5
-scoreboard players operation temp1 justmcf-temp-scoreboard %= @s test5
-scoreboard players operation temp0 justmcf-temp-scoreboard -= temp1 justmcf-temp-scoreboard
-scoreboard players operation @s ans = temp0 justmcf-temp-scoreboard
+scoreboard players operation #temp0 justmcf-temp-scoreboard = @s test3
+scoreboard players operation #temp0 justmcf-temp-scoreboard /= @s test4
+scoreboard players operation #temp0 justmcf-temp-scoreboard += @s test2
+scoreboard players set #temp1 justmcf-temp-scoreboard 5
+scoreboard players operation #temp1 justmcf-temp-scoreboard %= @s test5
+scoreboard players operation #temp0 justmcf-temp-scoreboard -= #temp1 justmcf-temp-scoreboard
+scoreboard players operation @s ans = #temp0 justmcf-temp-scoreboard
 ```
 
 关于记分板的逻辑简化操作将会再后面的execute简化部分提到。

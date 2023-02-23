@@ -37,11 +37,11 @@ statement
     | leagalCommand
     ;
 noInExecStatement
-    : funcStatement                                                                                                                                              #noInExecStatementFunc
-    | left=('->'|RUN) funcStatement                                                                                                                                    #noInExecStatementRunFunc
-    | funcImproveStatement                                                                                                                                       #noInExecStatementFuncImprove
-    | interfaceStatement                                                                                                                                         #noInExecStatementInterface
-    | statement s_ execStoreChild+                                                                                                                                  #noInExecStatementStore
+    : funcStatement                                                                                                              #noInExecStatementFunc
+    | left=('->'|RUN) funcStatement                                                                                              #noInExecStatementRunFunc
+    | funcImproveStatement                                                                                                       #noInExecStatementFuncImprove
+    | interfaceStatement                                                                                                         #noInExecStatementInterface
+    | statement s_ execStoreChild+                                                                                               #noInExecStatementStore
     ;
 leagalCommand : LeagalCommand;
 
@@ -51,20 +51,20 @@ nameSpaceStatement:
     '{' s_ (nameSpaceStatementInner (ends nameSpaceStatementInner)* ends?)? '}'
     ;
 nameSpaceSettings
-    : type=FUNC            '=' acceptableName                                                                                                                    #nameSpaceSettingsFunc
-    | type=BLOCK           '=' acceptableName                                                                                                                    #nameSpaceSettingsBlock
-    | type=STORAGE         '=' acceptableName                                                                                                                    #nameSpaceSettingsStorage
-    | type=BOSSBAR         '=' acceptableName                                                                                                                    #nameSpaceSettingsBossbar
-    | type=BIOME           '=' acceptableName                                                                                                                    #nameSpaceSettingsBiome
-    | type=ENTITY          '=' acceptableName                                                                                                                    #nameSpaceSettingsEntity
-    | type=PREDICATE       '=' acceptableName                                                                                                                    #nameSpaceSettingsPredicate
-    | type=(DIM|DIMENSION) '=' acceptableName                                                                                                                    #nameSpaceSettingsDim
-    | type=ITEM            '=' acceptableName                                                                                                                    #nameSpaceSettingsItem
-    | type=LOOT            '=' acceptableName                                                                                                                    #nameSpaceSettingsLoot
-    | type=ITEM_MODIFIER   '=' acceptableName                                                                                                                    #nameSpaceSettingsItemModifier
-    | type=DEFAULT         '=' acceptableName                                                                                                                    #nameSpaceSettingsDefault
-    | type=(ADVANCEMENT|ADVM)     '=' acceptableName                                                                                                             #nameSpaceSettingsAdvm
-    | type=DEFAULT                                                                                                                                               #nameSpaceSettingsJustDefault
+    : type=FUNC            '=' acceptableName                                                                                    #nameSpaceSettingsFunc
+    | type=BLOCK           '=' acceptableName                                                                                    #nameSpaceSettingsBlock
+    | type=STORAGE         '=' acceptableName                                                                                    #nameSpaceSettingsStorage
+    | type=BOSSBAR         '=' acceptableName                                                                                    #nameSpaceSettingsBossbar
+    | type=BIOME           '=' acceptableName                                                                                    #nameSpaceSettingsBiome
+    | type=ENTITY          '=' acceptableName                                                                                    #nameSpaceSettingsEntity
+    | type=PREDICATE       '=' acceptableName                                                                                    #nameSpaceSettingsPredicate
+    | type=(DIM|DIMENSION) '=' acceptableName                                                                                    #nameSpaceSettingsDim
+    | type=ITEM            '=' acceptableName                                                                                    #nameSpaceSettingsItem
+    | type=LOOT            '=' acceptableName                                                                                    #nameSpaceSettingsLoot
+    | type=ITEM_MODIFIER   '=' acceptableName                                                                                    #nameSpaceSettingsItemModifier
+    | type=DEFAULT         '=' acceptableName                                                                                    #nameSpaceSettingsDefault
+    | type=(ADVANCEMENT|ADVM)     '=' acceptableName                                                                             #nameSpaceSettingsAdvm
+    | type=DEFAULT                                                                                                               #nameSpaceSettingsJustDefault
     ;
 nameSpaceStatementInner
     : funcTagStatement
@@ -84,14 +84,14 @@ funcTagStatement:
     '{' s_ (funcTagStatementInner (ends funcTagStatementInner)* ends?)? '}'
     ;
 funcTagSettings
-    : REPLACE '=' boolValue                                                                                                                                      #funcTagSettingsReplace
-    | REPLACED                                                                                                                                                   #funcTagSettingsReplaced
+    : REPLACE '=' boolValue                                                                                                      #funcTagSettingsReplace
+    | REPLACED                                                                                                                   #funcTagSettingsReplaced
     ;
 funcTagStatementInner
-    : funcStatement                                                                                                                                              #funcTagSIFuncS
-    | funcRunStatement                                                                                                                                           #funcTagSIFuncRunS
-    | funcImproveStatement                                                                                                                                       #funcTagSIFuncImproveS
-    | funcTagStatement                                                                                                                                           #funcTagSIFuncTagS
+    : funcStatement                                                                                                              #funcTagSIFuncS
+    | funcRunStatement                                                                                                           #funcTagSIFuncRunS
+    | funcImproveStatement                                                                                                       #funcTagSIFuncImproveS
+    | funcTagStatement                                                                                                           #funcTagSIFuncTagS
     ;
 funcStatement: 
     FUNC nameSpaceFunc s_
@@ -131,44 +131,44 @@ execStatement
     : EXEC? s_ '{' s_ (execChild pn_)* '}' s_
     (execStoreChild s_)* 
     (execRunChild|execStoreChild) s_
-    (execStoreChild s_)*                                                                     #execWithRunOrChild
-    | EXEC s_ '{' s_ (execChild pn_)+ '}'                                                                                                                                    #execWithoutRunOrChild
+    (execStoreChild s_)*                                                                                                         #execWithRunOrChild
+    | EXEC s_ '{' s_ (execChild pn_)+ '}'                                                                                        #execWithoutRunOrChild
     ;
 execStoreChild
-    : ('=>'|STORE|(STORE RESULT)) scbIdentifier                                                                                                                                         #execStoreResultScore
-    | ('?=>'|('?'STORE)|(STORE SUCCESS)) scbIdentifier                                                                                                                                        #execStoreSuccessScore
-    | ('=>'|STORE|(STORE RESULT)) dataIdentifier (numberType '*'? number)?                                                                                                              #execStoreResultData
-    | ('?=>'|('?'STORE)|(STORE SUCCESS))  dataIdentifier (numberType '*'? number)?                                                                                                             #execStoreSuccessData
-    | ('=>'|STORE|(STORE RESULT)) bossbarIdentifier value=(VALUE|MAX)?                                                                                                           #execStoreResultBossbar
-    | ('?=>'|('?'STORE)|(STORE SUCCESS)) bossbarIdentifier value=(VALUE|MAX)?                                                                                                          #execStoreSuccessBossbar
+    : ('=>'|STORE|(STORE RESULT)) scbIdentifier                                                                                  #execStoreResultScore
+    | ('?=>'|('?'STORE)|(STORE SUCCESS)) scbIdentifier                                                                           #execStoreSuccessScore
+    | ('=>'|STORE|(STORE RESULT)) dataIdentifier (numberType '*'? number)?                                                       #execStoreResultData
+    | ('?=>'|('?'STORE)|(STORE SUCCESS))  dataIdentifier (numberType '*'? number)?                                               #execStoreSuccessData
+    | ('=>'|STORE|(STORE RESULT)) bossbarIdentifier value=(VALUE|MAX)?                                                           #execStoreResultBossbar
+    | ('?=>'|('?'STORE)|(STORE SUCCESS)) bossbarIdentifier value=(VALUE|MAX)?                                                    #execStoreSuccessBossbar
     ;
 
 execRunChild
-    : ('->'|RUN) s_ statement                                                                                                                                             #execDirectRun
-    | ('->'|RUN) s_ funcStatement                                                                                                                                         #execNamedRun
-    | ('->'|RUN) s_ FUNC? s_ '{' s_ (statementInner (ends statementInner)* ends?)? '}'                                                                                                                         #execAnonymousRun
+    : ('->'|RUN) s_ statement                                                                                                    #execDirectRun
+    | ('->'|RUN) s_ funcStatement                                                                                                #execNamedRun
+    | ('->'|RUN) s_ FUNC? s_ '{' s_ (statementInner (ends statementInner)* ends?)? '}'                                           #execAnonymousRun
     ;
 execChild
-    : ALIGN acceptableNameWithoutPointWithKey                                                                                                                                       #execAlign
-    | ANCHORED anchor=(EYES|FEET)                                                                                                                                #execAnchored
-    | IN nameSpaceDim                                                                                                                                            #execIn
-    | AS selector                                                                                                                                                #execAs
-    | AT selector                                                                                                                                                #execAt
-    | FACING pos3Identifier                                                                                                                                      #execFacingPos
-    | FACING ENTITY? selector anchor=(EYES|FEET)                                                                                                                         #execFacingEntity
-    | (POSITIONED|POS) pos3Identifier                                                                                                                            #execPositionedPos
-    | (POSITIONED|POS) AS? selector                                                                                                                                  #execPostionedAs
-    | (ROTATED|ROT) pos2Identifier                                                                                                                               #execRotatedPos
-    | (ROTATED|ROT) AS? selector                                                                                                                                     #execRotatedAs
-    | cond=(IF|UNLESS)? ENTITY? selector                                                                                                                         #execIfEntity
-    | cond=(IF|UNLESS)? SCORE? scbCoreIdentifier CompareOperation scbCoreIdentifier                                                                                      #execIfScore
-    | cond=(IF|UNLESS)? SCORE? scbCoreIdentifier ((MATCHES? intRange)|scbCompareNumber)                                                                             #execIfScoreMatches
-    | cond=(IF|UNLESS)? BLOCK? pos3Identifier block_predicate                                                                                                    #execIfBlock
-    | cond=(IF|UNLESS)? BLOCKS? pos3Identifier pos3Identifier pos3Identifier scan_mode=(ALL|MASKED)                                                              #execIfBlocks
-    | cond=(IF|UNLESS)? BIOME pos3Identifier nameSpaceBiome                                                                                                      #execIfBiome
-    | ((cond=(IF|UNLESS))| PREDICATE|(cond=(IF|UNLESS) PREDICATE)) nameSpacePredicate                                                                                                            #execPredicate
-    | cond=(IF|UNLESS)? DATA? dataIdentifier                                                                                                                     #execIfData
-    | execStoreChild                                                                                                                                             #execStore
+    : ALIGN acceptableNameWithoutPointWithKey                                                                                    #execAlign
+    | ANCHORED anchor=(EYES|FEET)                                                                                                #execAnchored
+    | IN nameSpaceDim                                                                                                            #execIn
+    | AS selector                                                                                                                #execAs
+    | AT selector                                                                                                                #execAt
+    | FACING pos3Identifier                                                                                                      #execFacingPos
+    | FACING ENTITY? selector anchor=(EYES|FEET)                                                                                 #execFacingEntity
+    | (POSITIONED|POS) pos3Identifier                                                                                            #execPositionedPos
+    | (POSITIONED|POS) AS? selector                                                                                              #execPostionedAs
+    | (ROTATED|ROT) pos2Identifier                                                                                               #execRotatedPos
+    | (ROTATED|ROT) AS? selector                                                                                                 #execRotatedAs
+    | cond=(IF|UNLESS)? ENTITY? selector                                                                                         #execIfEntity
+    | cond=(IF|UNLESS)? SCORE? scbCoreIdentifier CompareOperation scbCoreIdentifier                                              #execIfScore
+    | cond=(IF|UNLESS)? SCORE? scbCoreIdentifier ((MATCHES? intRange)|scbCompareNumber)                                          #execIfScoreMatches
+    | cond=(IF|UNLESS)? BLOCK? pos3Identifier block_predicate                                                                    #execIfBlock
+    | cond=(IF|UNLESS)? BLOCKS? pos3Identifier pos3Identifier pos3Identifier scan_mode=(ALL|MASKED)                              #execIfBlocks
+    | cond=(IF|UNLESS)? BIOME pos3Identifier nameSpaceBiome                                                                      #execIfBiome
+    | ((cond=(IF|UNLESS))| PREDICATE|(cond=(IF|UNLESS) PREDICATE)) nameSpacePredicate                                            #execPredicate
+    | cond=(IF|UNLESS)? DATA? dataIdentifier                                                                                     #execIfData
+    | execStoreChild                                                                                                             #execStore
     ;
 
 scbCompareNumber
@@ -176,11 +176,11 @@ scbCompareNumber
     ;
 
 dataIdentifier
-    : LOCAL '::' nbtPath                                                                                                                              #dataStorageLocal
-    | dataStorageIdentifier                                                                                                                              #dataStorage
-    | nbtPathWithoutCompound                                                                                                                                                    #dataStorageWithEnv
-    | dataEntityIdentifier                                                                                                                              #dataEntity
-    | dataBlockIdentifier                                                                                                                              #dataBlock
+    : LOCAL '::' nbtPath                                                                                                         #dataStorageLocal
+    | dataStorageIdentifier                                                                                                      #dataStorage
+    | nbtPathWithoutCompound                                                                                                     #dataStorageWithEnv
+    | dataEntityIdentifier                                                                                                       #dataEntity
+    | dataBlockIdentifier                                                                                                        #dataBlock
     ;
 dataStorageIdentifier
     : nameSpaceStorage '::' nbtPath
@@ -195,23 +195,23 @@ dataBlockIdentifier
     | BLOCK pos3Identifier nbtPath
     ;
 dataMergeExpression
-    : nameSpaceStorage '|=' nbt                                                                                                                                  #dataMergeStorage
-    | selector         '|=' nbt                                                                                                                                  #dataMergeEntity
-    | pos3Identifier   '|=' nbt                                                                                                                                  #dataMergeBlock
+    : nameSpaceStorage '|=' nbt                                                                                                  #dataMergeStorage
+    | selector         '|=' nbt                                                                                                  #dataMergeEntity
+    | pos3Identifier   '|=' nbt                                                                                                  #dataMergeBlock
     ;
 
 dataOperationExpression
-    : dataIdentifier ('*'? number)?                                                                                                                              #dataGet
-    | dataMergeExpression                                                                                                                                        #dataMerge
-    | dataIdentifier '|=' nbt                                                                                                                                    #dataModifyMergeValue
-    | dataIdentifier '|=' dataRightValue                                                                                                                         #dataModifyMergeFrom
-    | typeName? dataIdentifier '=' nbt                                                                                                                           #dataModifySetValue
-    | typeName? dataIdentifier '=' dataRightValue                                                                                                                #dataModifySetFrom
-    | dataIdentifier '..' nbt                                                                                                                                    #dataModifyAppendValue
-    | dataIdentifier '..' dataRightValue                                                                                                                         #dataModifyAppendFrom
-    | dataIdentifier '..' NUMBER_INT nbt                                                                                                                         #dataModifyInsertValue
-    | dataIdentifier '..' NUMBER_INT dataRightValue                                                                                                              #dataModifyInsertFrom
-    | dataIdentifier REMOVE                                                                                                                                      #dataRemove
+    : dataIdentifier ('*'? number)?                                                                                              #dataGet
+    | dataMergeExpression                                                                                                        #dataMerge
+    | dataIdentifier '|=' nbt                                                                                                    #dataModifyMergeValue
+    | dataIdentifier '|=' dataRightValue                                                                                         #dataModifyMergeFrom
+    | typeName? dataIdentifier '=' nbt                                                                                           #dataModifySetValue
+    | typeName? dataIdentifier '=' dataRightValue                                                                                #dataModifySetFrom
+    | dataIdentifier '..' nbt                                                                                                    #dataModifyAppendValue
+    | dataIdentifier '..' dataRightValue                                                                                         #dataModifyAppendFrom
+    | dataIdentifier '..' NUMBER_INT nbt                                                                                         #dataModifyInsertValue
+    | dataIdentifier '..' NUMBER_INT dataRightValue                                                                              #dataModifyInsertFrom
+    | dataIdentifier REMOVE                                                                                                      #dataRemove
     ;
 dataRightValue
     : dataIdentifier
@@ -219,38 +219,38 @@ dataRightValue
     ;
 
 dataStatement
-    : DATA s_ '{' s_ (dataOperationExpression (ends dataOperationExpression)* ends?)? '}'                                                                                                                      #dataSCompound
-    | DATA nameSpaceStorage('::'nbtPath)? s_ '{' s_ (dataOperationExpression (ends dataOperationExpression)* ends?)? '}'                                                                                       #dataSIdentifierCompound
+    : DATA s_ '{' s_ (dataOperationExpression (ends dataOperationExpression)* ends?)? '}'                                        #dataSCompound
+    | DATA nameSpaceStorage('::'nbtPath)? s_ '{' s_ (dataOperationExpression (ends dataOperationExpression)* ends?)? '}'         #dataSIdentifierCompound
     ;
 
 scbOperationExpression
-    : scbCoreIdentifier                                                                                                                                              #scbGet
-    | scbCoreIdentifier  '+='  NUMBER_INT                                                                                                                              #scbAdd
-    | scbCoreIdentifier  '-='  NUMBER_INT                                                                                                                              #scbRemove
-    | scbCoreIdentifier  '='  NUMBER_INT                                                                                                                               #scbSet
-    | scbCoreIdentifier  op='*='  NUMBER_INT                                                                                                                           #scbOptMulAssignNumber
-    | scbCoreIdentifier  op='/='  NUMBER_INT                                                                                                                          #scbOptDivAssignNumber
-    | scbCoreIdentifier  op='%='  NUMBER_INT                                                                                                                           #scbOptModAssignNumber
-    | scbCoreIdentifier  '+='  scbCoreIdentifier                                                                                                                           #scbOptAddAssign
-    | scbCoreIdentifier  '-='  scbCoreIdentifier                                                                                                                           #scbOptSubAssign
-    | scbCoreIdentifier  '*='  scbCoreIdentifier                                                                                                                           #scbOptMulAssign
-    | scbCoreIdentifier  '/='  scbCoreIdentifier                                                                                                                           #scbOptDivAssign
-    | scbCoreIdentifier  '%='  scbCoreIdentifier                                                                                                                           #scbOptModAssign
-    | scbCoreIdentifier  '><'  scbCoreIdentifier                                                                                                                           #scbOptExcFunc
-    | scbCoreIdentifier  '<<'  scbCoreIdentifier                                                                                                                           #scbOptMinFunc
-    | scbCoreIdentifier  '>>'  scbCoreIdentifier                                                                                                                           #scbOptMaxFunc
-    | scbCoreIdentifier  '='  scbCoreIdentifier                                                                                                                            #scbOptAssign
-    | scbCoreIdentifier RESET                                                                                                                                        #scbReset
-    | scbCoreIdentifier ENABLE                                                                                                                                       #scbEnable
-    | scbCoreIdentifier ':=' s_ scbSingleOperationExpression                                                                                                            #scbOptExpression
+    : scbCoreIdentifier                                                                                                          #scbGet
+    | scbCoreIdentifier  '+='  NUMBER_INT                                                                                        #scbAdd
+    | scbCoreIdentifier  '-='  NUMBER_INT                                                                                        #scbRemove
+    | scbCoreIdentifier  '='  NUMBER_INT                                                                                         #scbSet
+    | scbCoreIdentifier  op='*='  NUMBER_INT                                                                                     #scbOptMulAssignNumber
+    | scbCoreIdentifier  op='/='  NUMBER_INT                                                                                     #scbOptDivAssignNumber
+    | scbCoreIdentifier  op='%='  NUMBER_INT                                                                                     #scbOptModAssignNumber
+    | scbCoreIdentifier  '+='  scbCoreIdentifier                                                                                 #scbOptAddAssign
+    | scbCoreIdentifier  '-='  scbCoreIdentifier                                                                                 #scbOptSubAssign
+    | scbCoreIdentifier  '*='  scbCoreIdentifier                                                                                 #scbOptMulAssign
+    | scbCoreIdentifier  '/='  scbCoreIdentifier                                                                                 #scbOptDivAssign
+    | scbCoreIdentifier  '%='  scbCoreIdentifier                                                                                 #scbOptModAssign
+    | scbCoreIdentifier  '><'  scbCoreIdentifier                                                                                 #scbOptExcFunc
+    | scbCoreIdentifier  '<<'  scbCoreIdentifier                                                                                 #scbOptMinFunc
+    | scbCoreIdentifier  '>>'  scbCoreIdentifier                                                                                 #scbOptMaxFunc
+    | scbCoreIdentifier  '='  scbCoreIdentifier                                                                                  #scbOptAssign
+    | scbCoreIdentifier RESET                                                                                                    #scbReset
+    | scbCoreIdentifier ENABLE                                                                                                   #scbEnable
+    | scbCoreIdentifier ':=' s_ scbSingleOperationExpression                                                                     #scbOptExpression
     ;
 scbSingleOperationExpression
-    : scbSingleOperationExpression s_ op=('<<'|'>>') s_ scbSingleOperationExpression                                                                                   #scbFuncExpression
-    | scbSingleOperationExpression s_ op=('*'|'/'|'%') s_ scbSingleOperationExpression                                                                                 #scbOptMulDivModExpression
-    | scbSingleOperationExpression s_ op=('+'|'-') s_ scbSingleOperationExpression                                                                                     #scbOptAddSubExpression
-    | NUMBER_INT                                                                                                                                                 #scbTempNumberExpression
-    | scbCoreIdentifier                                                                                                                                              #scbIdExpression
-    | '(' s_ scbSingleOperationExpression s_ ')'                                                                                                                       #scbParenExpression
+    : scbSingleOperationExpression s_ op=('<<'|'>>') s_ scbSingleOperationExpression                                             #scbFuncExpression
+    | scbSingleOperationExpression s_ op=('*'|'/'|'%') s_ scbSingleOperationExpression                                           #scbOptMulDivModExpression
+    | scbSingleOperationExpression s_ op=('+'|'-') s_ scbSingleOperationExpression                                               #scbOptAddSubExpression
+    | NUMBER_INT                                                                                                                 #scbTempNumberExpression
+    | scbCoreIdentifier                                                                                                          #scbIdExpression
+    | '(' s_ scbSingleOperationExpression s_ ')'                                                                                 #scbParenExpression
     ;
 
 scbCoreIdentifier
@@ -263,101 +263,101 @@ scbIdentifier
 
 scbPlayerStatement: SCB s_ '{' s_ (scbPlayerStatementInner (ends scbPlayerStatementInner)* ends?)? '}';
 scbPlayerStatementInner
-    : scbOperationExpression                                                                                                                                     #scbPlayerSIScbOperationExpression
-    | selector? LIST                                                                                                                                             #scbPlayerSIScbList
-    | selector RESET #scbPlayerSIScbReset
+    : scbOperationExpression                                                                                                     #scbPlayerSIScbOperationExpression
+    | selector? LIST                                                                                                             #scbPlayerSIScbList
+    | selector RESET                                                                                                             #scbPlayerSIScbReset
     ;
 scbObjectiveStatement
     : SCB( '(' criterion ')')? nbtName s_ display=json s_
-    ('{' s_ ('.'? scbStatementInner (ends '.'? scbStatementInner)* ends?)? '}')?                                                                  #scbObjSDeclareWithName
-    | SCB '(' criterion ')' nbtName                                                                                                                       #scbObjSDeclareSingle
+    ('{' s_ ('.'? scbStatementInner (ends '.'? scbStatementInner)* ends?)? '}')?                                                 #scbObjSDeclareWithName
+    | SCB '(' criterion ')' nbtName                                                                                              #scbObjSDeclareSingle
     | SCB( '(' criterion ')')? nbtName DEFAULT s_
-    ('{' s_ ('.'? scbStatementInner (ends '.'? scbStatementInner)* ends?)? '}')?                                                                        #scbObjSDeclareDefault
-    | SCB nbtName s_ '{' s_ ('.'? scbStatementInner (ends '.'? scbStatementInner)* ends?)? '}'                                                                                                       #scbObjSOperation
+    ('{' s_ ('.'? scbStatementInner (ends '.'? scbStatementInner)* ends?)? '}')?                                                 #scbObjSDeclareDefault
+    | SCB nbtName s_ '{' s_ ('.'? scbStatementInner (ends '.'? scbStatementInner)* ends?)? '}'                                   #scbObjSOperation
     ;
 scbStatementInner
-    : REMOVE                                                                                                                                                     #scbSIRemove
-    | DISPLAYNAME json                                                                                                                                           #scbSIDisplayname
-    | RENDERTYPE type=(HEARTS|INTEGER)                                                                                                                           #scbSIRendertype
-    | DISPLAY acceptableName                                                                                                                                     #scbSIDisplay
+    : REMOVE                                                                                                                     #scbSIRemove
+    | DISPLAYNAME json                                                                                                           #scbSIDisplayname
+    | RENDERTYPE type=(HEARTS|INTEGER)                                                                                           #scbSIRendertype
+    | DISPLAY acceptableName                                                                                                     #scbSIDisplay
     ;
 
 bossbarStatement 
-    : BOSSBAR nameSpaceBossbar s_ json s_('{' s_ ( '.'? bossbarStatementInner ends )* '}')?                                                                                    #bossbarSDeclare
-    | BOSSBAR nameSpaceBossbar s_'{' s_ ( '.'? bossbarStatementInner (ends  '.'? bossbarStatementInner)* ends?)? '}'                                                                                            #bossbarSOperation
+    : BOSSBAR nameSpaceBossbar s_ json s_('{' s_ ( '.'? bossbarStatementInner ends )* '}')?                                      #bossbarSDeclare
+    | BOSSBAR nameSpaceBossbar s_'{' s_ ( '.'? bossbarStatementInner (ends  '.'? bossbarStatementInner)* ends?)? '}'             #bossbarSOperation
     ;
 bossbarStatementInner
-    : GET? type=(MAX|PLAYER|VALUE|VISIBLE)                                                                                                                       #bossbarSIGet
-    | REMOVE                                                                                                                                                     #bossbarSIRemove
-    | SET? COLOR color=(BLUE|GREEN|PINK|PURPLE|RED|WHITE|YELLOW)                                                                                                 #bossbarSISetColor
-    | SET? MAX NUMBER_INT                                                                                                                                            #bossbarSISetMax
-    | SET? NAME json                                                                                                                                             #bossbarSISetName
-    | SET? PLAYERS selector                                                                                                                                      #bossbarSISetPlayer
-    | SET? PLAYERS DEFAULT                                                                                                                                       #bossbarSISetPlayerNull
-    | SET? STYLE style=(NOTCHED_6|NOTCHED_10|NOTCHED_12|NOTCHED_20|PROGRESS)                                                                                     #bossbarSISetStyle
-    | SET? VALUE NUMBER_INT                                                                                                                                          #bossbarSISetValue
-    | SET? VISIBLE boolValue                                                                                                                                     #bossbarSISetVisible
+    : GET? type=(MAX|PLAYER|VALUE|VISIBLE)                                                                                       #bossbarSIGet
+    | REMOVE                                                                                                                     #bossbarSIRemove
+    | SET? COLOR color=(BLUE|GREEN|PINK|PURPLE|RED|WHITE|YELLOW)                                                                 #bossbarSISetColor
+    | SET? MAX NUMBER_INT                                                                                                        #bossbarSISetMax
+    | SET? NAME json                                                                                                             #bossbarSISetName
+    | SET? PLAYERS selector                                                                                                      #bossbarSISetPlayer
+    | SET? PLAYERS DEFAULT                                                                                                       #bossbarSISetPlayerNull
+    | SET? STYLE style=(NOTCHED_6|NOTCHED_10|NOTCHED_12|NOTCHED_20|PROGRESS)                                                     #bossbarSISetStyle
+    | SET? VALUE NUMBER_INT                                                                                                      #bossbarSISetValue
+    | SET? VISIBLE boolValue                                                                                                     #bossbarSISetVisible
     ;
 bossbarOperationExpression
-    : bossbarIdentifier type=(MAX|PLAYER|VALUE|VISIBLE)?                                                                                                  #bossbarOpExprGet
-    | bossbarIdentifier VALUE? '=' NUMBER_INT                                                                                                                 #bossbarOpExprAssignValue
-    | bossbarIdentifier MAX '=' NUMBER_INT                                                                                                                    #bossbarOpExprAssignMax
+    : bossbarIdentifier type=(MAX|PLAYER|VALUE|VISIBLE)?                                                                         #bossbarOpExprGet
+    | bossbarIdentifier VALUE? '=' NUMBER_INT                                                                                    #bossbarOpExprAssignValue
+    | bossbarIdentifier MAX '=' NUMBER_INT                                                                                       #bossbarOpExprAssignMax
     ;
 bossbarIdentifier
     : BOSSBAR nameSpaceBossbar
     ;
 titleStatement
-    : TITLE s_ '{' s_ (titleStatementInner (ends titleStatementInner)* ends?)? '}'                                                                                                                         #titleSCompound
-    | TITLE selector s_ '{' s_ ('.' titleSelectorStatementInner (ends '.' titleSelectorStatementInner)* ends?)? '}'                                                                                                 #titleSSelectorCompound
+    : TITLE s_ '{' s_ (titleStatementInner (ends titleStatementInner)* ends?)? '}'                                               #titleSCompound
+    | TITLE selector s_ '{' s_ ('.' titleSelectorStatementInner (ends '.' titleSelectorStatementInner)* ends?)? '}'              #titleSSelectorCompound
     ;
 titleStatementInner
-    : selector s_ '.' titleSelectorStatementInner                                                                                                                #titleSISelectorSingle
-    | selector s_ '{' s_ ('.' titleSelectorStatementInner (ends '.' titleSelectorStatementInner)* ends?)? '}'                                                                                                       #titleSISelectorCompound
+    : selector s_ '.' titleSelectorStatementInner                                                                                #titleSISelectorSingle
+    | selector s_ '{' s_ ('.' titleSelectorStatementInner (ends '.' titleSelectorStatementInner)* ends?)? '}'                    #titleSISelectorCompound
     ;
 titleSelectorStatementInner
-    : pos=(TITLE|SUBTITLE|ACTIONBAR) json                                                                                                                        #titleSSIJson
-    | CLEAR                                                                                                                                                      #titleSSIClear
-    | RESET                                                                                                                                                      #titleSSIReset
-    | TIMES number number number                                                                                                                                 #titleSSITimes
+    : pos=(TITLE|SUBTITLE|ACTIONBAR) json                                                                                        #titleSSIJson
+    | CLEAR                                                                                                                      #titleSSIClear
+    | RESET                                                                                                                      #titleSSIReset
+    | TIMES number number number                                                                                                 #titleSSITimes
     ;
 titleIndependentStatementInner
-    : pos=(TITLE|SUBTITLE|ACTIONBAR) json                                                                                                                        #titleISIJson
-    | TITLE CLEAR                                                                                                                                            #titleISIClear
-    | TITLE RESET                                                                                                                                            #titleISIReset
-    | TITLE TIMES number number number                                                                                                                       #titleISITimes
+    : pos=(TITLE|SUBTITLE|ACTIONBAR) json                                                                                        #titleISIJson
+    | TITLE CLEAR                                                                                                                #titleISIClear
+    | TITLE RESET                                                                                                                #titleISIReset
+    | TITLE TIMES number number number                                                                                           #titleISITimes
     ;
 
 displayStatement
-    : DISPLAY s_ '{' s_ (displayStatementInner (ends displayStatementInner)* ends?)?  '}'                                                                                                                    #displaySCompound
-    | DISPLAY selector s_ '{' s_ ('.' displayIndependentStatementInner (ends '.' displayIndependentStatementInner)* ends?)?  '}'                                                                                         #displaySSelectorCompound
+    : DISPLAY s_ '{' s_ (displayStatementInner (ends displayStatementInner)* ends?)?  '}'                                        #displaySCompound
+    | DISPLAY selector s_ '{' s_ ('.' displayIndependentStatementInner (ends '.' displayIndependentStatementInner)* ends?)?  '}' #displaySSelectorCompound
     ;
 displayStatementInner
-    : scbObjectiveStatement                                                                                                                                      #displaySIScb
-    | bossbarStatement                                                                                                                                           #displaySIBossbar
-    | selector s_ '.' displayIndependentStatementInner                                                                                                              #displaySISelectorSingle
-    | selector s_ '{' s_ ('.' displayIndependentStatementInner (ends '.' displayIndependentStatementInner)* ends?)? '}'                                                                                                  #displaySISelectorCompound
+    : scbObjectiveStatement                                                                                                      #displaySIScb
+    | bossbarStatement                                                                                                           #displaySIBossbar
+    | selector s_ '.' displayIndependentStatementInner                                                                           #displaySISelectorSingle
+    | selector s_ '{' s_ ('.' displayIndependentStatementInner (ends '.' displayIndependentStatementInner)* ends?)? '}'          #displaySISelectorCompound
     ;
 displayIndependentStatementInner
-    : titleIndependentStatementInner                                                                                                                             #displayISITitleSingle
-    | TITLE s_ '{' s_ ( '.' titleSelectorStatementInner (ends  '.' titleSelectorStatementInner)* ends?)? '}'                                                                                                                 #displayISITitleCompound
-    | TEXT json                                                                                                                                                  #displayISIText
-    | BOSSBAR nameSpaceBossbar json?                                                                                                                              #displayISIBossbar
+    : titleIndependentStatementInner                                                                                             #displayISITitleSingle
+    | TITLE s_ '{' s_ ( '.' titleSelectorStatementInner (ends  '.' titleSelectorStatementInner)* ends?)? '}'                     #displayISITitleCompound
+    | TEXT json                                                                                                                  #displayISIText
+    | BOSSBAR nameSpaceBossbar json?                                                                                             #displayISIBossbar
     ;
 itemStatement
-    : ITEM s_ '{' s_ (itemStatementInner (ends itemStatementInner)* ends?)?'}'                                                                                                                            #itemSCompound
-    | ITEM selector s_ '{' s_ (itemSelectorStatementInner (ends itemSelectorStatementInner)* ends?)? '}'                                                                                                           #itemSSelectorCompound
+    : ITEM s_ '{' s_ (itemStatementInner (ends itemStatementInner)* ends?)?'}'                                                   #itemSCompound
+    | ITEM selector s_ '{' s_ (itemSelectorStatementInner (ends itemSelectorStatementInner)* ends?)? '}'                         #itemSSelectorCompound
     ;
 lootStatement
-    : LOOT s_ '{' s_ (lootStatementInner (ends lootStatementInner)* ends?)? '}'                                                                                                                           #lootSCompound
-    | LOOT selector s_ '{' s_ (lootSelectorStatementInner (ends lootSelectorStatementInner)* ends?)?  '}'                                                                                                         #lootSSelectorCompound
+    : LOOT s_ '{' s_ (lootStatementInner (ends lootStatementInner)* ends?)? '}'                                                  #lootSCompound
+    | LOOT selector s_ '{' s_ (lootSelectorStatementInner (ends lootSelectorStatementInner)* ends?)?  '}'                        #lootSSelectorCompound
     ;
 lootStatementInner
-    : pos3Identifier '+=' lootSource                                                                                                                             #lootSIInsert
-    | pos3Identifier '=' lootSource                                                                                                                              #lootSISpawn
-    | pos3Identifier '::' lootIndependentStatementInnerReplaceEntity                                                                                             #lootSIReplaceBlock
-    | selector lootIndependentStatementInnerGive                                                                                                                 #lootSIGive
-    | selector '::' lootIndependentStatementInnerReplaceEntity                                                                                                   #lootSIReplaceEntity
-    | selector s_ '{' s_ (lootSelectorStatementInner (ends lootSelectorStatementInner)* ends?)?  '}'                                                                                                              #lootSISelectorNest
+    : pos3Identifier '+=' lootSource                                                                                             #lootSIInsert
+    | pos3Identifier '=' lootSource                                                                                              #lootSISpawn
+    | pos3Identifier '::' lootIndependentStatementInnerReplaceEntity                                                             #lootSIReplaceBlock
+    | selector lootIndependentStatementInnerGive                                                                                 #lootSIGive
+    | selector '::' lootIndependentStatementInnerReplaceEntity                                                                   #lootSIReplaceEntity
+    | selector s_ '{' s_ (lootSelectorStatementInner (ends lootSelectorStatementInner)* ends?)?  '}'                             #lootSISelectorNest
     ;
 lootSelectorStatementInner
     : lootIndependentStatementInnerGive
@@ -366,83 +366,83 @@ lootSelectorStatementInner
 lootIndependentStatementInnerGive: ('+='|('.' GIVE)) lootSource;
 lootIndependentStatementInnerReplaceEntity: item_slot '=' lootSource ('*'? NUMBER_INT)?;
 lootSource
-    :LOOT nameSpaceLoot                                                                                                                                         #lootSourceLoot
-    |FISH nameSpaceLoot pos3Identifier hand=(MAINHAND|OFFHAND)?                                                                                                  #lootSourceFishHand
-    |FISH nameSpaceLoot pos3Identifier nameSpaceItem                                                                                                             #lootSourceFishTool
-    |KILL selector                                                                                                                                              #lootSourceKill
-    |MINE pos3Identifier hand=(MAINHAND|OFFHAND)?                                                                                                               #lootSourceMineHand
-    |MINE pos3Identifier nameSpaceItem                                                                                                                          #lootSourceMineTool
+    :LOOT nameSpaceLoot                                                                                                          #lootSourceLoot
+    |FISH nameSpaceLoot pos3Identifier hand=(MAINHAND|OFFHAND)?                                                                  #lootSourceFishHand
+    |FISH nameSpaceLoot pos3Identifier nameSpaceItem                                                                             #lootSourceFishTool
+    |KILL selector                                                                                                               #lootSourceKill
+    |MINE pos3Identifier hand=(MAINHAND|OFFHAND)?                                                                                #lootSourceMineHand
+    |MINE pos3Identifier nameSpaceItem                                                                                           #lootSourceMineTool
     ;
 itemStatementInner
-    : selector giveAndClearIndependentStatementInner                                                                                                             #itemSIGiveAndClear
-    | selector '::' itemIndependentStatementInner                                                                                                                #itemSIEntity
-    | pos3Identifier '::' itemIndependentStatementInner                                                                                                          #itemSIBlock
-    | lootStatementInner                                                                                                                                         #itemSILootInner
-    | selector s_ '{' s_ (itemSelectorStatementInner s_)* '}'                                                                                                                #itemSISelectorNest
+    : selector giveAndClearIndependentStatementInner                                                                             #itemSIGiveAndClear
+    | selector '::' itemIndependentStatementInner                                                                                #itemSIEntity
+    | pos3Identifier '::' itemIndependentStatementInner                                                                          #itemSIBlock
+    | lootStatementInner                                                                                                         #itemSILootInner
+    | selector s_ '{' s_ (itemSelectorStatementInner s_)* '}'                                                                    #itemSISelectorNest
     ;
 itemSelectorStatementInner
-    : giveAndClearIndependentStatementInner                                                                                                                      #itemSSIGiveAndClear
-    | itemIndependentStatementInner                                                                                                                              #itemSSIItem
-    | lootSelectorStatementInner                                                                                                                                 #itemSSILootInner
+    : giveAndClearIndependentStatementInner                                                                                      #itemSSIGiveAndClear
+    | itemIndependentStatementInner                                                                                              #itemSSIItem
+    | lootSelectorStatementInner                                                                                                 #itemSSILootInner
     ;
 itemIndependentStatementInner
-    : item_slot '=' nameSpaceItem ('*'? NUMBER_INT)?                                                                                                                    #itemISIReplaceWith
-    | item_slot '=' selector '::' item_slot nameSpaceItemModifier?                                                                                               #itemISIReplaceFromEntity
-    | item_slot '=' pos3Identifier '::' item_slot nameSpaceItemModifier?                                                                                         #itemISIReplaceFromBlock
-    | item_slot '+=' nameSpaceItemModifier                                                                                                                       #itemISIModify
+    : item_slot '=' nameSpaceItem ('*'? NUMBER_INT)?                                                                             #itemISIReplaceWith
+    | item_slot '=' selector '::' item_slot nameSpaceItemModifier?                                                               #itemISIReplaceFromEntity
+    | item_slot '=' pos3Identifier '::' item_slot nameSpaceItemModifier?                                                         #itemISIReplaceFromBlock
+    | item_slot '+=' nameSpaceItemModifier                                                                                       #itemISIModify
     ;
 giveAndClearIndependentStatementInner
-    : ('+='|('.'? GIVE)) nameSpaceItem ('*'? NUMBER_INT)?                                                                                                                      #giveISI
-    | ('-='|('.'? CLEAR)) item_predicate ('*'? NUMBER_INT)?                                                                                                                   #clearISI
+    : ('+='|('.'? GIVE)) nameSpaceItem ('*'? NUMBER_INT)?                                                                        #giveISI
+    | ('-='|('.'? CLEAR)) item_predicate ('*'? NUMBER_INT)?                                                                      #clearISI
     ;
 
 attrStatement
-    : ATTR s_ '{' s_ (attrStatementInner (ends attrStatementInner)* ends?)? '}'                                                                                                                            #attrSCompound
-    | ATTR selector s_ '{' s_ (attrIndependentStatementInner (ends attrIndependentStatementInner)* ends?)? '}'                                                                                                        #attrSSelectorCompound
+    : ATTR s_ '{' s_ (attrStatementInner (ends attrStatementInner)* ends?)? '}'                                                  #attrSCompound
+    | ATTR selector s_ '{' s_ (attrIndependentStatementInner (ends attrIndependentStatementInner)* ends?)? '}'                   #attrSSelectorCompound
     ;
 attrStatementInner
-    : selector '::' attrIndependentStatementInner                                                                                                                #attrSISingle
-    | selector s_ '{' s_ (attrIndependentStatementInner (ends attrIndependentStatementInner)* ends?)? '}'                                                                                                             #attrSISelectorCompound
+    : selector '::' attrIndependentStatementInner                                                                                #attrSISingle
+    | selector s_ '{' s_ (attrIndependentStatementInner (ends attrIndependentStatementInner)* ends?)? '}'                        #attrSISelectorCompound
     ;
 attrIndependentStatementInner
-    : registerName ALL? ('*'?number)?                                                                                                                            #attrISIGet
-    | registerName BASE ('*'?number)?                                                                                                                            #attrISIGetBase
-    | registerName BASE '=' number                                                                                                                               #attrISISetBase
-    | registerName '+=' s_ UUID16_ string '(' op=('+'|'*+'|'*') number ')'                                                                                  #attrISIModifierAdd
-    | registerName '-=' s_ UUID16_                                                                                                                                  #attrISIModifierRemove
-    | registerName UUID16_ ('*'?number)?                                                                                                                         #attrISIModifierGet
+    : registerName ALL? ('*'?number)?                                                                                            #attrISIGet
+    | registerName BASE ('*'?number)?                                                                                            #attrISIGetBase
+    | registerName BASE '=' number                                                                                               #attrISISetBase
+    | registerName '+=' s_ UUID16_ string '(' op=('+'|'*+'|'*') number ')'                                                       #attrISIModifierAdd
+    | registerName '-=' s_ UUID16_                                                                                               #attrISIModifierRemove
+    | registerName UUID16_ ('*'?number)?                                                                                         #attrISIModifierGet
     ;
 
 entityStatement
-    : ENTITY '(' PLAYER ')' playerName (','? playerName)*                                                                                                        #entitySDeclarePlayer
+    : ENTITY '(' PLAYER ')' playerName (','? playerName)*                                                                        #entitySDeclarePlayer
     | ENTITY '(' type=nameSpaceEntity ')' s_ 
     pos3Identifier s_ 
     (nbt s_)?
-    ('{' s_ ('.'? entityDeclareStatementInner (ends '.'? entityDeclareStatementInner)* ends?)? '}')?                                                     #entitySDeclare
+    ('{' s_ ('.'? entityDeclareStatementInner (ends '.'? entityDeclareStatementInner)* ends?)? '}')?                             #entitySDeclare
     | ENTITY '(' type=nameSpaceEntity ')' s_ 
     (pos3Identifier s_)? acceptableName s_ 
     (nbt s_)? 
     ('{' s_ ('.'? entityDeclareStatementInner (ends '.'? entityDeclareStatementInner)* ends?)? s_
-    ('.' entityIndependentStatementInner (ends '.' entityIndependentStatementInner)* ends?)? '}')? #entitySDeclareWithName
-    | ENTITY s_ '{' s_ (entityStatementInner (ends entityStatementInner)* ends?)? '}'                                                                                                                        #entitySCompound
-    | ENTITY selector s_ '{' s_ ('.' entityIndependentStatementInner (ends '.' entityIndependentStatementInner)* ends?)? '}'                                                                                             #entitySSelectorCompound
+    ('.' entityIndependentStatementInner (ends '.' entityIndependentStatementInner)* ends?)? '}')?                               #entitySDeclareWithName
+    | ENTITY s_ '{' s_ (entityStatementInner (ends entityStatementInner)* ends?)? '}'                                            #entitySCompound
+    | ENTITY selector s_ '{' s_ ('.' entityIndependentStatementInner (ends '.' entityIndependentStatementInner)* ends?)? '}'     #entitySSelectorCompound
     ;
 playerName
     : fake='#'? nbtName
     ;
 entityDeclareStatementInner
-    : TAG '=' nbtName (p_ nbtName)*                                                                                                               #entityDeclareSITag
+    : TAG '=' nbtName (p_ nbtName)*                                                                                              #entityDeclareSITag
     ;
 tagIndependentStatementInner
-    : TAG ('+='|ADD) nbtName                                                                                                                              #tagISIAdd
-    | TAG ('-='|REMOVE) nbtName                                                                                                                           #tagISIRemove
-    | TAG LIST                                                                                                                                                   #tagISIList
+    : TAG ('+='|ADD) nbtName                                                                                                     #tagISIAdd
+    | TAG ('-='|REMOVE) nbtName                                                                                                  #tagISIRemove
+    | TAG LIST                                                                                                                   #tagISIList
     ;
 effectIndependentStatementInner
-    : EFFECT ('-='|CLEAR) acceptableName                                                                                                                         #effectISIClear
-    | EFFECT ('+='|GIVE) acceptableName second=NUMBER_INT? amplifier=NUMBER_INT? boolValue?                                                                              #effectISIGive
-    | EFFECT ('+='|GIVE) acceptableName ('(' amplifier=NUMBER_INT')')? second=NUMBER_INT? boolValue?                                                                     #effectISIGiveSp
-    | EFFECT CLEAR                                                                                                                                               #effectISIClearAll
+    : EFFECT ('-='|CLEAR) acceptableName                                                                                         #effectISIClear
+    | EFFECT ('+='|GIVE) acceptableName second=NUMBER_INT? amplifier=NUMBER_INT? boolValue?                                      #effectISIGive
+    | EFFECT ('+='|GIVE) acceptableName ('(' amplifier=NUMBER_INT')')? second=NUMBER_INT? boolValue?                             #effectISIGiveSp
+    | EFFECT CLEAR                                                                                                               #effectISIClearAll
     ;
 tpIndependentStatementInner
     : TP selector                                                                                                                                                #TpISIDestination
@@ -453,26 +453,26 @@ tpIndependentStatementInner
     | TP pos3Identifier FACING ENTITY? selector anchor=(EYES| FEET)?                                                                                                     #TpISIFacingEntity
     ;
 entityIndependentStatementInner
-    : giveAndClearIndependentStatementInner                                                                                                                      #entityISIGiveAndClear
-    | KILL                                                                                                                                                       #entityISIKill
-    | tagIndependentStatementInner                                                                                                                               #entityISITag
-    | effectIndependentStatementInner                                                                                                                            #entityISIEffect
-    | tpIndependentStatementInner                                                                                                                                #entityISITp
-    | TITLE s_ '{' s_ ('.' titleSelectorStatementInner (ends '.' titleSelectorStatementInner)* ends?)? '}'                                                                                                                 #entityISITitleCompound
-    | DISPLAY s_ '{' s_ ('.' displayIndependentStatementInner ends) * '}'                                                                                                          #entityISIDisplayCompound
-    | displayIndependentStatementInner                                                                                                                           #entityISIDisplaySingle
-    | ITEM '::' itemIndependentStatementInner                                                                                                                    #entityISIItemSingle
-    | (LOOT|ITEM)  lootIndependentStatementInnerGive                                                                                                             #entityISILootGiveSingle
-    | (LOOT|ITEM) '::' lootIndependentStatementInnerReplaceEntity                                                                                                #entityISILootSingle
-    | ITEM s_ '{' s_ (itemSelectorStatementInner (ends itemSelectorStatementInner)* ends?)? '}'                                                                                                                    #entityISIItemCompound
-    | LOOT s_ '{' s_ (lootSelectorStatementInner (ends lootSelectorStatementInner)* ends?)?  '}'                                                                                                                  #entityISILootCompound
-    | ATTR '::' attrIndependentStatementInner                                                                                                                    #entityISIAttrSingle
-    | ATTR s_ '{' s_ (attrIndependentStatementInner (ends attrIndependentStatementInner)* ends?)? '}'                                                                                                                #entityISIAttrCompound
-    | execStatement                                                                                                                                              #entityISIExec
+    : giveAndClearIndependentStatementInner                                                                                      #entityISIGiveAndClear
+    | KILL                                                                                                                       #entityISIKill
+    | tagIndependentStatementInner                                                                                               #entityISITag
+    | effectIndependentStatementInner                                                                                            #entityISIEffect
+    | tpIndependentStatementInner                                                                                                #entityISITp
+    | TITLE s_ '{' s_ ('.' titleSelectorStatementInner (ends '.' titleSelectorStatementInner)* ends?)? '}'                       #entityISITitleCompound
+    | DISPLAY s_ '{' s_ ('.' displayIndependentStatementInner ends) * '}'                                                        #entityISIDisplayCompound
+    | displayIndependentStatementInner                                                                                           #entityISIDisplaySingle
+    | ITEM '::' itemIndependentStatementInner                                                                                    #entityISIItemSingle
+    | (LOOT|ITEM)  lootIndependentStatementInnerGive                                                                             #entityISILootGiveSingle
+    | (LOOT|ITEM) '::' lootIndependentStatementInnerReplaceEntity                                                                #entityISILootSingle
+    | ITEM s_ '{' s_ (itemSelectorStatementInner (ends itemSelectorStatementInner)* ends?)? '}'                                  #entityISIItemCompound
+    | LOOT s_ '{' s_ (lootSelectorStatementInner (ends lootSelectorStatementInner)* ends?)?  '}'                                 #entityISILootCompound
+    | ATTR '::' attrIndependentStatementInner                                                                                    #entityISIAttrSingle
+    | ATTR s_ '{' s_ (attrIndependentStatementInner (ends attrIndependentStatementInner)* ends?)? '}'                            #entityISIAttrCompound
+    | execStatement                                                                                                              #entityISIExec
     ;
 entityStatementInner
-    : entityExpression                                                                                                                                           #entitySIEntityExpression
-    | selector s_ '{' s_ ('.' entityIndependentStatementInner (ends '.' entityIndependentStatementInner)* ends?)? '}'                                                                                                    #entitySISelectorCompound
+    : entityExpression                                                                                                           #entitySIEntityExpression
+    | selector s_ '{' s_ ('.' entityIndependentStatementInner (ends '.' entityIndependentStatementInner)* ends?)? '}'            #entitySISelectorCompound
     ;
 entityExpression
     : selector s_ '.' entityIndependentStatementInner
@@ -482,42 +482,42 @@ blockStatement
     ;
 
 blockStatementInner
-    : pos3Identifier blockIdentifier mod=(DESTROY|KEEP|REPLACE)?                                                                                                 #blockSISetblock
-    | pos3Identifier pos3Identifier blockIdentifier mod=(DESTROY|HOLLOW|KEEP|OUTLINE)?                                                                           #blockSIFill
-    | pos3Identifier pos3Identifier blockIdentifier REPLACE block_predicate                                                                                      #blockSIFillReplace
-    | pos3Identifier pos3Identifier pos3Identifier masked_mod=(REPLACE|MASKED)? mod=(FORCE|MOVE|NORMAL)?                                                         #blockSIClone
-    | pos3Identifier pos3Identifier pos3Identifier FILTERED block_predicate mod=(FORCE|MOVE|NORMAL)?                                                             #blockSICloneFiltered
+    : pos3Identifier blockIdentifier mod=(DESTROY|KEEP|REPLACE)?                                                                 #blockSISetblock
+    | pos3Identifier pos3Identifier blockIdentifier mod=(DESTROY|HOLLOW|KEEP|OUTLINE)?                                           #blockSIFill
+    | pos3Identifier pos3Identifier blockIdentifier REPLACE block_predicate                                                      #blockSIFillReplace
+    | pos3Identifier pos3Identifier pos3Identifier masked_mod=(REPLACE|MASKED)? mod=(FORCE|MOVE|NORMAL)?                         #blockSIClone
+    | pos3Identifier pos3Identifier pos3Identifier FILTERED block_predicate mod=(FORCE|MOVE|NORMAL)?                             #blockSICloneFiltered
     ;
 interfaceStatement
-    : INTERFACE nameSpaceStorage nbt                                                                                                                             #interfaceSNamespace
-    | INTERFACE dataIdentifier nbt                                                                                                                               #interfaceSIdentifier
+    : INTERFACE nameSpaceStorage nbt                                                                                             #interfaceSNamespace
+    | INTERFACE dataIdentifier nbt                                                                                               #interfaceSIdentifier
     ;
 dataAssignExistExpression
     : dataIdentifier '=' existExpression
     ;
 existExpression
-    : '{' s_ (execChild pn_)* '}'                                                                                                                                          #existExpressionExec
-    | dataIdentifier                                                                                                                                             #existExpressionId
-    | funcImproveRunExpression                                                                                                                                   #exisitExpressionFuncRun
-    | TRUE                                                                                                                                                       #existExpressionTrue
-    | FALSE                                                                                                                                                      #existExpressionFalse
-    |'!' existExpression                                                                                                                                         #existExpressionNot
-    | existExpression s_ op='&' s_ existExpression                                                                                                                     #existExpressionBitAnd
-    | existExpression s_ op='|' s_ existExpression                                                                                                                     #existExpressionBitOr
-    | existExpression s_ op='&&' s_ existExpression                                                                                                                    #existExpressionAnd
-    | existExpression s_ op='||' s_ existExpression                                                                                                                    #existExpressionOr
-    | '(' s_ existExpression s_ ')'                                                                                                                                    #existExpressionParen
+    : '{' s_ (execChild pn_)* '}'                                                                                                #existExpressionExec
+    | dataIdentifier                                                                                                             #existExpressionId
+    | funcImproveRunExpression                                                                                                   #exisitExpressionFuncRun
+    | TRUE                                                                                                                       #existExpressionTrue
+    | FALSE                                                                                                                      #existExpressionFalse
+    |'!' existExpression                                                                                                         #existExpressionNot
+    | existExpression s_ op='&' s_ existExpression                                                                               #existExpressionBitAnd
+    | existExpression s_ op='|' s_ existExpression                                                                               #existExpressionBitOr
+    | existExpression s_ op='&&' s_ existExpression                                                                              #existExpressionAnd
+    | existExpression s_ op='||' s_ existExpression                                                                              #existExpressionOr
+    | '(' s_ existExpression s_ ')'                                                                                              #existExpressionParen
     ;
 ifStatement
     : IF s_ existExpression s_ execRunChild (s_ ifElseStatement)?
     ;
 ifElseStatement
-    : ELSE s_ execRunChild                                                                                                                                          #ifElseExec
-    | ELSE s_ ifStatement                                                                                                                                           #ifElseSIfS
+    : ELSE s_ execRunChild                                                                                                       #ifElseExec
+    | ELSE s_ ifStatement                                                                                                        #ifElseSIfS
     ;
 whileStatement
-    : WHILE s_ '{' s_ (execChild pn_)* '}' s_ execRunChild                                                                                                                      #whileStatementExec
-    | WHILE s_  existExpression s_ execRunChild                                                                                                                        #whileStatementExist
+    : WHILE s_ '{' s_ (execChild pn_)* '}' s_ execRunChild                                                                       #whileStatementExec
+    | WHILE s_  existExpression s_ execRunChild                                                                                  #whileStatementExist
     ;
 forStatement
     : FOR s_ '{' s_ dataOperationExpression s_ '}' s_ execRunChild
@@ -1025,51 +1025,51 @@ numberRange
     | number
     ;
 selector
-    : selectorWithParams #selectorParams
-    | '@' acceptableNameWithoutPointWithKey #selectorName
-    | '#' acceptableNameWithoutPointWithKey #selectorFakeName
+    : selectorWithParams                                                                                                         #selectorParams
+    | '@' acceptableNameWithoutPointWithKey                                                                                      #selectorName
+    | '#' acceptableNameWithoutPointWithKey                                                                                      #selectorFakeName
     ;
 
 selectorWithParams: '@' SelectorKey ( '(' s_ selectorTypes s_ ')' )? ('[' s_ selectorParam (p_ selectorParam)* s_ ']')?;
 
 selectorParam
-    : POS '=' pos3Identifier #selectorParamPos
-    | DPOS '=' pos3Identifier #selectorParamDPos
-    | ROT '=' pos2Identifier  #selectorParamRot
-    | (X|Y|Z) '=' number  #selectorParamXYZ
-    | (DX|DY|DZ) '=' number #selectorParamDXYZ
-    | (X_ROTATION|Y_ROTATION) '=' numberRange #selectorParamRotation
-    | DISTANCE '=' positiveNumberRange #selectorParamDistance
+    : POS '=' pos3Identifier                                                                                                     #selectorParamPos
+    | DPOS '=' pos3Identifier                                                                                                    #selectorParamDPos
+    | ROT '=' pos2Identifier                                                                                                     #selectorParamRot
+    | (X|Y|Z) '=' number                                                                                                         #selectorParamXYZ
+    | (DX|DY|DZ) '=' number                                                                                                      #selectorParamDXYZ
+    | (X_ROTATION|Y_ROTATION) '=' numberRange                                                                                    #selectorParamRotation
+    | DISTANCE '=' positiveNumberRange                                                                                           #selectorParamDistance
     | NBT '=' (nbtCompound|selectorNbtCompound )#selectorParamNbt
-    | SCORES '=' '{' s_ selectorScoresPart ( p_ selectorScoresPart)* s_ '}' #selectorParamScores
-    | TAG '=' not='!'? nbtName #selectorParamTag
-    | TEAM '=' not='!'? nbtName #selectorParamTeam
-    | NAME '=' not='!'? nbtName #selectorParamName
-    | TYPE '=' not='!'? selectorType #selectorParamType
-    | LEVEL '=' intRange #selectorParamLevel
-    | PREDICATE '=' not='!'? nameSpacePredicate #selectorParamPredicate
-    | GAMEMODE '=' not='!'? (SPECTATOR|SURVIVAL|CREATIVE|ADVENTURE) #selectorParamGamemode
-    | (ADVANCEMENTS|ADVM) '=' '{' s_ selectorAdvancementsPart (p_ selectorAdvancementsPart)* s_ '}' #selectorParamAdvm
-    | LIMIT '=' '+'? NUMBER_INT #selectorParamLimit
-    | LIMIT '=' '..' #selectorParamLimitInf
-    | SORT '=' (NEAREST|FURTHEST|RANDOM|ARBITRARY) #selectorParamSort
-    | '+'? NUMBER_INT #selectorParamLimitNumber
-    | selectorNbtCompound #selectorParamNbtCompound
-    | '{' s_ selectorScoresPartImprove (p_ selectorScoresPartImprove)* s_ '}' #selectorParamScoreCompound
+    | SCORES '=' '{' s_ selectorScoresPart ( p_ selectorScoresPart)* s_ '}'                                                      #selectorParamScores
+    | TAG '=' not='!'? nbtName                                                                                                   #selectorParamTag
+    | TEAM '=' not='!'? nbtName                                                                                                  #selectorParamTeam
+    | NAME '=' not='!'? nbtName                                                                                                  #selectorParamName
+    | TYPE '=' not='!'? selectorType                                                                                             #selectorParamType
+    | LEVEL '=' intRange                                                                                                         #selectorParamLevel
+    | PREDICATE '=' not='!'? nameSpacePredicate                                                                                  #selectorParamPredicate
+    | GAMEMODE '=' not='!'? (SPECTATOR|SURVIVAL|CREATIVE|ADVENTURE)                                                              #selectorParamGamemode
+    | (ADVANCEMENTS|ADVM) '=' '{' s_ selectorAdvancementsPart (p_ selectorAdvancementsPart)* s_ '}'                              #selectorParamAdvm
+    | LIMIT '=' '+'? NUMBER_INT                                                                                                  #selectorParamLimit
+    | LIMIT '=' '..'                                                                                                             #selectorParamLimitInf
+    | SORT '=' (NEAREST|FURTHEST|RANDOM|ARBITRARY)                                                                               #selectorParamSort
+    | '+'? NUMBER_INT                                                                                                            #selectorParamLimitNumber
+    | selectorNbtCompound                                                                                                        #selectorParamNbtCompound
+    | '{' s_ selectorScoresPartImprove (p_ selectorScoresPartImprove)* s_ '}'                                                    #selectorParamScoreCompound
     ;
 selectorType:nameSpaceEntity|tagNameSpaceEntity;
 selectorTypes
-    : selectorType #selectorTypeSingle
-    | '!'selectorType (p_ '!'selectorType)*  #selectorTypeNot
+    : selectorType                                                                                                               #selectorTypeSingle
+    | '!'selectorType (p_ '!'selectorType)*                                                                                      #selectorTypeNot
     ;
 selectorNbtCompound : 'n{' s_ nbtPair (',' s_ nbtPair)*  s_'}' | 'n{' '}';
 selectorScoresPart: nbtName '=' intRange ;
 selectorScoresPartImprove
-    : nbtName scbCompareNumber  #selectorScoresPartCompare
-    | nbtName '='? intRange #selectorScoresPartRange
+    : nbtName scbCompareNumber                                                                                                   #selectorScoresPartCompare
+    | nbtName '='? intRange                                                                                                      #selectorScoresPartRange
     ;
 selectorAdvancementsPart
-    : nameSpaceAdvancement '=' boolValue #selectorAdvmPartDirect
-    | nameSpaceAdvancement '=' '{' s_ selectorAdvancementsCriteria (p_ selectorAdvancementsCriteria)* s_ '}' #selectorAdvmPartCriteria
+    : nameSpaceAdvancement '=' boolValue                                                                                         #selectorAdvmPartDirect
+    | nameSpaceAdvancement '=' '{' s_ selectorAdvancementsCriteria (p_ selectorAdvancementsCriteria)* s_ '}'                     #selectorAdvmPartCriteria
     ;
 selectorAdvancementsCriteria: acceptableName '=' boolValue;
