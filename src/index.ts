@@ -1,7 +1,7 @@
-import { FileUtils } from "FileUtils.js"
-import { JustMCFResult, defaultOption } from "JustMCFResult.js"
+import { FileUtils } from "./FileUtils.js"
+import { JustMCFResult, defaultOption } from "./JustMCFResult.js"
 import { build as simpleBuild, execute as simpleExecute } from './ManageSimplify.js';
-import { BuildAction, InitAction } from "JustMCFCli.js";
+import { BuildAction, InitAction } from "./JustMCFCli.js";
 
 export async function build(source_path: string, target_path: string) {
     if (source_path === undefined) {
